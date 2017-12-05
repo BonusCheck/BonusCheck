@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/main.css"> <!-- Resource style -->
+	
+  	
+	<title>Home</title>
+</head>
+<body>
+
+    <!-- ####### Header NAVBAR ####### -->
+	<header class="cd-main-header" >
+		<a href="#" class="cd-logo"><img src="images/logo-trans.png"  alt="Logo"></a>				
+		<a href="#0" class="cd-nav-trigger" >Menu<span ></span></a>
+		<nav class="cd-nav" >
+			<ul class="cd-top-nav">
+				<li><a href="#">option1</a></li>
+				<li><a href="#">option2</a></li>
+				<li class="has-children account">
+					<a href="#0"  >
+						<img  src="images/user.jpg" alt="avatar">
+						ruchi_awasthi
+					</a>
+					<ul>
+						<li><a href="#0">My Account</a></li>
+						<li><a href="#0">Edit Account</a></li>
+						<li><a href="#0">Logout</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</header> 
+	<!-- ###### Header NAVBAR END #######-->
+     
+    <!-- %%%%%%%%  Side NAVBAR %%%%%%% -->
+	<main class="cd-main-content" >
+		<nav class="cd-side-nav">
+			<ul>
+				<li class="has-children Overviews">
+					<button  class="button" onclick="openTab('dashboard')" > <i class="fa fa-th-large" ></i>Dashboard </button>										
+				</li>				
+				<li class="has-children comments">
+					<button  class="button" onclick="openTab('project')"><i class="fa fa-tasks"></i> Project</button>										
+				</li>
+
+				<li class="has-children bookmarks">
+					<button  class="button" onclick="openTab('tables')" ><i class="fa fa-table"></i> Tables</button>
+					<ul>
+						<li><a href="#0">option 1</a></li>
+						<li><a href="#0">option 2</a></li>
+						<li><a href="#0">option 3</a></li>
+					</ul>
+				</li>								
+				<li class="has-children users">
+					<button  class="button"  onclick="openTab('user')"><i class="fa fa-user"></i> User</button>				
+					<ul>
+						<li><a href="#0">All Users</a></li>
+						<li><a href="#0">Edit User</a></li>
+						<li><a href="#0">Add User</a></li>
+					</ul>
+				</li>
+				<li class="has-children comments">
+					<button  class="button" onclick="openTab('admin')" ><i class="fa fa-user-circle"></i> Admin</button>										
+				</li>							
+			</ul>
+		</nav>
+        <!-- %%%%%%%%  Side NAVBAR END %%%%%%% -->
+
+
+        <!-- #######  Project Page  ####### -->
+		<div class="content-wrapper tab" id="project" style="display:none">
+			<div class="content-wrapper">
+				<div id="projects-page" class="view">  
+			       <div class="row page-title">
+			           <div class=" col-lg-4 col-sm-6 title">
+			             <h1>Projects</h1>
+			           </div>
+			           <div class=" col-lg-4 col-sm-6 ">
+			              <button>Create Project</button>
+			           </div>
+		           </div>
+		        </div>   
+	        </div> 
+	   </div> 
+	   <!-- #######  Project Page END  ####### -->
+
+	   <!-- #######  Dshboard Page   ####### -->      
+	   <div class="content-wrapper tab" id="dashboard" style="display:none">
+			<div class="content-wrapper">
+				<div id="dashboard-page" class="view">  
+			       <div class="row page-title">
+			           <div class=" col-lg-4 col-sm-6 title">
+			             <h1>dashboard</h1>
+			           </div>
+			           <div class=" col-lg-4 col-sm-6 ">
+			              <button>Create </button>
+			           </div>
+		           </div>
+		        </div>   
+	        </div> 
+	   </div> 
+	   <!-- #######  Dashboard Page END  ####### -->
+
+	   <!-- #######  Table Page  ####### -->  
+	   <div class="content-wrapper tab" id="tables" style="display:none">
+			<div class="content-wrapper">
+				<div id="dashboard-page" class="view">  
+			       <div class="row page-title">
+			           <div class=" col-lg-4 col-sm-6 title">
+			             <h1>table</h1>
+			           </div>
+			           <div class=" col-lg-4 col-sm-6 ">
+			              <button>Create </button>
+			           </div>
+		           </div>
+		        </div>   
+	        </div> 
+	   </div>  
+       <!-- #######  Table Page END  ####### -->
+
+       <!-- #######  User Page  ####### -->
+	   <div class="content-wrapper tab" id="user" style="display:none">
+			<div class="content-wrapper">
+				<div id="dashboard-page" class="view">  
+			       <div class="row page-title">
+			           <div class=" col-lg-4 col-sm-6 title">
+			             <h1>user</h1>
+			           </div>
+			           <div class=" col-lg-4 col-sm-6 ">
+			              <button>Create </button>
+			           </div>
+		           </div>
+		        </div>   
+	        </div> 
+	   </div>
+	   <!-- ####### User Page END  ####### -->
+
+	   <!-- #######  Admin Page   ####### -->
+	   <div class="content-wrapper tab" id="admin" style="display:none">
+			<div class="content-wrapper">
+				<div id="dashboard-page" class="view">  
+			       <div class="row page-title">
+			           <div class=" col-lg-4 col-sm-6 title">
+			             <h1>admin</h1>
+			           </div>
+			           <div class=" col-lg-4 col-sm-6 ">
+			              <button>Create </button>
+			           </div>
+		           </div>
+		        </div>   
+	        </div> 
+	   </div> 
+	   <!-- #######  Admin Page END  ####### -->    
+	</main> <!-- .cd-main-content -->
+
+	<script>
+    function openTab(tabName) {
+	    var i;
+	    var x = document.getElementsByClassName("tab");
+	    for (i = 0; i < x.length; i++) {
+	       x[i].style.display = "none";  
+	    }
+	    document.getElementById(tabName).style.display = "block";  
+    }
+</script>
+<script src="js/jquery-2.1.4.js"></script>
+<script src="js/jquery.menu-aim.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+</body>
+</html>
