@@ -50,6 +50,29 @@ var orm = {
       cb(result);
     });
   },
+  someThreeTableJoin: function(table1, table2, table3, tableCols, condition1, condition2, cb) {
+    var queryString = "SELECT " + tableCols;
+
+    queryString += " FROM ";
+    queryString += table1;
+    queryString += " LEFT JOIN ";
+    queryString += table2;
+    queryString += " ON ";
+    queryString += condition1;
+    queryString += " LEFT JOIN ";
+    queryString += table3;
+    queryString += " ON ";
+    queryString += condition2;
+
+    console.log(queryString);
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+
+      cb(result);
+    });
+  },
   create: function(table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
 

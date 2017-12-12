@@ -3,25 +3,23 @@ var orm = require("../config/orm.js");
 
 var installer = {
   all: function(cb) {
-    orm.all("installers", function(res) {
+    orm.all("jobs", function(res) {
       cb(res);
     });
   },
   // The variables cols and vals are arrays.
   create: function(cols, vals, cb) {
-    console.log(cols);
-    console.log(vals);
-    orm.create("installers", cols, vals, function(res) {
+    orm.create("jobs", cols, vals, function(res) {
       cb(res);
     });
   },
   update: function(objColVals, condition, cb) {
-    orm.update("installers", objColVals, condition, function(res) {
+    orm.update("jobs", objColVals, condition, function(res) {
       cb(res);
     });
   },
   delete: function(condition, cb) {
-    orm.delete("installers", condition, function(res) {
+    orm.delete("jobs", condition, function(res) {
       cb(res);
     });
   }

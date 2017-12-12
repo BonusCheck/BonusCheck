@@ -4,6 +4,8 @@ var router = express.Router();
 
 // Import the model (cat.js) to use its database functions.
 var installer = require("../models/installer.js");
+var job = require("../models/job.js");
+var job_installer = require("../models/job-installer.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
@@ -16,16 +18,66 @@ router.get("/", function(req, res) {
   });
 });
 
-router.post("/api/cats", function(req, res) {
+router.get("/installers", function(req, res) {
+  installer.all(function(data) {
+    var hbsObject = {
+      installers: data
+    };
+    console.log(hbsObject);
+    res.json(hbsObject);
+  });
+});
+
+router.get("/jobs", function(req, res) {
+  job.all(function(data) {
+    var hbsObject = {
+      installers: data
+    };
+    console.log(hbsObject);
+    res.json(hbsObject);
+  });
+});
+
+router.get("/jobs-installers", function(req, res) {
+  job_installer.all(function(data) {
+    var hbsObject = {
+      installers: data
+    };
+    console.log(hbsObject);
+    res.json(hbsObject);
+  });
+});
+
+router.get("/jobs-installers-joined", function(req, res) {
+  job_installer.some(function(data) {
+    var hbsObject = {
+      installers: data
+    };
+    console.log(hbsObject);
+    res.json(hbsObject);
+  });
+});
+
+
+router.post("/add/installer", function(req, res) {
+  console.log(req);
   installer.create([
-    "name", "sleepy"
+    "created_by_id", "modified_by_id", "first_name", "last_name", "current_wage", "fk_installer_role_id"
   ], [
-    req.body.name, req.body.sleepy
+    req.body.created_by_id, req.body.modified_by_id, req.body.first_name, req.body.last_name, req.body.current_wage, req.body.installer_role_id
   ], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
   });
 });
+
+// "1", "1", "Wan", "Valdez", "17.75", "105"
+// req.body.created_by_id, req.body.modified_by_id, req.body.first_name, req.body.last_name, req.body.current_wage, req.body.installer_role_id
+
+
+
+
+
 
 router.put("/api/cats/:id", function(req, res) {
   var condition = "id = " + req.params.id;
