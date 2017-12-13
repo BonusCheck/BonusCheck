@@ -7,13 +7,23 @@
     "body-parser": "^1.18.2",
     "console.table": "^0.9.1",
     "express": "^4.16.2",
+    "express-layout": "^0.1.0",
     "mysql": "^2.15.0",
-    "path": "^0.12.7"
+    "vue": "^2.5.10"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "buble-loader": "^0.4.1",
+    "cross-env": "^5.1.1",
+    "vue-loader": "^13.5.0",
+    "webpack": "^3.10.0",
+    "vue-template-compiler": "^2.5.10"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "npm run build:dev && node server.js",
+    "build:dev": "cross-env NODE_ENV=development webpack --config=config/webpack.config.js --progress --hide-modules",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "repository": {
     "type": "git",
