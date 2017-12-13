@@ -214,7 +214,7 @@ INSERT INTO users(user_name, password) VALUES("Admin", "1234");
 
 INSERT INTO payment_types(created_by_id, modified_by_id, payment_type) VALUES(1, 1, "team_bonus_1"),(1, 1, "team_bonus_2"),(1, 1, "team_bonus_3"),(1, 1, "team_bonus_4"),(1, 1, "Indvidual_bonus_1"),(1, 1, "Indvidual_bonus_2"),(1, 1, "Indvidual_bonus_3"),(1, 1, "Indvidual_bonus_4"),(1, 1, "base_wage");
 
-INSERT INTO jobs(created_by_id, modified_by_id, job_name, start_date, end_date, bill_rate, max_labor_cost) VALUES(1, 1, "Samuel Iuka","2017-10-10","2017-11-04",65,43.5),(1, 1, "Samuel Wisconsin","2017-10-17","2017-11-04",65,43.5);
+INSERT INTO jobs(created_by_id, modified_by_id, job_name, est_start_date, est_end_date, bill_rate, max_labor_cost, hours_bid) VALUES(1, 1, "Samuel Iuka","2017-10-10","2017-11-04",65,43.5, 400),(1, 1, "Samuel Wisconsin","2017-10-17","2017-11-04",65,43.5, 250);
 
 INSERT INTO bonuses(created_by_id, modified_by_id, production_min, production_max, bonus_weight) VALUES(1, 1, 69.99,0.00,0.75),(1, 1, 79.99,70,0.55),(1, 1, 89.99,80,0.35),(1, 1, 99.99,90,0.25),(1, 1, 109.99,100,0.15);
 

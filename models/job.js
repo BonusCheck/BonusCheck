@@ -7,6 +7,12 @@ var installer = {
       cb(res);
     });
   },
+  someInstallerByID: function(cols, id, cb) {
+    orm.someThreeTableJoinByID("jobs", "jobs_installers", "installers", cols, "jobs.job_id = jobs_installers.fk_job_id", "jobs_installers.fk_installer_id = installers.installer_id", "installers.installer_id = " + id, function(res) {
+      cb(res);
+    });
+  },
+
   // The variables cols and vals are arrays.
   create: function(cols, vals, cb) {
     orm.create("jobs", cols, vals, function(res) {

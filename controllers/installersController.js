@@ -38,6 +38,36 @@ router.get("/jobs", function(req, res) {
   });
 });
 
+router.get("/jobs/installer/:id", function(req, res) {
+  job.someInstallerByID(["jobs.job_name", "jobs.start_date", "jobs.end_date", "jobs.job_status", "jobs.est_start_date", "jobs.est_end_date"], req.params.id, function(data) {
+    var hbsObject = {
+      installers: data
+    };
+    console.log(hbsObject);
+    res.json(hbsObject);
+  });
+});
+
+router.get("/jobs/pm/:id", function(req, res) {
+  job.someInstallerByID(["jobs.job_name", "jobs.start_date", "jobs.end_date", "jobs.job_status", "jobs.est_start_date", "jobs.est_end_date", "jobs.hours_bid", "jobs.fk_customer_id", "jobs.job_id"], req.params.id, function(data) {
+    var hbsObject = {
+      installers: data
+    };
+    console.log(hbsObject);
+    res.json(hbsObject);
+  });
+});
+
+router.get("/jobs/pc/:id", function(req, res) {
+  job.someInstallerByID(["jobs.job_name", "jobs.start_date", "jobs.end_date", "jobs.job_status", "jobs.est_start_date", "jobs.est_end_date", "jobs.hours_bid", "jobs.fk_customer_id", "jobs.hours_bid", "jobs.bill_rate", "jobs.max_labor_cost", "jobs.job_id"], req.params.id, function(data) {
+    var hbsObject = {
+      installers: data
+    };
+    console.log(hbsObject);
+    res.json(hbsObject);
+  });
+});
+
 router.get("/jobs-installers", function(req, res) {
   job_installer.all(function(data) {
     var hbsObject = {
@@ -71,8 +101,19 @@ router.post("/add/installer", function(req, res) {
   });
 });
 
-// "1", "1", "Wan", "Valdez", "17.75", "105"
-// req.body.created_by_id, req.body.modified_by_id, req.body.first_name, req.body.last_name, req.body.current_wage, req.body.installer_role_id
+router.post("/add/job", function(req, res) {
+  console.log(req);
+  installer.create([
+    "created_by_id", "modified_by_id", "first_name", "last_name", "current_wage", "fk_installer_role_id"
+  ], [
+    req.body.created_by_id, req.body.modified_by_id, req.body.first_name, req.body.last_name, req.body.current_wage, req.body.installer_role_id
+  ], function(result) {
+    // Send back the ID of the new quote
+    res.json({ id: result.insertId });
+  });
+});
+
+
 
 
 
