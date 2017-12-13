@@ -9,13 +9,7 @@ var job_installer = require("../models/job-installer.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
-  installer.all(function(data) {
-    var hbsObject = {
-      installers: data
-    };
-    console.log(hbsObject);
-    res.json(hbsObject);
-  });
+    res.render('index.html');
 });
 
 router.get("/installers", function(req, res) {
