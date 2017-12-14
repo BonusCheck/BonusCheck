@@ -24,7 +24,10 @@ module.exports = {
       }]
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json']
+    extensions: ['.js', '.vue', '.json'],
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' for webpack 1
+    }
   },
   devtool: '#cheap-module-source-map'
 };
