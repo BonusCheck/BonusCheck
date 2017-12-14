@@ -14,9 +14,10 @@
   "devDependencies": {
     "buble-loader": "^0.4.1",
     "cross-env": "^5.1.1",
+    "css-loader": "^0.28.7",
     "vue-loader": "^13.5.0",
-    "webpack": "^3.10.0",
-    "vue-template-compiler": "^2.5.10"
+    "vue-template-compiler": "^2.5.10",
+    "webpack": "^3.10.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
