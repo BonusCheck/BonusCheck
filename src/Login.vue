@@ -60,7 +60,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 	body{
 	    background-image: url(https://www.pega.com/sites/pega.com/files/banking-case-study-bg.jpg);
 	    background-repeat: no-repeat;

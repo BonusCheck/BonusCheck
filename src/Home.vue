@@ -14,7 +14,9 @@
             <li ><a  href="#">Home</a></li>
             <li><a   href="#">Contact</a></li>
             <li ><a  href="#">Sign up</a></li>
-            <li><router-link :to="'login'" class='btn-danger navbar-btn'>Log in</router-link></li>
+            <li>
+            	<router-link :to="'login'" class='btn-danger navbar-btn'>Log in</router-link>
+            </li>
           </ul>
         </div>
       </div>
@@ -129,7 +131,7 @@ export default {
   	   });
 </script>
 
-<style>
+<style scoped>
 	body{
 		
 		font-family: "Open Sans", sans-serif;
