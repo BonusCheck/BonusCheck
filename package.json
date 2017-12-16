@@ -8,6 +8,10 @@
     "body-parser": "^1.18.2",
     "console.table": "^0.9.1",
     "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "mysql": "^2.15.0",
+    "passport": "^0.4.0",
+    "path": "^0.12.7"
     "express-layout": "^0.1.0",
     "mysql": "^2.15.0",
     "vue": "^2.5.10",
@@ -20,6 +24,7 @@
     "vue-loader": "^13.5.0",
     "vue-template-compiler": "^2.5.10",
     "webpack": "^3.10.0"
+
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
