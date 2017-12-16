@@ -1,6 +1,7 @@
 <template>
-  <div class="container-fluid">
-    <h1>I am a vue app!</h1>
+  <div>
+    <router-view />
+    <!-- <router-link /> -->
   </div>
 </template>
 

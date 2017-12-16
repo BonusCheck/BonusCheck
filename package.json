@@ -9,7 +9,8 @@
     "express": "^4.16.2",
     "express-layout": "^0.1.0",
     "mysql": "^2.15.0",
-    "vue": "^2.5.10"
+    "vue": "^2.5.10",
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "buble-loader": "^0.4.1",

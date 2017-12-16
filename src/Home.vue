@@ -9,12 +9,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-        <div id="navbar-item" class="collapse  navbar-collapse">
+        <div id="navbar-item" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li ><a  href="#">Home</a></li>
             <li><a   href="#">Contact</a></li>
-            <li ><a  href="signup.html">Sign up</a></li>
-            <li><button class=" btn-danger navbar-btn "><a style="color: #fff;" href="login.html">Log in</a></button></li>
+            <li ><a  href="#">Sign up</a></li>
+            <li><router-link :to="'login'" class='btn-danger navbar-btn'>Log in</router-link></li>
           </ul>
         </div>
       </div>
@@ -94,7 +94,7 @@
 
 <script>
 export default {
-  name: 'home'
+  name: 'Home'
 };
 </script>
 

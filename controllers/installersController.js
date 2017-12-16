@@ -10,9 +10,7 @@ var job = require("../models/job.js");
 var job_installer = require("../models/job-installer.js");
 
 // Create all our routes and set up logic within those routes where required.
-router.get("/", function(req, res) {
-  res.send(layout);
-});
+
 
 router.get("/installers", function(req, res) {
   installer.all(function(data) {
@@ -145,6 +143,14 @@ router.delete("/api/cats/:id", function(req, res) {
     }
   });
 });
+
+router.get("/", function(req, res) {
+    res.send(layout);
+  });
+
+router.get("/:path", function(req, res) {
+    res.send(layout);
+  });
 
 // Export routes for server.js to use.
 module.exports = router;
