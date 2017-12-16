@@ -50,6 +50,37 @@ var orm = {
       cb(result);
     });
   },
+
+  some: function(tableInput, cols, cb) {
+    var queryString = "SELECT " + cols + " FROM " + tableInput + ";";
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+  },
+
+  auth: function(tableInput, user, password, cb) {
+    var queryString = "SELECT user_name FROM " + tableInput;
+
+    queryString += " WHERE ";
+    queryString += "user_name = '";
+    queryString += user;
+    queryString += "' AND ";
+    queryString += "password = '";
+    queryString += password;
+    queryString += "'";
+
+    console.log(queryString);
+
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+  },
   someByID: function(tableInput, tableCols, cb) {
     var queryString = "SELECT " + tableCols;
 
