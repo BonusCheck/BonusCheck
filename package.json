@@ -4,6 +4,7 @@
   "description": "Bonus Managment System for Installers",
   "main": "server.js",
   "dependencies": {
+    "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
     "console.table": "^0.9.1",
     "express": "^4.16.2",

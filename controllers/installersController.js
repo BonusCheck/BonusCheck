@@ -8,9 +8,70 @@ var router = express.Router();
 var installer = require("../models/installer.js");
 var job = require("../models/job.js");
 var job_installer = require("../models/job-installer.js");
+const user = require("../models/user.js");
+const roles = require("../models/roles.js");
+var bcrypt = require('bcrypt');
+
+const saltRounds = 10;
+const myPlaintextPassword = 's0/\/\P4$$w0rD';
+const someOtherPlaintextPassword = 'not_bacon';
 
 // Create all our routes and set up logic within those routes where required.
 
+
+
+// bcrypt.genSalt(saltRounds, function(err, salt) {
+//     bcrypt.hash(myPlaintextPassword, salt, function(err, hash) {
+//         // Store hash in your password DB.
+//     });
+// });
+
+// passport and passport local
+
+// router.post("/add/installer", function(req, res) {
+//   console.log(req);
+//   installer.create([
+//     "created_by_id", "modified_by_id", "first_name", "last_name", "current_wage", "fk_installer_role_id"
+//   ], [
+//     req.body.created_by_id, req.body.modified_by_id, req.body.first_name, req.body.last_name, req.body.current_wage, req.body.installer_role_id
+//   ], function(result) {
+//     // Send back the ID of the new quote
+//     res.json({ id: result.insertId });
+//   });
+// });
+
+router.post("/auth", function(req, res) {
+  user.auth(req.body.user_name, req.body.password, function(data) {
+    var hbsObject = {
+      installers: data
+    };
+    console.log(hbsObject);
+    res.json(hbsObject);
+  });
+});
+
+router.post("/add/user", function(req, res) {
+  user.create([
+    "user_name", "password"
+  ], [
+    req.body.user_name, req.body.password
+  ],function(data) {
+    var hbsObject = {
+      installers: data
+    };
+    console.log(hbsObject);
+    res.json(hbsObject);
+  });
+});
+
+router.get("/installer/roles", function(req, res) {
+  roles.some("installer_role_name", function(data) {
+    var hbsObject = {
+      installers: data
+    };
+    res.json(hbsObject);
+  });
+});
 
 router.get("/installers", function(req, res) {
   installer.all(function(data) {
