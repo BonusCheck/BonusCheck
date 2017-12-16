@@ -1,5 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
+// var passport = require('passport');
+// var session = require('express-session');
 
 var port = process.env.PORT || 8080;
 
@@ -14,5 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 var routes = require("./controllers/installersController.js");
 
 app.use("/", routes);
+
+// require('./config/passport/passport.js')(passport, db.user);
 
 app.listen(port);

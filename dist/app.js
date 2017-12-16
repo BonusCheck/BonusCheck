@@ -366,33 +366,6 @@ process.umask = function() { return 0; };
 /* 2 */
 /***/ (function(module, exports) {
 
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
 /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
@@ -472,7 +445,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -693,6 +666,33 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
 /* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -703,6 +703,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_router__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Home__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Login__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__jobs__ = __webpack_require__(24);
+
 
 
 
@@ -723,6 +725,11 @@ var routes = [
 	name: 'login',
 	component: __WEBPACK_IMPORTED_MODULE_4__Login__["a" /* default */],
 	path: '/login',
+},
+{
+	name: 'jobs',
+	component: __WEBPACK_IMPORTED_MODULE_5__jobs__["a" /* default */],
+	path: '/jobs',
 }
 ];
 
@@ -741,13 +748,29 @@ new __WEBPACK_IMPORTED_MODULE_1_vue__["a" /* default */]({
   template: '<App/>'
 });
 
+new __WEBPACK_IMPORTED_MODULE_1_vue__["a" /* default */]({
+		component: 'job-info',
+	    props: ['job'],
+	    template: '<li>{{job.text}}</li>'
+	})
+
+	var job = new __WEBPACK_IMPORTED_MODULE_1_vue__["a" /* default */]({
+		el: '#job',
+		data: {
+			jobList: [
+				{id: 0, text: 'Blow Me' },
+				{id: 1, text: 'Bathe me' }
+			]
+		}
+	})
+
 /***/ }),
 /* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_App_vue__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7ba5bd90_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_App_vue__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_04c2046b_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_App_vue__ = __webpack_require__(8);
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -764,13 +787,13 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_App_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7ba5bd90_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_App_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_04c2046b_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_App_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "src/App.vue"
+Component.options.__file = "src\\App.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
@@ -780,9 +803,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7ba5bd90", Component.options)
+    hotAPI.createRecord("data-v-04c2046b", Component.options)
   } else {
-    hotAPI.reload("data-v-7ba5bd90", Component.options)
+    hotAPI.reload("data-v-04c2046b", Component.options)
 ' + '  }
   module.hot.dispose(function (data) {
     disposed = true
@@ -828,7 +851,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7ba5bd90", esExports)
+    require("vue-hot-reload-api")      .rerender("data-v-04c2046b", esExports)
   }
 }
 
@@ -11604,7 +11627,7 @@ Vue$3.compile = compileToFunctions;
 
 /* harmony default export */ __webpack_exports__["a"] = (Vue$3);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1), __webpack_require__(2), __webpack_require__(10).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1), __webpack_require__(4), __webpack_require__(10).setImmediate))
 
 /***/ }),
 /* 10 */
@@ -11856,7 +11879,7 @@ exports.clearImmediate = clearImmediate;
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(1)))
 
 /***/ }),
 /* 12 */
@@ -14496,7 +14519,7 @@ if (inBrowser && window.Vue) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Home_vue__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Home_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Home_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2380d2d8_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Home_vue__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_33885605_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Home_vue__ = __webpack_require__(18);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
@@ -14517,13 +14540,13 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Home_vue___default.a,
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2380d2d8_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Home_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_33885605_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Home_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "src/Home.vue"
+Component.options.__file = "src\\Home.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
@@ -14533,9 +14556,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-2380d2d8", Component.options)
+    hotAPI.createRecord("data-v-33885605", Component.options)
   } else {
-    hotAPI.reload("data-v-2380d2d8", Component.options)
+    hotAPI.reload("data-v-33885605", Component.options)
 ' + '  }
   module.hot.dispose(function (data) {
     disposed = true
@@ -14556,13 +14579,13 @@ var content = __webpack_require__(15);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("dbce3994", content, false);
+var update = __webpack_require__(3)("e9f9e9aa", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2380d2d8\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Home.vue", function() {
-     var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2380d2d8\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Home.vue");
+   module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-33885605\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Home.vue", function() {
+     var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-33885605\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Home.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -14575,12 +14598,12 @@ if(false) {
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
 // module
-exports.push([module.i, "\nbody{\n\t\n\tfont-family: \"Open Sans\", sans-serif;\n}\n.home-container{\n    background-image: url(https://www.pega.com/sites/pega.com/files/banking-case-study-bg.jpg);\n    background-repeat: no-repeat;\n\tbackground-size: cover;\n\tbackground-position: center center;\n\tposition: relative;\n    top:0;\n    bottom: 0;\n\theight: 90vh;\n\tz-index: -10;\n}\n.overlay{\n\tposition: absolute;\n\tbackground-color: rgba(0,0,0,0.5);\n\ttop:0;\n    bottom: 0;\n\theight: 100%;\n\twidth: 100%;\n\tz-index: -5;\n}\n/*Body and background image END*/\n\n\n/*NAVBAR START*/\n.navbar-brand{\n\tmargin-top: -10px;\n}\n.navbar{\n\tbackground-color: #fff;\n\tposition: fixed;\n\tfont-weight: 800;\n\tletter-spacing: -1px;\n}\n.nav li a{\n\tcolor: #000;\n\tfont-size: 20px;\n}\n.nav li a:hover {\ntext-decoration: none;\n}\n.btn-danger{\n\tborder-radius: 10px;\n\tfont-weight: 800;\t\n\tline-height: 1.7;\n\tmargin-left: 40px;\n\tfont-size: 18px;\n\twidth: 80%;\n}\n\n/*NAVBAR  END*/\n\n\n/*HEADING TEXT START*/\n.title{\n   \n   margin-top: 300px;\n   text-align: center;\n}\n.title h1{\n\tfont-size: 45px;\n\tline-height: 45px;\n\tcolor: #fff;\n\tfont-weight: 800;\n\tletter-spacing: -1px;\n}\n.title h2{\n\tfont-size: 27px;\n\tline-height: 27px;\n\tletter-spacing: -0.5px;\n\tcolor: #aaa;\n}\n.title a{\n\tcolor: inherit;\n\ttext-decoration: underline;\n}\n\n/*HEADING TEXT END*/\n\n/*LAPTOP row style start*/\n#showcase{\n\tmargin-top: 40px;\n}\n#showcase h1{\n\tfont-size: 40px;\n\tmargin-bottom: 20px;\n}\n#showcase img{\n\twidth: 95%;\n\tmargin-top: 40px;\n}\n.showcase-right h1{\n\tfont-size: 31px;\n\tline-height: 45px;\n\tcolor: #333;\n\tfont-weight: 800;\n\tletter-spacing: -1px;\n}\n.showcase-right p{\n\tfont-size: 22px;\n\tline-height: 27px;\n\tletter-spacing: -0.5px;\n\tcolor: #aaa;\n}\n#showcase .showcase-right{\n\tmargin-top: 90px;\n}\n.btn{\n\tbackground-color: #7ABA05;\n\tcolor: #fff;\n\tborder: 2px solid transparent;\n\tborder-radius: 80px;\n\tfont-weight: 800;\n\twidth: 40%;\n\tfont-size: 24px;\n\tfont-size: 20px;\n\tline-height: 1.7;\n}\n\n/*LAPTOP row style END*/\n/**---------fotter----------*/\n#main-footer{\n\n    background-color: #333;\n    text-align: center;\n    margin-top: 140px;\n}\n#main-footer{\n\n    background-color: #333;\n    text-align: center;\n}\n#social-nav{\n\t\n\twidth: 340px;\n\tpadding: 40px 10px 20px;\n\tmargin:0 auto;\n\tcolor: #bfbfbf;\n}\n#social-nav p{\n\t\n\t\n\tmargin-left: 40px;\n}\nnav ul {\n\tlist-style: none;\n}\nnav ul li {\n\tfloat: left;\n}\n#copyright {\n\n\tmargin-left: 50px;\n\tcolor: #666;\n}\n.logo{\n\tmargin: 10px;\n}\n.navbar-toggle{\n\tborder: none;\n}\n.navbar-toggle span{\n\tbackground-color: #000;\n}\n", "", {"version":3,"sources":["/Users/timothy/Desktop/BonusCheck/src/src/Home.vue?0995d0e4"],"names":[],"mappings":";AAoIA;;CAEA,qCAAA;CAEA;AACA;IACA,2FAAA;IACA,6BAAA;CACA,uBAAA;CACA,mCAAA;CACA,mBAAA;IACA,MAAA;IACA,UAAA;CACA,aAAA;CACA,aAAA;CACA;AACA;CACA,mBAAA;CACA,kCAAA;CACA,MAAA;IACA,UAAA;CACA,aAAA;CACA,YAAA;CACA,YAAA;CAEA;AACA,iCAAA;;;AAGA,gBAAA;AACA;CACA,kBAAA;CAEA;AACA;CACA,uBAAA;CACA,gBAAA;CACA,iBAAA;CACA,qBAAA;CACA;AACA;CACA,YAAA;CACA,gBAAA;CAEA;AACA;AACA,sBAAA;CACA;AAEA;CACA,oBAAA;CACA,iBAAA;CACA,iBAAA;CACA,kBAAA;CACA,gBAAA;CACA,WAAA;CACA;;AAEA,eAAA;;;AAGA,sBAAA;AACA;;GAEA,kBAAA;GACA,mBAAA;CACA;AACA;CACA,gBAAA;CACA,kBAAA;CACA,YAAA;CACA,iBAAA;CACA,qBAAA;CAEA;AACA;CACA,gBAAA;CACA,kBAAA;CACA,uBAAA;CACA,YAAA;CAEA;AACA;CACA,eAAA;CACA,2BAAA;CAEA;;AAEA,oBAAA;;AAEA,0BAAA;AACA;CACA,iBAAA;CACA;AACA;CACA,gBAAA;CACA,oBAAA;CACA;AACA;CACA,WAAA;CACA,iBAAA;CAEA;AACA;CACA,gBAAA;CACA,kBAAA;CACA,YAAA;CACA,iBAAA;CACA,qBAAA;CACA;AACA;CACA,gBAAA;CACA,kBAAA;CACA,uBAAA;CACA,YAAA;CACA;AACA;CACA,iBAAA;CACA;AACA;CACA,0BAAA;CACA,YAAA;CACA,8BAAA;CACA,oBAAA;CACA,iBAAA;CACA,WAAA;CACA,gBAAA;CACA,gBAAA;CACA,iBAAA;CAEA;;AAEA,wBAAA;AACA,8BAAA;AACA;;IAEA,uBAAA;IACA,mBAAA;IACA,kBAAA;CACA;AAGA;;IAEA,uBAAA;IACA,mBAAA;CACA;AACA;;CAEA,aAAA;CACA,wBAAA;CACA,cAAA;CACA,eAAA;CACA;AACA;;;CAGA,kBAAA;CACA;AACA;CACA,iBAAA;CAEA;AACA;CACA,YAAA;CACA;AAEA;;CAEA,kBAAA;CACA,YAAA;CACA;AACA;CACA,aAAA;CACA;AACA;CACA,aAAA;CAEA;AACA;CACA,uBAAA;CACA","file":"Home.vue","sourcesContent":["<template>\n  <div>\n  \t<nav class=\"navbar navbar-fixed-top\">\n      <div class=\"container\">\t\t           \n    \t<a class=\"navbar-brand \" href=\"#page-top\"><img src=\"images/logo-web3.gif\"></a>\n    \t<button  class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#navbar-item\"  >\n            <span class=\"sr-only\">Toggle navigation</span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n          </button>\n        <div id=\"navbar-item\" class=\"collapse navbar-collapse\">\n          <ul class=\"nav navbar-nav navbar-right\">\n            <li ><a  href=\"#\">Home</a></li>\n            <li><a   href=\"#\">Contact</a></li>\n            <li ><a  href=\"#\">Sign up</a></li>\n            <li><router-link :to=\"'login'\" class='btn-danger navbar-btn'>Log in</router-link></li>\n          </ul>\n        </div>\n      </div>\n    </nav>\n\n    <!-- Navbar END -->\n\n    <!-- Heading container -->\n\t<div class=\"home-container\">\n        <div class=\"overlay\">    \n            <section class=\"title\">\n            \t<h1>Lorem ipsum dolor </h1>\n            \t<h2 class=\"home-hero-subtitle\">\n                   elit scripta suavitate his ea dico veritus no usu\n                    <a target=\"_blank\" href=\"/employee-recognition-guide\">transform employee recognition</a>\n                </h2>\n            </section>\n        </div>      \n    </div>\n\t <!-- Heading container END -->\n\n    <!-- Section starts for laptop row -->\n    <section id=\"showcase\">\n      <div class=\"container\">\n      \t<div class=\"row\">\n      \t  <div class=\"col-md-6 col-sm-6\">\n      \t    <div class=\"showcase-left\">\n      \t       <img src=\"images/laptop5.png\">\n       \t    </div>\n      \t  </div>\n      \t  <div class=\"col-md-6 col-sm-6 readme\">\n      \t    <div class=\"showcase-right\">\n      \t       <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h1>\n      \t       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </p>\n       \t    </div>\n       \t    <br>\n       \t    <a href=\"\" class=\"btn btn-danger btn-default btn-lg showcase-btn\">Read More</a>\n      \t  </div>      \t\t\n      \t</div>\n      </div>    \t\n    </section>\n\n    <!-- Section END for first row -->\n\n    <!-- footer -->\n    <footer id=\"main-footer\">\n        <nav id=\"social-nav\" class=\"clearfix\">\n            <p>Follow Us On:</p>\t                \n            <ul>\n                <li>\n                  <a href=\"\" title=\"Twitter\" class=\"social-button round twitter\">\n                  <div class=\"logo icon-twitter\"><img src=\"images/twitter.png\"></div>\n                  </a>\n                </li>\n                <li>\n                   <a href=\"\" title=\"Facebook\" class=\"social-button round facebook\">\n                   <div class=\"logo icon-facebook\"><img src=\"images/goggle.png\"></div>\n                   </a>\n                </li>\n                <li>\n                   <a href=\"\" title=\"Google Plus\" class=\"social-button round google-plus\">\n                   <div class=\"logo icon-google\"><img src=\"images/facebook.png\"></div>\n                   </a>\n                </li>\n                <li>\n                   <a href=\"\" title=\"Linked In\" class=\"social-button round linked-in\">\n                   <div class=\"logo icon-linkedin\"><img src=\"images/linkedin.png\"></div>\n                   </a>\n                </li>\n            </ul>\n        </nav>\n          <p id=\"copyright\">Terms of Service | Privacy Policy |\n           © 2017 Survey Planet, LLC. All Rights Reserved</p>\n    </footer>\n  </div>\n</template>\n\n<script>\nexport default {\n  name: 'Home'\n};\n</script>\n\n<script>\n    window.sr = ScrollReveal();\n  \t   sr.reveal('.navbar-brand',{\n  \t   \tduration: 2000,\n  \t   \torigin: 'left'\n  \t   });\n     sr.reveal('.collapse',{\n      duration: 2000,\n      origin: 'right'\n     });\n  \t   sr.reveal('.title',{\n  \t   \tduration: 2000,\n  \t   \torigin: 'bottom'\n  \t   });\n  \t   sr.reveal('.showcase-left',{\n  \t   \tduration: 2000,\n  \t   \torigin: 'left',\n  \t   \tdistance: '300px'\n  \t   });\n  \t   sr.reveal('.showcase-right',{\n  \t   \tduration: 2000,\n  \t   \torigin: 'right',\n  \t   \tdistance: '300px'\n  \t   });\n  \t   sr.reveal('.showcase-btn',{\n  \t   \tduration: 2000,\n  \t   \tdelay:2000,\n  \t   \torigin: 'bottom'\n  \t   });\n</script>\n\n<style>\n\tbody{\n\t\t\n\t\tfont-family: \"Open Sans\", sans-serif;\n\t\t\t\n\t}\n\t.home-container{\n\t    background-image: url(https://www.pega.com/sites/pega.com/files/banking-case-study-bg.jpg);\n\t    background-repeat: no-repeat;\n\t\tbackground-size: cover;\n\t\tbackground-position: center center;\n\t\tposition: relative;\n\t    top:0;\n\t    bottom: 0;\n\t\theight: 90vh;\n\t\tz-index: -10;\t\n\t}\n\t.overlay{\n\t\tposition: absolute;\n\t\tbackground-color: rgba(0,0,0,0.5);\n\t\ttop:0;\n\t    bottom: 0;\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tz-index: -5;\n\n\t}\n\t/*Body and background image END*/\n\n\n\t/*NAVBAR START*/\n\t.navbar-brand{\n\t\tmargin-top: -10px;\n\t\t\n\t}\n\t.navbar{\n\t\tbackground-color: #fff;\n\t\tposition: fixed;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n\t}\n\t.nav li a{\n\t\tcolor: #000;\n\t\tfont-size: 20px;\n\t\t\t\n\t}\n\t.nav li a:hover {\n\ttext-decoration: none;\n\t}\n\n\t.btn-danger{\n\t\tborder-radius: 10px;\n\t\tfont-weight: 800;\t\n\t\tline-height: 1.7;\n\t\tmargin-left: 40px;\n\t\tfont-size: 18px;\n\t\twidth: 80%;\n\t}\n\n\t/*NAVBAR  END*/\n\n\n\t/*HEADING TEXT START*/\n\t.title{\n\t   \n\t   margin-top: 300px;\n\t   text-align: center;\n\t}\n\t.title h1{\n\t\tfont-size: 45px;\n\t\tline-height: 45px;\n\t\tcolor: #fff;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n\t\t\n\t}\n\t.title h2{\n\t\tfont-size: 27px;\n\t\tline-height: 27px;\n\t\tletter-spacing: -0.5px;\n\t\tcolor: #aaa;\n\n\t}\n\t.title a{\n\t\tcolor: inherit;\n\t\ttext-decoration: underline;\n\n\t}\n\n\t/*HEADING TEXT END*/\n\n\t/*LAPTOP row style start*/\n\t#showcase{\n\t\tmargin-top: 40px;\n\t}\n\t#showcase h1{\n\t\tfont-size: 40px;\n\t\tmargin-bottom: 20px;\n\t}\n\t#showcase img{\n\t\twidth: 95%;\n\t\tmargin-top: 40px;\n\n\t}\n\t.showcase-right h1{\n\t\tfont-size: 31px;\n\t\tline-height: 45px;\n\t\tcolor: #333;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n\t}\n\t.showcase-right p{\n\t\tfont-size: 22px;\n\t\tline-height: 27px;\n\t\tletter-spacing: -0.5px;\n\t\tcolor: #aaa;\n\t}\n\t#showcase .showcase-right{\n\t\tmargin-top: 90px;\n\t}\n\t.btn{\n\t\tbackground-color: #7ABA05;\n\t\tcolor: #fff;\n\t\tborder: 2px solid transparent;\n\t\tborder-radius: 80px;\n\t\tfont-weight: 800;\n\t\twidth: 40%;\n\t\tfont-size: 24px;\n\t\tfont-size: 20px;\n\t\tline-height: 1.7;\n\n\t}\n\n\t/*LAPTOP row style END*/\n\t/**---------fotter----------*/\n\t#main-footer{\n\n\t    background-color: #333;\n\t    text-align: center;\n\t    margin-top: 140px;\n\t}\n\n\n\t#main-footer{\n\n\t    background-color: #333;\n\t    text-align: center;\n\t}\n\t#social-nav{\n\t\t\n\t\twidth: 340px;\n\t\tpadding: 40px 10px 20px;\n\t\tmargin:0 auto;\n\t\tcolor: #bfbfbf;\n\t}\n\t#social-nav p{\n\t\t\n\t\t\n\t\tmargin-left: 40px;\n\t}\n\tnav ul {\n\t\tlist-style: none;\n\n\t}\n\t nav ul li {\n\t\tfloat: left;\n\t}\n\n\t#copyright {\n\n\t\tmargin-left: 50px;\n\t\tcolor: #666;\n\t}\n\t.logo{\n\t\tmargin: 10px;\n\t}\n\t.navbar-toggle{\n\t\tborder: none;\n\t\t\n\t}\n\t.navbar-toggle span{\n\t\tbackground-color: #000;\n\t}\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\nbody{\n\t\n\tfont-family: \"Open Sans\", sans-serif;\n}\n.home-container{\n    background-image: url(https://www.pega.com/sites/pega.com/files/banking-case-study-bg.jpg);\n    background-repeat: no-repeat;\n\tbackground-size: cover;\n\tbackground-position: center center;\n\tposition: relative;\n    top:0;\n    bottom: 0;\n\theight: 90vh;\n\tz-index: -10;\n}\n.overlay{\n\tposition: absolute;\n\tbackground-color: rgba(0,0,0,0.5);\n\ttop:0;\n    bottom: 0;\n\theight: 100%;\n\twidth: 100%;\n\tz-index: -5;\n}\n/*Body and background image END*/\n\n\n/*NAVBAR START*/\n.navbar-brand{\n\tmargin-top: -10px;\n}\n.navbar{\n\tbackground-color: #fff;\n\tposition: fixed;\n\tfont-weight: 800;\n\tletter-spacing: -1px;\n}\n.nav li a{\n\tcolor: #000;\n\tfont-size: 20px;\n}\n.nav li a:hover {\ntext-decoration: none;\n}\n.btn-danger{\n\tborder-radius: 10px;\n\tfont-weight: 800;\t\n\tline-height: 1.7;\n\tmargin-left: 40px;\n\tfont-size: 18px;\n\twidth: 80%;\n}\n\n/*NAVBAR  END*/\n\n\n/*HEADING TEXT START*/\n.title{\n   \n   margin-top: 300px;\n   text-align: center;\n}\n.title h1{\n\tfont-size: 45px;\n\tline-height: 45px;\n\tcolor: #fff;\n\tfont-weight: 800;\n\tletter-spacing: -1px;\n}\n.title h2{\n\tfont-size: 27px;\n\tline-height: 27px;\n\tletter-spacing: -0.5px;\n\tcolor: #aaa;\n}\n.title a{\n\tcolor: inherit;\n\ttext-decoration: underline;\n}\n\n/*HEADING TEXT END*/\n\n/*LAPTOP row style start*/\n#showcase{\n\tmargin-top: 40px;\n}\n#showcase h1{\n\tfont-size: 40px;\n\tmargin-bottom: 20px;\n}\n#showcase img{\n\twidth: 95%;\n\tmargin-top: 40px;\n}\n.showcase-right h1{\n\tfont-size: 31px;\n\tline-height: 45px;\n\tcolor: #333;\n\tfont-weight: 800;\n\tletter-spacing: -1px;\n}\n.showcase-right p{\n\tfont-size: 22px;\n\tline-height: 27px;\n\tletter-spacing: -0.5px;\n\tcolor: #aaa;\n}\n#showcase .showcase-right{\n\tmargin-top: 90px;\n}\n.btn{\n\tbackground-color: #7ABA05;\n\tcolor: #fff;\n\tborder: 2px solid transparent;\n\tborder-radius: 80px;\n\tfont-weight: 800;\n\twidth: 40%;\n\tfont-size: 24px;\n\tfont-size: 20px;\n\tline-height: 1.7;\n}\n\n/*LAPTOP row style END*/\n/**---------fotter----------*/\n#main-footer{\n\n    background-color: #333;\n    text-align: center;\n    margin-top: 140px;\n}\n#main-footer{\n\n    background-color: #333;\n    text-align: center;\n}\n#social-nav{\n\t\n\twidth: 340px;\n\tpadding: 40px 10px 20px;\n\tmargin:0 auto;\n\tcolor: #bfbfbf;\n}\n#social-nav p{\n\t\n\t\n\tmargin-left: 40px;\n}\nnav ul {\n\tlist-style: none;\n}\nnav ul li {\n\tfloat: left;\n}\n#copyright {\n\n\tmargin-left: 50px;\n\tcolor: #666;\n}\n.logo{\n\tmargin: 10px;\n}\n.navbar-toggle{\n\tborder: none;\n}\n.navbar-toggle span{\n\tbackground-color: #000;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/src/Home.vue?210b6dc1"],"names":[],"mappings":";AAoIA;;CAEA,qCAAA;CAEA;AACA;IACA,2FAAA;IACA,6BAAA;CACA,uBAAA;CACA,mCAAA;CACA,mBAAA;IACA,MAAA;IACA,UAAA;CACA,aAAA;CACA,aAAA;CACA;AACA;CACA,mBAAA;CACA,kCAAA;CACA,MAAA;IACA,UAAA;CACA,aAAA;CACA,YAAA;CACA,YAAA;CAEA;AACA,iCAAA;;;AAGA,gBAAA;AACA;CACA,kBAAA;CAEA;AACA;CACA,uBAAA;CACA,gBAAA;CACA,iBAAA;CACA,qBAAA;CACA;AACA;CACA,YAAA;CACA,gBAAA;CAEA;AACA;AACA,sBAAA;CACA;AAEA;CACA,oBAAA;CACA,iBAAA;CACA,iBAAA;CACA,kBAAA;CACA,gBAAA;CACA,WAAA;CACA;;AAEA,eAAA;;;AAGA,sBAAA;AACA;;GAEA,kBAAA;GACA,mBAAA;CACA;AACA;CACA,gBAAA;CACA,kBAAA;CACA,YAAA;CACA,iBAAA;CACA,qBAAA;CAEA;AACA;CACA,gBAAA;CACA,kBAAA;CACA,uBAAA;CACA,YAAA;CAEA;AACA;CACA,eAAA;CACA,2BAAA;CAEA;;AAEA,oBAAA;;AAEA,0BAAA;AACA;CACA,iBAAA;CACA;AACA;CACA,gBAAA;CACA,oBAAA;CACA;AACA;CACA,WAAA;CACA,iBAAA;CAEA;AACA;CACA,gBAAA;CACA,kBAAA;CACA,YAAA;CACA,iBAAA;CACA,qBAAA;CACA;AACA;CACA,gBAAA;CACA,kBAAA;CACA,uBAAA;CACA,YAAA;CACA;AACA;CACA,iBAAA;CACA;AACA;CACA,0BAAA;CACA,YAAA;CACA,8BAAA;CACA,oBAAA;CACA,iBAAA;CACA,WAAA;CACA,gBAAA;CACA,gBAAA;CACA,iBAAA;CAEA;;AAEA,wBAAA;AACA,8BAAA;AACA;;IAEA,uBAAA;IACA,mBAAA;IACA,kBAAA;CACA;AAGA;;IAEA,uBAAA;IACA,mBAAA;CACA;AACA;;CAEA,aAAA;CACA,wBAAA;CACA,cAAA;CACA,eAAA;CACA;AACA;;;CAGA,kBAAA;CACA;AACA;CACA,iBAAA;CAEA;AACA;CACA,YAAA;CACA;AAEA;;CAEA,kBAAA;CACA,YAAA;CACA;AACA;CACA,aAAA;CACA;AACA;CACA,aAAA;CAEA;AACA;CACA,uBAAA;CACA","file":"Home.vue","sourcesContent":["<template>\n  <div>\n  \t<nav class=\"navbar navbar-fixed-top\">\n      <div class=\"container\">\t\t           \n    \t<a class=\"navbar-brand \" href=\"#page-top\"><img src=\"images/logo-web3.gif\"></a>\n    \t<button  class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#navbar-item\"  >\n            <span class=\"sr-only\">Toggle navigation</span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n          </button>\n        <div id=\"navbar-item\" class=\"collapse navbar-collapse\">\n          <ul class=\"nav navbar-nav navbar-right\">\n            <li ><router-link :to=\"'jobs'\">Home</router-link></li>\n            <li><a   href=\"#\">Contact</a></li>\n            <li ><a  href=\"#\">Sign up</a></li>\n            <li><router-link :to=\"'login'\" class='btn-danger navbar-btn'>Log in</router-link></li>\n          </ul>\n        </div>\n      </div>\n    </nav>\n\n    <!-- Navbar END -->\n\n    <!-- Heading container -->\n\t<div class=\"home-container\">\n        <div class=\"overlay\">    \n            <section class=\"title\">\n            \t<h1>Lorem ipsum dolor </h1>\n            \t<h2 class=\"home-hero-subtitle\">\n                   elit scripta suavitate his ea dico veritus no usu\n                    <a target=\"_blank\" href=\"/employee-recognition-guide\">transform employee recognition</a>\n                </h2>\n            </section>\n        </div>      \n    </div>\n\t <!-- Heading container END -->\n\n    <!-- Section starts for laptop row -->\n    <section id=\"showcase\">\n      <div class=\"container\">\n      \t<div class=\"row\">\n      \t  <div class=\"col-md-6 col-sm-6\">\n      \t    <div class=\"showcase-left\">\n      \t       <img src=\"images/laptop5.png\">\n       \t    </div>\n      \t  </div>\n      \t  <div class=\"col-md-6 col-sm-6 readme\">\n      \t    <div class=\"showcase-right\">\n      \t       <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h1>\n      \t       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </p>\n       \t    </div>\n       \t    <br>\n       \t    <a href=\"\" class=\"btn btn-danger btn-default btn-lg showcase-btn\">Read More</a>\n      \t  </div>      \t\t\n      \t</div>\n      </div>    \t\n    </section>\n\n    <!-- Section END for first row -->\n\n    <!-- footer -->\n    <footer id=\"main-footer\">\n        <nav id=\"social-nav\" class=\"clearfix\">\n            <p>Follow Us On:</p>\t                \n            <ul>\n                <li>\n                  <a href=\"\" title=\"Twitter\" class=\"social-button round twitter\">\n                  <div class=\"logo icon-twitter\"><img src=\"images/twitter.png\"></div>\n                  </a>\n                </li>\n                <li>\n                   <a href=\"\" title=\"Facebook\" class=\"social-button round facebook\">\n                   <div class=\"logo icon-facebook\"><img src=\"images/goggle.png\"></div>\n                   </a>\n                </li>\n                <li>\n                   <a href=\"\" title=\"Google Plus\" class=\"social-button round google-plus\">\n                   <div class=\"logo icon-google\"><img src=\"images/facebook.png\"></div>\n                   </a>\n                </li>\n                <li>\n                   <a href=\"\" title=\"Linked In\" class=\"social-button round linked-in\">\n                   <div class=\"logo icon-linkedin\"><img src=\"images/linkedin.png\"></div>\n                   </a>\n                </li>\n            </ul>\n        </nav>\n          <p id=\"copyright\">Terms of Service | Privacy Policy |\n           © 2017 Survey Planet, LLC. All Rights Reserved</p>\n    </footer>\n  </div>\n</template>\n\n<script>\nexport default {\n  name: 'Home'\n};\n</script>\n\n<script>\n    window.sr = ScrollReveal();\n  \t   sr.reveal('.navbar-brand',{\n  \t   \tduration: 2000,\n  \t   \torigin: 'left'\n  \t   });\n     sr.reveal('.collapse',{\n      duration: 2000,\n      origin: 'right'\n     });\n  \t   sr.reveal('.title',{\n  \t   \tduration: 2000,\n  \t   \torigin: 'bottom'\n  \t   });\n  \t   sr.reveal('.showcase-left',{\n  \t   \tduration: 2000,\n  \t   \torigin: 'left',\n  \t   \tdistance: '300px'\n  \t   });\n  \t   sr.reveal('.showcase-right',{\n  \t   \tduration: 2000,\n  \t   \torigin: 'right',\n  \t   \tdistance: '300px'\n  \t   });\n  \t   sr.reveal('.showcase-btn',{\n  \t   \tduration: 2000,\n  \t   \tdelay:2000,\n  \t   \torigin: 'bottom'\n  \t   });\n</script>\n\n<style>\n\tbody{\n\t\t\n\t\tfont-family: \"Open Sans\", sans-serif;\n\t\t\t\n\t}\n\t.home-container{\n\t    background-image: url(https://www.pega.com/sites/pega.com/files/banking-case-study-bg.jpg);\n\t    background-repeat: no-repeat;\n\t\tbackground-size: cover;\n\t\tbackground-position: center center;\n\t\tposition: relative;\n\t    top:0;\n\t    bottom: 0;\n\t\theight: 90vh;\n\t\tz-index: -10;\t\n\t}\n\t.overlay{\n\t\tposition: absolute;\n\t\tbackground-color: rgba(0,0,0,0.5);\n\t\ttop:0;\n\t    bottom: 0;\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tz-index: -5;\n\n\t}\n\t/*Body and background image END*/\n\n\n\t/*NAVBAR START*/\n\t.navbar-brand{\n\t\tmargin-top: -10px;\n\t\t\n\t}\n\t.navbar{\n\t\tbackground-color: #fff;\n\t\tposition: fixed;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n\t}\n\t.nav li a{\n\t\tcolor: #000;\n\t\tfont-size: 20px;\n\t\t\t\n\t}\n\t.nav li a:hover {\n\ttext-decoration: none;\n\t}\n\n\t.btn-danger{\n\t\tborder-radius: 10px;\n\t\tfont-weight: 800;\t\n\t\tline-height: 1.7;\n\t\tmargin-left: 40px;\n\t\tfont-size: 18px;\n\t\twidth: 80%;\n\t}\n\n\t/*NAVBAR  END*/\n\n\n\t/*HEADING TEXT START*/\n\t.title{\n\t   \n\t   margin-top: 300px;\n\t   text-align: center;\n\t}\n\t.title h1{\n\t\tfont-size: 45px;\n\t\tline-height: 45px;\n\t\tcolor: #fff;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n\t\t\n\t}\n\t.title h2{\n\t\tfont-size: 27px;\n\t\tline-height: 27px;\n\t\tletter-spacing: -0.5px;\n\t\tcolor: #aaa;\n\n\t}\n\t.title a{\n\t\tcolor: inherit;\n\t\ttext-decoration: underline;\n\n\t}\n\n\t/*HEADING TEXT END*/\n\n\t/*LAPTOP row style start*/\n\t#showcase{\n\t\tmargin-top: 40px;\n\t}\n\t#showcase h1{\n\t\tfont-size: 40px;\n\t\tmargin-bottom: 20px;\n\t}\n\t#showcase img{\n\t\twidth: 95%;\n\t\tmargin-top: 40px;\n\n\t}\n\t.showcase-right h1{\n\t\tfont-size: 31px;\n\t\tline-height: 45px;\n\t\tcolor: #333;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n\t}\n\t.showcase-right p{\n\t\tfont-size: 22px;\n\t\tline-height: 27px;\n\t\tletter-spacing: -0.5px;\n\t\tcolor: #aaa;\n\t}\n\t#showcase .showcase-right{\n\t\tmargin-top: 90px;\n\t}\n\t.btn{\n\t\tbackground-color: #7ABA05;\n\t\tcolor: #fff;\n\t\tborder: 2px solid transparent;\n\t\tborder-radius: 80px;\n\t\tfont-weight: 800;\n\t\twidth: 40%;\n\t\tfont-size: 24px;\n\t\tfont-size: 20px;\n\t\tline-height: 1.7;\n\n\t}\n\n\t/*LAPTOP row style END*/\n\t/**---------fotter----------*/\n\t#main-footer{\n\n\t    background-color: #333;\n\t    text-align: center;\n\t    margin-top: 140px;\n\t}\n\n\n\t#main-footer{\n\n\t    background-color: #333;\n\t    text-align: center;\n\t}\n\t#social-nav{\n\t\t\n\t\twidth: 340px;\n\t\tpadding: 40px 10px 20px;\n\t\tmargin:0 auto;\n\t\tcolor: #bfbfbf;\n\t}\n\t#social-nav p{\n\t\t\n\t\t\n\t\tmargin-left: 40px;\n\t}\n\tnav ul {\n\t\tlist-style: none;\n\n\t}\n\t nav ul li {\n\t\tfloat: left;\n\t}\n\n\t#copyright {\n\n\t\tmargin-left: 50px;\n\t\tcolor: #666;\n\t}\n\t.logo{\n\t\tmargin: 10px;\n\t}\n\t.navbar-toggle{\n\t\tborder: none;\n\t\t\n\t}\n\t.navbar-toggle span{\n\t\tbackground-color: #000;\n\t}\n</style>"],"sourceRoot":""}]);
 
 // exports
 
@@ -14777,11 +14800,17 @@ var render = function() {
           },
           [
             _c("ul", { staticClass: "nav navbar-nav navbar-right" }, [
+              _c(
+                "li",
+                [
+                  _c("router-link", { attrs: { to: "jobs" } }, [_vm._v("Home")])
+                ],
+                1
+              ),
+              _vm._v(" "),
               _vm._m(2),
               _vm._v(" "),
               _vm._m(3),
-              _vm._v(" "),
-              _vm._m(4),
               _vm._v(" "),
               _c(
                 "li",
@@ -14803,11 +14832,11 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
+    _vm._m(4),
+    _vm._v(" "),
     _vm._m(5),
     _vm._v(" "),
-    _vm._m(6),
-    _vm._v(" "),
-    _vm._m(7)
+    _vm._m(6)
   ])
 }
 var staticRenderFns = [
@@ -14841,12 +14870,6 @@ var staticRenderFns = [
         _c("span", { staticClass: "icon-bar" })
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Home")])])
   },
   function() {
     var _vm = this
@@ -15013,7 +15036,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-2380d2d8", esExports)
+    require("vue-hot-reload-api")      .rerender("data-v-33885605", esExports)
   }
 }
 
@@ -15023,7 +15046,7 @@ if (false) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Login_vue__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6a7e6ec0_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Login_vue__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5b675133_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Login_vue__ = __webpack_require__(23);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
@@ -15044,13 +15067,13 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Login_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6a7e6ec0_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Login_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5b675133_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Login_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "src/Login.vue"
+Component.options.__file = "src\\Login.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
@@ -15060,9 +15083,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6a7e6ec0", Component.options)
+    hotAPI.createRecord("data-v-5b675133", Component.options)
   } else {
-    hotAPI.reload("data-v-6a7e6ec0", Component.options)
+    hotAPI.reload("data-v-5b675133", Component.options)
 ' + '  }
   module.hot.dispose(function (data) {
     disposed = true
@@ -15083,13 +15106,13 @@ var content = __webpack_require__(21);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("064c3370", content, false);
+var update = __webpack_require__(3)("6a73ffb6", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6a7e6ec0\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Login.vue", function() {
-     var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6a7e6ec0\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Login.vue");
+   module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5b675133\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Login.vue", function() {
+     var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5b675133\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./Login.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -15102,12 +15125,12 @@ if(false) {
 /* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
 // module
-exports.push([module.i, "\nbody{\n\t    background-image: url(https://www.pega.com/sites/pega.com/files/banking-case-study-bg.jpg);\n\t    background-repeat: no-repeat;\n\t\tbackground-size: cover;\n\t\tbackground-position: center center;\n\t\tposition: relative;\n\t    top:0;\n\t    bottom: 0;\n\t\theight:100%;\n\t\tz-index: -10;\n}\n\n\t/*NAVBAR START*/\n.navbar-brand{\n\t\tmargin-top: -10px;\n}\n.navbar{\n\t\tbackground-color: #fff;\n\t\tposition: fixed;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n}\n.nav li a{\n\t\tcolor: #000;\n\t\tfont-size: 20px;\n}\n.nav li a:hover {\n\ttext-decoration: none;\n}\n.title{\n\t   \n\t   margin-top: 60px;\n\t   text-align: center;\n}\n.title h1{\n\t\tfont-size: 45px;\n\t\tline-height: 45px;\n\t\tcolor: #fff;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n}\n.title h2{\n\t\tfont-size: 27px;\n\t\tfont-weight: bold;\n\t\tline-height: 27px;\n\t\tletter-spacing: -0.5px;\n\t\tcolor: #C0C0C0;\n}\n.title a{\n\t\tcolor: inherit;\n\t\ttext-decoration: underline;\n}\n.btn-danger{\n\t\tborder-radius: 10px;\n\t\tfont-weight: 800;\t\n\t\tline-height: 1.7;\n\t\tmargin-left: 40px;\n\t\tfont-size: 18px;\n\t\twidth: 80%;\n}\n.row{\n\t\tmargin-top: 220px;\n}\n\t/*NAVBAR END*/\n\n\n\t/*LOGIN BOX START*/\nh1{ font-size:28px;\n}\nh2{ font-size:26px;\n}\nh3{ font-size:18px;\n}\nh4{ font-size:16px;\n}\nh5{ font-size:14px;\n}\nh6{ font-size:12px;\n}\nh1,h2,h3,h4,h5,h6{ color:#563D64;\n}\nsmall{ font-size:10px;\n}\nb, strong{ font-weight:bold;\n}\na{ text-decoration: none;\n}\na:hover{ text-decoration: underline;\n}\n.left { float:left;\n}\n.right { float:right;\n}\n.alignleft { float: left; margin-right: 15px;\n}\n.alignright { float: right; margin-left: 15px;\n}\n.clearfix:after,\n\tform:after {\n\t\tcontent: \".\";\n\t\tdisplay: block;\n\t\theight: 0;\n\t\tclear: both;\n\t\tvisibility: hidden;\n}\n#content {\n\t\tbackground: #f9f9f9;\n\t\tbackground: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );\n\t\t-webkit-box-shadow: 0 1px 0 #fff inset;\n\t\t-moz-box-shadow: 0 1px 0 #fff inset;\n\t\t-ms-box-shadow: 0 1px 0 #fff inset;\n\t\t-o-box-shadow: 0 1px 0 #fff inset;\n\t\tbox-shadow: 0 1px 0 #fff inset;\n\t\tborder: 1px solid #c4c6ca;\n\t\tmargin: 0;\n\t\tpadding: 25px 0 0;\n\t\tposition: relative;\n\t\ttext-align: center;\n\t\ttext-shadow: 0 1px 0 #fff;\n\t\twidth: 500px;\n}\n#content h1 {\n\t\tcolor: #7E7E7E;\n\t\tfont: bold 25px Helvetica, Arial, sans-serif;\n\t\tletter-spacing: -0.05em;\n\t\tline-height: 20px;\n\t\tmargin: 10px 0 30px;\n}\n#content h1:before,\n\t#content h1:after {\n\t\tcontent: \"\";\n\t\theight: 1px;\n\t\tposition: absolute;\n\t\ttop: 10px;\n\t\twidth: 27%;\n}\n#content h1:after {\n\t\tbackground: rgb(126,126,126);\n\t\tbackground: -moz-linear-gradient(left,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);\n\t\tbackground: -webkit-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -o-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -ms-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t    right: 0;\n}\n#content h1:before {\n\t\tbackground: rgb(126,126,126);\n\t\tbackground: -moz-linear-gradient(right,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);\n\t\tbackground: -webkit-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -o-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -ms-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t    left: 0;\n}\n#content:after,\n\t#content:before {\n\t\tbackground: #f9f9f9;\n\t\tbackground: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );\n\t\tborder: 1px solid #c4c6ca;\n\t\tcontent: \"\";\n\t\tdisplay: block;\n\t\theight: 100%;\n\t\tleft: -1px;\n\t\tposition: absolute;\n\t\twidth: 100%;\n}\n#content:after {\n\t\t-webkit-transform: rotate(2deg);\n\t\t-moz-transform: rotate(2deg);\n\t\t-ms-transform: rotate(2deg);\n\t\t-o-transform: rotate(2deg);\n\t\ttransform: rotate(2deg);\n\t\ttop: 0;\n\t\tz-index: -1;\n}\n#content:before {\n\t\t-webkit-transform: rotate(-3deg);\n\t\t-moz-transform: rotate(-3deg);\n\t\t-ms-transform: rotate(-3deg);\n\t\t-o-transform: rotate(-3deg);\n\t\ttransform: rotate(-3deg);\n\t\ttop: 0;\n\t\tz-index: -2;\n}\n#content form { margin: 0 20px; position: relative\n}\n#content form input[type=\"text\"],\n\t#content form input[type=\"password\"] {\n\t\t-webkit-border-radius: 3px;\n\t\t-moz-border-radius: 3px;\n\t\t-ms-border-radius: 3px;\n\t\t-o-border-radius: 3px;\n\t\tborder-radius: 3px;\n\t\t-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\tbox-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-webkit-transition: all 0.5s ease;\n\t\t-moz-transition: all 0.5s ease;\n\t\t-ms-transition: all 0.5s ease;\n\t\t-o-transition: all 0.5s ease;\n\t\ttransition: all 0.5s ease;\n\t\tbackground: #eae7e7 url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) no-repeat;\n\t\tborder: 1px solid #c8c8c8;\n\t\tcolor: #777;\n\t\tfont: 13px Helvetica, Arial, sans-serif;\n\t\tmargin: 0 0 20px;\n\t\tpadding: 15px 10px 15px 40px;\n\t\twidth: 90%;\n}\n#content form input[type=\"text\"]:focus,\n\t#content form input[type=\"password\"]:focus {\n\t\t-webkit-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-moz-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-ms-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-o-box-shadow: 0 0 2px #ed1c24 inset;\n\t\tbox-shadow: 0 0 2px #ed1c24 inset;\n\t\tbackground-color: #fff;\n\t\tborder: 1px solid #ed1c24;\n\t\toutline: none;\n}\n#username { background-position: 10px 10px !important\n}\n#password { background-position: 10px -53px !important\n}\n#content form input[type=\"submit\"] {\n\t\tbackground: rgb(254,231,154);\n\t\tbackground: -moz-linear-gradient(top,  rgba(254,231,154,1) 0%, rgba(254,193,81,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fee79a', endColorstr='#fec151',GradientType=0 );\n\t\t-webkit-border-radius: 30px;\n\t\t-moz-border-radius: 30px;\n\t\t-ms-border-radius: 30px;\n\t\t-o-border-radius: 30px;\n\t\tborder-radius: 30px;\n\t\t-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-ms-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-o-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\tbox-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\tborder: 1px solid #D69E31;\n\t\tcolor: #85592e;\n\t\tcursor: pointer;\n\t\tfloat: left;\n\t\tfont: bold 15px Helvetica, Arial, sans-serif;\n\t\theight: 35px;\n\t\tmargin: 20px 0 35px 15px;\n\t\tposition: relative;\n\t\ttext-shadow: 0 1px 0 rgba(255,255,255,0.5);\n\t\twidth: 120px;\n}\n#content form input[type=\"submit\"]:hover {\n\t\tbackground: rgb(254,193,81);\n\t\tbackground: -moz-linear-gradient(top,  rgba(254,193,81,1) 0%, rgba(254,231,154,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec151', endColorstr='#fee79a',GradientType=0 );\n}\n#content form div a {\n\t\tcolor: #004a80;\n\t    float: right;\n\t    font-size: 12px;\n\t    margin: 30px 15px 0 0;\n\t    text-decoration: underline;\n}\n.button {\n\t\tbackground: rgb(247,249,250);\n\t\tbackground: -moz-linear-gradient(top,  rgba(247,249,250,1) 0%, rgba(240,240,240,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f9fa', endColorstr='#f0f0f0',GradientType=0 );\n\t\t-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-ms-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-o-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\tbox-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-webkit-border-radius: 0 0 5px 5px;\n\t\t-moz-border-radius: 0 0 5px 5px;\n\t\t-o-border-radius: 0 0 5px 5px;\n\t\t-ms-border-radius: 0 0 5px 5px;\n\t\tborder-radius: 0 0 5px 5px;\n\t\tborder-top: 1px solid #CFD5D9;\n\t\tpadding: 15px 0;\n}\n.button a {\n\t\tbackground: url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) 0 -112px no-repeat;\n\t\tcolor: #7E7E7E;\n\t\tfont-size: 17px;\n\t\tpadding: 2px 0 2px 40px;\n\t\ttext-decoration: none;\n\t\t-webkit-transition: all 0.3s ease;\n\t\t-moz-transition: all 0.3s ease;\n\t\t-ms-transition: all 0.3s ease;\n\t\t-o-transition: all 0.3s ease;\n\t\ttransition: all 0.3s ease;\n}\n.button a:hover {\n\t\tbackground-position: 0 -135px;\n\t\tcolor: #00aeef;\n}\n", "", {"version":3,"sources":["/Users/timothy/Desktop/BonusCheck/src/src/Login.vue?7209aa15"],"names":[],"mappings":";AA+DA;KACA,2FAAA;KACA,6BAAA;EACA,uBAAA;EACA,mCAAA;EACA,mBAAA;KACA,MAAA;KACA,UAAA;EACA,YAAA;EACA,aAAA;CACA;;CAEA,gBAAA;AACA;EACA,kBAAA;CAEA;AACA;EACA,uBAAA;EACA,gBAAA;EACA,iBAAA;EACA,qBAAA;CACA;AACA;EACA,YAAA;EACA,gBAAA;CAEA;AACA;CACA,sBAAA;CACA;AAGA;;IAEA,iBAAA;IACA,mBAAA;CACA;AACA;EACA,gBAAA;EACA,kBAAA;EACA,YAAA;EACA,iBAAA;EACA,qBAAA;CAEA;AACA;EACA,gBAAA;EACA,kBAAA;EACA,kBAAA;EACA,uBAAA;EACA,eAAA;CAEA;AACA;EACA,eAAA;EACA,2BAAA;CAEA;AAEA;EACA,oBAAA;EACA,iBAAA;EACA,iBAAA;EACA,kBAAA;EACA,gBAAA;EACA,WAAA;CACA;AAEA;EACA,kBAAA;CACA;CACA,cAAA;;;CAGA,mBAAA;AACA,IAAA,eAAA;CAAA;AACA,IAAA,eAAA;CAAA;AACA,IAAA,eAAA;CAAA;AACA,IAAA,eAAA;CAAA;AACA,IAAA,eAAA;CAAA;AACA,IAAA,eAAA;CAAA;AACA,mBAAA,cAAA;CAAA;AACA,OAAA,eAAA;CAAA;AACA,WAAA,iBAAA;CAAA;AACA,GAAA,sBAAA;CAAA;AACA,SAAA,2BAAA;CAAA;AACA,QAAA,WAAA;CAAA;AACA,SAAA,YAAA;CAAA;AACA,aAAA,YAAA,CAAA,mBAAA;CAAA;AACA,cAAA,aAAA,CAAA,kBAAA;CAAA;AACA;;EAEA,aAAA;EACA,eAAA;EACA,UAAA;EACA,YAAA;EACA,mBAAA;CACA;AAGA;EACA,oBAAA;EACA,yFAAA;EACA,2FAAA;EACA,sFAAA;EACA,uFAAA;EACA,mFAAA;EACA,oHAAA;EACA,uCAAA;EACA,oCAAA;EACA,mCAAA;EACA,kCAAA;EACA,+BAAA;EACA,0BAAA;EACA,UAAA;EACA,kBAAA;EACA,mBAAA;EACA,mBAAA;EACA,0BAAA;EACA,aAAA;CAGA;AACA;EACA,eAAA;EACA,6CAAA;EACA,wBAAA;EACA,kBAAA;EACA,oBAAA;CACA;AACA;;EAEA,YAAA;EACA,YAAA;EACA,mBAAA;EACA,UAAA;EACA,WAAA;CACA;AACA;EACA,6BAAA;EACA,0FAAA;EACA,4FAAA;EACA,uFAAA;EACA,wFAAA;EACA,oFAAA;KACA,SAAA;CACA;AACA;EACA,6BAAA;EACA,2FAAA;EACA,6FAAA;EACA,wFAAA;EACA,yFAAA;EACA,qFAAA;KACA,QAAA;CACA;AACA;;EAEA,oBAAA;EACA,yFAAA;EACA,2FAAA;EACA,sFAAA;EACA,uFAAA;EACA,mFAAA;EACA,oHAAA;EACA,0BAAA;EACA,YAAA;EACA,eAAA;EACA,aAAA;EACA,WAAA;EACA,mBAAA;EACA,YAAA;CACA;AACA;EACA,gCAAA;EACA,6BAAA;EACA,4BAAA;EACA,2BAAA;EACA,wBAAA;EACA,OAAA;EACA,YAAA;CACA;AACA;EACA,iCAAA;EACA,8BAAA;EACA,6BAAA;EACA,4BAAA;EACA,yBAAA;EACA,OAAA;EACA,YAAA;CACA;AACA,gBAAA,eAAA,CAAA,kBAAA;CAAA;AACA;;EAEA,2BAAA;EACA,wBAAA;EACA,uBAAA;EACA,sBAAA;EACA,mBAAA;EACA,oEAAA;EACA,iEAAA;EACA,gEAAA;EACA,+DAAA;EACA,4DAAA;EACA,kCAAA;EACA,+BAAA;EACA,8BAAA;EACA,6BAAA;EACA,0BAAA;EACA,yFAAA;EACA,0BAAA;EACA,YAAA;EACA,wCAAA;EACA,iBAAA;EACA,6BAAA;EACA,WAAA;CACA;AACA;;EAEA,0CAAA;EACA,uCAAA;EACA,sCAAA;EACA,qCAAA;EACA,kCAAA;EACA,uBAAA;EACA,0BAAA;EACA,cAAA;CACA;AACA,YAAA,yCAAA;CAAA;AACA,YAAA,0CAAA;CAAA;AACA;EACA,6BAAA;EACA,wFAAA;EACA,0FAAA;EACA,qFAAA;EACA,sFAAA;EACA,kFAAA;EACA,oHAAA;EACA,4BAAA;EACA,yBAAA;EACA,wBAAA;EACA,uBAAA;EACA,oBAAA;EACA,wDAAA;EACA,qDAAA;EACA,oDAAA;EACA,mDAAA;EACA,gDAAA;EACA,0BAAA;EACA,eAAA;EACA,gBAAA;EACA,YAAA;EACA,6CAAA;EACA,aAAA;EACA,yBAAA;EACA,mBAAA;EACA,2CAAA;EACA,aAAA;CACA;AACA;EACA,4BAAA;EACA,wFAAA;EACA,0FAAA;EACA,qFAAA;EACA,sFAAA;EACA,kFAAA;EACA,oHAAA;CACA;AACA;EACA,eAAA;KACA,aAAA;KACA,gBAAA;KACA,sBAAA;KACA,2BAAA;CACA;AACA;EACA,6BAAA;EACA,yFAAA;EACA,2FAAA;EACA,sFAAA;EACA,uFAAA;EACA,mFAAA;EACA,oHAAA;EACA,oDAAA;EACA,iDAAA;EACA,gDAAA;EACA,+CAAA;EACA,4CAAA;EACA,mCAAA;EACA,gCAAA;EACA,8BAAA;EACA,+BAAA;EACA,2BAAA;EACA,8BAAA;EACA,gBAAA;CACA;AACA;EACA,0FAAA;EACA,eAAA;EACA,gBAAA;EACA,wBAAA;EACA,sBAAA;EACA,kCAAA;EACA,+BAAA;EACA,8BAAA;EACA,6BAAA;EACA,0BAAA;CACA;AACA;EACA,8BAAA;EACA,eAAA;CACA","file":"Login.vue","sourcesContent":["<template>\n  <div class=\"overlay\">\n\t    <!-- Navbar starts -->       \n\t    <nav class=\"navbar navbar-fixed-top\">\n\t\t    <div class=\"container\">\t\t       \n\t            <a class=\"navbar-brand \" href=\"index.html\"><img src=\"images/logo-web3.gif\"></a>\n\t           \t<button  class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#navbar-item\"  >\n\t\t            <span class=\"sr-only\">Toggle navigation</span>\n\t\t            <span class=\"icon-bar\"></span>\n\t\t            <span class=\"icon-bar\"></span>\n\t\t            <span class=\"icon-bar\"></span>\n\t\t        </button>\t\t          \n\t\t\t    <div id=\"navbar-item\" class=\"collapse  navbar-collapse\">\n\t\t\t          <ul class=\"nav navbar-nav navbar-right\">\n\t\t\t            <li ><a  href=\"index.html\">Home</a></li>\n\t\t\t            <li><a   href=\"#\">Contact</a></li>\n\t\t\t            <li ><a  href=\"signup.html\">Sign up</a></li>\n\t\t\t            <li><button class=\" btn-danger navbar-btn \"><a style=\"color: #fff;\" href=\"#\">Log in</a></button></li>\n\t\t\t          </ul>\n\t\t\t    </div><!--/.nav-collapse -->\n\t        </div>\n\t    </nav>\n\t    <!-- Navbar END -->\n\t\t\t      \t\t\t      \t\t        \n\t    <div class=\"row\">\n\t\t\t<div class=\"col-md-6 col-sm-6 title\">\n\t            \t<h1>Lorem ipsum dolor </h1>\n\t            \t<h2 class=\"home-hero-subtitle\">\n\t                   elit scripta suavitate his ea dico veritus no usu\n\t                    <a target=\"_blank\" href=\"/employee-recognition-guide\">transform employee recognition</a>\n\t                </h2>\n\t                \t\t    \t\n\t\t\t</div>\n\t\t    <div class=\"col-md-6 col-sm-6 login-col\">\n\t\t\t\t<section id=\"content\">\n\t\t\t\t\t<form action=\"\">\n\t\t\t\t\t\t<h1>Login </h1>\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t<input type=\"text\" placeholder=\"Username\" required=\"\" id=\"username\" />\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t<input type=\"password\" placeholder=\"Password\" required=\"\" id=\"password\" />\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t<input type=\"submit\" class=\"login\" value=\"Log in\" />\n\t\t\t\t\t\t\t<a style=\"color: #FF0000 ;\" href=\"#\">\n\t\t\t\t\t\t\t\tForgot password?\n\t\t\t\t\t\t\t</a>\t\t\t\t\t\t\t\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</form><!-- form -->\t\t\t\n\t\t\t\t</section><!-- content -->\n\t\t\t</div>\t\n\t    </div>\n    </div>\n</template>\n\n<script>\nexport default {\n  name: 'login'\n};\n</script>\n\n<style>\n\tbody{\n\t    background-image: url(https://www.pega.com/sites/pega.com/files/banking-case-study-bg.jpg);\n\t    background-repeat: no-repeat;\n\t\tbackground-size: cover;\n\t\tbackground-position: center center;\n\t\tposition: relative;\n\t    top:0;\n\t    bottom: 0;\n\t\theight:100%;\n\t\tz-index: -10;\t\n\t}\n\n\t/*NAVBAR START*/\n\t.navbar-brand{\n\t\tmargin-top: -10px;\n\t\t\n\t}\n\t.navbar{\n\t\tbackground-color: #fff;\n\t\tposition: fixed;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n\t}\n\t.nav li a{\n\t\tcolor: #000;\n\t\tfont-size: 20px;\n\t\t\t\n\t}\n\t.nav li a:hover {\n\ttext-decoration: none;\n\t}\n\n\n\t.title{\n\t   \n\t   margin-top: 60px;\n\t   text-align: center;\n\t}\n\t.title h1{\n\t\tfont-size: 45px;\n\t\tline-height: 45px;\n\t\tcolor: #fff;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n\t\t\n\t}\n\t.title h2{\n\t\tfont-size: 27px;\n\t\tfont-weight: bold;\n\t\tline-height: 27px;\n\t\tletter-spacing: -0.5px;\n\t\tcolor: #C0C0C0;\n\n\t}\n\t.title a{\n\t\tcolor: inherit;\n\t\ttext-decoration: underline;\n\n\t}\n\n\t.btn-danger{\n\t\tborder-radius: 10px;\n\t\tfont-weight: 800;\t\n\t\tline-height: 1.7;\n\t\tmargin-left: 40px;\n\t\tfont-size: 18px;\n\t\twidth: 80%;\n\t}\n\n\t.row{\n\t\tmargin-top: 220px;\n\t}\n\t/*NAVBAR END*/\n\n\n\t/*LOGIN BOX START*/\n\th1{ font-size:28px;}\n\th2{ font-size:26px;}\n\th3{ font-size:18px;}\n\th4{ font-size:16px;}\n\th5{ font-size:14px;}\n\th6{ font-size:12px;}\n\th1,h2,h3,h4,h5,h6{ color:#563D64;}\n\tsmall{ font-size:10px;}\n\tb, strong{ font-weight:bold;}\n\ta{ text-decoration: none; }\n\ta:hover{ text-decoration: underline; }\n\t.left { float:left; }\n\t.right { float:right; }\n\t.alignleft { float: left; margin-right: 15px; }\n\t.alignright { float: right; margin-left: 15px; }\n\t.clearfix:after,\n\tform:after {\n\t\tcontent: \".\";\n\t\tdisplay: block;\n\t\theight: 0;\n\t\tclear: both;\n\t\tvisibility: hidden;\n\t}\n\n\n\t#content {\n\t\tbackground: #f9f9f9;\n\t\tbackground: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );\n\t\t-webkit-box-shadow: 0 1px 0 #fff inset;\n\t\t-moz-box-shadow: 0 1px 0 #fff inset;\n\t\t-ms-box-shadow: 0 1px 0 #fff inset;\n\t\t-o-box-shadow: 0 1px 0 #fff inset;\n\t\tbox-shadow: 0 1px 0 #fff inset;\n\t\tborder: 1px solid #c4c6ca;\n\t\tmargin: 0;\n\t\tpadding: 25px 0 0;\n\t\tposition: relative;\n\t\ttext-align: center;\n\t\ttext-shadow: 0 1px 0 #fff;\n\t\twidth: 500px;\n\n\n\t}\n\t#content h1 {\n\t\tcolor: #7E7E7E;\n\t\tfont: bold 25px Helvetica, Arial, sans-serif;\n\t\tletter-spacing: -0.05em;\n\t\tline-height: 20px;\n\t\tmargin: 10px 0 30px;\n\t}\n\t#content h1:before,\n\t#content h1:after {\n\t\tcontent: \"\";\n\t\theight: 1px;\n\t\tposition: absolute;\n\t\ttop: 10px;\n\t\twidth: 27%;\n\t}\n\t#content h1:after {\n\t\tbackground: rgb(126,126,126);\n\t\tbackground: -moz-linear-gradient(left,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);\n\t\tbackground: -webkit-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -o-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -ms-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t    right: 0;\n\t}\n\t#content h1:before {\n\t\tbackground: rgb(126,126,126);\n\t\tbackground: -moz-linear-gradient(right,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);\n\t\tbackground: -webkit-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -o-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -ms-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t    left: 0;\n\t}\n\t#content:after,\n\t#content:before {\n\t\tbackground: #f9f9f9;\n\t\tbackground: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );\n\t\tborder: 1px solid #c4c6ca;\n\t\tcontent: \"\";\n\t\tdisplay: block;\n\t\theight: 100%;\n\t\tleft: -1px;\n\t\tposition: absolute;\n\t\twidth: 100%;\n\t}\n\t#content:after {\n\t\t-webkit-transform: rotate(2deg);\n\t\t-moz-transform: rotate(2deg);\n\t\t-ms-transform: rotate(2deg);\n\t\t-o-transform: rotate(2deg);\n\t\ttransform: rotate(2deg);\n\t\ttop: 0;\n\t\tz-index: -1;\n\t}\n\t#content:before {\n\t\t-webkit-transform: rotate(-3deg);\n\t\t-moz-transform: rotate(-3deg);\n\t\t-ms-transform: rotate(-3deg);\n\t\t-o-transform: rotate(-3deg);\n\t\ttransform: rotate(-3deg);\n\t\ttop: 0;\n\t\tz-index: -2;\n\t}\n\t#content form { margin: 0 20px; position: relative }\n\t#content form input[type=\"text\"],\n\t#content form input[type=\"password\"] {\n\t\t-webkit-border-radius: 3px;\n\t\t-moz-border-radius: 3px;\n\t\t-ms-border-radius: 3px;\n\t\t-o-border-radius: 3px;\n\t\tborder-radius: 3px;\n\t\t-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\tbox-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-webkit-transition: all 0.5s ease;\n\t\t-moz-transition: all 0.5s ease;\n\t\t-ms-transition: all 0.5s ease;\n\t\t-o-transition: all 0.5s ease;\n\t\ttransition: all 0.5s ease;\n\t\tbackground: #eae7e7 url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) no-repeat;\n\t\tborder: 1px solid #c8c8c8;\n\t\tcolor: #777;\n\t\tfont: 13px Helvetica, Arial, sans-serif;\n\t\tmargin: 0 0 20px;\n\t\tpadding: 15px 10px 15px 40px;\n\t\twidth: 90%;\n\t}\n\t#content form input[type=\"text\"]:focus,\n\t#content form input[type=\"password\"]:focus {\n\t\t-webkit-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-moz-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-ms-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-o-box-shadow: 0 0 2px #ed1c24 inset;\n\t\tbox-shadow: 0 0 2px #ed1c24 inset;\n\t\tbackground-color: #fff;\n\t\tborder: 1px solid #ed1c24;\n\t\toutline: none;\n\t}\n\t#username { background-position: 10px 10px !important }\n\t#password { background-position: 10px -53px !important }\n\t#content form input[type=\"submit\"] {\n\t\tbackground: rgb(254,231,154);\n\t\tbackground: -moz-linear-gradient(top,  rgba(254,231,154,1) 0%, rgba(254,193,81,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fee79a', endColorstr='#fec151',GradientType=0 );\n\t\t-webkit-border-radius: 30px;\n\t\t-moz-border-radius: 30px;\n\t\t-ms-border-radius: 30px;\n\t\t-o-border-radius: 30px;\n\t\tborder-radius: 30px;\n\t\t-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-ms-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-o-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\tbox-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\tborder: 1px solid #D69E31;\n\t\tcolor: #85592e;\n\t\tcursor: pointer;\n\t\tfloat: left;\n\t\tfont: bold 15px Helvetica, Arial, sans-serif;\n\t\theight: 35px;\n\t\tmargin: 20px 0 35px 15px;\n\t\tposition: relative;\n\t\ttext-shadow: 0 1px 0 rgba(255,255,255,0.5);\n\t\twidth: 120px;\n\t}\n\t#content form input[type=\"submit\"]:hover {\n\t\tbackground: rgb(254,193,81);\n\t\tbackground: -moz-linear-gradient(top,  rgba(254,193,81,1) 0%, rgba(254,231,154,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec151', endColorstr='#fee79a',GradientType=0 );\n\t}\n\t#content form div a {\n\t\tcolor: #004a80;\n\t    float: right;\n\t    font-size: 12px;\n\t    margin: 30px 15px 0 0;\n\t    text-decoration: underline;\n\t}\n\t.button {\n\t\tbackground: rgb(247,249,250);\n\t\tbackground: -moz-linear-gradient(top,  rgba(247,249,250,1) 0%, rgba(240,240,240,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f9fa', endColorstr='#f0f0f0',GradientType=0 );\n\t\t-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-ms-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-o-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\tbox-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-webkit-border-radius: 0 0 5px 5px;\n\t\t-moz-border-radius: 0 0 5px 5px;\n\t\t-o-border-radius: 0 0 5px 5px;\n\t\t-ms-border-radius: 0 0 5px 5px;\n\t\tborder-radius: 0 0 5px 5px;\n\t\tborder-top: 1px solid #CFD5D9;\n\t\tpadding: 15px 0;\n\t}\n\t.button a {\n\t\tbackground: url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) 0 -112px no-repeat;\n\t\tcolor: #7E7E7E;\n\t\tfont-size: 17px;\n\t\tpadding: 2px 0 2px 40px;\n\t\ttext-decoration: none;\n\t\t-webkit-transition: all 0.3s ease;\n\t\t-moz-transition: all 0.3s ease;\n\t\t-ms-transition: all 0.3s ease;\n\t\t-o-transition: all 0.3s ease;\n\t\ttransition: all 0.3s ease;\n\t}\n\t.button a:hover {\n\t\tbackground-position: 0 -135px;\n\t\tcolor: #00aeef;\n}\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\nbody{\n\t    background-image: url(https://www.pega.com/sites/pega.com/files/banking-case-study-bg.jpg);\n\t    background-repeat: no-repeat;\n\t\tbackground-size: cover;\n\t\tbackground-position: center center;\n\t\tposition: relative;\n\t    top:0;\n\t    bottom: 0;\n\t\theight:100%;\n\t\tz-index: -10;\n}\n\n\t/*NAVBAR START*/\n.navbar-brand{\n\t\tmargin-top: -10px;\n}\n.navbar{\n\t\tbackground-color: #fff;\n\t\tposition: fixed;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n}\n.nav li a{\n\t\tcolor: #000;\n\t\tfont-size: 20px;\n}\n.nav li a:hover {\n\ttext-decoration: none;\n}\n.title{\n\t   \n\t   margin-top: 60px;\n\t   text-align: center;\n}\n.title h1{\n\t\tfont-size: 45px;\n\t\tline-height: 45px;\n\t\tcolor: #fff;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n}\n.title h2{\n\t\tfont-size: 27px;\n\t\tfont-weight: bold;\n\t\tline-height: 27px;\n\t\tletter-spacing: -0.5px;\n\t\tcolor: #C0C0C0;\n}\n.title a{\n\t\tcolor: inherit;\n\t\ttext-decoration: underline;\n}\n.btn-danger{\n\t\tborder-radius: 10px;\n\t\tfont-weight: 800;\t\n\t\tline-height: 1.7;\n\t\tmargin-left: 40px;\n\t\tfont-size: 18px;\n\t\twidth: 80%;\n}\n.row{\n\t\tmargin-top: 220px;\n}\n\t/*NAVBAR END*/\n\n\n\t/*LOGIN BOX START*/\nh1{ font-size:28px;\n}\nh2{ font-size:26px;\n}\nh3{ font-size:18px;\n}\nh4{ font-size:16px;\n}\nh5{ font-size:14px;\n}\nh6{ font-size:12px;\n}\nh1,h2,h3,h4,h5,h6{ color:#563D64;\n}\nsmall{ font-size:10px;\n}\nb, strong{ font-weight:bold;\n}\na{ text-decoration: none;\n}\na:hover{ text-decoration: underline;\n}\n.left { float:left;\n}\n.right { float:right;\n}\n.alignleft { float: left; margin-right: 15px;\n}\n.alignright { float: right; margin-left: 15px;\n}\n.clearfix:after,\n\tform:after {\n\t\tcontent: \".\";\n\t\tdisplay: block;\n\t\theight: 0;\n\t\tclear: both;\n\t\tvisibility: hidden;\n}\n#content {\n\t\tbackground: #f9f9f9;\n\t\tbackground: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );\n\t\t-webkit-box-shadow: 0 1px 0 #fff inset;\n\t\t-moz-box-shadow: 0 1px 0 #fff inset;\n\t\t-ms-box-shadow: 0 1px 0 #fff inset;\n\t\t-o-box-shadow: 0 1px 0 #fff inset;\n\t\tbox-shadow: 0 1px 0 #fff inset;\n\t\tborder: 1px solid #c4c6ca;\n\t\tmargin: 0;\n\t\tpadding: 25px 0 0;\n\t\tposition: relative;\n\t\ttext-align: center;\n\t\ttext-shadow: 0 1px 0 #fff;\n\t\twidth: 500px;\n}\n#content h1 {\n\t\tcolor: #7E7E7E;\n\t\tfont: bold 25px Helvetica, Arial, sans-serif;\n\t\tletter-spacing: -0.05em;\n\t\tline-height: 20px;\n\t\tmargin: 10px 0 30px;\n}\n#content h1:before,\n\t#content h1:after {\n\t\tcontent: \"\";\n\t\theight: 1px;\n\t\tposition: absolute;\n\t\ttop: 10px;\n\t\twidth: 27%;\n}\n#content h1:after {\n\t\tbackground: rgb(126,126,126);\n\t\tbackground: -moz-linear-gradient(left,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);\n\t\tbackground: -webkit-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -o-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -ms-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t    right: 0;\n}\n#content h1:before {\n\t\tbackground: rgb(126,126,126);\n\t\tbackground: -moz-linear-gradient(right,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);\n\t\tbackground: -webkit-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -o-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -ms-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t    left: 0;\n}\n#content:after,\n\t#content:before {\n\t\tbackground: #f9f9f9;\n\t\tbackground: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );\n\t\tborder: 1px solid #c4c6ca;\n\t\tcontent: \"\";\n\t\tdisplay: block;\n\t\theight: 100%;\n\t\tleft: -1px;\n\t\tposition: absolute;\n\t\twidth: 100%;\n}\n#content:after {\n\t\t-webkit-transform: rotate(2deg);\n\t\t-moz-transform: rotate(2deg);\n\t\t-ms-transform: rotate(2deg);\n\t\t-o-transform: rotate(2deg);\n\t\ttransform: rotate(2deg);\n\t\ttop: 0;\n\t\tz-index: -1;\n}\n#content:before {\n\t\t-webkit-transform: rotate(-3deg);\n\t\t-moz-transform: rotate(-3deg);\n\t\t-ms-transform: rotate(-3deg);\n\t\t-o-transform: rotate(-3deg);\n\t\ttransform: rotate(-3deg);\n\t\ttop: 0;\n\t\tz-index: -2;\n}\n#content form { margin: 0 20px; position: relative\n}\n#content form input[type=\"text\"],\n\t#content form input[type=\"password\"] {\n\t\t-webkit-border-radius: 3px;\n\t\t-moz-border-radius: 3px;\n\t\t-ms-border-radius: 3px;\n\t\t-o-border-radius: 3px;\n\t\tborder-radius: 3px;\n\t\t-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\tbox-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-webkit-transition: all 0.5s ease;\n\t\t-moz-transition: all 0.5s ease;\n\t\t-ms-transition: all 0.5s ease;\n\t\t-o-transition: all 0.5s ease;\n\t\ttransition: all 0.5s ease;\n\t\tbackground: #eae7e7 url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) no-repeat;\n\t\tborder: 1px solid #c8c8c8;\n\t\tcolor: #777;\n\t\tfont: 13px Helvetica, Arial, sans-serif;\n\t\tmargin: 0 0 20px;\n\t\tpadding: 15px 10px 15px 40px;\n\t\twidth: 90%;\n}\n#content form input[type=\"text\"]:focus,\n\t#content form input[type=\"password\"]:focus {\n\t\t-webkit-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-moz-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-ms-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-o-box-shadow: 0 0 2px #ed1c24 inset;\n\t\tbox-shadow: 0 0 2px #ed1c24 inset;\n\t\tbackground-color: #fff;\n\t\tborder: 1px solid #ed1c24;\n\t\toutline: none;\n}\n#username { background-position: 10px 10px !important\n}\n#password { background-position: 10px -53px !important\n}\n#content form input[type=\"submit\"] {\n\t\tbackground: rgb(254,231,154);\n\t\tbackground: -moz-linear-gradient(top,  rgba(254,231,154,1) 0%, rgba(254,193,81,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fee79a', endColorstr='#fec151',GradientType=0 );\n\t\t-webkit-border-radius: 30px;\n\t\t-moz-border-radius: 30px;\n\t\t-ms-border-radius: 30px;\n\t\t-o-border-radius: 30px;\n\t\tborder-radius: 30px;\n\t\t-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-ms-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-o-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\tbox-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\tborder: 1px solid #D69E31;\n\t\tcolor: #85592e;\n\t\tcursor: pointer;\n\t\tfloat: left;\n\t\tfont: bold 15px Helvetica, Arial, sans-serif;\n\t\theight: 35px;\n\t\tmargin: 20px 0 35px 15px;\n\t\tposition: relative;\n\t\ttext-shadow: 0 1px 0 rgba(255,255,255,0.5);\n\t\twidth: 120px;\n}\n#content form input[type=\"submit\"]:hover {\n\t\tbackground: rgb(254,193,81);\n\t\tbackground: -moz-linear-gradient(top,  rgba(254,193,81,1) 0%, rgba(254,231,154,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec151', endColorstr='#fee79a',GradientType=0 );\n}\n#content form div a {\n\t\tcolor: #004a80;\n\t    float: right;\n\t    font-size: 12px;\n\t    margin: 30px 15px 0 0;\n\t    text-decoration: underline;\n}\n.button {\n\t\tbackground: rgb(247,249,250);\n\t\tbackground: -moz-linear-gradient(top,  rgba(247,249,250,1) 0%, rgba(240,240,240,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f9fa', endColorstr='#f0f0f0',GradientType=0 );\n\t\t-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-ms-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-o-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\tbox-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-webkit-border-radius: 0 0 5px 5px;\n\t\t-moz-border-radius: 0 0 5px 5px;\n\t\t-o-border-radius: 0 0 5px 5px;\n\t\t-ms-border-radius: 0 0 5px 5px;\n\t\tborder-radius: 0 0 5px 5px;\n\t\tborder-top: 1px solid #CFD5D9;\n\t\tpadding: 15px 0;\n}\n.button a {\n\t\tbackground: url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) 0 -112px no-repeat;\n\t\tcolor: #7E7E7E;\n\t\tfont-size: 17px;\n\t\tpadding: 2px 0 2px 40px;\n\t\ttext-decoration: none;\n\t\t-webkit-transition: all 0.3s ease;\n\t\t-moz-transition: all 0.3s ease;\n\t\t-ms-transition: all 0.3s ease;\n\t\t-o-transition: all 0.3s ease;\n\t\ttransition: all 0.3s ease;\n}\n.button a:hover {\n\t\tbackground-position: 0 -135px;\n\t\tcolor: #00aeef;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/src/Login.vue?7209aa15"],"names":[],"mappings":";AA+DA;KACA,2FAAA;KACA,6BAAA;EACA,uBAAA;EACA,mCAAA;EACA,mBAAA;KACA,MAAA;KACA,UAAA;EACA,YAAA;EACA,aAAA;CACA;;CAEA,gBAAA;AACA;EACA,kBAAA;CAEA;AACA;EACA,uBAAA;EACA,gBAAA;EACA,iBAAA;EACA,qBAAA;CACA;AACA;EACA,YAAA;EACA,gBAAA;CAEA;AACA;CACA,sBAAA;CACA;AAGA;;IAEA,iBAAA;IACA,mBAAA;CACA;AACA;EACA,gBAAA;EACA,kBAAA;EACA,YAAA;EACA,iBAAA;EACA,qBAAA;CAEA;AACA;EACA,gBAAA;EACA,kBAAA;EACA,kBAAA;EACA,uBAAA;EACA,eAAA;CAEA;AACA;EACA,eAAA;EACA,2BAAA;CAEA;AAEA;EACA,oBAAA;EACA,iBAAA;EACA,iBAAA;EACA,kBAAA;EACA,gBAAA;EACA,WAAA;CACA;AAEA;EACA,kBAAA;CACA;CACA,cAAA;;;CAGA,mBAAA;AACA,IAAA,eAAA;CAAA;AACA,IAAA,eAAA;CAAA;AACA,IAAA,eAAA;CAAA;AACA,IAAA,eAAA;CAAA;AACA,IAAA,eAAA;CAAA;AACA,IAAA,eAAA;CAAA;AACA,mBAAA,cAAA;CAAA;AACA,OAAA,eAAA;CAAA;AACA,WAAA,iBAAA;CAAA;AACA,GAAA,sBAAA;CAAA;AACA,SAAA,2BAAA;CAAA;AACA,QAAA,WAAA;CAAA;AACA,SAAA,YAAA;CAAA;AACA,aAAA,YAAA,CAAA,mBAAA;CAAA;AACA,cAAA,aAAA,CAAA,kBAAA;CAAA;AACA;;EAEA,aAAA;EACA,eAAA;EACA,UAAA;EACA,YAAA;EACA,mBAAA;CACA;AAGA;EACA,oBAAA;EACA,yFAAA;EACA,2FAAA;EACA,sFAAA;EACA,uFAAA;EACA,mFAAA;EACA,oHAAA;EACA,uCAAA;EACA,oCAAA;EACA,mCAAA;EACA,kCAAA;EACA,+BAAA;EACA,0BAAA;EACA,UAAA;EACA,kBAAA;EACA,mBAAA;EACA,mBAAA;EACA,0BAAA;EACA,aAAA;CAGA;AACA;EACA,eAAA;EACA,6CAAA;EACA,wBAAA;EACA,kBAAA;EACA,oBAAA;CACA;AACA;;EAEA,YAAA;EACA,YAAA;EACA,mBAAA;EACA,UAAA;EACA,WAAA;CACA;AACA;EACA,6BAAA;EACA,0FAAA;EACA,4FAAA;EACA,uFAAA;EACA,wFAAA;EACA,oFAAA;KACA,SAAA;CACA;AACA;EACA,6BAAA;EACA,2FAAA;EACA,6FAAA;EACA,wFAAA;EACA,yFAAA;EACA,qFAAA;KACA,QAAA;CACA;AACA;;EAEA,oBAAA;EACA,yFAAA;EACA,2FAAA;EACA,sFAAA;EACA,uFAAA;EACA,mFAAA;EACA,oHAAA;EACA,0BAAA;EACA,YAAA;EACA,eAAA;EACA,aAAA;EACA,WAAA;EACA,mBAAA;EACA,YAAA;CACA;AACA;EACA,gCAAA;EACA,6BAAA;EACA,4BAAA;EACA,2BAAA;EACA,wBAAA;EACA,OAAA;EACA,YAAA;CACA;AACA;EACA,iCAAA;EACA,8BAAA;EACA,6BAAA;EACA,4BAAA;EACA,yBAAA;EACA,OAAA;EACA,YAAA;CACA;AACA,gBAAA,eAAA,CAAA,kBAAA;CAAA;AACA;;EAEA,2BAAA;EACA,wBAAA;EACA,uBAAA;EACA,sBAAA;EACA,mBAAA;EACA,oEAAA;EACA,iEAAA;EACA,gEAAA;EACA,+DAAA;EACA,4DAAA;EACA,kCAAA;EACA,+BAAA;EACA,8BAAA;EACA,6BAAA;EACA,0BAAA;EACA,yFAAA;EACA,0BAAA;EACA,YAAA;EACA,wCAAA;EACA,iBAAA;EACA,6BAAA;EACA,WAAA;CACA;AACA;;EAEA,0CAAA;EACA,uCAAA;EACA,sCAAA;EACA,qCAAA;EACA,kCAAA;EACA,uBAAA;EACA,0BAAA;EACA,cAAA;CACA;AACA,YAAA,yCAAA;CAAA;AACA,YAAA,0CAAA;CAAA;AACA;EACA,6BAAA;EACA,wFAAA;EACA,0FAAA;EACA,qFAAA;EACA,sFAAA;EACA,kFAAA;EACA,oHAAA;EACA,4BAAA;EACA,yBAAA;EACA,wBAAA;EACA,uBAAA;EACA,oBAAA;EACA,wDAAA;EACA,qDAAA;EACA,oDAAA;EACA,mDAAA;EACA,gDAAA;EACA,0BAAA;EACA,eAAA;EACA,gBAAA;EACA,YAAA;EACA,6CAAA;EACA,aAAA;EACA,yBAAA;EACA,mBAAA;EACA,2CAAA;EACA,aAAA;CACA;AACA;EACA,4BAAA;EACA,wFAAA;EACA,0FAAA;EACA,qFAAA;EACA,sFAAA;EACA,kFAAA;EACA,oHAAA;CACA;AACA;EACA,eAAA;KACA,aAAA;KACA,gBAAA;KACA,sBAAA;KACA,2BAAA;CACA;AACA;EACA,6BAAA;EACA,yFAAA;EACA,2FAAA;EACA,sFAAA;EACA,uFAAA;EACA,mFAAA;EACA,oHAAA;EACA,oDAAA;EACA,iDAAA;EACA,gDAAA;EACA,+CAAA;EACA,4CAAA;EACA,mCAAA;EACA,gCAAA;EACA,8BAAA;EACA,+BAAA;EACA,2BAAA;EACA,8BAAA;EACA,gBAAA;CACA;AACA;EACA,0FAAA;EACA,eAAA;EACA,gBAAA;EACA,wBAAA;EACA,sBAAA;EACA,kCAAA;EACA,+BAAA;EACA,8BAAA;EACA,6BAAA;EACA,0BAAA;CACA;AACA;EACA,8BAAA;EACA,eAAA;CACA","file":"Login.vue","sourcesContent":["<template>\n  <div class=\"overlay\">\n\t    <!-- Navbar starts -->       \n\t    <nav class=\"navbar navbar-fixed-top\">\n\t\t    <div class=\"container\">\t\t       \n\t            <a class=\"navbar-brand \" href=\"index.html\"><img src=\"images/logo-web3.gif\"></a>\n\t           \t<button  class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#navbar-item\"  >\n\t\t            <span class=\"sr-only\">Toggle navigation</span>\n\t\t            <span class=\"icon-bar\"></span>\n\t\t            <span class=\"icon-bar\"></span>\n\t\t            <span class=\"icon-bar\"></span>\n\t\t        </button>\t\t          \n\t\t\t    <div id=\"navbar-item\" class=\"collapse  navbar-collapse\">\n\t\t\t          <ul class=\"nav navbar-nav navbar-right\">\n\t\t\t            <li ><a  href=\"index.html\">Home</a></li>\n\t\t\t            <li><a   href=\"#\">Contact</a></li>\n\t\t\t            <li ><a  href=\"signup.html\">Sign up</a></li>\n\t\t\t            <li><button class=\" btn-danger navbar-btn \"><a style=\"color: #fff;\" href=\"#\">Log in</a></button></li>\n\t\t\t          </ul>\n\t\t\t    </div><!--/.nav-collapse -->\n\t        </div>\n\t    </nav>\n\t    <!-- Navbar END -->\n\t\t\t      \t\t\t      \t\t        \n\t    <div class=\"row\">\n\t\t\t<div class=\"col-md-6 col-sm-6 title\">\n\t            \t<h1>Lorem ipsum dolor </h1>\n\t            \t<h2 class=\"home-hero-subtitle\">\n\t                   elit scripta suavitate his ea dico veritus no usu\n\t                    <a target=\"_blank\" href=\"/employee-recognition-guide\">transform employee recognition</a>\n\t                </h2>\n\t                \t\t    \t\n\t\t\t</div>\n\t\t    <div class=\"col-md-6 col-sm-6 login-col\">\n\t\t\t\t<section id=\"content\">\n\t\t\t\t\t<form action=\"\">\n\t\t\t\t\t\t<h1>Login </h1>\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t<input type=\"text\" placeholder=\"Username\" required=\"\" id=\"username\" />\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t<input type=\"password\" placeholder=\"Password\" required=\"\" id=\"password\" />\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t<input type=\"submit\" class=\"login\" value=\"Log in\" />\n\t\t\t\t\t\t\t<a style=\"color: #FF0000 ;\" href=\"#\">\n\t\t\t\t\t\t\t\tForgot password?\n\t\t\t\t\t\t\t</a>\t\t\t\t\t\t\t\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</form><!-- form -->\t\t\t\n\t\t\t\t</section><!-- content -->\n\t\t\t</div>\t\n\t    </div>\n    </div>\n</template>\n\n<script>\nexport default {\n  name: 'login'\n};\n</script>\n\n<style>\n\tbody{\n\t    background-image: url(https://www.pega.com/sites/pega.com/files/banking-case-study-bg.jpg);\n\t    background-repeat: no-repeat;\n\t\tbackground-size: cover;\n\t\tbackground-position: center center;\n\t\tposition: relative;\n\t    top:0;\n\t    bottom: 0;\n\t\theight:100%;\n\t\tz-index: -10;\t\n\t}\n\n\t/*NAVBAR START*/\n\t.navbar-brand{\n\t\tmargin-top: -10px;\n\t\t\n\t}\n\t.navbar{\n\t\tbackground-color: #fff;\n\t\tposition: fixed;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n\t}\n\t.nav li a{\n\t\tcolor: #000;\n\t\tfont-size: 20px;\n\t\t\t\n\t}\n\t.nav li a:hover {\n\ttext-decoration: none;\n\t}\n\n\n\t.title{\n\t   \n\t   margin-top: 60px;\n\t   text-align: center;\n\t}\n\t.title h1{\n\t\tfont-size: 45px;\n\t\tline-height: 45px;\n\t\tcolor: #fff;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n\t\t\n\t}\n\t.title h2{\n\t\tfont-size: 27px;\n\t\tfont-weight: bold;\n\t\tline-height: 27px;\n\t\tletter-spacing: -0.5px;\n\t\tcolor: #C0C0C0;\n\n\t}\n\t.title a{\n\t\tcolor: inherit;\n\t\ttext-decoration: underline;\n\n\t}\n\n\t.btn-danger{\n\t\tborder-radius: 10px;\n\t\tfont-weight: 800;\t\n\t\tline-height: 1.7;\n\t\tmargin-left: 40px;\n\t\tfont-size: 18px;\n\t\twidth: 80%;\n\t}\n\n\t.row{\n\t\tmargin-top: 220px;\n\t}\n\t/*NAVBAR END*/\n\n\n\t/*LOGIN BOX START*/\n\th1{ font-size:28px;}\n\th2{ font-size:26px;}\n\th3{ font-size:18px;}\n\th4{ font-size:16px;}\n\th5{ font-size:14px;}\n\th6{ font-size:12px;}\n\th1,h2,h3,h4,h5,h6{ color:#563D64;}\n\tsmall{ font-size:10px;}\n\tb, strong{ font-weight:bold;}\n\ta{ text-decoration: none; }\n\ta:hover{ text-decoration: underline; }\n\t.left { float:left; }\n\t.right { float:right; }\n\t.alignleft { float: left; margin-right: 15px; }\n\t.alignright { float: right; margin-left: 15px; }\n\t.clearfix:after,\n\tform:after {\n\t\tcontent: \".\";\n\t\tdisplay: block;\n\t\theight: 0;\n\t\tclear: both;\n\t\tvisibility: hidden;\n\t}\n\n\n\t#content {\n\t\tbackground: #f9f9f9;\n\t\tbackground: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );\n\t\t-webkit-box-shadow: 0 1px 0 #fff inset;\n\t\t-moz-box-shadow: 0 1px 0 #fff inset;\n\t\t-ms-box-shadow: 0 1px 0 #fff inset;\n\t\t-o-box-shadow: 0 1px 0 #fff inset;\n\t\tbox-shadow: 0 1px 0 #fff inset;\n\t\tborder: 1px solid #c4c6ca;\n\t\tmargin: 0;\n\t\tpadding: 25px 0 0;\n\t\tposition: relative;\n\t\ttext-align: center;\n\t\ttext-shadow: 0 1px 0 #fff;\n\t\twidth: 500px;\n\n\n\t}\n\t#content h1 {\n\t\tcolor: #7E7E7E;\n\t\tfont: bold 25px Helvetica, Arial, sans-serif;\n\t\tletter-spacing: -0.05em;\n\t\tline-height: 20px;\n\t\tmargin: 10px 0 30px;\n\t}\n\t#content h1:before,\n\t#content h1:after {\n\t\tcontent: \"\";\n\t\theight: 1px;\n\t\tposition: absolute;\n\t\ttop: 10px;\n\t\twidth: 27%;\n\t}\n\t#content h1:after {\n\t\tbackground: rgb(126,126,126);\n\t\tbackground: -moz-linear-gradient(left,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);\n\t\tbackground: -webkit-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -o-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -ms-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t    right: 0;\n\t}\n\t#content h1:before {\n\t\tbackground: rgb(126,126,126);\n\t\tbackground: -moz-linear-gradient(right,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);\n\t\tbackground: -webkit-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -o-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -ms-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t    left: 0;\n\t}\n\t#content:after,\n\t#content:before {\n\t\tbackground: #f9f9f9;\n\t\tbackground: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );\n\t\tborder: 1px solid #c4c6ca;\n\t\tcontent: \"\";\n\t\tdisplay: block;\n\t\theight: 100%;\n\t\tleft: -1px;\n\t\tposition: absolute;\n\t\twidth: 100%;\n\t}\n\t#content:after {\n\t\t-webkit-transform: rotate(2deg);\n\t\t-moz-transform: rotate(2deg);\n\t\t-ms-transform: rotate(2deg);\n\t\t-o-transform: rotate(2deg);\n\t\ttransform: rotate(2deg);\n\t\ttop: 0;\n\t\tz-index: -1;\n\t}\n\t#content:before {\n\t\t-webkit-transform: rotate(-3deg);\n\t\t-moz-transform: rotate(-3deg);\n\t\t-ms-transform: rotate(-3deg);\n\t\t-o-transform: rotate(-3deg);\n\t\ttransform: rotate(-3deg);\n\t\ttop: 0;\n\t\tz-index: -2;\n\t}\n\t#content form { margin: 0 20px; position: relative }\n\t#content form input[type=\"text\"],\n\t#content form input[type=\"password\"] {\n\t\t-webkit-border-radius: 3px;\n\t\t-moz-border-radius: 3px;\n\t\t-ms-border-radius: 3px;\n\t\t-o-border-radius: 3px;\n\t\tborder-radius: 3px;\n\t\t-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\tbox-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-webkit-transition: all 0.5s ease;\n\t\t-moz-transition: all 0.5s ease;\n\t\t-ms-transition: all 0.5s ease;\n\t\t-o-transition: all 0.5s ease;\n\t\ttransition: all 0.5s ease;\n\t\tbackground: #eae7e7 url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) no-repeat;\n\t\tborder: 1px solid #c8c8c8;\n\t\tcolor: #777;\n\t\tfont: 13px Helvetica, Arial, sans-serif;\n\t\tmargin: 0 0 20px;\n\t\tpadding: 15px 10px 15px 40px;\n\t\twidth: 90%;\n\t}\n\t#content form input[type=\"text\"]:focus,\n\t#content form input[type=\"password\"]:focus {\n\t\t-webkit-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-moz-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-ms-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-o-box-shadow: 0 0 2px #ed1c24 inset;\n\t\tbox-shadow: 0 0 2px #ed1c24 inset;\n\t\tbackground-color: #fff;\n\t\tborder: 1px solid #ed1c24;\n\t\toutline: none;\n\t}\n\t#username { background-position: 10px 10px !important }\n\t#password { background-position: 10px -53px !important }\n\t#content form input[type=\"submit\"] {\n\t\tbackground: rgb(254,231,154);\n\t\tbackground: -moz-linear-gradient(top,  rgba(254,231,154,1) 0%, rgba(254,193,81,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fee79a', endColorstr='#fec151',GradientType=0 );\n\t\t-webkit-border-radius: 30px;\n\t\t-moz-border-radius: 30px;\n\t\t-ms-border-radius: 30px;\n\t\t-o-border-radius: 30px;\n\t\tborder-radius: 30px;\n\t\t-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-ms-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-o-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\tbox-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\tborder: 1px solid #D69E31;\n\t\tcolor: #85592e;\n\t\tcursor: pointer;\n\t\tfloat: left;\n\t\tfont: bold 15px Helvetica, Arial, sans-serif;\n\t\theight: 35px;\n\t\tmargin: 20px 0 35px 15px;\n\t\tposition: relative;\n\t\ttext-shadow: 0 1px 0 rgba(255,255,255,0.5);\n\t\twidth: 120px;\n\t}\n\t#content form input[type=\"submit\"]:hover {\n\t\tbackground: rgb(254,193,81);\n\t\tbackground: -moz-linear-gradient(top,  rgba(254,193,81,1) 0%, rgba(254,231,154,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec151', endColorstr='#fee79a',GradientType=0 );\n\t}\n\t#content form div a {\n\t\tcolor: #004a80;\n\t    float: right;\n\t    font-size: 12px;\n\t    margin: 30px 15px 0 0;\n\t    text-decoration: underline;\n\t}\n\t.button {\n\t\tbackground: rgb(247,249,250);\n\t\tbackground: -moz-linear-gradient(top,  rgba(247,249,250,1) 0%, rgba(240,240,240,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f9fa', endColorstr='#f0f0f0',GradientType=0 );\n\t\t-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-ms-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-o-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\tbox-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-webkit-border-radius: 0 0 5px 5px;\n\t\t-moz-border-radius: 0 0 5px 5px;\n\t\t-o-border-radius: 0 0 5px 5px;\n\t\t-ms-border-radius: 0 0 5px 5px;\n\t\tborder-radius: 0 0 5px 5px;\n\t\tborder-top: 1px solid #CFD5D9;\n\t\tpadding: 15px 0;\n\t}\n\t.button a {\n\t\tbackground: url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) 0 -112px no-repeat;\n\t\tcolor: #7E7E7E;\n\t\tfont-size: 17px;\n\t\tpadding: 2px 0 2px 40px;\n\t\ttext-decoration: none;\n\t\t-webkit-transition: all 0.3s ease;\n\t\t-moz-transition: all 0.3s ease;\n\t\t-ms-transition: all 0.3s ease;\n\t\t-o-transition: all 0.3s ease;\n\t\ttransition: all 0.3s ease;\n\t}\n\t.button a:hover {\n\t\tbackground-position: 0 -135px;\n\t\tcolor: #00aeef;\n}\n</style>"],"sourceRoot":""}]);
 
 // exports
 
@@ -15333,7 +15356,407 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-6a7e6ec0", esExports)
+    require("vue-hot-reload-api")      .rerender("data-v-5b675133", esExports)
+  }
+}
+
+/***/ }),
+/* 24 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_jobs_vue__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_251f7448_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_jobs_vue__ = __webpack_require__(28);
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(25)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_jobs_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_251f7448_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_jobs_vue__["a" /* default */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src\\jobs.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-251f7448", Component.options)
+  } else {
+    hotAPI.reload("data-v-251f7448", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(26);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("294205be", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-251f7448\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./jobs.vue", function() {
+     var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-251f7448\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./jobs.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(true);
+// imports
+
+
+// module
+exports.push([module.i, "\n.media-carousel \r\n{\r\n  margin-bottom: 0;\r\n  padding: 0 40px 30px 40px;\r\n  margin-top: 30px;\n}\r\n/* Previous button  */\n.media-carousel .carousel-control.left \r\n{\r\n  left: -12px;\r\n  background-image: none;\r\n  background: none repeat scroll 0 0 #222222;\r\n  border: 4px solid #FFFFFF;\r\n  border-radius: 23px 23px 23px 23px;\r\n  height: 40px;\r\n  width : 40px;\r\n  margin-top: 30px\n}\r\n/* Next button  */\n.media-carousel .carousel-control.right \r\n{\r\n  right: -12px !important;\r\n  background-image: none;\r\n  background: none repeat scroll 0 0 #222222;\r\n  border: 4px solid #FFFFFF;\r\n  border-radius: 23px 23px 23px 23px;\r\n  height: 40px;\r\n  width : 40px;\r\n  margin-top: 30px\n}\r\n/* Changes the position of the indicators */\n.media-carousel .carousel-indicators \r\n{\r\n  right: 50%;\r\n  top: auto;\r\n  bottom: 0px;\r\n  margin-right: -19px;\n}\r\n/* Changes the colour of the indicators */\n.media-carousel .carousel-indicators li \r\n{\r\n  background: #c0c0c0;\n}\n.media-carousel .carousel-indicators .active \r\n{\r\n  background: #333333;\n}\n.media-carousel img\r\n{\r\n  width: 250px;\r\n  height: 100px\n}\r\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/src/jobs.vue?c04fe9ea"],"names":[],"mappings":";AACA;;EAEA,iBAAA;EACA,0BAAA;EACA,iBAAA;CACA;AACA,sBAAA;AACA;;EAEA,YAAA;EACA,uBAAA;EACA,2CAAA;EACA,0BAAA;EACA,mCAAA;EACA,aAAA;EACA,aAAA;EACA,gBAAA;CACA;AACA,kBAAA;AACA;;EAEA,wBAAA;EACA,uBAAA;EACA,2CAAA;EACA,0BAAA;EACA,mCAAA;EACA,aAAA;EACA,aAAA;EACA,gBAAA;CACA;AACA,4CAAA;AACA;;EAEA,WAAA;EACA,UAAA;EACA,YAAA;EACA,oBAAA;CACA;AACA,0CAAA;AACA;;EAEA,oBAAA;CACA;AACA;;EAEA,oBAAA;CACA;AACA;;EAEA,aAAA;EACA,aAAA;CACA","file":"jobs.vue","sourcesContent":["<style>\r\n.media-carousel \r\n{\r\n  margin-bottom: 0;\r\n  padding: 0 40px 30px 40px;\r\n  margin-top: 30px;\r\n}\r\n/* Previous button  */\r\n.media-carousel .carousel-control.left \r\n{\r\n  left: -12px;\r\n  background-image: none;\r\n  background: none repeat scroll 0 0 #222222;\r\n  border: 4px solid #FFFFFF;\r\n  border-radius: 23px 23px 23px 23px;\r\n  height: 40px;\r\n  width : 40px;\r\n  margin-top: 30px\r\n}\r\n/* Next button  */\r\n.media-carousel .carousel-control.right \r\n{\r\n  right: -12px !important;\r\n  background-image: none;\r\n  background: none repeat scroll 0 0 #222222;\r\n  border: 4px solid #FFFFFF;\r\n  border-radius: 23px 23px 23px 23px;\r\n  height: 40px;\r\n  width : 40px;\r\n  margin-top: 30px\r\n}\r\n/* Changes the position of the indicators */\r\n.media-carousel .carousel-indicators \r\n{\r\n  right: 50%;\r\n  top: auto;\r\n  bottom: 0px;\r\n  margin-right: -19px;\r\n}\r\n/* Changes the colour of the indicators */\r\n.media-carousel .carousel-indicators li \r\n{\r\n  background: #c0c0c0;\r\n}\r\n.media-carousel .carousel-indicators .active \r\n{\r\n  background: #333333;\r\n}\r\n.media-carousel img\r\n{\r\n  width: 250px;\r\n  height: 100px\r\n}\r\n</style>\r\n<template>\r\n\t<div class=\"container\">\r\n  <div class=\"row\">\r\n    <h2>Media Slider Carousel BS3</h2>\r\n  </div>\r\n  <div class='row'>\r\n    <div class='col-md-12'>\r\n      <div class=\"carousel slide media-carousel\" id=\"media\">\r\n        <div class=\"carousel-inner\">\r\n          <div class=\"item  active\">\r\n            <div class=\"row\">\r\n              <div class=\"col-md-4 job\">\r\n              \t<div id='job'>\r\n                <job-info\r\n\t                \tv-for=\"item in jobList\"\r\n\t      \t\t\t\tv-bind:job=\"item\"\r\n\t      \t\t\t\tv-bind:key=\"item.id\">\r\n\t      \t\t\t</job-info>\r\n      \t\t\t</div>\r\n              </div>          \r\n              <div class=\"col-md-4\">\r\n                <a class=\"thumbnail\" href=\"#\"><img alt=\"\" src=\"http://placehold.it/150x150\"></a>\r\n              </div>\r\n              <div class=\"col-md-4\">\r\n                <a class=\"thumbnail\" href=\"#\"><img alt=\"\" src=\"http://placehold.it/150x150\"></a>\r\n              </div>        \r\n            </div>\r\n          </div>\r\n          <div class=\"item\">\r\n            <div class=\"row\">\r\n              <div class=\"col-md-4\">\r\n                <a class=\"thumbnail\" href=\"#\"><img alt=\"\" src=\"http://placehold.it/150x150\"></a>\r\n              </div>          \r\n              <div class=\"col-md-4\">\r\n                <a class=\"thumbnail\" href=\"#\"><img alt=\"\" src=\"http://placehold.it/150x150\"></a>\r\n              </div>\r\n              <div class=\"col-md-4\">\r\n                <a class=\"thumbnail\" href=\"#\"><img alt=\"\" src=\"http://placehold.it/150x150\"></a>\r\n              </div>        \r\n            </div>\r\n          </div>\r\n          <div class=\"item\">\r\n            <div class=\"row\">\r\n              <div class=\"col-md-4\">\r\n                <a class=\"thumbnail\" href=\"#\"><img alt=\"\" src=\"http://placehold.it/150x150\"></a>\r\n              </div>          \r\n              <div class=\"col-md-4\">\r\n                <a class=\"thumbnail\" href=\"#\"><img alt=\"\" src=\"http://placehold.it/150x150\"></a>\r\n              </div>\r\n              <div class=\"col-md-4\">\r\n                <a class=\"thumbnail\" href=\"#\"><img alt=\"\" src=\"http://placehold.it/150x150\"></a>\r\n              </div>      \r\n            </div>\r\n          </div>\r\n        </div>\r\n        <a data-slide=\"prev\" href=\"#media\" class=\"left carousel-control\">&lArr;</a>\r\n        <a data-slide=\"next\" href=\"#media\" class=\"right carousel-control\">&rArr;</a>\r\n      </div>                          \r\n    </div>\r\n  </div>\r\n</div>\r\n</template>\r\n\r\n\r\n\r\n<script>\r\nexport default {\r\n  name: 'job'\r\n};\r\n</script>\r\n\r\n"],"sourceRoot":""}]);
+
+// exports
+
+
+/***/ }),
+/* 27 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  name: 'job'
+});
+
+
+/***/ }),
+/* 28 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c(
+          "div",
+          {
+            staticClass: "carousel slide media-carousel",
+            attrs: { id: "media" }
+          },
+          [
+            _c("div", { staticClass: "carousel-inner" }, [
+              _c("div", { staticClass: "item  active" }, [
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-4 job" }, [
+                    _c(
+                      "div",
+                      { attrs: { id: "job" } },
+                      _vm._l(_vm.jobList, function(item) {
+                        return _c("job-info", {
+                          key: item.id,
+                          attrs: { job: item }
+                        })
+                      })
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _vm._m(2)
+                ])
+              ]),
+              _vm._v(" "),
+              _vm._m(3),
+              _vm._v(" "),
+              _vm._m(4)
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "left carousel-control",
+                attrs: { "data-slide": "prev", href: "#media" }
+              },
+              [_vm._v("⇐")]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "right carousel-control",
+                attrs: { "data-slide": "next", href: "#media" }
+              },
+              [_vm._v("⇒")]
+            )
+          ]
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("h2", [_vm._v("Media Slider Carousel BS3")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4" }, [
+      _c("a", { staticClass: "thumbnail", attrs: { href: "#" } }, [
+        _c("img", { attrs: { alt: "", src: "http://placehold.it/150x150" } })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4" }, [
+      _c("a", { staticClass: "thumbnail", attrs: { href: "#" } }, [
+        _c("img", { attrs: { alt: "", src: "http://placehold.it/150x150" } })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "item" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-4" }, [
+          _c("a", { staticClass: "thumbnail", attrs: { href: "#" } }, [
+            _c("img", {
+              attrs: { alt: "", src: "http://placehold.it/150x150" }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4" }, [
+          _c("a", { staticClass: "thumbnail", attrs: { href: "#" } }, [
+            _c("img", {
+              attrs: { alt: "", src: "http://placehold.it/150x150" }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4" }, [
+          _c("a", { staticClass: "thumbnail", attrs: { href: "#" } }, [
+            _c("img", {
+              attrs: { alt: "", src: "http://placehold.it/150x150" }
+            })
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "item" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-4" }, [
+          _c("a", { staticClass: "thumbnail", attrs: { href: "#" } }, [
+            _c("img", {
+              attrs: { alt: "", src: "http://placehold.it/150x150" }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4" }, [
+          _c("a", { staticClass: "thumbnail", attrs: { href: "#" } }, [
+            _c("img", {
+              attrs: { alt: "", src: "http://placehold.it/150x150" }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4" }, [
+          _c("a", { staticClass: "thumbnail", attrs: { href: "#" } }, [
+            _c("img", {
+              attrs: { alt: "", src: "http://placehold.it/150x150" }
+            })
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-251f7448", esExports)
   }
 }
 

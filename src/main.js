@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 
 import Home from './Home';
 import Login from './Login';
+import Jobs from './jobs';
 
 Vue.use(VueRouter);
 
@@ -18,6 +19,11 @@ const routes = [
 	name: 'login',
 	component: Login,
 	path: '/login',
+},
+{
+	name: 'jobs',
+	component: Jobs,
+	path: '/jobs',
 }
 ];
 
@@ -35,3 +41,19 @@ new Vue({
   el: '#app',
   template: '<App/>'
 });
+
+new Vue({
+		component: 'job-info',
+	    props: ['job'],
+	    template: '<li>{{job.text}}</li>'
+	})
+
+	var job = new Vue({
+		el: '#job',
+		data: {
+			jobList: [
+				{id: 0, text: 'Blow Me' },
+				{id: 1, text: 'Bathe me' }
+			]
+		}
+	})
