@@ -1,4 +1,6 @@
 var express = require("express");
+var fs = require('fs');
+var layout = fs.readFileSync('./layout.html', 'utf8');
 
 var router = express.Router();
 
@@ -15,15 +17,7 @@ const myPlaintextPassword = 's0/\/\P4$$w0rD';
 const someOtherPlaintextPassword = 'not_bacon';
 
 // Create all our routes and set up logic within those routes where required.
-router.get("/", function(req, res) {
-  installer.all(function(data) {
-    var hbsObject = {
-      installers: data
-    };
-    console.log(hbsObject);
-    res.json(hbsObject);
-  });
-});
+
 
 
 // bcrypt.genSalt(saltRounds, function(err, salt) {
@@ -210,6 +204,14 @@ router.delete("/api/cats/:id", function(req, res) {
     }
   });
 });
+
+router.get("/", function(req, res) {
+    res.send(layout);
+  });
+
+router.get("/:path", function(req, res) {
+    res.send(layout);
+  });
 
 // Export routes for server.js to use.
 module.exports = router;
