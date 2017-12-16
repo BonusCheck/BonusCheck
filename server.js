@@ -15,7 +15,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(bodyParser.json()); -- Do we need this???
 
-app.use(session({ secret: 'this is a secret',resave: true, saveUninitialized:true}));
+app.use(session({ secret: 'WaddaDaDay3445',resave: true, saveUninitialized:false}));
  
 app.use(passport.initialize());
  
@@ -29,8 +29,8 @@ app.use("/", routes);
 app.listen(port);
 
 //Need to modify this to work in our environment
-var db = require("./models");
+// var db = require("./models");
 
-var authRoute = require('./routes/auth.js')(app,passport);
+// var authRoute = require('./routes/auth.js')(app,passport);
 
-require('./config/passport/passport.js')(passport, db.user);
+// require('./config/passport/passport.js')(passport, db.user);

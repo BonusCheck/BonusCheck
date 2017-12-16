@@ -12,7 +12,7 @@ var roles = {
   },
 
   some: function(cols, cb) {
-    orm.someThreeTableJoinByID("installer_roles", cols, function(res) {
+    orm.some("installer_roles", cols, function(res) {
       cb(res);
     });
   },

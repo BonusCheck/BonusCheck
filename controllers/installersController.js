@@ -15,6 +15,20 @@ const myPlaintextPassword = 's0/\/\P4$$w0rD';
 const someOtherPlaintextPassword = 'not_bacon';
 
 // Create all our routes and set up logic within those routes where required.
+
+router.get('/session', function(req, res, next) {
+  if (req.session.views) {
+    req.session.views++
+    res.setHeader('Content-Type', 'text/html')
+    res.write('<p>views: ' + req.session.views + '</p>')
+    res.write('<p>expires in: ' + (req.session.cookie.maxAge / 1000) + 's</p>')
+    res.end()
+  } else {
+    req.session.views = 1
+    res.end('welcome to the session demo. refresh!')
+  }
+})
+
 router.get("/", function(req, res) {
   installer.all(function(data) {
     var hbsObject = {
@@ -25,7 +39,6 @@ router.get("/", function(req, res) {
   });
 });
 
-
 // bcrypt.genSalt(saltRounds, function(err, salt) {
 //     bcrypt.hash(myPlaintextPassword, salt, function(err, hash) {
 //         // Store hash in your password DB.
@@ -33,18 +46,6 @@ router.get("/", function(req, res) {
 // });
 
 // passport and passport local
-
-// router.post("/add/installer", function(req, res) {
-//   console.log(req);
-//   installer.create([
-//     "created_by_id", "modified_by_id", "first_name", "last_name", "current_wage", "fk_installer_role_id"
-//   ], [
-//     req.body.created_by_id, req.body.modified_by_id, req.body.first_name, req.body.last_name, req.body.current_wage, req.body.installer_role_id
-//   ], function(result) {
-//     // Send back the ID of the new quote
-//     res.json({ id: result.insertId });
-//   });
-// });
 
 router.post("/auth", function(req, res) {
   user.auth(req.body.user_name, req.body.password, function(data) {
@@ -57,6 +58,7 @@ router.post("/auth", function(req, res) {
 });
 
 router.post("/add/user", function(req, res) {
+  //Need to add role name and then query the id before the create
   user.create([
     "user_name", "password"
   ], [
@@ -73,9 +75,14 @@ router.post("/add/user", function(req, res) {
 router.get("/installer/roles", function(req, res) {
   roles.some("installer_role_name", function(data) {
     var hbsObject = {
-      installers: data
+      role: data
     };
-    res.json(hbsObject);
+    var roles = [];
+    for (var i = hbsObject.role.length - 1; i >= 0; i--) {
+      roles.push(hbsObject.role[i].installer_role_name);
+    }
+    console.log(roles);
+    res.json(roles);
   });
 });
 
@@ -148,7 +155,6 @@ router.get("/jobs-installers-joined", function(req, res) {
     res.json(hbsObject);
   });
 });
-
 
 router.post("/add/installer", function(req, res) {
   console.log(req);
