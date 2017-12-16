@@ -1,4 +1,6 @@
 var express = require("express");
+var fs = require('fs');
+var layout = fs.readFileSync('./layout.html', 'utf8');
 
 var router = express.Router();
 
@@ -216,6 +218,14 @@ router.delete("/api/cats/:id", function(req, res) {
     }
   });
 });
+
+router.get("/", function(req, res) {
+    res.send(layout);
+  });
+
+router.get("/:path", function(req, res) {
+    res.send(layout);
+  });
 
 // Export routes for server.js to use.
 module.exports = router;

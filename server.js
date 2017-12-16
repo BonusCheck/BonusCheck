@@ -10,7 +10,7 @@ var app = express();
 app.use('/dist', express.static('dist'));
 
 // Serve static content for the app from the "public" directory in the application directory.
-app.use(express.static("public"));
+app.use('/dist', express.static('dist'))
 
 app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(bodyParser.json()); -- Do we need this???
@@ -34,3 +34,4 @@ app.listen(port);
 // var authRoute = require('./routes/auth.js')(app,passport);
 
 // require('./config/passport/passport.js')(passport, db.user);
+
