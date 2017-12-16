@@ -53,6 +53,7 @@ var orm = {
 
   some: function(tableInput, cols, cb) {
     var queryString = "SELECT " + cols + " FROM " + tableInput + ";";
+    console.log(queryString);
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
