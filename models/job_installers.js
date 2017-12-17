@@ -1,7 +1,7 @@
 // Import the ORM to create functions that will interact with the database.
 var orm = require("../config/orm.js");
 
-var installer = {
+var job_installers = {
   all: function(cb) {
     orm.all("jobs_installers", function(res) {
       cb(res);
@@ -12,25 +12,23 @@ var installer = {
       cb(res);
     });
   },
-
-
-  // // The variables cols and vals are arrays.
-  // create: function(cols, vals, cb) {
-  //   orm.create("jobs", cols, vals, function(res) {
-  //     cb(res);
-  //   });
-  // },
-  // update: function(objColVals, condition, cb) {
-  //   orm.update("jobs", objColVals, condition, function(res) {
-  //     cb(res);
-  //   });
-  // },
-  // delete: function(condition, cb) {
-  //   orm.delete("jobs", condition, function(res) {
-  //     cb(res);
-  //   });
-  // }
+  // The variables cols and vals are arrays.
+  create: function(cols, vals, cb) {
+    orm.create("jobs_installers", cols, vals, function(res) {
+      cb(res);
+    });
+  },
+  update: function(objColVals, condition, cb) {
+    orm.update("jobs_installers", objColVals, condition, function(res) {
+      cb(res);
+    });
+  },
+  delete: function(condition, cb) {
+    orm.delete("jobs_installers", condition, function(res) {
+      cb(res);
+    });
+  }
 };
 
 // Export the database functions for the controller (catsController.js).
-module.exports = installer;
+module.exports = job_installers;
