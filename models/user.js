@@ -11,16 +11,14 @@ var user = {
       cb(res);
     });
   },
-  auth: function(user, password, cb) {
-    orm.auth("users", user, password, function(res) {
-      if (bcrypt.compareSync(password, hash)) {
+  auth: function(user, cb) {
+    orm.auth("users", user, "user_name, password", function(res) {
         cb(res);
-      }
     });
   },
   some: function(username, cb) {
     var user = "users.user_name = '" + username + "'";
-    orm.someTwoTableJoinTwoConditions("users", "user_roles", "users.user_name, user_roles.user_role_name", user, "users.fk_user_role_id = user_roles.user_role_id", function(res) {
+    orm.someTwoTableJoinTwoConditions("users", "user_roles", "users.user_name, user_roles.user_role_name", "users.fk_user_role_id = user_roles.user_role_id", user, function(res) {
       cb(res);
     });
   },

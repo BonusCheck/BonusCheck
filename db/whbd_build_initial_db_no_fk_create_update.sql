@@ -32,7 +32,7 @@ PRIMARY KEY (change_orders_id),
 CREATE TABLE users(
 user_id MEDIUMINT NOT NULL AUTO_INCREMENT,
 user_name CHAR(75) NOT NULL,
-password CHAR(20) NOT NULL,
+password CHAR(75) NOT NULL,
 token CHAR(20),
 fk_user_role_id MEDIUMINT,
 PRIMARY KEY (user_id),
