@@ -95,6 +95,27 @@ var orm = {
       cb(result);
     });
   },
+  someTwoTableJoinTwoConditions: function(table1, table2, tableCols, condition1, condition2, cb) {
+    var queryString = "SELECT " + tableCols;
+
+    queryString += " FROM ";
+    queryString += table1;
+    queryString += " LEFT JOIN ";
+    queryString += table2;
+    queryString += " ON ";
+    queryString += condition1;
+    queryString += " AND ";
+    queryString += condition2;
+
+    console.log(queryString);
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+
+      cb(result);
+    });
+  },
   someThreeTableJoin: function(table1, table2, table3, tableCols, condition1, condition2, cb) {
     var queryString = "SELECT " + tableCols;
 

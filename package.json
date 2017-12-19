@@ -11,7 +11,7 @@
     "express-session": "^1.15.6",
     "mysql": "^2.15.0",
     "passport": "^0.4.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
     "express-layout": "^0.1.0",
     "mysql": "^2.15.0",
     "vue": "^2.5.10",
