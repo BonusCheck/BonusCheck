@@ -11,11 +11,8 @@ const express = require("express"),
       installer_hrs = require("../models/installer_hours.js"),
       installer_pmt = require("../models/installer_payments.js"),
       payment_type = require("../models/payment_types.js"),
-      job_installers = require("../models/job_installers.js"),
-      bcrypt = require('bcrypt'),
-      saltRounds = 10,
-      myPlaintextPassword = 's0/\/\P4$$w0rD',
-      someOtherPlaintextPassword = 'not_bacon';
+      job_installers = require("../models/job_installers.js");
+
 
 
 // bcrypt.genSalt(saltRounds, function(err, salt) {
@@ -67,6 +64,17 @@ router.get("/bonuses", function(req, res) {
   bonus.all(function(data) {
     var hbsObject = {
       bonuses: data
+    };
+    console.log(hbsObject);
+    res.json(hbsObject);
+  });
+});
+
+//USER AND ROLE GET ROUTE
+router.get("/user/:username", function(req, res) {
+  user.some(req.params.username, function(data) {
+    var hbsObject = {
+      user: data
     };
     console.log(hbsObject);
     res.json(hbsObject);

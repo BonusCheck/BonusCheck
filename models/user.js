@@ -1,4 +1,9 @@
-var orm = require("../config/orm.js");
+const orm = require("../config/orm.js"),
+      bcrypt = require('bcrypt'),
+      salt = bcrypt.genSaltSync(10),
+      hash = bcrypt.hashSync("sCr@mb13m3", salt);
+
+
 
 var user = {
   all: function(cb) {
@@ -8,6 +13,14 @@ var user = {
   },
   auth: function(user, password, cb) {
     orm.auth("users", user, password, function(res) {
+      if (bcrypt.compareSync(password, hash)) {
+        cb(res);
+      }
+    });
+  },
+  some: function(username, cb) {
+    var user = "users.user_name = '" + username + "'";
+    orm.someTwoTableJoinTwoConditions("users", "user_roles", "users.user_name, user_roles.user_role_name", user, "users.fk_user_role_id = user_roles.user_role_id", function(res) {
       cb(res);
     });
   },
