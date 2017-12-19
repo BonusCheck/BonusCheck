@@ -62,15 +62,12 @@ var orm = {
     });
   },
 
-  auth: function(tableInput, user, password, cb) {
-    var queryString = "SELECT user_name FROM " + tableInput;
+  auth: function(tableInput, user, tableCols, cb) {
+    var queryString = "SELECT " + tableCols + " FROM " + tableInput;
 
     queryString += " WHERE ";
     queryString += "user_name = '";
     queryString += user;
-    queryString += "' AND ";
-    queryString += "password = '";
-    queryString += password;
     queryString += "'";
 
     console.log(queryString);
@@ -79,6 +76,8 @@ var orm = {
       if (err) {
         throw err;
       }
+      console.log("Result");
+      console.log(result);
       cb(result);
     });
   },
@@ -104,7 +103,7 @@ var orm = {
     queryString += table2;
     queryString += " ON ";
     queryString += condition1;
-    queryString += " AND ";
+    queryString += " WHERE ";
     queryString += condition2;
 
     console.log(queryString);

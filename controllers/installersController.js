@@ -11,7 +11,11 @@ const express = require("express"),
       installer_hrs = require("../models/installer_hours.js"),
       installer_pmt = require("../models/installer_payments.js"),
       payment_type = require("../models/payment_types.js"),
-      job_installers = require("../models/job_installers.js");
+      job_installers = require("../models/job_installers.js"),
+      bcrypt = require('bcrypt'),
+      saltRounds = 10;
+      // salt = bcrypt.genSaltSync(10),
+      // hash = bcrypt.hashSync("sCr@mb13m3", salt);
 
 
 
@@ -25,23 +29,45 @@ const express = require("express"),
 
 //AUTHENTICATION ROUTE - POST AND GET
 router.post("/auth", function(req, res) {
-  user.auth(req.body.user_name, req.body.password, function(data) {
-    var hbsObject = {
-      installers: data
-    };
-    console.log(hbsObject);
-    res.json(hbsObject);
+  user.auth(req.body.user_name, function(data) {
+    const password = data[0].password,
+          username = data[0].user_name;
+    // console.log("Data");
+    // console.log(data[0].password);
+    if (bcrypt.compareSync(req.body.password, password)) {
+      // console.log("Username");
+      // console.log(username);
+      user.some(username, function(data) {
+        var hbsObject = {
+          user: data
+        };
+        var sessData = req.session;
+        //Not sure if below will work yet until we have a user logon.
+        sessData.user_name = data[0].user_name;
+        sessData.user_role_name = data[0].user_role_name;
+        console.log(hbsObject);
+        // res.json(hbsObject);
+        res.redirect("/session");
+      });
+    }
   });
 });
+
+  
 
 //GET ROUTES
 //SESSION GET ROUTE
 router.get('/session', function(req, res, next) {
   if (req.session.views) {
+    //Username and password are giving me nothign at this point on the session
     req.session.views++
     res.setHeader('Content-Type', 'text/html')
+    res.write('<p>Username: ' + req.session.user_name + '</p>');
+    res.write('<p>Role: ' + req.session.user_role_name  + '</p>');
     res.write('<p>views: ' + req.session.views + '</p>')
     res.write('<p>expires in: ' + (req.session.cookie.maxAge / 1000) + 's</p>')
+    res.write(req.session.user_name);
+    res.write(req.session.user_role_name);
     res.end()
   } else {
     req.session.views = 1
@@ -70,7 +96,7 @@ router.get("/bonuses", function(req, res) {
   });
 });
 
-//USER AND ROLE GET ROUTE
+//USER AND ROLE GET ROUTE - REMOVE LATER
 router.get("/user/:username", function(req, res) {
   user.some(req.params.username, function(data) {
     var hbsObject = {
@@ -227,19 +253,24 @@ router.get("/payment-types", function(req, res) {
 
 //POST ROUTES
 router.post("/add/user", function(req, res) {
-  //Need to add role name and then query the id before the create
-  user.create([
-    "user_name", "password"
-  ], [
-    req.body.user_name, req.body.password
-  ],function(data) {
-    var hbsObject = {
-      installers: data
-    };
-    console.log(hbsObject);
-    res.json(hbsObject);
+ bcrypt.genSalt(saltRounds, function(err, salt) {
+  bcrypt.hash(req.body.password, salt, function(err, hash) {
+    console.log(hash);
+    user.create([
+        "user_name", "password"
+      ], [
+        req.body.user_name, hash
+      ],function(data) {
+        var hbsObject = {
+          user: data
+        };
+        console.log(hbsObject);
+        res.json(hbsObject);
+      });
+    });
   });
 });
+ 
 
 router.post("/add/installer", function(req, res) {
   console.log(req);
