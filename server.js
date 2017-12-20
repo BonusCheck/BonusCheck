@@ -1,14 +1,12 @@
-var express = require("express");
-var bodyParser = require("body-parser");
-var passport = require('passport');
-var session = require('express-session');
-
-var port = process.env.PORT || 8080;
-
-var app = express();
+const 	express = require("express"),
+		bodyParser = require("body-parser"),
+		passport = require('passport'),
+		session = require('express-session'),
+		port = process.env.PORT || 8080,
+		app = express();
 
 // Serve static content for the app from the "public" directory in the application directory.
-app.use('/dist', express.static('dist'))
+app.use('/dist', express.static('dist'));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(bodyParser.json()); -- Do we need this???
@@ -20,16 +18,19 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Import routes and give the server access to them.
+
+// const 	installersRoutes = require("./controllers/installersController.js"),
+// 		jobsRoutes = require("./controllers/jobsController.js"),
+// 		usersRoutes = require("./controllers/usersController.js"),
+// 		generalRoutes = require("./controllers/generalController.js");
+
+// app.use("/", generalRoutes);
+// app.use("/installers", installersRoutes);
+// app.use("/users",usersRoutes);
+// app.use("/jobs", jobsRoutes);
+		
 var routes = require("./controllers/installersController.js");
 
 app.use("/", routes);
 
 app.listen(port);
-
-//Need to modify this to work in our environment
-// var db = require("./models");
-
-// var authRoute = require('./routes/auth.js')(app,passport);
-
-// require('./config/passport/passport.js')(passport, db.user);
-

@@ -18,7 +18,7 @@ var user = {
   },
   some: function(username, cb) {
     var user = "users.user_name = '" + username + "'";
-    orm.someTwoTableJoinTwoConditions("users", "user_roles", "users.user_name, user_roles.user_role_name", "users.fk_user_role_id = user_roles.user_role_id", user, function(res) {
+    orm.someTwoTableJoinTwoConditions("users", "user_roles", "users.user_id, users.user_name, user_roles.user_role_name", "users.fk_user_role_id = user_roles.user_role_id", user, function(res) {
       cb(res);
     });
   },
