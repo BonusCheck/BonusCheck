@@ -1,6 +1,5 @@
 const express = require("express"),
       router = express.Router(),
-      // layout = fs.readFileSync('./layout.html', 'utf8'),
       fs = require('fs'),
       installer = require("../models/installer.js"),
       job = require("../models/job.js"),
@@ -14,18 +13,6 @@ const express = require("express"),
       job_installers = require("../models/job_installers.js"),
       bcrypt = require('bcrypt'),
       saltRounds = 10;
-      // salt = bcrypt.genSaltSync(10),
-      // hash = bcrypt.hashSync("sCr@mb13m3", salt);
-
-
-
-// bcrypt.genSalt(saltRounds, function(err, salt) {
-//     bcrypt.hash(myPlaintextPassword, salt, function(err, hash) {
-//         // Store hash in your password DB.
-//     });
-// });
-
-// passport and passport local
 
 //AUTHENTICATION ROUTE - POST AND GET
 router.post("/auth", function(req, res) {
@@ -43,15 +30,21 @@ router.post("/auth", function(req, res) {
         };
         var sessData = req.session;
         //Not sure if below will work yet until we have a user logon.
+        sessData.user_id = data[0].user_id;
         sessData.user_name = data[0].user_name;
         sessData.user_role_name = data[0].user_role_name;
         console.log(hbsObject);
         // res.json(hbsObject);
-        res.redirect("/session");
+        res.redirect("/");
       });
     }
   });
 });
+
+// router.get('/bar', function(req, res, next) {
+//   var someAttribute = req.session.user_name;
+//   res.send(`This will print the attribute I set earlier: ${someAttribute}`);
+// });
 
   
 

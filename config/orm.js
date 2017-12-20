@@ -63,8 +63,10 @@ var orm = {
   },
 
   auth: function(tableInput, user, tableCols, cb) {
-    var queryString = "SELECT " + tableCols + " FROM " + tableInput;
+    var queryString = "SELECT " + tableCols;
 
+    queryString += " FROM ";
+    queryString += tableInput;
     queryString += " WHERE ";
     queryString += "user_name = '";
     queryString += user;
