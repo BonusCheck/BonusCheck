@@ -210,7 +210,7 @@ ALTER TABLE jobs AUTO_INCREMENT=50001;
 ALTER TABLE bonuses AUTO_INCREMENT=501;
 ALTER TABLE jobs_installers AUTO_INCREMENT=1000001;
 
-INSERT INTO users(user_name, password, fk_user_role_id) VALUES("Admin", "1234", "1");
+INSERT INTO users(user_name, password, fk_user_role_id) VALUES("Admin", "$2a$10$sacDeNTqL93iXs1knsBQle5biSw71k5evbPr17TeId6586W.GeVB2", "1");
 
 INSERT INTO payment_types(created_by_id, modified_by_id, payment_type) VALUES(1, 1, "team_bonus_1"),(1, 1, "team_bonus_2"),(1, 1, "team_bonus_3"),(1, 1, "team_bonus_4"),(1, 1, "Indvidual_bonus_1"),(1, 1, "Indvidual_bonus_2"),(1, 1, "Indvidual_bonus_3"),(1, 1, "Indvidual_bonus_4"),(1, 1, "base_wage");
 
