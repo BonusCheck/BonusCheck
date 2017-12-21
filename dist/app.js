@@ -60,11 +60,321 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 12);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var bind = __webpack_require__(7);
+var isBuffer = __webpack_require__(38);
+
+/*global toString:true*/
+
+// utils is a library of generic helper functions non-specific to axios
+
+var toString = Object.prototype.toString;
+
+/**
+ * Determine if a value is an Array
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an Array, otherwise false
+ */
+function isArray(val) {
+  return toString.call(val) === '[object Array]';
+}
+
+/**
+ * Determine if a value is an ArrayBuffer
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an ArrayBuffer, otherwise false
+ */
+function isArrayBuffer(val) {
+  return toString.call(val) === '[object ArrayBuffer]';
+}
+
+/**
+ * Determine if a value is a FormData
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an FormData, otherwise false
+ */
+function isFormData(val) {
+  return (typeof FormData !== 'undefined') && (val instanceof FormData);
+}
+
+/**
+ * Determine if a value is a view on an ArrayBuffer
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a view on an ArrayBuffer, otherwise false
+ */
+function isArrayBufferView(val) {
+  var result;
+  if ((typeof ArrayBuffer !== 'undefined') && (ArrayBuffer.isView)) {
+    result = ArrayBuffer.isView(val);
+  } else {
+    result = (val) && (val.buffer) && (val.buffer instanceof ArrayBuffer);
+  }
+  return result;
+}
+
+/**
+ * Determine if a value is a String
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a String, otherwise false
+ */
+function isString(val) {
+  return typeof val === 'string';
+}
+
+/**
+ * Determine if a value is a Number
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Number, otherwise false
+ */
+function isNumber(val) {
+  return typeof val === 'number';
+}
+
+/**
+ * Determine if a value is undefined
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if the value is undefined, otherwise false
+ */
+function isUndefined(val) {
+  return typeof val === 'undefined';
+}
+
+/**
+ * Determine if a value is an Object
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an Object, otherwise false
+ */
+function isObject(val) {
+  return val !== null && typeof val === 'object';
+}
+
+/**
+ * Determine if a value is a Date
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Date, otherwise false
+ */
+function isDate(val) {
+  return toString.call(val) === '[object Date]';
+}
+
+/**
+ * Determine if a value is a File
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a File, otherwise false
+ */
+function isFile(val) {
+  return toString.call(val) === '[object File]';
+}
+
+/**
+ * Determine if a value is a Blob
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Blob, otherwise false
+ */
+function isBlob(val) {
+  return toString.call(val) === '[object Blob]';
+}
+
+/**
+ * Determine if a value is a Function
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Function, otherwise false
+ */
+function isFunction(val) {
+  return toString.call(val) === '[object Function]';
+}
+
+/**
+ * Determine if a value is a Stream
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Stream, otherwise false
+ */
+function isStream(val) {
+  return isObject(val) && isFunction(val.pipe);
+}
+
+/**
+ * Determine if a value is a URLSearchParams object
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a URLSearchParams object, otherwise false
+ */
+function isURLSearchParams(val) {
+  return typeof URLSearchParams !== 'undefined' && val instanceof URLSearchParams;
+}
+
+/**
+ * Trim excess whitespace off the beginning and end of a string
+ *
+ * @param {String} str The String to trim
+ * @returns {String} The String freed of excess whitespace
+ */
+function trim(str) {
+  return str.replace(/^\s*/, '').replace(/\s*$/, '');
+}
+
+/**
+ * Determine if we're running in a standard browser environment
+ *
+ * This allows axios to run in a web worker, and react-native.
+ * Both environments support XMLHttpRequest, but not fully standard globals.
+ *
+ * web workers:
+ *  typeof window -> undefined
+ *  typeof document -> undefined
+ *
+ * react-native:
+ *  navigator.product -> 'ReactNative'
+ */
+function isStandardBrowserEnv() {
+  if (typeof navigator !== 'undefined' && navigator.product === 'ReactNative') {
+    return false;
+  }
+  return (
+    typeof window !== 'undefined' &&
+    typeof document !== 'undefined'
+  );
+}
+
+/**
+ * Iterate over an Array or an Object invoking a function for each item.
+ *
+ * If `obj` is an Array callback will be called passing
+ * the value, index, and complete array for each item.
+ *
+ * If 'obj' is an Object callback will be called passing
+ * the value, key, and complete object for each property.
+ *
+ * @param {Object|Array} obj The object to iterate
+ * @param {Function} fn The callback to invoke for each item
+ */
+function forEach(obj, fn) {
+  // Don't bother if no value provided
+  if (obj === null || typeof obj === 'undefined') {
+    return;
+  }
+
+  // Force an array if not already something iterable
+  if (typeof obj !== 'object') {
+    /*eslint no-param-reassign:0*/
+    obj = [obj];
+  }
+
+  if (isArray(obj)) {
+    // Iterate over array values
+    for (var i = 0, l = obj.length; i < l; i++) {
+      fn.call(null, obj[i], i, obj);
+    }
+  } else {
+    // Iterate over object keys
+    for (var key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        fn.call(null, obj[key], key, obj);
+      }
+    }
+  }
+}
+
+/**
+ * Accepts varargs expecting each argument to be an object, then
+ * immutably merges the properties of each object and returns result.
+ *
+ * When multiple objects contain the same key the later object in
+ * the arguments list will take precedence.
+ *
+ * Example:
+ *
+ * ```js
+ * var result = merge({foo: 123}, {foo: 456});
+ * console.log(result.foo); // outputs 456
+ * ```
+ *
+ * @param {Object} obj1 Object to merge
+ * @returns {Object} Result of all merge properties
+ */
+function merge(/* obj1, obj2, obj3, ... */) {
+  var result = {};
+  function assignValue(val, key) {
+    if (typeof result[key] === 'object' && typeof val === 'object') {
+      result[key] = merge(result[key], val);
+    } else {
+      result[key] = val;
+    }
+  }
+
+  for (var i = 0, l = arguments.length; i < l; i++) {
+    forEach(arguments[i], assignValue);
+  }
+  return result;
+}
+
+/**
+ * Extends object a by mutably adding to it the properties of object b.
+ *
+ * @param {Object} a The object to be extended
+ * @param {Object} b The object to copy properties from
+ * @param {Object} thisArg The object to bind function to
+ * @return {Object} The resulting value of object a
+ */
+function extend(a, b, thisArg) {
+  forEach(b, function assignValue(val, key) {
+    if (thisArg && typeof val === 'function') {
+      a[key] = bind(val, thisArg);
+    } else {
+      a[key] = val;
+    }
+  });
+  return a;
+}
+
+module.exports = {
+  isArray: isArray,
+  isArrayBuffer: isArrayBuffer,
+  isBuffer: isBuffer,
+  isFormData: isFormData,
+  isArrayBufferView: isArrayBufferView,
+  isString: isString,
+  isNumber: isNumber,
+  isObject: isObject,
+  isUndefined: isUndefined,
+  isDate: isDate,
+  isFile: isFile,
+  isBlob: isBlob,
+  isFunction: isFunction,
+  isStream: isStream,
+  isURLSearchParams: isURLSearchParams,
+  isStandardBrowserEnv: isStandardBrowserEnv,
+  forEach: forEach,
+  merge: merge,
+  extend: extend,
+  trim: trim
+};
+
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -173,7 +483,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 1 */
+/* 2 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -363,7 +673,107 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 2 */
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+var utils = __webpack_require__(0);
+var normalizeHeaderName = __webpack_require__(40);
+
+var DEFAULT_CONTENT_TYPE = {
+  'Content-Type': 'application/x-www-form-urlencoded'
+};
+
+function setContentTypeIfUnset(headers, value) {
+  if (!utils.isUndefined(headers) && utils.isUndefined(headers['Content-Type'])) {
+    headers['Content-Type'] = value;
+  }
+}
+
+function getDefaultAdapter() {
+  var adapter;
+  if (typeof XMLHttpRequest !== 'undefined') {
+    // For browsers use XHR adapter
+    adapter = __webpack_require__(8);
+  } else if (typeof process !== 'undefined') {
+    // For node use HTTP adapter
+    adapter = __webpack_require__(8);
+  }
+  return adapter;
+}
+
+var defaults = {
+  adapter: getDefaultAdapter(),
+
+  transformRequest: [function transformRequest(data, headers) {
+    normalizeHeaderName(headers, 'Content-Type');
+    if (utils.isFormData(data) ||
+      utils.isArrayBuffer(data) ||
+      utils.isBuffer(data) ||
+      utils.isStream(data) ||
+      utils.isFile(data) ||
+      utils.isBlob(data)
+    ) {
+      return data;
+    }
+    if (utils.isArrayBufferView(data)) {
+      return data.buffer;
+    }
+    if (utils.isURLSearchParams(data)) {
+      setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');
+      return data.toString();
+    }
+    if (utils.isObject(data)) {
+      setContentTypeIfUnset(headers, 'application/json;charset=utf-8');
+      return JSON.stringify(data);
+    }
+    return data;
+  }],
+
+  transformResponse: [function transformResponse(data) {
+    /*eslint no-param-reassign:0*/
+    if (typeof data === 'string') {
+      try {
+        data = JSON.parse(data);
+      } catch (e) { /* Ignore */ }
+    }
+    return data;
+  }],
+
+  timeout: 0,
+
+  xsrfCookieName: 'XSRF-TOKEN',
+  xsrfHeaderName: 'X-XSRF-TOKEN',
+
+  maxContentLength: -1,
+
+  validateStatus: function validateStatus(status) {
+    return status >= 200 && status < 300;
+  }
+};
+
+defaults.headers = {
+  common: {
+    'Accept': 'application/json, text/plain, */*'
+  }
+};
+
+utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
+  defaults.headers[method] = {};
+});
+
+utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
+  defaults.headers[method] = utils.merge(DEFAULT_CONTENT_TYPE);
+});
+
+module.exports = defaults;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports) {
 
 var g;
@@ -390,7 +800,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 3 */
+/* 5 */
 /***/ (function(module, exports) {
 
 /*
@@ -472,7 +882,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 4 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -491,7 +901,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(16)
+var listToStyles = __webpack_require__(23)
 
 /*
 type StyleObject = {
@@ -693,16 +1103,287 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
-/* 5 */
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function bind(fn, thisArg) {
+  return function wrap() {
+    var args = new Array(arguments.length);
+    for (var i = 0; i < args.length; i++) {
+      args[i] = arguments[i];
+    }
+    return fn.apply(thisArg, args);
+  };
+};
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+var utils = __webpack_require__(0);
+var settle = __webpack_require__(41);
+var buildURL = __webpack_require__(43);
+var parseHeaders = __webpack_require__(44);
+var isURLSameOrigin = __webpack_require__(45);
+var createError = __webpack_require__(9);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(46);
+
+module.exports = function xhrAdapter(config) {
+  return new Promise(function dispatchXhrRequest(resolve, reject) {
+    var requestData = config.data;
+    var requestHeaders = config.headers;
+
+    if (utils.isFormData(requestData)) {
+      delete requestHeaders['Content-Type']; // Let the browser set it
+    }
+
+    var request = new XMLHttpRequest();
+    var loadEvent = 'onreadystatechange';
+    var xDomain = false;
+
+    // For IE 8/9 CORS support
+    // Only supports POST and GET calls and doesn't returns the response headers.
+    // DON'T do this for testing b/c XMLHttpRequest is mocked, not XDomainRequest.
+    if (process.env.NODE_ENV !== 'test' &&
+        typeof window !== 'undefined' &&
+        window.XDomainRequest && !('withCredentials' in request) &&
+        !isURLSameOrigin(config.url)) {
+      request = new window.XDomainRequest();
+      loadEvent = 'onload';
+      xDomain = true;
+      request.onprogress = function handleProgress() {};
+      request.ontimeout = function handleTimeout() {};
+    }
+
+    // HTTP basic authentication
+    if (config.auth) {
+      var username = config.auth.username || '';
+      var password = config.auth.password || '';
+      requestHeaders.Authorization = 'Basic ' + btoa(username + ':' + password);
+    }
+
+    request.open(config.method.toUpperCase(), buildURL(config.url, config.params, config.paramsSerializer), true);
+
+    // Set the request timeout in MS
+    request.timeout = config.timeout;
+
+    // Listen for ready state
+    request[loadEvent] = function handleLoad() {
+      if (!request || (request.readyState !== 4 && !xDomain)) {
+        return;
+      }
+
+      // The request errored out and we didn't get a response, this will be
+      // handled by onerror instead
+      // With one exception: request that using file: protocol, most browsers
+      // will return status as 0 even though it's a successful request
+      if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf('file:') === 0)) {
+        return;
+      }
+
+      // Prepare the response
+      var responseHeaders = 'getAllResponseHeaders' in request ? parseHeaders(request.getAllResponseHeaders()) : null;
+      var responseData = !config.responseType || config.responseType === 'text' ? request.responseText : request.response;
+      var response = {
+        data: responseData,
+        // IE sends 1223 instead of 204 (https://github.com/axios/axios/issues/201)
+        status: request.status === 1223 ? 204 : request.status,
+        statusText: request.status === 1223 ? 'No Content' : request.statusText,
+        headers: responseHeaders,
+        config: config,
+        request: request
+      };
+
+      settle(resolve, reject, response);
+
+      // Clean up request
+      request = null;
+    };
+
+    // Handle low level network errors
+    request.onerror = function handleError() {
+      // Real errors are hidden from us by the browser
+      // onerror should only fire if it's a network error
+      reject(createError('Network Error', config, null, request));
+
+      // Clean up request
+      request = null;
+    };
+
+    // Handle timeout
+    request.ontimeout = function handleTimeout() {
+      reject(createError('timeout of ' + config.timeout + 'ms exceeded', config, 'ECONNABORTED',
+        request));
+
+      // Clean up request
+      request = null;
+    };
+
+    // Add xsrf header
+    // This is only done if running in a standard browser environment.
+    // Specifically not if we're in a web worker, or react-native.
+    if (utils.isStandardBrowserEnv()) {
+      var cookies = __webpack_require__(47);
+
+      // Add xsrf header
+      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
+          cookies.read(config.xsrfCookieName) :
+          undefined;
+
+      if (xsrfValue) {
+        requestHeaders[config.xsrfHeaderName] = xsrfValue;
+      }
+    }
+
+    // Add headers to the request
+    if ('setRequestHeader' in request) {
+      utils.forEach(requestHeaders, function setRequestHeader(val, key) {
+        if (typeof requestData === 'undefined' && key.toLowerCase() === 'content-type') {
+          // Remove Content-Type if data is undefined
+          delete requestHeaders[key];
+        } else {
+          // Otherwise add header to the request
+          request.setRequestHeader(key, val);
+        }
+      });
+    }
+
+    // Add withCredentials to request if needed
+    if (config.withCredentials) {
+      request.withCredentials = true;
+    }
+
+    // Add responseType to request if needed
+    if (config.responseType) {
+      try {
+        request.responseType = config.responseType;
+      } catch (e) {
+        // Expected DOMException thrown by browsers not compatible XMLHttpRequest Level 2.
+        // But, this can be suppressed for 'json' type as it can be parsed by default 'transformResponse' function.
+        if (config.responseType !== 'json') {
+          throw e;
+        }
+      }
+    }
+
+    // Handle progress if needed
+    if (typeof config.onDownloadProgress === 'function') {
+      request.addEventListener('progress', config.onDownloadProgress);
+    }
+
+    // Not all browsers support upload events
+    if (typeof config.onUploadProgress === 'function' && request.upload) {
+      request.upload.addEventListener('progress', config.onUploadProgress);
+    }
+
+    if (config.cancelToken) {
+      // Handle cancellation
+      config.cancelToken.promise.then(function onCanceled(cancel) {
+        if (!request) {
+          return;
+        }
+
+        request.abort();
+        reject(cancel);
+        // Clean up request
+        request = null;
+      });
+    }
+
+    if (requestData === undefined) {
+      requestData = null;
+    }
+
+    // Send the request
+    request.send(requestData);
+  });
+};
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var enhanceError = __webpack_require__(42);
+
+/**
+ * Create an Error with the specified message, config, error code, request and response.
+ *
+ * @param {string} message The error message.
+ * @param {Object} config The config.
+ * @param {string} [code] The error code (for example, 'ECONNABORTED').
+ * @param {Object} [request] The request.
+ * @param {Object} [response] The response.
+ * @returns {Error} The created error.
+ */
+module.exports = function createError(message, config, code, request, response) {
+  var error = new Error(message);
+  return enhanceError(error, config, code, request, response);
+};
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function isCancel(value) {
+  return !!(value && value.__CANCEL__);
+};
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * A `Cancel` is an object that is thrown when an operation is canceled.
+ *
+ * @class
+ * @param {string=} message The message.
+ */
+function Cancel(message) {
+  this.message = message;
+}
+
+Cancel.prototype.toString = function toString() {
+  return 'Cancel' + (this.message ? ': ' + this.message : '');
+};
+
+Cancel.prototype.__CANCEL__ = true;
+
+module.exports = Cancel;
+
+
+/***/ }),
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__App__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_router__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Home__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Login__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__App__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_router__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Home__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Login__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Dash__ = __webpack_require__(31);
+
 
 
 
@@ -723,6 +1404,11 @@ var routes = [
 	name: 'login',
 	component: __WEBPACK_IMPORTED_MODULE_4__Login__["a" /* default */],
 	path: '/login',
+},
+{
+	name: 'dash',
+	component: __WEBPACK_IMPORTED_MODULE_5__Dash__["a" /* default */],
+	path: '/dash'
 }
 ];
 
@@ -742,14 +1428,14 @@ new __WEBPACK_IMPORTED_MODULE_1_vue__["a" /* default */]({
 });
 
 /***/ }),
-/* 6 */
+/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_App_vue__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7ba5bd90_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_App_vue__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_App_vue__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7ba5bd90_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_App_vue__ = __webpack_require__(15);
 var disposed = false
-var normalizeComponent = __webpack_require__(0)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 
 /* template */
@@ -793,7 +1479,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 7 */
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -805,13 +1491,14 @@ if (false) {(function () {
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: 'app'
 });
 
 
 /***/ }),
-/* 8 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -833,7 +1520,7 @@ if (false) {
 }
 
 /***/ }),
-/* 9 */
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11604,10 +12291,10 @@ Vue$3.compile = compileToFunctions;
 
 /* harmony default export */ __webpack_exports__["a"] = (Vue$3);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1), __webpack_require__(2), __webpack_require__(10).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2), __webpack_require__(4), __webpack_require__(17).setImmediate))
 
 /***/ }),
-/* 10 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var apply = Function.prototype.apply;
@@ -11660,13 +12347,13 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(11);
+__webpack_require__(18);
 exports.setImmediate = setImmediate;
 exports.clearImmediate = clearImmediate;
 
 
 /***/ }),
-/* 11 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -11856,10 +12543,10 @@ exports.clearImmediate = clearImmediate;
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(2)))
 
 /***/ }),
-/* 12 */
+/* 19 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14487,22 +15174,22 @@ if (inBrowser && window.Vue) {
 
 /* harmony default export */ __webpack_exports__["a"] = (VueRouter);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2)))
 
 /***/ }),
-/* 13 */
+/* 20 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Home_vue__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Home_vue__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Home_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Home_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2380d2d8_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Home_vue__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2380d2d8_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Home_vue__ = __webpack_require__(25);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(14)
+  __webpack_require__(21)
 }
-var normalizeComponent = __webpack_require__(0)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 
 /* template */
@@ -14546,17 +15233,17 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 14 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(15);
+var content = __webpack_require__(22);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("59cd55f1", content, false);
+var update = __webpack_require__(6)("59cd55f1", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -14572,10 +15259,10 @@ if(false) {
 }
 
 /***/ }),
-/* 15 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(true);
+exports = module.exports = __webpack_require__(5)(true);
 // imports
 
 
@@ -14586,7 +15273,7 @@ exports.push([module.i, "\nbody[data-v-2380d2d8]{\n\t\n\tfont-family: \"Open San
 
 
 /***/ }),
-/* 16 */
+/* 23 */
 /***/ (function(module, exports) {
 
 /**
@@ -14619,7 +15306,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 17 */
+/* 24 */
 /***/ (function(module, exports) {
 
 //
@@ -14756,7 +15443,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 18 */
+/* 25 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15020,18 +15707,18 @@ if (false) {
 }
 
 /***/ }),
-/* 19 */
+/* 26 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Login_vue__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6a7e6ec0_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Login_vue__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Login_vue__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6a7e6ec0_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Login_vue__ = __webpack_require__(30);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(20)
+  __webpack_require__(27)
 }
-var normalizeComponent = __webpack_require__(0)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 
 /* template */
@@ -15075,17 +15762,17 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 20 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(21);
+var content = __webpack_require__(28);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("6370b1e1", content, false);
+var update = __webpack_require__(6)("6370b1e1", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -15101,21 +15788,21 @@ if(false) {
 }
 
 /***/ }),
-/* 21 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(true);
+exports = module.exports = __webpack_require__(5)(true);
 // imports
 
 
 // module
-exports.push([module.i, "\nbody[data-v-6a7e6ec0]{\n\t    background-image: url(https://www.pega.com/sites/pega.com/files/banking-case-study-bg.jpg);\n\t    background-repeat: no-repeat;\n\t\tbackground-size: cover;\n\t\tbackground-position: center center;\n\t\tposition: relative;\n\t    top:0;\n\t    bottom: 0;\n\t\theight:100%;\n\t\tz-index: -10;\n}\n\n\t/*NAVBAR START*/\n.navbar-brand[data-v-6a7e6ec0]{\n\t\tmargin-top: -10px;\n}\n.navbar[data-v-6a7e6ec0]{\n\t\tbackground-color: #fff;\n\t\tposition: fixed;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n}\n.nav li a[data-v-6a7e6ec0]{\n\t\tcolor: #000;\n\t\tfont-size: 20px;\n}\n.nav li a[data-v-6a7e6ec0]:hover {\n\ttext-decoration: none;\n}\n.title[data-v-6a7e6ec0]{\n\t   \n\t   margin-top: 60px;\n\t   text-align: center;\n}\n.title h1[data-v-6a7e6ec0]{\n\t\tfont-size: 45px;\n\t\tline-height: 45px;\n\t\tcolor: #fff;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n}\n.title h2[data-v-6a7e6ec0]{\n\t\tfont-size: 27px;\n\t\tfont-weight: bold;\n\t\tline-height: 27px;\n\t\tletter-spacing: -0.5px;\n\t\tcolor: #C0C0C0;\n}\n.title a[data-v-6a7e6ec0]{\n\t\tcolor: inherit;\n\t\ttext-decoration: underline;\n}\n.btn-danger[data-v-6a7e6ec0]{\n\t\tborder-radius: 10px;\n\t\tfont-weight: 800;\t\n\t\tline-height: 1.7;\n\t\tmargin-left: 40px;\n\t\tfont-size: 18px;\n\t\twidth: 80%;\n}\n.row[data-v-6a7e6ec0]{\n\t\tmargin-top: 220px;\n}\n\t/*NAVBAR END*/\n\n\n\t/*LOGIN BOX START*/\nh1[data-v-6a7e6ec0]{ font-size:28px;\n}\nh2[data-v-6a7e6ec0]{ font-size:26px;\n}\nh3[data-v-6a7e6ec0]{ font-size:18px;\n}\nh4[data-v-6a7e6ec0]{ font-size:16px;\n}\nh5[data-v-6a7e6ec0]{ font-size:14px;\n}\nh6[data-v-6a7e6ec0]{ font-size:12px;\n}\nh1[data-v-6a7e6ec0],h2[data-v-6a7e6ec0],h3[data-v-6a7e6ec0],h4[data-v-6a7e6ec0],h5[data-v-6a7e6ec0],h6[data-v-6a7e6ec0]{ color:#563D64;\n}\nsmall[data-v-6a7e6ec0]{ font-size:10px;\n}\nb[data-v-6a7e6ec0], strong[data-v-6a7e6ec0]{ font-weight:bold;\n}\na[data-v-6a7e6ec0]{ text-decoration: none;\n}\na[data-v-6a7e6ec0]:hover{ text-decoration: underline;\n}\n.left[data-v-6a7e6ec0] { float:left;\n}\n.right[data-v-6a7e6ec0] { float:right;\n}\n.alignleft[data-v-6a7e6ec0] { float: left; margin-right: 15px;\n}\n.alignright[data-v-6a7e6ec0] { float: right; margin-left: 15px;\n}\n.clearfix[data-v-6a7e6ec0]:after,\n\tform[data-v-6a7e6ec0]:after {\n\t\tcontent: \".\";\n\t\tdisplay: block;\n\t\theight: 0;\n\t\tclear: both;\n\t\tvisibility: hidden;\n}\n#content[data-v-6a7e6ec0] {\n\t\tbackground: #f9f9f9;\n\t\tbackground: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );\n\t\t-webkit-box-shadow: 0 1px 0 #fff inset;\n\t\t-moz-box-shadow: 0 1px 0 #fff inset;\n\t\t-ms-box-shadow: 0 1px 0 #fff inset;\n\t\t-o-box-shadow: 0 1px 0 #fff inset;\n\t\tbox-shadow: 0 1px 0 #fff inset;\n\t\tborder: 1px solid #c4c6ca;\n\t\tmargin: 0;\n\t\tpadding: 25px 0 0;\n\t\tposition: relative;\n\t\ttext-align: center;\n\t\ttext-shadow: 0 1px 0 #fff;\n\t\twidth: 500px;\n}\n#content h1[data-v-6a7e6ec0] {\n\t\tcolor: #7E7E7E;\n\t\tfont: bold 25px Helvetica, Arial, sans-serif;\n\t\tletter-spacing: -0.05em;\n\t\tline-height: 20px;\n\t\tmargin: 10px 0 30px;\n}\n#content h1[data-v-6a7e6ec0]:before,\n\t#content h1[data-v-6a7e6ec0]:after {\n\t\tcontent: \"\";\n\t\theight: 1px;\n\t\tposition: absolute;\n\t\ttop: 10px;\n\t\twidth: 27%;\n}\n#content h1[data-v-6a7e6ec0]:after {\n\t\tbackground: rgb(126,126,126);\n\t\tbackground: -moz-linear-gradient(left,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);\n\t\tbackground: -webkit-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -o-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -ms-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t    right: 0;\n}\n#content h1[data-v-6a7e6ec0]:before {\n\t\tbackground: rgb(126,126,126);\n\t\tbackground: -moz-linear-gradient(right,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);\n\t\tbackground: -webkit-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -o-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -ms-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t    left: 0;\n}\n#content[data-v-6a7e6ec0]:after,\n\t#content[data-v-6a7e6ec0]:before {\n\t\tbackground: #f9f9f9;\n\t\tbackground: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );\n\t\tborder: 1px solid #c4c6ca;\n\t\tcontent: \"\";\n\t\tdisplay: block;\n\t\theight: 100%;\n\t\tleft: -1px;\n\t\tposition: absolute;\n\t\twidth: 100%;\n}\n#content[data-v-6a7e6ec0]:after {\n\t\t-webkit-transform: rotate(2deg);\n\t\t-moz-transform: rotate(2deg);\n\t\t-ms-transform: rotate(2deg);\n\t\t-o-transform: rotate(2deg);\n\t\ttransform: rotate(2deg);\n\t\ttop: 0;\n\t\tz-index: -1;\n}\n#content[data-v-6a7e6ec0]:before {\n\t\t-webkit-transform: rotate(-3deg);\n\t\t-moz-transform: rotate(-3deg);\n\t\t-ms-transform: rotate(-3deg);\n\t\t-o-transform: rotate(-3deg);\n\t\ttransform: rotate(-3deg);\n\t\ttop: 0;\n\t\tz-index: -2;\n}\n#content form[data-v-6a7e6ec0] { margin: 0 20px; position: relative\n}\n#content form input[type=\"text\"][data-v-6a7e6ec0],\n\t#content form input[type=\"password\"][data-v-6a7e6ec0] {\n\t\t-webkit-border-radius: 3px;\n\t\t-moz-border-radius: 3px;\n\t\t-ms-border-radius: 3px;\n\t\t-o-border-radius: 3px;\n\t\tborder-radius: 3px;\n\t\t-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\tbox-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-webkit-transition: all 0.5s ease;\n\t\t-moz-transition: all 0.5s ease;\n\t\t-ms-transition: all 0.5s ease;\n\t\t-o-transition: all 0.5s ease;\n\t\ttransition: all 0.5s ease;\n\t\tbackground: #eae7e7 url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) no-repeat;\n\t\tborder: 1px solid #c8c8c8;\n\t\tcolor: #777;\n\t\tfont: 13px Helvetica, Arial, sans-serif;\n\t\tmargin: 0 0 20px;\n\t\tpadding: 15px 10px 15px 40px;\n\t\twidth: 90%;\n}\n#content form input[type=\"text\"][data-v-6a7e6ec0]:focus,\n\t#content form input[type=\"password\"][data-v-6a7e6ec0]:focus {\n\t\t-webkit-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-moz-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-ms-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-o-box-shadow: 0 0 2px #ed1c24 inset;\n\t\tbox-shadow: 0 0 2px #ed1c24 inset;\n\t\tbackground-color: #fff;\n\t\tborder: 1px solid #ed1c24;\n\t\toutline: none;\n}\n#username[data-v-6a7e6ec0] { background-position: 10px 10px !important\n}\n#password[data-v-6a7e6ec0] { background-position: 10px -53px !important\n}\n#content form input[type=\"submit\"][data-v-6a7e6ec0] {\n\t\tbackground: rgb(254,231,154);\n\t\tbackground: -moz-linear-gradient(top,  rgba(254,231,154,1) 0%, rgba(254,193,81,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fee79a', endColorstr='#fec151',GradientType=0 );\n\t\t-webkit-border-radius: 30px;\n\t\t-moz-border-radius: 30px;\n\t\t-ms-border-radius: 30px;\n\t\t-o-border-radius: 30px;\n\t\tborder-radius: 30px;\n\t\t-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-ms-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-o-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\tbox-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\tborder: 1px solid #D69E31;\n\t\tcolor: #85592e;\n\t\tcursor: pointer;\n\t\tfloat: left;\n\t\tfont: bold 15px Helvetica, Arial, sans-serif;\n\t\theight: 35px;\n\t\tmargin: 20px 0 35px 15px;\n\t\tposition: relative;\n\t\ttext-shadow: 0 1px 0 rgba(255,255,255,0.5);\n\t\twidth: 120px;\n}\n#content form input[type=\"submit\"][data-v-6a7e6ec0]:hover {\n\t\tbackground: rgb(254,193,81);\n\t\tbackground: -moz-linear-gradient(top,  rgba(254,193,81,1) 0%, rgba(254,231,154,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec151', endColorstr='#fee79a',GradientType=0 );\n}\n#content form div a[data-v-6a7e6ec0] {\n\t\tcolor: #004a80;\n\t    float: right;\n\t    font-size: 12px;\n\t    margin: 30px 15px 0 0;\n\t    text-decoration: underline;\n}\n.button[data-v-6a7e6ec0] {\n\t\tbackground: rgb(247,249,250);\n\t\tbackground: -moz-linear-gradient(top,  rgba(247,249,250,1) 0%, rgba(240,240,240,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f9fa', endColorstr='#f0f0f0',GradientType=0 );\n\t\t-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-ms-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-o-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\tbox-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-webkit-border-radius: 0 0 5px 5px;\n\t\t-moz-border-radius: 0 0 5px 5px;\n\t\t-o-border-radius: 0 0 5px 5px;\n\t\t-ms-border-radius: 0 0 5px 5px;\n\t\tborder-radius: 0 0 5px 5px;\n\t\tborder-top: 1px solid #CFD5D9;\n\t\tpadding: 15px 0;\n}\n.button a[data-v-6a7e6ec0] {\n\t\tbackground: url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) 0 -112px no-repeat;\n\t\tcolor: #7E7E7E;\n\t\tfont-size: 17px;\n\t\tpadding: 2px 0 2px 40px;\n\t\ttext-decoration: none;\n\t\t-webkit-transition: all 0.3s ease;\n\t\t-moz-transition: all 0.3s ease;\n\t\t-ms-transition: all 0.3s ease;\n\t\t-o-transition: all 0.3s ease;\n\t\ttransition: all 0.3s ease;\n}\n.button a[data-v-6a7e6ec0]:hover {\n\t\tbackground-position: 0 -135px;\n\t\tcolor: #00aeef;\n}\n", "", {"version":3,"sources":["/Users/timothy/Desktop/BonusCheck/src/src/Login.vue?5c4635b8"],"names":[],"mappings":";AA+DA;KACA,2FAAA;KACA,6BAAA;EACA,uBAAA;EACA,mCAAA;EACA,mBAAA;KACA,MAAA;KACA,UAAA;EACA,YAAA;EACA,aAAA;CACA;;CAEA,gBAAA;AACA;EACA,kBAAA;CAEA;AACA;EACA,uBAAA;EACA,gBAAA;EACA,iBAAA;EACA,qBAAA;CACA;AACA;EACA,YAAA;EACA,gBAAA;CAEA;AACA;CACA,sBAAA;CACA;AAGA;;IAEA,iBAAA;IACA,mBAAA;CACA;AACA;EACA,gBAAA;EACA,kBAAA;EACA,YAAA;EACA,iBAAA;EACA,qBAAA;CAEA;AACA;EACA,gBAAA;EACA,kBAAA;EACA,kBAAA;EACA,uBAAA;EACA,eAAA;CAEA;AACA;EACA,eAAA;EACA,2BAAA;CAEA;AAEA;EACA,oBAAA;EACA,iBAAA;EACA,iBAAA;EACA,kBAAA;EACA,gBAAA;EACA,WAAA;CACA;AAEA;EACA,kBAAA;CACA;CACA,cAAA;;;CAGA,mBAAA;AACA,qBAAA,eAAA;CAAA;AACA,qBAAA,eAAA;CAAA;AACA,qBAAA,eAAA;CAAA;AACA,qBAAA,eAAA;CAAA;AACA,qBAAA,eAAA;CAAA;AACA,qBAAA,eAAA;CAAA;AACA,yHAAA,cAAA;CAAA;AACA,wBAAA,eAAA;CAAA;AACA,6CAAA,iBAAA;CAAA;AACA,oBAAA,sBAAA;CAAA;AACA,0BAAA,2BAAA;CAAA;AACA,yBAAA,WAAA;CAAA;AACA,0BAAA,YAAA;CAAA;AACA,8BAAA,YAAA,CAAA,mBAAA;CAAA;AACA,+BAAA,aAAA,CAAA,kBAAA;CAAA;AACA;;EAEA,aAAA;EACA,eAAA;EACA,UAAA;EACA,YAAA;EACA,mBAAA;CACA;AAGA;EACA,oBAAA;EACA,yFAAA;EACA,2FAAA;EACA,sFAAA;EACA,uFAAA;EACA,mFAAA;EACA,oHAAA;EACA,uCAAA;EACA,oCAAA;EACA,mCAAA;EACA,kCAAA;EACA,+BAAA;EACA,0BAAA;EACA,UAAA;EACA,kBAAA;EACA,mBAAA;EACA,mBAAA;EACA,0BAAA;EACA,aAAA;CAGA;AACA;EACA,eAAA;EACA,6CAAA;EACA,wBAAA;EACA,kBAAA;EACA,oBAAA;CACA;AACA;;EAEA,YAAA;EACA,YAAA;EACA,mBAAA;EACA,UAAA;EACA,WAAA;CACA;AACA;EACA,6BAAA;EACA,0FAAA;EACA,4FAAA;EACA,uFAAA;EACA,wFAAA;EACA,oFAAA;KACA,SAAA;CACA;AACA;EACA,6BAAA;EACA,2FAAA;EACA,6FAAA;EACA,wFAAA;EACA,yFAAA;EACA,qFAAA;KACA,QAAA;CACA;AACA;;EAEA,oBAAA;EACA,yFAAA;EACA,2FAAA;EACA,sFAAA;EACA,uFAAA;EACA,mFAAA;EACA,oHAAA;EACA,0BAAA;EACA,YAAA;EACA,eAAA;EACA,aAAA;EACA,WAAA;EACA,mBAAA;EACA,YAAA;CACA;AACA;EACA,gCAAA;EACA,6BAAA;EACA,4BAAA;EACA,2BAAA;EACA,wBAAA;EACA,OAAA;EACA,YAAA;CACA;AACA;EACA,iCAAA;EACA,8BAAA;EACA,6BAAA;EACA,4BAAA;EACA,yBAAA;EACA,OAAA;EACA,YAAA;CACA;AACA,iCAAA,eAAA,CAAA,kBAAA;CAAA;AACA;;EAEA,2BAAA;EACA,wBAAA;EACA,uBAAA;EACA,sBAAA;EACA,mBAAA;EACA,oEAAA;EACA,iEAAA;EACA,gEAAA;EACA,+DAAA;EACA,4DAAA;EACA,kCAAA;EACA,+BAAA;EACA,8BAAA;EACA,6BAAA;EACA,0BAAA;EACA,yFAAA;EACA,0BAAA;EACA,YAAA;EACA,wCAAA;EACA,iBAAA;EACA,6BAAA;EACA,WAAA;CACA;AACA;;EAEA,0CAAA;EACA,uCAAA;EACA,sCAAA;EACA,qCAAA;EACA,kCAAA;EACA,uBAAA;EACA,0BAAA;EACA,cAAA;CACA;AACA,6BAAA,yCAAA;CAAA;AACA,6BAAA,0CAAA;CAAA;AACA;EACA,6BAAA;EACA,wFAAA;EACA,0FAAA;EACA,qFAAA;EACA,sFAAA;EACA,kFAAA;EACA,oHAAA;EACA,4BAAA;EACA,yBAAA;EACA,wBAAA;EACA,uBAAA;EACA,oBAAA;EACA,wDAAA;EACA,qDAAA;EACA,oDAAA;EACA,mDAAA;EACA,gDAAA;EACA,0BAAA;EACA,eAAA;EACA,gBAAA;EACA,YAAA;EACA,6CAAA;EACA,aAAA;EACA,yBAAA;EACA,mBAAA;EACA,2CAAA;EACA,aAAA;CACA;AACA;EACA,4BAAA;EACA,wFAAA;EACA,0FAAA;EACA,qFAAA;EACA,sFAAA;EACA,kFAAA;EACA,oHAAA;CACA;AACA;EACA,eAAA;KACA,aAAA;KACA,gBAAA;KACA,sBAAA;KACA,2BAAA;CACA;AACA;EACA,6BAAA;EACA,yFAAA;EACA,2FAAA;EACA,sFAAA;EACA,uFAAA;EACA,mFAAA;EACA,oHAAA;EACA,oDAAA;EACA,iDAAA;EACA,gDAAA;EACA,+CAAA;EACA,4CAAA;EACA,mCAAA;EACA,gCAAA;EACA,8BAAA;EACA,+BAAA;EACA,2BAAA;EACA,8BAAA;EACA,gBAAA;CACA;AACA;EACA,0FAAA;EACA,eAAA;EACA,gBAAA;EACA,wBAAA;EACA,sBAAA;EACA,kCAAA;EACA,+BAAA;EACA,8BAAA;EACA,6BAAA;EACA,0BAAA;CACA;AACA;EACA,8BAAA;EACA,eAAA;CACA","file":"Login.vue","sourcesContent":["<template>\n  <div class=\"overlay\">\n\t    <!-- Navbar starts -->       \n\t    <nav class=\"navbar navbar-fixed-top\">\n\t\t    <div class=\"container\">\t\t       \n\t            <a class=\"navbar-brand \" href=\"index.html\"><img src=\"images/logo-web3.gif\"></a>\n\t           \t<button  class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#navbar-item\"  >\n\t\t            <span class=\"sr-only\">Toggle navigation</span>\n\t\t            <span class=\"icon-bar\"></span>\n\t\t            <span class=\"icon-bar\"></span>\n\t\t            <span class=\"icon-bar\"></span>\n\t\t        </button>\t\t          \n\t\t\t    <div id=\"navbar-item\" class=\"collapse  navbar-collapse\">\n\t\t\t          <ul class=\"nav navbar-nav navbar-right\">\n\t\t\t            <li ><router-link :to=\"'home'\">Home</router-link></li>\n\t\t\t            <li><a   href=\"#\">Contact</a></li>\n\t\t\t            <li ><a  href=\"signup.html\">Sign up</a></li>\n\t\t\t            <li><button class=\" btn-danger navbar-btn \"><a style=\"color: #fff;\" href=\"#\">Log in</a></button></li>\n\t\t\t          </ul>\n\t\t\t    </div><!--/.nav-collapse -->\n\t        </div>\n\t    </nav>\n\t    <!-- Navbar END -->\n\t\t\t      \t\t\t      \t\t        \n\t    <div class=\"row\">\n\t\t\t<div class=\"col-md-6 col-sm-6 title\">\n\t            \t<h1>Lorem ipsum dolor </h1>\n\t            \t<h2 class=\"home-hero-subtitle\">\n\t                   elit scripta suavitate his ea dico veritus no usu\n\t                    <a target=\"_blank\" href=\"/employee-recognition-guide\">transform employee recognition</a>\n\t                </h2>\n\t                \t\t    \t\n\t\t\t</div>\n\t\t    <div class=\"col-md-6 col-sm-6 login-col\">\n\t\t\t\t<section id=\"content\">\n\t\t\t\t\t<form name=\"signin\" method=\"post\" action=\"/signin\">\n\t\t\t\t\t\t<h1>Login </h1>\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t<input type=\"text\" placeholder=\"Username\" required=\"\" id=\"username\" name=\"user_name\"/>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t<input type=\"password\" placeholder=\"Password\" required=\"\" id=\"password\" name=\"password\"/>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t<input type=\"submit\" class=\"login\" value=\"Log in\" />\n\t\t\t\t\t\t\t<a style=\"color: #FF0000 ;\" href=\"#\">\n\t\t\t\t\t\t\t\tForgot password?\n\t\t\t\t\t\t\t</a>\t\t\t\t\t\t\t\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</form><!-- form -->\t\t\t\n\t\t\t\t</section><!-- content -->\n\t\t\t</div>\t\n\t    </div>\n    </div>\n</template>\n\n<script>\nexport default {\n  name: 'login'\n};\n</script>\n\n<style scoped>\n\tbody{\n\t    background-image: url(https://www.pega.com/sites/pega.com/files/banking-case-study-bg.jpg);\n\t    background-repeat: no-repeat;\n\t\tbackground-size: cover;\n\t\tbackground-position: center center;\n\t\tposition: relative;\n\t    top:0;\n\t    bottom: 0;\n\t\theight:100%;\n\t\tz-index: -10;\t\n\t}\n\n\t/*NAVBAR START*/\n\t.navbar-brand{\n\t\tmargin-top: -10px;\n\t\t\n\t}\n\t.navbar{\n\t\tbackground-color: #fff;\n\t\tposition: fixed;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n\t}\n\t.nav li a{\n\t\tcolor: #000;\n\t\tfont-size: 20px;\n\t\t\t\n\t}\n\t.nav li a:hover {\n\ttext-decoration: none;\n\t}\n\n\n\t.title{\n\t   \n\t   margin-top: 60px;\n\t   text-align: center;\n\t}\n\t.title h1{\n\t\tfont-size: 45px;\n\t\tline-height: 45px;\n\t\tcolor: #fff;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n\t\t\n\t}\n\t.title h2{\n\t\tfont-size: 27px;\n\t\tfont-weight: bold;\n\t\tline-height: 27px;\n\t\tletter-spacing: -0.5px;\n\t\tcolor: #C0C0C0;\n\n\t}\n\t.title a{\n\t\tcolor: inherit;\n\t\ttext-decoration: underline;\n\n\t}\n\n\t.btn-danger{\n\t\tborder-radius: 10px;\n\t\tfont-weight: 800;\t\n\t\tline-height: 1.7;\n\t\tmargin-left: 40px;\n\t\tfont-size: 18px;\n\t\twidth: 80%;\n\t}\n\n\t.row{\n\t\tmargin-top: 220px;\n\t}\n\t/*NAVBAR END*/\n\n\n\t/*LOGIN BOX START*/\n\th1{ font-size:28px;}\n\th2{ font-size:26px;}\n\th3{ font-size:18px;}\n\th4{ font-size:16px;}\n\th5{ font-size:14px;}\n\th6{ font-size:12px;}\n\th1,h2,h3,h4,h5,h6{ color:#563D64;}\n\tsmall{ font-size:10px;}\n\tb, strong{ font-weight:bold;}\n\ta{ text-decoration: none; }\n\ta:hover{ text-decoration: underline; }\n\t.left { float:left; }\n\t.right { float:right; }\n\t.alignleft { float: left; margin-right: 15px; }\n\t.alignright { float: right; margin-left: 15px; }\n\t.clearfix:after,\n\tform:after {\n\t\tcontent: \".\";\n\t\tdisplay: block;\n\t\theight: 0;\n\t\tclear: both;\n\t\tvisibility: hidden;\n\t}\n\n\n\t#content {\n\t\tbackground: #f9f9f9;\n\t\tbackground: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );\n\t\t-webkit-box-shadow: 0 1px 0 #fff inset;\n\t\t-moz-box-shadow: 0 1px 0 #fff inset;\n\t\t-ms-box-shadow: 0 1px 0 #fff inset;\n\t\t-o-box-shadow: 0 1px 0 #fff inset;\n\t\tbox-shadow: 0 1px 0 #fff inset;\n\t\tborder: 1px solid #c4c6ca;\n\t\tmargin: 0;\n\t\tpadding: 25px 0 0;\n\t\tposition: relative;\n\t\ttext-align: center;\n\t\ttext-shadow: 0 1px 0 #fff;\n\t\twidth: 500px;\n\n\n\t}\n\t#content h1 {\n\t\tcolor: #7E7E7E;\n\t\tfont: bold 25px Helvetica, Arial, sans-serif;\n\t\tletter-spacing: -0.05em;\n\t\tline-height: 20px;\n\t\tmargin: 10px 0 30px;\n\t}\n\t#content h1:before,\n\t#content h1:after {\n\t\tcontent: \"\";\n\t\theight: 1px;\n\t\tposition: absolute;\n\t\ttop: 10px;\n\t\twidth: 27%;\n\t}\n\t#content h1:after {\n\t\tbackground: rgb(126,126,126);\n\t\tbackground: -moz-linear-gradient(left,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);\n\t\tbackground: -webkit-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -o-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -ms-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t    right: 0;\n\t}\n\t#content h1:before {\n\t\tbackground: rgb(126,126,126);\n\t\tbackground: -moz-linear-gradient(right,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);\n\t\tbackground: -webkit-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -o-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -ms-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t    left: 0;\n\t}\n\t#content:after,\n\t#content:before {\n\t\tbackground: #f9f9f9;\n\t\tbackground: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );\n\t\tborder: 1px solid #c4c6ca;\n\t\tcontent: \"\";\n\t\tdisplay: block;\n\t\theight: 100%;\n\t\tleft: -1px;\n\t\tposition: absolute;\n\t\twidth: 100%;\n\t}\n\t#content:after {\n\t\t-webkit-transform: rotate(2deg);\n\t\t-moz-transform: rotate(2deg);\n\t\t-ms-transform: rotate(2deg);\n\t\t-o-transform: rotate(2deg);\n\t\ttransform: rotate(2deg);\n\t\ttop: 0;\n\t\tz-index: -1;\n\t}\n\t#content:before {\n\t\t-webkit-transform: rotate(-3deg);\n\t\t-moz-transform: rotate(-3deg);\n\t\t-ms-transform: rotate(-3deg);\n\t\t-o-transform: rotate(-3deg);\n\t\ttransform: rotate(-3deg);\n\t\ttop: 0;\n\t\tz-index: -2;\n\t}\n\t#content form { margin: 0 20px; position: relative }\n\t#content form input[type=\"text\"],\n\t#content form input[type=\"password\"] {\n\t\t-webkit-border-radius: 3px;\n\t\t-moz-border-radius: 3px;\n\t\t-ms-border-radius: 3px;\n\t\t-o-border-radius: 3px;\n\t\tborder-radius: 3px;\n\t\t-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\tbox-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-webkit-transition: all 0.5s ease;\n\t\t-moz-transition: all 0.5s ease;\n\t\t-ms-transition: all 0.5s ease;\n\t\t-o-transition: all 0.5s ease;\n\t\ttransition: all 0.5s ease;\n\t\tbackground: #eae7e7 url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) no-repeat;\n\t\tborder: 1px solid #c8c8c8;\n\t\tcolor: #777;\n\t\tfont: 13px Helvetica, Arial, sans-serif;\n\t\tmargin: 0 0 20px;\n\t\tpadding: 15px 10px 15px 40px;\n\t\twidth: 90%;\n\t}\n\t#content form input[type=\"text\"]:focus,\n\t#content form input[type=\"password\"]:focus {\n\t\t-webkit-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-moz-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-ms-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-o-box-shadow: 0 0 2px #ed1c24 inset;\n\t\tbox-shadow: 0 0 2px #ed1c24 inset;\n\t\tbackground-color: #fff;\n\t\tborder: 1px solid #ed1c24;\n\t\toutline: none;\n\t}\n\t#username { background-position: 10px 10px !important }\n\t#password { background-position: 10px -53px !important }\n\t#content form input[type=\"submit\"] {\n\t\tbackground: rgb(254,231,154);\n\t\tbackground: -moz-linear-gradient(top,  rgba(254,231,154,1) 0%, rgba(254,193,81,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fee79a', endColorstr='#fec151',GradientType=0 );\n\t\t-webkit-border-radius: 30px;\n\t\t-moz-border-radius: 30px;\n\t\t-ms-border-radius: 30px;\n\t\t-o-border-radius: 30px;\n\t\tborder-radius: 30px;\n\t\t-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-ms-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-o-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\tbox-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\tborder: 1px solid #D69E31;\n\t\tcolor: #85592e;\n\t\tcursor: pointer;\n\t\tfloat: left;\n\t\tfont: bold 15px Helvetica, Arial, sans-serif;\n\t\theight: 35px;\n\t\tmargin: 20px 0 35px 15px;\n\t\tposition: relative;\n\t\ttext-shadow: 0 1px 0 rgba(255,255,255,0.5);\n\t\twidth: 120px;\n\t}\n\t#content form input[type=\"submit\"]:hover {\n\t\tbackground: rgb(254,193,81);\n\t\tbackground: -moz-linear-gradient(top,  rgba(254,193,81,1) 0%, rgba(254,231,154,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec151', endColorstr='#fee79a',GradientType=0 );\n\t}\n\t#content form div a {\n\t\tcolor: #004a80;\n\t    float: right;\n\t    font-size: 12px;\n\t    margin: 30px 15px 0 0;\n\t    text-decoration: underline;\n\t}\n\t.button {\n\t\tbackground: rgb(247,249,250);\n\t\tbackground: -moz-linear-gradient(top,  rgba(247,249,250,1) 0%, rgba(240,240,240,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f9fa', endColorstr='#f0f0f0',GradientType=0 );\n\t\t-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-ms-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-o-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\tbox-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-webkit-border-radius: 0 0 5px 5px;\n\t\t-moz-border-radius: 0 0 5px 5px;\n\t\t-o-border-radius: 0 0 5px 5px;\n\t\t-ms-border-radius: 0 0 5px 5px;\n\t\tborder-radius: 0 0 5px 5px;\n\t\tborder-top: 1px solid #CFD5D9;\n\t\tpadding: 15px 0;\n\t}\n\t.button a {\n\t\tbackground: url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) 0 -112px no-repeat;\n\t\tcolor: #7E7E7E;\n\t\tfont-size: 17px;\n\t\tpadding: 2px 0 2px 40px;\n\t\ttext-decoration: none;\n\t\t-webkit-transition: all 0.3s ease;\n\t\t-moz-transition: all 0.3s ease;\n\t\t-ms-transition: all 0.3s ease;\n\t\t-o-transition: all 0.3s ease;\n\t\ttransition: all 0.3s ease;\n\t}\n\t.button a:hover {\n\t\tbackground-position: 0 -135px;\n\t\tcolor: #00aeef;\n}\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\nbody[data-v-6a7e6ec0]{\n\t    background-image: url(https://www.pega.com/sites/pega.com/files/banking-case-study-bg.jpg);\n\t    background-repeat: no-repeat;\n\t\tbackground-size: cover;\n\t\tbackground-position: center center;\n\t\tposition: relative;\n\t    top:0;\n\t    bottom: 0;\n\t\theight:100%;\n\t\tz-index: -10;\n}\n\n\t/*NAVBAR START*/\n.navbar-brand[data-v-6a7e6ec0]{\n\t\tmargin-top: -10px;\n}\n.navbar[data-v-6a7e6ec0]{\n\t\tbackground-color: #fff;\n\t\tposition: fixed;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n}\n.nav li a[data-v-6a7e6ec0]{\n\t\tcolor: #000;\n\t\tfont-size: 20px;\n}\n.nav li a[data-v-6a7e6ec0]:hover {\n\ttext-decoration: none;\n}\n.title[data-v-6a7e6ec0]{\n\t   \n\t   margin-top: 60px;\n\t   text-align: center;\n}\n.title h1[data-v-6a7e6ec0]{\n\t\tfont-size: 45px;\n\t\tline-height: 45px;\n\t\tcolor: #fff;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n}\n.title h2[data-v-6a7e6ec0]{\n\t\tfont-size: 27px;\n\t\tfont-weight: bold;\n\t\tline-height: 27px;\n\t\tletter-spacing: -0.5px;\n\t\tcolor: #C0C0C0;\n}\n.title a[data-v-6a7e6ec0]{\n\t\tcolor: inherit;\n\t\ttext-decoration: underline;\n}\n.btn-danger[data-v-6a7e6ec0]{\n\t\tborder-radius: 10px;\n\t\tfont-weight: 800;\t\n\t\tline-height: 1.7;\n\t\tmargin-left: 40px;\n\t\tfont-size: 18px;\n\t\twidth: 80%;\n}\n.row[data-v-6a7e6ec0]{\n\t\tmargin-top: 220px;\n}\n\t/*NAVBAR END*/\n\n\n\t/*LOGIN BOX START*/\nh1[data-v-6a7e6ec0]{ font-size:28px;\n}\nh2[data-v-6a7e6ec0]{ font-size:26px;\n}\nh3[data-v-6a7e6ec0]{ font-size:18px;\n}\nh4[data-v-6a7e6ec0]{ font-size:16px;\n}\nh5[data-v-6a7e6ec0]{ font-size:14px;\n}\nh6[data-v-6a7e6ec0]{ font-size:12px;\n}\nh1[data-v-6a7e6ec0],h2[data-v-6a7e6ec0],h3[data-v-6a7e6ec0],h4[data-v-6a7e6ec0],h5[data-v-6a7e6ec0],h6[data-v-6a7e6ec0]{ color:#563D64;\n}\nsmall[data-v-6a7e6ec0]{ font-size:10px;\n}\nb[data-v-6a7e6ec0], strong[data-v-6a7e6ec0]{ font-weight:bold;\n}\na[data-v-6a7e6ec0]{ text-decoration: none;\n}\na[data-v-6a7e6ec0]:hover{ text-decoration: underline;\n}\n.left[data-v-6a7e6ec0] { float:left;\n}\n.right[data-v-6a7e6ec0] { float:right;\n}\n.alignleft[data-v-6a7e6ec0] { float: left; margin-right: 15px;\n}\n.alignright[data-v-6a7e6ec0] { float: right; margin-left: 15px;\n}\n.clearfix[data-v-6a7e6ec0]:after,\n\tform[data-v-6a7e6ec0]:after {\n\t\tcontent: \".\";\n\t\tdisplay: block;\n\t\theight: 0;\n\t\tclear: both;\n\t\tvisibility: hidden;\n}\n#content[data-v-6a7e6ec0] {\n\t\tbackground: #f9f9f9;\n\t\tbackground: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );\n\t\t-webkit-box-shadow: 0 1px 0 #fff inset;\n\t\t-moz-box-shadow: 0 1px 0 #fff inset;\n\t\t-ms-box-shadow: 0 1px 0 #fff inset;\n\t\t-o-box-shadow: 0 1px 0 #fff inset;\n\t\tbox-shadow: 0 1px 0 #fff inset;\n\t\tborder: 1px solid #c4c6ca;\n\t\tmargin: 0;\n\t\tpadding: 25px 0 0;\n\t\tposition: relative;\n\t\ttext-align: center;\n\t\ttext-shadow: 0 1px 0 #fff;\n\t\twidth: 500px;\n}\n#content h1[data-v-6a7e6ec0] {\n\t\tcolor: #7E7E7E;\n\t\tfont: bold 25px Helvetica, Arial, sans-serif;\n\t\tletter-spacing: -0.05em;\n\t\tline-height: 20px;\n\t\tmargin: 10px 0 30px;\n}\n#content h1[data-v-6a7e6ec0]:before,\n\t#content h1[data-v-6a7e6ec0]:after {\n\t\tcontent: \"\";\n\t\theight: 1px;\n\t\tposition: absolute;\n\t\ttop: 10px;\n\t\twidth: 27%;\n}\n#content h1[data-v-6a7e6ec0]:after {\n\t\tbackground: rgb(126,126,126);\n\t\tbackground: -moz-linear-gradient(left,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);\n\t\tbackground: -webkit-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -o-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -ms-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t    right: 0;\n}\n#content h1[data-v-6a7e6ec0]:before {\n\t\tbackground: rgb(126,126,126);\n\t\tbackground: -moz-linear-gradient(right,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);\n\t\tbackground: -webkit-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -o-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -ms-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t    left: 0;\n}\n#content[data-v-6a7e6ec0]:after,\n\t#content[data-v-6a7e6ec0]:before {\n\t\tbackground: #f9f9f9;\n\t\tbackground: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );\n\t\tborder: 1px solid #c4c6ca;\n\t\tcontent: \"\";\n\t\tdisplay: block;\n\t\theight: 100%;\n\t\tleft: -1px;\n\t\tposition: absolute;\n\t\twidth: 100%;\n}\n#content[data-v-6a7e6ec0]:after {\n\t\t-webkit-transform: rotate(2deg);\n\t\t-moz-transform: rotate(2deg);\n\t\t-ms-transform: rotate(2deg);\n\t\t-o-transform: rotate(2deg);\n\t\ttransform: rotate(2deg);\n\t\ttop: 0;\n\t\tz-index: -1;\n}\n#content[data-v-6a7e6ec0]:before {\n\t\t-webkit-transform: rotate(-3deg);\n\t\t-moz-transform: rotate(-3deg);\n\t\t-ms-transform: rotate(-3deg);\n\t\t-o-transform: rotate(-3deg);\n\t\ttransform: rotate(-3deg);\n\t\ttop: 0;\n\t\tz-index: -2;\n}\n#content form[data-v-6a7e6ec0] { margin: 0 20px; position: relative\n}\n#content form input[type=\"text\"][data-v-6a7e6ec0],\n\t#content form input[type=\"password\"][data-v-6a7e6ec0] {\n\t\t-webkit-border-radius: 3px;\n\t\t-moz-border-radius: 3px;\n\t\t-ms-border-radius: 3px;\n\t\t-o-border-radius: 3px;\n\t\tborder-radius: 3px;\n\t\t-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\tbox-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-webkit-transition: all 0.5s ease;\n\t\t-moz-transition: all 0.5s ease;\n\t\t-ms-transition: all 0.5s ease;\n\t\t-o-transition: all 0.5s ease;\n\t\ttransition: all 0.5s ease;\n\t\tbackground: #eae7e7 url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) no-repeat;\n\t\tborder: 1px solid #c8c8c8;\n\t\tcolor: #777;\n\t\tfont: 13px Helvetica, Arial, sans-serif;\n\t\tmargin: 0 0 20px;\n\t\tpadding: 15px 10px 15px 40px;\n\t\twidth: 90%;\n}\n#content form input[type=\"text\"][data-v-6a7e6ec0]:focus,\n\t#content form input[type=\"password\"][data-v-6a7e6ec0]:focus {\n\t\t-webkit-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-moz-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-ms-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-o-box-shadow: 0 0 2px #ed1c24 inset;\n\t\tbox-shadow: 0 0 2px #ed1c24 inset;\n\t\tbackground-color: #fff;\n\t\tborder: 1px solid #ed1c24;\n\t\toutline: none;\n}\n#username[data-v-6a7e6ec0] { background-position: 10px 10px !important\n}\n#password[data-v-6a7e6ec0] { background-position: 10px -53px !important\n}\n#content form input[type=\"submit\"][data-v-6a7e6ec0] {\n\t\tbackground: rgb(254,231,154);\n\t\tbackground: -moz-linear-gradient(top,  rgba(254,231,154,1) 0%, rgba(254,193,81,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fee79a', endColorstr='#fec151',GradientType=0 );\n\t\t-webkit-border-radius: 30px;\n\t\t-moz-border-radius: 30px;\n\t\t-ms-border-radius: 30px;\n\t\t-o-border-radius: 30px;\n\t\tborder-radius: 30px;\n\t\t-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-ms-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-o-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\tbox-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\tborder: 1px solid #D69E31;\n\t\tcolor: #85592e;\n\t\tcursor: pointer;\n\t\tfloat: left;\n\t\tfont: bold 15px Helvetica, Arial, sans-serif;\n\t\theight: 35px;\n\t\tmargin: 20px 0 35px 15px;\n\t\tposition: relative;\n\t\ttext-shadow: 0 1px 0 rgba(255,255,255,0.5);\n\t\twidth: 120px;\n}\n#content form input[type=\"submit\"][data-v-6a7e6ec0]:hover {\n\t\tbackground: rgb(254,193,81);\n\t\tbackground: -moz-linear-gradient(top,  rgba(254,193,81,1) 0%, rgba(254,231,154,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec151', endColorstr='#fee79a',GradientType=0 );\n}\n#content form div a[data-v-6a7e6ec0] {\n\t\tcolor: #004a80;\n\t    float: right;\n\t    font-size: 12px;\n\t    margin: 30px 15px 0 0;\n\t    text-decoration: underline;\n}\n.button[data-v-6a7e6ec0] {\n\t\tbackground: rgb(247,249,250);\n\t\tbackground: -moz-linear-gradient(top,  rgba(247,249,250,1) 0%, rgba(240,240,240,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f9fa', endColorstr='#f0f0f0',GradientType=0 );\n\t\t-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-ms-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-o-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\tbox-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-webkit-border-radius: 0 0 5px 5px;\n\t\t-moz-border-radius: 0 0 5px 5px;\n\t\t-o-border-radius: 0 0 5px 5px;\n\t\t-ms-border-radius: 0 0 5px 5px;\n\t\tborder-radius: 0 0 5px 5px;\n\t\tborder-top: 1px solid #CFD5D9;\n\t\tpadding: 15px 0;\n}\n.button a[data-v-6a7e6ec0] {\n\t\tbackground: url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) 0 -112px no-repeat;\n\t\tcolor: #7E7E7E;\n\t\tfont-size: 17px;\n\t\tpadding: 2px 0 2px 40px;\n\t\ttext-decoration: none;\n\t\t-webkit-transition: all 0.3s ease;\n\t\t-moz-transition: all 0.3s ease;\n\t\t-ms-transition: all 0.3s ease;\n\t\t-o-transition: all 0.3s ease;\n\t\ttransition: all 0.3s ease;\n}\n.button a[data-v-6a7e6ec0]:hover {\n\t\tbackground-position: 0 -135px;\n\t\tcolor: #00aeef;\n}\n", "", {"version":3,"sources":["/Users/timothy/Desktop/BonusCheck/src/src/Login.vue?31c687b2"],"names":[],"mappings":";AA+DA;KACA,2FAAA;KACA,6BAAA;EACA,uBAAA;EACA,mCAAA;EACA,mBAAA;KACA,MAAA;KACA,UAAA;EACA,YAAA;EACA,aAAA;CACA;;CAEA,gBAAA;AACA;EACA,kBAAA;CAEA;AACA;EACA,uBAAA;EACA,gBAAA;EACA,iBAAA;EACA,qBAAA;CACA;AACA;EACA,YAAA;EACA,gBAAA;CAEA;AACA;CACA,sBAAA;CACA;AAGA;;IAEA,iBAAA;IACA,mBAAA;CACA;AACA;EACA,gBAAA;EACA,kBAAA;EACA,YAAA;EACA,iBAAA;EACA,qBAAA;CAEA;AACA;EACA,gBAAA;EACA,kBAAA;EACA,kBAAA;EACA,uBAAA;EACA,eAAA;CAEA;AACA;EACA,eAAA;EACA,2BAAA;CAEA;AAEA;EACA,oBAAA;EACA,iBAAA;EACA,iBAAA;EACA,kBAAA;EACA,gBAAA;EACA,WAAA;CACA;AAEA;EACA,kBAAA;CACA;CACA,cAAA;;;CAGA,mBAAA;AACA,qBAAA,eAAA;CAAA;AACA,qBAAA,eAAA;CAAA;AACA,qBAAA,eAAA;CAAA;AACA,qBAAA,eAAA;CAAA;AACA,qBAAA,eAAA;CAAA;AACA,qBAAA,eAAA;CAAA;AACA,yHAAA,cAAA;CAAA;AACA,wBAAA,eAAA;CAAA;AACA,6CAAA,iBAAA;CAAA;AACA,oBAAA,sBAAA;CAAA;AACA,0BAAA,2BAAA;CAAA;AACA,yBAAA,WAAA;CAAA;AACA,0BAAA,YAAA;CAAA;AACA,8BAAA,YAAA,CAAA,mBAAA;CAAA;AACA,+BAAA,aAAA,CAAA,kBAAA;CAAA;AACA;;EAEA,aAAA;EACA,eAAA;EACA,UAAA;EACA,YAAA;EACA,mBAAA;CACA;AAGA;EACA,oBAAA;EACA,yFAAA;EACA,2FAAA;EACA,sFAAA;EACA,uFAAA;EACA,mFAAA;EACA,oHAAA;EACA,uCAAA;EACA,oCAAA;EACA,mCAAA;EACA,kCAAA;EACA,+BAAA;EACA,0BAAA;EACA,UAAA;EACA,kBAAA;EACA,mBAAA;EACA,mBAAA;EACA,0BAAA;EACA,aAAA;CAGA;AACA;EACA,eAAA;EACA,6CAAA;EACA,wBAAA;EACA,kBAAA;EACA,oBAAA;CACA;AACA;;EAEA,YAAA;EACA,YAAA;EACA,mBAAA;EACA,UAAA;EACA,WAAA;CACA;AACA;EACA,6BAAA;EACA,0FAAA;EACA,4FAAA;EACA,uFAAA;EACA,wFAAA;EACA,oFAAA;KACA,SAAA;CACA;AACA;EACA,6BAAA;EACA,2FAAA;EACA,6FAAA;EACA,wFAAA;EACA,yFAAA;EACA,qFAAA;KACA,QAAA;CACA;AACA;;EAEA,oBAAA;EACA,yFAAA;EACA,2FAAA;EACA,sFAAA;EACA,uFAAA;EACA,mFAAA;EACA,oHAAA;EACA,0BAAA;EACA,YAAA;EACA,eAAA;EACA,aAAA;EACA,WAAA;EACA,mBAAA;EACA,YAAA;CACA;AACA;EACA,gCAAA;EACA,6BAAA;EACA,4BAAA;EACA,2BAAA;EACA,wBAAA;EACA,OAAA;EACA,YAAA;CACA;AACA;EACA,iCAAA;EACA,8BAAA;EACA,6BAAA;EACA,4BAAA;EACA,yBAAA;EACA,OAAA;EACA,YAAA;CACA;AACA,iCAAA,eAAA,CAAA,kBAAA;CAAA;AACA;;EAEA,2BAAA;EACA,wBAAA;EACA,uBAAA;EACA,sBAAA;EACA,mBAAA;EACA,oEAAA;EACA,iEAAA;EACA,gEAAA;EACA,+DAAA;EACA,4DAAA;EACA,kCAAA;EACA,+BAAA;EACA,8BAAA;EACA,6BAAA;EACA,0BAAA;EACA,yFAAA;EACA,0BAAA;EACA,YAAA;EACA,wCAAA;EACA,iBAAA;EACA,6BAAA;EACA,WAAA;CACA;AACA;;EAEA,0CAAA;EACA,uCAAA;EACA,sCAAA;EACA,qCAAA;EACA,kCAAA;EACA,uBAAA;EACA,0BAAA;EACA,cAAA;CACA;AACA,6BAAA,yCAAA;CAAA;AACA,6BAAA,0CAAA;CAAA;AACA;EACA,6BAAA;EACA,wFAAA;EACA,0FAAA;EACA,qFAAA;EACA,sFAAA;EACA,kFAAA;EACA,oHAAA;EACA,4BAAA;EACA,yBAAA;EACA,wBAAA;EACA,uBAAA;EACA,oBAAA;EACA,wDAAA;EACA,qDAAA;EACA,oDAAA;EACA,mDAAA;EACA,gDAAA;EACA,0BAAA;EACA,eAAA;EACA,gBAAA;EACA,YAAA;EACA,6CAAA;EACA,aAAA;EACA,yBAAA;EACA,mBAAA;EACA,2CAAA;EACA,aAAA;CACA;AACA;EACA,4BAAA;EACA,wFAAA;EACA,0FAAA;EACA,qFAAA;EACA,sFAAA;EACA,kFAAA;EACA,oHAAA;CACA;AACA;EACA,eAAA;KACA,aAAA;KACA,gBAAA;KACA,sBAAA;KACA,2BAAA;CACA;AACA;EACA,6BAAA;EACA,yFAAA;EACA,2FAAA;EACA,sFAAA;EACA,uFAAA;EACA,mFAAA;EACA,oHAAA;EACA,oDAAA;EACA,iDAAA;EACA,gDAAA;EACA,+CAAA;EACA,4CAAA;EACA,mCAAA;EACA,gCAAA;EACA,8BAAA;EACA,+BAAA;EACA,2BAAA;EACA,8BAAA;EACA,gBAAA;CACA;AACA;EACA,0FAAA;EACA,eAAA;EACA,gBAAA;EACA,wBAAA;EACA,sBAAA;EACA,kCAAA;EACA,+BAAA;EACA,8BAAA;EACA,6BAAA;EACA,0BAAA;CACA;AACA;EACA,8BAAA;EACA,eAAA;CACA","file":"Login.vue","sourcesContent":["<template>\n  <div class=\"overlay\">\n\t    <!-- Navbar starts -->       \n\t    <nav class=\"navbar navbar-fixed-top\">\n\t\t    <div class=\"container\">\t\t       \n\t            <a class=\"navbar-brand \" href=\"index.html\"><img src=\"images/logo-web3.gif\"></a>\n\t           \t<button  class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#navbar-item\"  >\n\t\t            <span class=\"sr-only\">Toggle navigation</span>\n\t\t            <span class=\"icon-bar\"></span>\n\t\t            <span class=\"icon-bar\"></span>\n\t\t            <span class=\"icon-bar\"></span>\n\t\t        </button>\t\t          \n\t\t\t    <div id=\"navbar-item\" class=\"collapse  navbar-collapse\">\n\t\t\t          <ul class=\"nav navbar-nav navbar-right\">\n\t\t\t            <li ><router-link :to=\"'home'\">Home</router-link></li>\n\t\t\t            <li><a   href=\"#\">Contact</a></li>\n\t\t\t            <li ><a  href=\"signup.html\">Sign up</a></li>\n\t\t\t            <li><button class=\" btn-danger navbar-btn \"><a style=\"color: #fff;\" href=\"#\">Log in</a></button></li>\n\t\t\t          </ul>\n\t\t\t    </div><!--/.nav-collapse -->\n\t        </div>\n\t    </nav>\n\t    <!-- Navbar END -->\n\t\t\t      \t\t\t      \t\t        \n\t    <div class=\"row\">\n\t\t\t<div class=\"col-md-6 col-sm-6 title\">\n\t            \t<h1>Lorem ipsum dolor </h1>\n\t            \t<h2 class=\"home-hero-subtitle\">\n\t                   elit scripta suavitate his ea dico veritus no usu\n\t                    <a target=\"_blank\" href=\"/employee-recognition-guide\">transform employee recognition</a>\n\t                </h2>\n\t                \t\t    \t\n\t\t\t</div>\n\t\t    <div class=\"col-md-6 col-sm-6 login-col\">\n\t\t\t\t<section id=\"content\">\n\t\t\t\t\t<form name=\"signin\" method=\"post\" action=\"/auth\">\n\t\t\t\t\t\t<h1>Login </h1>\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t<input type=\"text\" placeholder=\"Username\" required=\"\" id=\"username\" name=\"user_name\"/>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t<input type=\"password\" placeholder=\"Password\" required=\"\" id=\"password\" name=\"password\"/>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t<input type=\"submit\" class=\"login\" value=\"Log in\" />\n\t\t\t\t\t\t\t<a style=\"color: #FF0000 ;\" href=\"#\">\n\t\t\t\t\t\t\t\tForgot password?\n\t\t\t\t\t\t\t</a>\t\t\t\t\t\t\t\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</form><!-- form -->\t\t\t\n\t\t\t\t</section><!-- content -->\n\t\t\t</div>\t\n\t    </div>\n    </div>\n</template>\n\n<script>\nexport default {\n  name: 'login'\n};\n</script>\n\n<style scoped>\n\tbody{\n\t    background-image: url(https://www.pega.com/sites/pega.com/files/banking-case-study-bg.jpg);\n\t    background-repeat: no-repeat;\n\t\tbackground-size: cover;\n\t\tbackground-position: center center;\n\t\tposition: relative;\n\t    top:0;\n\t    bottom: 0;\n\t\theight:100%;\n\t\tz-index: -10;\t\n\t}\n\n\t/*NAVBAR START*/\n\t.navbar-brand{\n\t\tmargin-top: -10px;\n\t\t\n\t}\n\t.navbar{\n\t\tbackground-color: #fff;\n\t\tposition: fixed;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n\t}\n\t.nav li a{\n\t\tcolor: #000;\n\t\tfont-size: 20px;\n\t\t\t\n\t}\n\t.nav li a:hover {\n\ttext-decoration: none;\n\t}\n\n\n\t.title{\n\t   \n\t   margin-top: 60px;\n\t   text-align: center;\n\t}\n\t.title h1{\n\t\tfont-size: 45px;\n\t\tline-height: 45px;\n\t\tcolor: #fff;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n\t\t\n\t}\n\t.title h2{\n\t\tfont-size: 27px;\n\t\tfont-weight: bold;\n\t\tline-height: 27px;\n\t\tletter-spacing: -0.5px;\n\t\tcolor: #C0C0C0;\n\n\t}\n\t.title a{\n\t\tcolor: inherit;\n\t\ttext-decoration: underline;\n\n\t}\n\n\t.btn-danger{\n\t\tborder-radius: 10px;\n\t\tfont-weight: 800;\t\n\t\tline-height: 1.7;\n\t\tmargin-left: 40px;\n\t\tfont-size: 18px;\n\t\twidth: 80%;\n\t}\n\n\t.row{\n\t\tmargin-top: 220px;\n\t}\n\t/*NAVBAR END*/\n\n\n\t/*LOGIN BOX START*/\n\th1{ font-size:28px;}\n\th2{ font-size:26px;}\n\th3{ font-size:18px;}\n\th4{ font-size:16px;}\n\th5{ font-size:14px;}\n\th6{ font-size:12px;}\n\th1,h2,h3,h4,h5,h6{ color:#563D64;}\n\tsmall{ font-size:10px;}\n\tb, strong{ font-weight:bold;}\n\ta{ text-decoration: none; }\n\ta:hover{ text-decoration: underline; }\n\t.left { float:left; }\n\t.right { float:right; }\n\t.alignleft { float: left; margin-right: 15px; }\n\t.alignright { float: right; margin-left: 15px; }\n\t.clearfix:after,\n\tform:after {\n\t\tcontent: \".\";\n\t\tdisplay: block;\n\t\theight: 0;\n\t\tclear: both;\n\t\tvisibility: hidden;\n\t}\n\n\n\t#content {\n\t\tbackground: #f9f9f9;\n\t\tbackground: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );\n\t\t-webkit-box-shadow: 0 1px 0 #fff inset;\n\t\t-moz-box-shadow: 0 1px 0 #fff inset;\n\t\t-ms-box-shadow: 0 1px 0 #fff inset;\n\t\t-o-box-shadow: 0 1px 0 #fff inset;\n\t\tbox-shadow: 0 1px 0 #fff inset;\n\t\tborder: 1px solid #c4c6ca;\n\t\tmargin: 0;\n\t\tpadding: 25px 0 0;\n\t\tposition: relative;\n\t\ttext-align: center;\n\t\ttext-shadow: 0 1px 0 #fff;\n\t\twidth: 500px;\n\n\n\t}\n\t#content h1 {\n\t\tcolor: #7E7E7E;\n\t\tfont: bold 25px Helvetica, Arial, sans-serif;\n\t\tletter-spacing: -0.05em;\n\t\tline-height: 20px;\n\t\tmargin: 10px 0 30px;\n\t}\n\t#content h1:before,\n\t#content h1:after {\n\t\tcontent: \"\";\n\t\theight: 1px;\n\t\tposition: absolute;\n\t\ttop: 10px;\n\t\twidth: 27%;\n\t}\n\t#content h1:after {\n\t\tbackground: rgb(126,126,126);\n\t\tbackground: -moz-linear-gradient(left,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);\n\t\tbackground: -webkit-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -o-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -ms-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t    right: 0;\n\t}\n\t#content h1:before {\n\t\tbackground: rgb(126,126,126);\n\t\tbackground: -moz-linear-gradient(right,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);\n\t\tbackground: -webkit-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -o-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: -ms-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t\tbackground: linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t    left: 0;\n\t}\n\t#content:after,\n\t#content:before {\n\t\tbackground: #f9f9f9;\n\t\tbackground: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );\n\t\tborder: 1px solid #c4c6ca;\n\t\tcontent: \"\";\n\t\tdisplay: block;\n\t\theight: 100%;\n\t\tleft: -1px;\n\t\tposition: absolute;\n\t\twidth: 100%;\n\t}\n\t#content:after {\n\t\t-webkit-transform: rotate(2deg);\n\t\t-moz-transform: rotate(2deg);\n\t\t-ms-transform: rotate(2deg);\n\t\t-o-transform: rotate(2deg);\n\t\ttransform: rotate(2deg);\n\t\ttop: 0;\n\t\tz-index: -1;\n\t}\n\t#content:before {\n\t\t-webkit-transform: rotate(-3deg);\n\t\t-moz-transform: rotate(-3deg);\n\t\t-ms-transform: rotate(-3deg);\n\t\t-o-transform: rotate(-3deg);\n\t\ttransform: rotate(-3deg);\n\t\ttop: 0;\n\t\tz-index: -2;\n\t}\n\t#content form { margin: 0 20px; position: relative }\n\t#content form input[type=\"text\"],\n\t#content form input[type=\"password\"] {\n\t\t-webkit-border-radius: 3px;\n\t\t-moz-border-radius: 3px;\n\t\t-ms-border-radius: 3px;\n\t\t-o-border-radius: 3px;\n\t\tborder-radius: 3px;\n\t\t-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\tbox-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-webkit-transition: all 0.5s ease;\n\t\t-moz-transition: all 0.5s ease;\n\t\t-ms-transition: all 0.5s ease;\n\t\t-o-transition: all 0.5s ease;\n\t\ttransition: all 0.5s ease;\n\t\tbackground: #eae7e7 url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) no-repeat;\n\t\tborder: 1px solid #c8c8c8;\n\t\tcolor: #777;\n\t\tfont: 13px Helvetica, Arial, sans-serif;\n\t\tmargin: 0 0 20px;\n\t\tpadding: 15px 10px 15px 40px;\n\t\twidth: 90%;\n\t}\n\t#content form input[type=\"text\"]:focus,\n\t#content form input[type=\"password\"]:focus {\n\t\t-webkit-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-moz-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-ms-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-o-box-shadow: 0 0 2px #ed1c24 inset;\n\t\tbox-shadow: 0 0 2px #ed1c24 inset;\n\t\tbackground-color: #fff;\n\t\tborder: 1px solid #ed1c24;\n\t\toutline: none;\n\t}\n\t#username { background-position: 10px 10px !important }\n\t#password { background-position: 10px -53px !important }\n\t#content form input[type=\"submit\"] {\n\t\tbackground: rgb(254,231,154);\n\t\tbackground: -moz-linear-gradient(top,  rgba(254,231,154,1) 0%, rgba(254,193,81,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fee79a', endColorstr='#fec151',GradientType=0 );\n\t\t-webkit-border-radius: 30px;\n\t\t-moz-border-radius: 30px;\n\t\t-ms-border-radius: 30px;\n\t\t-o-border-radius: 30px;\n\t\tborder-radius: 30px;\n\t\t-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-ms-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-o-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\tbox-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\tborder: 1px solid #D69E31;\n\t\tcolor: #85592e;\n\t\tcursor: pointer;\n\t\tfloat: left;\n\t\tfont: bold 15px Helvetica, Arial, sans-serif;\n\t\theight: 35px;\n\t\tmargin: 20px 0 35px 15px;\n\t\tposition: relative;\n\t\ttext-shadow: 0 1px 0 rgba(255,255,255,0.5);\n\t\twidth: 120px;\n\t}\n\t#content form input[type=\"submit\"]:hover {\n\t\tbackground: rgb(254,193,81);\n\t\tbackground: -moz-linear-gradient(top,  rgba(254,193,81,1) 0%, rgba(254,231,154,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec151', endColorstr='#fee79a',GradientType=0 );\n\t}\n\t#content form div a {\n\t\tcolor: #004a80;\n\t    float: right;\n\t    font-size: 12px;\n\t    margin: 30px 15px 0 0;\n\t    text-decoration: underline;\n\t}\n\t.button {\n\t\tbackground: rgb(247,249,250);\n\t\tbackground: -moz-linear-gradient(top,  rgba(247,249,250,1) 0%, rgba(240,240,240,1) 100%);\n\t\tbackground: -webkit-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tbackground: -o-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tbackground: -ms-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tbackground: linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f9fa', endColorstr='#f0f0f0',GradientType=0 );\n\t\t-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-ms-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-o-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\tbox-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-webkit-border-radius: 0 0 5px 5px;\n\t\t-moz-border-radius: 0 0 5px 5px;\n\t\t-o-border-radius: 0 0 5px 5px;\n\t\t-ms-border-radius: 0 0 5px 5px;\n\t\tborder-radius: 0 0 5px 5px;\n\t\tborder-top: 1px solid #CFD5D9;\n\t\tpadding: 15px 0;\n\t}\n\t.button a {\n\t\tbackground: url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) 0 -112px no-repeat;\n\t\tcolor: #7E7E7E;\n\t\tfont-size: 17px;\n\t\tpadding: 2px 0 2px 40px;\n\t\ttext-decoration: none;\n\t\t-webkit-transition: all 0.3s ease;\n\t\t-moz-transition: all 0.3s ease;\n\t\t-ms-transition: all 0.3s ease;\n\t\t-o-transition: all 0.3s ease;\n\t\ttransition: all 0.3s ease;\n\t}\n\t.button a:hover {\n\t\tbackground-position: 0 -135px;\n\t\tcolor: #00aeef;\n}\n</style>"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 22 */
+/* 29 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15182,7 +15869,7 @@ exports.push([module.i, "\nbody[data-v-6a7e6ec0]{\n\t    background-image: url(h
 
 
 /***/ }),
-/* 23 */
+/* 30 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15311,7 +15998,7 @@ var staticRenderFns = [
         _c("section", { attrs: { id: "content" } }, [
           _c(
             "form",
-            { attrs: { name: "signin", method: "post", action: "/signin" } },
+            { attrs: { name: "signin", method: "post", action: "/auth" } },
             [
               _c("h1", [_vm._v("Login ")]),
               _vm._v(" "),
@@ -15365,6 +16052,1208 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-6a7e6ec0", esExports)
+  }
+}
+
+/***/ }),
+/* 31 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Dash_vue__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_ac6787ea_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Dash_vue__ = __webpack_require__(55);
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Dash_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_ac6787ea_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Dash_vue__["a" /* default */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src/Dash.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-ac6787ea", Component.options)
+  } else {
+    hotAPI.reload("data-v-ac6787ea", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+/* 32 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sidebar__ = __webpack_require__(33);
+//
+//
+//
+//
+
+
+
+var axios = __webpack_require__(36);
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  name: 'Dash',
+  components: {
+  	'side-bar': __WEBPACK_IMPORTED_MODULE_0__sidebar__["a" /* default */]
+  },
+  data: function data(){
+  	return {
+      user: {}
+    }
+  }, 
+  methods: {
+
+  },
+
+  beforeMount: function beforeMount(){
+	 var this$1 = this;
+
+	 axios.get('/session-data')
+	 .then(function (req) {
+		  console.log(req.data);
+      this$1.user = req.data;
+	 })
+	.catch(function(err){
+		console.log(err);
+	});
+}
+});
+
+
+
+/***/ }),
+/* 33 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_sidebar_vue__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_394e5d93_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_sidebar_vue__ = __webpack_require__(35);
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_sidebar_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_394e5d93_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_sidebar_vue__["a" /* default */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src/sidebar.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-394e5d93", Component.options)
+  } else {
+    hotAPI.reload("data-v-394e5d93", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+/* 34 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  name: 'side-bar'
+});
+
+
+
+/***/ }),
+/* 35 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "cd-side-nav" }, [
+      _c("ul", [
+        _c("li", { staticClass: "has-children Overviews" }, [
+          _c(
+            "button",
+            {
+              staticClass: "button",
+              attrs: { onclick: "openTab('dashboard')" }
+            },
+            [_c("i", { staticClass: "fa fa-th-large" }), _vm._v("Dashboard ")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "has-children comments" }, [
+          _c(
+            "button",
+            { staticClass: "button", attrs: { onclick: "openTab('project')" } },
+            [_c("i", { staticClass: "fa fa-tasks" }), _vm._v(" Project")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "has-children bookmarks" }, [
+          _c(
+            "button",
+            { staticClass: "button", attrs: { onclick: "openTab('tables')" } },
+            [_c("i", { staticClass: "fa fa-table" }), _vm._v(" Tables")]
+          ),
+          _vm._v(" "),
+          _c("ul", [
+            _c("li", [
+              _c("a", { attrs: { href: "#0" } }, [_vm._v("option 1")])
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#0" } }, [_vm._v("option 2")])
+            ]),
+            _vm._v(" "),
+            _c("li", [_c("a", { attrs: { href: "#0" } }, [_vm._v("option 3")])])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "has-children users" }, [
+          _c(
+            "button",
+            { staticClass: "button", attrs: { onclick: "openTab('user')" } },
+            [_c("i", { staticClass: "fa fa-user" }), _vm._v(" User")]
+          ),
+          _vm._v(" "),
+          _c("ul", [
+            _c("li", [
+              _c("a", { attrs: { href: "#0" } }, [_vm._v("All Users")])
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("a", { attrs: { href: "#0" } }, [_vm._v("Edit User")])
+            ]),
+            _vm._v(" "),
+            _c("li", [_c("a", { attrs: { href: "#0" } }, [_vm._v("Add User")])])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "has-children comments" }, [
+          _c(
+            "button",
+            { staticClass: "button", attrs: { onclick: "openTab('admin')" } },
+            [_c("i", { staticClass: "fa fa-user-circle" }), _vm._v(" Admin")]
+          )
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-394e5d93", esExports)
+  }
+}
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(37);
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(0);
+var bind = __webpack_require__(7);
+var Axios = __webpack_require__(39);
+var defaults = __webpack_require__(3);
+
+/**
+ * Create an instance of Axios
+ *
+ * @param {Object} defaultConfig The default config for the instance
+ * @return {Axios} A new instance of Axios
+ */
+function createInstance(defaultConfig) {
+  var context = new Axios(defaultConfig);
+  var instance = bind(Axios.prototype.request, context);
+
+  // Copy axios.prototype to instance
+  utils.extend(instance, Axios.prototype, context);
+
+  // Copy context to instance
+  utils.extend(instance, context);
+
+  return instance;
+}
+
+// Create the default instance to be exported
+var axios = createInstance(defaults);
+
+// Expose Axios class to allow class inheritance
+axios.Axios = Axios;
+
+// Factory for creating new instances
+axios.create = function create(instanceConfig) {
+  return createInstance(utils.merge(defaults, instanceConfig));
+};
+
+// Expose Cancel & CancelToken
+axios.Cancel = __webpack_require__(11);
+axios.CancelToken = __webpack_require__(53);
+axios.isCancel = __webpack_require__(10);
+
+// Expose all/spread
+axios.all = function all(promises) {
+  return Promise.all(promises);
+};
+axios.spread = __webpack_require__(54);
+
+module.exports = axios;
+
+// Allow use of default import syntax in TypeScript
+module.exports.default = axios;
+
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports) {
+
+/*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */
+
+// The _isBuffer check is for Safari 5-7 support, because it's missing
+// Object.prototype.constructor. Remove this eventually
+module.exports = function (obj) {
+  return obj != null && (isBuffer(obj) || isSlowBuffer(obj) || !!obj._isBuffer)
+}
+
+function isBuffer (obj) {
+  return !!obj.constructor && typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
+}
+
+// For Node v0.10 support. Remove this eventually.
+function isSlowBuffer (obj) {
+  return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isBuffer(obj.slice(0, 0))
+}
+
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var defaults = __webpack_require__(3);
+var utils = __webpack_require__(0);
+var InterceptorManager = __webpack_require__(48);
+var dispatchRequest = __webpack_require__(49);
+
+/**
+ * Create a new instance of Axios
+ *
+ * @param {Object} instanceConfig The default config for the instance
+ */
+function Axios(instanceConfig) {
+  this.defaults = instanceConfig;
+  this.interceptors = {
+    request: new InterceptorManager(),
+    response: new InterceptorManager()
+  };
+}
+
+/**
+ * Dispatch a request
+ *
+ * @param {Object} config The config specific for this request (merged with this.defaults)
+ */
+Axios.prototype.request = function request(config) {
+  /*eslint no-param-reassign:0*/
+  // Allow for axios('example/url'[, config]) a la fetch API
+  if (typeof config === 'string') {
+    config = utils.merge({
+      url: arguments[0]
+    }, arguments[1]);
+  }
+
+  config = utils.merge(defaults, this.defaults, { method: 'get' }, config);
+  config.method = config.method.toLowerCase();
+
+  // Hook up interceptors middleware
+  var chain = [dispatchRequest, undefined];
+  var promise = Promise.resolve(config);
+
+  this.interceptors.request.forEach(function unshiftRequestInterceptors(interceptor) {
+    chain.unshift(interceptor.fulfilled, interceptor.rejected);
+  });
+
+  this.interceptors.response.forEach(function pushResponseInterceptors(interceptor) {
+    chain.push(interceptor.fulfilled, interceptor.rejected);
+  });
+
+  while (chain.length) {
+    promise = promise.then(chain.shift(), chain.shift());
+  }
+
+  return promise;
+};
+
+// Provide aliases for supported request methods
+utils.forEach(['delete', 'get', 'head', 'options'], function forEachMethodNoData(method) {
+  /*eslint func-names:0*/
+  Axios.prototype[method] = function(url, config) {
+    return this.request(utils.merge(config || {}, {
+      method: method,
+      url: url
+    }));
+  };
+});
+
+utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
+  /*eslint func-names:0*/
+  Axios.prototype[method] = function(url, data, config) {
+    return this.request(utils.merge(config || {}, {
+      method: method,
+      url: url,
+      data: data
+    }));
+  };
+});
+
+module.exports = Axios;
+
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(0);
+
+module.exports = function normalizeHeaderName(headers, normalizedName) {
+  utils.forEach(headers, function processHeader(value, name) {
+    if (name !== normalizedName && name.toUpperCase() === normalizedName.toUpperCase()) {
+      headers[normalizedName] = value;
+      delete headers[name];
+    }
+  });
+};
+
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var createError = __webpack_require__(9);
+
+/**
+ * Resolve or reject a Promise based on response status.
+ *
+ * @param {Function} resolve A function that resolves the promise.
+ * @param {Function} reject A function that rejects the promise.
+ * @param {object} response The response.
+ */
+module.exports = function settle(resolve, reject, response) {
+  var validateStatus = response.config.validateStatus;
+  // Note: status is not exposed by XDomainRequest
+  if (!response.status || !validateStatus || validateStatus(response.status)) {
+    resolve(response);
+  } else {
+    reject(createError(
+      'Request failed with status code ' + response.status,
+      response.config,
+      null,
+      response.request,
+      response
+    ));
+  }
+};
+
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Update an Error with the specified config, error code, and response.
+ *
+ * @param {Error} error The error to update.
+ * @param {Object} config The config.
+ * @param {string} [code] The error code (for example, 'ECONNABORTED').
+ * @param {Object} [request] The request.
+ * @param {Object} [response] The response.
+ * @returns {Error} The error.
+ */
+module.exports = function enhanceError(error, config, code, request, response) {
+  error.config = config;
+  if (code) {
+    error.code = code;
+  }
+  error.request = request;
+  error.response = response;
+  return error;
+};
+
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(0);
+
+function encode(val) {
+  return encodeURIComponent(val).
+    replace(/%40/gi, '@').
+    replace(/%3A/gi, ':').
+    replace(/%24/g, '$').
+    replace(/%2C/gi, ',').
+    replace(/%20/g, '+').
+    replace(/%5B/gi, '[').
+    replace(/%5D/gi, ']');
+}
+
+/**
+ * Build a URL by appending params to the end
+ *
+ * @param {string} url The base of the url (e.g., http://www.google.com)
+ * @param {object} [params] The params to be appended
+ * @returns {string} The formatted url
+ */
+module.exports = function buildURL(url, params, paramsSerializer) {
+  /*eslint no-param-reassign:0*/
+  if (!params) {
+    return url;
+  }
+
+  var serializedParams;
+  if (paramsSerializer) {
+    serializedParams = paramsSerializer(params);
+  } else if (utils.isURLSearchParams(params)) {
+    serializedParams = params.toString();
+  } else {
+    var parts = [];
+
+    utils.forEach(params, function serialize(val, key) {
+      if (val === null || typeof val === 'undefined') {
+        return;
+      }
+
+      if (utils.isArray(val)) {
+        key = key + '[]';
+      }
+
+      if (!utils.isArray(val)) {
+        val = [val];
+      }
+
+      utils.forEach(val, function parseValue(v) {
+        if (utils.isDate(v)) {
+          v = v.toISOString();
+        } else if (utils.isObject(v)) {
+          v = JSON.stringify(v);
+        }
+        parts.push(encode(key) + '=' + encode(v));
+      });
+    });
+
+    serializedParams = parts.join('&');
+  }
+
+  if (serializedParams) {
+    url += (url.indexOf('?') === -1 ? '?' : '&') + serializedParams;
+  }
+
+  return url;
+};
+
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(0);
+
+// Headers whose duplicates are ignored by node
+// c.f. https://nodejs.org/api/http.html#http_message_headers
+var ignoreDuplicateOf = [
+  'age', 'authorization', 'content-length', 'content-type', 'etag',
+  'expires', 'from', 'host', 'if-modified-since', 'if-unmodified-since',
+  'last-modified', 'location', 'max-forwards', 'proxy-authorization',
+  'referer', 'retry-after', 'user-agent'
+];
+
+/**
+ * Parse headers into an object
+ *
+ * ```
+ * Date: Wed, 27 Aug 2014 08:58:49 GMT
+ * Content-Type: application/json
+ * Connection: keep-alive
+ * Transfer-Encoding: chunked
+ * ```
+ *
+ * @param {String} headers Headers needing to be parsed
+ * @returns {Object} Headers parsed into an object
+ */
+module.exports = function parseHeaders(headers) {
+  var parsed = {};
+  var key;
+  var val;
+  var i;
+
+  if (!headers) { return parsed; }
+
+  utils.forEach(headers.split('\n'), function parser(line) {
+    i = line.indexOf(':');
+    key = utils.trim(line.substr(0, i)).toLowerCase();
+    val = utils.trim(line.substr(i + 1));
+
+    if (key) {
+      if (parsed[key] && ignoreDuplicateOf.indexOf(key) >= 0) {
+        return;
+      }
+      if (key === 'set-cookie') {
+        parsed[key] = (parsed[key] ? parsed[key] : []).concat([val]);
+      } else {
+        parsed[key] = parsed[key] ? parsed[key] + ', ' + val : val;
+      }
+    }
+  });
+
+  return parsed;
+};
+
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(0);
+
+module.exports = (
+  utils.isStandardBrowserEnv() ?
+
+  // Standard browser envs have full support of the APIs needed to test
+  // whether the request URL is of the same origin as current location.
+  (function standardBrowserEnv() {
+    var msie = /(msie|trident)/i.test(navigator.userAgent);
+    var urlParsingNode = document.createElement('a');
+    var originURL;
+
+    /**
+    * Parse a URL to discover it's components
+    *
+    * @param {String} url The URL to be parsed
+    * @returns {Object}
+    */
+    function resolveURL(url) {
+      var href = url;
+
+      if (msie) {
+        // IE needs attribute set twice to normalize properties
+        urlParsingNode.setAttribute('href', href);
+        href = urlParsingNode.href;
+      }
+
+      urlParsingNode.setAttribute('href', href);
+
+      // urlParsingNode provides the UrlUtils interface - http://url.spec.whatwg.org/#urlutils
+      return {
+        href: urlParsingNode.href,
+        protocol: urlParsingNode.protocol ? urlParsingNode.protocol.replace(/:$/, '') : '',
+        host: urlParsingNode.host,
+        search: urlParsingNode.search ? urlParsingNode.search.replace(/^\?/, '') : '',
+        hash: urlParsingNode.hash ? urlParsingNode.hash.replace(/^#/, '') : '',
+        hostname: urlParsingNode.hostname,
+        port: urlParsingNode.port,
+        pathname: (urlParsingNode.pathname.charAt(0) === '/') ?
+                  urlParsingNode.pathname :
+                  '/' + urlParsingNode.pathname
+      };
+    }
+
+    originURL = resolveURL(window.location.href);
+
+    /**
+    * Determine if a URL shares the same origin as the current location
+    *
+    * @param {String} requestURL The URL to test
+    * @returns {boolean} True if URL shares the same origin, otherwise false
+    */
+    return function isURLSameOrigin(requestURL) {
+      var parsed = (utils.isString(requestURL)) ? resolveURL(requestURL) : requestURL;
+      return (parsed.protocol === originURL.protocol &&
+            parsed.host === originURL.host);
+    };
+  })() :
+
+  // Non standard browser envs (web workers, react-native) lack needed support.
+  (function nonStandardBrowserEnv() {
+    return function isURLSameOrigin() {
+      return true;
+    };
+  })()
+);
+
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// btoa polyfill for IE<10 courtesy https://github.com/davidchambers/Base64.js
+
+var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+
+function E() {
+  this.message = 'String contains an invalid character';
+}
+E.prototype = new Error;
+E.prototype.code = 5;
+E.prototype.name = 'InvalidCharacterError';
+
+function btoa(input) {
+  var str = String(input);
+  var output = '';
+  for (
+    // initialize result and counter
+    var block, charCode, idx = 0, map = chars;
+    // if the next str index does not exist:
+    //   change the mapping table to "="
+    //   check if d has no fractional digits
+    str.charAt(idx | 0) || (map = '=', idx % 1);
+    // "8 - idx % 1 * 8" generates the sequence 2, 4, 6, 8
+    output += map.charAt(63 & block >> 8 - idx % 1 * 8)
+  ) {
+    charCode = str.charCodeAt(idx += 3 / 4);
+    if (charCode > 0xFF) {
+      throw new E();
+    }
+    block = block << 8 | charCode;
+  }
+  return output;
+}
+
+module.exports = btoa;
+
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(0);
+
+module.exports = (
+  utils.isStandardBrowserEnv() ?
+
+  // Standard browser envs support document.cookie
+  (function standardBrowserEnv() {
+    return {
+      write: function write(name, value, expires, path, domain, secure) {
+        var cookie = [];
+        cookie.push(name + '=' + encodeURIComponent(value));
+
+        if (utils.isNumber(expires)) {
+          cookie.push('expires=' + new Date(expires).toGMTString());
+        }
+
+        if (utils.isString(path)) {
+          cookie.push('path=' + path);
+        }
+
+        if (utils.isString(domain)) {
+          cookie.push('domain=' + domain);
+        }
+
+        if (secure === true) {
+          cookie.push('secure');
+        }
+
+        document.cookie = cookie.join('; ');
+      },
+
+      read: function read(name) {
+        var match = document.cookie.match(new RegExp('(^|;\\s*)(' + name + ')=([^;]*)'));
+        return (match ? decodeURIComponent(match[3]) : null);
+      },
+
+      remove: function remove(name) {
+        this.write(name, '', Date.now() - 86400000);
+      }
+    };
+  })() :
+
+  // Non standard browser env (web workers, react-native) lack needed support.
+  (function nonStandardBrowserEnv() {
+    return {
+      write: function write() {},
+      read: function read() { return null; },
+      remove: function remove() {}
+    };
+  })()
+);
+
+
+/***/ }),
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(0);
+
+function InterceptorManager() {
+  this.handlers = [];
+}
+
+/**
+ * Add a new interceptor to the stack
+ *
+ * @param {Function} fulfilled The function to handle `then` for a `Promise`
+ * @param {Function} rejected The function to handle `reject` for a `Promise`
+ *
+ * @return {Number} An ID used to remove interceptor later
+ */
+InterceptorManager.prototype.use = function use(fulfilled, rejected) {
+  this.handlers.push({
+    fulfilled: fulfilled,
+    rejected: rejected
+  });
+  return this.handlers.length - 1;
+};
+
+/**
+ * Remove an interceptor from the stack
+ *
+ * @param {Number} id The ID that was returned by `use`
+ */
+InterceptorManager.prototype.eject = function eject(id) {
+  if (this.handlers[id]) {
+    this.handlers[id] = null;
+  }
+};
+
+/**
+ * Iterate over all the registered interceptors
+ *
+ * This method is particularly useful for skipping over any
+ * interceptors that may have become `null` calling `eject`.
+ *
+ * @param {Function} fn The function to call for each interceptor
+ */
+InterceptorManager.prototype.forEach = function forEach(fn) {
+  utils.forEach(this.handlers, function forEachHandler(h) {
+    if (h !== null) {
+      fn(h);
+    }
+  });
+};
+
+module.exports = InterceptorManager;
+
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(0);
+var transformData = __webpack_require__(50);
+var isCancel = __webpack_require__(10);
+var defaults = __webpack_require__(3);
+var isAbsoluteURL = __webpack_require__(51);
+var combineURLs = __webpack_require__(52);
+
+/**
+ * Throws a `Cancel` if cancellation has been requested.
+ */
+function throwIfCancellationRequested(config) {
+  if (config.cancelToken) {
+    config.cancelToken.throwIfRequested();
+  }
+}
+
+/**
+ * Dispatch a request to the server using the configured adapter.
+ *
+ * @param {object} config The config that is to be used for the request
+ * @returns {Promise} The Promise to be fulfilled
+ */
+module.exports = function dispatchRequest(config) {
+  throwIfCancellationRequested(config);
+
+  // Support baseURL config
+  if (config.baseURL && !isAbsoluteURL(config.url)) {
+    config.url = combineURLs(config.baseURL, config.url);
+  }
+
+  // Ensure headers exist
+  config.headers = config.headers || {};
+
+  // Transform request data
+  config.data = transformData(
+    config.data,
+    config.headers,
+    config.transformRequest
+  );
+
+  // Flatten headers
+  config.headers = utils.merge(
+    config.headers.common || {},
+    config.headers[config.method] || {},
+    config.headers || {}
+  );
+
+  utils.forEach(
+    ['delete', 'get', 'head', 'post', 'put', 'patch', 'common'],
+    function cleanHeaderConfig(method) {
+      delete config.headers[method];
+    }
+  );
+
+  var adapter = config.adapter || defaults.adapter;
+
+  return adapter(config).then(function onAdapterResolution(response) {
+    throwIfCancellationRequested(config);
+
+    // Transform response data
+    response.data = transformData(
+      response.data,
+      response.headers,
+      config.transformResponse
+    );
+
+    return response;
+  }, function onAdapterRejection(reason) {
+    if (!isCancel(reason)) {
+      throwIfCancellationRequested(config);
+
+      // Transform response data
+      if (reason && reason.response) {
+        reason.response.data = transformData(
+          reason.response.data,
+          reason.response.headers,
+          config.transformResponse
+        );
+      }
+    }
+
+    return Promise.reject(reason);
+  });
+};
+
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(0);
+
+/**
+ * Transform the data for a request or a response
+ *
+ * @param {Object|String} data The data to be transformed
+ * @param {Array} headers The headers for the request or response
+ * @param {Array|Function} fns A single function or Array of functions
+ * @returns {*} The resulting transformed data
+ */
+module.exports = function transformData(data, headers, fns) {
+  /*eslint no-param-reassign:0*/
+  utils.forEach(fns, function transform(fn) {
+    data = fn(data, headers);
+  });
+
+  return data;
+};
+
+
+/***/ }),
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Determines whether the specified URL is absolute
+ *
+ * @param {string} url The URL to test
+ * @returns {boolean} True if the specified URL is absolute, otherwise false
+ */
+module.exports = function isAbsoluteURL(url) {
+  // A URL is considered absolute if it begins with "<scheme>://" or "//" (protocol-relative URL).
+  // RFC 3986 defines scheme name as a sequence of characters beginning with a letter and followed
+  // by any combination of letters, digits, plus, period, or hyphen.
+  return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(url);
+};
+
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Creates a new URL by combining the specified URLs
+ *
+ * @param {string} baseURL The base URL
+ * @param {string} relativeURL The relative URL
+ * @returns {string} The combined URL
+ */
+module.exports = function combineURLs(baseURL, relativeURL) {
+  return relativeURL
+    ? baseURL.replace(/\/+$/, '') + '/' + relativeURL.replace(/^\/+/, '')
+    : baseURL;
+};
+
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var Cancel = __webpack_require__(11);
+
+/**
+ * A `CancelToken` is an object that can be used to request cancellation of an operation.
+ *
+ * @class
+ * @param {Function} executor The executor function.
+ */
+function CancelToken(executor) {
+  if (typeof executor !== 'function') {
+    throw new TypeError('executor must be a function.');
+  }
+
+  var resolvePromise;
+  this.promise = new Promise(function promiseExecutor(resolve) {
+    resolvePromise = resolve;
+  });
+
+  var token = this;
+  executor(function cancel(message) {
+    if (token.reason) {
+      // Cancellation has already been requested
+      return;
+    }
+
+    token.reason = new Cancel(message);
+    resolvePromise(token.reason);
+  });
+}
+
+/**
+ * Throws a `Cancel` if cancellation has been requested.
+ */
+CancelToken.prototype.throwIfRequested = function throwIfRequested() {
+  if (this.reason) {
+    throw this.reason;
+  }
+};
+
+/**
+ * Returns an object that contains a new `CancelToken` and a function that, when called,
+ * cancels the `CancelToken`.
+ */
+CancelToken.source = function source() {
+  var cancel;
+  var token = new CancelToken(function executor(c) {
+    cancel = c;
+  });
+  return {
+    token: token,
+    cancel: cancel
+  };
+};
+
+module.exports = CancelToken;
+
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Syntactic sugar for invoking a function and expanding an array for arguments.
+ *
+ * Common use case would be to use `Function.prototype.apply`.
+ *
+ *  ```js
+ *  function f(x, y, z) {}
+ *  var args = [1, 2, 3];
+ *  f.apply(null, args);
+ *  ```
+ *
+ * With `spread` this example can be re-written.
+ *
+ *  ```js
+ *  spread(function(x, y, z) {})([1, 2, 3]);
+ *  ```
+ *
+ * @param {Function} callback
+ * @returns {Function}
+ */
+module.exports = function spread(callback) {
+  return function wrap(arr) {
+    return callback.apply(null, arr);
+  };
+};
+
+
+/***/ }),
+/* 55 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("side-bar")
+}
+var staticRenderFns = []
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-ac6787ea", esExports)
   }
 }
 

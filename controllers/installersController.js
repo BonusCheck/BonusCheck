@@ -1,6 +1,7 @@
 const express = require("express"),
       router = express.Router(),
       fs = require('fs'),
+      layout = fs.readFileSync('./layout.html', 'utf8');
       installer = require("../models/installer.js"),
       job = require("../models/job.js"),
       change_ord = require("../models/change_orders.js"),
@@ -34,8 +35,8 @@ router.post("/auth", function(req, res) {
         sessData.user_name = data[0].user_name;
         sessData.user_role_name = data[0].user_role_name;
         console.log(hbsObject);
-        // res.json(hbsObject);
-        res.redirect("/");
+         res.json(hbsObject);
+        //res.redirect("/");
       });
     }
   });
@@ -68,15 +69,28 @@ router.get('/session', function(req, res, next) {
   }
 })
 //DEFAULT GET ROUTE
+// router.get("/", function(req, res) {
+//   installer.all(function(data) {
+//     var hbsObject = {
+//       installers: data
+//     };
+//     console.log(hbsObject);
+//     res.json(hbsObject);
+//   });
+// });
 router.get("/", function(req, res) {
-  installer.all(function(data) {
-    var hbsObject = {
-      installers: data
-    };
-    console.log(hbsObject);
-    res.json(hbsObject);
+    res.send(layout);
   });
-});
+
+router.get('/session-data', function(req,res){
+  const user = {
+    userID: req.session.user_id,
+    username: req.session.user_name,
+    role: req.session.user_role_name
+  }
+  console.log(user);
+  res.json(user);
+})
 
 //BONUS GET ROUTES
 router.get("/bonuses", function(req, res) {
