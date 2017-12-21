@@ -19,18 +19,18 @@ app.use(passport.session());
 
 // Import routes and give the server access to them.
 
-// const 	installersRoutes = require("./controllers/installersController.js"),
-// 		jobsRoutes = require("./controllers/jobsController.js"),
-// 		usersRoutes = require("./controllers/usersController.js"),
-// 		generalRoutes = require("./controllers/generalController.js");
+const 	installersRoutes = require("./controllers/installersController.js"),
+		jobsRoutes = require("./controllers/jobsController.js"),
+		usersRoutes = require("./controllers/usersController.js"),
+		generalRoutes = require("./controllers/generalController.js");
 
-// app.use("/", generalRoutes);
-// app.use("/installers", installersRoutes);
-// app.use("/users",usersRoutes);
-// app.use("/jobs", jobsRoutes);
+app.use("/", generalRoutes);
+app.use("/installers", installersRoutes);
+app.use("/users",usersRoutes);
+app.use("/jobs", jobsRoutes);
 		
-var routes = require("./controllers/installersController.js");
+// var routes = require("./controllers/installersController.js");
 
-app.use("/", routes);
+// app.use("/", routes);
 
 app.listen(port);
