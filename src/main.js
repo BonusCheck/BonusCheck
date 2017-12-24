@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 
 import Home from './Home';
 import Login from './Login';
+import Dash from './Dash';
 
 Vue.use(VueRouter);
 
@@ -18,6 +19,11 @@ const routes = [
 	name: 'login',
 	component: Login,
 	path: '/login',
+},
+{
+	name: 'dash',
+	component: Dash,
+	path: '/dash'
 }
 ];
 
