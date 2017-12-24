@@ -1,7 +1,6 @@
 const express = require("express"),
       router = express.Router(),
       fs = require('fs'),
-      layout = fs.readFileSync('./layout.html', 'utf8');
       installer = require("../models/installer.js"),
       job = require("../models/job.js"),
       change_ord = require("../models/change_orders.js"),
@@ -15,7 +14,6 @@ const express = require("express"),
       // bcrypt = require('bcrypt'),
       // saltRounds = 10;
 
-     
   
 
 //GET ROUTES
