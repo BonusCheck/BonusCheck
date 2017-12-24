@@ -14,35 +14,6 @@ const express = require("express"),
       bcrypt = require('bcrypt'),
       saltRounds = 10;
 
-//USER AND ROLE GET ROUTE - REMOVE LATER
-router.get("/users/:username", function(req, res) {
-  user.some(req.params.username, function(data) {
-    var hbsObject = {
-      user: data
-    };
-    console.log(hbsObject);
-    res.json(hbsObject);
-  });
-});
 
-//POST ROUTES
-router.post("/user/add", function(req, res) {
- bcrypt.genSalt(saltRounds, function(err, salt) {
-  bcrypt.hash(req.body.password, salt, function(err, hash) {
-    console.log(hash);
-    user.create([
-        "user_name", "password"
-      ], [
-        req.body.user_name, hash
-      ],function(data) {
-        var hbsObject = {
-          user: data
-        };
-        console.log(hbsObject);
-        res.json(hbsObject);
-      });
-    });
-  });
-});
 
 module.exports = router;

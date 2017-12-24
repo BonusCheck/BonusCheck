@@ -1,5 +1,5 @@
 const express = require("express"),
-      router = express.Router(),
+      jobsRouter = express.Router(),
       // fs = require('fs'),
       installer = require("../models/installer.js"),
       job = require("../models/job.js"),
@@ -14,78 +14,36 @@ const express = require("express"),
       // bcrypt = require('bcrypt'),
       // saltRounds = 10;
 
-      //CHANGE ORGER GET ROUTES
-router.get("/jobs/change-orders", function(req, res) {
-  change_ord.all(function(data) {
-    var hbsObject = {
-      change_orders: data
-    };
-    console.log(hbsObject);
-    res.json(hbsObject);
+
+
+jobsRouter.put("/jobs/update/:id", function(req, res) {
+  var condition = "id = " + req.params.id;
+
+  console.log("condition", condition);
+
+  jobs.update({
+    sleepy: req.body.sleepy
+  }, condition, function(result) {
+    if (result.changedRows == 0) {
+      // If no rows were changed, then the ID must not exist, so 404
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
   });
 });
 
-router.get("/jobs/installer/:id", function(req, res) {
-  job.someInstallerByID(["jobs.job_name", "jobs.start_date", "jobs.end_date", "jobs.job_status", "jobs.est_start_date", "jobs.est_end_date"], req.params.id, function(data) {
-    var hbsObject = {
-      jobs_for_installer: data
-    };
-    console.log(hbsObject);
-    res.json(hbsObject);
+jobsRouter.delete("/api/cats/:id", function(req, res) {
+  var condition = "id = " + req.params.id;
+
+  installer.delete(condition, function(result) {
+    if (result.affectedRows == 0) {
+      // If no rows were changed, then the ID must not exist, so 404
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
   });
 });
 
-router.get("/jobs/pc/:id", function(req, res) {
-  job.someInstallerByID(["jobs.job_name", "jobs.start_date", "jobs.end_date", "jobs.job_status", "jobs.est_start_date", "jobs.est_end_date", "jobs.hours_bid", "jobs.fk_customer_id", "jobs.hours_bid", "jobs.bill_rate", "jobs.max_labor_cost", "jobs.job_id"], req.params.id, function(data) {
-    var hbsObject = {
-      jobs_for_project_coordinator: data
-    };
-    console.log(hbsObject);
-    res.json(hbsObject);
-  });
-});
-
-router.get("/jobs/pm/:id", function(req, res) {
-  job.someInstallerByID(["jobs.job_name", "jobs.start_date", "jobs.end_date", "jobs.job_status", "jobs.est_start_date", "jobs.est_end_date", "jobs.hours_bid", "jobs.fk_customer_id", "jobs.job_id"], req.params.id, function(data) {
-    var hbsObject = {
-      jobs_for_project_manager: data
-    };
-    console.log(hbsObject);
-    res.json(hbsObject);
-  });
-});
-
-//JOBS-INSTALLER GET ROUTES
-router.get("/jobs/installers", function(req, res) {
-  job_installers.all(function(data) {
-    var hbsObject = {
-      jobs_installers: data
-    };
-    console.log(hbsObject);
-    res.json(hbsObject);
-  });
-});
-
-router.get("/jobs/installers-joined", function(req, res) {
-  job_installers.some(function(data) {
-    var hbsObject = {
-      jobs_installers: data
-    };
-    console.log(hbsObject);
-    res.json(hbsObject);
-  });
-});
-
-router.post("/jobs/add/", function(req, res) {
-  console.log(req);
-  installer.create([
-    "created_by_id", "modified_by_id", "first_name", "last_name", "current_wage", "fk_installer_role_id"
-  ], [
-    req.body.created_by_id, req.body.modified_by_id, req.body.first_name, req.body.last_name, req.body.current_wage, req.body.installer_role_id
-  ], function(result) {
-    // Send back the ID of the new quote
-    res.json({ id: result.insertId });
-  });
-});
-
-module.exports = router;
+module.exports = jobsRouter;
