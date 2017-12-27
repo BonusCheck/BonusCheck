@@ -353,7 +353,7 @@ generalRouter.get("/installer/roles", function(req, res) {
 });
 
 generalRouter.get("/installers/roles/list", function(req, res) {
-  roles.some("installer_role_name", function(data) {
+  installer_roles.some("installer_role_name", function(data) {
     var vueObject = {
       role: data
     };
