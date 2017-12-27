@@ -1,7 +1,7 @@
 // Import the ORM to create functions that will interact with the database.
 var orm = require("../config/orm.js");
 
-var roles = {
+var installerRoles = {
   all: function(cb) {
     orm.all("installer_roles", function(res) {
       // console.log(res);
@@ -37,4 +37,4 @@ var roles = {
 };
 
 // Export the database functions for the controller (catsController.js).
-module.exports = roles;
+module.exports = installerRoles;
