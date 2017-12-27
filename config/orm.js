@@ -51,8 +51,8 @@ var orm = {
     });
   },
 
-  some: function(tableInput, cols, cb) {
-    var queryString = "SELECT " + cols + " FROM " + tableInput + ";";
+  some: function(tableInput, tableCols, cb) {
+    var queryString = "SELECT " + tableCols + " FROM " + tableInput + ";";
     console.log(queryString);
     connection.query(queryString, function(err, result) {
       if (err) {

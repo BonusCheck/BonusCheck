@@ -22,6 +22,11 @@ var user = {
       cb(res);
     });
   },
+  list: function(cols, cb) {
+      orm.some("users", cols, function(res) {
+      cb(res);
+    });
+  },
   // The variables cols and vals are arrays.
   create: function(cols, vals, cb) {
     orm.create("users", cols, vals, function(res) {

@@ -7,6 +7,11 @@ var installer = {
       cb(res);
     });
   },
+   some: function(cols, cb) {
+    orm.some("installers", cols, function(res) {
+      cb(res);
+    });
+  },
   // The variables cols and vals are arrays.
   create: function(cols, vals, cb) {
     console.log(cols);
