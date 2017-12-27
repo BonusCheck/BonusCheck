@@ -1,3 +1,4 @@
+
 <style>
 .media-carousel 
 {
@@ -52,74 +53,88 @@
   height: 100px
 }
 </style>
+
 <template>
 	<div class="container">
-  <div class="row">
-    <h2>Media Slider Carousel BS3</h2>
-  </div>
-  <div class='row'>
-    <div class='col-md-12'>
-      <div class="carousel slide media-carousel" id="media">
-        <div class="carousel-inner">
-          <div class="item  active">
-            <div class="row">
-              <div class="col-md-4 job">
-              	<div id='job'>
-                <job-info
-	                	v-for="item in jobList"
-	      				v-bind:job="item"
-	      				v-bind:key="item.id">
-	      			</job-info>
-      			</div>
-              </div>          
-              <div class="col-md-4">
-                <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
-              </div>
-              <div class="col-md-4">
-                <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
-              </div>        
-            </div>
-          </div>
-          <div class="item">
-            <div class="row">
-              <div class="col-md-4">
-                <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
-              </div>          
-              <div class="col-md-4">
-                <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
-              </div>
-              <div class="col-md-4">
-                <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
-              </div>        
-            </div>
-          </div>
-          <div class="item">
-            <div class="row">
-              <div class="col-md-4">
-                <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
-              </div>          
-              <div class="col-md-4">
-                <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
-              </div>
-              <div class="col-md-4">
-                <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
-              </div>      
-            </div>
-          </div>
+        <div class="row">
+            <h2>Media Slider Carousel BS3</h2>
         </div>
-        <a data-slide="prev" href="#media" class="left carousel-control">&lArr;</a>
-        <a data-slide="next" href="#media" class="right carousel-control">&rArr;</a>
-      </div>                          
+
+        <div class='row'>
+            <div class='col-md-12'>
+                <div class="carousel slide media-carousel" id="media">
+                    <div class="carousel-inner">
+                        <div class="item  active">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <jobList
+                                        v-for="(item, i) in jobList"
+                                        :key="i"
+                          	      		v-bind:job="item"
+                          	      		v-bind:key="item.text">
+                                    </jobList>
+                                </div>          
+                                <div class="col-md-4">
+                                </div>
+                                <div class="col-md-4">
+                                    <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
+                                </div> 
+                            </div>
+                        </div>
+                        
+                        <div class="item">
+                            <div class='row'>
+                                <div class="col-md-4">
+                                    <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
+                                </div>          
+                                <div class="col-md-4">
+                                    <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
+                                </div>  
+                            </div>
+                        </div>      
+                        <div class='item'>
+                            <div class='row'>
+                                <div class="col-md-4">
+                                    <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
+                                </div>          
+                                <div class="col-md-4">
+                                    <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>  
+                                </div>
+                            </div>
+                        </div>    
+                    </div> 
+                    <a data-slide="prev" href="#media" class="left carousel-control">&lArr;</a>
+                    <a data-slide="next" href="#media" class="right carousel-control">&rArr;</a>                         
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 </template>
 
 
 
 <script>
+import jobList from './joblist';
+
 export default {
-  name: 'job'
+  name: 'job',
+  components: {
+    jobList
+  },
+  computed: {
+    jobList() {
+      return  [
+          {id: 0, text: 'Blow Me' },
+          {id: 1, text: 'Bathe me' }
+        ]
+    }
+  }
 };
 </script>
 
