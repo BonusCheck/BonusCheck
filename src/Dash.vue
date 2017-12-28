@@ -34,9 +34,9 @@ export default {
   },
 
   beforeMount(){
-   axios.get('/session-data')
+   axios.get('/session/data')
    .then(req => {
-      console.log(req.data.role);
+      console.log(req.data.roll);
       this.user = req.data.userID;
 
       if(req.data.role === 'Admin'){
@@ -55,6 +55,7 @@ export default {
       console.log(this.buttons);
    })
   .catch(function(err){
+    this.$router.show('Home')
     console.log(err);
   });
 }

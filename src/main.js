@@ -5,6 +5,7 @@ import VueRouter from 'vue-router';
 import Home from './Home';
 import Login from './Login';
 import Dash from './Dash';
+import Joblist from './joblist'
 
 Vue.use(VueRouter);
 
@@ -24,6 +25,11 @@ const routes = [
 	name: 'dash',
 	component: Dash,
 	path: '/dash'
+},
+{
+	name: 'joblist',
+	component: Joblist,
+	path: '/jobs'
 }
 ];
 
