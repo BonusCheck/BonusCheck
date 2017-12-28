@@ -21,14 +21,14 @@ app.use(passport.session());
 
 // Import routes and give the server access to them.
 
-const controllers = fs.readdirSync(path.join(__dirname, 'controllers'));
+//const controllers = fs.readdirSync(path.join(__dirname, 'controllers'));
 
-controllers.forEach(controller => {
+//controllers.forEach(controller => {
  // 	app.use("/installers", require("./controllers/installersController.js"));
 	// app.use("/jobs", require("./controllers/jobsController.js"));
 	// app.use("/users",require("./controllers/usersController.js"));
-	app.use("/", require("./controllers/generalController.js"));
-});
+//	app.use("/", require("./controllers/generalController.js"));
+//});
 
 // const 	installersRoutes = require("./controllers/installersController.js"),
 // 		jobsRoutes = require("./controllers/jobsController.js"),
@@ -40,8 +40,8 @@ controllers.forEach(controller => {
 // app.use("/users",usersRoutes);
 // app.use("/", generalRoutes);
 
-// var routes = require("./controllers/installersController.js");
+var routes = require("./controllers/generalController.js");
 
-// app.use("/", routes);
+app.use("/", routes);
 
 app.listen(port);

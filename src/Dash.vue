@@ -34,12 +34,12 @@ export default {
   },
 
   beforeMount(){
-	 axios.get('/session-data')
+	 axios.get('/session/data')
 	 .then(req => {
-      console.log(req.data.role);
+      console.log(req.data.roll);
       this.user = req.data.userID;
 
-      if(req.data.role === 'Admin'){
+      if(req.data.roll === 'Admin'){
         this.buttons.push(
           {
             name: 'Add user'
@@ -48,7 +48,55 @@ export default {
             name: 'Delete user'
           },
           {
-            name: 'Do something else'
+            name: 'View transaction logs'
+          },
+          {
+            name: 'Enter time worked'
+          },
+          {
+            name: 'View project data'
+          },
+          {
+           name: 'View bonus schedule' 
+          },
+          {
+            name: 'View bonus history'
+          },
+          {
+            name: 'View payment history'
+          },
+          {
+            name: 'Approve time'
+          },
+          {
+            name: 'Create a project'
+          },
+          {
+            name: 'Create a customer'
+          },
+          {
+            name: 'Create roles'
+          },
+          {
+            name: 'Modify roles'
+          },
+          {
+            name: 'Modify project'
+          },
+          {
+            name: 'Modify bonuses'
+          },
+          {
+            name: 'Create payments'
+          },
+          {
+            name: 'Modify payments'
+          },
+          {
+            name: 'Create payment types'
+          },
+          {
+            name: 'Modify payment types'
           }
         );
       }
