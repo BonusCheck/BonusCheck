@@ -12,7 +12,7 @@
 		        </button>		          
 			    <div id="navbar-item" class="collapse  navbar-collapse">
 			          <ul class="nav navbar-nav navbar-right">
-			            <li ><a  href="index.html">Home</a></li>
+			            <li ><router-link :to="'home'">Home</router-link></li>
 			            <li><a   href="#">Contact</a></li>
 			            <li ><a  href="signup.html">Sign up</a></li>
 			            <li><button class=" btn-danger navbar-btn "><a style="color: #fff;" href="#">Log in</a></button></li>
@@ -33,13 +33,13 @@
 			</div>
 		    <div class="col-md-6 col-sm-6 login-col">
 				<section id="content">
-					<form action="">
+					<form name="signin" method="post" action="/auth">
 						<h1>Login </h1>
 						<div>
-							<input type="text" placeholder="Username" required="" id="username" />
+							<input type="text" placeholder="Username" required="" id="username" name="user_name"/>
 						</div>
 						<div>
-							<input type="password" placeholder="Password" required="" id="password" />
+							<input type="password" placeholder="Password" required="" id="password" name="password"/>
 						</div>
 						<div>
 							<input type="submit" class="login" value="Log in" />
@@ -60,7 +60,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 	body{
 	    background-image: url(https://www.pega.com/sites/pega.com/files/banking-case-study-bg.jpg);
 	    background-repeat: no-repeat;

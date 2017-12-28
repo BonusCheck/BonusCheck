@@ -4,10 +4,7 @@ import VueRouter from 'vue-router';
 
 import Home from './Home';
 import Login from './Login';
-import Jobs from './jobs';
-import Jobs1 from './Jobpractice';
-import Jobs2 from './jobpractice1';
-import Jobs3 from './jobpractice2';
+import Dash from './Dash';
 
 Vue.use(VueRouter);
 
@@ -24,14 +21,9 @@ const routes = [
 	path: '/login',
 },
 {
-	name: 'jobs',
-	components: {
-		Jobs,
-	}
-	path: '/jobs',
-	data: {
-		jobList: ''
-	},
+	name: 'dash',
+	component: Dash,
+	path: '/dash'
 }
 ];
 

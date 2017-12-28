@@ -5,19 +5,23 @@ USE installers_db;
 set foreign_key_checks=0;
 
 CREATE TABLE user_roles(
-user_role_id MEDIUMINT NOT NULL AUTO_INCREMENT,
+user_role_id INT NOT NULL AUTO_INCREMENT,
 user_role_name CHAR(75) NOT NULL,
 date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-created_by_id MEDIUMINT,
+created_by_id INT,
 date_modified TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-modified_by_id MEDIUMINT,
+modified_by_id INT,
 PRIMARY KEY (user_role_id)
 );
 
 CREATE TABLE change_orders (
-change_orders_id MEDIUMINT NOT NULL AUTO_INCREMENT,
-fk_original_job_id MEDIUMINT,
-fk_change_job_id MEDIUMINT,
+change_orders_id INT NOT NULL AUTO_INCREMENT,
+fk_original_job_id INT,
+fk_change_job_id INT,
+date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+created_by_id INT,
+date_modified TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+modified_by_id INT,
 PRIMARY KEY (change_orders_id),
 	FOREIGN KEY (fk_original_job_id)
 	REFERENCES installers_db.jobs (job_id)
@@ -30,11 +34,11 @@ PRIMARY KEY (change_orders_id),
 );
 
 CREATE TABLE users(
-user_id MEDIUMINT NOT NULL AUTO_INCREMENT,
+user_id INT NOT NULL AUTO_INCREMENT,
 user_name CHAR(75) NOT NULL,
 password CHAR(75) NOT NULL,
 token CHAR(20),
-fk_user_role_id MEDIUMINT,
+fk_user_role_id INT,
 PRIMARY KEY (user_id),
 	FOREIGN KEY (fk_user_role_id)
 	REFERENCES installers_db.user_roles (user_role_id)
@@ -43,16 +47,16 @@ PRIMARY KEY (user_id),
 );
 
 CREATE TABLE installers(
-installer_id MEDIUMINT NOT NULL AUTO_INCREMENT,
+installer_id INT NOT NULL AUTO_INCREMENT,
 first_name CHAR(50) NOT NULL,
 last_name  CHAR(50) NOT NULL,
 current_wage DOUBLE(25,2) NOT NULL,
-fk_user_id MEDIUMINT,
-fk_installer_role_id MEDIUMINT,
+fk_user_id INT,
+fk_installer_role_id INT,
 date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-created_by_id MEDIUMINT,
+created_by_id INT,
 date_modified TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-modified_by_id MEDIUMINT,
+modified_by_id INT,
 PRIMARY KEY (installer_id),
 	FOREIGN KEY (fk_user_id)
 	REFERENCES installers_db.users (user_id)
@@ -65,7 +69,7 @@ PRIMARY KEY (installer_id),
 );
 
 CREATE TABLE installer_roles(
-installer_role_id MEDIUMINT NOT NULL AUTO_INCREMENT,
+installer_role_id INT NOT NULL AUTO_INCREMENT,
 installer_role_name CHAR(75) NOT NULL,
 role_weight DOUBLE(10,5) NOT NULL,
 min_base DOUBLE(10,2) NOT NULL,
@@ -74,39 +78,46 @@ individual_bonus DOUBLE(5,4) NOT NULL,
 team_bonus DOUBLE(5,4) NOT NULL,
 bonus_weight DOUBLE(5,4) NOT NULL,
 date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-created_by_id MEDIUMINT,
+created_by_id INT,
 date_modified TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-modified_by_id MEDIUMINT,
+modified_by_id INT,
 PRIMARY KEY (installer_role_id)
 );
 
 CREATE TABLE installer_hours(
-installers_hours_id MEDIUMINT NOT NULL AUTO_INCREMENT,
+installers_hours_id INT NOT NULL AUTO_INCREMENT,
 reg_hours_worked DOUBLE(10,2),
 ot_hours_worked DOUBLE(10,2),
 work_date DATE,
-fk_job_id MEDIUMINT,
+fk_job_id INT,
+fk_installer_id INT,
 date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-created_by_id MEDIUMINT,
+created_by_id INT,
 date_modified TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-modified_by_id MEDIUMINT,
+modified_by_id INT,
 PRIMARY KEY (installers_hours_id),
 	FOREIGN KEY (fk_job_id)
 	REFERENCES installers_db.jobs (job_id)
+	ON DELETE NO ACTION
+	ON UPDATE NO ACTION,
+	FOREIGN KEY (fk_installer_id)
+	REFERENCES installers_db.installers (installer_id)
 	ON DELETE NO ACTION
 	ON UPDATE NO ACTION
 );
 
 CREATE TABLE installer_payments(
-payment_id MEDIUMINT NOT NULL AUTO_INCREMENT,
+payment_id INT NOT NULL AUTO_INCREMENT,
 date_paid DATE,
 scheduled_pay_date DATE,
-fk_payment_type_id MEDIUMINT,
-fk_job_id MEDIUMINT,
+payment_amount DOUBLE(10,2),
+fk_installer_id INT,
+fk_payment_type_id INT,
+fk_job_id INT,
 date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-created_by_id MEDIUMINT,
+created_by_id INT,
 date_modified TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-modified_by_id MEDIUMINT,
+modified_by_id INT,
 PRIMARY KEY (payment_id),
 	FOREIGN KEY (fk_payment_type_id)
 	REFERENCES installers_db.payment_types (payment_type_id)
@@ -115,35 +126,39 @@ PRIMARY KEY (payment_id),
 	FOREIGN KEY (fk_job_id)
 	REFERENCES installers_db.jobs (job_id)
 	ON DELETE NO ACTION
+	ON UPDATE NO ACTION,
+	FOREIGN KEY (fk_installer_id)
+	REFERENCES installers_db.installers (installer_id)
+	ON DELETE NO ACTION
 	ON UPDATE NO ACTION
 );
 
 CREATE TABLE payment_types(
-payment_type_id MEDIUMINT NOT NULL AUTO_INCREMENT,
+payment_type_id INT NOT NULL AUTO_INCREMENT,
 payment_type CHAR(75),
 date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-created_by_id MEDIUMINT,
+created_by_id INT,
 date_modified TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-modified_by_id MEDIUMINT,
+modified_by_id INT,
 PRIMARY KEY (payment_type_id)
 );
 
 CREATE TABLE jobs(
-job_id MEDIUMINT NOT NULL AUTO_INCREMENT,
+job_id INT NOT NULL AUTO_INCREMENT,
 job_name CHAR(255) NOT NULL,
 start_date DATE,
 end_date DATE,
 hours_bid DOUBLE(25,2),
 est_start_date DATE,
 est_end_date DATE,
-fk_customer_id MEDIUMINT,
+fk_customer_id INT,
 bill_rate DOUBLE(7,2) NOT NULL,
 job_status CHAR(255) NOT NULL DEFAULT "Open",
 max_labor_cost DOUBLE(5,2) DEFAULT 43.5 NOT NULL,
 date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-created_by_id MEDIUMINT,
+created_by_id INT,
 date_modified TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-modified_by_id MEDIUMINT,
+modified_by_id INT,
 PRIMARY KEY (job_id),
     FOREIGN KEY (fk_customer_id)
 	REFERENCES installers_db.customers (customer_id)
@@ -152,15 +167,15 @@ PRIMARY KEY (job_id),
 );
 
 CREATE TABLE bonuses(
-bonus_id MEDIUMINT NOT NULL AUTO_INCREMENT,
+bonus_id INT NOT NULL AUTO_INCREMENT,
 production_min DOUBLE(5,2) NOT NULL,
 production_max DOUBLE(5,2) NOT NULL,
 bonus_weight DOUBLE(5,2) NOT NULL,
-fk_job_id MEDIUMINT,
+fk_job_id INT,
 date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-created_by_id MEDIUMINT,
+created_by_id INT,
 date_modified TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-modified_by_id MEDIUMINT,
+modified_by_id INT,
 PRIMARY KEY (bonus_id),
 	FOREIGN KEY (fk_job_id)
 	REFERENCES installers_db.jobs (job_id)
@@ -169,16 +184,16 @@ PRIMARY KEY (bonus_id),
 );
 
 CREATE TABLE jobs_installers(
-job_installer_id MEDIUMINT NOT NULL AUTO_INCREMENT,
-hours_bid MEDIUMINT NOT NULL,
+job_installer_id INT NOT NULL AUTO_INCREMENT,
+hours_bid INT NOT NULL,
 wage DOUBLE(25,2),
-fk_job_id MEDIUMINT NOT NULL ,
-fk_installer_id MEDIUMINT NOT NULL,
-fk_installer_role_id MEDIUMINT NOT NULL,
+fk_job_id INT NOT NULL ,
+fk_installer_id INT NOT NULL,
+fk_installer_role_id INT NOT NULL,
 date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-created_by_id MEDIUMINT,
+created_by_id INT,
 date_modified TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-modified_by_id MEDIUMINT,
+modified_by_id INT,
 PRIMARY KEY (job_installer_id),
 	FOREIGN KEY (fk_job_id)
 	REFERENCES installers_db.jobs (job_id)
@@ -195,40 +210,24 @@ PRIMARY KEY (job_installer_id),
 );
 
 CREATE TABLE customers(
-customer_id MEDIUMINT NOT NULL AUTO_INCREMENT,
+customer_id INT NOT NULL AUTO_INCREMENT,
 customer_name CHAR(50) NOT NULL,
 date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-created_by_id MEDIUMINT,
+created_by_id INT,
 date_modified TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-modified_by_id MEDIUMINT,
+modified_by_id INT,
 PRIMARY KEY (customer_id)
 );
 
+ALTER TABLE bonuses AUTO_INCREMENT=1001;
+ALTER TABLE change_orders AUTO_INCREMENT=50000001;
+ALTER TABLE customers AUTO_INCREMENT=50001;
 ALTER TABLE installers AUTO_INCREMENT=10001;
-ALTER TABLE installer_roles AUTO_INCREMENT=101;
-ALTER TABLE jobs AUTO_INCREMENT=50001;
-ALTER TABLE bonuses AUTO_INCREMENT=501;
-ALTER TABLE jobs_installers AUTO_INCREMENT=1000001;
-
-INSERT INTO users(user_name, password, fk_user_role_id) VALUES("Admin", "$2a$10$sacDeNTqL93iXs1knsBQle5biSw71k5evbPr17TeId6586W.GeVB2", "1");
-
-INSERT INTO payment_types(created_by_id, modified_by_id, payment_type) VALUES(1, 1, "team_bonus_1"),(1, 1, "team_bonus_2"),(1, 1, "team_bonus_3"),(1, 1, "team_bonus_4"),(1, 1, "Indvidual_bonus_1"),(1, 1, "Indvidual_bonus_2"),(1, 1, "Indvidual_bonus_3"),(1, 1, "Indvidual_bonus_4"),(1, 1, "base_wage");
-
-INSERT INTO jobs(created_by_id, modified_by_id, job_name, est_start_date, est_end_date, bill_rate, max_labor_cost, hours_bid) VALUES(1, 1, "Samuel Iuka","2017-10-10","2017-11-04",65,43.5, 400),(1, 1, "Samuel Wisconsin","2017-10-17","2017-11-04",65,43.5, 250);
-
-INSERT INTO bonuses(created_by_id, modified_by_id, production_min, production_max, bonus_weight) VALUES(1, 1, 69.99,0.00,0.75),(1, 1, 79.99,70,0.55),(1, 1, 89.99,80,0.35),(1, 1, 99.99,90,0.25),(1, 1, 109.99,100,0.15);
-
-INSERT INTO installers(created_by_id, modified_by_id, first_name, last_name, current_wage, fk_installer_role_id) VALUES(1, 1, "Sam","Fisher",17.5,105),(1, 1, "Tom","Schulze",17.5,106);
-
-INSERT INTO installer_roles(created_by_id, modified_by_id, installer_role_name, role_weight, min_base, max_base, individual_bonus, team_bonus, bonus_weight) VALUES(1, 1, "Field Operations Manager",1.25,20,27.5,0.25,0.75,1),(1, 1, "Sr. Project Manager",1.2,18.50,22.5,0.3,0.7,1),(1, 1, "Project Manager",1.15,17.5,21.5,0.35,0.65,1),(1, 1, "Jr. Project Manager",1.1,16.5,20,0.4,0.6,0.95),(1, 1, "Sr. Project Lead",1.05,15,19,0.45,0.55,0.85),(1, 1, "Project Lead",1,15,17.5,0.5,0.5,0.85),(1, 1, "Jr. Project Lead",0.95,13.5,16,0.55,0.45,0.75),(1, 1, "Sr. Technician",0.9,12,15,0.60,0.40,0.75),(1, 1, "Technician",0.85,11,12.5,0.65,0.35,0.65),(1, 1, "Jr. Technician",0.8,10,11,0.7,0.3,0.55),(1, 1, "Laborer",0.75,8.15,11,0.75,0.25,0.5);
-
-INSERT INTO jobs_installers(created_by_id, modified_by_id, fk_job_id, fk_installer_id, fk_installer_role_id, hours_bid) VALUES(1, 1, 50001,10001,105,100),(1, 1, 50001,10002,106,100),(1, 1, 50002,10001,105,50),(1, 1, 50002,10002,106,50);
-
-INSERT INTO user_roles(created_by_id, modified_by_id, user_role_name) VALUES(1, 1, "Admin"),(1, 1, "Installer"),(1, 1, "Project Coordinator"),(1, 1, "Project Manager");
-
-SELECT * FROM installer_roles;
-SELECT * FROM installers;
-SELECT * FROM jobs;
-SELECT * FROM jobs_installers;
-SELECT * FROM bonuses;
-SELECT * FROM jobs ORDER BY end_date;
+ALTER TABLE installer_hours AUTO_INCREMENT=100000001;
+ALTER TABLE installer_roles AUTO_INCREMENT=2001;
+ALTER TABLE installer_payments AUTO_INCREMENT=200000001;
+ALTER TABLE jobs AUTO_INCREMENT=10000001;
+ALTER TABLE jobs_installers AUTO_INCREMENT=600000001;
+ALTER TABLE payment_types AUTO_INCREMENT=4001;
+ALTER TABLE users AUTO_INCREMENT=5001;
+ALTER TABLE user_roles AUTO_INCREMENT=3001;

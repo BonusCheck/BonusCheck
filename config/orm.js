@@ -50,6 +50,39 @@ var orm = {
       cb(result);
     });
   },
+
+  some: function(tableInput, tableCols, cb) {
+    var queryString = "SELECT " + tableCols + " FROM " + tableInput + ";";
+    console.log(queryString);
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+  },
+
+  auth: function(tableInput, user, tableCols, cb) {
+    var queryString = "SELECT " + tableCols;
+
+    queryString += " FROM ";
+    queryString += tableInput;
+    queryString += " WHERE ";
+    queryString += "user_name = '";
+    queryString += user;
+    queryString += "'";
+
+    console.log(queryString);
+
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+      console.log("Result");
+      console.log(result);
+      cb(result);
+    });
+  },
   someByID: function(tableInput, tableCols, cb) {
     var queryString = "SELECT " + tableCols;
 
@@ -60,6 +93,27 @@ var orm = {
       if (err) {
         throw err;
       }
+      cb(result);
+    });
+  },
+  someTwoTableJoinTwoConditions: function(table1, table2, tableCols, condition1, condition2, cb) {
+    var queryString = "SELECT " + tableCols;
+
+    queryString += " FROM ";
+    queryString += table1;
+    queryString += " LEFT JOIN ";
+    queryString += table2;
+    queryString += " ON ";
+    queryString += condition1;
+    queryString += " WHERE ";
+    queryString += condition2;
+
+    console.log(queryString);
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+
       cb(result);
     });
   },

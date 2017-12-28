@@ -1,14 +1,18 @@
 // Import the ORM to create functions that will interact with the database.
 var orm = require("../config/orm.js");
 
-var installer = {
+var installerRoles = {
   all: function(cb) {
-    orm.all("installers", function(res) {
+    orm.all("installer_roles", function(res) {
+      // console.log(res);
+      // var roles = res.body.installer_roll_name;
+      // console.log(roles);
       cb(res);
     });
   },
-   some: function(cols, cb) {
-    orm.some("installers", cols, function(res) {
+
+  some: function(cols, cb) {
+    orm.some("installer_roles", cols, function(res) {
       cb(res);
     });
   },
@@ -16,21 +20,21 @@ var installer = {
   create: function(cols, vals, cb) {
     console.log(cols);
     console.log(vals);
-    orm.create("installers", cols, vals, function(res) {
+    orm.create("installer_roles", cols, vals, function(res) {
       cb(res);
     });
   },
   update: function(objColVals, condition, cb) {
-    orm.update("installers", objColVals, condition, function(res) {
+    orm.update("installer_rolls", objColVals, condition, function(res) {
       cb(res);
     });
   },
   delete: function(condition, cb) {
-    orm.delete("installers", condition, function(res) {
+    orm.delete("installer_roles", condition, function(res) {
       cb(res);
     });
   }
 };
 
 // Export the database functions for the controller (catsController.js).
-module.exports = installer;
+module.exports = installerRoles;

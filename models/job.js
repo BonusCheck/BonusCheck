@@ -1,7 +1,7 @@
 // Import the ORM to create functions that will interact with the database.
 var orm = require("../config/orm.js");
 
-var installer = {
+var job = {
   all: function(cb) {
     orm.all("jobs", function(res) {
       cb(res);
@@ -12,7 +12,6 @@ var installer = {
       cb(res);
     });
   },
-
   // The variables cols and vals are arrays.
   create: function(cols, vals, cb) {
     orm.create("jobs", cols, vals, function(res) {
@@ -32,4 +31,4 @@ var installer = {
 };
 
 // Export the database functions for the controller (catsController.js).
-module.exports = installer;
+module.exports = job;
