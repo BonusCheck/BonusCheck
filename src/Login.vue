@@ -33,7 +33,7 @@
 			</div>
 		    <div class="col-md-6 col-sm-6 login-col">
 				<section id="content">
-					<form name="signin" method="post" action="/dash">
+					<form name="signin" method="post" action="/auth">
 						<h1>Login </h1>
 						<div>
 							<input type="text" placeholder="Username" required="" id="username" name="user_name"/>

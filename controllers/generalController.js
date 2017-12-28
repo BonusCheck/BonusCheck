@@ -25,6 +25,9 @@ generalRouter.get("/", function(req, res) {
     res.send(layout);
   });
 
+generalRouter.get("/:path", function(req, res){
+  res.send(layout);
+})
 
 //***********************************************************************************************************
 // API ROUTES
@@ -51,8 +54,8 @@ generalRouter.post("/auth", function(req, res) {
         sessData.user_name = data[0].user_name;
         sessData.user_role_name = data[0].user_role_name;
         console.log(vueObject);
-        res.json(vueObject);
-        // res.redirect("/");
+        //res.json(vueObject);
+        res.redirect("/dash");
       });
     }
   });
