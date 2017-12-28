@@ -24,9 +24,9 @@ app.use(passport.session());
 const controllers = fs.readdirSync(path.join(__dirname, 'controllers'));
 
 controllers.forEach(controller => {
- 	app.use("/installers", require("./controllers/installersController.js"));
-	app.use("/jobs", require("./controllers/jobsController.js"));
-	app.use("/users",require("./controllers/usersController.js"));
+ // 	app.use("/installers", require("./controllers/installersController.js"));
+	// app.use("/jobs", require("./controllers/jobsController.js"));
+	// app.use("/users",require("./controllers/usersController.js"));
 	app.use("/", require("./controllers/generalController.js"));
 });
 
