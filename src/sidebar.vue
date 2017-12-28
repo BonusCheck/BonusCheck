@@ -1,11 +1,15 @@
 <template>
   <div class="cd-side-nav">
 			<ul>
-				<li class="has-children Overviews">
-					<button  class="button" onclick="openTab('dashboard')" > <i class="fa fa-th-large" ></i>Dashboard </button>										
+				<li v-for="button in buttons">
+					<a v-on:click="$parent.updateView('delete-user')">{{button.name}}</a>
+				</li>
+
+				<!-- <li class="has-children Overviews">
+					<button  class="button" onclick="openTab('dashboard')" > <i class="fa fa-th-large" ></i> </button>										
 				</li>				
 				<li class="has-children comments">
-					<button  class="button" onclick="openTab('project')"><i class="fa fa-tasks"></i> Project</button>										
+					<button  class="button" onclick="openTab('project')"><i class="fa fa-tasks"></i>{{user}}</button>										
 				</li>
 
 				<li class="has-children bookmarks">
@@ -26,14 +30,16 @@
 				</li>
 				<li class="has-children comments">
 					<button  class="button" onclick="openTab('admin')" ><i class="fa fa-user-circle"></i> Admin</button>										
-				</li>							
+				</li> -->							
 			</ul>
 		</div>
 </template>
 
 <script>
+
 export default {
-  name: 'side-bar'
+  name: 'side-bar',
+  props: ['buttons']
 };
 
 </script>
