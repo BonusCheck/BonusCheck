@@ -27,6 +27,19 @@
 <script>
 import jobs from './jobs';
 
+const axios = require('axios');
+
+router.beforeEach(to, from, next) => {
+  if(to.meta.auth) {
+    axios.get('/verify/token').then(({data}) => {
+      
+    }
+      )
+    }
+  }
+}
+
+
 export default {
   name: 'joblist',
   components: {

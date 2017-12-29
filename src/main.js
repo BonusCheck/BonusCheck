@@ -19,7 +19,8 @@ const routes = [
 {
 	name: 'login',
 	component: Login,
-	path: '/login'
+	path: '/login',
+	meta: {auth: true}
 },
 {
 	name: 'dash',

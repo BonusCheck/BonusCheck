@@ -9,6 +9,7 @@
 import sidebar from './sidebar';
 import addUser from './addUser';
 import deleteUser from './deleteUser';
+import joblist from './joblist';
 
 
 const axios = require('axios');
@@ -18,7 +19,8 @@ export default {
   components: {
     'side-bar': sidebar,
     'add-user': addUser,
-    'delete-user': deleteUser
+    'delete-user': deleteUser,
+    'joblist': joblist
   },
   data(){
     return {
