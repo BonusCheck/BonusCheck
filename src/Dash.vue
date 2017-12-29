@@ -6,10 +6,9 @@
 </template>
 
 <script>
-import sidebar from './sidebar';
-import addUser from './addUser';
-import deleteUser from './deleteUser';
-import joblist from './joblist';
+import sidebar from './components/sidebar';
+import addUser from './components/addUser';
+import deleteUser from './components/deleteUser';
 
 
 const axios = require('axios');
@@ -44,10 +43,11 @@ export default {
       if(req.data.roll === 'Admin'){
         this.buttons.push(
           {
-            name: 'Add user'
+            name: 'Add user',
           },
           {
-            name: 'Delete user'
+            name: 'Delete user',
+            link: 'delete-user'
           },
           {
             name: 'View transaction logs'

@@ -2,7 +2,7 @@
   <div class="cd-side-nav">
 			<ul>
 				<li v-for="button in buttons">
-					<a v-on:click="$parent.updateView('delete-user')">{{button.name}}</a>
+					<a v-on:click="$parent.updateView(button.link)">{{button.name}}</a>
 				</li>
 
 				<!-- <li class="has-children Overviews">
