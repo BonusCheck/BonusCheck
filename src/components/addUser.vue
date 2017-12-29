@@ -7,6 +7,9 @@
 <script>
 
 export default {
-  name: 'add-user'
-};
+  name: 'add-user',
+  beforeMount(){
+  	
+  }
+}; 
 </script>

@@ -95,40 +95,19 @@
 </template>
 
 <script>
-export default {
-  name: 'Home'
-};
-</script>
+import axios from 'axios';
 
-<script>
-    window.sr = ScrollReveal();
-  	   sr.reveal('.navbar-brand',{
-  	   	duration: 2000,
-  	   	origin: 'left'
-  	   });
-     sr.reveal('.collapse',{
-      duration: 2000,
-      origin: 'right'
-     });
-  	   sr.reveal('.title',{
-  	   	duration: 2000,
-  	   	origin: 'bottom'
-  	   });
-  	   sr.reveal('.showcase-left',{
-  	   	duration: 2000,
-  	   	origin: 'left',
-  	   	distance: '300px'
-  	   });
-  	   sr.reveal('.showcase-right',{
-  	   	duration: 2000,
-  	   	origin: 'right',
-  	   	distance: '300px'
-  	   });
-  	   sr.reveal('.showcase-btn',{
-  	   	duration: 2000,
-  	   	delay:2000,
-  	   	origin: 'bottom'
-  	   });
+export default {
+  name: 'home',
+  beforeMount(){
+  	axios.get('/session/data')
+  	.then(req => {
+  		if(req.data.roll){
+  			this.$router.push('/dash');
+  		}
+  	});
+  }
+};
 </script>
 
 <style scoped>
