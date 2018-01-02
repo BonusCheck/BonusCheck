@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 20);
+/******/ 	return __webpack_require__(__webpack_require__.s = 21);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -71,7 +71,7 @@
 
 
 var bind = __webpack_require__(10);
-var isBuffer = __webpack_require__(32);
+var isBuffer = __webpack_require__(33);
 
 /*global toString:true*/
 
@@ -774,7 +774,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(30)
+var listToStyles = __webpack_require__(31)
 
 /*
 type StyleObject = {
@@ -979,7 +979,7 @@ function applyToTag (styleElement, obj) {
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(31);
+module.exports = __webpack_require__(32);
 
 /***/ }),
 /* 6 */
@@ -989,7 +989,7 @@ module.exports = __webpack_require__(31);
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(0);
-var normalizeHeaderName = __webpack_require__(34);
+var normalizeHeaderName = __webpack_require__(35);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -1274,12 +1274,12 @@ module.exports = function bind(fn, thisArg) {
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(0);
-var settle = __webpack_require__(35);
-var buildURL = __webpack_require__(37);
-var parseHeaders = __webpack_require__(38);
-var isURLSameOrigin = __webpack_require__(39);
+var settle = __webpack_require__(36);
+var buildURL = __webpack_require__(38);
+var parseHeaders = __webpack_require__(39);
+var isURLSameOrigin = __webpack_require__(40);
 var createError = __webpack_require__(12);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(40);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(41);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -1376,7 +1376,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(41);
+      var cookies = __webpack_require__(42);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -1461,7 +1461,7 @@ module.exports = function xhrAdapter(config) {
 "use strict";
 
 
-var enhanceError = __webpack_require__(36);
+var enhanceError = __webpack_require__(37);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -1601,9 +1601,10 @@ var axios = __webpack_require__(5);
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_sidebar__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_addUser__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_deleteUser__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_sidebar__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_addUser__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_deleteUser__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_addInstaller__ = __webpack_require__(64);
 //
 //
 //
@@ -1611,6 +1612,7 @@ var axios = __webpack_require__(5);
 //
 //
 //
+
 
 
 
@@ -1624,7 +1626,8 @@ var axios = __webpack_require__(5);
   components: {
   	'side-bar': __WEBPACK_IMPORTED_MODULE_0__components_sidebar__["a" /* default */],
     'add-user': __WEBPACK_IMPORTED_MODULE_1__components_addUser__["a" /* default */],
-    'delete-user': __WEBPACK_IMPORTED_MODULE_2__components_deleteUser__["a" /* default */]
+    'delete-user': __WEBPACK_IMPORTED_MODULE_2__components_deleteUser__["a" /* default */],
+    'add-installer': __WEBPACK_IMPORTED_MODULE_3__components_addInstaller__["a" /* default */]
   },
   data: function data(){
   	return {
@@ -1647,14 +1650,24 @@ var axios = __webpack_require__(5);
       console.log(req.data.roll);
       this$1.user = req.data.userID;
 
+      //If no session received, return home
+      if(!req.data.roll){
+        this$1.$router.push('/');
+      }
+
       if(req.data.roll === 'Admin'){
         this$1.buttons.push(
           {
             name: 'Add user',
+            link: 'add-user'
           },
           {
             name: 'Delete user',
             link: 'delete-user'
+          },
+          {
+            name: 'Add installer',
+            link: 'add-installer'
           },
           {
             name: 'View transaction logs'
@@ -1764,8 +1777,8 @@ var axios = __webpack_require__(5);
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  name: 'side-bar',
-  props: ['buttons']
+  name: "side-bar",
+  props: ["buttons"]
 });
 
 
@@ -1781,12 +1794,17 @@ var axios = __webpack_require__(5);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  name: 'add-user',
+  name: "add-user",
+  props: ["user"],
   beforeMount: function beforeMount(){
-  	
+  	console.log(this);
   }
 }); 
 
@@ -1814,13 +1832,40 @@ var axios = __webpack_require__(5);
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  name: "add-installer",
+  props: ["user"]
+}); 
+
+
+/***/ }),
+/* 21 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__App__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_router__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Home__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Login__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Dash__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__App__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_router__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Home__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Login__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Dash__ = __webpack_require__(55);
 
 
 
@@ -1866,13 +1911,13 @@ new __WEBPACK_IMPORTED_MODULE_1_vue__["a" /* default */]({
 });
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_App_vue__ = __webpack_require__(7);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_04c2046b_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_App_vue__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_04c2046b_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_App_vue__ = __webpack_require__(23);
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
@@ -1918,7 +1963,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1940,7 +1985,7 @@ if (false) {
 }
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12754,10 +12799,10 @@ Vue$3.compile = compileToFunctions;
 
 /* harmony default export */ __webpack_exports__["a"] = (Vue$3);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2), __webpack_require__(8), __webpack_require__(24).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2), __webpack_require__(8), __webpack_require__(25).setImmediate))
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var apply = Function.prototype.apply;
@@ -12810,13 +12855,13 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(25);
+__webpack_require__(26);
 exports.setImmediate = setImmediate;
 exports.clearImmediate = clearImmediate;
 
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -13009,7 +13054,7 @@ exports.clearImmediate = clearImmediate;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(2)))
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15640,17 +15685,17 @@ if (inBrowser && window.Vue) {
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2)))
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Home_vue__ = __webpack_require__(9);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_33885605_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Home_vue__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_33885605_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Home_vue__ = __webpack_require__(50);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(28)
+  __webpack_require__(29)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
@@ -15696,13 +15741,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(29);
+var content = __webpack_require__(30);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -15722,7 +15767,7 @@ if(false) {
 }
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(true);
@@ -15736,7 +15781,7 @@ exports.push([module.i, "\nbody[data-v-33885605]{\n\t\n\tfont-family: \"Open San
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports) {
 
 /**
@@ -15769,7 +15814,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15777,7 +15822,7 @@ module.exports = function listToStyles (parentId, list) {
 
 var utils = __webpack_require__(0);
 var bind = __webpack_require__(10);
-var Axios = __webpack_require__(33);
+var Axios = __webpack_require__(34);
 var defaults = __webpack_require__(6);
 
 /**
@@ -15812,14 +15857,14 @@ axios.create = function create(instanceConfig) {
 
 // Expose Cancel & CancelToken
 axios.Cancel = __webpack_require__(14);
-axios.CancelToken = __webpack_require__(47);
+axios.CancelToken = __webpack_require__(48);
 axios.isCancel = __webpack_require__(13);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(48);
+axios.spread = __webpack_require__(49);
 
 module.exports = axios;
 
@@ -15828,7 +15873,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports) {
 
 /*!
@@ -15855,7 +15900,7 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15863,8 +15908,8 @@ function isSlowBuffer (obj) {
 
 var defaults = __webpack_require__(6);
 var utils = __webpack_require__(0);
-var InterceptorManager = __webpack_require__(42);
-var dispatchRequest = __webpack_require__(43);
+var InterceptorManager = __webpack_require__(43);
+var dispatchRequest = __webpack_require__(44);
 
 /**
  * Create a new instance of Axios
@@ -15941,7 +15986,7 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15960,7 +16005,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15993,7 +16038,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16021,7 +16066,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16096,7 +16141,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16156,7 +16201,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16231,7 +16276,7 @@ module.exports = (
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16274,7 +16319,7 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16334,7 +16379,7 @@ module.exports = (
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16393,18 +16438,18 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(0);
-var transformData = __webpack_require__(44);
+var transformData = __webpack_require__(45);
 var isCancel = __webpack_require__(13);
 var defaults = __webpack_require__(6);
-var isAbsoluteURL = __webpack_require__(45);
-var combineURLs = __webpack_require__(46);
+var isAbsoluteURL = __webpack_require__(46);
+var combineURLs = __webpack_require__(47);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -16486,7 +16531,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16513,7 +16558,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16534,7 +16579,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16555,7 +16600,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16619,7 +16664,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16653,7 +16698,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16917,17 +16962,17 @@ if (false) {
 }
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Login_vue__ = __webpack_require__(15);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5b675133_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Login_vue__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5b675133_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Login_vue__ = __webpack_require__(54);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(51)
+  __webpack_require__(52)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
@@ -16973,13 +17018,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(52);
+var content = __webpack_require__(53);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -16999,7 +17044,7 @@ if(false) {
 }
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(true);
@@ -17013,7 +17058,7 @@ exports.push([module.i, "\nbody[data-v-5b675133]{\n\t    background-image: url(h
 
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17200,17 +17245,17 @@ if (false) {
 }
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Dash_vue__ = __webpack_require__(16);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_8c588190_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Dash_vue__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_8c588190_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Dash_vue__ = __webpack_require__(66);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(55)
+  __webpack_require__(56)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
@@ -17256,13 +17301,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(56);
+var content = __webpack_require__(57);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -17282,7 +17327,7 @@ if(false) {
 }
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(true);
@@ -17290,19 +17335,19 @@ exports = module.exports = __webpack_require__(3)(true);
 
 
 // module
-exports.push([module.i, "\n*[data-v-8c588190], *[data-v-8c588190]::after, *[data-v-8c588190]::before {\n  box-sizing: border-box;\n}\nhtml[data-v-8c588190] {\n  font-size: 62.5%;\n}\nbody[data-v-8c588190] {\n  font-size: 1.6rem;\n  font-family: \"Open Sans\", sans-serif;\n  color: #3e454c;\n  background-color: #F5F5F5;\n}\nbody[data-v-8c588190]::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\na[data-v-8c588190] {\n  color: #1784c7;\n  text-decoration: none;\n}\n\n/*  ######  Side NAVBAR page style  ######  */\n#dashboard[data-v-8c588190]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#project[data-v-8c588190]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#tables[data-v-8c588190]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#user[data-v-8c588190]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#admin[data-v-8c588190]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n/*  ######  Side NAVBAR page style END ######  */\n.button[data-v-8c588190]{\n  background-color: transparent;\n  color:#C8C8C8;\n  border: transparent;\n  height: 35px;\n  margin: 10px 10px 0 10px;\n  font-size: 15px;\n  border : none;\n  outline: none;\n}\n.button[data-v-8c588190]:active {\n  background-color: #323232;\n  border : none;\n  outline: none;\n}\n.button[data-v-8c588190]:hover{\n  color: #ffffff;\n}\n.cd-side-nav[data-v-8c588190]{\n  font-size: 20px;\n  margin-top: 20px;\n}\n.fa[data-v-8c588190]{\n  margin-right: 13px;\n}\n.cd-nav ul li a[data-v-8c588190]{\n  color:#C8C8C8;\n}\n.cd-nav ul li a[data-v-8c588190]:hover{\n  color: #ffffff;\n}\ninput[data-v-8c588190] {\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 1.6rem;\n}\ninput[type=\"search\"][data-v-8c588190]::-webkit-search-decoration,\ninput[type=\"search\"][data-v-8c588190]::-webkit-search-cancel-button,\ninput[type=\"search\"][data-v-8c588190]::-webkit-search-results-button,\ninput[type=\"search\"][data-v-8c588190]::-webkit-search-results-decoration {\n  display: none;\n}\n\n/* -------------------------------- \n\nMain Page Content\n\n-------------------------------- */\n.cd-main-content .content-wrapper[data-v-8c588190] {\n  padding: 45px 5% 3em;\n}\n.cd-main-content .content-wrapper h1[data-v-8c588190] {\n  text-align: center;\n  padding: 3em 0;\n  font-size: 2rem;\n}\n.cd-main-content[data-v-8c588190]::before {\n  /* never visible - used to check MQ in jQuery */\n  display: none;\n  content: 'mobile';\n}\n@media only screen and (min-width: 768px) {\n.cd-main-content .content-wrapper[data-v-8c588190] {\n    margin-left: 110px;\n    padding-top: 55px;\n}\n.cd-main-content .content-wrapper h1[data-v-8c588190] {\n    padding: 4em 0;\n    font-size: 3.2rem;\n    font-weight: 300;\n}\n.cd-main-content[data-v-8c588190]::before {\n    content: 'tablet';\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-main-content .content-wrapper[data-v-8c588190] {\n    margin-left: 200px;\n}\n.cd-main-content[data-v-8c588190]::before {\n    content: 'desktop';\n}\n}\n\n/* -------------------------------- \n\nHeader\n\n-------------------------------- */\n.cd-main-header[data-v-8c588190] {\n  position: absolute;\n  z-index: 2;\n  top: 0;\n  left: 0;\n  height: 45px;\n  width: 100%;\n  background: #FFFFFF;\n\n\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.cd-main-header[data-v-8c588190]::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\n/**/\n@media only screen and (min-width: 768px) \n{\n.cd-main-header[data-v-8c588190] {\n    position: fixed;\n    height: 55px;\n    background-color:#323232;\n}\n}\n.cd-logo[data-v-8c588190] {\n  float: left;\n  display: block;\n  margin: 11px 0 0 5%;\n}\n.cd-logo img[data-v-8c588190] {\n  display: block;\n}\n@media only screen and (min-width: 768px) {\n.cd-logo[data-v-8c588190] {\n    margin: 16px 0 0 36px;\n}\n}\n.cd-nav-trigger[data-v-8c588190] {\n  /* navigation trigger - visible on mobile devices only */\n  float: right;\n  position: relative;\n  display: block;\n  width: 34px;\n  height: 44px;\n  margin-right: 5%;\n  /* hide text */\n  overflow: hidden;\n  white-space: nowrap;\n  color: transparent;\n}\n.cd-nav-trigger span[data-v-8c588190], .cd-nav-trigger span[data-v-8c588190]::before, .cd-nav-trigger span[data-v-8c588190]::after {\n  /* hamburger icon in CSS */\n  position: absolute;\n  display: inline-block;\n  height: 3px;\n  width: 24px;\n  background:#323232;\n}\n.cd-nav-trigger span[data-v-8c588190] {\n  /* line in the center */\n  position: absolute;\n  top: 50%;\n  right: 5px;\n  margin-top: -2px;\n  -webkit-transition: background 0.2s;\n  -moz-transition: background 0.2s;\n  transition: background 0.2s;\n}\n.cd-nav-trigger span[data-v-8c588190]::before, .cd-nav-trigger span[data-v-8c588190]::after {\n  /* other 2 lines */\n  content: '';\n  right: 0;\n  /* Force Hardware Acceleration in WebKit */\n  -webkit-transform: translateZ(0);\n  -moz-transform: translateZ(0);\n  -ms-transform: translateZ(0);\n  -o-transform: translateZ(0);\n  transform: translateZ(0);\n  -webkit-backface-visibility: hidden;\n  backface-visibility: hidden;\n  -webkit-transform-origin: 0% 50%;\n  -moz-transform-origin: 0% 50%;\n  -ms-transform-origin: 0% 50%;\n  -o-transform-origin: 0% 50%;\n  transform-origin: 0% 50%;\n  -webkit-transition: -webkit-transform 0.2s;\n  -moz-transition: -moz-transform 0.2s;\n  transition: transform 0.2s;\n}\n.cd-nav-trigger span[data-v-8c588190]::before {\n  /* menu icon top line */\n  top: -6px;\n}\n.cd-nav-trigger span[data-v-8c588190]::after {\n  /* menu icon bottom line */\n  top: 6px;\n}\n.cd-nav-trigger.nav-is-visible span[data-v-8c588190] {\n  /* hide line in the center */\n  background: rgba(255, 255, 255, 0);\n}\n.cd-nav-trigger.nav-is-visible span[data-v-8c588190]::before, .cd-nav-trigger.nav-is-visible span[data-v-8c588190]::after {\n  /* keep visible other 2 lines */\n  background: white;\n}\n.cd-nav-trigger.nav-is-visible span[data-v-8c588190]::before {\n  -webkit-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  -moz-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  -ms-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  -o-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  transform: translateX(4px) translateY(-3px) rotate(45deg);\n}\n.cd-nav-trigger.nav-is-visible span[data-v-8c588190]::after {\n  -webkit-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  -moz-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  -ms-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  -o-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  transform: translateX(4px) translateY(2px) rotate(-45deg);\n}\n@media only screen and (min-width: 768px) {\n.cd-nav-trigger[data-v-8c588190] {\n    display: none;\n}\n}\n.cd-search[data-v-8c588190] {\n  position: relative;\n  margin: 1.2em 5% 0.6em;\n}\n.cd-search.is-hidden[data-v-8c588190] {\n  opacity: 0;\n}\n.cd-search[data-v-8c588190]::before {\n  /* lens icon */\n  content: '';\n  position: absolute;\n  left: 8px;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n  /* background: url(../img/cd-search.svg) no-repeat 0 0; */\n}\n.cd-search input[data-v-8c588190] {\n  padding-left: 32px;\n  width: 100%;\n  height: 36px;\n  border: none;\n  border-radius: .25em;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  -ms-appearance: none;\n  -o-appearance: none;\n  appearance: none;\n}\n.cd-search input[data-v-8c588190]:focus {\n  outline: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-search[data-v-8c588190] {\n    float: left;\n    display: inline-block;\n    width: 250px;\n    height: 100%;\n    margin: 0 0 0 2.5em;\n}\n.cd-search.is-hidden[data-v-8c588190] {\n    /* reset style */\n    opacity: 1;\n}\n.cd-search[data-v-8c588190]::before {\n    background-position: 0 -16px;\n    left: 1em;\n}\n.cd-search form[data-v-8c588190], .cd-search input[data-v-8c588190] {\n    height: 100%;\n    width: 100%;\n}\n.cd-search input[data-v-8c588190] {\n    border: none;\n    padding-left: 2.6em;\n    border-radius: 0;\n    background-color: #3e454c;\n    border-left: 1px solid #51575d;\n    color: #ffffff;\n}\n.cd-search input[data-v-8c588190]::-webkit-input-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-8c588190]::-moz-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-8c588190]:-moz-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-8c588190]:-ms-input-placeholder {\n    color: #777c81;\n}\n}\n\n/* -------------------------------- \n\nTop Navigation\n\n-------------------------------- */\n.cd-nav[data-v-8c588190] {\n  /* top nav - not visible on mobile devices */\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-nav[data-v-8c588190] {\n    display: block;\n    float: right;\n    height: 100%;\n}\n}\n.cd-top-nav > li > a[data-v-8c588190]::before {\n  /* reset style */\n  display: none;\n}\n.cd-top-nav > li a[data-v-8c588190] {\n  padding: 1em 5% !important;\n}\n.cd-top-nav img[data-v-8c588190] {\n  /* avatar image */\n  position: absolute;\n  left: 1.8em;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 20px;\n  width: 20px;\n  border-radius: 50%;\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-top-nav[data-v-8c588190] {\n    height: 100%;\n}\n.cd-top-nav a[data-v-8c588190] {\n    display: block;\n    font-size: 1.4rem;\n    color: #ffffff;\n}\n.cd-top-nav > li[data-v-8c588190] {\n    display: inline-block;\n    margin-right: 1em;\n    height: 100%;\n}\n.cd-top-nav > li[data-v-8c588190]:last-of-type {\n    margin-right: 0;\n}\n.cd-top-nav > li a[data-v-8c588190] {\n    padding: 1em .6em !important;\n}\n.cd-top-nav img[data-v-8c588190] {\n    display: block;\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-top-nav li:not(.has-children) a[data-v-8c588190]:hover {\n    color: #1784c7;\n}\n}\n\n/* -------------------------------- \n\nSidebar\n\n-------------------------------- */\n.cd-side-nav[data-v-8c588190] {\n  position: absolute;\n  z-index: 1;\n  left: 0;\n  top: 0;\n  width: 100%;\n  padding: 45px 0 0;\n  background-color: #323232;\n  visibility: hidden;\n  opacity: 0;\n  max-height: 100vh;\n  overflow: hidden;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;\n  -moz-transition: opacity 0.2s 0s, visibility 0s 0.2s;\n  transition: opacity 0.2s 0s, visibility 0s 0.2s;\n}\n.cd-side-nav.nav-is-visible[data-v-8c588190] {\n  opacity: 1;\n  visibility: visible;\n  overflow: visible;\n  -webkit-overflow-scrolling: touch;\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0s;\n  -moz-transition: opacity 0.2s 0s, visibility 0s 0s;\n  transition: opacity 0.2s 0s, visibility 0s 0s;\n  max-height: none;\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-side-nav > ul[data-v-8c588190] {\n  padding: 0.6em 0;\n}\n.cd-side-nav > ul[data-v-8c588190]:last-of-type {\n  padding-bottom: 0;\n}\n.cd-side-nav .cd-label[data-v-8c588190], .cd-side-nav a[data-v-8c588190] {\n  display: block;\n  padding: 1em 5%;\n}\n.cd-side-nav a[data-v-8c588190] {\n  position: relative;\n  color: #ffffff;\n  font-size: 1.4rem;\n}\n.cd-side-nav ul.cd-top-nav > li:last-of-type > a[data-v-8c588190] {\n  border-bottom: none;\n}\n.cd-side-nav > ul > li > a[data-v-8c588190] {\n  padding-left: calc(5% + 24px);\n  border-bottom: 1px solid #373d44;\n}\n.cd-side-nav > ul > li > a[data-v-8c588190]::before {\n  /* icon before item name */\n  position: absolute;\n  content: '';\n  left: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n  /* background: url(../img/cd-nav-icons.svg) no-repeat 0 0; /*\n}\n.cd-side-nav > ul > li.overview > a::before {\n  background-position: -64px 0;\n}\n.cd-side-nav > ul > li.notifications > a::before {\n  background-position: -80px 0;\n}\n.cd-side-nav > ul > li.comments > a::before {\n  background-position: -48px 0;\n}\n.cd-side-nav > ul > li.bookmarks > a::before {\n  background-position: -32px 0;\n}\n.cd-side-nav > ul > li.images > a::before {\n  background-position: 0 0;\n}\n.cd-side-nav > ul > li.users > a::before {\n  background-position: -16px 0;\n}\n.cd-side-nav .count {\n  /* notification badge */\n  position: absolute;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  right: calc(5% + 16px + 0.4em);\n  padding: 0.2em 0.4em;\n  background-color: #ff7e66;\n  border-radius: .25em;\n  color: #ffffff;\n  font-weight: bold;\n  font-size: 1.2rem;\n  text-align: center;\n}\n.cd-side-nav .action-btn a[data-v-8c588190] {\n  display: block;\n  margin: 0 5%;\n  padding: 1em 0;\n  background-color: #1784c7;\n  border-radius: .25em;\n  border: none;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);\n  text-align: center;\n  color: #ffffff;\n  font-weight: bold;\n}\n.cd-side-nav .action-btn a[data-v-8c588190]::before {\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-side-nav[data-v-8c588190] {\n    position: relative;\n    float: left;\n    top: auto;\n    width: 110px;\n    min-height: 100vh;\n    padding-top: 55px;\n    /* reset style */\n    visibility: visible;\n    opacity: 1;\n    overflow: visible;\n    max-height: none;\n}\n.cd-side-nav.nav-is-visible[data-v-8c588190] {\n    box-shadow: none;\n}\n.cd-side-nav.is-fixed[data-v-8c588190] {\n    position: fixed;\n}\n.cd-side-nav > ul[data-v-8c588190] {\n    /* reset style */\n    padding: 0;\n}\n.cd-side-nav .cd-label[data-v-8c588190] {\n    /* remove labels on minified version of the sidebar */\n    display: none;\n}\n.cd-side-nav a[data-v-8c588190] {\n    font-size: 1.2rem;\n    text-align: center;\n}\n.cd-side-nav > ul > li > a[data-v-8c588190] {\n    padding: calc(2.2em + 24px) 0 2.4em;\n}\n.cd-side-nav > ul > li > a[data-v-8c588190]::before {\n    left: 50%;\n    right: auto;\n    -webkit-transform: translateX(-50%);\n    -moz-transform: translateX(-50%);\n    -ms-transform: translateX(-50%);\n    -o-transform: translateX(-50%);\n    transform: translateX(-50%);\n    top: 2.4em;\n}\n.cd-side-nav .active > a[data-v-8c588190] {\n    /* current page */\n    box-shadow: inset 3px 0 0 #1784c7;\n    background-color: #33383e;\n}\n.cd-side-nav .action-btn a[data-v-8c588190] {\n    margin: 1em 10% 0;\n}\n.cd-side-nav .count[data-v-8c588190] {\n    height: 8px;\n    width: 8px;\n    border-radius: 50%;\n    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n    padding: 0;\n    top: 2em;\n    -webkit-transform: translateX(-50%);\n    -moz-transform: translateX(-50%);\n    -ms-transform: translateX(-50%);\n    -o-transform: translateX(-50%);\n    transform: translateX(-50%);\n    left: calc(50% + 5px);\n    right: auto;\n    color: transparent;\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-side-nav[data-v-8c588190] {\n    width: 150px;\n}\n.cd-logo img[data-v-8c588190]{\n    margin-left: -16px;\n    margin-top: 3px;\n}\n.cd-side-nav > ul[data-v-8c588190] {\n    padding: 0.6em 0;\n}\n.cd-side-nav > ul > li:not(.action-btn):hover > a[data-v-8c588190] {\n    background-color: #33383e;\n}\n.cd-side-nav > ul > li > a[data-v-8c588190] {\n    padding: 1em 1em 1em 42px;\n    text-align: left;\n    border-bottom: none;\n}\n.cd-side-nav > ul > li > a[data-v-8c588190]::before {\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    -moz-transform: translateY(-50%);\n    -ms-transform: translateY(-50%);\n    -o-transform: translateY(-50%);\n    transform: translateY(-50%);\n    left: 18px;\n}\n.cd-side-nav .cd-label[data-v-8c588190] {\n    display: block;\n    padding: 1em 18px;\n}\n.cd-side-nav .action-btn[data-v-8c588190] {\n    text-align: left;\n}\n.cd-side-nav .action-btn a[data-v-8c588190] {\n    margin: 0 18px;\n}\n.no-touch .cd-side-nav .action-btn a[data-v-8c588190]:hover {\n    background-color: #1a93de;\n}\n.cd-side-nav .count[data-v-8c588190] {\n    /* reset style */\n    color: #ffffff;\n    height: auto;\n    width: auto;\n    border-radius: .25em;\n    padding: .2em .4em;\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    -moz-transform: translateY(-50%);\n    -ms-transform: translateY(-50%);\n    -o-transform: translateY(-50%);\n    transform: translateY(-50%);\n    right: 18px;\n    left: auto;\n    box-shadow: none;\n}\n}\n.has-children ul[data-v-8c588190] {\n  position: relative;\n  width: 100%;\n  display: none;\n  background-color: #1c1f22;\n}\n.has-children > a[data-v-8c588190]::after {\n  /* arrow icon */\n  position: absolute;\n  content: '';\n  height: 16px;\n  width: 16px;\n  right: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  /* background: url(../img/cd-arrow.svg); */\n}\n.has-children.selected > ul[data-v-8c588190] {\n  display: block;\n}\n.has-children.selected > a[data-v-8c588190]::after {\n  -webkit-transform: translateY(-50%) rotate(180deg);\n  -moz-transform: translateY(-50%) rotate(180deg);\n  -ms-transform: translateY(-50%) rotate(180deg);\n  -o-transform: translateY(-50%) rotate(180deg);\n  transform: translateY(-50%) rotate(180deg);\n}\n@media only screen and (min-width: 768px) {\n.has-children[data-v-8c588190] {\n    position: relative;\n}\n.has-children ul[data-v-8c588190] {\n    position: absolute;\n    top: 0;\n    left: 100%;\n    width: 160px;\n    padding: 0;\n    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);\n}\n.has-children ul a[data-v-8c588190] {\n    text-align: left;\n    border: none;\n    padding: 1em;\n}\n.no-touch .has-children ul a[data-v-8c588190]:hover {\n    color: #1784c7;\n}\n.has-children > a[data-v-8c588190]::after {\n    display: none;\n    color: black;\n}\n.cd-side-nav .has-children.selected > a[data-v-8c588190] {\n    /* focus state -> show sub pages */\n    background-color: #33383e;\n}\n.cd-top-nav .has-children[data-v-8c588190] {\n    position: relative;\n    background-color: #323232;\n}\n.cd-top-nav .has-children > a[data-v-8c588190] {\n    height: 100%;\n    padding: 0 calc(1.8em + 22px) 0 calc(1.8em + 26px) !important;\n    line-height: 55px;\n}\n.cd-top-nav .has-children > a[data-v-8c588190]::after {\n    display: block;\n    right: 1.8em;\n}\n.cd-top-nav .has-children ul[data-v-8c588190] {\n    background-color: #1c1f22;\n    width: 200px;\n    top: 100%;\n    right: 0;\n    left: auto;\n    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-top-nav .has-children ul a[data-v-8c588190] {\n    padding-left: 18px !important;\n}\n}\n@media only screen and (min-width: 1170px) {\n.has-children > ul[data-v-8c588190] {\n    width: 100%;\n    z-index: 1;\n}\n.has-children ul a[data-v-8c588190] {\n    padding-left: 18px;\n}\n.has-children.active > ul[data-v-8c588190] {\n    /* if the item is active, make the subnavigation visible */\n    position: relative;\n    display: block;\n    /* reset style */\n    left: 0;\n    box-shadow: none;\n}\n.no-touch .cd-side-nav .has-children:hover > ul[data-v-8c588190], .cd-side-nav .has-children.hover > ul[data-v-8c588190] {\n    /* show subnavigation on hover */\n    display: block;\n    opacity: 1;\n    visibility: visible;\n}\n}\n", "", {"version":3,"sources":["C:/Users/timmk/desktop/bonuscheck/src/src/Dash.vue?7ab39db7"],"names":[],"mappings":";AAkHA;EACA,uBAAA;CACA;AAEA;EACA,iBAAA;CACA;AAEA;EACA,kBAAA;EACA,qCAAA;EACA,eAAA;EACA,0BAAA;CACA;AACA;EACA,YAAA;EACA,YAAA;EACA,eAAA;CACA;AAEA;EACA,eAAA;EACA,sBAAA;CACA;;AAEA,8CAAA;AAGA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA,iDAAA;AAEA;EACA,8BAAA;EACA,cAAA;EACA,oBAAA;EACA,aAAA;EACA,yBAAA;EACA,gBAAA;EACA,cAAA;EACA,cAAA;CAGA;AACA;EACA,0BAAA;EACA,cAAA;EACA,cAAA;CAGA;AACA;EACA,eAAA;CACA;AACA;EACA,gBAAA;EACA,iBAAA;CACA;AACA;EACA,mBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,eAAA;CACA;AAGA;EACA,qCAAA;EACA,kBAAA;CACA;AAEA;;;;EAIA,cAAA;CACA;;AAEA;;;;mCAIA;AACA;EACA,qBAAA;CACA;AACA;EACA,mBAAA;EACA,eAAA;EACA,gBAAA;CACA;AACA;EACA,gDAAA;EACA,cAAA;EACA,kBAAA;CACA;AACA;AACA;IACA,mBAAA;IACA,kBAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;IACA,iBAAA;CACA;AACA;IACA,kBAAA;CACA;CACA;AACA;AACA;IACA,mBAAA;CACA;AACA;IACA,mBAAA;CACA;CACA;;AAEA;;;;mCAIA;AAEA;EACA,mBAAA;EACA,WAAA;EACA,OAAA;EACA,QAAA;EACA,aAAA;EACA,YAAA;EACA,oBAAA;;;EAGA,yCAAA;EACA,oCAAA;EACA,mCAAA;CACA;AACA;EACA,YAAA;EACA,YAAA;EACA,eAAA;CACA;AACA,IAAA;AAAA;;AAEA;IACA,gBAAA;IACA,aAAA;IACA,yBAAA;CACA;CACA;AAEA;EACA,YAAA;EACA,eAAA;EACA,oBAAA;CACA;AACA;EACA,eAAA;CACA;AACA;AACA;IACA,sBAAA;CACA;CACA;AAEA;EACA,yDAAA;EACA,aAAA;EACA,mBAAA;EACA,eAAA;EACA,YAAA;EACA,aAAA;EACA,iBAAA;EACA,eAAA;EACA,iBAAA;EACA,oBAAA;EACA,mBAAA;CACA;AACA;EACA,2BAAA;EACA,mBAAA;EACA,sBAAA;EACA,YAAA;EACA,YAAA;EACA,mBAAA;CACA;AACA;EACA,wBAAA;EACA,mBAAA;EACA,SAAA;EACA,WAAA;EACA,iBAAA;EACA,oCAAA;EACA,iCAAA;EACA,4BAAA;CACA;AACA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,2CAAA;EACA,iCAAA;EACA,8BAAA;EACA,6BAAA;EACA,4BAAA;EACA,yBAAA;EACA,oCAAA;EACA,4BAAA;EACA,iCAAA;EACA,8BAAA;EACA,6BAAA;EACA,4BAAA;EACA,yBAAA;EACA,2CAAA;EACA,qCAAA;EACA,2BAAA;CACA;AACA;EACA,wBAAA;EACA,UAAA;CACA;AACA;EACA,2BAAA;EACA,SAAA;CACA;AACA;EACA,6BAAA;EACA,mCAAA;CACA;AACA;EACA,gCAAA;EACA,kBAAA;CACA;AACA;EACA,kEAAA;EACA,+DAAA;EACA,8DAAA;EACA,6DAAA;EACA,0DAAA;CACA;AACA;EACA,kEAAA;EACA,+DAAA;EACA,8DAAA;EACA,6DAAA;EACA,0DAAA;CACA;AACA;AACA;IACA,cAAA;CACA;CACA;AAEA;EACA,mBAAA;EACA,uBAAA;CACA;AACA;EACA,WAAA;CACA;AACA;EACA,eAAA;EACA,YAAA;EACA,mBAAA;EACA,UAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EACA,iCAAA;EACA,gCAAA;EACA,+BAAA;EACA,4BAAA;EACA,aAAA;EACA,YAAA;EACA,0DAAA;CACA;AACA;EACA,mBAAA;EACA,YAAA;EACA,aAAA;EACA,aAAA;EACA,qBAAA;EACA,yBAAA;EACA,sBAAA;EACA,qBAAA;EACA,oBAAA;EACA,iBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;AACA;IACA,YAAA;IACA,sBAAA;IACA,aAAA;IACA,aAAA;IACA,oBAAA;CACA;AACA;IACA,iBAAA;IACA,WAAA;CACA;AACA;IACA,6BAAA;IACA,UAAA;CACA;AACA;IACA,aAAA;IACA,YAAA;CACA;AACA;IACA,aAAA;IACA,oBAAA;IACA,iBAAA;IACA,0BAAA;IACA,+BAAA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;CACA;;AAEA;;;;mCAIA;AACA;EACA,6CAAA;EACA,cAAA;CACA;AACA;AACA;IACA,eAAA;IACA,aAAA;IACA,aAAA;CACA;CACA;AAEA;EACA,iBAAA;EACA,cAAA;CACA;AACA;EACA,2BAAA;CACA;AACA;EACA,kBAAA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EACA,iCAAA;EACA,gCAAA;EACA,+BAAA;EACA,4BAAA;EACA,aAAA;EACA,YAAA;EACA,mBAAA;EACA,cAAA;CACA;AACA;AACA;IACA,aAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;IACA,eAAA;CACA;AACA;IACA,sBAAA;IACA,kBAAA;IACA,aAAA;CACA;AACA;IACA,gBAAA;CACA;AACA;IACA,6BAAA;CACA;AACA;IACA,eAAA;CACA;CACA;AACA;AACA;IACA,eAAA;CACA;CACA;;AAEA;;;;mCAIA;AACA;EACA,mBAAA;EACA,WAAA;EACA,QAAA;EACA,OAAA;EACA,YAAA;EACA,kBAAA;EACA,0BAAA;EACA,mBAAA;EACA,WAAA;EACA,kBAAA;EACA,iBAAA;EACA,oCAAA;EACA,mCAAA;EACA,wDAAA;EACA,qDAAA;EACA,gDAAA;CACA;AACA;EACA,WAAA;EACA,oBAAA;EACA,kBAAA;EACA,kCAAA;EACA,sDAAA;EACA,mDAAA;EACA,8CAAA;EACA,iBAAA;EACA,0CAAA;CACA;AACA;EACA,iBAAA;CACA;AACA;EACA,kBAAA;CACA;AACA;EACA,eAAA;EACA,gBAAA;CACA;AAEA;EACA,mBAAA;EACA,eAAA;EACA,kBAAA;CACA;AACA;EACA,oBAAA;CACA;AACA;EACA,8BAAA;EACA,iCAAA;CACA;AACA;EACA,2BAAA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EACA,iCAAA;EACA,gCAAA;EACA,+BAAA;EACA,4BAAA;EACA,aAAA;EACA,YAAA;EACA;;;;;;;;;;;;;;;;;;;;;0BAqBA;EACA,mBAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EACA,iCAAA;EACA,gCAAA;EACA,+BAAA;EACA,4BAAA;EACA,+BAAA;EACA,qBAAA;EACA,0BAAA;EACA,qBAAA;EACA,eAAA;EACA,kBAAA;EACA,kBAAA;EACA,mBAAA;CACA;AACA;EACA,eAAA;EACA,aAAA;EACA,eAAA;EACA,0BAAA;EACA,qBAAA;EACA,aAAA;EACA,iFAAA;EACA,mBAAA;EACA,eAAA;EACA,kBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;AACA;IACA,mBAAA;IACA,YAAA;IACA,UAAA;IACA,aAAA;IACA,kBAAA;IACA,kBAAA;IACA,iBAAA;IACA,oBAAA;IACA,WAAA;IACA,kBAAA;IACA,iBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,gBAAA;CACA;AACA;IACA,iBAAA;IACA,WAAA;CACA;AACA;IACA,sDAAA;IACA,cAAA;CACA;AACA;IACA,kBAAA;IACA,mBAAA;CACA;AACA;IACA,oCAAA;CACA;AACA;IACA,UAAA;IACA,YAAA;IACA,oCAAA;IACA,iCAAA;IACA,gCAAA;IACA,+BAAA;IACA,4BAAA;IACA,WAAA;CACA;AACA;IACA,kBAAA;IACA,kCAAA;IACA,0BAAA;CACA;AACA;IACA,kBAAA;CACA;AACA;IACA,YAAA;IACA,WAAA;IACA,mBAAA;IACA,uCAAA;IACA,WAAA;IACA,SAAA;IACA,oCAAA;IACA,iCAAA;IACA,gCAAA;IACA,+BAAA;IACA,4BAAA;IACA,sBAAA;IACA,YAAA;IACA,mBAAA;CACA;CACA;AACA;AACA;IACA,aAAA;CACA;AACA;IACA,mBAAA;IACA,gBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,0BAAA;IACA,iBAAA;IACA,oBAAA;CACA;AACA;IACA,SAAA;IACA,aAAA;IACA,oCAAA;IACA,iCAAA;IACA,gCAAA;IACA,+BAAA;IACA,4BAAA;IACA,WAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,iBAAA;IACA,eAAA;IACA,aAAA;IACA,YAAA;IACA,qBAAA;IACA,mBAAA;IACA,SAAA;IACA,aAAA;IACA,oCAAA;IACA,iCAAA;IACA,gCAAA;IACA,+BAAA;IACA,4BAAA;IACA,YAAA;IACA,WAAA;IACA,iBAAA;CACA;CACA;AAEA;EACA,mBAAA;EACA,YAAA;EACA,cAAA;EACA,0BAAA;CACA;AACA;EACA,gBAAA;EACA,mBAAA;EACA,YAAA;EACA,aAAA;EACA,YAAA;EACA,UAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EACA,iCAAA;EACA,gCAAA;EACA,+BAAA;EACA,4BAAA;EACA,2CAAA;CACA;AACA;EACA,eAAA;CACA;AACA;EACA,mDAAA;EACA,gDAAA;EACA,+CAAA;EACA,8CAAA;EACA,2CAAA;CACA;AACA;AACA;IACA,mBAAA;CACA;AACA;IACA,mBAAA;IACA,OAAA;IACA,WAAA;IACA,aAAA;IACA,WAAA;IACA,0CAAA;CACA;AACA;IACA,iBAAA;IACA,aAAA;IACA,aAAA;CACA;AAGA;IACA,eAAA;CACA;AACA;IACA,cAAA;IACA,aAAA;CACA;AACA;IACA,mCAAA;IACA,0BAAA;CACA;AACA;IACA,mBAAA;IACA,0BAAA;CAEA;AACA;IACA,aAAA;IACA,8DAAA;IACA,kBAAA;CACA;AACA;IACA,eAAA;IACA,aAAA;CACA;AACA;IACA,0BAAA;IACA,aAAA;IACA,UAAA;IACA,SAAA;IACA,WAAA;IACA,0CAAA;CACA;AACA;IACA,8BAAA;CACA;CACA;AACA;AACA;IACA,YAAA;IACA,WAAA;CACA;AACA;IACA,mBAAA;CACA;AACA;IACA,2DAAA;IACA,mBAAA;IACA,eAAA;IACA,iBAAA;IACA,QAAA;IACA,iBAAA;CACA;AACA;IACA,iCAAA;IACA,eAAA;IACA,WAAA;IACA,oBAAA;CACA;CACA","file":"Dash.vue","sourcesContent":["<template>\n  <div>\n    <side-bar :buttons=\"buttons\"></side-bar>\n    <component :is=\"currentView\"></component>\n  </div>\n</template>\n\n<script>\nimport sidebar from './components/sidebar';\nimport addUser from './components/addUser';\nimport deleteUser from './components/deleteUser';\n\n\nconst axios = require('axios');\n\nexport default {\n  name: 'Dash',\n  components: {\n  \t'side-bar': sidebar,\n    'add-user': addUser,\n    'delete-user': deleteUser\n  },\n  data(){\n  \treturn {\n      user: '',\n      buttons: [],\n      currentView: 'add-user'\n    }\n  }, \n  methods: {\n    updateView: function(view){\n      this.currentView = view;\n    }\n  },\n\n  beforeMount(){\n\t axios.get('/session/data')\n\t .then(req => {\n      console.log(req.data.roll);\n      this.user = req.data.userID;\n\n      if(req.data.roll === 'Admin'){\n        this.buttons.push(\n          {\n            name: 'Add user',\n          },\n          {\n            name: 'Delete user',\n            link: 'delete-user'\n          },\n          {\n            name: 'View transaction logs'\n          },\n          {\n            name: 'Enter time worked'\n          },\n          {\n            name: 'View project data'\n          },\n          {\n           name: 'View bonus schedule' \n          },\n          {\n            name: 'View bonus history'\n          },\n          {\n            name: 'View payment history'\n          },\n          {\n            name: 'Approve time'\n          },\n          {\n            name: 'Create a project'\n          },\n          {\n            name: 'Create a customer'\n          },\n          {\n            name: 'Create roles'\n          },\n          {\n            name: 'Modify roles'\n          },\n          {\n            name: 'Modify project'\n          },\n          {\n            name: 'Modify bonuses'\n          },\n          {\n            name: 'Create payments'\n          },\n          {\n            name: 'Modify payments'\n          },\n          {\n            name: 'Create payment types'\n          },\n          {\n            name: 'Modify payment types'\n          }\n        );\n      }\n      console.log(this.buttons);\n\t })\n\t.catch(function(err){\n\t\tconsole.log(err);\n\t});\n}\n};\n\n</script>\n\n<style scoped>\n  *, *::after, *::before {\n  box-sizing: border-box;\n}\n\nhtml {\n  font-size: 62.5%;\n}\n\nbody {\n  font-size: 1.6rem;\n  font-family: \"Open Sans\", sans-serif;\n  color: #3e454c;\n  background-color: #F5F5F5;\n}\nbody::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\n\na {\n  color: #1784c7;\n  text-decoration: none;\n}\n\n/*  ######  Side NAVBAR page style  ######  */\n\n\n#dashboard{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n#project{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n#tables{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n#user{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n#admin{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n/*  ######  Side NAVBAR page style END ######  */\n\n.button{\n  background-color: transparent;\n  color:#C8C8C8;\n  border: transparent;\n  height: 35px;\n  margin: 10px 10px 0 10px;\n  font-size: 15px;\n  border : none;\n  outline: none;\n\n\n}\n.button:active {\n  background-color: #323232;\n  border : none;\n  outline: none;\n  \n\n}\n.button:hover{\n  color: #ffffff;\n}\n.cd-side-nav{\n  font-size: 20px;\n  margin-top: 20px;\n}\n.fa{\n  margin-right: 13px;\n}\n.cd-nav ul li a{\n  color:#C8C8C8;\n}\n.cd-nav ul li a:hover{\n  color: #ffffff;\n}\n\n\ninput {\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 1.6rem;\n}\n\ninput[type=\"search\"]::-webkit-search-decoration,\ninput[type=\"search\"]::-webkit-search-cancel-button,\ninput[type=\"search\"]::-webkit-search-results-button,\ninput[type=\"search\"]::-webkit-search-results-decoration {\n  display: none;\n}\n\n/* -------------------------------- \n\nMain Page Content\n\n-------------------------------- */\n.cd-main-content .content-wrapper {\n  padding: 45px 5% 3em;\n}\n.cd-main-content .content-wrapper h1 {\n  text-align: center;\n  padding: 3em 0;\n  font-size: 2rem;\n}\n.cd-main-content::before {\n  /* never visible - used to check MQ in jQuery */\n  display: none;\n  content: 'mobile';\n}\n@media only screen and (min-width: 768px) {\n  .cd-main-content .content-wrapper {\n    margin-left: 110px;\n    padding-top: 55px;\n  }\n  .cd-main-content .content-wrapper h1 {\n    padding: 4em 0;\n    font-size: 3.2rem;\n    font-weight: 300;\n  }\n  .cd-main-content::before {\n    content: 'tablet';\n  }\n}\n@media only screen and (min-width: 1170px) {\n  .cd-main-content .content-wrapper {\n    margin-left: 200px;\n  }\n  .cd-main-content::before {\n    content: 'desktop';\n  }\n}\n\n/* -------------------------------- \n\nHeader\n\n-------------------------------- */\n \n.cd-main-header {\n  position: absolute;\n  z-index: 2;\n  top: 0;\n  left: 0;\n  height: 45px;\n  width: 100%;\n  background: #FFFFFF;\n\n\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.cd-main-header::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\n/**/@media only screen and (min-width: 768px) \n{\n  .cd-main-header {\n    position: fixed;\n    height: 55px;\n    background-color:#323232;\n  }\n}\n\n.cd-logo {\n  float: left;\n  display: block;\n  margin: 11px 0 0 5%;\n}\n.cd-logo img {\n  display: block;\n}\n@media only screen and (min-width: 768px) {\n  .cd-logo {\n    margin: 16px 0 0 36px;\n  }\n}\n\n.cd-nav-trigger {\n  /* navigation trigger - visible on mobile devices only */\n  float: right;\n  position: relative;\n  display: block;\n  width: 34px;\n  height: 44px;\n  margin-right: 5%;\n  /* hide text */\n  overflow: hidden;\n  white-space: nowrap;\n  color: transparent;\n}\n.cd-nav-trigger span, .cd-nav-trigger span::before, .cd-nav-trigger span::after {\n  /* hamburger icon in CSS */\n  position: absolute;\n  display: inline-block;\n  height: 3px;\n  width: 24px;\n  background:#323232;\n}\n.cd-nav-trigger span {\n  /* line in the center */\n  position: absolute;\n  top: 50%;\n  right: 5px;\n  margin-top: -2px;\n  -webkit-transition: background 0.2s;\n  -moz-transition: background 0.2s;\n  transition: background 0.2s;\n}\n.cd-nav-trigger span::before, .cd-nav-trigger span::after {\n  /* other 2 lines */\n  content: '';\n  right: 0;\n  /* Force Hardware Acceleration in WebKit */\n  -webkit-transform: translateZ(0);\n  -moz-transform: translateZ(0);\n  -ms-transform: translateZ(0);\n  -o-transform: translateZ(0);\n  transform: translateZ(0);\n  -webkit-backface-visibility: hidden;\n  backface-visibility: hidden;\n  -webkit-transform-origin: 0% 50%;\n  -moz-transform-origin: 0% 50%;\n  -ms-transform-origin: 0% 50%;\n  -o-transform-origin: 0% 50%;\n  transform-origin: 0% 50%;\n  -webkit-transition: -webkit-transform 0.2s;\n  -moz-transition: -moz-transform 0.2s;\n  transition: transform 0.2s;\n}\n.cd-nav-trigger span::before {\n  /* menu icon top line */\n  top: -6px;\n}\n.cd-nav-trigger span::after {\n  /* menu icon bottom line */\n  top: 6px;\n}\n.cd-nav-trigger.nav-is-visible span {\n  /* hide line in the center */\n  background: rgba(255, 255, 255, 0);\n}\n.cd-nav-trigger.nav-is-visible span::before, .cd-nav-trigger.nav-is-visible span::after {\n  /* keep visible other 2 lines */\n  background: white;\n}\n.cd-nav-trigger.nav-is-visible span::before {\n  -webkit-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  -moz-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  -ms-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  -o-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  transform: translateX(4px) translateY(-3px) rotate(45deg);\n}\n.cd-nav-trigger.nav-is-visible span::after {\n  -webkit-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  -moz-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  -ms-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  -o-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  transform: translateX(4px) translateY(2px) rotate(-45deg);\n}\n@media only screen and (min-width: 768px) {\n  .cd-nav-trigger {\n    display: none;\n  }\n}\n\n.cd-search {\n  position: relative;\n  margin: 1.2em 5% 0.6em;\n}\n.cd-search.is-hidden {\n  opacity: 0;\n}\n.cd-search::before {\n  /* lens icon */\n  content: '';\n  position: absolute;\n  left: 8px;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n  /* background: url(../img/cd-search.svg) no-repeat 0 0; */\n}\n.cd-search input {\n  padding-left: 32px;\n  width: 100%;\n  height: 36px;\n  border: none;\n  border-radius: .25em;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  -ms-appearance: none;\n  -o-appearance: none;\n  appearance: none;\n}\n.cd-search input:focus {\n  outline: none;\n}\n@media only screen and (min-width: 768px) {\n  .cd-search {\n    float: left;\n    display: inline-block;\n    width: 250px;\n    height: 100%;\n    margin: 0 0 0 2.5em;\n  }\n  .cd-search.is-hidden {\n    /* reset style */\n    opacity: 1;\n  }\n  .cd-search::before {\n    background-position: 0 -16px;\n    left: 1em;\n  }\n  .cd-search form, .cd-search input {\n    height: 100%;\n    width: 100%;\n  }\n  .cd-search input {\n    border: none;\n    padding-left: 2.6em;\n    border-radius: 0;\n    background-color: #3e454c;\n    border-left: 1px solid #51575d;\n    color: #ffffff;\n  }\n  .cd-search input::-webkit-input-placeholder {\n    color: #777c81;\n  }\n  .cd-search input::-moz-placeholder {\n    color: #777c81;\n  }\n  .cd-search input:-moz-placeholder {\n    color: #777c81;\n  }\n  .cd-search input:-ms-input-placeholder {\n    color: #777c81;\n  }\n}\n\n/* -------------------------------- \n\nTop Navigation\n\n-------------------------------- */\n.cd-nav {\n  /* top nav - not visible on mobile devices */\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n  .cd-nav {\n    display: block;\n    float: right;\n    height: 100%;\n  }\n}\n\n.cd-top-nav > li > a::before {\n  /* reset style */\n  display: none;\n}\n.cd-top-nav > li a {\n  padding: 1em 5% !important;\n}\n.cd-top-nav img {\n  /* avatar image */\n  position: absolute;\n  left: 1.8em;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 20px;\n  width: 20px;\n  border-radius: 50%;\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n  .cd-top-nav {\n    height: 100%;\n  }\n  .cd-top-nav a {\n    display: block;\n    font-size: 1.4rem;\n    color: #ffffff;\n  }\n  .cd-top-nav > li {\n    display: inline-block;\n    margin-right: 1em;\n    height: 100%;\n  }\n  .cd-top-nav > li:last-of-type {\n    margin-right: 0;\n  }\n  .cd-top-nav > li a {\n    padding: 1em .6em !important;\n  }\n  .cd-top-nav img {\n    display: block;\n  }\n}\n@media only screen and (min-width: 1170px) {\n  .cd-top-nav li:not(.has-children) a:hover {\n    color: #1784c7;\n  }\n}\n\n/* -------------------------------- \n\nSidebar\n\n-------------------------------- */\n.cd-side-nav {\n  position: absolute;\n  z-index: 1;\n  left: 0;\n  top: 0;\n  width: 100%;\n  padding: 45px 0 0;\n  background-color: #323232;\n  visibility: hidden;\n  opacity: 0;\n  max-height: 100vh;\n  overflow: hidden;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;\n  -moz-transition: opacity 0.2s 0s, visibility 0s 0.2s;\n  transition: opacity 0.2s 0s, visibility 0s 0.2s;\n}\n.cd-side-nav.nav-is-visible {\n  opacity: 1;\n  visibility: visible;\n  overflow: visible;\n  -webkit-overflow-scrolling: touch;\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0s;\n  -moz-transition: opacity 0.2s 0s, visibility 0s 0s;\n  transition: opacity 0.2s 0s, visibility 0s 0s;\n  max-height: none;\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-side-nav > ul {\n  padding: 0.6em 0;\n}\n.cd-side-nav > ul:last-of-type {\n  padding-bottom: 0;\n}\n.cd-side-nav .cd-label, .cd-side-nav a {\n  display: block;\n  padding: 1em 5%;\n}\n\n.cd-side-nav a {\n  position: relative;\n  color: #ffffff;\n  font-size: 1.4rem;\n}\n.cd-side-nav ul.cd-top-nav > li:last-of-type > a {\n  border-bottom: none;\n}\n.cd-side-nav > ul > li > a {\n  padding-left: calc(5% + 24px);\n  border-bottom: 1px solid #373d44;\n}\n.cd-side-nav > ul > li > a::before {\n  /* icon before item name */\n  position: absolute;\n  content: '';\n  left: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n  /* background: url(../img/cd-nav-icons.svg) no-repeat 0 0; /*\n}\n.cd-side-nav > ul > li.overview > a::before {\n  background-position: -64px 0;\n}\n.cd-side-nav > ul > li.notifications > a::before {\n  background-position: -80px 0;\n}\n.cd-side-nav > ul > li.comments > a::before {\n  background-position: -48px 0;\n}\n.cd-side-nav > ul > li.bookmarks > a::before {\n  background-position: -32px 0;\n}\n.cd-side-nav > ul > li.images > a::before {\n  background-position: 0 0;\n}\n.cd-side-nav > ul > li.users > a::before {\n  background-position: -16px 0;\n}\n.cd-side-nav .count {\n  /* notification badge */\n  position: absolute;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  right: calc(5% + 16px + 0.4em);\n  padding: 0.2em 0.4em;\n  background-color: #ff7e66;\n  border-radius: .25em;\n  color: #ffffff;\n  font-weight: bold;\n  font-size: 1.2rem;\n  text-align: center;\n}\n.cd-side-nav .action-btn a {\n  display: block;\n  margin: 0 5%;\n  padding: 1em 0;\n  background-color: #1784c7;\n  border-radius: .25em;\n  border: none;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);\n  text-align: center;\n  color: #ffffff;\n  font-weight: bold;\n}\n.cd-side-nav .action-btn a::before {\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n  .cd-side-nav {\n    position: relative;\n    float: left;\n    top: auto;\n    width: 110px;\n    min-height: 100vh;\n    padding-top: 55px;\n    /* reset style */\n    visibility: visible;\n    opacity: 1;\n    overflow: visible;\n    max-height: none;\n  }\n  .cd-side-nav.nav-is-visible {\n    box-shadow: none;\n  }\n  .cd-side-nav.is-fixed {\n    position: fixed;\n  }\n  .cd-side-nav > ul {\n    /* reset style */\n    padding: 0;\n  }\n  .cd-side-nav .cd-label {\n    /* remove labels on minified version of the sidebar */\n    display: none;\n  }\n  .cd-side-nav a {\n    font-size: 1.2rem;\n    text-align: center;\n  }\n  .cd-side-nav > ul > li > a {\n    padding: calc(2.2em + 24px) 0 2.4em;\n  }\n  .cd-side-nav > ul > li > a::before {\n    left: 50%;\n    right: auto;\n    -webkit-transform: translateX(-50%);\n    -moz-transform: translateX(-50%);\n    -ms-transform: translateX(-50%);\n    -o-transform: translateX(-50%);\n    transform: translateX(-50%);\n    top: 2.4em;\n  }\n  .cd-side-nav .active > a {\n    /* current page */\n    box-shadow: inset 3px 0 0 #1784c7;\n    background-color: #33383e;\n  }\n  .cd-side-nav .action-btn a {\n    margin: 1em 10% 0;\n  }\n  .cd-side-nav .count {\n    height: 8px;\n    width: 8px;\n    border-radius: 50%;\n    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n    padding: 0;\n    top: 2em;\n    -webkit-transform: translateX(-50%);\n    -moz-transform: translateX(-50%);\n    -ms-transform: translateX(-50%);\n    -o-transform: translateX(-50%);\n    transform: translateX(-50%);\n    left: calc(50% + 5px);\n    right: auto;\n    color: transparent;\n  }\n}\n@media only screen and (min-width: 1170px) {\n  .cd-side-nav {\n    width: 150px;\n  }\n  .cd-logo img{\n    margin-left: -16px;\n    margin-top: 3px;\n  }\n  .cd-side-nav > ul {\n    padding: 0.6em 0;\n  }\n  .cd-side-nav > ul > li:not(.action-btn):hover > a {\n    background-color: #33383e;\n  }\n  .cd-side-nav > ul > li > a {\n    padding: 1em 1em 1em 42px;\n    text-align: left;\n    border-bottom: none;\n  }\n  .cd-side-nav > ul > li > a::before {\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    -moz-transform: translateY(-50%);\n    -ms-transform: translateY(-50%);\n    -o-transform: translateY(-50%);\n    transform: translateY(-50%);\n    left: 18px;\n  }\n  .cd-side-nav .cd-label {\n    display: block;\n    padding: 1em 18px;\n  }\n  .cd-side-nav .action-btn {\n    text-align: left;\n  }\n  .cd-side-nav .action-btn a {\n    margin: 0 18px;\n  }\n  .no-touch .cd-side-nav .action-btn a:hover {\n    background-color: #1a93de;\n  }\n  .cd-side-nav .count {\n    /* reset style */\n    color: #ffffff;\n    height: auto;\n    width: auto;\n    border-radius: .25em;\n    padding: .2em .4em;\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    -moz-transform: translateY(-50%);\n    -ms-transform: translateY(-50%);\n    -o-transform: translateY(-50%);\n    transform: translateY(-50%);\n    right: 18px;\n    left: auto;\n    box-shadow: none;\n  }\n}\n\n.has-children ul {\n  position: relative;\n  width: 100%;\n  display: none;\n  background-color: #1c1f22;\n}\n.has-children > a::after {\n  /* arrow icon */\n  position: absolute;\n  content: '';\n  height: 16px;\n  width: 16px;\n  right: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  /* background: url(../img/cd-arrow.svg); */\n}\n.has-children.selected > ul {\n  display: block;\n}\n.has-children.selected > a::after {\n  -webkit-transform: translateY(-50%) rotate(180deg);\n  -moz-transform: translateY(-50%) rotate(180deg);\n  -ms-transform: translateY(-50%) rotate(180deg);\n  -o-transform: translateY(-50%) rotate(180deg);\n  transform: translateY(-50%) rotate(180deg);\n}\n@media only screen and (min-width: 768px) {\n  .has-children {\n    position: relative;\n  }\n  .has-children ul {\n    position: absolute;\n    top: 0;\n    left: 100%;\n    width: 160px;\n    padding: 0;\n    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);\n  }\n  .has-children ul a {\n    text-align: left;\n    border: none;\n    padding: 1em;\n  }\n \n  \n  .no-touch .has-children ul a:hover {\n    color: #1784c7;\n  }\n  .has-children > a::after {\n    display: none;\n    color: black;\n  }\n  .cd-side-nav .has-children.selected > a {\n    /* focus state -> show sub pages */\n    background-color: #33383e;\n  }\n  .cd-top-nav .has-children {\n    position: relative;\n    background-color: #323232;\n\n  }\n  .cd-top-nav .has-children > a {\n    height: 100%;\n    padding: 0 calc(1.8em + 22px) 0 calc(1.8em + 26px) !important;\n    line-height: 55px;\n  }\n  .cd-top-nav .has-children > a::after {\n    display: block;\n    right: 1.8em;\n  }\n  .cd-top-nav .has-children ul {\n    background-color: #1c1f22;\n    width: 200px;\n    top: 100%;\n    right: 0;\n    left: auto;\n    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);\n  }\n  .cd-top-nav .has-children ul a {\n    padding-left: 18px !important;\n  }\n}\n@media only screen and (min-width: 1170px) {\n  .has-children > ul {\n    width: 100%;\n    z-index: 1;\n  }\n  .has-children ul a {\n    padding-left: 18px;\n  }\n  .has-children.active > ul {\n    /* if the item is active, make the subnavigation visible */\n    position: relative;\n    display: block;\n    /* reset style */\n    left: 0;\n    box-shadow: none;\n  }\n  .no-touch .cd-side-nav .has-children:hover > ul, .cd-side-nav .has-children.hover > ul {\n    /* show subnavigation on hover */\n    display: block;\n    opacity: 1;\n    visibility: visible;\n  }\n}\n</style>\n\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n*[data-v-8c588190], *[data-v-8c588190]::after, *[data-v-8c588190]::before {\n  box-sizing: border-box;\n}\nhtml[data-v-8c588190] {\n  font-size: 62.5%;\n}\nbody[data-v-8c588190] {\n  font-size: 1.6rem;\n  font-family: \"Open Sans\", sans-serif;\n  color: #3e454c;\n  background-color: #F5F5F5;\n}\nbody[data-v-8c588190]::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\na[data-v-8c588190] {\n  color: #1784c7;\n  text-decoration: none;\n}\n\n/*  ######  Side NAVBAR page style  ######  */\n#dashboard[data-v-8c588190]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#project[data-v-8c588190]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#tables[data-v-8c588190]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#user[data-v-8c588190]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#admin[data-v-8c588190]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n/*  ######  Side NAVBAR page style END ######  */\n.button[data-v-8c588190]{\n  background-color: transparent;\n  color:#C8C8C8;\n  border: transparent;\n  height: 35px;\n  margin: 10px 10px 0 10px;\n  font-size: 15px;\n  border : none;\n  outline: none;\n}\n.button[data-v-8c588190]:active {\n  background-color: #323232;\n  border : none;\n  outline: none;\n}\n.button[data-v-8c588190]:hover{\n  color: #ffffff;\n}\n.cd-side-nav[data-v-8c588190]{\n  font-size: 20px;\n  margin-top: 20px;\n}\n.fa[data-v-8c588190]{\n  margin-right: 13px;\n}\n.cd-nav ul li a[data-v-8c588190]{\n  color:#C8C8C8;\n}\n.cd-nav ul li a[data-v-8c588190]:hover{\n  color: #ffffff;\n}\ninput[data-v-8c588190] {\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 1.6rem;\n}\ninput[type=\"search\"][data-v-8c588190]::-webkit-search-decoration,\ninput[type=\"search\"][data-v-8c588190]::-webkit-search-cancel-button,\ninput[type=\"search\"][data-v-8c588190]::-webkit-search-results-button,\ninput[type=\"search\"][data-v-8c588190]::-webkit-search-results-decoration {\n  display: none;\n}\n\n/* -------------------------------- \n\nMain Page Content\n\n-------------------------------- */\n.cd-main-content .content-wrapper[data-v-8c588190] {\n  padding: 45px 5% 3em;\n}\n.cd-main-content .content-wrapper h1[data-v-8c588190] {\n  text-align: center;\n  padding: 3em 0;\n  font-size: 2rem;\n}\n.cd-main-content[data-v-8c588190]::before {\n  /* never visible - used to check MQ in jQuery */\n  display: none;\n  content: 'mobile';\n}\n@media only screen and (min-width: 768px) {\n.cd-main-content .content-wrapper[data-v-8c588190] {\n    margin-left: 110px;\n    padding-top: 55px;\n}\n.cd-main-content .content-wrapper h1[data-v-8c588190] {\n    padding: 4em 0;\n    font-size: 3.2rem;\n    font-weight: 300;\n}\n.cd-main-content[data-v-8c588190]::before {\n    content: 'tablet';\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-main-content .content-wrapper[data-v-8c588190] {\n    margin-left: 200px;\n}\n.cd-main-content[data-v-8c588190]::before {\n    content: 'desktop';\n}\n}\n\n/* -------------------------------- \n\nHeader\n\n-------------------------------- */\n.cd-main-header[data-v-8c588190] {\n  position: absolute;\n  z-index: 2;\n  top: 0;\n  left: 0;\n  height: 45px;\n  width: 100%;\n  background: #FFFFFF;\n\n\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.cd-main-header[data-v-8c588190]::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\n/**/\n@media only screen and (min-width: 768px) \n{\n.cd-main-header[data-v-8c588190] {\n    position: fixed;\n    height: 55px;\n    background-color:#323232;\n}\n}\n.cd-logo[data-v-8c588190] {\n  float: left;\n  display: block;\n  margin: 11px 0 0 5%;\n}\n.cd-logo img[data-v-8c588190] {\n  display: block;\n}\n@media only screen and (min-width: 768px) {\n.cd-logo[data-v-8c588190] {\n    margin: 16px 0 0 36px;\n}\n}\n.cd-nav-trigger[data-v-8c588190] {\n  /* navigation trigger - visible on mobile devices only */\n  float: right;\n  position: relative;\n  display: block;\n  width: 34px;\n  height: 44px;\n  margin-right: 5%;\n  /* hide text */\n  overflow: hidden;\n  white-space: nowrap;\n  color: transparent;\n}\n.cd-nav-trigger span[data-v-8c588190], .cd-nav-trigger span[data-v-8c588190]::before, .cd-nav-trigger span[data-v-8c588190]::after {\n  /* hamburger icon in CSS */\n  position: absolute;\n  display: inline-block;\n  height: 3px;\n  width: 24px;\n  background:#323232;\n}\n.cd-nav-trigger span[data-v-8c588190] {\n  /* line in the center */\n  position: absolute;\n  top: 50%;\n  right: 5px;\n  margin-top: -2px;\n  -webkit-transition: background 0.2s;\n  -moz-transition: background 0.2s;\n  transition: background 0.2s;\n}\n.cd-nav-trigger span[data-v-8c588190]::before, .cd-nav-trigger span[data-v-8c588190]::after {\n  /* other 2 lines */\n  content: '';\n  right: 0;\n  /* Force Hardware Acceleration in WebKit */\n  -webkit-transform: translateZ(0);\n  -moz-transform: translateZ(0);\n  -ms-transform: translateZ(0);\n  -o-transform: translateZ(0);\n  transform: translateZ(0);\n  -webkit-backface-visibility: hidden;\n  backface-visibility: hidden;\n  -webkit-transform-origin: 0% 50%;\n  -moz-transform-origin: 0% 50%;\n  -ms-transform-origin: 0% 50%;\n  -o-transform-origin: 0% 50%;\n  transform-origin: 0% 50%;\n  -webkit-transition: -webkit-transform 0.2s;\n  -moz-transition: -moz-transform 0.2s;\n  transition: transform 0.2s;\n}\n.cd-nav-trigger span[data-v-8c588190]::before {\n  /* menu icon top line */\n  top: -6px;\n}\n.cd-nav-trigger span[data-v-8c588190]::after {\n  /* menu icon bottom line */\n  top: 6px;\n}\n.cd-nav-trigger.nav-is-visible span[data-v-8c588190] {\n  /* hide line in the center */\n  background: rgba(255, 255, 255, 0);\n}\n.cd-nav-trigger.nav-is-visible span[data-v-8c588190]::before, .cd-nav-trigger.nav-is-visible span[data-v-8c588190]::after {\n  /* keep visible other 2 lines */\n  background: white;\n}\n.cd-nav-trigger.nav-is-visible span[data-v-8c588190]::before {\n  -webkit-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  -moz-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  -ms-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  -o-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  transform: translateX(4px) translateY(-3px) rotate(45deg);\n}\n.cd-nav-trigger.nav-is-visible span[data-v-8c588190]::after {\n  -webkit-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  -moz-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  -ms-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  -o-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  transform: translateX(4px) translateY(2px) rotate(-45deg);\n}\n@media only screen and (min-width: 768px) {\n.cd-nav-trigger[data-v-8c588190] {\n    display: none;\n}\n}\n.cd-search[data-v-8c588190] {\n  position: relative;\n  margin: 1.2em 5% 0.6em;\n}\n.cd-search.is-hidden[data-v-8c588190] {\n  opacity: 0;\n}\n.cd-search[data-v-8c588190]::before {\n  /* lens icon */\n  content: '';\n  position: absolute;\n  left: 8px;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n  /* background: url(../img/cd-search.svg) no-repeat 0 0; */\n}\n.cd-search input[data-v-8c588190] {\n  padding-left: 32px;\n  width: 100%;\n  height: 36px;\n  border: none;\n  border-radius: .25em;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  -ms-appearance: none;\n  -o-appearance: none;\n  appearance: none;\n}\n.cd-search input[data-v-8c588190]:focus {\n  outline: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-search[data-v-8c588190] {\n    float: left;\n    display: inline-block;\n    width: 250px;\n    height: 100%;\n    margin: 0 0 0 2.5em;\n}\n.cd-search.is-hidden[data-v-8c588190] {\n    /* reset style */\n    opacity: 1;\n}\n.cd-search[data-v-8c588190]::before {\n    background-position: 0 -16px;\n    left: 1em;\n}\n.cd-search form[data-v-8c588190], .cd-search input[data-v-8c588190] {\n    height: 100%;\n    width: 100%;\n}\n.cd-search input[data-v-8c588190] {\n    border: none;\n    padding-left: 2.6em;\n    border-radius: 0;\n    background-color: #3e454c;\n    border-left: 1px solid #51575d;\n    color: #ffffff;\n}\n.cd-search input[data-v-8c588190]::-webkit-input-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-8c588190]::-moz-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-8c588190]:-moz-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-8c588190]:-ms-input-placeholder {\n    color: #777c81;\n}\n}\n\n/* -------------------------------- \n\nTop Navigation\n\n-------------------------------- */\n.cd-nav[data-v-8c588190] {\n  /* top nav - not visible on mobile devices */\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-nav[data-v-8c588190] {\n    display: block;\n    float: right;\n    height: 100%;\n}\n}\n.cd-top-nav > li > a[data-v-8c588190]::before {\n  /* reset style */\n  display: none;\n}\n.cd-top-nav > li a[data-v-8c588190] {\n  padding: 1em 5% !important;\n}\n.cd-top-nav img[data-v-8c588190] {\n  /* avatar image */\n  position: absolute;\n  left: 1.8em;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 20px;\n  width: 20px;\n  border-radius: 50%;\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-top-nav[data-v-8c588190] {\n    height: 100%;\n}\n.cd-top-nav a[data-v-8c588190] {\n    display: block;\n    font-size: 1.4rem;\n    color: #ffffff;\n}\n.cd-top-nav > li[data-v-8c588190] {\n    display: inline-block;\n    margin-right: 1em;\n    height: 100%;\n}\n.cd-top-nav > li[data-v-8c588190]:last-of-type {\n    margin-right: 0;\n}\n.cd-top-nav > li a[data-v-8c588190] {\n    padding: 1em .6em !important;\n}\n.cd-top-nav img[data-v-8c588190] {\n    display: block;\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-top-nav li:not(.has-children) a[data-v-8c588190]:hover {\n    color: #1784c7;\n}\n}\n\n/* -------------------------------- \n\nSidebar\n\n-------------------------------- */\n.cd-side-nav[data-v-8c588190] {\n  position: absolute;\n  z-index: 1;\n  left: 0;\n  top: 0;\n  width: 100%;\n  padding: 45px 0 0;\n  background-color: #323232;\n  visibility: hidden;\n  opacity: 0;\n  max-height: 100vh;\n  overflow: hidden;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;\n  -moz-transition: opacity 0.2s 0s, visibility 0s 0.2s;\n  transition: opacity 0.2s 0s, visibility 0s 0.2s;\n}\n.cd-side-nav.nav-is-visible[data-v-8c588190] {\n  opacity: 1;\n  visibility: visible;\n  overflow: visible;\n  -webkit-overflow-scrolling: touch;\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0s;\n  -moz-transition: opacity 0.2s 0s, visibility 0s 0s;\n  transition: opacity 0.2s 0s, visibility 0s 0s;\n  max-height: none;\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-side-nav > ul[data-v-8c588190] {\n  padding: 0.6em 0;\n}\n.cd-side-nav > ul[data-v-8c588190]:last-of-type {\n  padding-bottom: 0;\n}\n.cd-side-nav .cd-label[data-v-8c588190], .cd-side-nav a[data-v-8c588190] {\n  display: block;\n  padding: 1em 5%;\n}\n.cd-side-nav a[data-v-8c588190] {\n  position: relative;\n  color: #ffffff;\n  font-size: 1.4rem;\n}\n.cd-side-nav ul.cd-top-nav > li:last-of-type > a[data-v-8c588190] {\n  border-bottom: none;\n}\n.cd-side-nav > ul > li > a[data-v-8c588190] {\n  padding-left: calc(5% + 24px);\n  border-bottom: 1px solid #373d44;\n}\n.cd-side-nav > ul > li > a[data-v-8c588190]::before {\n  /* icon before item name */\n  position: absolute;\n  content: '';\n  left: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n  /* background: url(../img/cd-nav-icons.svg) no-repeat 0 0; /*\n}\n.cd-side-nav > ul > li.overview > a::before {\n  background-position: -64px 0;\n}\n.cd-side-nav > ul > li.notifications > a::before {\n  background-position: -80px 0;\n}\n.cd-side-nav > ul > li.comments > a::before {\n  background-position: -48px 0;\n}\n.cd-side-nav > ul > li.bookmarks > a::before {\n  background-position: -32px 0;\n}\n.cd-side-nav > ul > li.images > a::before {\n  background-position: 0 0;\n}\n.cd-side-nav > ul > li.users > a::before {\n  background-position: -16px 0;\n}\n.cd-side-nav .count {\n  /* notification badge */\n  position: absolute;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  right: calc(5% + 16px + 0.4em);\n  padding: 0.2em 0.4em;\n  background-color: #ff7e66;\n  border-radius: .25em;\n  color: #ffffff;\n  font-weight: bold;\n  font-size: 1.2rem;\n  text-align: center;\n}\n.cd-side-nav .action-btn a[data-v-8c588190] {\n  display: block;\n  margin: 0 5%;\n  padding: 1em 0;\n  background-color: #1784c7;\n  border-radius: .25em;\n  border: none;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);\n  text-align: center;\n  color: #ffffff;\n  font-weight: bold;\n}\n.cd-side-nav .action-btn a[data-v-8c588190]::before {\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-side-nav[data-v-8c588190] {\n    position: relative;\n    float: left;\n    top: auto;\n    width: 110px;\n    min-height: 100vh;\n    padding-top: 55px;\n    /* reset style */\n    visibility: visible;\n    opacity: 1;\n    overflow: visible;\n    max-height: none;\n}\n.cd-side-nav.nav-is-visible[data-v-8c588190] {\n    box-shadow: none;\n}\n.cd-side-nav.is-fixed[data-v-8c588190] {\n    position: fixed;\n}\n.cd-side-nav > ul[data-v-8c588190] {\n    /* reset style */\n    padding: 0;\n}\n.cd-side-nav .cd-label[data-v-8c588190] {\n    /* remove labels on minified version of the sidebar */\n    display: none;\n}\n.cd-side-nav a[data-v-8c588190] {\n    font-size: 1.2rem;\n    text-align: center;\n}\n.cd-side-nav > ul > li > a[data-v-8c588190] {\n    padding: calc(2.2em + 24px) 0 2.4em;\n}\n.cd-side-nav > ul > li > a[data-v-8c588190]::before {\n    left: 50%;\n    right: auto;\n    -webkit-transform: translateX(-50%);\n    -moz-transform: translateX(-50%);\n    -ms-transform: translateX(-50%);\n    -o-transform: translateX(-50%);\n    transform: translateX(-50%);\n    top: 2.4em;\n}\n.cd-side-nav .active > a[data-v-8c588190] {\n    /* current page */\n    box-shadow: inset 3px 0 0 #1784c7;\n    background-color: #33383e;\n}\n.cd-side-nav .action-btn a[data-v-8c588190] {\n    margin: 1em 10% 0;\n}\n.cd-side-nav .count[data-v-8c588190] {\n    height: 8px;\n    width: 8px;\n    border-radius: 50%;\n    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n    padding: 0;\n    top: 2em;\n    -webkit-transform: translateX(-50%);\n    -moz-transform: translateX(-50%);\n    -ms-transform: translateX(-50%);\n    -o-transform: translateX(-50%);\n    transform: translateX(-50%);\n    left: calc(50% + 5px);\n    right: auto;\n    color: transparent;\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-side-nav[data-v-8c588190] {\n    width: 150px;\n}\n.cd-logo img[data-v-8c588190]{\n    margin-left: -16px;\n    margin-top: 3px;\n}\n.cd-side-nav > ul[data-v-8c588190] {\n    padding: 0.6em 0;\n}\n.cd-side-nav > ul > li:not(.action-btn):hover > a[data-v-8c588190] {\n    background-color: #33383e;\n}\n.cd-side-nav > ul > li > a[data-v-8c588190] {\n    padding: 1em 1em 1em 42px;\n    text-align: left;\n    border-bottom: none;\n}\n.cd-side-nav > ul > li > a[data-v-8c588190]::before {\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    -moz-transform: translateY(-50%);\n    -ms-transform: translateY(-50%);\n    -o-transform: translateY(-50%);\n    transform: translateY(-50%);\n    left: 18px;\n}\n.cd-side-nav .cd-label[data-v-8c588190] {\n    display: block;\n    padding: 1em 18px;\n}\n.cd-side-nav .action-btn[data-v-8c588190] {\n    text-align: left;\n}\n.cd-side-nav .action-btn a[data-v-8c588190] {\n    margin: 0 18px;\n}\n.no-touch .cd-side-nav .action-btn a[data-v-8c588190]:hover {\n    background-color: #1a93de;\n}\n.cd-side-nav .count[data-v-8c588190] {\n    /* reset style */\n    color: #ffffff;\n    height: auto;\n    width: auto;\n    border-radius: .25em;\n    padding: .2em .4em;\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    -moz-transform: translateY(-50%);\n    -ms-transform: translateY(-50%);\n    -o-transform: translateY(-50%);\n    transform: translateY(-50%);\n    right: 18px;\n    left: auto;\n    box-shadow: none;\n}\n}\n.has-children ul[data-v-8c588190] {\n  position: relative;\n  width: 100%;\n  display: none;\n  background-color: #1c1f22;\n}\n.has-children > a[data-v-8c588190]::after {\n  /* arrow icon */\n  position: absolute;\n  content: '';\n  height: 16px;\n  width: 16px;\n  right: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  /* background: url(../img/cd-arrow.svg); */\n}\n.has-children.selected > ul[data-v-8c588190] {\n  display: block;\n}\n.has-children.selected > a[data-v-8c588190]::after {\n  -webkit-transform: translateY(-50%) rotate(180deg);\n  -moz-transform: translateY(-50%) rotate(180deg);\n  -ms-transform: translateY(-50%) rotate(180deg);\n  -o-transform: translateY(-50%) rotate(180deg);\n  transform: translateY(-50%) rotate(180deg);\n}\n@media only screen and (min-width: 768px) {\n.has-children[data-v-8c588190] {\n    position: relative;\n}\n.has-children ul[data-v-8c588190] {\n    position: absolute;\n    top: 0;\n    left: 100%;\n    width: 160px;\n    padding: 0;\n    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);\n}\n.has-children ul a[data-v-8c588190] {\n    text-align: left;\n    border: none;\n    padding: 1em;\n}\n.no-touch .has-children ul a[data-v-8c588190]:hover {\n    color: #1784c7;\n}\n.has-children > a[data-v-8c588190]::after {\n    display: none;\n    color: black;\n}\n.cd-side-nav .has-children.selected > a[data-v-8c588190] {\n    /* focus state -> show sub pages */\n    background-color: #33383e;\n}\n.cd-top-nav .has-children[data-v-8c588190] {\n    position: relative;\n    background-color: #323232;\n}\n.cd-top-nav .has-children > a[data-v-8c588190] {\n    height: 100%;\n    padding: 0 calc(1.8em + 22px) 0 calc(1.8em + 26px) !important;\n    line-height: 55px;\n}\n.cd-top-nav .has-children > a[data-v-8c588190]::after {\n    display: block;\n    right: 1.8em;\n}\n.cd-top-nav .has-children ul[data-v-8c588190] {\n    background-color: #1c1f22;\n    width: 200px;\n    top: 100%;\n    right: 0;\n    left: auto;\n    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-top-nav .has-children ul a[data-v-8c588190] {\n    padding-left: 18px !important;\n}\n}\n@media only screen and (min-width: 1170px) {\n.has-children > ul[data-v-8c588190] {\n    width: 100%;\n    z-index: 1;\n}\n.has-children ul a[data-v-8c588190] {\n    padding-left: 18px;\n}\n.has-children.active > ul[data-v-8c588190] {\n    /* if the item is active, make the subnavigation visible */\n    position: relative;\n    display: block;\n    /* reset style */\n    left: 0;\n    box-shadow: none;\n}\n.no-touch .cd-side-nav .has-children:hover > ul[data-v-8c588190], .cd-side-nav .has-children.hover > ul[data-v-8c588190] {\n    /* show subnavigation on hover */\n    display: block;\n    opacity: 1;\n    visibility: visible;\n}\n}\n", "", {"version":3,"sources":["C:/Users/timmk/desktop/bonuscheck/src/src/Dash.vue?46608da4"],"names":[],"mappings":";AA8HA;EACA,uBAAA;CACA;AAEA;EACA,iBAAA;CACA;AAEA;EACA,kBAAA;EACA,qCAAA;EACA,eAAA;EACA,0BAAA;CACA;AACA;EACA,YAAA;EACA,YAAA;EACA,eAAA;CACA;AAEA;EACA,eAAA;EACA,sBAAA;CACA;;AAEA,8CAAA;AAGA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA,iDAAA;AAEA;EACA,8BAAA;EACA,cAAA;EACA,oBAAA;EACA,aAAA;EACA,yBAAA;EACA,gBAAA;EACA,cAAA;EACA,cAAA;CAGA;AACA;EACA,0BAAA;EACA,cAAA;EACA,cAAA;CAGA;AACA;EACA,eAAA;CACA;AACA;EACA,gBAAA;EACA,iBAAA;CACA;AACA;EACA,mBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,eAAA;CACA;AAGA;EACA,qCAAA;EACA,kBAAA;CACA;AAEA;;;;EAIA,cAAA;CACA;;AAEA;;;;mCAIA;AACA;EACA,qBAAA;CACA;AACA;EACA,mBAAA;EACA,eAAA;EACA,gBAAA;CACA;AACA;EACA,gDAAA;EACA,cAAA;EACA,kBAAA;CACA;AACA;AACA;IACA,mBAAA;IACA,kBAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;IACA,iBAAA;CACA;AACA;IACA,kBAAA;CACA;CACA;AACA;AACA;IACA,mBAAA;CACA;AACA;IACA,mBAAA;CACA;CACA;;AAEA;;;;mCAIA;AAEA;EACA,mBAAA;EACA,WAAA;EACA,OAAA;EACA,QAAA;EACA,aAAA;EACA,YAAA;EACA,oBAAA;;;EAGA,yCAAA;EACA,oCAAA;EACA,mCAAA;CACA;AACA;EACA,YAAA;EACA,YAAA;EACA,eAAA;CACA;AACA,IAAA;AAAA;;AAEA;IACA,gBAAA;IACA,aAAA;IACA,yBAAA;CACA;CACA;AAEA;EACA,YAAA;EACA,eAAA;EACA,oBAAA;CACA;AACA;EACA,eAAA;CACA;AACA;AACA;IACA,sBAAA;CACA;CACA;AAEA;EACA,yDAAA;EACA,aAAA;EACA,mBAAA;EACA,eAAA;EACA,YAAA;EACA,aAAA;EACA,iBAAA;EACA,eAAA;EACA,iBAAA;EACA,oBAAA;EACA,mBAAA;CACA;AACA;EACA,2BAAA;EACA,mBAAA;EACA,sBAAA;EACA,YAAA;EACA,YAAA;EACA,mBAAA;CACA;AACA;EACA,wBAAA;EACA,mBAAA;EACA,SAAA;EACA,WAAA;EACA,iBAAA;EACA,oCAAA;EACA,iCAAA;EACA,4BAAA;CACA;AACA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,2CAAA;EACA,iCAAA;EACA,8BAAA;EACA,6BAAA;EACA,4BAAA;EACA,yBAAA;EACA,oCAAA;EACA,4BAAA;EACA,iCAAA;EACA,8BAAA;EACA,6BAAA;EACA,4BAAA;EACA,yBAAA;EACA,2CAAA;EACA,qCAAA;EACA,2BAAA;CACA;AACA;EACA,wBAAA;EACA,UAAA;CACA;AACA;EACA,2BAAA;EACA,SAAA;CACA;AACA;EACA,6BAAA;EACA,mCAAA;CACA;AACA;EACA,gCAAA;EACA,kBAAA;CACA;AACA;EACA,kEAAA;EACA,+DAAA;EACA,8DAAA;EACA,6DAAA;EACA,0DAAA;CACA;AACA;EACA,kEAAA;EACA,+DAAA;EACA,8DAAA;EACA,6DAAA;EACA,0DAAA;CACA;AACA;AACA;IACA,cAAA;CACA;CACA;AAEA;EACA,mBAAA;EACA,uBAAA;CACA;AACA;EACA,WAAA;CACA;AACA;EACA,eAAA;EACA,YAAA;EACA,mBAAA;EACA,UAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EACA,iCAAA;EACA,gCAAA;EACA,+BAAA;EACA,4BAAA;EACA,aAAA;EACA,YAAA;EACA,0DAAA;CACA;AACA;EACA,mBAAA;EACA,YAAA;EACA,aAAA;EACA,aAAA;EACA,qBAAA;EACA,yBAAA;EACA,sBAAA;EACA,qBAAA;EACA,oBAAA;EACA,iBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;AACA;IACA,YAAA;IACA,sBAAA;IACA,aAAA;IACA,aAAA;IACA,oBAAA;CACA;AACA;IACA,iBAAA;IACA,WAAA;CACA;AACA;IACA,6BAAA;IACA,UAAA;CACA;AACA;IACA,aAAA;IACA,YAAA;CACA;AACA;IACA,aAAA;IACA,oBAAA;IACA,iBAAA;IACA,0BAAA;IACA,+BAAA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;CACA;;AAEA;;;;mCAIA;AACA;EACA,6CAAA;EACA,cAAA;CACA;AACA;AACA;IACA,eAAA;IACA,aAAA;IACA,aAAA;CACA;CACA;AAEA;EACA,iBAAA;EACA,cAAA;CACA;AACA;EACA,2BAAA;CACA;AACA;EACA,kBAAA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EACA,iCAAA;EACA,gCAAA;EACA,+BAAA;EACA,4BAAA;EACA,aAAA;EACA,YAAA;EACA,mBAAA;EACA,cAAA;CACA;AACA;AACA;IACA,aAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;IACA,eAAA;CACA;AACA;IACA,sBAAA;IACA,kBAAA;IACA,aAAA;CACA;AACA;IACA,gBAAA;CACA;AACA;IACA,6BAAA;CACA;AACA;IACA,eAAA;CACA;CACA;AACA;AACA;IACA,eAAA;CACA;CACA;;AAEA;;;;mCAIA;AACA;EACA,mBAAA;EACA,WAAA;EACA,QAAA;EACA,OAAA;EACA,YAAA;EACA,kBAAA;EACA,0BAAA;EACA,mBAAA;EACA,WAAA;EACA,kBAAA;EACA,iBAAA;EACA,oCAAA;EACA,mCAAA;EACA,wDAAA;EACA,qDAAA;EACA,gDAAA;CACA;AACA;EACA,WAAA;EACA,oBAAA;EACA,kBAAA;EACA,kCAAA;EACA,sDAAA;EACA,mDAAA;EACA,8CAAA;EACA,iBAAA;EACA,0CAAA;CACA;AACA;EACA,iBAAA;CACA;AACA;EACA,kBAAA;CACA;AACA;EACA,eAAA;EACA,gBAAA;CACA;AAEA;EACA,mBAAA;EACA,eAAA;EACA,kBAAA;CACA;AACA;EACA,oBAAA;CACA;AACA;EACA,8BAAA;EACA,iCAAA;CACA;AACA;EACA,2BAAA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EACA,iCAAA;EACA,gCAAA;EACA,+BAAA;EACA,4BAAA;EACA,aAAA;EACA,YAAA;EACA;;;;;;;;;;;;;;;;;;;;;0BAqBA;EACA,mBAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EACA,iCAAA;EACA,gCAAA;EACA,+BAAA;EACA,4BAAA;EACA,+BAAA;EACA,qBAAA;EACA,0BAAA;EACA,qBAAA;EACA,eAAA;EACA,kBAAA;EACA,kBAAA;EACA,mBAAA;CACA;AACA;EACA,eAAA;EACA,aAAA;EACA,eAAA;EACA,0BAAA;EACA,qBAAA;EACA,aAAA;EACA,iFAAA;EACA,mBAAA;EACA,eAAA;EACA,kBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;AACA;IACA,mBAAA;IACA,YAAA;IACA,UAAA;IACA,aAAA;IACA,kBAAA;IACA,kBAAA;IACA,iBAAA;IACA,oBAAA;IACA,WAAA;IACA,kBAAA;IACA,iBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,gBAAA;CACA;AACA;IACA,iBAAA;IACA,WAAA;CACA;AACA;IACA,sDAAA;IACA,cAAA;CACA;AACA;IACA,kBAAA;IACA,mBAAA;CACA;AACA;IACA,oCAAA;CACA;AACA;IACA,UAAA;IACA,YAAA;IACA,oCAAA;IACA,iCAAA;IACA,gCAAA;IACA,+BAAA;IACA,4BAAA;IACA,WAAA;CACA;AACA;IACA,kBAAA;IACA,kCAAA;IACA,0BAAA;CACA;AACA;IACA,kBAAA;CACA;AACA;IACA,YAAA;IACA,WAAA;IACA,mBAAA;IACA,uCAAA;IACA,WAAA;IACA,SAAA;IACA,oCAAA;IACA,iCAAA;IACA,gCAAA;IACA,+BAAA;IACA,4BAAA;IACA,sBAAA;IACA,YAAA;IACA,mBAAA;CACA;CACA;AACA;AACA;IACA,aAAA;CACA;AACA;IACA,mBAAA;IACA,gBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,0BAAA;IACA,iBAAA;IACA,oBAAA;CACA;AACA;IACA,SAAA;IACA,aAAA;IACA,oCAAA;IACA,iCAAA;IACA,gCAAA;IACA,+BAAA;IACA,4BAAA;IACA,WAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,iBAAA;IACA,eAAA;IACA,aAAA;IACA,YAAA;IACA,qBAAA;IACA,mBAAA;IACA,SAAA;IACA,aAAA;IACA,oCAAA;IACA,iCAAA;IACA,gCAAA;IACA,+BAAA;IACA,4BAAA;IACA,YAAA;IACA,WAAA;IACA,iBAAA;CACA;CACA;AAEA;EACA,mBAAA;EACA,YAAA;EACA,cAAA;EACA,0BAAA;CACA;AACA;EACA,gBAAA;EACA,mBAAA;EACA,YAAA;EACA,aAAA;EACA,YAAA;EACA,UAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EACA,iCAAA;EACA,gCAAA;EACA,+BAAA;EACA,4BAAA;EACA,2CAAA;CACA;AACA;EACA,eAAA;CACA;AACA;EACA,mDAAA;EACA,gDAAA;EACA,+CAAA;EACA,8CAAA;EACA,2CAAA;CACA;AACA;AACA;IACA,mBAAA;CACA;AACA;IACA,mBAAA;IACA,OAAA;IACA,WAAA;IACA,aAAA;IACA,WAAA;IACA,0CAAA;CACA;AACA;IACA,iBAAA;IACA,aAAA;IACA,aAAA;CACA;AAGA;IACA,eAAA;CACA;AACA;IACA,cAAA;IACA,aAAA;CACA;AACA;IACA,mCAAA;IACA,0BAAA;CACA;AACA;IACA,mBAAA;IACA,0BAAA;CAEA;AACA;IACA,aAAA;IACA,8DAAA;IACA,kBAAA;CACA;AACA;IACA,eAAA;IACA,aAAA;CACA;AACA;IACA,0BAAA;IACA,aAAA;IACA,UAAA;IACA,SAAA;IACA,WAAA;IACA,0CAAA;CACA;AACA;IACA,8BAAA;CACA;CACA;AACA;AACA;IACA,YAAA;IACA,WAAA;CACA;AACA;IACA,mBAAA;CACA;AACA;IACA,2DAAA;IACA,mBAAA;IACA,eAAA;IACA,iBAAA;IACA,QAAA;IACA,iBAAA;CACA;AACA;IACA,iCAAA;IACA,eAAA;IACA,WAAA;IACA,oBAAA;CACA;CACA","file":"Dash.vue","sourcesContent":["<template>\n  <div>\n    <side-bar :buttons=\"buttons\"></side-bar>\n    <component :is=\"currentView\" :user=\"user\"></component>\n  </div>\n</template>\n\n<script>\nimport sidebar from './components/sidebar';\nimport addUser from './components/addUser';\nimport deleteUser from './components/deleteUser';\nimport addInstaller from './components/addInstaller';\n\n\nconst axios = require('axios');\n\nexport default {\n  name: 'Dash',\n  components: {\n  \t'side-bar': sidebar,\n    'add-user': addUser,\n    'delete-user': deleteUser,\n    'add-installer': addInstaller\n  },\n  data(){\n  \treturn {\n      user: '',\n      buttons: [],\n      currentView: 'add-user'\n    }\n  }, \n  methods: {\n    updateView: function(view){\n      this.currentView = view;\n    }\n  },\n\n  beforeMount(){\n\t axios.get('/session/data')\n\t .then(req => {\n      console.log(req.data.roll);\n      this.user = req.data.userID;\n\n      //If no session received, return home\n      if(!req.data.roll){\n        this.$router.push('/');\n      }\n\n      if(req.data.roll === 'Admin'){\n        this.buttons.push(\n          {\n            name: 'Add user',\n            link: 'add-user'\n          },\n          {\n            name: 'Delete user',\n            link: 'delete-user'\n          },\n          {\n            name: 'Add installer',\n            link: 'add-installer'\n          },\n          {\n            name: 'View transaction logs'\n          },\n          {\n            name: 'Enter time worked'\n          },\n          {\n            name: 'View project data'\n          },\n          {\n           name: 'View bonus schedule' \n          },\n          {\n            name: 'View bonus history'\n          },\n          {\n            name: 'View payment history'\n          },\n          {\n            name: 'Approve time'\n          },\n          {\n            name: 'Create a project'\n          },\n          {\n            name: 'Create a customer'\n          },\n          {\n            name: 'Create roles'\n          },\n          {\n            name: 'Modify roles'\n          },\n          {\n            name: 'Modify project'\n          },\n          {\n            name: 'Modify bonuses'\n          },\n          {\n            name: 'Create payments'\n          },\n          {\n            name: 'Modify payments'\n          },\n          {\n            name: 'Create payment types'\n          },\n          {\n            name: 'Modify payment types'\n          }\n        );\n      }\n      console.log(this.buttons);\n\t })\n\t.catch(function(err){\n\t\tconsole.log(err);\n\t});\n}\n};\n\n</script>\n\n<style scoped>\n  *, *::after, *::before {\n  box-sizing: border-box;\n}\n\nhtml {\n  font-size: 62.5%;\n}\n\nbody {\n  font-size: 1.6rem;\n  font-family: \"Open Sans\", sans-serif;\n  color: #3e454c;\n  background-color: #F5F5F5;\n}\nbody::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\n\na {\n  color: #1784c7;\n  text-decoration: none;\n}\n\n/*  ######  Side NAVBAR page style  ######  */\n\n\n#dashboard{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n#project{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n#tables{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n#user{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n#admin{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n/*  ######  Side NAVBAR page style END ######  */\n\n.button{\n  background-color: transparent;\n  color:#C8C8C8;\n  border: transparent;\n  height: 35px;\n  margin: 10px 10px 0 10px;\n  font-size: 15px;\n  border : none;\n  outline: none;\n\n\n}\n.button:active {\n  background-color: #323232;\n  border : none;\n  outline: none;\n  \n\n}\n.button:hover{\n  color: #ffffff;\n}\n.cd-side-nav{\n  font-size: 20px;\n  margin-top: 20px;\n}\n.fa{\n  margin-right: 13px;\n}\n.cd-nav ul li a{\n  color:#C8C8C8;\n}\n.cd-nav ul li a:hover{\n  color: #ffffff;\n}\n\n\ninput {\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 1.6rem;\n}\n\ninput[type=\"search\"]::-webkit-search-decoration,\ninput[type=\"search\"]::-webkit-search-cancel-button,\ninput[type=\"search\"]::-webkit-search-results-button,\ninput[type=\"search\"]::-webkit-search-results-decoration {\n  display: none;\n}\n\n/* -------------------------------- \n\nMain Page Content\n\n-------------------------------- */\n.cd-main-content .content-wrapper {\n  padding: 45px 5% 3em;\n}\n.cd-main-content .content-wrapper h1 {\n  text-align: center;\n  padding: 3em 0;\n  font-size: 2rem;\n}\n.cd-main-content::before {\n  /* never visible - used to check MQ in jQuery */\n  display: none;\n  content: 'mobile';\n}\n@media only screen and (min-width: 768px) {\n  .cd-main-content .content-wrapper {\n    margin-left: 110px;\n    padding-top: 55px;\n  }\n  .cd-main-content .content-wrapper h1 {\n    padding: 4em 0;\n    font-size: 3.2rem;\n    font-weight: 300;\n  }\n  .cd-main-content::before {\n    content: 'tablet';\n  }\n}\n@media only screen and (min-width: 1170px) {\n  .cd-main-content .content-wrapper {\n    margin-left: 200px;\n  }\n  .cd-main-content::before {\n    content: 'desktop';\n  }\n}\n\n/* -------------------------------- \n\nHeader\n\n-------------------------------- */\n \n.cd-main-header {\n  position: absolute;\n  z-index: 2;\n  top: 0;\n  left: 0;\n  height: 45px;\n  width: 100%;\n  background: #FFFFFF;\n\n\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.cd-main-header::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\n/**/@media only screen and (min-width: 768px) \n{\n  .cd-main-header {\n    position: fixed;\n    height: 55px;\n    background-color:#323232;\n  }\n}\n\n.cd-logo {\n  float: left;\n  display: block;\n  margin: 11px 0 0 5%;\n}\n.cd-logo img {\n  display: block;\n}\n@media only screen and (min-width: 768px) {\n  .cd-logo {\n    margin: 16px 0 0 36px;\n  }\n}\n\n.cd-nav-trigger {\n  /* navigation trigger - visible on mobile devices only */\n  float: right;\n  position: relative;\n  display: block;\n  width: 34px;\n  height: 44px;\n  margin-right: 5%;\n  /* hide text */\n  overflow: hidden;\n  white-space: nowrap;\n  color: transparent;\n}\n.cd-nav-trigger span, .cd-nav-trigger span::before, .cd-nav-trigger span::after {\n  /* hamburger icon in CSS */\n  position: absolute;\n  display: inline-block;\n  height: 3px;\n  width: 24px;\n  background:#323232;\n}\n.cd-nav-trigger span {\n  /* line in the center */\n  position: absolute;\n  top: 50%;\n  right: 5px;\n  margin-top: -2px;\n  -webkit-transition: background 0.2s;\n  -moz-transition: background 0.2s;\n  transition: background 0.2s;\n}\n.cd-nav-trigger span::before, .cd-nav-trigger span::after {\n  /* other 2 lines */\n  content: '';\n  right: 0;\n  /* Force Hardware Acceleration in WebKit */\n  -webkit-transform: translateZ(0);\n  -moz-transform: translateZ(0);\n  -ms-transform: translateZ(0);\n  -o-transform: translateZ(0);\n  transform: translateZ(0);\n  -webkit-backface-visibility: hidden;\n  backface-visibility: hidden;\n  -webkit-transform-origin: 0% 50%;\n  -moz-transform-origin: 0% 50%;\n  -ms-transform-origin: 0% 50%;\n  -o-transform-origin: 0% 50%;\n  transform-origin: 0% 50%;\n  -webkit-transition: -webkit-transform 0.2s;\n  -moz-transition: -moz-transform 0.2s;\n  transition: transform 0.2s;\n}\n.cd-nav-trigger span::before {\n  /* menu icon top line */\n  top: -6px;\n}\n.cd-nav-trigger span::after {\n  /* menu icon bottom line */\n  top: 6px;\n}\n.cd-nav-trigger.nav-is-visible span {\n  /* hide line in the center */\n  background: rgba(255, 255, 255, 0);\n}\n.cd-nav-trigger.nav-is-visible span::before, .cd-nav-trigger.nav-is-visible span::after {\n  /* keep visible other 2 lines */\n  background: white;\n}\n.cd-nav-trigger.nav-is-visible span::before {\n  -webkit-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  -moz-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  -ms-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  -o-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  transform: translateX(4px) translateY(-3px) rotate(45deg);\n}\n.cd-nav-trigger.nav-is-visible span::after {\n  -webkit-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  -moz-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  -ms-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  -o-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  transform: translateX(4px) translateY(2px) rotate(-45deg);\n}\n@media only screen and (min-width: 768px) {\n  .cd-nav-trigger {\n    display: none;\n  }\n}\n\n.cd-search {\n  position: relative;\n  margin: 1.2em 5% 0.6em;\n}\n.cd-search.is-hidden {\n  opacity: 0;\n}\n.cd-search::before {\n  /* lens icon */\n  content: '';\n  position: absolute;\n  left: 8px;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n  /* background: url(../img/cd-search.svg) no-repeat 0 0; */\n}\n.cd-search input {\n  padding-left: 32px;\n  width: 100%;\n  height: 36px;\n  border: none;\n  border-radius: .25em;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  -ms-appearance: none;\n  -o-appearance: none;\n  appearance: none;\n}\n.cd-search input:focus {\n  outline: none;\n}\n@media only screen and (min-width: 768px) {\n  .cd-search {\n    float: left;\n    display: inline-block;\n    width: 250px;\n    height: 100%;\n    margin: 0 0 0 2.5em;\n  }\n  .cd-search.is-hidden {\n    /* reset style */\n    opacity: 1;\n  }\n  .cd-search::before {\n    background-position: 0 -16px;\n    left: 1em;\n  }\n  .cd-search form, .cd-search input {\n    height: 100%;\n    width: 100%;\n  }\n  .cd-search input {\n    border: none;\n    padding-left: 2.6em;\n    border-radius: 0;\n    background-color: #3e454c;\n    border-left: 1px solid #51575d;\n    color: #ffffff;\n  }\n  .cd-search input::-webkit-input-placeholder {\n    color: #777c81;\n  }\n  .cd-search input::-moz-placeholder {\n    color: #777c81;\n  }\n  .cd-search input:-moz-placeholder {\n    color: #777c81;\n  }\n  .cd-search input:-ms-input-placeholder {\n    color: #777c81;\n  }\n}\n\n/* -------------------------------- \n\nTop Navigation\n\n-------------------------------- */\n.cd-nav {\n  /* top nav - not visible on mobile devices */\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n  .cd-nav {\n    display: block;\n    float: right;\n    height: 100%;\n  }\n}\n\n.cd-top-nav > li > a::before {\n  /* reset style */\n  display: none;\n}\n.cd-top-nav > li a {\n  padding: 1em 5% !important;\n}\n.cd-top-nav img {\n  /* avatar image */\n  position: absolute;\n  left: 1.8em;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 20px;\n  width: 20px;\n  border-radius: 50%;\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n  .cd-top-nav {\n    height: 100%;\n  }\n  .cd-top-nav a {\n    display: block;\n    font-size: 1.4rem;\n    color: #ffffff;\n  }\n  .cd-top-nav > li {\n    display: inline-block;\n    margin-right: 1em;\n    height: 100%;\n  }\n  .cd-top-nav > li:last-of-type {\n    margin-right: 0;\n  }\n  .cd-top-nav > li a {\n    padding: 1em .6em !important;\n  }\n  .cd-top-nav img {\n    display: block;\n  }\n}\n@media only screen and (min-width: 1170px) {\n  .cd-top-nav li:not(.has-children) a:hover {\n    color: #1784c7;\n  }\n}\n\n/* -------------------------------- \n\nSidebar\n\n-------------------------------- */\n.cd-side-nav {\n  position: absolute;\n  z-index: 1;\n  left: 0;\n  top: 0;\n  width: 100%;\n  padding: 45px 0 0;\n  background-color: #323232;\n  visibility: hidden;\n  opacity: 0;\n  max-height: 100vh;\n  overflow: hidden;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;\n  -moz-transition: opacity 0.2s 0s, visibility 0s 0.2s;\n  transition: opacity 0.2s 0s, visibility 0s 0.2s;\n}\n.cd-side-nav.nav-is-visible {\n  opacity: 1;\n  visibility: visible;\n  overflow: visible;\n  -webkit-overflow-scrolling: touch;\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0s;\n  -moz-transition: opacity 0.2s 0s, visibility 0s 0s;\n  transition: opacity 0.2s 0s, visibility 0s 0s;\n  max-height: none;\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-side-nav > ul {\n  padding: 0.6em 0;\n}\n.cd-side-nav > ul:last-of-type {\n  padding-bottom: 0;\n}\n.cd-side-nav .cd-label, .cd-side-nav a {\n  display: block;\n  padding: 1em 5%;\n}\n\n.cd-side-nav a {\n  position: relative;\n  color: #ffffff;\n  font-size: 1.4rem;\n}\n.cd-side-nav ul.cd-top-nav > li:last-of-type > a {\n  border-bottom: none;\n}\n.cd-side-nav > ul > li > a {\n  padding-left: calc(5% + 24px);\n  border-bottom: 1px solid #373d44;\n}\n.cd-side-nav > ul > li > a::before {\n  /* icon before item name */\n  position: absolute;\n  content: '';\n  left: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n  /* background: url(../img/cd-nav-icons.svg) no-repeat 0 0; /*\n}\n.cd-side-nav > ul > li.overview > a::before {\n  background-position: -64px 0;\n}\n.cd-side-nav > ul > li.notifications > a::before {\n  background-position: -80px 0;\n}\n.cd-side-nav > ul > li.comments > a::before {\n  background-position: -48px 0;\n}\n.cd-side-nav > ul > li.bookmarks > a::before {\n  background-position: -32px 0;\n}\n.cd-side-nav > ul > li.images > a::before {\n  background-position: 0 0;\n}\n.cd-side-nav > ul > li.users > a::before {\n  background-position: -16px 0;\n}\n.cd-side-nav .count {\n  /* notification badge */\n  position: absolute;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  right: calc(5% + 16px + 0.4em);\n  padding: 0.2em 0.4em;\n  background-color: #ff7e66;\n  border-radius: .25em;\n  color: #ffffff;\n  font-weight: bold;\n  font-size: 1.2rem;\n  text-align: center;\n}\n.cd-side-nav .action-btn a {\n  display: block;\n  margin: 0 5%;\n  padding: 1em 0;\n  background-color: #1784c7;\n  border-radius: .25em;\n  border: none;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);\n  text-align: center;\n  color: #ffffff;\n  font-weight: bold;\n}\n.cd-side-nav .action-btn a::before {\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n  .cd-side-nav {\n    position: relative;\n    float: left;\n    top: auto;\n    width: 110px;\n    min-height: 100vh;\n    padding-top: 55px;\n    /* reset style */\n    visibility: visible;\n    opacity: 1;\n    overflow: visible;\n    max-height: none;\n  }\n  .cd-side-nav.nav-is-visible {\n    box-shadow: none;\n  }\n  .cd-side-nav.is-fixed {\n    position: fixed;\n  }\n  .cd-side-nav > ul {\n    /* reset style */\n    padding: 0;\n  }\n  .cd-side-nav .cd-label {\n    /* remove labels on minified version of the sidebar */\n    display: none;\n  }\n  .cd-side-nav a {\n    font-size: 1.2rem;\n    text-align: center;\n  }\n  .cd-side-nav > ul > li > a {\n    padding: calc(2.2em + 24px) 0 2.4em;\n  }\n  .cd-side-nav > ul > li > a::before {\n    left: 50%;\n    right: auto;\n    -webkit-transform: translateX(-50%);\n    -moz-transform: translateX(-50%);\n    -ms-transform: translateX(-50%);\n    -o-transform: translateX(-50%);\n    transform: translateX(-50%);\n    top: 2.4em;\n  }\n  .cd-side-nav .active > a {\n    /* current page */\n    box-shadow: inset 3px 0 0 #1784c7;\n    background-color: #33383e;\n  }\n  .cd-side-nav .action-btn a {\n    margin: 1em 10% 0;\n  }\n  .cd-side-nav .count {\n    height: 8px;\n    width: 8px;\n    border-radius: 50%;\n    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n    padding: 0;\n    top: 2em;\n    -webkit-transform: translateX(-50%);\n    -moz-transform: translateX(-50%);\n    -ms-transform: translateX(-50%);\n    -o-transform: translateX(-50%);\n    transform: translateX(-50%);\n    left: calc(50% + 5px);\n    right: auto;\n    color: transparent;\n  }\n}\n@media only screen and (min-width: 1170px) {\n  .cd-side-nav {\n    width: 150px;\n  }\n  .cd-logo img{\n    margin-left: -16px;\n    margin-top: 3px;\n  }\n  .cd-side-nav > ul {\n    padding: 0.6em 0;\n  }\n  .cd-side-nav > ul > li:not(.action-btn):hover > a {\n    background-color: #33383e;\n  }\n  .cd-side-nav > ul > li > a {\n    padding: 1em 1em 1em 42px;\n    text-align: left;\n    border-bottom: none;\n  }\n  .cd-side-nav > ul > li > a::before {\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    -moz-transform: translateY(-50%);\n    -ms-transform: translateY(-50%);\n    -o-transform: translateY(-50%);\n    transform: translateY(-50%);\n    left: 18px;\n  }\n  .cd-side-nav .cd-label {\n    display: block;\n    padding: 1em 18px;\n  }\n  .cd-side-nav .action-btn {\n    text-align: left;\n  }\n  .cd-side-nav .action-btn a {\n    margin: 0 18px;\n  }\n  .no-touch .cd-side-nav .action-btn a:hover {\n    background-color: #1a93de;\n  }\n  .cd-side-nav .count {\n    /* reset style */\n    color: #ffffff;\n    height: auto;\n    width: auto;\n    border-radius: .25em;\n    padding: .2em .4em;\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    -moz-transform: translateY(-50%);\n    -ms-transform: translateY(-50%);\n    -o-transform: translateY(-50%);\n    transform: translateY(-50%);\n    right: 18px;\n    left: auto;\n    box-shadow: none;\n  }\n}\n\n.has-children ul {\n  position: relative;\n  width: 100%;\n  display: none;\n  background-color: #1c1f22;\n}\n.has-children > a::after {\n  /* arrow icon */\n  position: absolute;\n  content: '';\n  height: 16px;\n  width: 16px;\n  right: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  /* background: url(../img/cd-arrow.svg); */\n}\n.has-children.selected > ul {\n  display: block;\n}\n.has-children.selected > a::after {\n  -webkit-transform: translateY(-50%) rotate(180deg);\n  -moz-transform: translateY(-50%) rotate(180deg);\n  -ms-transform: translateY(-50%) rotate(180deg);\n  -o-transform: translateY(-50%) rotate(180deg);\n  transform: translateY(-50%) rotate(180deg);\n}\n@media only screen and (min-width: 768px) {\n  .has-children {\n    position: relative;\n  }\n  .has-children ul {\n    position: absolute;\n    top: 0;\n    left: 100%;\n    width: 160px;\n    padding: 0;\n    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);\n  }\n  .has-children ul a {\n    text-align: left;\n    border: none;\n    padding: 1em;\n  }\n \n  \n  .no-touch .has-children ul a:hover {\n    color: #1784c7;\n  }\n  .has-children > a::after {\n    display: none;\n    color: black;\n  }\n  .cd-side-nav .has-children.selected > a {\n    /* focus state -> show sub pages */\n    background-color: #33383e;\n  }\n  .cd-top-nav .has-children {\n    position: relative;\n    background-color: #323232;\n\n  }\n  .cd-top-nav .has-children > a {\n    height: 100%;\n    padding: 0 calc(1.8em + 22px) 0 calc(1.8em + 26px) !important;\n    line-height: 55px;\n  }\n  .cd-top-nav .has-children > a::after {\n    display: block;\n    right: 1.8em;\n  }\n  .cd-top-nav .has-children ul {\n    background-color: #1c1f22;\n    width: 200px;\n    top: 100%;\n    right: 0;\n    left: auto;\n    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);\n  }\n  .cd-top-nav .has-children ul a {\n    padding-left: 18px !important;\n  }\n}\n@media only screen and (min-width: 1170px) {\n  .has-children > ul {\n    width: 100%;\n    z-index: 1;\n  }\n  .has-children ul a {\n    padding-left: 18px;\n  }\n  .has-children.active > ul {\n    /* if the item is active, make the subnavigation visible */\n    position: relative;\n    display: block;\n    /* reset style */\n    left: 0;\n    box-shadow: none;\n  }\n  .no-touch .cd-side-nav .has-children:hover > ul, .cd-side-nav .has-children.hover > ul {\n    /* show subnavigation on hover */\n    display: block;\n    opacity: 1;\n    visibility: visible;\n  }\n}\n</style>\n\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_sidebar_vue__ = __webpack_require__(17);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7eea899c_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_sidebar_vue__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7eea899c_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_sidebar_vue__ = __webpack_require__(59);
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
@@ -17348,7 +17393,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17389,13 +17434,13 @@ if (false) {
 }
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_addUser_vue__ = __webpack_require__(18);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4d71464c_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_addUser_vue__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4d71464c_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_addUser_vue__ = __webpack_require__(61);
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
@@ -17441,7 +17486,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17449,9 +17494,32 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n  form\n")])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("form", { attrs: { action: "/user/add" } }, [
+        _c("input", {
+          attrs: {
+            type: "text",
+            name: "user_name",
+            placeholder: "Enter username"
+          }
+        }),
+        _vm._v(" "),
+        _c("input", {
+          attrs: { type: "text", name: "password", placeholder: "password" }
+        }),
+        _vm._v(" "),
+        _c("input", { attrs: { type: "submit", value: "Submit" } })
+      ])
+    ])
+  }
+]
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
@@ -17463,13 +17531,13 @@ if (false) {
 }
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_deleteUser_vue__ = __webpack_require__(19);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_f52c95f4_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_deleteUser_vue__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_f52c95f4_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_deleteUser_vue__ = __webpack_require__(63);
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
@@ -17515,7 +17583,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17537,7 +17605,136 @@ if (false) {
 }
 
 /***/ }),
-/* 63 */
+/* 64 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_addInstaller_vue__ = __webpack_require__(20);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_78a34b52_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_addInstaller_vue__ = __webpack_require__(65);
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_addInstaller_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_78a34b52_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_addInstaller_vue__["a" /* default */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src\\components\\addInstaller.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-78a34b52", Component.options)
+  } else {
+    hotAPI.reload("data-v-78a34b52", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+/* 65 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("form", { attrs: { method: "post", action: "/installers/add" } }, [
+        _c("input", {
+          attrs: { type: "hidden", name: "created_by_id", value: "" }
+        }),
+        _vm._v(" "),
+        _c("input", {
+          attrs: { type: "hidden", name: "modified_by_id", value: "" }
+        }),
+        _vm._v(" "),
+        _c("input", {
+          attrs: {
+            type: "text",
+            name: "first_name",
+            placeholder: "First name",
+            required: ""
+          }
+        }),
+        _vm._v(" "),
+        _c("input", {
+          attrs: {
+            type: "text",
+            name: "last_name",
+            placeholder: "Last name",
+            required: ""
+          }
+        }),
+        _vm._v(" "),
+        _c("input", {
+          attrs: {
+            type: "text",
+            name: "current_wage",
+            placeholder: "Current wage",
+            required: ""
+          }
+        }),
+        _vm._v(" "),
+        _c("input", {
+          attrs: {
+            type: "text",
+            name: "fk_installer_role_id",
+            placeholder: "Role",
+            required: ""
+          }
+        }),
+        _vm._v(" "),
+        _c("input", { attrs: { type: "submit", value: "Submit" } })
+      ])
+    ])
+  }
+]
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-78a34b52", esExports)
+  }
+}
+
+/***/ }),
+/* 66 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17550,7 +17747,7 @@ var render = function() {
     [
       _c("side-bar", { attrs: { buttons: _vm.buttons } }),
       _vm._v(" "),
-      _c(_vm.currentView, { tag: "component" })
+      _c(_vm.currentView, { tag: "component", attrs: { user: _vm.user } })
     ],
     1
   )
