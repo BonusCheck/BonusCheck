@@ -70,7 +70,7 @@ generalRouter.get("/bonuses", function(req, res) {
   });
 });
 
-generalRouter.post("/bonuses/add/", function(req, res) {
+generalRouter.post("/bonuses/add", function(req, res) {
   console.log(req);
   bonus.create([
     "created_by_id", "modified_by_id", "production_min", "production_max", "bonus_weight"
@@ -342,7 +342,7 @@ generalRouter.put("/installers/payments/update", function(req, res) {
 //***********************************************************************************************************
 //INSTALLER ROLES ROUTES
 
-generalRouter.get("/installer/roles", function(req, res) {
+generalRouter.get("/installers/roles", function(req, res) {
   installer_roles.all(function(data) {
     var vueObject = {
       roles: data
@@ -366,7 +366,7 @@ generalRouter.get("/installers/roles/list", function(req, res) {
   });
 });
 
-generalRouter.post("/installer/roles/add/", function(req, res) {
+generalRouter.post("/installers/roles/add", function(req, res) {
   console.log(req);
   installer_roles.create([
     "created_by_id", "modified_by_id", "payment_type"
@@ -378,7 +378,7 @@ generalRouter.post("/installer/roles/add/", function(req, res) {
   });
 });
 
-generalRouter.delete("/installer/roles/delete", function(req, res) {
+generalRouter.delete("/installers/roles/delete", function(req, res) {
   var condition = "id = " + req.body.payment_type_id;
 
   installer_roles.delete(condition, function(result) {
@@ -391,7 +391,7 @@ generalRouter.delete("/installer/roles/delete", function(req, res) {
   });
 });
 
-generalRouter.put("/installer/roles/update", function(req, res) {
+generalRouter.put("/installers/roles/update", function(req, res) {
   var condition = "id = " + req.body.role_id;
 
   installer_roles.update({
@@ -505,7 +505,7 @@ generalRouter.get("/jobs/change-orders", function(req, res) {
   });
 });
 
-generalRouter.post("/jobs/change-orders/add/", function(req, res) {
+generalRouter.post("/jobs/change-orders/add", function(req, res) {
   console.log(req);
   change_ord.create([
     "created_by_id", "modified_by_id", "fk_original_job_id", "fk_change_job_id"
@@ -568,45 +568,6 @@ generalRouter.get("/jobs/installers-joined", function(req, res) {
   });
 });
 
-generalRouter.post("/jobs/add/", function(req, res) {
-  console.log(req);
-  job.create([
-    "created_by_id", "modified_by_id", "job_name", "start_date", "end_date", "hours_bid", "est_start_date", "est_end_date", "fk_customer_id", "bill_rate", "job_status", "max_labor_cost"
-  ], [
-    req.body.created_by_id, req.body.modified_by_id, req.body.job_name, req.body.start_date, req.body.end_date, req.body.hours_bid. req.body.est_start_date, req.body.est_end_date, req.body.fk_customer_id, req.body.bill_rate, req.body.job_status, req.body.max_labor_cost
-  ], function(result) {
-    // Send back the ID of the new quote
-    res.json({ id: result.insertId });
-  });
-});
-
-generalRouter.delete("/jobs/delete", function(req, res) {
-  var condition = "id = " + req.body.job_id;
-
-  job.delete(condition, function(result) {
-    if (result.affectedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
-  });
-});
-
-generalRouter.put("/jobs/update", function(req, res) {
-  var condition = "id = " + req.body.job_id;
-
-  job.update({
-    //HOW DO I TAKE IN RANDOM FILEDS HERE?  DO I COMPARE THE VALUES FIELD BY FIELD?
-  }, condition, function(result) {
-    if (result.changedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
-  });
-});
 //***********************************************************************************************************
 
 //PAYMENT TYPE ROUTS
@@ -621,7 +582,7 @@ generalRouter.get("/payment-types", function(req, res) {
   });
 });
 
-generalRouter.post("/payment-types/add/", function(req, res) {
+generalRouter.post("/payment-types/add", function(req, res) {
   console.log(req);
   payment_type.create([
     "created_by_id", "modified_by_id", "payment_type"
@@ -664,7 +625,7 @@ generalRouter.put("/payment-types/update", function(req, res) {
 
 //SESSION ROUTES
 
-generalRouter.get('/session', function(req, res, next) {
+generalRouter.get("/session", function(req, res, next) {
   if (req.session.views) {
     //Username and password are giving me nothign at this point on the session
     req.session.views++
@@ -741,33 +702,6 @@ generalRouter.post("/user/add", function(req, res) {
   });
 });
 
-generalRouter.delete("/payment-types/delete", function(req, res) {
-  var condition = "id = " + req.body.user_id;
-
-  user.delete(condition, function(result) {
-    if (result.affectedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
-  });
-});
-
-generalRouter.put("/payment-types/update", function(req, res) {
-  var condition = "id = " + req.body.user_id;
-
-  user.update({
-    //HOW DO I TAKE IN RANDOM FILEDS HERE?  DO I COMPARE THE VALUES FIELD BY FIELD?
-  }, condition, function(result) {
-    if (result.changedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
-  });
-});
 //***********************************************************************************************************
 
 module.exports = generalRouter;
