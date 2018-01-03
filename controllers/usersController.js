@@ -1,5 +1,5 @@
 const express = require("express"),
-      router = express.Router(),
+      userRouter = express.Router(),
       // fs = require('fs'),
       // installer = require("../models/installer.js"),
       // job = require("../models/job.js"),
@@ -14,6 +14,52 @@ const express = require("express"),
       bcrypt = require('bcrypt'),
       saltRounds = 10;
 
+//USER AND ROLE GET ROUTE - REMOVE LATER
 
+userRouter.get("/list", function(req, res) {
+  user.list("user_name", function(data) {
+    console.log("DATA");
+    console.log(data);
+    var vueObject = {
+      user: data
+    };
+    var users = [];
+    for (var i = vueObject.user.length - 1; i >= 0; i--) {
+      users.push(vueObject.user[i].user_name);
+    }
+    console.log(users);
+    res.json(users);
+  });
+});
 
-module.exports = router;
+userRouter.post("/add", function(req, res) {
+ bcrypt.genSalt(saltRounds, function(err, salt) {
+  bcrypt.hash(req.body.password, salt, function(err, hash) {
+    console.log(hash);
+    user.create([
+        "user_name", "password"
+      ], [
+        req.body.user_name, hash
+      ],function(data) {
+        var vueObject = {
+          user: data
+        };
+        console.log(vueObject);
+        res.json(vueObject);
+      });
+    });
+  });
+});
+
+//REMOVE ROUTE BEFORE PRODUCTION???
+userRouter.get("/:username", function(req, res) {
+  user.some(req.params.username, function(data) {
+    var vueObject = {
+      user: data
+    };
+    console.log(vueObject);
+    res.json(vueObject);
+  });
+});
+
+module.exports = userRouter;

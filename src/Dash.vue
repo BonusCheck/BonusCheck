@@ -1,7 +1,7 @@
 <template>
   <div>
     <side-bar :buttons="buttons"></side-bar>
-    <component :is="currentView"></component>
+    <component :is="currentView" :user="user"></component>
   </div>
 </template>
 
@@ -9,6 +9,7 @@
 import sidebar from './components/sidebar';
 import addUser from './components/addUser';
 import deleteUser from './components/deleteUser';
+import addInstaller from './components/addInstaller';
 
 
 const axios = require('axios');
@@ -19,7 +20,7 @@ export default {
     'side-bar': sidebar,
     'add-user': addUser,
     'delete-user': deleteUser,
-    'joblist': joblist
+    'add-installer': addInstaller
   },
   data(){
     return {
@@ -40,14 +41,24 @@ export default {
       console.log(req.data.roll);
       this.user = req.data.userID;
 
+      //If no session received, return home
+      if(!req.data.roll){
+        this.$router.push('/');
+      }
+
       if(req.data.roll === 'Admin'){
         this.buttons.push(
           {
             name: 'Add user',
+            link: 'add-user'
           },
           {
             name: 'Delete user',
             link: 'delete-user'
+          },
+          {
+            name: 'Add installer',
+            link: 'add-installer'
           },
           {
             name: 'View transaction logs'

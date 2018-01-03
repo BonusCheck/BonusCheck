@@ -38,8 +38,8 @@
 <script>
 
 export default {
-  name: 'side-bar',
-  props: ['buttons']
+  name: "side-bar",
+  props: ["buttons"]
 };
 
 </script>
