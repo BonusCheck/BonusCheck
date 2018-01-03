@@ -1,12 +1,12 @@
 <template>
 	<div>
-		<h1>Delete User</h1>
+		<h1>Create a Project</h1>
 	</div>
 </template>
 
 <script>
 
 export default {
-  name: 'delete-user'
+  name: 'create-project'
 };
 </script>
