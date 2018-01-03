@@ -55,8 +55,18 @@
 </template>
 
 <script>
+const axios = require('axios');
+
 export default {
-  name: 'login'
+  name: 'login',
+  beforeMount(){
+  	axios.get('/session/data')
+  	.then(req => {
+  		if(req.data.roll){
+  			this.$router.push('/dash')
+  		}
+  	});
+  }
 };
 </script>
 

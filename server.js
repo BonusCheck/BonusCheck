@@ -29,5 +29,4 @@ controllers.forEach(controller => {
 	app.use("/", require("./controllers/generalController.js"));
 });
 
-
 app.listen(port);
