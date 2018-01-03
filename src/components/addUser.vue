@@ -1,5 +1,6 @@
 <template>
   <div>
+  	<h1>Add User</h1>
     <form action="/user/add">
     	<input type="text" name="user_name" placeholder="Enter username">
     	<input type="text" name ="password" placeholder="password">
