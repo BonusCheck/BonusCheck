@@ -5,7 +5,7 @@
       <p>Username</p>
     	<input type="text" name="user_name" v-model="user_name">
       <p>Password</p>
-    	<input type="text" name ="password" v-model="password">
+    	<input type="password" name ="password" v-model="password">
     	<input type="submit" value="Submit">
     </form>
   </div>
