@@ -36,6 +36,7 @@ userRouter.post("/add", function(req, res) {
  bcrypt.genSalt(saltRounds, function(err, salt) {
   bcrypt.hash(req.body.password, salt, function(err, hash) {
     console.log(hash);
+    console.log(req.body.password);
     user.create([
         "user_name", "password"
       ], [
