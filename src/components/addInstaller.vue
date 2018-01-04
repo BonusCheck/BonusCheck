@@ -2,8 +2,8 @@
   <div>
     <h1>Add Installer</h1>
     <form method="post" action="/installers/add">
-    	<input type="hidden" name="created_by_id" value="">
-      <input type="hidden" name="modified_by_id" value="">
+    	<input type="hidden" name="created_by_id" :value="this.user">
+      <input type="hidden" name="modified_by_id" :value="this.user">
       <input type="text" name="first_name" placeholder="First name" required>
       <input type="text" name="last_name" placeholder="Last name" required>
       <input type="text" name="current_wage" placeholder="Current wage" required>

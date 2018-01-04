@@ -23,5 +23,3 @@ INSERT INTO payment_types(created_by_id, modified_by_id, payment_type) VALUES(50
 INSERT INTO users(user_name, password, fk_user_role_id) VALUES("Admin", "$2a$10$sacDeNTqL93iXs1knsBQle5biSw71k5evbPr17TeId6586W.GeVB2", "3001");
 
 INSERT INTO user_roles(created_by_id, modified_by_id, user_role_name) VALUES(5001, 5001, "Admin"),(5001, 5001, "Installer"),(5001, 5001, "Project Coordinator"),(5001, 5001, "Project Manager");
-
-INSERT INTO users(user_name, password, fk_user_role_id) VALUES("matt", "1234", "5000");

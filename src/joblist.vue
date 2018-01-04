@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="container">
     <div class="row">
             <h2>Job History</h2>
@@ -110,4 +110,4 @@ export default {
   width: 250px;
   height: 100px
 }
-</style>
+</style> -->
