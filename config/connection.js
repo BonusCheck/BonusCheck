@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
   host: "localhost",
   //socketPath: "/Applications/MAMP/tmp/mysql/mysql.sock",
   user: "root",
-  password: "Fuckin@D^d3$",
+  password: "root",
   database: "installers_db"
 });
 

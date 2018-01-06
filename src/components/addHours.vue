@@ -11,8 +11,6 @@
 			<input type="number" v-model.number="form.ot_hours_worked" required>
 			<p>Work date</p>
 			<input type="date" v-model="form.work_date">
-			<p></p>
-
 			<input type="submit" value="Submit">
 		</form>
 	</div>
@@ -50,6 +48,12 @@ export default {
   				fk_job_id: form.fk_job_id,
   				fk_installer_id: ''
   			}
+  		})
+  		.then(req => {
+
+  		})
+  		.catch(err => {
+  			console.log(err);
   		})
   	}
   },

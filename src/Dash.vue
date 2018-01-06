@@ -88,28 +88,16 @@ export default {
             link: 'add-installer'
           },
           {
-            name: 'View transaction logs'
-          },
-          {
             name: 'Enter time worked',
             link: 'add-hours'
-          },
-          {
-            name: 'View project data'
           },
           {
            name: 'View bonus schedule',
            link: 'bonus-schedule' 
           },
           {
-            name: 'View bonus history'
-          },
-          {
             name: 'View payment history',
             link: 'payment-history'
-          },
-          {
-            name: 'Approve time'
           },
           {
             name: 'Create a project',

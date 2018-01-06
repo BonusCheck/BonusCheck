@@ -28,7 +28,9 @@ export default {
       first_name: '',
       last_name: '',
       current_wage: '',
-      fk_installer_role_id: ''
+      fk_installer_role_id: '',
+      fk_user_id: '',
+      users: ''
     }
   },
   methods: {
@@ -42,7 +44,8 @@ export default {
           first_name: this.first_name,
           last_name: this.last_name,
           current_wage: this.current_wage,
-          fk_installer_role_id: this.fk_installer_role_id
+          fk_installer_role_id: this.fk_installer_role_id,
+          fk_user_id: this.fk_user_id
         }
       })
       .then(req => {
@@ -55,6 +58,19 @@ export default {
         console.log(err);
       })
     }
+  },
+  beforeMount(){
+    axios({
+      method: 'get',
+      url: '/users'
+    })
+    .then(req => {
+      this.users = req.data.users;
+      console.log(this.users);
+    })
+    .catch(err => {
+      console.log(err);
+    })
   }
 }; 
 </script>

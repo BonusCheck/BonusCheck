@@ -19,7 +19,7 @@ const express = require("express"),
 userRouter.get("/", function(req, res) {
   user.all(function(data) {
     var vueObject = {
-      installers: data
+      users: data
     };
     console.log(vueObject);
     res.json(vueObject);
