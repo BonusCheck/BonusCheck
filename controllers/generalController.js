@@ -45,15 +45,23 @@ generalRouter.post("/auth", function(req, res) {
       // console.log("Username");
       // console.log(username);
       user.some(username, function(data) {
-        var vueObject = {
-          user: data
-        };
+        // var vueObject = {
+        //   user: data
+        // };
         var sessData = req.session;
         //Not sure if below will work yet until we have a user logon.
+      installer.single(data[0].user_id, function(data2) {
+        var vueObject =  {
+          user: data,
+          installer: data2
+        }
         sessData.user_id = data[0].user_id;
         sessData.user_name = data[0].user_name;
         sessData.user_role_name = data[0].user_role_name;
+        sessData.installer_id = data2[0].installer_id;
+        console.log(sessData.installer_id);
         console.log(vueObject);
+      });
         //res.json(vueObject);
         res.redirect("/dash");
       });
