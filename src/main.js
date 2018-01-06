@@ -4,8 +4,8 @@ import VueRouter from 'vue-router';
 
 import Home from './Home';
 import Login from './Login';
+import Signup from './Signup';
 import Dash from './Dash';
-import Joblist from './joblist'
 
 Vue.use(VueRouter);
 
@@ -21,6 +21,11 @@ const routes = [
 	component: Login,
 	path: '/login',
 	meta: {auth: true}
+},
+{
+    name: 'signup',
+	component: Signup,
+	path: '/signup'
 },
 {
 	name: 'dash',
