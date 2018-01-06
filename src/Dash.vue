@@ -124,6 +124,10 @@ export default {
             link: 'create-roles'
           },
           {
+            name: 'Modify customer',
+            link: 'modify-customer'
+          },
+          {
             name: 'Modify roles',
             link: 'modify-roles'
           },

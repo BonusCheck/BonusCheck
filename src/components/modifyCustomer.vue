@@ -5,8 +5,21 @@
 </template>
 
 <script>
+import axios from 'axios';
 
 export default {
-  name: 'modify-customer'
+  name: 'modify-customer',
+  beforeMount(){
+  	axios({
+  		method: 'get',
+  		url: '/customers'
+  	})
+  	.then(req => {
+  		console.log(req.data);
+  	})
+  	.catch(err => {
+  		console.log(err);
+  	})
+  }
 };
 </script>

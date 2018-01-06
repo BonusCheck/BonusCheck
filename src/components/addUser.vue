@@ -7,6 +7,7 @@
       <p>Password</p>
     	<input type="password" name ="password" v-model="password">
     	<input type="submit" value="Submit">
+      <p class="hidden" id="confirmation">User added!</p>
     </form>
   </div>
 </template>
@@ -36,7 +37,7 @@ export default {
       })
       .then(req => {
         if(req.data.ok){
-          console.log('User added!');
+          document.getElementById('confirmation').classList.remove('hidden');
         };
       })
       .catch(err => {
