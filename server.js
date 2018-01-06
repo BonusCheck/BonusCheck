@@ -17,6 +17,11 @@ app.use(passport.initialize());
  
 app.use(passport.session());
 
+app.use(function(req, res, next) {
+  console.log(req.originalUrl);
+  next();
+});
+
 const controllers = fs.readdirSync(path.join(__dirname, 'controllers'));
 
 controllers.forEach(controller => {

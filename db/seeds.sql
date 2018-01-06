@@ -6,7 +6,7 @@ INSERT INTO change_orders (created_by_id, modified_by_id, fk_original_job_id, fk
 
 INSERT INTO customers (created_by_id, modified_by_id, customer_name) VALUES(5001, 5001, "Samuel"),(5001, 5001, "Heilind Electronics"),(5001, 5001, "Air Products");
 
-INSERT INTO installers(created_by_id, modified_by_id, first_name, last_name, current_wage, fk_installer_role_id) VALUES(5001, 5001, "Sam","Fisher",17.5,2005),(5001, 5001, "Tom","Schulze",17.5,2006);
+INSERT INTO installers(created_by_id, modified_by_id, first_name, last_name, current_wage, fk_installer_role_id, fk_user_id) VALUES(5001, 5001, "Sam","Fisher",17.5,2005,5002),(5001, 5001, "Tom","Schulze",17.5,2006,5003);
 
 INSERT INTO installer_roles (created_by_id, modified_by_id, installer_role_name, role_weight, min_base, max_base, individual_bonus, team_bonus, bonus_weight) VALUES(5001, 5001, "Field Operations Manager",1.25,20,27.5,0.25,0.75,1),(5001, 5001, "Sr. Project Manager",1.2,18.50,22.5,0.3,0.7,1),(5001, 5001, "Project Manager",1.15,17.5,21.5,0.35,0.65,1),(5001, 5001, "Jr. Project Manager",1.1,16.5,20,0.4,0.6,0.95),(5001, 5001, "Sr. Project Lead",1.05,15,19,0.45,0.55,0.85),(5001, 5001, "Project Lead",1,15,17.5,0.5,0.5,0.85),(5001, 5001, "Jr. Project Lead",0.95,13.5,16,0.55,0.45,0.75),(5001, 5001, "Sr. Technician",0.9,12,15,0.60,0.40,0.75),(5001, 5001, "Technician",0.85,11,12.5,0.65,0.35,0.65),(5001, 5001, "Jr. Technician",0.8,10,11,0.7,0.3,0.55),(5001, 5001, "Laborer",0.75,8.15,11,0.75,0.25,0.5);
 
@@ -20,6 +20,6 @@ INSERT INTO jobs_installers(created_by_id, modified_by_id, fk_job_id, fk_install
 
 INSERT INTO payment_types(created_by_id, modified_by_id, payment_type) VALUES(5001, 5001, "team_bonus_1"),(5001, 5001, "team_bonus_2"),(5001, 5001, "team_bonus_3"),(5001, 5001, "team_bonus_4"),(5001, 5001, "Indvidual_bonus_1"),(5001, 5001, "Indvidual_bonus_2"),(5001, 5001, "Indvidual_bonus_3"),(5001, 5001, "Indvidual_bonus_4"),(5001, 5001, "base_wage");
 
-INSERT INTO users(user_name, password, fk_user_role_id) VALUES("Admin", "$2a$10$sacDeNTqL93iXs1knsBQle5biSw71k5evbPr17TeId6586W.GeVB2", "3001");
+INSERT INTO users(user_name, password, fk_user_role_id) VALUES("Admin", "$2a$10$sacDeNTqL93iXs1knsBQle5biSw71k5evbPr17TeId6586W.GeVB2", "3001"), ("SFisher", "$2a$10$3MacwVIY2EIz9SU5B0E/terv1UtzYFpWsPSe4zFxXXm23nHWsDziW", 3002), ("TSchulze", "$2a$10$3MacwVIY2EIz9SU5B0E/terv1UtzYFpWsPSe4zFxXXm23nHWsDziW", 3002);
 
 INSERT INTO user_roles(created_by_id, modified_by_id, user_role_name) VALUES(5001, 5001, "Admin"),(5001, 5001, "Installer"),(5001, 5001, "Project Coordinator"),(5001, 5001, "Project Manager");

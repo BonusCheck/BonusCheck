@@ -92,4 +92,9 @@ generalRouter.get("/session/data", function(req, res) {
       res.json(user);
 });
 
+// exports.logout = function(req, res){
+//    req.session.destroy(function(err){
+//        res.redirect('/');
+//    });
+
 module.exports = generalRouter;
