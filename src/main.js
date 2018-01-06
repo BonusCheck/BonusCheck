@@ -31,11 +31,6 @@ const routes = [
 	name: 'dash',
 	component: Dash,
 	path: '/dash'
-},
-{
-	name: 'joblist',
-	component: Joblist,
-	path: '/jobs'
 }
 ];
 
