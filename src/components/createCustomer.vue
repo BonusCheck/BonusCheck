@@ -3,7 +3,7 @@
 		<h1>Create a Customer</h1>
 
 		<form v-on:submit.prevent="onSubmit">
-		   	<input type="text" name="customer_name" placeholder="Enter Customer Name" v-model="customer_name">
+		   	<input type="text" name="customer_name" placeholder="Enter Customer Name" v-model.trim="customer_name" required>
 		    <input type="submit" value="Submit">
 		</form>
 	</div>

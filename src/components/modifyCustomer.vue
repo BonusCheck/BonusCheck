@@ -15,7 +15,7 @@ export default {
   		url: '/customers'
   	})
   	.then(req => {
-  		console.log(req.data);
+  		console.log(req.data.customers);
   	})
   	.catch(err => {
   		console.log(err);
