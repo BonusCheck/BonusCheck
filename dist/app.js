@@ -2123,6 +2123,9 @@ var axios = __webpack_require__(1);
 //
 //
 //
+//
+//
+//
 
 
 
@@ -2131,18 +2134,21 @@ var axios = __webpack_require__(1);
   props: ['user'],
   data: function data(){
   	return {
-  		reg_hours_worked: '',
-  		ot_hours_worked: '',
-  		work_date: '',
-  		fk_job_id: '',
-  		fk_installer_id: ''
+  		form: {
+	  		reg_hours_worked: '',
+	  		ot_hours_worked: '',
+	  		work_date: '',
+	  		fk_job_id: '',
+	  		fk_installer_id: ''
+	  	},
+	  	jobs: ''
   	}
   },
   methods: {
   	onSubmit: function(){
   		__WEBPACK_IMPORTED_MODULE_0_axios___default()({
   			method: 'put',
-  			url: 'installers/hours/add',
+  			url: '/installers/hours/add',
   			data: {
   				created_by_id: this.user,
   				modified_by_id: this.user,
@@ -2154,6 +2160,21 @@ var axios = __webpack_require__(1);
   			}
   		})
   	}
+  },
+  beforeMount: function beforeMount(){
+  	var this$1 = this;
+
+  	__WEBPACK_IMPORTED_MODULE_0_axios___default()({
+  		method: 'get',
+  		url: '/jobs'
+  	})
+  	.then(function (req) {
+  		console.log(req.data.jobs);
+  		this$1.jobs = req.data.jobs;
+  	})
+  	.catch(function (err) {
+  		console.log(err);
+  	})
   }
 });
 
@@ -19004,6 +19025,15 @@ var render = function() {
         }
       },
       [
+        _c(
+          "select",
+          _vm._l(_vm.jobs, function(job) {
+            return _c("option", { domProps: { value: job.job_id } }, [
+              _vm._v(_vm._s(job.job_name))
+            ])
+          })
+        ),
+        _vm._v(" "),
         _c("p", [_vm._v("Regular hours worked")]),
         _vm._v(" "),
         _c("input", {
@@ -19011,19 +19041,23 @@ var render = function() {
             {
               name: "model",
               rawName: "v-model.number",
-              value: _vm.reg_hours_worked,
-              expression: "reg_hours_worked",
+              value: _vm.form.reg_hours_worked,
+              expression: "form.reg_hours_worked",
               modifiers: { number: true }
             }
           ],
-          attrs: { type: "number", requird: "" },
-          domProps: { value: _vm.reg_hours_worked },
+          attrs: { type: "number", required: "" },
+          domProps: { value: _vm.form.reg_hours_worked },
           on: {
             input: function($event) {
               if ($event.target.composing) {
                 return
               }
-              _vm.reg_hours_worked = _vm._n($event.target.value)
+              _vm.$set(
+                _vm.form,
+                "reg_hours_worked",
+                _vm._n($event.target.value)
+              )
             },
             blur: function($event) {
               _vm.$forceUpdate()
@@ -19038,19 +19072,19 @@ var render = function() {
             {
               name: "model",
               rawName: "v-model.number",
-              value: _vm.ot_hours_worked,
-              expression: "ot_hours_worked",
+              value: _vm.form.ot_hours_worked,
+              expression: "form.ot_hours_worked",
               modifiers: { number: true }
             }
           ],
-          attrs: { type: "number", requird: "" },
-          domProps: { value: _vm.ot_hours_worked },
+          attrs: { type: "number", required: "" },
+          domProps: { value: _vm.form.ot_hours_worked },
           on: {
             input: function($event) {
               if ($event.target.composing) {
                 return
               }
-              _vm.ot_hours_worked = _vm._n($event.target.value)
+              _vm.$set(_vm.form, "ot_hours_worked", _vm._n($event.target.value))
             },
             blur: function($event) {
               _vm.$forceUpdate()
@@ -19065,18 +19099,18 @@ var render = function() {
             {
               name: "model",
               rawName: "v-model",
-              value: _vm.work_date,
-              expression: "work_date"
+              value: _vm.form.work_date,
+              expression: "form.work_date"
             }
           ],
           attrs: { type: "date" },
-          domProps: { value: _vm.work_date },
+          domProps: { value: _vm.form.work_date },
           on: {
             input: function($event) {
               if ($event.target.composing) {
                 return
               }
-              _vm.work_date = $event.target.value
+              _vm.$set(_vm.form, "work_date", $event.target.value)
             }
           }
         }),
