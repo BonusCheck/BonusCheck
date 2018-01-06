@@ -12,6 +12,12 @@ var installer = {
       cb(res);
     });
   },
+  single: function(userID, cb) {
+    var user = "users.user_id = '" + userID + "'";
+    orm.someTwoTableJoinTwoConditions("users", "installers", "installers.installer_id", "installers.fk_user_id = users.user_id", user, function(res) {
+      cb(res);
+    });
+  },
   // The variables cols and vals are arrays.
   create: function(cols, vals, cb) {
     console.log(cols);
