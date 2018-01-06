@@ -2,7 +2,7 @@
   <div>
   	<nav class="navbar navbar-fixed-top">
       <div class="container">		           
-    	<a class="navbar-brand " href="#page-top"><img src="images/logo-web3.gif"></a>
+    	<a class="navbar-brand " href="#page-top"><img src="/dist/assets/images/logo-web3.gif"></a>
     	<button  class="navbar-toggle" data-toggle="collapse" data-target="#navbar-item"  >
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
@@ -11,11 +11,11 @@
           </button>
         <div id="navbar-item" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li ><a  href="#">Home</a></li>
+            <li ><router-link :to="'jobs'">Home</router-link></li>
             <li><a   href="#">Contact</a></li>
-            <li ><a  href="#">Sign up</a></li>
+            <li ><a  href="#"><router-link :to="'signup'"  >Sign up</router-link></a></li>
             <li>
-            	<router-link :to="'login'" class='btn-danger navbar-btn'>Log in</router-link>
+            	<button class='btn-danger navbar-btn'><router-link :to="'login'"  ><a style="color: #fff;">Log in</a></router-link></button>
             </li>
           </ul>
         </div>
@@ -44,7 +44,7 @@
       	<div class="row">
       	  <div class="col-md-6 col-sm-6">
       	    <div class="showcase-left">
-      	       <img src="images/laptop5.png">
+      	       <img src="/dist/assets/images/laptop5.png">
        	    </div>
       	  </div>
       	  <div class="col-md-6 col-sm-6 readme">
@@ -68,22 +68,22 @@
             <ul>
                 <li>
                   <a href="" title="Twitter" class="social-button round twitter">
-                  <div class="logo icon-twitter"><img src="images/twitter.png"></div>
+                  <div class="logo icon-twitter"><img src="/dist/assets/images/twitter.png"></div>
                   </a>
                 </li>
                 <li>
                    <a href="" title="Facebook" class="social-button round facebook">
-                   <div class="logo icon-facebook"><img src="images/goggle.png"></div>
+                   <div class="logo icon-facebook"><img src="/dist/assets/images/goggle.png"></div>
                    </a>
                 </li>
                 <li>
                    <a href="" title="Google Plus" class="social-button round google-plus">
-                   <div class="logo icon-google"><img src="images/facebook.png"></div>
+                   <div class="logo icon-google"><img src="/dist/assets/images/facebook.png"></div>
                    </a>
                 </li>
                 <li>
                    <a href="" title="Linked In" class="social-button round linked-in">
-                   <div class="logo icon-linkedin"><img src="images/linkedin.png"></div>
+                   <div class="logo icon-linkedin"><img src="/dist/assets/images/linkedin.png"></div>
                    </a>
                 </li>
             </ul>
@@ -106,8 +106,43 @@ export default {
   			this.$router.push('/dash');
   		}
   	});
+  },
+  mounted (){
+  	this.$nextTick(() => {
+  		window.sr = ScrollReveal();
+	  	   sr.reveal('.navbar-brand',{
+	  	   	duration: 2000,
+	  	   	origin: 'left'
+	  	   });
+         sr.reveal('.collapse',{
+          duration: 2000,
+          origin: 'right'
+         });
+	  	   sr.reveal('.title',{
+	  	   	duration: 2000,
+	  	   	origin: 'bottom'
+	  	   });
+	  	   sr.reveal('.showcase-left',{
+	  	   	duration: 2000,
+	  	   	origin: 'left',
+	  	   	distance: '300px'
+	  	   });
+	  	   sr.reveal('.showcase-right',{
+	  	   	duration: 2000,
+	  	   	origin: 'right',
+	  	   	distance: '300px'
+	  	   });
+	  	   sr.reveal('.showcase-btn',{
+	  	   	duration: 2000,
+	  	   	delay:2000,
+	  	   	origin: 'bottom'
+	  	   });
+
+  		})
+  	}
+
   }
-};
+
 </script>
 
 <style scoped>
@@ -150,6 +185,7 @@ export default {
 		position: fixed;
 		font-weight: 800;
 		letter-spacing: -1px;
+		margin-top: 20px;
 	}
 	.nav li a{
 		color: #000;
@@ -161,14 +197,18 @@ export default {
 	}
 
 	.btn-danger{
+
 		border-radius: 10px;
 		font-weight: 800;	
 		line-height: 1.7;
 		margin-left: 40px;
 		font-size: 18px;
 		width: 80%;
+		
 	}
-
+ .btn-danger:hover{
+ 	background-color: #d43f3a;
+ }
 	/*NAVBAR  END*/
 
 

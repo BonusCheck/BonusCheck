@@ -10,20 +10,47 @@ import sidebar from './components/sidebar';
 import addUser from './components/addUser';
 import deleteUser from './components/deleteUser';
 import addInstaller from './components/addInstaller';
-
+import addHours from './components/addHours';
+import bonusSchedule from './components/bonusSchedule';
+import paymentHistory from './components/paymentHistory';
+import createProject from './components/createProject';
+import createCustomer from './components/createCustomer';
+import createRoles from './components/createRoles';
+import modifyRoles from './components/modifyRoles';
+import modifyCustomer from './components/modifyCustomer';
+import modifyProject from './components/modifyProject';
+import modifyBonuses from './components/modifyBonuses';
+import createPayments from './components/createPayments';
+import modifyPayments from './components/modifyPayments';
+import createPaymentTypes from './components/createPaymentTypes';
+import modifyPaymentTypes from './components/modifyPaymentTypes';
 
 const axios = require('axios');
 
 export default {
   name: 'Dash',
   components: {
-  	'side-bar': sidebar,
+    'side-bar': sidebar,
     'add-user': addUser,
     'delete-user': deleteUser,
-    'add-installer': addInstaller
+    'add-installer': addInstaller,
+    'add-hours': addHours,
+    'bonus-schedule': bonusSchedule,
+    'payment-history': paymentHistory,
+    'create-project': createProject,
+    'create-customer': createCustomer,
+    'create-roles': createRoles,
+    'modify-roles': modifyRoles,
+    'modify-customer': modifyCustomer,
+    'modify-project': modifyProject,
+    'modify-bonuses': modifyBonuses,
+    'create-payments': createPayments,
+    'modify-payments': modifyPayments,
+    'create-payment-types': createPaymentTypes,
+    'modify-payment-types': modifyPaymentTypes,
   },
   data(){
-  	return {
+    return {
       user: '',
       buttons: [],
       currentView: 'add-user'
@@ -64,60 +91,78 @@ export default {
             name: 'View transaction logs'
           },
           {
-            name: 'Enter time worked'
+            name: 'Enter time worked',
+            link: 'add-hours'
           },
           {
             name: 'View project data'
           },
           {
-           name: 'View bonus schedule' 
+           name: 'View bonus schedule',
+           link: 'bonus-schedule' 
           },
           {
             name: 'View bonus history'
           },
           {
-            name: 'View payment history'
+            name: 'View payment history',
+            link: 'payment-history'
           },
           {
             name: 'Approve time'
           },
           {
-            name: 'Create a project'
+            name: 'Create a project',
+            link: 'create-project'
           },
           {
-            name: 'Create a customer'
+            name: 'Create a customer',
+            link: 'create-customer'
           },
           {
-            name: 'Create roles'
+            name: 'Create roles',
+            link: 'create-roles'
           },
           {
-            name: 'Modify roles'
+            name: 'Modify customer',
+            link: 'modify-customer'
           },
           {
-            name: 'Modify project'
+            name: 'Modify roles',
+            link: 'modify-roles'
           },
           {
-            name: 'Modify bonuses'
+            name: 'Modify project',
+            link: 'modify-project'
           },
           {
-            name: 'Create payments'
+            name: 'Modify bonuses',
+            link: 'modify-bonuses'
           },
           {
-            name: 'Modify payments'
+            name: 'Create payments',
+            link: 'create-payments'
           },
           {
-            name: 'Create payment types'
+            name: 'Modify payments',
+            link: 'modify-payments'
           },
           {
-            name: 'Modify payment types'
+            name: 'Create payment types',
+            link: 'create-payment-types'
+          },
+          {
+            name: 'Modify payment types',
+            link: 'modify-payment-types'
           }
         );
       }
       console.log(this.buttons);
-	 })
-	.catch(function(err){
-		console.log(err);
-	});
+   })
+  .catch(function(err){
+    this.$router.show('Home')
+    console.log(err);
+  });
 }
 };
 

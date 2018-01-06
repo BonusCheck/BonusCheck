@@ -1,6 +1,11 @@
 <template>
-  <div>
-    other form
+	<div>
+  	<h1>Add User</h1>
+	<form action="/users/add">
+	   	<input type="text" name="user_name" placeholder="Enter username">
+	    <input type="text" name ="password" placeholder="password">
+	    <input type="submit" value="Submit">
+	</form>
   </div>
 </template>
 

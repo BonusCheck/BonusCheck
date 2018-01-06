@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 
 import Home from './Home';
 import Login from './Login';
+import Signup from './Signup';
 import Dash from './Dash';
 
 Vue.use(VueRouter);
@@ -18,7 +19,13 @@ const routes = [
 {
 	name: 'login',
 	component: Login,
-	path: '/login'
+	path: '/login',
+	meta: {auth: true}
+},
+{
+    name: 'signup',
+	component: Signup,
+	path: '/signup'
 },
 {
 	name: 'dash',
@@ -35,9 +42,10 @@ const router = new VueRouter({
 /* eslint-disable no-new */
 new Vue({
   components: {
-    App
+    App,
   },
   router,
   el: '#app',
   template: '<App/>'
 });
+

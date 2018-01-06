@@ -11,6 +11,8 @@ app.use('/dist', express.static('dist'));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use(bodyParser.json());
+
 app.use(session({ secret: 'WaddaDaDay3445',resave: true, saveUninitialized:false}));
  
 app.use(passport.initialize());
