@@ -32,7 +32,7 @@ customerRouter.post("/add", function(req, res) {
   customer.create([
     "created_by_id", "modified_by_id", "customer_name"
   ], [
-    req.body.created_by_id, req.body.modified_by_id, req.body.customer
+    req.body.created_by_id, req.body.modified_by_id, req.body.customer_name
   ], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });

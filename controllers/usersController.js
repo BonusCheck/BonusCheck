@@ -36,13 +36,15 @@ userRouter.post("/add", function(req, res) {
  bcrypt.genSalt(saltRounds, function(err, salt) {
   bcrypt.hash(req.body.password, salt, function(err, hash) {
     console.log(hash);
+
     user.create([
         "user_name", "password"
       ], [
         req.body.user_name, hash
       ],function(data) {
         var vueObject = {
-          user: data
+          user: data,
+          ok: true
         };
         console.log(vueObject);
         res.json(vueObject);

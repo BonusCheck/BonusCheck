@@ -11,7 +11,7 @@
           </button>
         <div id="navbar-item" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li ><a  href="#">Home</a></li>
+            <li ><router-link :to="'jobs'">Home</router-link></li>
             <li><a   href="#">Contact</a></li>
             <li ><a  href="#"><router-link :to="'signup'"  >Sign up</router-link></a></li>
             <li>

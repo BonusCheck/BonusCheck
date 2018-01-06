@@ -6,10 +6,6 @@ import Home from './Home';
 import Login from './Login';
 import Signup from './Signup';
 import Dash from './Dash';
-import jQuery from 'jquery';
-global.jQuery= jQuery;
-let Bootstrap = require('bootstrap');
-/*import 'bootstrap/dist/css/bootstrap.css';*/
 
 Vue.use(VueRouter);
 
@@ -23,7 +19,8 @@ const routes = [
 {
 	name: 'login',
 	component: Login,
-	path: '/login'
+	path: '/login',
+	meta: {auth: true}
 },
 {
     name: 'signup',
@@ -34,6 +31,11 @@ const routes = [
 	name: 'dash',
 	component: Dash,
 	path: '/dash'
+},
+{
+	name: 'joblist',
+	component: Joblist,
+	path: '/jobs'
 }
 ];
 
@@ -45,9 +47,10 @@ const router = new VueRouter({
 /* eslint-disable no-new */
 new Vue({
   components: {
-    App
+    App,
   },
   router,
   el: '#app',
   template: '<App/>'
 });
+

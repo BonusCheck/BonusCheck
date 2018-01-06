@@ -30,7 +30,7 @@ const axios = require('axios');
 export default {
   name: 'Dash',
   components: {
-  	'side-bar': sidebar,
+    'side-bar': sidebar,
     'add-user': addUser,
     'delete-user': deleteUser,
     'add-installer': addInstaller,
@@ -50,7 +50,7 @@ export default {
     'modify-payment-types': modifyPaymentTypes,
   },
   data(){
-  	return {
+    return {
       user: '',
       buttons: [],
       currentView: 'add-user'
@@ -124,6 +124,10 @@ export default {
             link: 'create-roles'
           },
           {
+            name: 'Modify customer',
+            link: 'modify-customer'
+          },
+          {
             name: 'Modify roles',
             link: 'modify-roles'
           },
@@ -154,10 +158,11 @@ export default {
         );
       }
       console.log(this.buttons);
-	 })
-	.catch(function(err){
-		console.log(err);
-	});
+   })
+  .catch(function(err){
+    this.$router.show('Home')
+    console.log(err);
+  });
 }
 };
 
