@@ -4,14 +4,11 @@
     <form v-on:submit.prevent="onSubmit" id="form">
       <input type="text" name="first_name" placeholder="First name" v-model.trim="first_name" required>
       <input type="text" name="last_name" placeholder="Last name" v-model.trim="last_name" required>
-      <input type="number" name="current_wage" placeholder="Current wage" v-model.number.trim="current_wage" required>
-      <select name="fk_installer_role_id" placeholder="Role" v-model.number.trim="fk_installer_role_id" required>
-        <option value=2001>Installer</option>
-        <option value="Project Coordinator">Project Coordinator</option>
-        <option value="Project Manager">Project Manager</option>
-        <option value="Admin">Admin</option>
+      <input type="number" name="current_wage" placeholder="Current wage" v-model.number="current_wage" required>
+      <select v-model.number="fk_installer_role_id" required>
+        <option v-for="role in roles" v-bind:value="role.installer_role_id">{{role.installer_role_name}}</option>
       </select>
-      <select v-model="fk_user_id" placeholder="Select user">
+      <select v-model="fk_user_id" required>
         <option v-for="user in users" v-bind:value="user.user_id">{{user.user_name}}</option>
       </select>
       <input type="submit" value="Submit">
@@ -33,7 +30,8 @@ export default {
       current_wage: '',
       fk_installer_role_id: '',
       fk_user_id: '',
-      users: ''
+      users: '',
+      roles: ''
     }
   },
   methods: {
@@ -73,7 +71,18 @@ export default {
     })
     .then(req => {
       this.users = req.data.users;
-      console.log(this.users);
+    })
+    .catch(err => {
+      console.log(err);
+    })
+
+    //Get role list
+    axios({
+      method: 'get',
+      url: '/installers/roles'
+    })
+    .then(req => {
+      this.roles = req.data.roles;
     })
     .catch(err => {
       console.log(err);

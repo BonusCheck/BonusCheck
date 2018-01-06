@@ -2046,9 +2046,6 @@ var axios = __webpack_require__(1);
 //
 //
 //
-//
-//
-//
 
 
 
@@ -2062,7 +2059,8 @@ var axios = __webpack_require__(1);
       current_wage: '',
       fk_installer_role_id: '',
       fk_user_id: '',
-      users: ''
+      users: '',
+      roles: ''
     }
   },
   methods: {
@@ -2106,7 +2104,18 @@ var axios = __webpack_require__(1);
     })
     .then(function (req) {
       this$1.users = req.data.users;
-      console.log(this$1.users);
+    })
+    .catch(function (err) {
+      console.log(err);
+    })
+
+    //Get role list
+    __WEBPACK_IMPORTED_MODULE_0_axios___default()({
+      method: 'get',
+      url: '/installers/roles'
+    })
+    .then(function (req) {
+      this$1.roles = req.data.roles;
     })
     .catch(function (err) {
       console.log(err);
@@ -18880,10 +18889,10 @@ var render = function() {
           directives: [
             {
               name: "model",
-              rawName: "v-model.number.trim",
+              rawName: "v-model.number",
               value: _vm.current_wage,
               expression: "current_wage",
-              modifiers: { number: true, trim: true }
+              modifiers: { number: true }
             }
           ],
           attrs: {
@@ -18898,7 +18907,7 @@ var render = function() {
               if ($event.target.composing) {
                 return
               }
-              _vm.current_wage = _vm._n($event.target.value.trim())
+              _vm.current_wage = _vm._n($event.target.value)
             },
             blur: function($event) {
               _vm.$forceUpdate()
@@ -18912,17 +18921,13 @@ var render = function() {
             directives: [
               {
                 name: "model",
-                rawName: "v-model.number.trim",
+                rawName: "v-model.number",
                 value: _vm.fk_installer_role_id,
                 expression: "fk_installer_role_id",
-                modifiers: { number: true, trim: true }
+                modifiers: { number: true }
               }
             ],
-            attrs: {
-              name: "fk_installer_role_id",
-              placeholder: "Role",
-              required: ""
-            },
+            attrs: { required: "" },
             on: {
               change: function($event) {
                 var $$selectedVal = Array.prototype.filter
@@ -18939,19 +18944,13 @@ var render = function() {
               }
             }
           },
-          [
-            _c("option", { attrs: { value: "2001" } }, [_vm._v("Installer")]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "Project Coordinator" } }, [
-              _vm._v("Project Coordinator")
-            ]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "Project Manager" } }, [
-              _vm._v("Project Manager")
-            ]),
-            _vm._v(" "),
-            _c("option", { attrs: { value: "Admin" } }, [_vm._v("Admin")])
-          ]
+          _vm._l(_vm.roles, function(role) {
+            return _c(
+              "option",
+              { domProps: { value: role.installer_role_id } },
+              [_vm._v(_vm._s(role.installer_role_name))]
+            )
+          })
         ),
         _vm._v(" "),
         _c(
@@ -18965,7 +18964,7 @@ var render = function() {
                 expression: "fk_user_id"
               }
             ],
-            attrs: { placeholder: "Select user" },
+            attrs: { required: "" },
             on: {
               change: function($event) {
                 var $$selectedVal = Array.prototype.filter
