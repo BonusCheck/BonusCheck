@@ -5,8 +5,9 @@
       <p>Username</p>
     	<input type="text" name="user_name" v-model="user_name">
       <p>Password</p>
-    	<input type="text" name ="password" v-model="password">
+    	<input type="password" name ="password" v-model="password">
     	<input type="submit" value="Submit">
+      <p class="hidden" id="confirmation">User added!</p>
     </form>
   </div>
 </template>
@@ -25,7 +26,6 @@ export default {
   },
   methods: {
     onSubmit: function(){
-      console.log(this.user_name);
       axios({
         method: 'post',
         url: '/users/add',
@@ -36,16 +36,13 @@ export default {
       })
       .then(req => {
         if(req.data.ok){
-          console.log('User added!');
+          document.getElementById('confirmation').classList.remove('hidden');
         };
       })
       .catch(err => {
         console.log(err);
       })
     }
-  },
-  beforeMount(){
-  	console.log(this);
   }
 }; 
 </script>
