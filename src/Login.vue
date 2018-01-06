@@ -3,7 +3,7 @@
 	    <!-- Navbar starts -->       
 	    <nav class="navbar navbar-fixed-top">
 		    <div class="container">		       
-	            <a class="navbar-brand " href="index.html"><img src="images/logo-web3.gif"></a>
+	            <a class="navbar-brand " href="index.html"><img src="/dist/assets/images/logo-web3.gif"></a>
 	           	<button  class="navbar-toggle" data-toggle="collapse" data-target="#navbar-item"  >
 		            <span class="sr-only">Toggle navigation</span>
 		            <span class="icon-bar"></span>
@@ -14,7 +14,7 @@
 			          <ul class="nav navbar-nav navbar-right">
 			            <li ><router-link :to="'home'">Home</router-link></li>
 			            <li><a   href="#">Contact</a></li>
-			            <li ><a  href="signup.html">Sign up</a></li>
+			            <li ><a  href="#"><router-link :to="'signup'"  >Sign up</router-link></a></li>
 			            <li><button class=" btn-danger navbar-btn "><a style="color: #fff;" href="#">Log in</a></button></li>
 			          </ul>
 			    </div><!--/.nav-collapse -->
@@ -70,18 +70,23 @@ export default {
 };
 </script>
 
+
+
 <style scoped>
-	body{
+	.overlay{
+	   
 	    background-image: url(https://www.pega.com/sites/pega.com/files/banking-case-study-bg.jpg);
-	    background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center center;
-		position: relative;
-	    top:0;
-	    bottom: 0;
-		height:100%;
-		z-index: -10;	
+    background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	position: fixed;
+    top:0;
+    bottom: 0;
+	height:100%;
+	z-index: -10;
+	width:100%;
 	}
+
 
 	/*NAVBAR START*/
 	.navbar-brand{
@@ -93,6 +98,7 @@ export default {
 		position: fixed;
 		font-weight: 800;
 		letter-spacing: -1px;
+		margin-top: 20px;
 	}
 	.nav li a{
 		color: #000;
@@ -106,7 +112,7 @@ export default {
 
 	.title{
 	   
-	   margin-top: 60px;
+	   margin-top: 260px;
 	   text-align: center;
 	}
 	.title h1{
@@ -140,9 +146,7 @@ export default {
 		width: 80%;
 	}
 
-	.row{
-		margin-top: 220px;
-	}
+	
 	/*NAVBAR END*/
 
 
@@ -186,7 +190,7 @@ export default {
 		-o-box-shadow: 0 1px 0 #fff inset;
 		box-shadow: 0 1px 0 #fff inset;
 		border: 1px solid #c4c6ca;
-		margin: 0;
+		margin-top: 220px;
 		padding: 25px 0 0;
 		position: relative;
 		text-align: center;
