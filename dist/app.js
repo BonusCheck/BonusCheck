@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -20499,3 +20500,5 @@ if (false) {
 /***/ })
 /******/ ]);
 //# sourceMappingURL=app.js.map
+=======
+>>>>>>> 2364e7a79812951193a35020e42dc9002ef6ccd5
