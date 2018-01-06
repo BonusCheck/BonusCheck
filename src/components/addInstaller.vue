@@ -11,6 +11,9 @@
         <option value="Project Manager">Project Manager</option>
         <option value="Admin">Admin</option>
       </select>
+      <select v-model="fk_user_id" placeholder="Select user">
+        <option v-for="user in users" v-bind:value="user.user_id">{{user.user_name}}</option>
+      </select>
       <input type="submit" value="Submit">
       <p class="hidden" id="confirmation">Added</p>
     </form>
@@ -39,8 +42,8 @@ export default {
         method: 'post',
         url: '/installers/add',
         data: {
-          created_by_id: this.user,
-          modified_by_id: this.user,
+          created_by_id: this.user.userID,
+          modified_by_id: this.user.userID,
           first_name: this.first_name,
           last_name: this.last_name,
           current_wage: this.current_wage,
@@ -52,7 +55,11 @@ export default {
         console.log(req.data);
         document.getElementById('confirmation').innerHTML = this.first_name + ' added';
         document.getElementById('confirmation').classList.remove('hidden');
-        Object.assign(this.$data, this.$options.data.call(this))
+        this.first_name = '',
+        this.last_name = '',
+        this.current_wage = '',
+        this.fk_installer_role_id = '',
+        this.fk_user_id = '';
       })
       .catch(err => {
         console.log(err);

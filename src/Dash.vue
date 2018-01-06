@@ -66,7 +66,10 @@ export default {
 	 axios.get('/session/data')
 	 .then(req => {
       console.log(req.data.roll);
-      this.user = req.data.userID;
+      this.user = {
+        userID: req.data.userID,
+        installerID: req.data.installerID
+      }
 
       //If no session received, return home
       if(!req.data.roll){

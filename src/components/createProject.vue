@@ -38,8 +38,8 @@ export default {
   data() {
     return {
 
-    	created_by_id: this.user,
-    	modified_by_id: this.user, 
+    	created_by_id: this.user.userID,
+    	modified_by_id: this.user.userID, 
     	job_name: '',
     	start_date: '',
     	end_date: '',
@@ -59,8 +59,8 @@ export default {
         method: 'post',
         url: '/jobs/add',
         data: {
-        created_by_id: this.user,
-    	modified_by_id: this.user, 
+        created_by_id: this.user.userID,
+    	modified_by_id: this.user.userID, 
     	job_name: this.job_name,
     	start_date: this.start_date,
     	end_date: this.end_date,
