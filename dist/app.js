@@ -1876,7 +1876,6 @@ var axios = __webpack_require__(2);
   },
   methods: {
     onSubmit: function(){
-      console.log(this.user_name);
       __WEBPACK_IMPORTED_MODULE_0_axios___default()({
         method: 'post',
         url: '/users/add',
@@ -1894,9 +1893,6 @@ var axios = __webpack_require__(2);
         console.log(err);
       })
     }
-  },
-  beforeMount: function beforeMount(){
-  	console.log(this);
   }
 }); 
 
@@ -1924,6 +1920,8 @@ var axios = __webpack_require__(2);
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
 //
@@ -1942,13 +1940,36 @@ var axios = __webpack_require__(2);
 //
 //
 //
-//
-//
+
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: "add-installer",
-  props: ["user"]
+  props: ["user"],
+  data: function data(){
+    return {
+      first_name: '',
+      last_name: '',
+      current_wage: '',
+      fk_installer_role_id: ''
+    }
+  },
+  methods: {
+    onSubmit: function(){
+      __WEBPACK_IMPORTED_MODULE_0_axios___default()({
+        method: 'post',
+        url: '/installers/add',
+        data: {
+          created_by_id: this.user,
+          modified_by_id: this.user,
+          first_name: this.first_name,
+          last_name: this.last_name,
+          current_wage: this.current_wage,
+          fk_installer_role_id: this.fk_installer_role_id
+        }
+      })
+    }
+  }
 }); 
 
 
@@ -18126,80 +18147,150 @@ var render = function() {
   return _c("div", [
     _c("h1", [_vm._v("Add Installer")]),
     _vm._v(" "),
-    _c("form", { attrs: { method: "post", action: "/installers/add" } }, [
-      _c("input", {
-        attrs: { type: "hidden", name: "created_by_id" },
-        domProps: { value: this.user }
-      }),
-      _vm._v(" "),
-      _c("input", {
-        attrs: { type: "hidden", name: "modified_by_id" },
-        domProps: { value: this.user }
-      }),
-      _vm._v(" "),
-      _c("input", {
-        attrs: {
-          type: "text",
-          name: "first_name",
-          placeholder: "First name",
-          required: ""
-        }
-      }),
-      _vm._v(" "),
-      _c("input", {
-        attrs: {
-          type: "text",
-          name: "last_name",
-          placeholder: "Last name",
-          required: ""
-        }
-      }),
-      _vm._v(" "),
-      _c("input", {
-        attrs: {
-          type: "text",
-          name: "current_wage",
-          placeholder: "Current wage",
-          required: ""
-        }
-      }),
-      _vm._v(" "),
-      _vm._m(0),
-      _vm._v(" "),
-      _c("input", { attrs: { type: "submit", value: "Submit" } })
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "select",
+    _c(
+      "form",
       {
-        attrs: {
-          name: "fk_installer_role_id",
-          placeholder: "Role",
-          required: ""
+        on: {
+          submit: function($event) {
+            $event.preventDefault()
+            _vm.onSubmit($event)
+          }
         }
       },
       [
-        _c("option", { attrs: { value: "Installer" } }, [_vm._v("Installer")]),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.first_name,
+              expression: "first_name"
+            }
+          ],
+          attrs: {
+            type: "text",
+            name: "first_name",
+            placeholder: "First name",
+            required: ""
+          },
+          domProps: { value: _vm.first_name },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.first_name = $event.target.value
+            }
+          }
+        }),
         _vm._v(" "),
-        _c("option", { attrs: { value: "Project Coordinator" } }, [
-          _vm._v("Project Coordinator")
-        ]),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.last_name,
+              expression: "last_name"
+            }
+          ],
+          attrs: {
+            type: "text",
+            name: "last_name",
+            placeholder: "Last name",
+            required: ""
+          },
+          domProps: { value: _vm.last_name },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.last_name = $event.target.value
+            }
+          }
+        }),
         _vm._v(" "),
-        _c("option", { attrs: { value: "Project Manager" } }, [
-          _vm._v("Project Manager")
-        ]),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.current_wage,
+              expression: "current_wage"
+            }
+          ],
+          attrs: {
+            type: "text",
+            name: "current_wage",
+            placeholder: "Current wage",
+            required: ""
+          },
+          domProps: { value: _vm.current_wage },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.current_wage = $event.target.value
+            }
+          }
+        }),
         _vm._v(" "),
-        _c("option", { attrs: { value: "Admin" } }, [_vm._v("Admin")])
+        _c(
+          "select",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.fk_installer_role_id,
+                expression: "fk_installer_role_id"
+              }
+            ],
+            attrs: {
+              name: "fk_installer_role_id",
+              placeholder: "Role",
+              required: ""
+            },
+            on: {
+              change: function($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function(o) {
+                    return o.selected
+                  })
+                  .map(function(o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.fk_installer_role_id = $event.target.multiple
+                  ? $$selectedVal
+                  : $$selectedVal[0]
+              }
+            }
+          },
+          [
+            _c("option", { attrs: { value: "Installer" } }, [
+              _vm._v("Installer")
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "Project Coordinator" } }, [
+              _vm._v("Project Coordinator")
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "Project Manager" } }, [
+              _vm._v("Project Manager")
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "Admin" } }, [_vm._v("Admin")])
+          ]
+        ),
+        _vm._v(" "),
+        _c("input", { attrs: { type: "submit", value: "Submit" } })
       ]
     )
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);

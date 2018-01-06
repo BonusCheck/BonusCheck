@@ -26,7 +26,6 @@ export default {
   },
   methods: {
     onSubmit: function(){
-      console.log(this.user_name);
       axios({
         method: 'post',
         url: '/users/add',
@@ -44,9 +43,6 @@ export default {
         console.log(err);
       })
     }
-  },
-  beforeMount(){
-  	console.log(this);
   }
 }; 
 </script>
