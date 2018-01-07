@@ -40,7 +40,7 @@ customerRouter.post("/add", function(req, res) {
 });
 
 customerRouter.delete("/delete", function(req, res) {
-  var condition = "id = " + req.body.customer_id;
+  var condition = "customer_id = " + req.body.customer_id;
 
   customer.delete(condition, function(result) {
     if (result.affectedRows == 0) {
@@ -53,7 +53,7 @@ customerRouter.delete("/delete", function(req, res) {
 });
 
 customerRouter.put("/update", function(req, res) {
-  var condition = "id = " + req.body.customer_id;
+  var condition = "customer_id = " + req.body.customer_id;
 
   customer.update({
     //HOW DO I TAKE IN RANDOM FILEDS HERE?  DO I COMPARE THE VALUES FIELD BY FIELD?
