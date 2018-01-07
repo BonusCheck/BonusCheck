@@ -45,6 +45,7 @@ installerRouter.get("/list", function(req, res) {
 });
 
 installerRouter.post("/add", function(req, res) {
+  
   installer.create([
     "created_by_id", "modified_by_id", "first_name", "last_name", "current_wage", "fk_installer_role_id", "fk_user_id"
   ], [
@@ -56,7 +57,7 @@ installerRouter.post("/add", function(req, res) {
 });
 
 installerRouter.delete("/delete", function(req, res) {
-  var condition = "id = " + req.body.installer_id;
+  var condition = "installer_id = " + req.body.installer_id;
 
   installer.delete(condition, function(result) {
     if (result.affectedRows == 0) {
@@ -69,7 +70,7 @@ installerRouter.delete("/delete", function(req, res) {
 });
 
 installerRouter.put("/update", function(req, res) {
-  var condition = "id = " + req.body.installer_id;
+  var condition = "installer_id = " + req.body.installer_id;
 
   installer.update({
     //HOW DO I TAKE IN RANDOM FILEDS HERE?  DO I COMPARE THE VALUES FIELD BY FIELD?
@@ -97,7 +98,7 @@ installerRouter.get("/hours", function(req, res) {
 });
 
 installerRouter.post("/hours/add", function(req, res) {
-  console.log(req);
+  
   installer_hrs.create([
     "created_by_id", "modified_by_id", "reg_hours_worked", "ot_hours_worked", "work_date", "fk_job_id", "fk_installer_id"
   ], [
@@ -109,7 +110,7 @@ installerRouter.post("/hours/add", function(req, res) {
 });
 
 installerRouter.delete("/hours/delete", function(req, res) {
-  var condition = "id = " + req.body.installer_hours_id;
+  var condition = "installers_hours_id = " + req.body.installer_hours_id;
 
   installer_hrs.delete(condition, function(result) {
     if (result.affectedRows == 0) {
@@ -122,7 +123,7 @@ installerRouter.delete("/hours/delete", function(req, res) {
 });
 
 installerRouter.put("/hours/update", function(req, res) {
-  var condition = "id = " + req.body.installer_hours_id;
+  var condition = "installers_hours_id = " + req.body.installer_hours_id;
 
   installer_hrs.update({
     //HOW DO I TAKE IN RANDOM FILEDS HERE?  DO I COMPARE THE VALUES FIELD BY FIELD?
@@ -149,12 +150,11 @@ installerRouter.get("/payments", function(req, res) {
   });
 });
 
-installerRouter.post("/payments/add", function(req, res) {
-  console.log(req);
+installerRouter.post("/payments/schedule/add", function(req, res) {
   installer_pmt.create([
-    "created_by_id", "modified_by_id", "date_paid", "scheduled_pay_date", "payment_amount", "fk_installer_id", "fk_payment_type_id", "fk_job_id"
+    "created_by_id", "modified_by_id", "scheduled_pay_date", "scheduled_payment_amount", "fk_installer_id", "fk_payment_type_id", "fk_job_id"
   ], [
-    req.body.created_by_id, req.body.modified_by_id, req.body.date_paid, req.body.scheduled_pay_date, req.body.payment_amount, req.body.fk_installer_id, req.body.fk_payment_type_id, req.body.fk_job_id
+    req.body.created_by_id, req.body.modified_by_id, req.body.scheduled_pay_date, req.body.scheduled_payment_amount, req.body.fk_installer_id, req.body.fk_payment_type_id, req.body.fk_job_id
   ], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
@@ -162,7 +162,7 @@ installerRouter.post("/payments/add", function(req, res) {
 });
 
 installerRouter.delete("/payments/delete", function(req, res) {
-  var condition = "id = " + req.body.installer_hours_id;
+  var condition = "payment_id = " + req.body.installer_hours_id;
 
   installer_pmt.delete(condition, function(result) {
     if (result.affectedRows == 0) {
@@ -174,8 +174,20 @@ installerRouter.delete("/payments/delete", function(req, res) {
   });
 });
 
+installerRouter.put("/payments/make/add", function(req, res) {
+  var condition = "payment_id = " + req.body.payment_id;
+  var pairs = {
+    modified_by_id: req.body.modified_by_id,
+    date_paid: req.body.date_paid,
+    payment_amount: req.body.payment_amount
+  }
+  installer_pmt.update(pairs, condition, function(result) {
+    res.json({ id: result.insertId });
+  });
+});
+
 installerRouter.put("/payments/update", function(req, res) {
-  var condition = "id = " + req.body.installer_hours_id;
+  var condition = "payment_id = " + req.body.installer_hours_id;
 
   installer_pmt.update({
     //HOW DO I TAKE IN RANDOM FILEDS HERE?  DO I COMPARE THE VALUES FIELD BY FIELD?
@@ -216,11 +228,11 @@ installerRouter.get("/roles/list", function(req, res) {
 });
 
 installerRouter.post("/roles/add", function(req, res) {
-  console.log(req);
+  
   installer_roles.create([
-    "created_by_id", "modified_by_id", "payment_type"
+    "created_by_id", "modified_by_id", "installer_role_name", "role_weight", "min_base", "max_base", "individual_bonus", "team_bonus", "bonus_weight"
   ], [
-    req.body.created_by_id, req.body.modified_by_id, req.body.payment_type
+    req.body.created_by_id, req.body.modified_by_id, req.body.installer_role_name, req.body.role_weight, req.body.min_base, req.body.max_base, req.body.individual_bonus, req.body.team_bonus, req.body.bonus_weight,
   ], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
@@ -228,8 +240,7 @@ installerRouter.post("/roles/add", function(req, res) {
 });
 
 installerRouter.delete("/roles/delete", function(req, res) {
-  var condition = "id = " + req.body.payment_type_id;
-
+  var condition = "installer_role_id = " + req.body.installer_role_id;
   installer_roles.delete(condition, function(result) {
     if (result.affectedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
@@ -241,7 +252,7 @@ installerRouter.delete("/roles/delete", function(req, res) {
 });
 
 installerRouter.put("/roles/update", function(req, res) {
-  var condition = "id = " + req.body.role_id;
+  var condition = "role_id = " + req.body.role_id;
 
   installer_roles.update({
     //HOW DO I TAKE IN RANDOM FILEDS HERE?  DO I COMPARE THE VALUES FIELD BY FIELD?

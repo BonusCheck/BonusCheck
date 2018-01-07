@@ -40,7 +40,7 @@ paymentRouter.post("/add", function(req, res) {
 });
 
 paymentRouter.delete("/delete", function(req, res) {
-  var condition = "id = " + req.body.payment_type_id;
+  var condition = "payment_type_id = " + req.body.payment_type_id;
 
   payment_type.delete(condition, function(result) {
     if (result.affectedRows == 0) {
@@ -53,7 +53,7 @@ paymentRouter.delete("/delete", function(req, res) {
 });
 
 paymentRouter.put("/update", function(req, res) {
-  var condition = "id = " + req.body.payment_type_id;
+  var condition = "payment_type_id = " + req.body.payment_type_id;
 
   payment_type.update({
     //HOW DO I TAKE IN RANDOM FILEDS HERE?  DO I COMPARE THE VALUES FIELD BY FIELD?

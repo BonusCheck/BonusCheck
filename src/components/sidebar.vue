@@ -8,7 +8,8 @@
          <li class="has-children account">
           <a href="#0"  >
             <img  src="/dist/assets/images/user.jpg" alt="avatar">
-            {{user.username}}
+          <!--   {{user.username}} -->
+          Ruchi
           </a>
           <ul>
             <li><a href="#0">My Account</a></li>
@@ -25,8 +26,10 @@
   <main class="cd-main-content" >
     <nav class="cd-side-nav">
       <ul>
-
-        <li class="has-children Overviews">
+        <li v-for="button in buttons">
+          <a v-on:click="$parent.updateView(button.link)">{{button.name}}</a>
+        </li>
+         <li class="has-children Overviews">
          <a v-on:click="$parent.updateView('create-customer')"> <i class="fa fa-th-large" ></i>Customer</a>                   
         </li>       
         <li class="has-children comments">
@@ -65,10 +68,7 @@
            <li><a v-on:click="$parent.updateView('modify-roles')">Modify Roles</a></li>
           </ul> -->
         </li>
-       
-       
-                      
-      </ul>
+    </ul>
     </nav>
         <!-- %%%%%%%%  Side NAVBAR END %%%%%%% -->
 
@@ -83,7 +83,7 @@
 
 export default {
   name: "side-bar",
-  props: ["user"]
+  props: ["buttons"]
 };
 
 </script>

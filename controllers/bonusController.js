@@ -40,7 +40,7 @@ bonusRouter.post("/add", function(req, res) {
 });
 
 bonusRouter.delete("/delete", function(req, res) {
-  var condition = "id = " + req.body.bonus_id;
+  var condition = "bonus_id = " + req.body.bonus_id;
 
   bonus.delete(condition, function(result) {
     if (result.affectedRows == 0) {
@@ -53,7 +53,7 @@ bonusRouter.delete("/delete", function(req, res) {
 });
 
 bonusRouter.put("/update", function(req, res) {
-  var condition = "id = " + req.body.req.body.bonus_id;;
+  var condition = "bonus_id = " + req.body.req.body.bonus_id;;
 
   bonus.update({
     //HOW DO I TAKE IN RANDOM FILEDS HERE?  DO I COMPARE THE VALUES FIELD BY FIELD?

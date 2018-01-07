@@ -24,7 +24,7 @@ export default {
   		url: '/payments'
   	})
   	.then(req => {
-  		console.log(req.data);
+  		
   	})
   	.catch(err => {
   		console.log(err);

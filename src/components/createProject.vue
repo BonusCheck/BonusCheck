@@ -18,19 +18,19 @@
     	<p>End Date</p>
     	<input type="date" name="end_date" v-model.trim="end_date">
     	<p>Hours Bid</p>
-    	<input type="text" name ="hours_bid" v-model.number="hours_bid">
+    	<input type="number" name ="hours_bid" v-model.number="hours_bid">
     	<p>Estimated Start Date</p>
     	<input type="date" name="est_start_date" v-model.trim="est_start_date">
     	<p>Estimated End Date</p>
     	<input type="date" name="est_end_date" v-model.trim="est_end_date">
     	<p>Customer ID</p>
-    	<input type="text" name="fk_customer_id" v-model.number="fk_customer_id">
+    	<input type="number" name="fk_customer_id" v-model.number="fk_customer_id">
     	<p>Bill Rate</p>
     	<input type="text" name="bill_rate" v-model.trim="bill_rate">
     	<p>Job Status</p>
     	<input type="text" name="job_status" v-model.trim="job_status">
     	<p>Max Labor Cost</p>
-    	<input type="text" name="max_labor_cost" v-model=.number"max_labor_cost">
+    	<input type="number" name="max_labor_cost" v-model.number="max_labor_cost">
 
     	<input type="submit" value="Submit">
     </form>

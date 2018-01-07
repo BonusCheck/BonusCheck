@@ -17,7 +17,7 @@ import axios from 'axios';
 export default {
   name: 'bonus-schedule',
   beforeMount(){
-  	axios.get('/bonuses')
+  	axios.get('/installers/payments')
   	.then(req => {
   		console.log(req.data.bonuses);
   	})
