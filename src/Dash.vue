@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div >
 
     <side-bar :user="user"></side-bar>
-    <component :is="currentView" :user="user"></component> 
+    <component :is="currentView" :user="user" ></component> 
      
  
   </div>

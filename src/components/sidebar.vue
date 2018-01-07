@@ -8,7 +8,7 @@
          <li class="has-children account">
           <a href="#0"  >
             <img  src="/dist/assets/images/user.jpg" alt="avatar">
-            {{user}}
+            {{user.username}}
           </a>
           <ul>
             <li><a href="#0">My Account</a></li>
@@ -34,56 +34,36 @@
         </li>
 
         <li class="has-children bookmarks">
-          <a  class="button"><i class="fa fa-table"></i> Bonus</a>
-          <ul>
-            <li><a v-on:click="$parent.updateView('modify-bonuses')">Modify Bonuses</a></li>
-            <li><a v-on:click="$parent.updateView('')">View Bonus History</a></li>
-            <li><a v-on:click="$parent.updateView('bonus-schedule')">View Bonus Schedule</a></li>
-          </ul>
+          <a  v-on:click="$parent.updateView('bonus-schedule')"><i class="fa fa-table"></i> Bonus</a>
+          
         </li> 
-		<li class="has-children bookmarks">
-          <a  class="button"><i class="fa fa-table"></i> Payments</a>
-          <ul>
-            <li><a v-on:click="$parent.updateView('payment-history')">View Payment History</a></li>
-            <li><a v-on:click="$parent.updateView('create-payments')">Create Payments</a></li>
-            <li><a v-on:click="$parent.updateView('modify-payments')">Modify Payments</a></li>
-            <li><a v-on:click="$parent.updateView('create-payment-types')">Create Payments</a></li>
-            <li><a v-on:click="$parent.updateView('modify-payment-types')">Modify Payment Types</a></li>
-          </ul>
+		    <li class="has-children bookmarks">
+          <a  v-on:click="$parent.updateView('payment-history')"><i class="fa fa-table"></i> Payments</a>
+          
         </li> 
-
         <li class="has-children users">
-          <a  class="button"><i class="fa fa-user"></i> User</a>       
-          <ul>
-           <li><a v-on:click="$parent.updateView('add-user')">Add User</a></li>
-           <li><a v-on:click="$parent.updateView('delete-user')">Delete User</a></li>
-          </ul>
+          <a  v-on:click="$parent.updateView('add-user')"><i class="fa fa-user"></i> User</a>       
+         
         </li>
        
         <li class="has-children users">
-          <a  class="button"><i class="fa fa-user"></i> Jobs</a>       
-          <ul>
+          <a  v-on:click="$parent.updateView('')"><i class="fa fa-user"></i> Jobs</a>       
+          <!-- <ul>
            <li><a v-on:click="$parent.updateView('')">View transaction logs</a></li>
            <li><a v-on:click="$parent.updateView('')">View project data</a></li>
-          </ul>
+          </ul> -->
         </li>
 
          <li class="has-children users">
-          <a  class="button"><i class="fa fa-user"></i> Project</a>       
-          <ul>
-           <li><a v-on:click="$parent.updateView('add-hours')">Enter Time Worked</a></li>
-           <li><a v-on:click="$parent.updateView('')">Approve Time</a></li>
-           <li><a v-on:click="$parent.updateView('create-project')">Create Project</a></li>
-           <li><a v-on:click="$parent.updateView('modify-project')">Modify project</a></li>
-          </ul>
+          <a  v-on:click="$parent.updateView('create-project')"><i class="fa fa-user"></i> Project</a>                 
         </li>
 
         <li class="has-children users">
-          <a  class="button"><i class="fa fa-user"></i> Admin</a>       
-          <ul>
+          <a v-on:click="$parent.updateView('create-roles')"><i class="fa fa-user"></i> Admin</a>       
+          <!-- <ul>
            <li><a v-on:click="$parent.updateView('create-roles')">Create roles</a></li>
            <li><a v-on:click="$parent.updateView('modify-roles')">Modify Roles</a></li>
-          </ul>
+          </ul> -->
         </li>
        
        
@@ -684,7 +664,7 @@ Sidebar
 }
 @media only screen and (min-width: 768px) {
   .cd-side-nav {
-    position: relative;
+    
     float: left;
     top: fixed;
     width: 110px;

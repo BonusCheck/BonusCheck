@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="mainDiv">
+   
     <h1>Add Installer</h1>
     <form v-on:submit.prevent="onSubmit" id="form">
       <input type="text" name="first_name" placeholder="First name" v-model.trim="first_name" required>
@@ -90,3 +91,15 @@ export default {
   }
 }; 
 </script>
+<style scoped>
+
+.mainDiv{
+     margin:200px 50px 0 200px;
+     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
+     height: 200px;
+     background-color: #fff;
+     font-size: 16px;
+     padding: 40px;
+
+}
+</style>
