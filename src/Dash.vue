@@ -65,7 +65,7 @@ export default {
   beforeMount(){
 	 axios.get('/session/data')
 	 .then(req => {
-      console.log(req.data.roll);
+      console.log(req.data);
       this.user = {
         userID: req.data.userID,
         installerID: req.data.installerID
@@ -148,7 +148,6 @@ export default {
           }
         );
       }
-      console.log(this.buttons);
    })
   .catch(function(err){
     this.$router.show('Home')

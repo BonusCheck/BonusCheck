@@ -33,13 +33,13 @@
 			</div>
 		    <div class="col-md-6 col-sm-6 login-col">
 				<section id="content">
-					<form name="signin" method="post" action="/auth">
+					<form v-on:submit.prevent="onSubmit" id="form">
 						<h1>Login </h1>
 						<div>
-							<input type="text" placeholder="Username" required="" id="username" name="user_name"/>
+							<input type="text" placeholder="Username" required id="username" v-model.trim="username"/>
 						</div>
 						<div>
-							<input type="password" placeholder="Password" required="" id="password" name="password"/>
+							<input type="password" placeholder="Password" required id="password" v-model.trim="password"/>
 						</div>
 						<div>
 							<input type="submit" class="login" value="Log in" />
@@ -59,6 +59,31 @@ const axios = require('axios');
 
 export default {
   name: 'login',
+  data(){
+  	return {
+  		username: '',
+  		password: ''
+  	}
+  },
+  methods: {
+  	onSubmit: function(){
+  		axios({
+  			method: 'post',
+  			url: '/auth',
+  			data: {
+  				user_name: this.username,
+  				password: this.password
+  			}
+  		})
+  		.then(req => {
+  			console.log(req);
+  			this.$router.push('/dash');
+  		})
+  		.catch(err => {
+  			console.log(err);
+  		})
+  	}
+  },
   beforeMount(){
   	axios.get('/session/data')
   	.then(req => {
