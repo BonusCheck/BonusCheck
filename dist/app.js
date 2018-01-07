@@ -2868,10 +2868,10 @@ mounted: function mounted (){
     //Get installers
     __WEBPACK_IMPORTED_MODULE_0_axios___default()({
       method: 'get',
-      url: '/installers'
+      url: '/installers/payments'
     })
     .then(function (req) {
-      this$1.installers = req.data.installers;
+      console.log(req.data)
     })
     .catch(function (err) {
       console.log(err);
@@ -21221,7 +21221,7 @@ var render = function() {
         }),
         _vm._v(" "),
         _c("p", [_vm._v("Installer")]),
-        _vm._v("XXXXXXXXXXXXXXXXXXXXXXXXXX\n      "),
+        _vm._v(" "),
         _c(
           "select",
           {

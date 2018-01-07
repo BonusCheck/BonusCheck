@@ -81,10 +81,10 @@ export default {
     //Get installers
     axios({
       method: 'get',
-      url: '/installers'
+      url: '/installers/payments'
     })
     .then(req => {
-      this.installers = req.data.installers;
+      console.log(req.data)
     })
     .catch(err => {
       console.log(err);

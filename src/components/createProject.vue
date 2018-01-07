@@ -21,7 +21,7 @@
     	<p>Job Status</p>
     	<input type="text" name="job_status" v-model.trim="job_status">
     	<p>Max Labor Cost</p>
-    	<input type="number" name="max_labor_cost" v-model.number=.number"max_labor_cost">
+    	<input type="number" name="max_labor_cost" v-model.number="max_labor_cost">
 
     	<input type="submit" value="Submit">
     </form>
