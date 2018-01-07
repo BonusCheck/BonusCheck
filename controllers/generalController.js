@@ -61,9 +61,11 @@ generalRouter.post("/auth", function(req, res) {
         sessData.installer_id = data2[0].installer_id;
         console.log(sessData.installer_id);
         console.log(vueObject);
-      });
-        //res.json(vueObject);
         res.redirect("/dash");
+      });
+      console.log(sessData.installer_id);
+        //res.json(vueObject);
+      
       });
     }
   });

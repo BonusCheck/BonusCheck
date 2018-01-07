@@ -45,10 +45,11 @@ installerRouter.get("/list", function(req, res) {
 });
 
 installerRouter.post("/add", function(req, res) {
+  console.log(req);
   installer.create([
-    "created_by_id", "modified_by_id", "first_name", "last_name", "current_wage", "fk_installer_role_id"
+    "created_by_id", "modified_by_id", "first_name", "last_name", "current_wage", "fk_installer_role_id", "fk_user_id"
   ], [
-    req.body.created_by_id, req.body.modified_by_id, req.body.first_name, req.body.last_name, req.body.current_wage, req.body.fk_installer_role_id
+    req.body.created_by_id, req.body.modified_by_id, req.body.first_name, req.body.last_name, req.body.current_wage, req.body.installer_role_id, req.body.fk_user_id
   ], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
@@ -218,9 +219,9 @@ installerRouter.get("/roles/list", function(req, res) {
 installerRouter.post("/roles/add", function(req, res) {
   console.log(req);
   installer_roles.create([
-    "created_by_id", "modified_by_id", "payment_type"
+    "created_by_id", "modified_by_id", "installer_role_name", "role_weight", "min_base", "max_base", "individual_bonus", "team_bonus", "bonus_weight"
   ], [
-    req.body.created_by_id, req.body.modified_by_id, req.body.payment_type
+    req.body.created_by_id, req.body.modified_by_id, req.body.installer_role_name, req.body.role_weight, req.body.min_base, req.body.max_base, req.body.individual_bonus, req.body.team_bonus, req.body.bonus_weight,
   ], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
@@ -228,7 +229,7 @@ installerRouter.post("/roles/add", function(req, res) {
 });
 
 installerRouter.delete("/roles/delete", function(req, res) {
-  var condition = "id = " + req.body.payment_type_id;
+  var condition = "id = " + req.body.installer_role_id;
 
   installer_roles.delete(condition, function(result) {
     if (result.affectedRows == 0) {
