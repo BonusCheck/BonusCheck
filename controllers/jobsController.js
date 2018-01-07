@@ -53,10 +53,8 @@ jobsRouter.delete("/delete", function(req, res) {
 
 jobsRouter.put("/update", function(req, res) {
   var condition = "job_id = " + req.body.job_id;
-
-  job.update({
-    //HOW DO I TAKE IN RANDOM FILEDS HERE?  DO I COMPARE THE VALUES FIELD BY FIELD?
-  }, condition, function(result) {
+  var objColVals = req.body.data;
+  job.update(objColVals, condition, function(result) {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
