@@ -64,7 +64,7 @@ generalRouter.post("/auth", function(req, res) {
         console.log(vueObject);
         res.redirect("/dash");
       });
-        //res.json(vueObject);
+      console.log(sessData.installer_id);
       });
     }
   });
