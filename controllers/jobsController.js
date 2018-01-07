@@ -39,7 +39,7 @@ jobsRouter.post("/add", function(req, res) {
 });
 
 jobsRouter.delete("/delete", function(req, res) {
-  var condition = "id = " + req.body.job_id;
+  var condition = "job_id = " + req.body.job_id;
 
   job.delete(condition, function(result) {
     if (result.affectedRows == 0) {
@@ -52,7 +52,7 @@ jobsRouter.delete("/delete", function(req, res) {
 });
 
 jobsRouter.put("/update", function(req, res) {
-  var condition = "id = " + req.body.job_id;
+  var condition = "job_id = " + req.body.job_id;
 
   job.update({
     //HOW DO I TAKE IN RANDOM FILEDS HERE?  DO I COMPARE THE VALUES FIELD BY FIELD?
@@ -125,7 +125,7 @@ jobsRouter.post("/change-orders/add", function(req, res) {
 });
 
 jobsRouter.delete("/change-orders/delete", function(req, res) {
-  var condition = "id = " + req.body.change_orders_id;
+  var condition = "job_id = " + req.body.change_orders_id;
 
   change_ord.delete(condition, function(result) {
     if (result.affectedRows == 0) {
@@ -138,7 +138,7 @@ jobsRouter.delete("/change-orders/delete", function(req, res) {
 });
 
 jobsRouter.put("/change-orders/update", function(req, res) {
-  var condition = "id = " + req.body.change_orders_id;
+  var condition = "job_id = " + req.body.change_orders_id;
 
   change_ord.update({
     //HOW DO I TAKE IN RANDOM FILEDS HERE?  DO I COMPARE THE VALUES FIELD BY FIELD?
@@ -179,7 +179,7 @@ jobsRouter.get("/installers-joined", function(req, res) {
 
 
 jobsRouter.put("/update/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
+  var condition = "job_id = " + req.params.id;
 
   console.log("condition", condition);
 
