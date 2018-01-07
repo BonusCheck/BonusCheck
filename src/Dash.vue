@@ -20,6 +20,7 @@ import createProject from './components/createProject';
 import createCustomer from './components/createCustomer';
 import createRoles from './components/createRoles';
 import modifyRoles from './components/modifyRoles';
+import deleteRoles from './components/deleteRoles';
 import modifyCustomer from './components/modifyCustomer';
 import modifyProject from './components/modifyProject';
 import modifyBonuses from './components/modifyBonuses';
@@ -45,6 +46,7 @@ export default {
     'create-customer': createCustomer,
     'create-roles': createRoles,
     'modify-roles': modifyRoles,
+    'delete-roles': deleteRoles,
     'modify-customer': modifyCustomer,
     'modify-project': modifyProject,
     'modify-bonuses': modifyBonuses,
@@ -123,6 +125,10 @@ export default {
           {
             name: 'Modify roles',
             link: 'modify-roles'
+          },
+          {
+            name: 'Delete roles',
+            link: 'delete-roles'
           },
           {
             name: 'Modify customer',
