@@ -12,7 +12,7 @@ export default {
   beforeMount(){
   	axios.get('/bonuses')
   	.then(req => {
-  		console.log(req.data);
+  		console.log(req.data.bonuses);
   	})
   }
 };

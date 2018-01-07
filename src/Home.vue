@@ -164,7 +164,7 @@ export default {
 	}
 	.overlay{
 		position: absolute;
-		background-color: rgba(0,0,0,0.5);
+		
 		top:0;
 	    bottom: 0;
 		height: 100%;

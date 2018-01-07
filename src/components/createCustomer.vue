@@ -18,8 +18,8 @@ export default {
   data(){
     return {
       customer_name: '',
-      created_by_id: this.user,
-      modified_by_id: this.user
+      created_by_id: this.user.userID,
+      modified_by_id: this.user.userID
     }
   },
   methods: {
