@@ -1884,6 +1884,10 @@ var axios = __webpack_require__(1);
             link: 'modify-roles'
           },
           {
+            name: 'Modify customer',
+            link: 'modify-customer'
+          },
+          {
             name: 'Modify project',
             link: 'modify-project'
           },
@@ -2133,18 +2137,24 @@ mounted: function mounted (){
   name: 'delete-user',
   data: function data(){
   	return {
-  		fk_user_id: '',
+  		user_id: '',
   		users: ''
   	}
   },
   methods: {
   	onSubmit: function(){
+  		var this$1 = this;
+
   		__WEBPACK_IMPORTED_MODULE_0_axios___default()({
-  			method: 'post',
-  			url: '/users/delete'
+  			method: 'delete',
+  			url: '/users/delete',
+        data: {
+          user_id: this.user_id
+        }
   		})
   		.then(function (req) {
   			document.getElementById('confirmation').classList.remove('hidden');
+        this$1.user_id = '';
   		})
   		.catch(function (err) {
   			console.log(err);
@@ -2703,18 +2713,33 @@ mounted: function mounted (){
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: 'modify-customer',
+  props: ['user'],
+  data: function data(){
+    return {
+      role_id: '',
+      customers: ''
+    }
+  },
   beforeMount: function beforeMount(){
+  	var this$1 = this;
+
   	__WEBPACK_IMPORTED_MODULE_0_axios___default()({
   		method: 'get',
   		url: '/customers'
   	})
   	.then(function (req) {
-  		console.log(req.data.customers);
+  		this$1.customers = req.data.customers;
   	})
   	.catch(function (err) {
   		console.log(err);
@@ -19348,8 +19373,8 @@ var render = function() {
               {
                 name: "model",
                 rawName: "v-model",
-                value: _vm.fk_user_id,
-                expression: "fk_user_id"
+                value: _vm.user_id,
+                expression: "user_id"
               }
             ],
             attrs: { required: "" },
@@ -19363,7 +19388,7 @@ var render = function() {
                     var val = "_value" in o ? o._value : o.value
                     return val
                   })
-                _vm.fk_user_id = $event.target.multiple
+                _vm.user_id = $event.target.multiple
                   ? $$selectedVal
                   : $$selectedVal[0]
               }
@@ -20347,7 +20372,31 @@ var render = function() {
         _vm._v(" "),
         _c("p", [_vm._v("Max Labor Cost")]),
         _vm._v(" "),
-        _vm._v('"max_labor_cost">\n\n    \t'),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model.number",
+              value: _vm.max_labor_cost,
+              expression: "max_labor_cost",
+              modifiers: { number: true }
+            }
+          ],
+          attrs: { type: "number", name: "max_labor_cost" },
+          domProps: { value: _vm.max_labor_cost },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.max_labor_cost = _vm._n($event.target.value)
+            },
+            blur: function($event) {
+              _vm.$forceUpdate()
+            }
+          }
+        }),
+        _vm._v(" "),
         _c("input", { attrs: { type: "submit", value: "Submit" } })
       ]
     )
@@ -20912,16 +20961,47 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("h1", [_vm._v("Modify a Customer")]),
+    _vm._v(" "),
+    _c("p", [_vm._v("Select customer to modify")]),
+    _vm._v(" "),
+    _c(
+      "select",
+      {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.role_id,
+            expression: "role_id"
+          }
+        ],
+        on: {
+          change: function($event) {
+            var $$selectedVal = Array.prototype.filter
+              .call($event.target.options, function(o) {
+                return o.selected
+              })
+              .map(function(o) {
+                var val = "_value" in o ? o._value : o.value
+                return val
+              })
+            _vm.role_id = $event.target.multiple
+              ? $$selectedVal
+              : $$selectedVal[0]
+          }
+        }
+      },
+      _vm._l(_vm.customers, function(customer) {
+        return _c("option", [
+          _vm._v("\n        " + _vm._s(customer.customer_name) + "\n      ")
+        ])
+      })
+    )
+  ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("h1", [_vm._v("Modify a Customer")])])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);

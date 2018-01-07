@@ -125,6 +125,10 @@ export default {
             link: 'modify-roles'
           },
           {
+            name: 'Modify customer',
+            link: 'modify-customer'
+          },
+          {
             name: 'Modify project',
             link: 'modify-project'
           },

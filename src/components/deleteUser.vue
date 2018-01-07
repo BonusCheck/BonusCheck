@@ -3,7 +3,7 @@
   	<h1>Delete User</h1>
 	<form v-on:submit.prevent="onSubmit" id="form">
 		<p>Choose user to delete:</p>
-		<select v-model="fk_user_id" required>
+		<select v-model="user_id" required>
 			<option v-for="user in users" v-bind:value="user.user_id">{{user.user_name}}</option>
 		</select>
 		<input type="submit" value="Submit">
@@ -19,18 +19,22 @@ export default {
   name: 'delete-user',
   data(){
   	return {
-  		fk_user_id: '',
+  		user_id: '',
   		users: ''
   	}
   },
   methods: {
   	onSubmit: function(){
   		axios({
-  			method: 'post',
-  			url: '/users/delete'
+  			method: 'delete',
+  			url: '/users/delete',
+        data: {
+          user_id: this.user_id
+        }
   		})
   		.then(req => {
   			document.getElementById('confirmation').classList.remove('hidden');
+        this.user_id = '';
   		})
   		.catch(err => {
   			console.log(err);
