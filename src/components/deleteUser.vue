@@ -7,7 +7,7 @@
 			<option v-for="user in users" v-bind:value="user.user_id">{{user.user_name}}</option>
 		</select>
 		<input type="submit" value="Submit">
-      	<p class="hidden" id="confirmation">Added</p>
+      	<p class="hidden" id="confirmation">User deleted</p>
 	</form>
   </div>
 </template>
@@ -25,7 +25,16 @@ export default {
   },
   methods: {
   	onSubmit: function(){
-  		
+  		axios({
+  			method: 'post',
+  			url: '/users/delete'
+  		})
+  		.then(req => {
+  			document.getElementById('confirmation').classList.remove('hidden');
+  		})
+  		.catch(err => {
+  			console.log(err);
+  		})
   	}
   },
   beforeMount(){

@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <side-bar :user="user"></side-bar>
+    <side-bar :user="user" :buttons="buttons"></side-bar>
     <component :is="currentView" :user="user"></component> 
      
  
@@ -27,6 +27,7 @@ import createPayments from './components/createPayments';
 import modifyPayments from './components/modifyPayments';
 import createPaymentTypes from './components/createPaymentTypes';
 import modifyPaymentTypes from './components/modifyPaymentTypes';
+import schedulePayments from './components/schedulePayments'
 
 const axios = require('axios');
 
@@ -48,6 +49,7 @@ export default {
     'modify-project': modifyProject,
     'modify-bonuses': modifyBonuses,
     'create-payments': createPayments,
+    'schedule-payments': schedulePayments,
     'modify-payments': modifyPayments,
     'create-payment-types': createPaymentTypes,
     'modify-payment-types': modifyPaymentTypes,
@@ -133,6 +135,10 @@ export default {
           {
             name: 'Create payments',
             link: 'create-payments'
+          },
+          {
+            name: 'Schedule payments',
+            link: 'schedule-payments'
           },
           {
             name: 'Modify payments',

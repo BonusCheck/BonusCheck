@@ -25,8 +25,10 @@
   <main class="cd-main-content" >
     <nav class="cd-side-nav">
       <ul>
-
-        <li class="has-children Overviews">
+        <li v-for="button in buttons">
+          <a v-on:click="$parent.updateView(button.link)">{{button.name}}</a>
+        </li>
+        <!-- <li class="has-children Overviews">
          <a v-on:click="$parent.updateView('create-customer')"> <i class="fa fa-th-large" ></i>Customer</a>                   
         </li>       
         <li class="has-children comments">
@@ -84,7 +86,7 @@
            <li><a v-on:click="$parent.updateView('create-roles')">Create roles</a></li>
            <li><a v-on:click="$parent.updateView('modify-roles')">Modify Roles</a></li>
           </ul>
-        </li>
+        </li> -->
        
        
                       
@@ -103,7 +105,7 @@
 
 export default {
   name: "side-bar",
-  props: ["user"]
+  props: ["buttons"]
 };
 
 </script>

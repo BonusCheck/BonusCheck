@@ -176,7 +176,7 @@ installerRouter.delete("/payments/delete", function(req, res) {
 });
 
 installerRouter.put("/payments/make/add", function(req, res) {
-  var condition = "id = " + req.body.payment_id;
+  var condition = "payment_id = " + req.body.payment_id;
   var pairs = {
     modified_by_id: req.body.modified_by_id,
     date_paid: req.body.date_paid,
