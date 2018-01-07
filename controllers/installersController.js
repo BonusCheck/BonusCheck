@@ -45,7 +45,7 @@ installerRouter.get("/list", function(req, res) {
 });
 
 installerRouter.post("/add", function(req, res) {
-  console.log(req);
+  
   installer.create([
     "created_by_id", "modified_by_id", "first_name", "last_name", "current_wage", "fk_installer_role_id", "fk_user_id"
   ], [
@@ -98,7 +98,7 @@ installerRouter.get("/hours", function(req, res) {
 });
 
 installerRouter.post("/hours/add", function(req, res) {
-  console.log(req);
+  
   installer_hrs.create([
     "created_by_id", "modified_by_id", "reg_hours_worked", "ot_hours_worked", "work_date", "fk_job_id", "fk_installer_id"
   ], [
@@ -150,12 +150,12 @@ installerRouter.get("/payments", function(req, res) {
   });
 });
 
-installerRouter.post("/payments/add", function(req, res) {
-  console.log(req);
+installerRouter.post("/payments/schedule/add", function(req, res) {
+  
   installer_pmt.create([
-    "created_by_id", "modified_by_id", "date_paid", "scheduled_pay_date", "payment_amount", "fk_installer_id", "fk_payment_type_id", "fk_job_id"
+    "created_by_id", "modified_by_id", "scheduled_pay_date", "scheduled_payment_amount", "fk_installer_id", "fk_payment_type_id", "fk_job_id"
   ], [
-    req.body.created_by_id, req.body.modified_by_id, req.body.date_paid, req.body.scheduled_pay_date, req.body.payment_amount, req.body.fk_installer_id, req.body.fk_payment_type_id, req.body.fk_job_id
+    req.body.created_by_id, req.body.modified_by_id, req.body.scheduled_pay_date, req.body.scheduled_payment_amount, req.body.fk_installer_id, req.body.fk_payment_type_id, req.body.fk_job_id
   ], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
@@ -172,6 +172,18 @@ installerRouter.delete("/payments/delete", function(req, res) {
     } else {
       res.status(200).end();
     }
+  });
+});
+
+installerRouter.put("/payments/make/add", function(req, res) {
+  var condition = "id = " + req.body.payment_id;
+  var pairs = {
+    modified_by_id: req.body.modified_by_id,
+    date_paid: req.body.date_paid,
+    payment_amount: req.body.payment_amount
+  }
+  installer_pmt.update(pairs, condition, function(result) {
+    res.json({ id: result.insertId });
   });
 });
 
@@ -217,7 +229,7 @@ installerRouter.get("/roles/list", function(req, res) {
 });
 
 installerRouter.post("/roles/add", function(req, res) {
-  console.log(req);
+  
   installer_roles.create([
     "created_by_id", "modified_by_id", "installer_role_name", "role_weight", "min_base", "max_base", "individual_bonus", "team_bonus", "bonus_weight"
   ], [
