@@ -66,11 +66,15 @@ export default {
   },
 
   beforeMount(){
-   axios.get('/session/data')
-   .then(req => {
-      console.log(req.data.roll);
-      this.user = req.data.username;
 
+	 axios.get('/session/data')
+	 .then(req => {
+      console.log(req.data);
+      this.user = {
+        userID: req.data.userID,
+        installerID: req.data.installerID,
+        username:req.data.username
+      }
       //If no session received, return home
       if(!req.data.roll){
         this.$router.push('/');
@@ -91,28 +95,16 @@ export default {
             link: 'add-installer'
           },
           {
-            name: 'View transaction logs'
-          },
-          {
             name: 'Enter time worked',
             link: 'add-hours'
-          },
-          {
-            name: 'View project data'
           },
           {
            name: 'View bonus schedule',
            link: 'bonus-schedule' 
           },
           {
-            name: 'View bonus history'
-          },
-          {
             name: 'View payment history',
             link: 'payment-history'
-          },
-          {
-            name: 'Approve time'
           },
           {
             name: 'Create a project',
@@ -156,7 +148,6 @@ export default {
           }
         );
       }
-      console.log(this.buttons);
    })
   .catch(function(err){
     console.log(err);

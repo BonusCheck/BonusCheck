@@ -16,6 +16,16 @@ const express = require("express"),
 
 //USER AND ROLE GET ROUTE - REMOVE LATER
 
+userRouter.get("/", function(req, res) {
+  user.all(function(data) {
+    var vueObject = {
+      users: data
+    };
+    console.log(vueObject);
+    res.json(vueObject);
+  });
+});
+
 userRouter.get("/list", function(req, res) {
   user.list("user_name", function(data) {
     console.log("DATA");
@@ -36,7 +46,6 @@ userRouter.post("/add", function(req, res) {
  bcrypt.genSalt(saltRounds, function(err, salt) {
   bcrypt.hash(req.body.password, salt, function(err, hash) {
     console.log(hash);
-
     user.create([
         "user_name", "password"
       ], [
