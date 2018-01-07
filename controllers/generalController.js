@@ -58,14 +58,13 @@ generalRouter.post("/auth", function(req, res) {
           user: data,
           installer: data2
         }
+        
         sessData.installer_id = data2[0].installer_id;
         console.log(sessData.installer_id);
         console.log(vueObject);
         res.redirect("/dash");
       });
       console.log(sessData.installer_id);
-        //res.json(vueObject);
-      
       });
     }
   });
@@ -96,7 +95,8 @@ generalRouter.get("/session/data", function(req, res) {
       const user = {
             userID: req.session.user_id,
             username: req.session.user_name,
-            roll: req.session.user_role_name
+            roll: req.session.user_role_name,
+            installerID: req.session.installer_id
       };
 
       res.json(user);

@@ -49,7 +49,7 @@ installerRouter.post("/add", function(req, res) {
   installer.create([
     "created_by_id", "modified_by_id", "first_name", "last_name", "current_wage", "fk_installer_role_id", "fk_user_id"
   ], [
-    req.body.created_by_id, req.body.modified_by_id, req.body.first_name, req.body.last_name, req.body.current_wage, req.body.installer_role_id, req.body.fk_user_id
+    req.body.created_by_id, req.body.modified_by_id, req.body.first_name, req.body.last_name, req.body.current_wage, req.body.fk_installer_role_id, req.body.fk_user_id
   ], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
