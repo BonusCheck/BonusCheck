@@ -5,8 +5,8 @@
             <li><a v-on:click="$parent.updateView('payment-history')">View Payment History</a></li>
             <li><a v-on:click="$parent.updateView('create-payments')">Create Payments</a></li>
             <li><a v-on:click="$parent.updateView('modify-payments')">Modify Payments</a></li>
-            <li><a v-on:click="$parent.updateView('create-payment-types')">Create Payments</a></li>
-            <li><a v-on:click="$parent.updateView('modify-payment-types')">Modify Payment Types</a></li>
+            <li><a v-on:click="$parent.updateView('create-payment-types')">Create Payments Types</a></li>
+            <li><a v-on:click="$parent.updateView('modify-payment-types')" style="color:#4bc800">Modify Payment Types</a></li>
           </ul>
        </div>   
 		<h1>Modify Payment Types</h1>
@@ -41,7 +41,7 @@ ul{
   justify-content: center;
 }
 li{
-      padding: 0 27px;
+      padding: 0 20px;
     line-height: 4;
     border-bottom: 3px solid transparent;
     margin-bottom: -10px;

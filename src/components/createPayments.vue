@@ -3,40 +3,40 @@
    <div  class="header">
     <ul>
             <li><a v-on:click="$parent.updateView('payment-history')">View Payment History</a></li>
-            <li><a v-on:click="$parent.updateView('create-payments')">Create Payments</a></li>
+            <li><a v-on:click="$parent.updateView('create-payments')" style="color:#4bc800">Create Payments</a></li>
             <li><a v-on:click="$parent.updateView('modify-payments')">Modify Payments</a></li>
             <li><a v-on:click="$parent.updateView('create-payment-types')">Create Payments Types</a></li>
             <li><a v-on:click="$parent.updateView('modify-payment-types')">Modify Payment Types</a></li>
           </ul>
       </div>    
-		<h1>Schedule a Payment</h1>
-     <form v-on:submit.prevent="onSubmit" id="form">
-      <p>Scheduled pay date</p>
-      <input type="date" v-model="scheduled_pay_date">
-      <p>Scheduled payment amount</p>
-      <input type="number" v-model.number="scheduled_payment_amount">
-      <p>Installer</p>
-      <select v-model.number="fk_installer_id">
-        <option v-for="installer in installers" v-bind:value="installer.installer_id">
-          {{installer.first_name}} {{installer.last_name}}
-        </option>
-      </select>
-      <p>Payment type</p>
-      <select v-model="fk_payment_type_id">
-        <option v-for="payment_type in payment_types" v-bind:value="payment_type.payment_type_id">
-          {{payment_type.payment_type}}
-        </option>
-      </select>
-      <p>Jobs</p>
-      <select v-model="fk_job_id">
-        <option v-for="job in jobs" v-bind:value="job.job_id">
-          {{job.job_name}}
-        </option>
-      </select>
+		 <p class="heading">Schedule a Payment</p>
+        <form v-on:submit.prevent="onSubmit" id="form">
+            <p class="input_heading">Scheduled pay date</p>
+            <input class="inputField" type="date" v-model="scheduled_pay_date">
+            <p class="input_heading">Scheduled payment amount</p>
+            <input class="inputField" type="number" v-model.number="scheduled_payment_amount">
+            <p class="input_heading">Installer</p>
+            <select class="inputField" v-model.number="fk_installer_id">
+              <option v-for="installer in installers" v-bind:value="installer.installer_id">
+                {{installer.first_name}} {{installer.last_name}}
+              </option>
+            </select>
+            <p class="input_heading">Payment type</p>
+            <select class="inputField" v-model="fk_payment_type_id">
+              <option v-for="payment_type in payment_types" v-bind:value="payment_type.payment_type_id">
+                {{payment_type.payment_type}}
+              </option>
+            </select>
+            <p class="input_heading">Jobs</p>
+            <select class="inputField" v-model="fk_job_id">
+              <option v-for="job in jobs" v-bind:value="job.job_id">
+                {{job.job_name}}
+              </option>
+            </select>
 
-      <input type="submit" value="Submit">
-      <p class="hidden" id="confirmation">Payment scheduled</p>
-    </form>
+            <button class="button" type="submit" value="Submit">Submit</button>
+            <p style="text-align:center;" class="hidden" id="confirmation"><img src="/dist/assets/images/yes.png"  alt="Logo">Payment scheduled</p>
+        </form>
 
 </div>
 </template>
@@ -129,7 +129,7 @@ export default {
 <style scoped>
 
 .mainDiv{
-     margin:150px 50px 0 200px;
+     margin:130px 50px 0 200px;
      box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
      height: 25%;
      background-color: #fff;
@@ -137,18 +137,81 @@ export default {
      padding: 20px;
 
 }
+.heading{
+    color: #afaeb0;
+    text-align: center;
+    line-height: 3.5;
+    font-weight: bold;
+    font-size: 20px;
+
+}
 
 .header{
   border-bottom: 1px solid #ebebeb;
     
 }
+
+.input_heading{
+    color: #afaeb0;
+    margin-left: 18px;
+    
+ }   
+.inputField{
+    background-color: #fff;
+    border: 0;
+    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);
+    color: #222;
+    display: block;
+    font-size: 14px;
+    margin: 15px;
+    padding: 12px 18px 12px;
+    width: 97%;
+}
+.inputField:focus{
+  outline: none;
+}
+.button:focus{
+  outline-color:  #4bc800;
+
+}
+.button{
+    background: #4bc800!important;
+    border: 0;
+    box-shadow: inset 0 -2px 0 #45b900!important;
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 15px;
+    padding: 12px 18px 12px;
+    width: 20%;
+    margin-top: 10px;
+}
+.inputField{
+    background-color: #fff;
+    border: 0;
+    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);
+    color: #222;
+    display: block;
+    font-size: 14px;
+    margin: 15px;
+    padding: 12px 18px 12px;
+    width: 97%;
+}
+.inputField:focus{
+  outline: none;
+}
+.button:focus{
+  outline-color:  #4bc800;
+
+}
+
 ul{
   list-style-type:none;
   display: flex;
   justify-content: center;
 }
 li{
-      padding: 0 27px;
+      padding: 0 20px;
     line-height: 4;
     border-bottom: 3px solid transparent;
     margin-bottom: -10px;

@@ -4,35 +4,66 @@
         <ul>
             <li><a v-on:click="$parent.updateView('add-hours')">Enter Time Worked</a></li>
            <li><a v-on:click="$parent.updateView('')">Approve Time</a></li>
-           <li><a v-on:click="$parent.updateView('create-project')">Create Project</a></li>
+           <li><a v-on:click="$parent.updateView('create-project')" style="color:#4bc800">Create Project</a></li>
            <li><a v-on:click="$parent.updateView('modify-project')">Modify project</a></li>
             
         </ul>
       </div>
-		<h1>Create a Project</h1>
+		
 		<form v-on:submit.prevent="onSubmit">
-    	<p>Project Name</p>
-    	<input type="text" name="job_name" v-model.trim="job_name">
-    	<p>Start Date</p>
-    	<input type="date" name="start_date" v-model.trim="start_date">
-    	<p>End Date</p>
-    	<input type="date" name="end_date" v-model.trim="end_date">
-    	<p>Hours Bid</p>
-    	<input type="number" name ="hours_bid" v-model.number="hours_bid">
-    	<p>Estimated Start Date</p>
-    	<input type="date" name="est_start_date" v-model.trim="est_start_date">
-    	<p>Estimated End Date</p>
-    	<input type="date" name="est_end_date" v-model.trim="est_end_date">
-    	<p>Customer ID</p>
-    	<input type="number" name="fk_customer_id" v-model.number="fk_customer_id">
-    	<p>Bill Rate</p>
-    	<input type="text" name="bill_rate" v-model.trim="bill_rate">
-    	<p>Job Status</p>
-    	<input type="text" name="job_status" v-model.trim="job_status">
-    	<p>Max Labor Cost</p>
-    	<input type="number" name="max_labor_cost" v-model.number="max_labor_cost">
+        <div class="row">
+            <div class="col-md-6">
+            	<p class="input_heading">Project Name</p>
+            	<input class="inputField" type="text" name="job_name" v-model.trim="job_name">
+            </div> 
+            <div class="col-md-6"> 
+            	<p class="input_heading">Start Date</p>
+            	<input class="inputField" type="date" name="start_date" v-model.trim="start_date">
+            </div>  
+        </div>
+        <div class="row"> 
+            <div class="col-md-6">     
+            	<p class="input_heading">End Date</p>
+            	<input class="inputField" type="date" name="end_date" v-model.trim="end_date">
+            </div>
+            <div class="col-md-6">  
+            	<p class="input_heading">Hours Bid</p>
+            	<input class="inputField" type="number" name ="hours_bid" v-model.number="hours_bid">
+            </div>  
+        </div>      
+        <div class="row">
+            <div class="col-md-6">
+            	<p class="input_heading">Estimated Start Date</p>
+            	<input class="inputField" type="date" name="est_start_date" v-model.trim="est_start_date">
+            </div>
+            <div class="col-md-6">  
+            	<p class="input_heading">Estimated End Date</p>
+            	<input class="inputField" type="date" name="est_end_date" v-model.trim="est_end_date">
+            </div>  
+        </div>
+        <div class="row">
+            <div class="col-md-6">      
+            	<p class="input_heading">Customer ID</p>
+            	<input class="inputField" type="number" name="fk_customer_id" v-model.number="fk_customer_id">
+            </div>
+            <div class="col-md-6">  
+            	<p class="input_heading">Bill Rate</p>
+            	<input class="inputField" type="text" name="bill_rate" v-model.trim="bill_rate">
+            </div>
+        </div>    
+        <div class="row">    
+            <div class="col-md-6">  
+            	<p class="input_heading">Job Status</p>
+            	<input class="inputField" type="text" name="job_status" v-model.trim="job_status">
+            </div> 
+            <div class="col-md-6"> 
+            	<p class="input_heading">Max Labor Cost</p>
+            	<input class="inputField" type="number" name="max_labor_cost" v-model.number="max_labor_cost">
+            </div> 
+        </div>     
 
-    	<input type="submit" value="Submit">
+            <button class="button" type="submit" value="Submit">Create Project</button>
+             
     </form>
 	</div>
 </template>
@@ -108,10 +139,65 @@ export default {
      padding: 20px;
 
 }
+form{
+  margin-top: 30px;
+}
 
 .header{
   border-bottom: 1px solid #ebebeb;
     
+}
+.input_heading{
+    color: #afaeb0;
+    margin-left: 18px;
+    
+ }   
+.inputField{
+    background-color: #fff;
+    border: 0;
+    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);
+    color: #222;
+    display: block;
+    font-size: 14px;
+    margin: 15px;
+    padding: 12px 18px 12px;
+    width: 97%;
+}
+.inputField:focus{
+  outline: none;
+}
+.button:focus{
+  outline-color:  #4bc800;
+
+}
+.button{
+    background: #4bc800!important;
+    border: 0;
+    box-shadow: inset 0 -2px 0 #45b900!important;
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 15px;
+    padding: 12px 18px 12px;
+    margin-top: 10px;
+}
+.inputField{
+    background-color: #fff;
+    border: 0;
+    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);
+    color: #222;
+    display: block;
+    font-size: 14px;
+    margin: 15px;
+    padding: 12px 18px 12px;
+    width: 97%;
+}
+.inputField:focus{
+  outline: none;
+}
+.button:focus{
+  outline-color:  #4bc800;
+
 }
 ul{
   list-style-type:none;

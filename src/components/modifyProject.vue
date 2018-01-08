@@ -5,7 +5,7 @@
             <li><a v-on:click="$parent.updateView('add-hours')">Enter Time Worked</a></li>
            <li><a v-on:click="$parent.updateView('')">Approve Time</a></li>
            <li><a v-on:click="$parent.updateView('create-project')">Create Project</a></li>
-           <li><a v-on:click="$parent.updateView('modify-project')">Modify project</a></li>
+           <li><a v-on:click="$parent.updateView('modify-project')" style="color:#4bc800">Modify project</a></li>
             
         </ul>
       </div>

@@ -2,7 +2,7 @@
 	<div class="mainDiv">
     <div  class="header">
 	    <ul>
-            <li><a v-on:click="$parent.updateView('payment-history')">View Payment History</a></li>
+            <li><a v-on:click="$parent.updateView('payment-history')" style="color:#4bc800">View Payment History</a></li>
             <li><a v-on:click="$parent.updateView('create-payments')">Create Payments</a></li>
             <li><a v-on:click="$parent.updateView('modify-payments')">Modify Payments</a></li>
             <li><a v-on:click="$parent.updateView('create-payment-types')">Create Payments</a></li>

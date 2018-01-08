@@ -85,17 +85,24 @@ export default {
     display: block;
     font-size: 14px;
     margin: 0;
-    padding: 10px 18px 11px;
+    padding: 12px 18px 11px;
     width: 100%;
+}
+.inputField:focus{
+  outline: none;
 }
 .button{
     color: #fff;
     background: #4bc800!important;
     border: 0;
     box-shadow: inset 0 -2px 0 #45b900!important;
-    padding: 7.8px;
+    padding: 9px;
     margin-left: -30px;
-    width: 75%;
+    width: 85%;
+
+}
+.button:focus{
+  outline-color:  #4bc800;
 
 }
 .row1{

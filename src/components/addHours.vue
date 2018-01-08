@@ -2,7 +2,7 @@
 	<div class="mainDiv">
       <div  class="header">
         <ul>
-            <li><a v-on:click="$parent.updateView('add-hours')">Enter Time Worked</a></li>
+            <li><a v-on:click="$parent.updateView('add-hours')" style="color:#4bc800">Enter Time Worked</a></li>
            <li><a v-on:click="$parent.updateView('')">Approve Time</a></li>
            <li><a v-on:click="$parent.updateView('create-project')">Create Project</a></li>
            <li><a v-on:click="$parent.updateView('modify-project')">Modify project</a></li>
@@ -10,20 +10,20 @@
         </ul>
       </div>
 
-      		<h1>Add hours</h1>
+      		<!-- <h1>Add hours</h1> -->
       		<form v-on:submit.prevent="onSubmit" id="form">
-      			<p>Job</p>
-      			<select v-model="fk_job_id" required>
-      				<option v-for="job in jobs" v-bind:value="job.job_id">{{job.job_name}}</option>
-      			</select>
-      			<p>Regular hours worked</p>
-      			<input type="number" v-model.number="reg_hours_worked" required>
-      			<p>Overtime hours worked</p>
-      			<input type="number" v-model.number="ot_hours_worked" required>
-      			<p>Work date</p>
-      			<input type="date" v-model="work_date" required>
-      			<input type="submit" value="Submit">
-      			<p class="hidden" id="confirmation">Hours added</p>
+          			<p class="input_heading">Job</p>
+          			<select class="inputField" v-model="fk_job_id" required>
+          				<option v-for="job in jobs" v-bind:value="job.job_id">{{job.job_name}}</option>
+          			</select>
+          			<p class="input_heading">Regular hours worked</p>
+          			<input class="inputField" type="number" v-model.number="reg_hours_worked" required>
+          			<p class="input_heading">Overtime hours worked</p>
+          			<input class="inputField" type="number" v-model.number="ot_hours_worked" required>
+          			<p class="input_heading">Work date</p>
+          			<input class="inputField" type="date" v-model="work_date" required>
+          			 <button class="button" type="submit" value="Submit">Add hours</button>
+          			<p class="hidden input_heading" id="confirmation"><img src="/dist/assets/images/yes.png"  alt="Logo">Hours added</p>
       		</form>
 	</div>
 </template>
@@ -96,11 +96,67 @@ export default {
      padding: 20px;
 
 }
+form{
+  margin-top: 30px;
+}
 
 .header{
   border-bottom: 1px solid #ebebeb;
     
 }
+.input_heading{
+    color: #afaeb0;
+    margin-left: 18px;
+    
+ }   
+.inputField{
+    background-color: #fff;
+    border: 0;
+    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);
+    color: #222;
+    display: block;
+    font-size: 14px;
+    margin: 15px;
+    padding: 12px 18px 12px;
+    width: 97%;
+}
+.inputField:focus{
+  outline: none;
+}
+.button:focus{
+  outline-color:  #4bc800;
+
+}
+.button{
+    background: #4bc800!important;
+    border: 0;
+    box-shadow: inset 0 -2px 0 #45b900!important;
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 15px;
+    padding: 12px 18px 12px;
+    margin-top: 10px;
+}
+.inputField{
+    background-color: #fff;
+    border: 0;
+    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);
+    color: #222;
+    display: block;
+    font-size: 14px;
+    margin: 15px;
+    padding: 12px 18px 12px;
+    width: 97%;
+}
+.inputField:focus{
+  outline: none;
+}
+.button:focus{
+  outline-color:  #4bc800;
+
+}
+
 ul{
   list-style-type:none;
   display: flex;
