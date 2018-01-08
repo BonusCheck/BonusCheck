@@ -63,7 +63,11 @@ export default {
   }, 
   methods: {
     updateView: function(view){
-      this.currentView = view;
+     this.currentView = view;
+    },
+    logout: function(){
+      console.log('In dash board');
+    this.$router.push('/');
     }
   },
 

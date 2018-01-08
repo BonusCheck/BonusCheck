@@ -2,9 +2,9 @@
 	    <div class="mainDiv">
         <div  class="header">
           <ul>
-            <li><a v-on:click="$parent.updateView('modify-bonuses')">Modify Bonuses</a></li>
-            <li><a v-on:click="$parent.updateView('')">View Bonus History</a></li>
-            <li><a v-on:click="$parent.updateView('bonus-schedule')">View Bonus Schedule</a></li>
+            <li><a v-on:click="$parent.updateView('modify-bonuses')" >Modify Bonuses</a></li>
+            <li><a v-on:click="$parent.updateView('')" >View Bonus History</a></li>
+            <li><a v-on:click="$parent.updateView('bonus-schedule')" style="color:#4bc800">View Bonus Schedule</a></li>
           </ul>
          </div> 
 		   <h1>Bonus Schedule</h1>
@@ -23,11 +23,14 @@ export default {
   	})
   }
 };
+
 </script>
+
+
 <style scoped>
 
 .mainDiv{
-     margin:90px 50px 0 200px;
+     margin:150px 50px 0 200px;
      box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
      height: 25%;
      background-color: #fff;
@@ -61,5 +64,6 @@ li:hover{
 a{
   color: #adadad;
   text-decoration: none;
+  font-weight: bold;
 }
 </style>

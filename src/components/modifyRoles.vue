@@ -82,5 +82,6 @@ li:hover{
 a{
   color: #adadad;
   text-decoration: none;
+  font-weight: bold;
 }
 </style>

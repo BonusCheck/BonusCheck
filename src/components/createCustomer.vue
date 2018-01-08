@@ -67,7 +67,7 @@ export default {
 <style scoped>
 
 .mainDiv{
-     margin:200px 50px 0 200px;
+     margin:150px 50px 0 200px;
      box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
      height: 200px;
      background-color: #fff;

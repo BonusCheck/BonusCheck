@@ -124,15 +124,17 @@ li{
     border-bottom: 3px solid transparent;
      margin-bottom: -10px;
 }
-li:active{
-  border-color:#4bc800; 
+
+li:active a {
+  color:#4bc800; 
 }
 
 li:hover{
-  border-color: #929292;
+  border-color: #4bc800;
 }
 a{
   color: #adadad;
   text-decoration: none;
+  font-weight: bold;
 }
 </style>

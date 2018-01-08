@@ -17,12 +17,13 @@
 
 export default {
   name: 'payment-history'
+ 
 };
 </script>
 <style scoped>
 
 .mainDiv{
-     margin:90px 50px 0 200px;
+     margin:150px 50px 0 200px;
      box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
      height: 25%;
      background-color: #fff;
@@ -56,5 +57,6 @@ li:hover{
 a{
   color: #adadad;
   text-decoration: none;
+  font-weight: bold;
 }
 </style>

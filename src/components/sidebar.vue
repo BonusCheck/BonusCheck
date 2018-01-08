@@ -5,16 +5,16 @@
     <a href="#" class="cd-logo"><img src="/dist/assets/images/logo-trans.png"  alt="Logo"></a>       
     <nav class="cd-nav" >
       <ul class="cd-top-nav">
+         <li><a v-on:click="$parent.logout()">Logout</a></li>
          <li class="has-children account">
           <a href="#0"  >
             <img  src="/dist/assets/images/user.jpg" alt="avatar">
-          <!--   {{user.username}} -->
-          Ruchi
+            <div id='username'></div>
           </a>
           <ul>
-            <li><a href="#0">My Account</a></li>
-            <li><a href="#0">Edit Account</a></li>
-            <li><a href="#0">Logout</a></li>
+           <!--  <li><a href="#0">My Account</a></li>
+           <li><a href="#0">Edit Account</a></li> -->
+            <!-- <li><a href="#0">Logout</a></li> -->
           </ul>
         </li>
       </ul>
@@ -26,10 +26,7 @@
   <main class="cd-main-content" >
     <nav class="cd-side-nav">
       <ul>
-        <li v-for="button in buttons">
-          <a v-on:click="$parent.updateView(button.link)">{{button.name}}</a>
-        </li>
-         <li class="has-children Overviews">
+        <li class="has-children Overviews">
          <a v-on:click="$parent.updateView('create-customer')"> <i class="fa fa-th-large" ></i>Customer</a>                   
         </li>       
         <li class="has-children comments">
@@ -80,10 +77,26 @@
 </template>
 
 <script>
-
+const axios = require('axios');
 export default {
   name: "side-bar",
-  props: ["buttons"]
+  beforeMount(){
+  axios.get('/session/data')
+   .then(req => {
+      console.log("Side Bar username"+req.data.username);
+      $('#username').html(req.data.username);
+     
+      //If no session received, return home
+      if(!req.data.roll){
+        this.$router.push('/');
+      }
+
+     
+   })
+  .catch(function(err){
+    console.log("Error R"+err);
+  });
+  }
 };
 
 </script>
