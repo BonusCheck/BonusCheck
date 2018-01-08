@@ -1,13 +1,19 @@
 <template>
-  <div>
-  	<h1>Add User</h1>
+  <div class="mainDiv">
+   <div  class="header">
+    <ul>
+           <li><a v-on:click="$parent.updateView('add-user')" style="color:#4bc800">Add User</a></li>
+           <li><a v-on:click="$parent.updateView('delete-user')">Delete User</a></li>
+    </ul>
+   </div> 
+  	<!-- <p class="heading">Add User</p> -->
     <form v-on:submit.prevent="onSubmit">
-      <p>Username</p>
-    	<input type="text" name="user_name" v-model="user_name">
-      <p>Password</p>
-    	<input type="password" name ="password" v-model="password">
-    	<input type="submit" value="Submit">
-      <p class="hidden" id="confirmation">User added!</p>
+      <p class="input_heading">Username</p>
+    	<input class="inputField" type="text" name="user_name" v-model="user_name">
+      <p class="input_heading">Password</p>
+    	<input class="inputField" type="password" name ="password" v-model="password">
+    	<button class="button" type="submit" value="Submit">Add User</button>
+      <p style="text-align:center;" class="hidden input_heading" id="confirmation"><img src="/dist/assets/images/yes.png"  alt="Logo">User added successfully.</p>
     </form>
   </div>
 </template>
@@ -46,3 +52,93 @@ export default {
   }
 }; 
 </script>
+<style scoped>
+
+.mainDiv{
+     margin:150px 310px 0 400px;
+     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
+     height: 25%;
+     background-color: #fff;
+     font-size: 16px;
+     padding: 20px;
+
+}
+form{
+  margin-top: 30px;
+}
+/*.heading{
+    color: #afaeb0;
+    text-align: center;
+    line-height: 3.5;
+    font-weight: bold;
+    margin-top: 10px;
+
+}*/
+.input_heading{
+    color: #afaeb0;
+    margin-left: 18px;
+    
+    
+   
+
+}
+
+.header{
+  border-bottom: 1px solid #ebebeb;
+    
+}
+.inputField{
+    background-color: #fff;
+    border: 0;
+    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);
+    color: #222;
+    display: block;
+    font-size: 14px;
+    margin: 15px;
+    padding: 12px 18px 12px;
+    width: 97%;
+}
+.inputField:focus{
+  outline: none;
+}
+.button:focus{
+  outline-color:  #4bc800;
+
+}
+.button{
+    background: #4bc800!important;
+    border: 0;
+    box-shadow: inset 0 -2px 0 #45b900!important;
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 15px;
+    padding: 12px 18px 12px;
+    width: 20%;
+    margin-top: 10px;
+}
+ul{
+  list-style-type:none;
+  display: flex;
+  justify-content: center;
+}
+li{
+      padding: 0 90px;
+    line-height: 4;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -10px;
+}
+li:active{
+  border-color:#4bc800; 
+}
+
+li:hover{
+  border-color: #929292;
+}
+a{
+  color: #adadad;
+  text-decoration: none;
+  font-weight: bold;
+}
+</style>
+

@@ -240,8 +240,7 @@ installerRouter.post("/roles/add", function(req, res) {
 });
 
 installerRouter.delete("/roles/delete", function(req, res) {
-  var condition = "role_id = " + req.body.installer_role_id;
-
+  var condition = "installer_role_id = " + req.body.installer_role_id;
   installer_roles.delete(condition, function(result) {
     if (result.affectedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404

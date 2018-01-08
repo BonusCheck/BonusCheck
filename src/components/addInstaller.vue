@@ -1,17 +1,18 @@
 <template>
-  <div>
-    <h1>Add Installer</h1>
+  <div class="mainDiv">
+   
+    <p class="heading">Add Installer</p>
     <form v-on:submit.prevent="onSubmit" id="form">
-      <input type="text" name="first_name" placeholder="First name" v-model.trim="first_name" required>
-      <input type="text" name="last_name" placeholder="Last name" v-model.trim="last_name" required>
-      <input type="number" name="current_wage" placeholder="Current wage" v-model.number="current_wage" required>
-      <select v-model.number="fk_installer_role_id" required>
-        <option v-for="role in roles" v-bind:value="role.installer_role_id">{{role.installer_role_name}}</option>
+      <input class="inputField" type="text" name="first_name" placeholder="First name" v-model.trim="first_name" required>
+      <input class="inputField" type="text" name="last_name" placeholder="Last name" v-model.trim="last_name" required>
+      <input class="inputField" type="number" name="current_wage" placeholder="Current wage" v-model.number="current_wage" required>
+      <select class="dropdown" v-model.number="fk_installer_role_id" required>
+        <option class="option" v-for="role in roles" v-bind:value="role.installer_role_id">{{role.installer_role_name}}</option>
       </select>
-      <select v-model="fk_user_id" required>
-        <option v-for="user in users" v-bind:value="user.user_id">{{user.user_name}}</option>
+      <select class="dropdown" v-model="fk_user_id" required>
+        <option class="option" v-for="user in users" v-bind:value="user.user_id">{{user.user_name}}</option>
       </select>
-      <input type="submit" value="Submit">
+      <button class="button " type="submit" value="Submit">Submit</button>
       <p class="hidden" id="confirmation">Added</p>
     </form>
   </div>
@@ -90,3 +91,70 @@ export default {
   }
 }; 
 </script>
+<style scoped>
+
+.mainDiv{
+     margin:150px 310px 0 430px;
+     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
+     height: 480px;
+     background-color: #fff;
+     font-size: 16px;
+     padding: 20px;
+
+}
+.heading{
+    color: #afaeb0;
+    text-align: center;
+    line-height: 3.5;
+    border-bottom: 1px solid #ebebeb;
+    font-weight: bold;
+    font-size: 22px;
+
+}
+.inputField{
+    background-color: #fff;
+    border: 0;
+    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);
+    color: #222;
+    display: block;
+    font-size: 14px;
+    margin: 15px;
+    padding: 12px 18px 12px;
+    width: 97%;
+}
+.inputField:focus{
+  outline: none;
+}
+.dropdown{
+    background-color: #fff;
+    border: 0;
+    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);
+    color: #222;
+    display: block;
+    font-size: 14px;
+    margin: 15px;
+    padding: 12px 18px 12px;
+    width: 97%;
+}
+.dropdown:focus{
+
+  outline: none;
+}
+.button:focus{
+  outline-color:  #4bc800;
+
+}
+.button{
+    background: #4bc800!important;
+    border: 0;
+    box-shadow: inset 0 -2px 0 #45b900!important;
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 15px;
+    padding: 12px 18px 12px;
+    width: 20%;
+    margin-top: 10px;
+}
+
+</style>

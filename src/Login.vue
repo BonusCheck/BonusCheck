@@ -76,7 +76,6 @@ export default {
   			}
   		})
   		.then(req => {
-  			console.log(req);
   			this.$router.push('/dash');
   		})
   		.catch(err => {

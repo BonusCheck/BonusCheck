@@ -1,9 +1,7 @@
 <template>
-  <div>
-
-    <side-bar :user="user" :buttons="buttons"></side-bar>
-    <component :is="currentView" :user="user"></component> 
-     
+  <div >
+    <side-bar :user="user"></side-bar>
+    <component :is="currentView" :user="user" ></component> 
  
   </div>
 </template>
@@ -20,6 +18,7 @@ import createProject from './components/createProject';
 import createCustomer from './components/createCustomer';
 import createRoles from './components/createRoles';
 import modifyRoles from './components/modifyRoles';
+import deleteRoles from './components/deleteRoles';
 import modifyCustomer from './components/modifyCustomer';
 import modifyProject from './components/modifyProject';
 import modifyBonuses from './components/modifyBonuses';
@@ -45,6 +44,7 @@ export default {
     'create-customer': createCustomer,
     'create-roles': createRoles,
     'modify-roles': modifyRoles,
+    'delete-roles': deleteRoles,
     'modify-customer': modifyCustomer,
     'modify-project': modifyProject,
     'modify-bonuses': modifyBonuses,
@@ -63,12 +63,16 @@ export default {
   }, 
   methods: {
     updateView: function(view){
-      this.currentView = view;
+     this.currentView = view;
+    },
+    logout: function(){
+      console.log('In dash board');
+    this.$router.push('/');
     }
   },
 
   beforeMount(){
-
+  
 	 axios.get('/session/data')
 	 .then(req => {
       console.log(req.data);
@@ -82,81 +86,10 @@ export default {
         this.$router.push('/');
       }
 
-      if(req.data.roll === 'Admin'){
-        this.buttons.push(
-          {
-            name: 'Add user',
-            link: 'add-user'
-          },
-          {
-            name: 'Delete user',
-            link: 'delete-user'
-          },
-          {
-            name: 'Add installer',
-            link: 'add-installer'
-          },
-          {
-            name: 'Enter time worked',
-            link: 'add-hours'
-          },
-          {
-           name: 'View bonus schedule',
-           link: 'bonus-schedule' 
-          },
-          {
-            name: 'View payment history',
-            link: 'payment-history'
-          },
-          {
-            name: 'Create a project',
-            link: 'create-project'
-          },
-          {
-            name: 'Create a customer',
-            link: 'create-customer'
-          },
-          {
-            name: 'Create roles',
-            link: 'create-roles'
-          },
-          {
-            name: 'Modify roles',
-            link: 'modify-roles'
-          },
-          {
-            name: 'Modify project',
-            link: 'modify-project'
-          },
-          {
-            name: 'Modify bonuses',
-            link: 'modify-bonuses'
-          },
-          {
-            name: 'Create payments',
-            link: 'create-payments'
-          },
-          {
-            name: 'Schedule payments',
-            link: 'schedule-payments'
-          },
-          {
-            name: 'Modify payments',
-            link: 'modify-payments'
-          },
-          {
-            name: 'Create payment types',
-            link: 'create-payment-types'
-          },
-          {
-            name: 'Modify payment types',
-            link: 'modify-payment-types'
-          }
-        );
-      }
+     
    })
   .catch(function(err){
-    console.log(err);
+    console.log("Error R"+err);
   });
 },
 mounted (){

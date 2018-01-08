@@ -5,15 +5,16 @@
     <a href="#" class="cd-logo"><img src="/dist/assets/images/logo-trans.png"  alt="Logo"></a>       
     <nav class="cd-nav" >
       <ul class="cd-top-nav">
+         <li><a v-on:click="$parent.logout()">Logout</a></li>
          <li class="has-children account">
           <a href="#0"  >
             <img  src="/dist/assets/images/user.jpg" alt="avatar">
-            {{user}}
+            <div id='username'></div>
           </a>
           <ul>
-            <li><a href="#0">My Account</a></li>
-            <li><a href="#0">Edit Account</a></li>
-            <li><a href="#0">Logout</a></li>
+           <!--  <li><a href="#0">My Account</a></li>
+           <li><a href="#0">Edit Account</a></li> -->
+            <!-- <li><a href="#0">Logout</a></li> -->
           </ul>
         </li>
       </ul>
@@ -25,10 +26,7 @@
   <main class="cd-main-content" >
     <nav class="cd-side-nav">
       <ul>
-        <li v-for="button in buttons">
-          <a v-on:click="$parent.updateView(button.link)">{{button.name}}</a>
-        </li>
-        <!-- <li class="has-children Overviews">
+        <li class="has-children Overviews">
          <a v-on:click="$parent.updateView('create-customer')"> <i class="fa fa-th-large" ></i>Customer</a>                   
         </li>       
         <li class="has-children comments">
@@ -36,61 +34,38 @@
         </li>
 
         <li class="has-children bookmarks">
-          <a  class="button"><i class="fa fa-table"></i> Bonus</a>
-          <ul>
-            <li><a v-on:click="$parent.updateView('modify-bonuses')">Modify Bonuses</a></li>
-            <li><a v-on:click="$parent.updateView('')">View Bonus History</a></li>
-            <li><a v-on:click="$parent.updateView('bonus-schedule')">View Bonus Schedule</a></li>
-          </ul>
+          <a  v-on:click="$parent.updateView('bonus-schedule')"><i class="fa fa-table"></i> Bonus</a>
+          
         </li> 
-		<li class="has-children bookmarks">
-          <a  class="button"><i class="fa fa-table"></i> Payments</a>
-          <ul>
-            <li><a v-on:click="$parent.updateView('payment-history')">View Payment History</a></li>
-            <li><a v-on:click="$parent.updateView('create-payments')">Create Payments</a></li>
-            <li><a v-on:click="$parent.updateView('modify-payments')">Modify Payments</a></li>
-            <li><a v-on:click="$parent.updateView('create-payment-types')">Create Payments</a></li>
-            <li><a v-on:click="$parent.updateView('modify-payment-types')">Modify Payment Types</a></li>
-          </ul>
+		    <li class="has-children bookmarks">
+          <a  v-on:click="$parent.updateView('payment-history')"><i class="fa fa-table"></i> Payments</a>
+          
         </li> 
-
         <li class="has-children users">
-          <a  class="button"><i class="fa fa-user"></i> User</a>       
-          <ul>
-           <li><a v-on:click="$parent.updateView('add-user')">Add User</a></li>
-           <li><a v-on:click="$parent.updateView('delete-user')">Delete User</a></li>
-          </ul>
+          <a  v-on:click="$parent.updateView('add-user')"><i class="fa fa-user"></i> User</a>       
+         
         </li>
        
         <li class="has-children users">
-          <a  class="button"><i class="fa fa-user"></i> Jobs</a>       
-          <ul>
+          <a  v-on:click="$parent.updateView('')"><i class="fa fa-user"></i> Jobs</a>       
+          <!-- <ul>
            <li><a v-on:click="$parent.updateView('')">View transaction logs</a></li>
            <li><a v-on:click="$parent.updateView('')">View project data</a></li>
-          </ul>
+          </ul> -->
         </li>
 
          <li class="has-children users">
-          <a  class="button"><i class="fa fa-user"></i> Project</a>       
-          <ul>
-           <li><a v-on:click="$parent.updateView('add-hours')">Enter Time Worked</a></li>
-           <li><a v-on:click="$parent.updateView('')">Approve Time</a></li>
-           <li><a v-on:click="$parent.updateView('create-project')">Create Project</a></li>
-           <li><a v-on:click="$parent.updateView('modify-project')">Modify project</a></li>
-          </ul>
+          <a  v-on:click="$parent.updateView('create-project')"><i class="fa fa-user"></i> Project</a>                 
         </li>
 
         <li class="has-children users">
-          <a  class="button"><i class="fa fa-user"></i> Admin</a>       
-          <ul>
+          <a v-on:click="$parent.updateView('create-roles')"><i class="fa fa-user"></i> Admin</a>       
+          <!-- <ul>
            <li><a v-on:click="$parent.updateView('create-roles')">Create roles</a></li>
            <li><a v-on:click="$parent.updateView('modify-roles')">Modify Roles</a></li>
-          </ul>
-        </li> -->
-       
-       
-                      
-      </ul>
+          </ul> -->
+        </li>
+    </ul>
     </nav>
         <!-- %%%%%%%%  Side NAVBAR END %%%%%%% -->
 
@@ -102,10 +77,26 @@
 </template>
 
 <script>
-
+const axios = require('axios');
 export default {
   name: "side-bar",
-  props: ["buttons"]
+  beforeMount(){
+  axios.get('/session/data')
+   .then(req => {
+      console.log("Side Bar username"+req.data.username);
+      $('#username').html(req.data.username);
+     
+      //If no session received, return home
+      if(!req.data.roll){
+        this.$router.push('/');
+      }
+
+     
+   })
+  .catch(function(err){
+    console.log("Error R"+err);
+  });
+  }
 };
 
 </script>
@@ -686,7 +677,7 @@ Sidebar
 }
 @media only screen and (min-width: 768px) {
   .cd-side-nav {
-    position: relative;
+    
     float: left;
     top: fixed;
     width: 110px;
