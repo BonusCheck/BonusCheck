@@ -19,6 +19,9 @@
           <strong>Create a customer</strong> and add it to a project on Project Edit Page. <br>
           This will allow you to <strong>filter and group</strong> your time by clients in reports.
         </p>  
+        /////
+        <li><a v-on:click="$parent.updateView('modify-customer')" style="color:#4bc800">Modify cust</a></li>
+        /////
       </div>
 	</div>
   
