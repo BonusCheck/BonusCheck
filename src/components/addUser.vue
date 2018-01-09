@@ -12,6 +12,14 @@
     	<input class="inputField" type="text" name="user_name" v-model="user_name">
       <p class="input_heading">Password</p>
     	<input class="inputField" type="password" name ="password" v-model="password">
+
+      <select v-model="fk_user_role_id" required>
+        <option value='' placeholder="Choose a role"></option>
+        <option v-for="role in roles" v-bind:value="role.user_role_id">
+          {{role.user_role_name}}
+        </option>
+      </select>
+
     	<button class="button" type="submit" value="Submit">Add User</button>
       <p style="text-align:center;" class="hidden input_heading" id="confirmation"><img src="/dist/assets/images/yes.png"  alt="Logo">User added successfully.</p>
     </form>
@@ -27,7 +35,9 @@ export default {
   data(){
     return {
       user_name: '',
-      password: ''
+      password: '',
+      fk_user_role_id: '',
+      roles: ''
     }
   },
   methods: {
@@ -37,7 +47,8 @@ export default {
         url: '/users/add',
         data: {
         user_name: this.user_name,
-        password: this.password
+        password: this.password,
+        fk_user_role_id: this.fk_user_role_id
       }
       })
       .then(req => {
@@ -49,6 +60,19 @@ export default {
         console.log(err);
       })
     }
+  },
+  beforeMount(){
+    axios({
+      method: 'get',
+      url: '/users/roles'
+    })
+    .then(req => {
+      this.roles = req.data.roles;
+      console.log(this.roles);
+    })
+    .catch(err => {
+      console.log(err);
+    })
   }
 }; 
 </script>

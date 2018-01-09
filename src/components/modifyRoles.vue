@@ -51,7 +51,7 @@ export default {
       role_id: '',
       roles: '',
       selectedRole: {}
-    }
+  	}
   },
   methods: {
     onSubmit: function(){

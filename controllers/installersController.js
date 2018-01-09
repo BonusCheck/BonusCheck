@@ -252,11 +252,11 @@ installerRouter.delete("/roles/delete", function(req, res) {
 });
 
 installerRouter.put("/roles/update", function(req, res) {
-  var condition = "role_id = " + req.body.role_id;
+  var condition = "installer_role_id = " + req.body.installer_role_id;
+  var objColVals = req.body;
+  console.log(req.body);
 
-  installer_roles.update({
-    //HOW DO I TAKE IN RANDOM FILEDS HERE?  DO I COMPARE THE VALUES FIELD BY FIELD?
-  }, condition, function(result) {
+  installer_roles.update(objColVals, condition, function(result) {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
