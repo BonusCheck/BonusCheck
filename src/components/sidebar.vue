@@ -2,15 +2,20 @@
   <div class="cd-side-nav">
      <!-- ####### Header NAVBAR ####### -->
   <header class="cd-main-header" >
-    <a href="#" class="cd-logo"><img src="/dist/assets/images/logo-trans.png"  alt="Logo"></a>       
+    <a href="#" class="cd-logo"><img style="margin-left:-80px; margin-top:-8px;" src="/dist/assets/images/logo-trans.png"  alt="Logo"></a>       
     <nav class="cd-nav" >
       <ul class="cd-top-nav">
-         <li><a v-on:click="$parent.logout()">Logout</a></li>
+         <li>
+             <a style="margin-top:6px;" v-on:click="$parent.logout()" class="btn btn-danger btn-md">
+              <span class="glyphicon glyphicon-log-out"></span> Log out
+             </a>
+        </li>
          <li class="has-children account">
           <a href="#0"  >
             <img  src="/dist/assets/images/user.jpg" alt="avatar">
             <div id='username'></div>
           </a>
+        </li>  
           <ul>
            <!--  <li><a href="#0">My Account</a></li>
            <li><a href="#0">Edit Account</a></li> -->
