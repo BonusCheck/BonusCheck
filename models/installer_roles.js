@@ -25,7 +25,7 @@ var installerRoles = {
     });
   },
   update: function(objColVals, condition, cb) {
-    orm.update("installer_rolls", objColVals, condition, function(res) {
+    orm.update("installer_roles", objColVals, condition, function(res) {
       cb(res);
     });
   },
