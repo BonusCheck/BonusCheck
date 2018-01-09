@@ -3,7 +3,7 @@
     <side-bar :user="user"></side-bar>
     <component :is="currentView" :user="user" ></component> 
  
-  </div>
+  </div> 
 </template>
 
 <script>
@@ -79,7 +79,8 @@ export default {
       this.user = {
         userID: req.data.userID,
         installerID: req.data.installerID,
-        username:req.data.username
+        username:req.data.username,
+        roll:req.data.roll
       }
       //If no session received, return home
       if(!req.data.roll){

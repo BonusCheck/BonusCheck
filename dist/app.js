@@ -17590,7 +17590,8 @@ var axios = __webpack_require__(3);
       this$1.user = {
         userID: req.data.userID,
         installerID: req.data.installerID,
-        username:req.data.username
+        username:req.data.username,
+        roll:req.data.roll
       }
       //If no session received, return home
       if(!req.data.roll){
@@ -17707,7 +17708,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n /* -------------------------------- \n\nPrimary style\n\n-------------------------------- */\n*[data-v-7eea899c], *[data-v-7eea899c]::after, *[data-v-7eea899c]::before {\n  box-sizing: border-box;\n}\nhtml[data-v-7eea899c] {\n  font-size: 62.5%;\n}\nbody[data-v-7eea899c] {\n  font-size: 1.6rem;\n  font-family: \"Open Sans\", sans-serif;\n  color: #3e454c;\n  background-color: #F5F5F5;\n}\nbody[data-v-7eea899c]::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\na[data-v-7eea899c] {\n  color: #1784c7;\n  text-decoration: none;\n}\n/*  ######  Side NAVBAR page style  ######  */\n#dashboard[data-v-7eea899c]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n    height: 100%;\n}\n#project[data-v-7eea899c]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#tables[data-v-7eea899c]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#user[data-v-7eea899c]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#admin[data-v-7eea899c]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n/*  ######  Side NAVBAR page style END ######  */\n.button[data-v-7eea899c]{\n  background-color: transparent;\n  color:#C8C8C8;\n  border: transparent;\n  height: 35px;\n  \n  font-size: 15px;\n  border : none;\n  outline: none;\n}\n.button[data-v-7eea899c]:active {\n  background-color: #323232;\n  border : none;\n  outline: none;\n}\n.button[data-v-7eea899c]:hover{\n  color: #ffffff;\n}\n.cd-side-nav[data-v-7eea899c]{\n  font-size: 20px;\n  margin-top: 20px;\n}\n.fa[data-v-7eea899c]{\n  margin-right: 13px;\n}\n.cd-nav ul li a[data-v-7eea899c]{\n  color:#C8C8C8;\n}\n.cd-nav ul li a[data-v-7eea899c]:hover{\n  color: #ffffff;\n}\ninput[data-v-7eea899c] {\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 1.6rem;\n}\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-decoration,\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-cancel-button,\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-results-button,\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-results-decoration {\n  display: none;\n}\n/* -------------------------------- \n\nMain Page Content\n\n-------------------------------- */\n.cd-main-content .content-wrapper[data-v-7eea899c] {\n  padding: 45px 5% 3em;\n}\n.cd-main-content .content-wrapper h1[data-v-7eea899c] {\n  text-align: center;\n  padding: 3em 0;\n  font-size: 2rem;\n}\n.cd-main-content[data-v-7eea899c]::before {\n  /* never visible - used to check MQ in jQuery */\n  display: none;\n  content: 'mobile';\n}\n@media only screen and (min-width: 768px) {\n.cd-main-content .content-wrapper[data-v-7eea899c] {\n    margin-left: 110px;\n    margin-top: 80px;\n    padding-top: 155px;\n}\n.cd-main-content .content-wrapper h1[data-v-7eea899c] {\n    padding: 4em 0;\n    font-size: 3.2rem;\n    font-weight: 300;\n}\n.cd-main-content[data-v-7eea899c]::before {\n    content: 'tablet';\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-main-content .content-wrapper[data-v-7eea899c] {\n    margin-left: 200px;\n}\n.cd-main-content[data-v-7eea899c]::before {\n    content: 'desktop';\n}\n}\n/* -------------------------------- \n\nHeader\n\n-------------------------------- */\n.cd-main-header[data-v-7eea899c] {\n  position: absolute;\n  z-index: 2;\n  top: 0;\n  left: 0;\n  height: 45px;\n  width: 100%;\n  background: #FFFFFF;\n\n\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.cd-main-header[data-v-7eea899c]::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\n/**/\n@media only screen and (min-width: 768px) \n{\n.cd-main-header[data-v-7eea899c] {\n    position: fixed;\n    height: 55px;\n    background-color:#323232;\n}\n}\n.cd-logo[data-v-7eea899c] {\n  float: left;\n  display: block;\n  margin: 11px 0 0 5%;\n}\n.cd-logo img[data-v-7eea899c] {\n  display: block;\n}\n@media only screen and (min-width: 768px) {\n.cd-logo[data-v-7eea899c] {\n    margin: 16px 0 0 36px;\n}\n}\n.cd-nav-trigger[data-v-7eea899c] {\n  /* navigation trigger - visible on mobile devices only */\n  float: right;\n  position: relative;\n  display: block;\n  width: 34px;\n  height: 44px;\n  margin-right: 5%;\n  /* hide text */\n  overflow: hidden;\n  white-space: nowrap;\n  color: transparent;\n}\n.cd-nav-trigger span[data-v-7eea899c], .cd-nav-trigger span[data-v-7eea899c]::before, .cd-nav-trigger span[data-v-7eea899c]::after {\n  /* hamburger icon in CSS */\n  position: absolute;\n  display: inline-block;\n  height: 3px;\n  width: 24px;\n  background:#323232;\n}\n.cd-nav-trigger span[data-v-7eea899c] {\n  /* line in the center */\n  position: absolute;\n  top: 50%;\n  right: 5px;\n  margin-top: -2px;\n  transition: background 0.2s;\n}\n.cd-nav-trigger span[data-v-7eea899c]::before, .cd-nav-trigger span[data-v-7eea899c]::after {\n  /* other 2 lines */\n  content: '';\n  right: 0;\n  /* Force Hardware Acceleration in WebKit */\n  -webkit-transform: translateZ(0);\n  transform: translateZ(0);\n  -webkit-backface-visibility: hidden;\n  backface-visibility: hidden;\n  -webkit-transform-origin: 0% 50%;\n  transform-origin: 0% 50%;\n  transition: -webkit-transform 0.2s;\n  transition: transform 0.2s;\n  transition: transform 0.2s, -webkit-transform 0.2s;\n}\n.cd-nav-trigger span[data-v-7eea899c]::before {\n  /* menu icon top line */\n  top: -6px;\n}\n.cd-nav-trigger span[data-v-7eea899c]::after {\n  /* menu icon bottom line */\n  top: 6px;\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c] {\n  /* hide line in the center */\n  background: rgba(255, 255, 255, 0);\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::before, .cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::after {\n  /* keep visible other 2 lines */\n  background: white;\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::before {\n  -webkit-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  transform: translateX(4px) translateY(-3px) rotate(45deg);\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::after {\n  -webkit-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  transform: translateX(4px) translateY(2px) rotate(-45deg);\n}\n@media only screen and (min-width: 768px) {\n.cd-nav-trigger[data-v-7eea899c] {\n    display: none;\n}\n}\n.cd-search[data-v-7eea899c] {\n  position: relative;\n  margin: 1.2em 5% 0.6em;\n}\n.cd-search.is-hidden[data-v-7eea899c] {\n  opacity: 0;\n}\n.cd-search[data-v-7eea899c]::before {\n  /* lens icon */\n  content: '';\n  position: absolute;\n  left: 8px;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n}\n.cd-search input[data-v-7eea899c] {\n  padding-left: 32px;\n  width: 100%;\n  height: 36px;\n  border: none;\n  border-radius: .25em;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  -ms-appearance: none;\n  -o-appearance: none;\n  appearance: none;\n}\n.cd-search input[data-v-7eea899c]:focus {\n  outline: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-search[data-v-7eea899c] {\n    float: left;\n    display: inline-block;\n    width: 250px;\n    height: 100%;\n    margin: 0 0 0 2.5em;\n}\n.cd-search.is-hidden[data-v-7eea899c] {\n    /* reset style */\n    opacity: 1;\n}\n.cd-search[data-v-7eea899c]::before {\n    background-position: 0 -16px;\n    left: 1em;\n}\n.cd-search form[data-v-7eea899c], .cd-search input[data-v-7eea899c] {\n    height: 100%;\n    width: 100%;\n}\n.cd-search input[data-v-7eea899c] {\n    border: none;\n    padding-left: 2.6em;\n    border-radius: 0;\n    background-color: #3e454c;\n    border-left: 1px solid #51575d;\n    color: #ffffff;\n}\n.cd-search input[data-v-7eea899c]::-webkit-input-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-7eea899c]::-moz-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-7eea899c]:-moz-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-7eea899c]:-ms-input-placeholder {\n    color: #777c81;\n}\n}\n/* -------------------------------- \n\nTop Navigation\n\n-------------------------------- */\n.cd-nav[data-v-7eea899c] {\n  /* top nav - not visible on mobile devices */\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-nav[data-v-7eea899c] {\n    display: block;\n    float: right;\n    height: 100%;\n}\n}\n.cd-top-nav > li > a[data-v-7eea899c]::before {\n  /* reset style */\n  display: none;\n}\n.cd-top-nav > li a[data-v-7eea899c] {\n  padding: 1em 5% !important;\n}\n.cd-top-nav img[data-v-7eea899c] {\n  /* avatar image */\n  position: absolute;\n  left: 1.8em;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 20px;\n  width: 20px;\n  border-radius: 50%;\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-top-nav[data-v-7eea899c] {\n    height: 100%;\n}\n.cd-top-nav a[data-v-7eea899c] {\n    display: block;\n    font-size: 1.4rem;\n    color: #ffffff;\n}\n.cd-top-nav > li[data-v-7eea899c] {\n    display: inline-block;\n    margin-right: 1em;\n    height: 100%;\n}\n.cd-top-nav > li[data-v-7eea899c]:last-of-type {\n    margin-right: 0;\n}\n.cd-top-nav > li a[data-v-7eea899c] {\n    padding: 1em .6em !important;\n}\n.cd-top-nav img[data-v-7eea899c] {\n    display: block;\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-top-nav li:not(.has-children) a[data-v-7eea899c]:hover {\n    color: #1784c7;\n}\n}\n/* -------------------------------- \n\nSidebar\n\n-------------------------------- */\n.cd-side-nav[data-v-7eea899c] {\n  position: absolute;\n  z-index: 1;\n  left: 0;\n  top: 0;\n  width: 100%;\n  padding: 45px 0 0;\n  background-color: #323232;\n  visibility: hidden;\n  opacity: 0;\n  max-height: 100vh;\n  overflow: hidden;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  transition: opacity 0.2s 0s, visibility 0s 0.2s;\n}\n.cd-side-nav.nav-is-visible[data-v-7eea899c] {\n  opacity: 1;\n  visibility: visible;\n  overflow: visible;\n  -webkit-overflow-scrolling: touch;\n  transition: opacity 0.2s 0s, visibility 0s 0s;\n  max-height: none;\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-side-nav > ul[data-v-7eea899c] {\n  padding: 0.6em 0;\n}\n.cd-side-nav > ul[data-v-7eea899c]:last-of-type {\n  padding-bottom: 0;\n}\n.cd-side-nav .cd-label[data-v-7eea899c], .cd-side-nav a[data-v-7eea899c] {\n  display: block;\n  padding: 1em 5%;\n}\n.cd-side-nav a[data-v-7eea899c] {\n  position: relative;\n  color: #ffffff;\n  font-size: 1.4rem;\n}\n.cd-side-nav ul.cd-top-nav > li:last-of-type > a[data-v-7eea899c] {\n  border-bottom: none;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c] {\n  padding-left: calc(5% + 24px);\n  border-bottom: 1px solid #373d44;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c]::before {\n  /* icon before item name */\n  position: absolute;\n  content: '';\n  left: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n}\n.cd-side-nav > ul > li.overview > a[data-v-7eea899c]::before {\n  background-position: -64px 0;\n}\n.cd-side-nav > ul > li.notifications > a[data-v-7eea899c]::before {\n  background-position: -80px 0;\n}\n.cd-side-nav > ul > li.comments > a[data-v-7eea899c]::before {\n  background-position: -48px 0;\n}\n.cd-side-nav > ul > li.bookmarks > a[data-v-7eea899c]::before {\n  background-position: -32px 0;\n}\n.cd-side-nav > ul > li.images > a[data-v-7eea899c]::before {\n  background-position: 0 0;\n}\n.cd-side-nav > ul > li.users > a[data-v-7eea899c]::before {\n  background-position: -16px 0;\n}\n.cd-side-nav .count[data-v-7eea899c] {\n  /* notification badge */\n  position: absolute;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  right: calc(5% + 16px + 0.4em);\n  padding: 0.2em 0.4em;\n  background-color: #ff7e66;\n  border-radius: .25em;\n  color: #ffffff;\n  font-weight: bold;\n  font-size: 1.2rem;\n  text-align: center;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c] {\n  display: block;\n  margin: 0 5%;\n  padding: 1em 0;\n  background-color: #1784c7;\n  border-radius: .25em;\n  border: none;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);\n  text-align: center;\n  color: #ffffff;\n  font-weight: bold;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c]::before {\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-side-nav[data-v-7eea899c] {\n    \n    float: left;\n    top: fixed;\n    width: 110px;\n    min-height: 100vh;\n    padding-top: 55px;\n    /* reset style */\n    visibility: visible;\n    opacity: 1;\n    overflow: visible;\n    max-height: none;\n}\n.cd-side-nav.nav-is-visible[data-v-7eea899c] {\n    box-shadow: none;\n}\n.cd-side-nav.is-fixed[data-v-7eea899c] {\n    position: fixed;\n}\n.cd-side-nav > ul[data-v-7eea899c] {\n    /* reset style */\n    padding: 0;\n}\n.cd-side-nav .cd-label[data-v-7eea899c] {\n    /* remove labels on minified version of the sidebar */\n    display: none;\n}\n.cd-side-nav a[data-v-7eea899c] {\n    font-size: 1.2rem;\n    text-align: center;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c] {\n    padding: calc(2.2em + 24px) 0 2.4em;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c]::before {\n    left: 50%;\n    right: auto;\n    -webkit-transform: translateX(-50%);\n    transform: translateX(-50%);\n    top: 2.4em;\n}\n.cd-side-nav .active > a[data-v-7eea899c] {\n    /* current page */\n    box-shadow: inset 3px 0 0 #1784c7;\n    background-color: #33383e;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c] {\n    margin: 1em 10% 0;\n}\n.cd-side-nav .count[data-v-7eea899c] {\n    height: 8px;\n    width: 8px;\n    border-radius: 50%;\n    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n    padding: 0;\n    top: 2em;\n    -webkit-transform: translateX(-50%);\n    transform: translateX(-50%);\n    left: calc(50% + 5px);\n    right: auto;\n    color: transparent;\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-side-nav[data-v-7eea899c] {\n    width: 150px;\n}\n.cd-logo img[data-v-7eea899c]{\n    margin-left: -16px;\n    margin-top: 3px;\n}\n.cd-side-nav > ul[data-v-7eea899c] {\n    padding: 0.6em 0;\n}\n.cd-side-nav > ul > li:not(.action-btn):hover > a[data-v-7eea899c] {\n    background-color: #33383e;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c] {\n    padding: 1em 1em 1em 42px;\n    text-align: left;\n    border-bottom: none;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c]::before {\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    transform: translateY(-50%);\n    left: 18px;\n}\n.cd-side-nav .cd-label[data-v-7eea899c] {\n    display: block;\n    padding: 1em 18px;\n}\n.cd-side-nav .action-btn[data-v-7eea899c] {\n    text-align: left;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c] {\n    margin: 0 18px;\n}\n.no-touch .cd-side-nav .action-btn a[data-v-7eea899c]:hover {\n    background-color: #1a93de;\n}\n.cd-side-nav .count[data-v-7eea899c] {\n    /* reset style */\n    color: #ffffff;\n    height: auto;\n    width: auto;\n    border-radius: .25em;\n    padding: .2em .4em;\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    transform: translateY(-50%);\n    right: 18px;\n    left: auto;\n    box-shadow: none;\n}\n}\n.has-children ul[data-v-7eea899c] {\n  position: relative;\n  width: 100%;\n  display: none;\n  background-color: #1c1f22;\n}\n.has-children > a[data-v-7eea899c]::after {\n  /* arrow icon */\n  position: absolute;\n  content: '';\n  height: 16px;\n  width: 16px;\n  right: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n}\n.has-children.selected > ul[data-v-7eea899c] {\n  display: block;\n}\n.has-children.selected > a[data-v-7eea899c]::after {\n  -webkit-transform: translateY(-50%) rotate(180deg);\n  transform: translateY(-50%) rotate(180deg);\n}\n@media only screen and (min-width: 768px) {\n.has-children[data-v-7eea899c] {\n    position: relative;\n}\n.has-children ul[data-v-7eea899c] {\n    position: absolute;\n    top: 0;\n    left: 100%;\n    width: 160px;\n    padding: 0;\n    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);\n}\n.has-children ul a[data-v-7eea899c] {\n    text-align: left;\n    border: none;\n    padding: 1em;\n}\n.no-touch .has-children ul a[data-v-7eea899c]:hover {\n    color: #1784c7;\n}\n.has-children > a[data-v-7eea899c]::after {\n    display: none;\n    color: black;\n}\n.cd-side-nav .has-children.selected > a[data-v-7eea899c] {\n    /* focus state -> show sub pages */\n    background-color: #33383e;\n}\n.cd-top-nav .has-children[data-v-7eea899c] {\n    position: relative;\n    background-color: #323232;\n}\n.cd-top-nav .has-children > a[data-v-7eea899c] {\n    height: 100%;\n    padding: 0 calc(1.8em + 22px) 0 calc(1.8em + 26px) !important;\n    line-height: 55px;\n}\n.cd-top-nav .has-children > a[data-v-7eea899c]::after {\n    display: block;\n    right: 1.8em;\n}\n.cd-top-nav .has-children ul[data-v-7eea899c] {\n    background-color: #1c1f22;\n    width: 200px;\n    top: 100%;\n    right: 0;\n    left: auto;\n    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-top-nav .has-children ul a[data-v-7eea899c] {\n    padding-left: 18px !important;\n}\n}\n@media only screen and (min-width: 1170px) {\n.has-children > ul[data-v-7eea899c] {\n    width: 100%;\n    z-index: 1;\n}\n.has-children ul a[data-v-7eea899c] {\n    padding-left: 18px;\n}\n.has-children.active > ul[data-v-7eea899c] {\n    /* if the item is active, make the subnavigation visible */\n    position: relative;\n    display: block;\n    /* reset style */\n    left: 0;\n    box-shadow: none;\n}\n.no-touch .cd-side-nav .has-children:hover > ul[data-v-7eea899c], .cd-side-nav .has-children.hover > ul[data-v-7eea899c] {\n    /* show subnavigation on hover */\n    display: block;\n    opacity: 1;\n    visibility: visible;\n}\n}\n\n\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/sidebar.vue?0fe70570"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;CAwGA;;;;mCAIA;AACA;EACA,uBAAA;CACA;AAEA;EACA,iBAAA;CACA;AAEA;EACA,kBAAA;EACA,qCAAA;EACA,eAAA;EACA,0BAAA;CACA;AACA;EACA,YAAA;EACA,YAAA;EACA,eAAA;CACA;AAEA;EACA,eAAA;EACA,sBAAA;CACA;AAEA,8CAAA;AAGA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;IACA,aAAA;CAGA;AACA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA,iDAAA;AAEA;EACA,8BAAA;EACA,cAAA;EACA,oBAAA;EACA,aAAA;;EAEA,gBAAA;EACA,cAAA;EACA,cAAA;CAGA;AACA;EACA,0BAAA;EACA,cAAA;EACA,cAAA;CAGA;AACA;EACA,eAAA;CACA;AACA;EACA,gBAAA;EACA,iBAAA;CACA;AACA;EACA,mBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,eAAA;CACA;AAGA;EACA,qCAAA;EACA,kBAAA;CACA;AAEA;;;;EAIA,cAAA;CACA;AAEA;;;;mCAIA;AACA;EACA,qBAAA;CACA;AACA;EACA,mBAAA;EACA,eAAA;EACA,gBAAA;CACA;AACA;EACA,gDAAA;EACA,cAAA;EACA,kBAAA;CACA;AACA;AACA;IACA,mBAAA;IACA,iBAAA;IACA,mBAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;IACA,iBAAA;CACA;AACA;IACA,kBAAA;CACA;CACA;AACA;AACA;IACA,mBAAA;CACA;AACA;IACA,mBAAA;CACA;CACA;AAEA;;;;mCAIA;AAEA;EACA,mBAAA;EACA,WAAA;EACA,OAAA;EACA,QAAA;EACA,aAAA;EACA,YAAA;EACA,oBAAA;;;EAGA,yCAAA;EACA,oCAAA;EACA,mCAAA;CACA;AACA;EACA,YAAA;EACA,YAAA;EACA,eAAA;CACA;AACA,IAAA;AAAA;;AAEA;IACA,gBAAA;IACA,aAAA;IACA,yBAAA;CACA;CACA;AAEA;EACA,YAAA;EACA,eAAA;EACA,oBAAA;CACA;AACA;EACA,eAAA;CACA;AACA;AACA;IACA,sBAAA;CACA;CACA;AAEA;EACA,yDAAA;EACA,aAAA;EACA,mBAAA;EACA,eAAA;EACA,YAAA;EACA,aAAA;EACA,iBAAA;EACA,eAAA;EACA,iBAAA;EACA,oBAAA;EACA,mBAAA;CACA;AACA;EACA,2BAAA;EACA,mBAAA;EACA,sBAAA;EACA,YAAA;EACA,YAAA;EACA,mBAAA;CACA;AACA;EACA,wBAAA;EACA,mBAAA;EACA,SAAA;EACA,WAAA;EACA,iBAAA;EAGA,4BAAA;CACA;AACA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,2CAAA;EACA,iCAAA;EAIA,yBAAA;EACA,oCAAA;EACA,4BAAA;EACA,iCAAA;EAIA,yBAAA;EAGA,mCAAA;EAAA,2BAAA;EAAA,mDAAA;CACA;AACA;EACA,wBAAA;EACA,UAAA;CACA;AACA;EACA,2BAAA;EACA,SAAA;CACA;AACA;EACA,6BAAA;EACA,mCAAA;CACA;AACA;EACA,gCAAA;EACA,kBAAA;CACA;AACA;EACA,kEAAA;EAIA,0DAAA;CACA;AACA;EACA,kEAAA;EAIA,0DAAA;CACA;AACA;AACA;IACA,cAAA;CACA;CACA;AAEA;EACA,mBAAA;EACA,uBAAA;CACA;AACA;EACA,WAAA;CACA;AACA;EACA,eAAA;EACA,YAAA;EACA,mBAAA;EACA,UAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,aAAA;EACA,YAAA;CAEA;AACA;EACA,mBAAA;EACA,YAAA;EACA,aAAA;EACA,aAAA;EACA,qBAAA;EACA,yBAAA;EACA,sBAAA;EACA,qBAAA;EACA,oBAAA;EACA,iBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;AACA;IACA,YAAA;IACA,sBAAA;IACA,aAAA;IACA,aAAA;IACA,oBAAA;CACA;AACA;IACA,iBAAA;IACA,WAAA;CACA;AACA;IACA,6BAAA;IACA,UAAA;CACA;AACA;IACA,aAAA;IACA,YAAA;CACA;AACA;IACA,aAAA;IACA,oBAAA;IACA,iBAAA;IACA,0BAAA;IACA,+BAAA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;CACA;AAEA;;;;mCAIA;AACA;EACA,6CAAA;EACA,cAAA;CACA;AACA;AACA;IACA,eAAA;IACA,aAAA;IACA,aAAA;CACA;CACA;AAEA;EACA,iBAAA;EACA,cAAA;CACA;AACA;EACA,2BAAA;CACA;AACA;EACA,kBAAA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,aAAA;EACA,YAAA;EACA,mBAAA;EACA,cAAA;CACA;AACA;AACA;IACA,aAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;IACA,eAAA;CACA;AACA;IACA,sBAAA;IACA,kBAAA;IACA,aAAA;CACA;AACA;IACA,gBAAA;CACA;AACA;IACA,6BAAA;CACA;AACA;IACA,eAAA;CACA;CACA;AACA;AACA;IACA,eAAA;CACA;CACA;AAEA;;;;mCAIA;AACA;EACA,mBAAA;EACA,WAAA;EACA,QAAA;EACA,OAAA;EACA,YAAA;EACA,kBAAA;EACA,0BAAA;EACA,mBAAA;EACA,WAAA;EACA,kBAAA;EACA,iBAAA;EACA,oCAAA;EACA,mCAAA;EAGA,gDAAA;CACA;AACA;EACA,WAAA;EACA,oBAAA;EACA,kBAAA;EACA,kCAAA;EAGA,8CAAA;EACA,iBAAA;EACA,0CAAA;CACA;AACA;EACA,iBAAA;CACA;AACA;EACA,kBAAA;CACA;AACA;EACA,eAAA;EACA,gBAAA;CACA;AAEA;EACA,mBAAA;EACA,eAAA;EACA,kBAAA;CACA;AACA;EACA,oBAAA;CACA;AACA;EACA,8BAAA;EACA,iCAAA;CACA;AACA;EACA,2BAAA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,aAAA;EACA,YAAA;CAEA;AACA;EACA,6BAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,yBAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,wBAAA;EACA,mBAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,+BAAA;EACA,qBAAA;EACA,0BAAA;EACA,qBAAA;EACA,eAAA;EACA,kBAAA;EACA,kBAAA;EACA,mBAAA;CACA;AACA;EACA,eAAA;EACA,aAAA;EACA,eAAA;EACA,0BAAA;EACA,qBAAA;EACA,aAAA;EACA,iFAAA;EACA,mBAAA;EACA,eAAA;EACA,kBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;AACA;;IAEA,YAAA;IACA,WAAA;IACA,aAAA;IACA,kBAAA;IACA,kBAAA;IACA,iBAAA;IACA,oBAAA;IACA,WAAA;IACA,kBAAA;IACA,iBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,gBAAA;CACA;AACA;IACA,iBAAA;IACA,WAAA;CACA;AACA;IACA,sDAAA;IACA,cAAA;CACA;AACA;IACA,kBAAA;IACA,mBAAA;CACA;AACA;IACA,oCAAA;CACA;AACA;IACA,UAAA;IACA,YAAA;IACA,oCAAA;IAIA,4BAAA;IACA,WAAA;CACA;AACA;IACA,kBAAA;IACA,kCAAA;IACA,0BAAA;CACA;AACA;IACA,kBAAA;CACA;AACA;IACA,YAAA;IACA,WAAA;IACA,mBAAA;IACA,uCAAA;IACA,WAAA;IACA,SAAA;IACA,oCAAA;IAIA,4BAAA;IACA,sBAAA;IACA,YAAA;IACA,mBAAA;CACA;CACA;AACA;AACA;IACA,aAAA;CACA;AACA;IACA,mBAAA;IACA,gBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,0BAAA;IACA,iBAAA;IACA,oBAAA;CACA;AACA;IACA,SAAA;IACA,aAAA;IACA,oCAAA;IAIA,4BAAA;IACA,WAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,iBAAA;IACA,eAAA;IACA,aAAA;IACA,YAAA;IACA,qBAAA;IACA,mBAAA;IACA,SAAA;IACA,aAAA;IACA,oCAAA;IAIA,4BAAA;IACA,YAAA;IACA,WAAA;IACA,iBAAA;CACA;CACA;AAEA;EACA,mBAAA;EACA,YAAA;EACA,cAAA;EACA,0BAAA;CACA;AACA;EACA,gBAAA;EACA,mBAAA;EACA,YAAA;EACA,aAAA;EACA,YAAA;EACA,UAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;CAEA;AACA;EACA,eAAA;CACA;AACA;EACA,mDAAA;EAIA,2CAAA;CACA;AACA;AACA;IACA,mBAAA;CACA;AACA;IACA,mBAAA;IACA,OAAA;IACA,WAAA;IACA,aAAA;IACA,WAAA;IACA,0CAAA;CACA;AACA;IACA,iBAAA;IACA,aAAA;IACA,aAAA;CACA;AAGA;IACA,eAAA;CACA;AACA;IACA,cAAA;IACA,aAAA;CACA;AACA;IACA,mCAAA;IACA,0BAAA;CACA;AACA;IACA,mBAAA;IACA,0BAAA;CAEA;AACA;IACA,aAAA;IACA,8DAAA;IACA,kBAAA;CACA;AACA;IACA,eAAA;IACA,aAAA;CACA;AACA;IACA,0BAAA;IACA,aAAA;IACA,UAAA;IACA,SAAA;IACA,WAAA;IACA,0CAAA;CACA;AACA;IACA,8BAAA;CACA;CACA;AACA;AACA;IACA,YAAA;IACA,WAAA;CACA;AACA;IACA,mBAAA;CACA;AACA;IACA,2DAAA;IACA,mBAAA;IACA,eAAA;IACA,iBAAA;IACA,QAAA;IACA,iBAAA;CACA;AACA;IACA,iCAAA;IACA,eAAA;IACA,WAAA;IACA,oBAAA;CACA;CACA","file":"sidebar.vue","sourcesContent":["<template>\n  <div class=\"cd-side-nav\">\n     <!-- ####### Header NAVBAR ####### -->\n  <header class=\"cd-main-header\" >\n    <a href=\"#\" class=\"cd-logo\"><img src=\"/dist/assets/images/logo-trans.png\"  alt=\"Logo\"></a>       \n    <nav class=\"cd-nav\" >\n      <ul class=\"cd-top-nav\">\n         <li><a v-on:click=\"$parent.logout()\">Logout</a></li>\n         <li class=\"has-children account\">\n          <a href=\"#0\"  >\n            <img  src=\"/dist/assets/images/user.jpg\" alt=\"avatar\">\n            <div id='username'></div>\n          </a>\n          <ul>\n           <!--  <li><a href=\"#0\">My Account</a></li>\n           <li><a href=\"#0\">Edit Account</a></li> -->\n            <!-- <li><a href=\"#0\">Logout</a></li> -->\n          </ul>\n        </li>\n      </ul>\n    </nav>\n  </header> \n  <!-- ###### Header NAVBAR END #######-->\n     \n    <!-- %%%%%%%%  Side NAVBAR %%%%%%% -->\n  <main class=\"cd-main-content\" >\n    <nav class=\"cd-side-nav\">\n      <ul>\n        <li class=\"has-children Overviews\">\n         <a v-on:click=\"$parent.updateView('create-customer')\"> <i class=\"fa fa-th-large\" ></i>Customer</a>                   \n        </li>       \n        <li class=\"has-children comments\">\n          <a v-on:click=\"$parent.updateView('add-installer')\"><i class=\"fa fa-tasks\"></i> Installer</a>                   \n        </li>\n\n        <li class=\"has-children bookmarks\">\n          <a  v-on:click=\"$parent.updateView('bonus-schedule')\"><i class=\"fa fa-table\"></i> Bonus</a>\n          \n        </li> \n\t\t    <li class=\"has-children bookmarks\">\n          <a  v-on:click=\"$parent.updateView('payment-history')\"><i class=\"fa fa-table\"></i> Payments</a>\n          \n        </li> \n        <li class=\"has-children users\">\n          <a  v-on:click=\"$parent.updateView('add-user')\"><i class=\"fa fa-user\"></i> User</a>       \n         \n        </li>\n       \n        <li class=\"has-children users\">\n          <a  v-on:click=\"$parent.updateView('')\"><i class=\"fa fa-user\"></i> Jobs</a>       \n          <!-- <ul>\n           <li><a v-on:click=\"$parent.updateView('')\">View transaction logs</a></li>\n           <li><a v-on:click=\"$parent.updateView('')\">View project data</a></li>\n          </ul> -->\n        </li>\n\n         <li class=\"has-children users\">\n          <a  v-on:click=\"$parent.updateView('create-project')\"><i class=\"fa fa-user\"></i> Project</a>                 \n        </li>\n\n        <li class=\"has-children users\">\n          <a v-on:click=\"$parent.updateView('create-roles')\"><i class=\"fa fa-user\"></i> Admin</a>       \n          <!-- <ul>\n           <li><a v-on:click=\"$parent.updateView('create-roles')\">Create roles</a></li>\n           <li><a v-on:click=\"$parent.updateView('modify-roles')\">Modify Roles</a></li>\n          </ul> -->\n        </li>\n    </ul>\n    </nav>\n        <!-- %%%%%%%%  Side NAVBAR END %%%%%%% -->\n\n\n \n\n  </main> <!-- .cd-main-content -->\t\t\n  </div>\n</template>\n\n<script>\nconst axios = require('axios');\nexport default {\n  name: \"side-bar\",\n  beforeMount(){\n  axios.get('/session/data')\n   .then(req => {\n      console.log(\"Side Bar username\"+req.data.username);\n      $('#username').html(req.data.username);\n     \n      //If no session received, return home\n      if(!req.data.roll){\n        this.$router.push('/');\n      }\n\n     \n   })\n  .catch(function(err){\n    console.log(\"Error R\"+err);\n  });\n  }\n};\n\n</script>\n\n<style scoped>\n /* -------------------------------- \n\nPrimary style\n\n-------------------------------- */\n*, *::after, *::before {\n  box-sizing: border-box;\n}\n\nhtml {\n  font-size: 62.5%;\n}\n\nbody {\n  font-size: 1.6rem;\n  font-family: \"Open Sans\", sans-serif;\n  color: #3e454c;\n  background-color: #F5F5F5;\n}\nbody::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\n\na {\n  color: #1784c7;\n  text-decoration: none;\n}\n\n/*  ######  Side NAVBAR page style  ######  */\n\n\n#dashboard{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n    height: 100%;\n\n\n}\n#project{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n#tables{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n#user{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n#admin{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n/*  ######  Side NAVBAR page style END ######  */\n\n.button{\n  background-color: transparent;\n  color:#C8C8C8;\n  border: transparent;\n  height: 35px;\n  \n  font-size: 15px;\n  border : none;\n  outline: none;\n\n\n}\n.button:active {\n  background-color: #323232;\n  border : none;\n  outline: none;\n  \n\n}\n.button:hover{\n  color: #ffffff;\n}\n.cd-side-nav{\n  font-size: 20px;\n  margin-top: 20px;\n}\n.fa{\n  margin-right: 13px;\n}\n.cd-nav ul li a{\n  color:#C8C8C8;\n}\n.cd-nav ul li a:hover{\n  color: #ffffff;\n}\n\n\ninput {\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 1.6rem;\n}\n\ninput[type=\"search\"]::-webkit-search-decoration,\ninput[type=\"search\"]::-webkit-search-cancel-button,\ninput[type=\"search\"]::-webkit-search-results-button,\ninput[type=\"search\"]::-webkit-search-results-decoration {\n  display: none;\n}\n\n/* -------------------------------- \n\nMain Page Content\n\n-------------------------------- */\n.cd-main-content .content-wrapper {\n  padding: 45px 5% 3em;\n}\n.cd-main-content .content-wrapper h1 {\n  text-align: center;\n  padding: 3em 0;\n  font-size: 2rem;\n}\n.cd-main-content::before {\n  /* never visible - used to check MQ in jQuery */\n  display: none;\n  content: 'mobile';\n}\n@media only screen and (min-width: 768px) {\n  .cd-main-content .content-wrapper {\n    margin-left: 110px;\n    margin-top: 80px;\n    padding-top: 155px;\n  }\n  .cd-main-content .content-wrapper h1 {\n    padding: 4em 0;\n    font-size: 3.2rem;\n    font-weight: 300;\n  }\n  .cd-main-content::before {\n    content: 'tablet';\n  }\n}\n@media only screen and (min-width: 1170px) {\n  .cd-main-content .content-wrapper {\n    margin-left: 200px;\n  }\n  .cd-main-content::before {\n    content: 'desktop';\n  }\n}\n\n/* -------------------------------- \n\nHeader\n\n-------------------------------- */\n \n.cd-main-header {\n  position: absolute;\n  z-index: 2;\n  top: 0;\n  left: 0;\n  height: 45px;\n  width: 100%;\n  background: #FFFFFF;\n\n\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.cd-main-header::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\n/**/@media only screen and (min-width: 768px) \n{\n  .cd-main-header {\n    position: fixed;\n    height: 55px;\n    background-color:#323232;\n  }\n}\n\n.cd-logo {\n  float: left;\n  display: block;\n  margin: 11px 0 0 5%;\n}\n.cd-logo img {\n  display: block;\n}\n@media only screen and (min-width: 768px) {\n  .cd-logo {\n    margin: 16px 0 0 36px;\n  }\n}\n\n.cd-nav-trigger {\n  /* navigation trigger - visible on mobile devices only */\n  float: right;\n  position: relative;\n  display: block;\n  width: 34px;\n  height: 44px;\n  margin-right: 5%;\n  /* hide text */\n  overflow: hidden;\n  white-space: nowrap;\n  color: transparent;\n}\n.cd-nav-trigger span, .cd-nav-trigger span::before, .cd-nav-trigger span::after {\n  /* hamburger icon in CSS */\n  position: absolute;\n  display: inline-block;\n  height: 3px;\n  width: 24px;\n  background:#323232;\n}\n.cd-nav-trigger span {\n  /* line in the center */\n  position: absolute;\n  top: 50%;\n  right: 5px;\n  margin-top: -2px;\n  -webkit-transition: background 0.2s;\n  -moz-transition: background 0.2s;\n  transition: background 0.2s;\n}\n.cd-nav-trigger span::before, .cd-nav-trigger span::after {\n  /* other 2 lines */\n  content: '';\n  right: 0;\n  /* Force Hardware Acceleration in WebKit */\n  -webkit-transform: translateZ(0);\n  -moz-transform: translateZ(0);\n  -ms-transform: translateZ(0);\n  -o-transform: translateZ(0);\n  transform: translateZ(0);\n  -webkit-backface-visibility: hidden;\n  backface-visibility: hidden;\n  -webkit-transform-origin: 0% 50%;\n  -moz-transform-origin: 0% 50%;\n  -ms-transform-origin: 0% 50%;\n  -o-transform-origin: 0% 50%;\n  transform-origin: 0% 50%;\n  -webkit-transition: -webkit-transform 0.2s;\n  -moz-transition: -moz-transform 0.2s;\n  transition: transform 0.2s;\n}\n.cd-nav-trigger span::before {\n  /* menu icon top line */\n  top: -6px;\n}\n.cd-nav-trigger span::after {\n  /* menu icon bottom line */\n  top: 6px;\n}\n.cd-nav-trigger.nav-is-visible span {\n  /* hide line in the center */\n  background: rgba(255, 255, 255, 0);\n}\n.cd-nav-trigger.nav-is-visible span::before, .cd-nav-trigger.nav-is-visible span::after {\n  /* keep visible other 2 lines */\n  background: white;\n}\n.cd-nav-trigger.nav-is-visible span::before {\n  -webkit-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  -moz-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  -ms-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  -o-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  transform: translateX(4px) translateY(-3px) rotate(45deg);\n}\n.cd-nav-trigger.nav-is-visible span::after {\n  -webkit-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  -moz-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  -ms-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  -o-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  transform: translateX(4px) translateY(2px) rotate(-45deg);\n}\n@media only screen and (min-width: 768px) {\n  .cd-nav-trigger {\n    display: none;\n  }\n}\n\n.cd-search {\n  position: relative;\n  margin: 1.2em 5% 0.6em;\n}\n.cd-search.is-hidden {\n  opacity: 0;\n}\n.cd-search::before {\n  /* lens icon */\n  content: '';\n  position: absolute;\n  left: 8px;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n \n}\n.cd-search input {\n  padding-left: 32px;\n  width: 100%;\n  height: 36px;\n  border: none;\n  border-radius: .25em;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  -ms-appearance: none;\n  -o-appearance: none;\n  appearance: none;\n}\n.cd-search input:focus {\n  outline: none;\n}\n@media only screen and (min-width: 768px) {\n  .cd-search {\n    float: left;\n    display: inline-block;\n    width: 250px;\n    height: 100%;\n    margin: 0 0 0 2.5em;\n  }\n  .cd-search.is-hidden {\n    /* reset style */\n    opacity: 1;\n  }\n  .cd-search::before {\n    background-position: 0 -16px;\n    left: 1em;\n  }\n  .cd-search form, .cd-search input {\n    height: 100%;\n    width: 100%;\n  }\n  .cd-search input {\n    border: none;\n    padding-left: 2.6em;\n    border-radius: 0;\n    background-color: #3e454c;\n    border-left: 1px solid #51575d;\n    color: #ffffff;\n  }\n  .cd-search input::-webkit-input-placeholder {\n    color: #777c81;\n  }\n  .cd-search input::-moz-placeholder {\n    color: #777c81;\n  }\n  .cd-search input:-moz-placeholder {\n    color: #777c81;\n  }\n  .cd-search input:-ms-input-placeholder {\n    color: #777c81;\n  }\n}\n\n/* -------------------------------- \n\nTop Navigation\n\n-------------------------------- */\n.cd-nav {\n  /* top nav - not visible on mobile devices */\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n  .cd-nav {\n    display: block;\n    float: right;\n    height: 100%;\n  }\n}\n\n.cd-top-nav > li > a::before {\n  /* reset style */\n  display: none;\n}\n.cd-top-nav > li a {\n  padding: 1em 5% !important;\n}\n.cd-top-nav img {\n  /* avatar image */\n  position: absolute;\n  left: 1.8em;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 20px;\n  width: 20px;\n  border-radius: 50%;\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n  .cd-top-nav {\n    height: 100%;\n  }\n  .cd-top-nav a {\n    display: block;\n    font-size: 1.4rem;\n    color: #ffffff;\n  }\n  .cd-top-nav > li {\n    display: inline-block;\n    margin-right: 1em;\n    height: 100%;\n  }\n  .cd-top-nav > li:last-of-type {\n    margin-right: 0;\n  }\n  .cd-top-nav > li a {\n    padding: 1em .6em !important;\n  }\n  .cd-top-nav img {\n    display: block;\n  }\n}\n@media only screen and (min-width: 1170px) {\n  .cd-top-nav li:not(.has-children) a:hover {\n    color: #1784c7;\n  }\n}\n\n/* -------------------------------- \n\nSidebar\n\n-------------------------------- */\n.cd-side-nav {\n  position: absolute;\n  z-index: 1;\n  left: 0;\n  top: 0;\n  width: 100%;\n  padding: 45px 0 0;\n  background-color: #323232;\n  visibility: hidden;\n  opacity: 0;\n  max-height: 100vh;\n  overflow: hidden;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;\n  -moz-transition: opacity 0.2s 0s, visibility 0s 0.2s;\n  transition: opacity 0.2s 0s, visibility 0s 0.2s;\n}\n.cd-side-nav.nav-is-visible {\n  opacity: 1;\n  visibility: visible;\n  overflow: visible;\n  -webkit-overflow-scrolling: touch;\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0s;\n  -moz-transition: opacity 0.2s 0s, visibility 0s 0s;\n  transition: opacity 0.2s 0s, visibility 0s 0s;\n  max-height: none;\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-side-nav > ul {\n  padding: 0.6em 0;\n}\n.cd-side-nav > ul:last-of-type {\n  padding-bottom: 0;\n}\n.cd-side-nav .cd-label, .cd-side-nav a {\n  display: block;\n  padding: 1em 5%;\n}\n\n.cd-side-nav a {\n  position: relative;\n  color: #ffffff;\n  font-size: 1.4rem;\n}\n.cd-side-nav ul.cd-top-nav > li:last-of-type > a {\n  border-bottom: none;\n}\n.cd-side-nav > ul > li > a {\n  padding-left: calc(5% + 24px);\n  border-bottom: 1px solid #373d44;\n}\n.cd-side-nav > ul > li > a::before {\n  /* icon before item name */\n  position: absolute;\n  content: '';\n  left: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n  \n}\n.cd-side-nav > ul > li.overview > a::before {\n  background-position: -64px 0;\n}\n.cd-side-nav > ul > li.notifications > a::before {\n  background-position: -80px 0;\n}\n.cd-side-nav > ul > li.comments > a::before {\n  background-position: -48px 0;\n}\n.cd-side-nav > ul > li.bookmarks > a::before {\n  background-position: -32px 0;\n}\n.cd-side-nav > ul > li.images > a::before {\n  background-position: 0 0;\n}\n.cd-side-nav > ul > li.users > a::before {\n  background-position: -16px 0;\n}\n.cd-side-nav .count {\n  /* notification badge */\n  position: absolute;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  right: calc(5% + 16px + 0.4em);\n  padding: 0.2em 0.4em;\n  background-color: #ff7e66;\n  border-radius: .25em;\n  color: #ffffff;\n  font-weight: bold;\n  font-size: 1.2rem;\n  text-align: center;\n}\n.cd-side-nav .action-btn a {\n  display: block;\n  margin: 0 5%;\n  padding: 1em 0;\n  background-color: #1784c7;\n  border-radius: .25em;\n  border: none;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);\n  text-align: center;\n  color: #ffffff;\n  font-weight: bold;\n}\n.cd-side-nav .action-btn a::before {\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n  .cd-side-nav {\n    \n    float: left;\n    top: fixed;\n    width: 110px;\n    min-height: 100vh;\n    padding-top: 55px;\n    /* reset style */\n    visibility: visible;\n    opacity: 1;\n    overflow: visible;\n    max-height: none;\n  }\n  .cd-side-nav.nav-is-visible {\n    box-shadow: none;\n  }\n  .cd-side-nav.is-fixed {\n    position: fixed;\n  }\n  .cd-side-nav > ul {\n    /* reset style */\n    padding: 0;\n  }\n  .cd-side-nav .cd-label {\n    /* remove labels on minified version of the sidebar */\n    display: none;\n  }\n  .cd-side-nav a {\n    font-size: 1.2rem;\n    text-align: center;\n  }\n  .cd-side-nav > ul > li > a {\n    padding: calc(2.2em + 24px) 0 2.4em;\n  }\n  .cd-side-nav > ul > li > a::before {\n    left: 50%;\n    right: auto;\n    -webkit-transform: translateX(-50%);\n    -moz-transform: translateX(-50%);\n    -ms-transform: translateX(-50%);\n    -o-transform: translateX(-50%);\n    transform: translateX(-50%);\n    top: 2.4em;\n  }\n  .cd-side-nav .active > a {\n    /* current page */\n    box-shadow: inset 3px 0 0 #1784c7;\n    background-color: #33383e;\n  }\n  .cd-side-nav .action-btn a {\n    margin: 1em 10% 0;\n  }\n  .cd-side-nav .count {\n    height: 8px;\n    width: 8px;\n    border-radius: 50%;\n    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n    padding: 0;\n    top: 2em;\n    -webkit-transform: translateX(-50%);\n    -moz-transform: translateX(-50%);\n    -ms-transform: translateX(-50%);\n    -o-transform: translateX(-50%);\n    transform: translateX(-50%);\n    left: calc(50% + 5px);\n    right: auto;\n    color: transparent;\n  }\n}\n@media only screen and (min-width: 1170px) {\n  .cd-side-nav {\n    width: 150px;\n  }\n  .cd-logo img{\n    margin-left: -16px;\n    margin-top: 3px;\n  }\n  .cd-side-nav > ul {\n    padding: 0.6em 0;\n  }\n  .cd-side-nav > ul > li:not(.action-btn):hover > a {\n    background-color: #33383e;\n  }\n  .cd-side-nav > ul > li > a {\n    padding: 1em 1em 1em 42px;\n    text-align: left;\n    border-bottom: none;\n  }\n  .cd-side-nav > ul > li > a::before {\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    -moz-transform: translateY(-50%);\n    -ms-transform: translateY(-50%);\n    -o-transform: translateY(-50%);\n    transform: translateY(-50%);\n    left: 18px;\n  }\n  .cd-side-nav .cd-label {\n    display: block;\n    padding: 1em 18px;\n  }\n  .cd-side-nav .action-btn {\n    text-align: left;\n  }\n  .cd-side-nav .action-btn a {\n    margin: 0 18px;\n  }\n  .no-touch .cd-side-nav .action-btn a:hover {\n    background-color: #1a93de;\n  }\n  .cd-side-nav .count {\n    /* reset style */\n    color: #ffffff;\n    height: auto;\n    width: auto;\n    border-radius: .25em;\n    padding: .2em .4em;\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    -moz-transform: translateY(-50%);\n    -ms-transform: translateY(-50%);\n    -o-transform: translateY(-50%);\n    transform: translateY(-50%);\n    right: 18px;\n    left: auto;\n    box-shadow: none;\n  }\n}\n\n.has-children ul {\n  position: relative;\n  width: 100%;\n  display: none;\n  background-color: #1c1f22;\n}\n.has-children > a::after {\n  /* arrow icon */\n  position: absolute;\n  content: '';\n  height: 16px;\n  width: 16px;\n  right: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  \n}\n.has-children.selected > ul {\n  display: block;\n}\n.has-children.selected > a::after {\n  -webkit-transform: translateY(-50%) rotate(180deg);\n  -moz-transform: translateY(-50%) rotate(180deg);\n  -ms-transform: translateY(-50%) rotate(180deg);\n  -o-transform: translateY(-50%) rotate(180deg);\n  transform: translateY(-50%) rotate(180deg);\n}\n@media only screen and (min-width: 768px) {\n  .has-children {\n    position: relative;\n  }\n  .has-children ul {\n    position: absolute;\n    top: 0;\n    left: 100%;\n    width: 160px;\n    padding: 0;\n    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);\n  }\n  .has-children ul a {\n    text-align: left;\n    border: none;\n    padding: 1em;\n  }\n \n  \n  .no-touch .has-children ul a:hover {\n    color: #1784c7;\n  }\n  .has-children > a::after {\n    display: none;\n    color: black;\n  }\n  .cd-side-nav .has-children.selected > a {\n    /* focus state -> show sub pages */\n    background-color: #33383e;\n  }\n  .cd-top-nav .has-children {\n    position: relative;\n    background-color: #323232;\n\n  }\n  .cd-top-nav .has-children > a {\n    height: 100%;\n    padding: 0 calc(1.8em + 22px) 0 calc(1.8em + 26px) !important;\n    line-height: 55px;\n  }\n  .cd-top-nav .has-children > a::after {\n    display: block;\n    right: 1.8em;\n  }\n  .cd-top-nav .has-children ul {\n    background-color: #1c1f22;\n    width: 200px;\n    top: 100%;\n    right: 0;\n    left: auto;\n    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);\n  }\n  .cd-top-nav .has-children ul a {\n    padding-left: 18px !important;\n  }\n}\n@media only screen and (min-width: 1170px) {\n  .has-children > ul {\n    width: 100%;\n    z-index: 1;\n  }\n  .has-children ul a {\n    padding-left: 18px;\n  }\n  .has-children.active > ul {\n    /* if the item is active, make the subnavigation visible */\n    position: relative;\n    display: block;\n    /* reset style */\n    left: 0;\n    box-shadow: none;\n  }\n  .no-touch .cd-side-nav .has-children:hover > ul, .cd-side-nav .has-children.hover > ul {\n    /* show subnavigation on hover */\n    display: block;\n    opacity: 1;\n    visibility: visible;\n  }\n}\n\n\n</style>\n\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n /* -------------------------------- \n\nPrimary style\n\n-------------------------------- */\n*[data-v-7eea899c], *[data-v-7eea899c]::after, *[data-v-7eea899c]::before {\n  box-sizing: border-box;\n}\nhtml[data-v-7eea899c] {\n  font-size: 62.5%;\n}\nbody[data-v-7eea899c] {\n  font-size: 1.6rem;\n  font-family: \"Open Sans\", sans-serif;\n  color: #3e454c;\n  background-color: #F5F5F5;\n}\nbody[data-v-7eea899c]::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\na[data-v-7eea899c] {\n  color: #1784c7;\n  text-decoration: none;\n}\n/*  ######  Side NAVBAR page style  ######  */\n#dashboard[data-v-7eea899c]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n    height: 100%;\n}\n#project[data-v-7eea899c]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#tables[data-v-7eea899c]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#user[data-v-7eea899c]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#admin[data-v-7eea899c]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n/*  ######  Side NAVBAR page style END ######  */\n.button[data-v-7eea899c]{\n  background-color: transparent;\n  color:#C8C8C8;\n  border: transparent;\n  height: 35px;\n  \n  font-size: 15px;\n  border : none;\n  outline: none;\n}\n.button[data-v-7eea899c]:active {\n  background-color: #323232;\n  border : none;\n  outline: none;\n}\n.button[data-v-7eea899c]:hover{\n  color: #ffffff;\n}\n.cd-side-nav[data-v-7eea899c]{\n  font-size: 20px;\n  margin-top: 20px;\n}\n.fa[data-v-7eea899c]{\n  margin-right: 13px;\n}\n.cd-nav ul li a[data-v-7eea899c]{\n  color:#C8C8C8;\n}\n.cd-nav ul li a[data-v-7eea899c]:hover{\n  color: #ffffff;\n}\ninput[data-v-7eea899c] {\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 1.6rem;\n}\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-decoration,\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-cancel-button,\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-results-button,\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-results-decoration {\n  display: none;\n}\n/* -------------------------------- \n\nMain Page Content\n\n-------------------------------- */\n.cd-main-content .content-wrapper[data-v-7eea899c] {\n  padding: 45px 5% 3em;\n}\n.cd-main-content .content-wrapper h1[data-v-7eea899c] {\n  text-align: center;\n  padding: 3em 0;\n  font-size: 2rem;\n}\n.cd-main-content[data-v-7eea899c]::before {\n  /* never visible - used to check MQ in jQuery */\n  display: none;\n  content: 'mobile';\n}\n@media only screen and (min-width: 768px) {\n.cd-main-content .content-wrapper[data-v-7eea899c] {\n    margin-left: 110px;\n    margin-top: 80px;\n    padding-top: 155px;\n}\n.cd-main-content .content-wrapper h1[data-v-7eea899c] {\n    padding: 4em 0;\n    font-size: 3.2rem;\n    font-weight: 300;\n}\n.cd-main-content[data-v-7eea899c]::before {\n    content: 'tablet';\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-main-content .content-wrapper[data-v-7eea899c] {\n    margin-left: 200px;\n}\n.cd-main-content[data-v-7eea899c]::before {\n    content: 'desktop';\n}\n}\n/* -------------------------------- \n\nHeader\n\n-------------------------------- */\n.cd-main-header[data-v-7eea899c] {\n  position: absolute;\n  z-index: 2;\n  top: 0;\n  left: 0;\n  height: 45px;\n  width: 100%;\n  background: #FFFFFF;\n\n\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.cd-main-header[data-v-7eea899c]::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\n/**/\n@media only screen and (min-width: 768px) \n{\n.cd-main-header[data-v-7eea899c] {\n    position: fixed;\n    height: 55px;\n    background-color:#323232;\n}\n}\n.cd-logo[data-v-7eea899c] {\n  float: left;\n  display: block;\n  margin: 11px 0 0 5%;\n}\n.cd-logo img[data-v-7eea899c] {\n  display: block;\n}\n@media only screen and (min-width: 768px) {\n.cd-logo[data-v-7eea899c] {\n    margin: 16px 0 0 36px;\n}\n}\n.cd-nav-trigger[data-v-7eea899c] {\n  /* navigation trigger - visible on mobile devices only */\n  float: right;\n  position: relative;\n  display: block;\n  width: 34px;\n  height: 44px;\n  margin-right: 5%;\n  /* hide text */\n  overflow: hidden;\n  white-space: nowrap;\n  color: transparent;\n}\n.cd-nav-trigger span[data-v-7eea899c], .cd-nav-trigger span[data-v-7eea899c]::before, .cd-nav-trigger span[data-v-7eea899c]::after {\n  /* hamburger icon in CSS */\n  position: absolute;\n  display: inline-block;\n  height: 3px;\n  width: 24px;\n  background:#323232;\n}\n.cd-nav-trigger span[data-v-7eea899c] {\n  /* line in the center */\n  position: absolute;\n  top: 50%;\n  right: 5px;\n  margin-top: -2px;\n  transition: background 0.2s;\n}\n.cd-nav-trigger span[data-v-7eea899c]::before, .cd-nav-trigger span[data-v-7eea899c]::after {\n  /* other 2 lines */\n  content: '';\n  right: 0;\n  /* Force Hardware Acceleration in WebKit */\n  -webkit-transform: translateZ(0);\n  transform: translateZ(0);\n  -webkit-backface-visibility: hidden;\n  backface-visibility: hidden;\n  -webkit-transform-origin: 0% 50%;\n  transform-origin: 0% 50%;\n  transition: -webkit-transform 0.2s;\n  transition: transform 0.2s;\n  transition: transform 0.2s, -webkit-transform 0.2s;\n}\n.cd-nav-trigger span[data-v-7eea899c]::before {\n  /* menu icon top line */\n  top: -6px;\n}\n.cd-nav-trigger span[data-v-7eea899c]::after {\n  /* menu icon bottom line */\n  top: 6px;\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c] {\n  /* hide line in the center */\n  background: rgba(255, 255, 255, 0);\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::before, .cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::after {\n  /* keep visible other 2 lines */\n  background: white;\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::before {\n  -webkit-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  transform: translateX(4px) translateY(-3px) rotate(45deg);\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::after {\n  -webkit-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  transform: translateX(4px) translateY(2px) rotate(-45deg);\n}\n@media only screen and (min-width: 768px) {\n.cd-nav-trigger[data-v-7eea899c] {\n    display: none;\n}\n}\n.cd-search[data-v-7eea899c] {\n  position: relative;\n  margin: 1.2em 5% 0.6em;\n}\n.cd-search.is-hidden[data-v-7eea899c] {\n  opacity: 0;\n}\n.cd-search[data-v-7eea899c]::before {\n  /* lens icon */\n  content: '';\n  position: absolute;\n  left: 8px;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n}\n.cd-search input[data-v-7eea899c] {\n  padding-left: 32px;\n  width: 100%;\n  height: 36px;\n  border: none;\n  border-radius: .25em;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  -ms-appearance: none;\n  -o-appearance: none;\n  appearance: none;\n}\n.cd-search input[data-v-7eea899c]:focus {\n  outline: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-search[data-v-7eea899c] {\n    float: left;\n    display: inline-block;\n    width: 250px;\n    height: 100%;\n    margin: 0 0 0 2.5em;\n}\n.cd-search.is-hidden[data-v-7eea899c] {\n    /* reset style */\n    opacity: 1;\n}\n.cd-search[data-v-7eea899c]::before {\n    background-position: 0 -16px;\n    left: 1em;\n}\n.cd-search form[data-v-7eea899c], .cd-search input[data-v-7eea899c] {\n    height: 100%;\n    width: 100%;\n}\n.cd-search input[data-v-7eea899c] {\n    border: none;\n    padding-left: 2.6em;\n    border-radius: 0;\n    background-color: #3e454c;\n    border-left: 1px solid #51575d;\n    color: #ffffff;\n}\n.cd-search input[data-v-7eea899c]::-webkit-input-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-7eea899c]::-moz-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-7eea899c]:-moz-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-7eea899c]:-ms-input-placeholder {\n    color: #777c81;\n}\n}\n/* -------------------------------- \n\nTop Navigation\n\n-------------------------------- */\n.cd-nav[data-v-7eea899c] {\n  /* top nav - not visible on mobile devices */\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-nav[data-v-7eea899c] {\n    display: block;\n    float: right;\n    height: 100%;\n}\n}\n.cd-top-nav > li > a[data-v-7eea899c]::before {\n  /* reset style */\n  display: none;\n}\n.cd-top-nav > li a[data-v-7eea899c] {\n  padding: 1em 5% !important;\n}\n.cd-top-nav img[data-v-7eea899c] {\n  /* avatar image */\n  position: absolute;\n  left: 1.8em;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 20px;\n  width: 20px;\n  border-radius: 50%;\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-top-nav[data-v-7eea899c] {\n    height: 100%;\n}\n.cd-top-nav a[data-v-7eea899c] {\n    display: block;\n    font-size: 1.4rem;\n    color: #ffffff;\n}\n.cd-top-nav > li[data-v-7eea899c] {\n    display: inline-block;\n    margin-right: 1em;\n    height: 100%;\n}\n.cd-top-nav > li[data-v-7eea899c]:last-of-type {\n    margin-right: 0;\n}\n.cd-top-nav > li a[data-v-7eea899c] {\n    padding: 1em .6em !important;\n}\n.cd-top-nav img[data-v-7eea899c] {\n    display: block;\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-top-nav li:not(.has-children) a[data-v-7eea899c]:hover {\n    color: #1784c7;\n}\n}\n/* -------------------------------- \n\nSidebar\n\n-------------------------------- */\n.cd-side-nav[data-v-7eea899c] {\n  position: absolute;\n  z-index: 1;\n  left: 0;\n  top: 0;\n  width: 100%;\n  padding: 45px 0 0;\n  background-color: #323232;\n  visibility: hidden;\n  opacity: 0;\n  max-height: 100vh;\n  overflow: hidden;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  transition: opacity 0.2s 0s, visibility 0s 0.2s;\n}\n.cd-side-nav.nav-is-visible[data-v-7eea899c] {\n  opacity: 1;\n  visibility: visible;\n  overflow: visible;\n  -webkit-overflow-scrolling: touch;\n  transition: opacity 0.2s 0s, visibility 0s 0s;\n  max-height: none;\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-side-nav > ul[data-v-7eea899c] {\n  padding: 0.6em 0;\n}\n.cd-side-nav > ul[data-v-7eea899c]:last-of-type {\n  padding-bottom: 0;\n}\n.cd-side-nav .cd-label[data-v-7eea899c], .cd-side-nav a[data-v-7eea899c] {\n  display: block;\n  padding: 1em 5%;\n}\n.cd-side-nav a[data-v-7eea899c] {\n  position: relative;\n  color: #ffffff;\n  font-size: 1.4rem;\n}\n.cd-side-nav ul.cd-top-nav > li:last-of-type > a[data-v-7eea899c] {\n  border-bottom: none;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c] {\n  padding-left: calc(5% + 24px);\n  border-bottom: 1px solid #373d44;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c]::before {\n  /* icon before item name */\n  position: absolute;\n  content: '';\n  left: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n}\n.cd-side-nav > ul > li.overview > a[data-v-7eea899c]::before {\n  background-position: -64px 0;\n}\n.cd-side-nav > ul > li.notifications > a[data-v-7eea899c]::before {\n  background-position: -80px 0;\n}\n.cd-side-nav > ul > li.comments > a[data-v-7eea899c]::before {\n  background-position: -48px 0;\n}\n.cd-side-nav > ul > li.bookmarks > a[data-v-7eea899c]::before {\n  background-position: -32px 0;\n}\n.cd-side-nav > ul > li.images > a[data-v-7eea899c]::before {\n  background-position: 0 0;\n}\n.cd-side-nav > ul > li.users > a[data-v-7eea899c]::before {\n  background-position: -16px 0;\n}\n.cd-side-nav .count[data-v-7eea899c] {\n  /* notification badge */\n  position: absolute;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  right: calc(5% + 16px + 0.4em);\n  padding: 0.2em 0.4em;\n  background-color: #ff7e66;\n  border-radius: .25em;\n  color: #ffffff;\n  font-weight: bold;\n  font-size: 1.2rem;\n  text-align: center;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c] {\n  display: block;\n  margin: 0 5%;\n  padding: 1em 0;\n  background-color: #1784c7;\n  border-radius: .25em;\n  border: none;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);\n  text-align: center;\n  color: #ffffff;\n  font-weight: bold;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c]::before {\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-side-nav[data-v-7eea899c] {\n    \n    float: left;\n    top: fixed;\n    width: 110px;\n    min-height: 100vh;\n    padding-top: 55px;\n    /* reset style */\n    visibility: visible;\n    opacity: 1;\n    overflow: visible;\n    max-height: none;\n}\n.cd-side-nav.nav-is-visible[data-v-7eea899c] {\n    box-shadow: none;\n}\n.cd-side-nav.is-fixed[data-v-7eea899c] {\n    position: fixed;\n}\n.cd-side-nav > ul[data-v-7eea899c] {\n    /* reset style */\n    padding: 0;\n}\n.cd-side-nav .cd-label[data-v-7eea899c] {\n    /* remove labels on minified version of the sidebar */\n    display: none;\n}\n.cd-side-nav a[data-v-7eea899c] {\n    font-size: 1.2rem;\n    text-align: center;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c] {\n    padding: calc(2.2em + 24px) 0 2.4em;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c]::before {\n    left: 50%;\n    right: auto;\n    -webkit-transform: translateX(-50%);\n    transform: translateX(-50%);\n    top: 2.4em;\n}\n.cd-side-nav .active > a[data-v-7eea899c] {\n    /* current page */\n    box-shadow: inset 3px 0 0 #1784c7;\n    background-color: #33383e;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c] {\n    margin: 1em 10% 0;\n}\n.cd-side-nav .count[data-v-7eea899c] {\n    height: 8px;\n    width: 8px;\n    border-radius: 50%;\n    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n    padding: 0;\n    top: 2em;\n    -webkit-transform: translateX(-50%);\n    transform: translateX(-50%);\n    left: calc(50% + 5px);\n    right: auto;\n    color: transparent;\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-side-nav[data-v-7eea899c] {\n    width: 150px;\n}\n.cd-logo img[data-v-7eea899c]{\n    margin-left: -16px;\n    margin-top: 3px;\n}\n.cd-side-nav > ul[data-v-7eea899c] {\n    padding: 0.6em 0;\n}\n.cd-side-nav > ul > li:not(.action-btn):hover > a[data-v-7eea899c] {\n    background-color: #33383e;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c] {\n    padding: 1em 1em 1em 42px;\n    text-align: left;\n    border-bottom: none;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c]::before {\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    transform: translateY(-50%);\n    left: 18px;\n}\n.cd-side-nav .cd-label[data-v-7eea899c] {\n    display: block;\n    padding: 1em 18px;\n}\n.cd-side-nav .action-btn[data-v-7eea899c] {\n    text-align: left;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c] {\n    margin: 0 18px;\n}\n.no-touch .cd-side-nav .action-btn a[data-v-7eea899c]:hover {\n    background-color: #1a93de;\n}\n.cd-side-nav .count[data-v-7eea899c] {\n    /* reset style */\n    color: #ffffff;\n    height: auto;\n    width: auto;\n    border-radius: .25em;\n    padding: .2em .4em;\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    transform: translateY(-50%);\n    right: 18px;\n    left: auto;\n    box-shadow: none;\n}\n}\n.has-children ul[data-v-7eea899c] {\n  position: relative;\n  width: 100%;\n  display: none;\n  background-color: #1c1f22;\n}\n.has-children > a[data-v-7eea899c]::after {\n  /* arrow icon */\n  position: absolute;\n  content: '';\n  height: 16px;\n  width: 16px;\n  right: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n}\n.has-children.selected > ul[data-v-7eea899c] {\n  display: block;\n}\n.has-children.selected > a[data-v-7eea899c]::after {\n  -webkit-transform: translateY(-50%) rotate(180deg);\n  transform: translateY(-50%) rotate(180deg);\n}\n@media only screen and (min-width: 768px) {\n.has-children[data-v-7eea899c] {\n    position: relative;\n}\n.has-children ul[data-v-7eea899c] {\n    position: absolute;\n    top: 0;\n    left: 100%;\n    width: 160px;\n    padding: 0;\n    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);\n}\n.has-children ul a[data-v-7eea899c] {\n    text-align: left;\n    border: none;\n    padding: 1em;\n}\n.no-touch .has-children ul a[data-v-7eea899c]:hover {\n    color: #1784c7;\n}\n.has-children > a[data-v-7eea899c]::after {\n    display: none;\n    color: black;\n}\n.cd-side-nav .has-children.selected > a[data-v-7eea899c] {\n    /* focus state -> show sub pages */\n    background-color: #33383e;\n}\n.cd-top-nav .has-children[data-v-7eea899c] {\n    position: relative;\n    background-color: #323232;\n}\n.cd-top-nav .has-children > a[data-v-7eea899c] {\n    height: 100%;\n    padding: 0 calc(1.8em + 22px) 0 calc(1.8em + 26px) !important;\n    line-height: 55px;\n}\n.cd-top-nav .has-children > a[data-v-7eea899c]::after {\n    display: block;\n    right: 1.8em;\n}\n.cd-top-nav .has-children ul[data-v-7eea899c] {\n    background-color: #1c1f22;\n    width: 200px;\n    top: 100%;\n    right: 0;\n    left: auto;\n    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-top-nav .has-children ul a[data-v-7eea899c] {\n    padding-left: 18px !important;\n}\n}\n@media only screen and (min-width: 1170px) {\n.has-children > ul[data-v-7eea899c] {\n    width: 100%;\n    z-index: 1;\n}\n.has-children ul a[data-v-7eea899c] {\n    padding-left: 18px;\n}\n.has-children.active > ul[data-v-7eea899c] {\n    /* if the item is active, make the subnavigation visible */\n    position: relative;\n    display: block;\n    /* reset style */\n    left: 0;\n    box-shadow: none;\n}\n.no-touch .cd-side-nav .has-children:hover > ul[data-v-7eea899c], .cd-side-nav .has-children.hover > ul[data-v-7eea899c] {\n    /* show subnavigation on hover */\n    display: block;\n    opacity: 1;\n    visibility: visible;\n}\n}\n\n\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/sidebar.vue?bc6fdd9a"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;CA0GA;;;;mCAIA;AACA;EACA,uBAAA;CACA;AAEA;EACA,iBAAA;CACA;AAEA;EACA,kBAAA;EACA,qCAAA;EACA,eAAA;EACA,0BAAA;CACA;AACA;EACA,YAAA;EACA,YAAA;EACA,eAAA;CACA;AAEA;EACA,eAAA;EACA,sBAAA;CACA;AAEA,8CAAA;AAGA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;IACA,aAAA;CAGA;AACA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA,iDAAA;AAEA;EACA,8BAAA;EACA,cAAA;EACA,oBAAA;EACA,aAAA;;EAEA,gBAAA;EACA,cAAA;EACA,cAAA;CAGA;AACA;EACA,0BAAA;EACA,cAAA;EACA,cAAA;CAGA;AACA;EACA,eAAA;CACA;AACA;EACA,gBAAA;EACA,iBAAA;CACA;AACA;EACA,mBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,eAAA;CACA;AAGA;EACA,qCAAA;EACA,kBAAA;CACA;AAEA;;;;EAIA,cAAA;CACA;AAEA;;;;mCAIA;AACA;EACA,qBAAA;CACA;AACA;EACA,mBAAA;EACA,eAAA;EACA,gBAAA;CACA;AACA;EACA,gDAAA;EACA,cAAA;EACA,kBAAA;CACA;AACA;AACA;IACA,mBAAA;IACA,iBAAA;IACA,mBAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;IACA,iBAAA;CACA;AACA;IACA,kBAAA;CACA;CACA;AACA;AACA;IACA,mBAAA;CACA;AACA;IACA,mBAAA;CACA;CACA;AAEA;;;;mCAIA;AAEA;EACA,mBAAA;EACA,WAAA;EACA,OAAA;EACA,QAAA;EACA,aAAA;EACA,YAAA;EACA,oBAAA;;;EAGA,yCAAA;EACA,oCAAA;EACA,mCAAA;CACA;AACA;EACA,YAAA;EACA,YAAA;EACA,eAAA;CACA;AACA,IAAA;AAAA;;AAEA;IACA,gBAAA;IACA,aAAA;IACA,yBAAA;CACA;CACA;AAEA;EACA,YAAA;EACA,eAAA;EACA,oBAAA;CACA;AACA;EACA,eAAA;CACA;AACA;AACA;IACA,sBAAA;CACA;CACA;AAEA;EACA,yDAAA;EACA,aAAA;EACA,mBAAA;EACA,eAAA;EACA,YAAA;EACA,aAAA;EACA,iBAAA;EACA,eAAA;EACA,iBAAA;EACA,oBAAA;EACA,mBAAA;CACA;AACA;EACA,2BAAA;EACA,mBAAA;EACA,sBAAA;EACA,YAAA;EACA,YAAA;EACA,mBAAA;CACA;AACA;EACA,wBAAA;EACA,mBAAA;EACA,SAAA;EACA,WAAA;EACA,iBAAA;EAGA,4BAAA;CACA;AACA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,2CAAA;EACA,iCAAA;EAIA,yBAAA;EACA,oCAAA;EACA,4BAAA;EACA,iCAAA;EAIA,yBAAA;EAGA,mCAAA;EAAA,2BAAA;EAAA,mDAAA;CACA;AACA;EACA,wBAAA;EACA,UAAA;CACA;AACA;EACA,2BAAA;EACA,SAAA;CACA;AACA;EACA,6BAAA;EACA,mCAAA;CACA;AACA;EACA,gCAAA;EACA,kBAAA;CACA;AACA;EACA,kEAAA;EAIA,0DAAA;CACA;AACA;EACA,kEAAA;EAIA,0DAAA;CACA;AACA;AACA;IACA,cAAA;CACA;CACA;AAEA;EACA,mBAAA;EACA,uBAAA;CACA;AACA;EACA,WAAA;CACA;AACA;EACA,eAAA;EACA,YAAA;EACA,mBAAA;EACA,UAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,aAAA;EACA,YAAA;CAEA;AACA;EACA,mBAAA;EACA,YAAA;EACA,aAAA;EACA,aAAA;EACA,qBAAA;EACA,yBAAA;EACA,sBAAA;EACA,qBAAA;EACA,oBAAA;EACA,iBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;AACA;IACA,YAAA;IACA,sBAAA;IACA,aAAA;IACA,aAAA;IACA,oBAAA;CACA;AACA;IACA,iBAAA;IACA,WAAA;CACA;AACA;IACA,6BAAA;IACA,UAAA;CACA;AACA;IACA,aAAA;IACA,YAAA;CACA;AACA;IACA,aAAA;IACA,oBAAA;IACA,iBAAA;IACA,0BAAA;IACA,+BAAA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;CACA;AAEA;;;;mCAIA;AACA;EACA,6CAAA;EACA,cAAA;CACA;AACA;AACA;IACA,eAAA;IACA,aAAA;IACA,aAAA;CACA;CACA;AAEA;EACA,iBAAA;EACA,cAAA;CACA;AACA;EACA,2BAAA;CACA;AACA;EACA,kBAAA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,aAAA;EACA,YAAA;EACA,mBAAA;EACA,cAAA;CACA;AACA;AACA;IACA,aAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;IACA,eAAA;CACA;AACA;IACA,sBAAA;IACA,kBAAA;IACA,aAAA;CACA;AACA;IACA,gBAAA;CACA;AACA;IACA,6BAAA;CACA;AACA;IACA,eAAA;CACA;CACA;AACA;AACA;IACA,eAAA;CACA;CACA;AAEA;;;;mCAIA;AACA;EACA,mBAAA;EACA,WAAA;EACA,QAAA;EACA,OAAA;EACA,YAAA;EACA,kBAAA;EACA,0BAAA;EACA,mBAAA;EACA,WAAA;EACA,kBAAA;EACA,iBAAA;EACA,oCAAA;EACA,mCAAA;EAGA,gDAAA;CACA;AACA;EACA,WAAA;EACA,oBAAA;EACA,kBAAA;EACA,kCAAA;EAGA,8CAAA;EACA,iBAAA;EACA,0CAAA;CACA;AACA;EACA,iBAAA;CACA;AACA;EACA,kBAAA;CACA;AACA;EACA,eAAA;EACA,gBAAA;CACA;AAEA;EACA,mBAAA;EACA,eAAA;EACA,kBAAA;CACA;AACA;EACA,oBAAA;CACA;AACA;EACA,8BAAA;EACA,iCAAA;CACA;AACA;EACA,2BAAA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,aAAA;EACA,YAAA;CAEA;AACA;EACA,6BAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,yBAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,wBAAA;EACA,mBAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,+BAAA;EACA,qBAAA;EACA,0BAAA;EACA,qBAAA;EACA,eAAA;EACA,kBAAA;EACA,kBAAA;EACA,mBAAA;CACA;AACA;EACA,eAAA;EACA,aAAA;EACA,eAAA;EACA,0BAAA;EACA,qBAAA;EACA,aAAA;EACA,iFAAA;EACA,mBAAA;EACA,eAAA;EACA,kBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;AACA;;IAEA,YAAA;IACA,WAAA;IACA,aAAA;IACA,kBAAA;IACA,kBAAA;IACA,iBAAA;IACA,oBAAA;IACA,WAAA;IACA,kBAAA;IACA,iBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,gBAAA;CACA;AACA;IACA,iBAAA;IACA,WAAA;CACA;AACA;IACA,sDAAA;IACA,cAAA;CACA;AACA;IACA,kBAAA;IACA,mBAAA;CACA;AACA;IACA,oCAAA;CACA;AACA;IACA,UAAA;IACA,YAAA;IACA,oCAAA;IAIA,4BAAA;IACA,WAAA;CACA;AACA;IACA,kBAAA;IACA,kCAAA;IACA,0BAAA;CACA;AACA;IACA,kBAAA;CACA;AACA;IACA,YAAA;IACA,WAAA;IACA,mBAAA;IACA,uCAAA;IACA,WAAA;IACA,SAAA;IACA,oCAAA;IAIA,4BAAA;IACA,sBAAA;IACA,YAAA;IACA,mBAAA;CACA;CACA;AACA;AACA;IACA,aAAA;CACA;AACA;IACA,mBAAA;IACA,gBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,0BAAA;IACA,iBAAA;IACA,oBAAA;CACA;AACA;IACA,SAAA;IACA,aAAA;IACA,oCAAA;IAIA,4BAAA;IACA,WAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,iBAAA;IACA,eAAA;IACA,aAAA;IACA,YAAA;IACA,qBAAA;IACA,mBAAA;IACA,SAAA;IACA,aAAA;IACA,oCAAA;IAIA,4BAAA;IACA,YAAA;IACA,WAAA;IACA,iBAAA;CACA;CACA;AAEA;EACA,mBAAA;EACA,YAAA;EACA,cAAA;EACA,0BAAA;CACA;AACA;EACA,gBAAA;EACA,mBAAA;EACA,YAAA;EACA,aAAA;EACA,YAAA;EACA,UAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;CAEA;AACA;EACA,eAAA;CACA;AACA;EACA,mDAAA;EAIA,2CAAA;CACA;AACA;AACA;IACA,mBAAA;CACA;AACA;IACA,mBAAA;IACA,OAAA;IACA,WAAA;IACA,aAAA;IACA,WAAA;IACA,0CAAA;CACA;AACA;IACA,iBAAA;IACA,aAAA;IACA,aAAA;CACA;AAGA;IACA,eAAA;CACA;AACA;IACA,cAAA;IACA,aAAA;CACA;AACA;IACA,mCAAA;IACA,0BAAA;CACA;AACA;IACA,mBAAA;IACA,0BAAA;CAEA;AACA;IACA,aAAA;IACA,8DAAA;IACA,kBAAA;CACA;AACA;IACA,eAAA;IACA,aAAA;CACA;AACA;IACA,0BAAA;IACA,aAAA;IACA,UAAA;IACA,SAAA;IACA,WAAA;IACA,0CAAA;CACA;AACA;IACA,8BAAA;CACA;CACA;AACA;AACA;IACA,YAAA;IACA,WAAA;CACA;AACA;IACA,mBAAA;CACA;AACA;IACA,2DAAA;IACA,mBAAA;IACA,eAAA;IACA,iBAAA;IACA,QAAA;IACA,iBAAA;CACA;AACA;IACA,iCAAA;IACA,eAAA;IACA,WAAA;IACA,oBAAA;CACA;CACA","file":"sidebar.vue","sourcesContent":["<template>\n  <div class=\"cd-side-nav\">\n     <!-- ####### Header NAVBAR ####### -->\n  <header class=\"cd-main-header\" >\n    <a href=\"#\" class=\"cd-logo\"><img src=\"/dist/assets/images/logo-trans.png\"  alt=\"Logo\"></a>       \n    <nav class=\"cd-nav\" >\n      <ul class=\"cd-top-nav\">\n         <li><a v-on:click=\"$parent.logout()\">Logout</a></li>\n         <li class=\"has-children account\">\n          <a href=\"#0\"  >\n            <img  src=\"/dist/assets/images/user.jpg\" alt=\"avatar\">\n            <div id='username'></div>\n          </a>\n          <ul>\n           <!--  <li><a href=\"#0\">My Account</a></li>\n           <li><a href=\"#0\">Edit Account</a></li> -->\n            <!-- <li><a href=\"#0\">Logout</a></li> -->\n          </ul>\n        </li>\n      </ul>\n    </nav>\n  </header> \n  <!-- ###### Header NAVBAR END #######-->\n     \n    <!-- %%%%%%%%  Side NAVBAR %%%%%%% -->\n  <main class=\"cd-main-content\" >\n    <nav class=\"cd-side-nav\">\n      <input type=\"hidden\" name=\"user.installerID\" v-model=\"user.roll\">\n      <ul>\n        <li class=\"has-children Overviews\" v-if=\"user.roll == 'Admin' || 'Project Coordinator'\">\n         <a v-on:click=\"$parent.updateView('create-customer')\"> <i class=\"fa fa-th-large\" ></i>Customer</a>                   \n        </li>       \n        <li class=\"has-children comments\" v-if=\"user.roll == 'Admin' || 'Project Coordinator'\">\n          <a v-on:click=\"$parent.updateView('add-installer')\"><i class=\"fa fa-tasks\"></i> Installer</a>                   \n        </li>\n\n        <li class=\"has-children bookmarks\" v-if=\"user.roll == 'Admin' || 'Project Coordinator' || 'Project Manager' || 'Installer'\">\n          <a  v-on:click=\"$parent.updateView('bonus-schedule')\"><i class=\"fa fa-table\"></i> Bonus</a>\n          \n        </li> \n\t\t    <li class=\"has-children bookmarks\" v-if=\"user.roll == 'Admin' || 'Project Coordinator'\">\n          <a  v-on:click=\"$parent.updateView('payment-history')\"><i class=\"fa fa-table\"></i> Payments</a>\n          \n        </li> \n        <li class=\"has-children users\" v-if=\"user.roll == 'Admin' || 'Project Coordinator'\">\n          <a  v-on:click=\"$parent.updateView('add-user')\"><i class=\"fa fa-user\"></i> User</a>       \n         \n        </li>\n       \n        <li class=\"has-children users\" v-if=\"user.roll == 'Admin' || 'Project Coordinator' || 'Project Manager' || 'Installer'\">\n          <a  v-on:click=\"$parent.updateView('')\"><i class=\"fa fa-user\"></i> Jobs</a>       \n          <!-- <ul>\n           <li><a v-on:click=\"$parent.updateView('')\">View transaction logs</a></li>\n           <li><a v-on:click=\"$parent.updateView('')\">View project data</a></li>\n          </ul> -->\n        </li>\n\n         <li class=\"has-children users\" v-if=\"user.roll == 'Admin' || 'Project Coordinator'\">\n          <a  v-on:click=\"$parent.updateView('create-project')\"><i class=\"fa fa-user\"></i> Project</a>                 \n        </li>\n\n        <li class=\"has-children users\" v-if=\"user.roll == 'Admin' || 'Project Coordinator'\">\n          <a v-on:click=\"$parent.updateView('create-roles')\"><i class=\"fa fa-user\"></i> Admin</a>       \n          <!-- <ul>\n           <li><a v-on:click=\"$parent.updateView('create-roles')\">Create roles</a></li>\n           <li><a v-on:click=\"$parent.updateView('modify-roles')\">Modify Roles</a></li>\n          </ul> -->\n        </li>\n    </ul>\n    </nav>\n        <!-- %%%%%%%%  Side NAVBAR END %%%%%%% -->\n\n\n \n\n  </main> <!-- .cd-main-content -->\t\t\n  </div>\n</template>\n\n<script>\nconst axios = require('axios');\nexport default {\n  name: \"side-bar\",\n  props: [\"user\"],\n  beforeMount(){\n  axios.get('/session/data')\n   .then(req => {\n      console.log(\"Side Bar username\"+req.data.username);\n      $('#username').html(req.data.username);\n     \n      //If no session received, return home\n      if(!req.data.roll){\n        this.$router.push('/');\n      }\n\n     \n   })\n  .catch(function(err){\n    console.log(\"Error R\"+err);\n  });\n  }\n};\n\n</script>\n\n<style scoped>\n /* -------------------------------- \n\nPrimary style\n\n-------------------------------- */\n*, *::after, *::before {\n  box-sizing: border-box;\n}\n\nhtml {\n  font-size: 62.5%;\n}\n\nbody {\n  font-size: 1.6rem;\n  font-family: \"Open Sans\", sans-serif;\n  color: #3e454c;\n  background-color: #F5F5F5;\n}\nbody::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\n\na {\n  color: #1784c7;\n  text-decoration: none;\n}\n\n/*  ######  Side NAVBAR page style  ######  */\n\n\n#dashboard{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n    height: 100%;\n\n\n}\n#project{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n#tables{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n#user{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n#admin{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n/*  ######  Side NAVBAR page style END ######  */\n\n.button{\n  background-color: transparent;\n  color:#C8C8C8;\n  border: transparent;\n  height: 35px;\n  \n  font-size: 15px;\n  border : none;\n  outline: none;\n\n\n}\n.button:active {\n  background-color: #323232;\n  border : none;\n  outline: none;\n  \n\n}\n.button:hover{\n  color: #ffffff;\n}\n.cd-side-nav{\n  font-size: 20px;\n  margin-top: 20px;\n}\n.fa{\n  margin-right: 13px;\n}\n.cd-nav ul li a{\n  color:#C8C8C8;\n}\n.cd-nav ul li a:hover{\n  color: #ffffff;\n}\n\n\ninput {\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 1.6rem;\n}\n\ninput[type=\"search\"]::-webkit-search-decoration,\ninput[type=\"search\"]::-webkit-search-cancel-button,\ninput[type=\"search\"]::-webkit-search-results-button,\ninput[type=\"search\"]::-webkit-search-results-decoration {\n  display: none;\n}\n\n/* -------------------------------- \n\nMain Page Content\n\n-------------------------------- */\n.cd-main-content .content-wrapper {\n  padding: 45px 5% 3em;\n}\n.cd-main-content .content-wrapper h1 {\n  text-align: center;\n  padding: 3em 0;\n  font-size: 2rem;\n}\n.cd-main-content::before {\n  /* never visible - used to check MQ in jQuery */\n  display: none;\n  content: 'mobile';\n}\n@media only screen and (min-width: 768px) {\n  .cd-main-content .content-wrapper {\n    margin-left: 110px;\n    margin-top: 80px;\n    padding-top: 155px;\n  }\n  .cd-main-content .content-wrapper h1 {\n    padding: 4em 0;\n    font-size: 3.2rem;\n    font-weight: 300;\n  }\n  .cd-main-content::before {\n    content: 'tablet';\n  }\n}\n@media only screen and (min-width: 1170px) {\n  .cd-main-content .content-wrapper {\n    margin-left: 200px;\n  }\n  .cd-main-content::before {\n    content: 'desktop';\n  }\n}\n\n/* -------------------------------- \n\nHeader\n\n-------------------------------- */\n \n.cd-main-header {\n  position: absolute;\n  z-index: 2;\n  top: 0;\n  left: 0;\n  height: 45px;\n  width: 100%;\n  background: #FFFFFF;\n\n\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.cd-main-header::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\n/**/@media only screen and (min-width: 768px) \n{\n  .cd-main-header {\n    position: fixed;\n    height: 55px;\n    background-color:#323232;\n  }\n}\n\n.cd-logo {\n  float: left;\n  display: block;\n  margin: 11px 0 0 5%;\n}\n.cd-logo img {\n  display: block;\n}\n@media only screen and (min-width: 768px) {\n  .cd-logo {\n    margin: 16px 0 0 36px;\n  }\n}\n\n.cd-nav-trigger {\n  /* navigation trigger - visible on mobile devices only */\n  float: right;\n  position: relative;\n  display: block;\n  width: 34px;\n  height: 44px;\n  margin-right: 5%;\n  /* hide text */\n  overflow: hidden;\n  white-space: nowrap;\n  color: transparent;\n}\n.cd-nav-trigger span, .cd-nav-trigger span::before, .cd-nav-trigger span::after {\n  /* hamburger icon in CSS */\n  position: absolute;\n  display: inline-block;\n  height: 3px;\n  width: 24px;\n  background:#323232;\n}\n.cd-nav-trigger span {\n  /* line in the center */\n  position: absolute;\n  top: 50%;\n  right: 5px;\n  margin-top: -2px;\n  -webkit-transition: background 0.2s;\n  -moz-transition: background 0.2s;\n  transition: background 0.2s;\n}\n.cd-nav-trigger span::before, .cd-nav-trigger span::after {\n  /* other 2 lines */\n  content: '';\n  right: 0;\n  /* Force Hardware Acceleration in WebKit */\n  -webkit-transform: translateZ(0);\n  -moz-transform: translateZ(0);\n  -ms-transform: translateZ(0);\n  -o-transform: translateZ(0);\n  transform: translateZ(0);\n  -webkit-backface-visibility: hidden;\n  backface-visibility: hidden;\n  -webkit-transform-origin: 0% 50%;\n  -moz-transform-origin: 0% 50%;\n  -ms-transform-origin: 0% 50%;\n  -o-transform-origin: 0% 50%;\n  transform-origin: 0% 50%;\n  -webkit-transition: -webkit-transform 0.2s;\n  -moz-transition: -moz-transform 0.2s;\n  transition: transform 0.2s;\n}\n.cd-nav-trigger span::before {\n  /* menu icon top line */\n  top: -6px;\n}\n.cd-nav-trigger span::after {\n  /* menu icon bottom line */\n  top: 6px;\n}\n.cd-nav-trigger.nav-is-visible span {\n  /* hide line in the center */\n  background: rgba(255, 255, 255, 0);\n}\n.cd-nav-trigger.nav-is-visible span::before, .cd-nav-trigger.nav-is-visible span::after {\n  /* keep visible other 2 lines */\n  background: white;\n}\n.cd-nav-trigger.nav-is-visible span::before {\n  -webkit-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  -moz-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  -ms-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  -o-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  transform: translateX(4px) translateY(-3px) rotate(45deg);\n}\n.cd-nav-trigger.nav-is-visible span::after {\n  -webkit-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  -moz-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  -ms-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  -o-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  transform: translateX(4px) translateY(2px) rotate(-45deg);\n}\n@media only screen and (min-width: 768px) {\n  .cd-nav-trigger {\n    display: none;\n  }\n}\n\n.cd-search {\n  position: relative;\n  margin: 1.2em 5% 0.6em;\n}\n.cd-search.is-hidden {\n  opacity: 0;\n}\n.cd-search::before {\n  /* lens icon */\n  content: '';\n  position: absolute;\n  left: 8px;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n \n}\n.cd-search input {\n  padding-left: 32px;\n  width: 100%;\n  height: 36px;\n  border: none;\n  border-radius: .25em;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  -ms-appearance: none;\n  -o-appearance: none;\n  appearance: none;\n}\n.cd-search input:focus {\n  outline: none;\n}\n@media only screen and (min-width: 768px) {\n  .cd-search {\n    float: left;\n    display: inline-block;\n    width: 250px;\n    height: 100%;\n    margin: 0 0 0 2.5em;\n  }\n  .cd-search.is-hidden {\n    /* reset style */\n    opacity: 1;\n  }\n  .cd-search::before {\n    background-position: 0 -16px;\n    left: 1em;\n  }\n  .cd-search form, .cd-search input {\n    height: 100%;\n    width: 100%;\n  }\n  .cd-search input {\n    border: none;\n    padding-left: 2.6em;\n    border-radius: 0;\n    background-color: #3e454c;\n    border-left: 1px solid #51575d;\n    color: #ffffff;\n  }\n  .cd-search input::-webkit-input-placeholder {\n    color: #777c81;\n  }\n  .cd-search input::-moz-placeholder {\n    color: #777c81;\n  }\n  .cd-search input:-moz-placeholder {\n    color: #777c81;\n  }\n  .cd-search input:-ms-input-placeholder {\n    color: #777c81;\n  }\n}\n\n/* -------------------------------- \n\nTop Navigation\n\n-------------------------------- */\n.cd-nav {\n  /* top nav - not visible on mobile devices */\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n  .cd-nav {\n    display: block;\n    float: right;\n    height: 100%;\n  }\n}\n\n.cd-top-nav > li > a::before {\n  /* reset style */\n  display: none;\n}\n.cd-top-nav > li a {\n  padding: 1em 5% !important;\n}\n.cd-top-nav img {\n  /* avatar image */\n  position: absolute;\n  left: 1.8em;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 20px;\n  width: 20px;\n  border-radius: 50%;\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n  .cd-top-nav {\n    height: 100%;\n  }\n  .cd-top-nav a {\n    display: block;\n    font-size: 1.4rem;\n    color: #ffffff;\n  }\n  .cd-top-nav > li {\n    display: inline-block;\n    margin-right: 1em;\n    height: 100%;\n  }\n  .cd-top-nav > li:last-of-type {\n    margin-right: 0;\n  }\n  .cd-top-nav > li a {\n    padding: 1em .6em !important;\n  }\n  .cd-top-nav img {\n    display: block;\n  }\n}\n@media only screen and (min-width: 1170px) {\n  .cd-top-nav li:not(.has-children) a:hover {\n    color: #1784c7;\n  }\n}\n\n/* -------------------------------- \n\nSidebar\n\n-------------------------------- */\n.cd-side-nav {\n  position: absolute;\n  z-index: 1;\n  left: 0;\n  top: 0;\n  width: 100%;\n  padding: 45px 0 0;\n  background-color: #323232;\n  visibility: hidden;\n  opacity: 0;\n  max-height: 100vh;\n  overflow: hidden;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;\n  -moz-transition: opacity 0.2s 0s, visibility 0s 0.2s;\n  transition: opacity 0.2s 0s, visibility 0s 0.2s;\n}\n.cd-side-nav.nav-is-visible {\n  opacity: 1;\n  visibility: visible;\n  overflow: visible;\n  -webkit-overflow-scrolling: touch;\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0s;\n  -moz-transition: opacity 0.2s 0s, visibility 0s 0s;\n  transition: opacity 0.2s 0s, visibility 0s 0s;\n  max-height: none;\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-side-nav > ul {\n  padding: 0.6em 0;\n}\n.cd-side-nav > ul:last-of-type {\n  padding-bottom: 0;\n}\n.cd-side-nav .cd-label, .cd-side-nav a {\n  display: block;\n  padding: 1em 5%;\n}\n\n.cd-side-nav a {\n  position: relative;\n  color: #ffffff;\n  font-size: 1.4rem;\n}\n.cd-side-nav ul.cd-top-nav > li:last-of-type > a {\n  border-bottom: none;\n}\n.cd-side-nav > ul > li > a {\n  padding-left: calc(5% + 24px);\n  border-bottom: 1px solid #373d44;\n}\n.cd-side-nav > ul > li > a::before {\n  /* icon before item name */\n  position: absolute;\n  content: '';\n  left: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n  \n}\n.cd-side-nav > ul > li.overview > a::before {\n  background-position: -64px 0;\n}\n.cd-side-nav > ul > li.notifications > a::before {\n  background-position: -80px 0;\n}\n.cd-side-nav > ul > li.comments > a::before {\n  background-position: -48px 0;\n}\n.cd-side-nav > ul > li.bookmarks > a::before {\n  background-position: -32px 0;\n}\n.cd-side-nav > ul > li.images > a::before {\n  background-position: 0 0;\n}\n.cd-side-nav > ul > li.users > a::before {\n  background-position: -16px 0;\n}\n.cd-side-nav .count {\n  /* notification badge */\n  position: absolute;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  right: calc(5% + 16px + 0.4em);\n  padding: 0.2em 0.4em;\n  background-color: #ff7e66;\n  border-radius: .25em;\n  color: #ffffff;\n  font-weight: bold;\n  font-size: 1.2rem;\n  text-align: center;\n}\n.cd-side-nav .action-btn a {\n  display: block;\n  margin: 0 5%;\n  padding: 1em 0;\n  background-color: #1784c7;\n  border-radius: .25em;\n  border: none;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);\n  text-align: center;\n  color: #ffffff;\n  font-weight: bold;\n}\n.cd-side-nav .action-btn a::before {\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n  .cd-side-nav {\n    \n    float: left;\n    top: fixed;\n    width: 110px;\n    min-height: 100vh;\n    padding-top: 55px;\n    /* reset style */\n    visibility: visible;\n    opacity: 1;\n    overflow: visible;\n    max-height: none;\n  }\n  .cd-side-nav.nav-is-visible {\n    box-shadow: none;\n  }\n  .cd-side-nav.is-fixed {\n    position: fixed;\n  }\n  .cd-side-nav > ul {\n    /* reset style */\n    padding: 0;\n  }\n  .cd-side-nav .cd-label {\n    /* remove labels on minified version of the sidebar */\n    display: none;\n  }\n  .cd-side-nav a {\n    font-size: 1.2rem;\n    text-align: center;\n  }\n  .cd-side-nav > ul > li > a {\n    padding: calc(2.2em + 24px) 0 2.4em;\n  }\n  .cd-side-nav > ul > li > a::before {\n    left: 50%;\n    right: auto;\n    -webkit-transform: translateX(-50%);\n    -moz-transform: translateX(-50%);\n    -ms-transform: translateX(-50%);\n    -o-transform: translateX(-50%);\n    transform: translateX(-50%);\n    top: 2.4em;\n  }\n  .cd-side-nav .active > a {\n    /* current page */\n    box-shadow: inset 3px 0 0 #1784c7;\n    background-color: #33383e;\n  }\n  .cd-side-nav .action-btn a {\n    margin: 1em 10% 0;\n  }\n  .cd-side-nav .count {\n    height: 8px;\n    width: 8px;\n    border-radius: 50%;\n    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n    padding: 0;\n    top: 2em;\n    -webkit-transform: translateX(-50%);\n    -moz-transform: translateX(-50%);\n    -ms-transform: translateX(-50%);\n    -o-transform: translateX(-50%);\n    transform: translateX(-50%);\n    left: calc(50% + 5px);\n    right: auto;\n    color: transparent;\n  }\n}\n@media only screen and (min-width: 1170px) {\n  .cd-side-nav {\n    width: 150px;\n  }\n  .cd-logo img{\n    margin-left: -16px;\n    margin-top: 3px;\n  }\n  .cd-side-nav > ul {\n    padding: 0.6em 0;\n  }\n  .cd-side-nav > ul > li:not(.action-btn):hover > a {\n    background-color: #33383e;\n  }\n  .cd-side-nav > ul > li > a {\n    padding: 1em 1em 1em 42px;\n    text-align: left;\n    border-bottom: none;\n  }\n  .cd-side-nav > ul > li > a::before {\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    -moz-transform: translateY(-50%);\n    -ms-transform: translateY(-50%);\n    -o-transform: translateY(-50%);\n    transform: translateY(-50%);\n    left: 18px;\n  }\n  .cd-side-nav .cd-label {\n    display: block;\n    padding: 1em 18px;\n  }\n  .cd-side-nav .action-btn {\n    text-align: left;\n  }\n  .cd-side-nav .action-btn a {\n    margin: 0 18px;\n  }\n  .no-touch .cd-side-nav .action-btn a:hover {\n    background-color: #1a93de;\n  }\n  .cd-side-nav .count {\n    /* reset style */\n    color: #ffffff;\n    height: auto;\n    width: auto;\n    border-radius: .25em;\n    padding: .2em .4em;\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    -moz-transform: translateY(-50%);\n    -ms-transform: translateY(-50%);\n    -o-transform: translateY(-50%);\n    transform: translateY(-50%);\n    right: 18px;\n    left: auto;\n    box-shadow: none;\n  }\n}\n\n.has-children ul {\n  position: relative;\n  width: 100%;\n  display: none;\n  background-color: #1c1f22;\n}\n.has-children > a::after {\n  /* arrow icon */\n  position: absolute;\n  content: '';\n  height: 16px;\n  width: 16px;\n  right: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  \n}\n.has-children.selected > ul {\n  display: block;\n}\n.has-children.selected > a::after {\n  -webkit-transform: translateY(-50%) rotate(180deg);\n  -moz-transform: translateY(-50%) rotate(180deg);\n  -ms-transform: translateY(-50%) rotate(180deg);\n  -o-transform: translateY(-50%) rotate(180deg);\n  transform: translateY(-50%) rotate(180deg);\n}\n@media only screen and (min-width: 768px) {\n  .has-children {\n    position: relative;\n  }\n  .has-children ul {\n    position: absolute;\n    top: 0;\n    left: 100%;\n    width: 160px;\n    padding: 0;\n    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);\n  }\n  .has-children ul a {\n    text-align: left;\n    border: none;\n    padding: 1em;\n  }\n \n  \n  .no-touch .has-children ul a:hover {\n    color: #1784c7;\n  }\n  .has-children > a::after {\n    display: none;\n    color: black;\n  }\n  .cd-side-nav .has-children.selected > a {\n    /* focus state -> show sub pages */\n    background-color: #33383e;\n  }\n  .cd-top-nav .has-children {\n    position: relative;\n    background-color: #323232;\n\n  }\n  .cd-top-nav .has-children > a {\n    height: 100%;\n    padding: 0 calc(1.8em + 22px) 0 calc(1.8em + 26px) !important;\n    line-height: 55px;\n  }\n  .cd-top-nav .has-children > a::after {\n    display: block;\n    right: 1.8em;\n  }\n  .cd-top-nav .has-children ul {\n    background-color: #1c1f22;\n    width: 200px;\n    top: 100%;\n    right: 0;\n    left: auto;\n    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);\n  }\n  .cd-top-nav .has-children ul a {\n    padding-left: 18px !important;\n  }\n}\n@media only screen and (min-width: 1170px) {\n  .has-children > ul {\n    width: 100%;\n    z-index: 1;\n  }\n  .has-children ul a {\n    padding-left: 18px;\n  }\n  .has-children.active > ul {\n    /* if the item is active, make the subnavigation visible */\n    position: relative;\n    display: block;\n    /* reset style */\n    left: 0;\n    box-shadow: none;\n  }\n  .no-touch .cd-side-nav .has-children:hover > ul, .cd-side-nav .has-children.hover > ul {\n    /* show subnavigation on hover */\n    display: block;\n    opacity: 1;\n    visibility: visible;\n  }\n}\n\n\n</style>\n\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -17795,10 +17796,12 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 //
 //
 //
+//
 
 var axios = __webpack_require__(3);
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: "side-bar",
+  props: ["user"],
   beforeMount: function beforeMount(){
   var this$1 = this;
 
@@ -17858,118 +17861,167 @@ var render = function() {
     _vm._v(" "),
     _c("main", { staticClass: "cd-main-content" }, [
       _c("nav", { staticClass: "cd-side-nav" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.user.roll,
+              expression: "user.roll"
+            }
+          ],
+          attrs: { type: "hidden", name: "user.installerID" },
+          domProps: { value: _vm.user.roll },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.user, "roll", $event.target.value)
+            }
+          }
+        }),
+        _vm._v(" "),
         _c("ul", [
-          _c("li", { staticClass: "has-children Overviews" }, [
-            _c(
-              "a",
-              {
-                on: {
-                  click: function($event) {
-                    _vm.$parent.updateView("create-customer")
-                  }
-                }
-              },
-              [_c("i", { staticClass: "fa fa-th-large" }), _vm._v("Customer")]
-            )
-          ]),
+          _vm.user.roll == "Admin" || "Project Coordinator"
+            ? _c("li", { staticClass: "has-children Overviews" }, [
+                _c(
+                  "a",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.$parent.updateView("create-customer")
+                      }
+                    }
+                  },
+                  [
+                    _c("i", { staticClass: "fa fa-th-large" }),
+                    _vm._v("Customer")
+                  ]
+                )
+              ])
+            : _vm._e(),
           _vm._v(" "),
-          _c("li", { staticClass: "has-children comments" }, [
-            _c(
-              "a",
-              {
-                on: {
-                  click: function($event) {
-                    _vm.$parent.updateView("add-installer")
-                  }
-                }
-              },
-              [_c("i", { staticClass: "fa fa-tasks" }), _vm._v(" Installer")]
-            )
-          ]),
+          _vm.user.roll == "Admin" || "Project Coordinator"
+            ? _c("li", { staticClass: "has-children comments" }, [
+                _c(
+                  "a",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.$parent.updateView("add-installer")
+                      }
+                    }
+                  },
+                  [
+                    _c("i", { staticClass: "fa fa-tasks" }),
+                    _vm._v(" Installer")
+                  ]
+                )
+              ])
+            : _vm._e(),
           _vm._v(" "),
-          _c("li", { staticClass: "has-children bookmarks" }, [
-            _c(
-              "a",
-              {
-                on: {
-                  click: function($event) {
-                    _vm.$parent.updateView("bonus-schedule")
-                  }
-                }
-              },
-              [_c("i", { staticClass: "fa fa-table" }), _vm._v(" Bonus")]
-            )
-          ]),
+          _vm.user.roll == "Admin" ||
+          "Project Coordinator" ||
+          "Project Manager" ||
+          "Installer"
+            ? _c("li", { staticClass: "has-children bookmarks" }, [
+                _c(
+                  "a",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.$parent.updateView("bonus-schedule")
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fa fa-table" }), _vm._v(" Bonus")]
+                )
+              ])
+            : _vm._e(),
           _vm._v(" "),
-          _c("li", { staticClass: "has-children bookmarks" }, [
-            _c(
-              "a",
-              {
-                on: {
-                  click: function($event) {
-                    _vm.$parent.updateView("payment-history")
-                  }
-                }
-              },
-              [_c("i", { staticClass: "fa fa-table" }), _vm._v(" Payments")]
-            )
-          ]),
+          _vm.user.roll == "Admin" || "Project Coordinator"
+            ? _c("li", { staticClass: "has-children bookmarks" }, [
+                _c(
+                  "a",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.$parent.updateView("payment-history")
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fa fa-table" }), _vm._v(" Payments")]
+                )
+              ])
+            : _vm._e(),
           _vm._v(" "),
-          _c("li", { staticClass: "has-children users" }, [
-            _c(
-              "a",
-              {
-                on: {
-                  click: function($event) {
-                    _vm.$parent.updateView("add-user")
-                  }
-                }
-              },
-              [_c("i", { staticClass: "fa fa-user" }), _vm._v(" User")]
-            )
-          ]),
+          _vm.user.roll == "Admin" || "Project Coordinator"
+            ? _c("li", { staticClass: "has-children users" }, [
+                _c(
+                  "a",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.$parent.updateView("add-user")
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fa fa-user" }), _vm._v(" User")]
+                )
+              ])
+            : _vm._e(),
           _vm._v(" "),
-          _c("li", { staticClass: "has-children users" }, [
-            _c(
-              "a",
-              {
-                on: {
-                  click: function($event) {
-                    _vm.$parent.updateView("")
-                  }
-                }
-              },
-              [_c("i", { staticClass: "fa fa-user" }), _vm._v(" Jobs")]
-            )
-          ]),
+          _vm.user.roll == "Admin" ||
+          "Project Coordinator" ||
+          "Project Manager" ||
+          "Installer"
+            ? _c("li", { staticClass: "has-children users" }, [
+                _c(
+                  "a",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.$parent.updateView("")
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fa fa-user" }), _vm._v(" Jobs")]
+                )
+              ])
+            : _vm._e(),
           _vm._v(" "),
-          _c("li", { staticClass: "has-children users" }, [
-            _c(
-              "a",
-              {
-                on: {
-                  click: function($event) {
-                    _vm.$parent.updateView("create-project")
-                  }
-                }
-              },
-              [_c("i", { staticClass: "fa fa-user" }), _vm._v(" Project")]
-            )
-          ]),
+          _vm.user.roll == "Admin" || "Project Coordinator"
+            ? _c("li", { staticClass: "has-children users" }, [
+                _c(
+                  "a",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.$parent.updateView("create-project")
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fa fa-user" }), _vm._v(" Project")]
+                )
+              ])
+            : _vm._e(),
           _vm._v(" "),
-          _c("li", { staticClass: "has-children users" }, [
-            _c(
-              "a",
-              {
-                on: {
-                  click: function($event) {
-                    _vm.$parent.updateView("create-roles")
-                  }
-                }
-              },
-              [_c("i", { staticClass: "fa fa-user" }), _vm._v(" Admin")]
-            )
-          ])
+          _vm.user.roll == "Admin" || "Project Coordinator"
+            ? _c("li", { staticClass: "has-children users" }, [
+                _c(
+                  "a",
+                  {
+                    on: {
+                      click: function($event) {
+                        _vm.$parent.updateView("create-roles")
+                      }
+                    }
+                  },
+                  [_c("i", { staticClass: "fa fa-user" }), _vm._v(" Admin")]
+                )
+              ])
+            : _vm._e()
         ])
       ])
     ])
@@ -19160,7 +19212,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-e86efc44]{\n     margin:90px 50px 0 200px;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n}\nform[data-v-e86efc44]{\n  margin-top: 30px;\n}\n.header[data-v-e86efc44]{\n  border-bottom: 1px solid #ebebeb;\n}\n.input_heading[data-v-e86efc44]{\n    color: #afaeb0;\n    margin-left: 18px;\n}\n.inputField[data-v-e86efc44]{\n    background-color: #fff;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 97%;\n}\n.inputField[data-v-e86efc44]:focus{\n  outline: none;\n}\n.button[data-v-e86efc44]:focus{\n  outline-color:  #4bc800;\n}\n.button[data-v-e86efc44]{\n    background: #4bc800!important;\n    border: 0;\n    box-shadow: inset 0 -2px 0 #45b900!important;\n    color: #fff;\n    font-size: 17px;\n    font-weight: bold;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    margin-top: 10px;\n}\n.inputField[data-v-e86efc44]{\n    background-color: #fff;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 97%;\n}\n.inputField[data-v-e86efc44]:focus{\n  outline: none;\n}\n.button[data-v-e86efc44]:focus{\n  outline-color:  #4bc800;\n}\nul[data-v-e86efc44]{\n  list-style-type:none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\nli[data-v-e86efc44]{\n      padding: 0 60px;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli[data-v-e86efc44]:active{\n  border-color:#4bc800;\n}\nli[data-v-e86efc44]:hover{\n  border-color: #929292;\n}\na[data-v-e86efc44]{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/addHours.vue?6155df67"],"names":[],"mappings":";AAyFA;KACA,yBAAA;KACA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,eAAA;IACA,kBAAA;CAEA;AACA;IACA,uBAAA;IACA,UAAA;IACA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;IACA,8BAAA;IACA,UAAA;IACA,6CAAA;IACA,YAAA;IACA,gBAAA;IACA,kBAAA;IACA,aAAA;IACA,wBAAA;IACA,iBAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AAEA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;MACA,gBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"addHours.vue","sourcesContent":["<template>\n\t<div class=\"mainDiv\">\n      <div  class=\"header\">\n        <ul>\n            <li><a v-on:click=\"$parent.updateView('add-hours')\" style=\"color:#4bc800\">Enter Time Worked</a></li>\n           <li><a v-on:click=\"$parent.updateView('')\">Approve Time</a></li>\n           <li><a v-on:click=\"$parent.updateView('create-project')\">Create Project</a></li>\n           <li><a v-on:click=\"$parent.updateView('modify-project')\">Modify project</a></li>\n            \n        </ul>\n      </div>\n\n      \t\t<!-- <h1>Add hours</h1> -->\n      \t\t<form v-on:submit.prevent=\"onSubmit\" id=\"form\">\n          \t\t\t<p class=\"input_heading\">Job</p>\n          \t\t\t<select class=\"inputField\" v-model=\"fk_job_id\" required>\n          \t\t\t\t<option v-for=\"job in jobs\" v-bind:value=\"job.job_id\">{{job.job_name}}</option>\n          \t\t\t</select>\n          \t\t\t<p class=\"input_heading\">Regular hours worked</p>\n          \t\t\t<input class=\"inputField\" type=\"number\" v-model.number=\"reg_hours_worked\" required>\n          \t\t\t<p class=\"input_heading\">Overtime hours worked</p>\n          \t\t\t<input class=\"inputField\" type=\"number\" v-model.number=\"ot_hours_worked\" required>\n          \t\t\t<p class=\"input_heading\">Work date</p>\n          \t\t\t<input class=\"inputField\" type=\"date\" v-model=\"work_date\" required>\n          \t\t\t <button class=\"button\" type=\"submit\" value=\"Submit\">Add hours</button>\n          \t\t\t<p class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Hours added</p>\n      \t\t</form>\n\t</div>\n</template>\n\n<script>\nimport axios from 'axios';\n\nexport default {\n  name: 'add-hours',\n  props: ['user'],\n  data(){\n  \treturn {\n\t  \treg_hours_worked: '',\n\t  \tot_hours_worked: '',\n\t  \twork_date: '',\n\t  \tfk_job_id: '',\n\t  \tjobs: ''\n  \t}\n  },\n  methods: {\n  \tonSubmit: function(){\n  \t\taxios({\n  \t\t\tmethod: 'post',\n  \t\t\turl: '/installers/hours/add',\n  \t\t\tdata: {\n  \t\t\t\tcreated_by_id: this.user.userID,\n  \t\t\t\tmodified_by_id: this.user.userID,\n  \t\t\t\treg_hours_worked: this.reg_hours_worked,\n  \t\t\t\tot_hours_worked: this.ot_hours_worked,\n  \t\t\t\twork_date: this.work_date,\n  \t\t\t\tfk_job_id: this.fk_job_id,\n  \t\t\t\tfk_installer_id: this.user.installerID\n  \t\t\t}\n  \t\t})\n  \t\t.then(req => {\n  \t\t\tdocument.getElementById('confirmation').classList.remove('hidden');\n  \t\t\tthis.reg_hours_worked = '',\n  \t\t\tthis.ot_hours_worked = '',\n  \t\t\tthis.work_date = '',\n  \t\t\tthis.fk_job_id = ''\n  \t\t})\n  \t\t.catch(err => {\n  \t\t\tconsole.log(err);\n  \t\t})\n  \t}\n  },\n  beforeMount(){\n  \taxios({\n  \t\tmethod: 'get',\n  \t\turl: '/jobs'\n  \t})\n  \t.then(req => {\n  \t\tconsole.log(req.data.jobs);\n  \t\tthis.jobs = req.data.jobs;\n  \t})\n  \t.catch(err => {\n  \t\tconsole.log(err);\n  \t})\n  }\n};\n</script>\n<style scoped>\n\n.mainDiv{\n     margin:90px 50px 0 200px;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n\n}\nform{\n  margin-top: 30px;\n}\n\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\n.input_heading{\n    color: #afaeb0;\n    margin-left: 18px;\n    \n }   \n.inputField{\n    background-color: #fff;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 97%;\n}\n.inputField:focus{\n  outline: none;\n}\n.button:focus{\n  outline-color:  #4bc800;\n\n}\n.button{\n    background: #4bc800!important;\n    border: 0;\n    box-shadow: inset 0 -2px 0 #45b900!important;\n    color: #fff;\n    font-size: 17px;\n    font-weight: bold;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    margin-top: 10px;\n}\n.inputField{\n    background-color: #fff;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 97%;\n}\n.inputField:focus{\n  outline: none;\n}\n.button:focus{\n  outline-color:  #4bc800;\n\n}\n\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n      padding: 0 60px;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\na{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-e86efc44]{\n     margin:90px 50px 0 200px;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n}\nform[data-v-e86efc44]{\n  margin-top: 30px;\n}\n.header[data-v-e86efc44]{\n  border-bottom: 1px solid #ebebeb;\n}\n.input_heading[data-v-e86efc44]{\n    color: #afaeb0;\n    margin-left: 18px;\n}\n.inputField[data-v-e86efc44]{\n    background-color: #fff;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 97%;\n}\n.inputField[data-v-e86efc44]:focus{\n  outline: none;\n}\n.button[data-v-e86efc44]:focus{\n  outline-color:  #4bc800;\n}\n.button[data-v-e86efc44]{\n    background: #4bc800!important;\n    border: 0;\n    box-shadow: inset 0 -2px 0 #45b900!important;\n    color: #fff;\n    font-size: 17px;\n    font-weight: bold;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    margin-top: 10px;\n}\n.inputField[data-v-e86efc44]{\n    background-color: #fff;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 97%;\n}\n.inputField[data-v-e86efc44]:focus{\n  outline: none;\n}\n.button[data-v-e86efc44]:focus{\n  outline-color:  #4bc800;\n}\nul[data-v-e86efc44]{\n  list-style-type:none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\nli[data-v-e86efc44]{\n      padding: 0 60px;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli[data-v-e86efc44]:active{\n  border-color:#4bc800;\n}\nli[data-v-e86efc44]:hover{\n  border-color: #929292;\n}\na[data-v-e86efc44]{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/addHours.vue?533d0061"],"names":[],"mappings":";AAwFA;KACA,yBAAA;KACA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,eAAA;IACA,kBAAA;CAEA;AACA;IACA,uBAAA;IACA,UAAA;IACA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;IACA,8BAAA;IACA,UAAA;IACA,6CAAA;IACA,YAAA;IACA,gBAAA;IACA,kBAAA;IACA,aAAA;IACA,wBAAA;IACA,iBAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AAEA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;MACA,gBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"addHours.vue","sourcesContent":["<template>\n\t<div class=\"mainDiv\">\n      <div  class=\"header\">\n        <ul>\n            <li><a v-on:click=\"$parent.updateView('add-hours')\" style=\"color:#4bc800\">Enter Time Worked</a></li>\n           <li><a v-on:click=\"$parent.updateView('')\">Approve Time</a></li>\n           <li><a v-on:click=\"$parent.updateView('create-project')\">Create Project</a></li>\n           <li><a v-on:click=\"$parent.updateView('modify-project')\">Modify project</a></li>\n            \n        </ul>\n      </div>\n      \t\t<!-- <h1>Add hours</h1> -->\n      \t\t<form v-on:submit.prevent=\"onSubmit\" id=\"form\">\n          \t\t\t<p class=\"input_heading\">Job</p>\n          \t\t\t<select class=\"inputField\" v-model=\"fk_job_id\" required>\n          \t\t\t\t<option v-for=\"job in jobs\" v-bind:value=\"job.job_id\">{{job.job_name}}</option>\n          \t\t\t</select>\n          \t\t\t<p class=\"input_heading\">Regular hours worked</p>\n          \t\t\t<input class=\"inputField\" type=\"number\" v-model.number=\"reg_hours_worked\" required>\n          \t\t\t<p class=\"input_heading\">Overtime hours worked</p>\n          \t\t\t<input class=\"inputField\" type=\"number\" v-model.number=\"ot_hours_worked\" required>\n          \t\t\t<p class=\"input_heading\">Work date</p>\n          \t\t\t<input class=\"inputField\" type=\"date\" v-model=\"work_date\" required>\n          \t\t\t <button class=\"button\" type=\"submit\" value=\"Submit\">Add hours</button>\n          \t\t\t<p class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Hours added</p>\n      \t\t</form>\n\t</div>\n</template>\n\n<script>\nimport axios from 'axios';\n\nexport default {\n  name: 'add-hours',\n  props: ['user'],\n  data(){\n  \treturn {\n\t  \treg_hours_worked: '',\n\t  \tot_hours_worked: '',\n\t  \twork_date: '',\n\t  \tfk_job_id: '',\n\t  \tjobs: ''\n  \t}\n  },\n  methods: {\n  \tonSubmit: function(){\n  \t\taxios({\n  \t\t\tmethod: 'post',\n  \t\t\turl: '/installers/hours/add',\n  \t\t\tdata: {\n  \t\t\t\tcreated_by_id: this.user.userID,\n  \t\t\t\tmodified_by_id: this.user.userID,\n  \t\t\t\treg_hours_worked: this.reg_hours_worked,\n  \t\t\t\tot_hours_worked: this.ot_hours_worked,\n  \t\t\t\twork_date: this.work_date,\n  \t\t\t\tfk_job_id: this.fk_job_id,\n  \t\t\t\tfk_installer_id: this.user.installerID\n  \t\t\t}\n  \t\t})\n  \t\t.then(req => {\n  \t\t\tdocument.getElementById('confirmation').classList.remove('hidden');\n  \t\t\tthis.reg_hours_worked = '',\n  \t\t\tthis.ot_hours_worked = '',\n  \t\t\tthis.work_date = '',\n  \t\t\tthis.fk_job_id = ''\n  \t\t})\n  \t\t.catch(err => {\n  \t\t\tconsole.log(err);\n  \t\t})\n  \t}\n  },\n  beforeMount(){\n  \taxios({\n  \t\tmethod: 'get',\n  \t\turl: '/jobs'\n  \t})\n  \t.then(req => {\n  \t\tconsole.log(req.data.jobs);\n  \t\tthis.jobs = req.data.jobs;\n  \t})\n  \t.catch(err => {\n  \t\tconsole.log(err);\n  \t})\n  }\n};\n</script>\n<style scoped>\n\n.mainDiv{\n     margin:90px 50px 0 200px;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n\n}\nform{\n  margin-top: 30px;\n}\n\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\n.input_heading{\n    color: #afaeb0;\n    margin-left: 18px;\n    \n }   \n.inputField{\n    background-color: #fff;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 97%;\n}\n.inputField:focus{\n  outline: none;\n}\n.button:focus{\n  outline-color:  #4bc800;\n\n}\n.button{\n    background: #4bc800!important;\n    border: 0;\n    box-shadow: inset 0 -2px 0 #45b900!important;\n    color: #fff;\n    font-size: 17px;\n    font-weight: bold;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    margin-top: 10px;\n}\n.inputField{\n    background-color: #fff;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 97%;\n}\n.inputField:focus{\n  outline: none;\n}\n.button:focus{\n  outline-color:  #4bc800;\n\n}\n\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n      padding: 0 60px;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\na{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n</style>"],"sourceRoot":""}]);
 
 // exports
 
@@ -19172,7 +19224,6 @@ exports.push([module.i, "\n.mainDiv[data-v-e86efc44]{\n     margin:90px 50px 0 2
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-//
 //
 //
 //
@@ -21508,7 +21559,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-7ae58e3a]{\n     margin:90px 150px 0 300px;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n}\n.header[data-v-7ae58e3a]{\n  border-bottom: 1px solid #ebebeb;\n}\n.paragraph[data-v-7ae58e3a]{\n    margin-top: 40px;\n    color: #afaeb0;\n    text-align: center;\n    line-height: 1.5;\n    font-weight: bold;\n    font-size: 17px;\n}\n.input[data-v-7ae58e3a]:focus{\n  outline: none;\n}\n.input[data-v-7ae58e3a]{\n    background-color: #fff;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 100%;\n    margin-left: 70px;\n    margin-top: 40px;\n}\nul[data-v-7ae58e3a]{\n  list-style-type:none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\nli[data-v-7ae58e3a]{\n      padding: 0 90px;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli[data-v-7ae58e3a]:active{\n  border-color:#4bc800;\n}\nli[data-v-7ae58e3a]:hover{\n  border-color: #929292;\n}\na[data-v-7ae58e3a]{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/modifyRoles.vue?fed43ec8"],"names":[],"mappings":";AAwDA;KACA,0BAAA;KACA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,iBAAA;IACA,eAAA;IACA,mBAAA;IACA,iBAAA;IACA,kBAAA;IACA,gBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,YAAA;IACA,kBAAA;IACA,iBAAA;CACA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;MACA,gBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyRoles.vue","sourcesContent":["<template>\n\t<div class=\"mainDiv\">\n    <div  class=\"header\">\n\t    <ul>\n           <li><a v-on:click=\"$parent.updateView('create-roles')\">Create roles</a></li>\n           <li><a v-on:click=\"$parent.updateView('modify-roles')\" style=\"color:#4bc800\">Modify Roles</a></li>\n        </ul>\n      </div>  \n\t\t<div class=\"row\">\n        <div class=\"col-md-10\">\n            <select class=\"input\" v-model=\"role_id\">\n              <option v-for=\"role in roles\" v-bind:value=\"role.installer_role_id\">\n                {{role.installer_role_name}}\n              </option>\n            </select>\n        </div>    \n    </div>        \n    <div class=\"row\"> \n        <div class=\"col-md-12\"> \n              <p class=\"paragraph\">Select role to modify</p>\n        </div>      \n     </div> \n\t</div>\n</template>\n\n<script>\nimport axios from 'axios';\n\nexport default {\n  name: 'modify-roles',\n  data(){\n  \treturn {\n      role_id: '',\n      roles: ''\n  \t}\n  },\n  methods: {\n\n  },\n  beforeMount(){\n  \taxios({\n  \t\tmethod: 'get',\n  \t\turl: '/installers/roles'\n  \t})\n  \t.then(req => {\n      this.roles = req.data.roles;\n      console.log(req.data.roles);\n  \t})\n  \t.catch(err => {\n  \t\t\n  \t})\n  }\n};\n</script>\n<style scoped>\n\n.mainDiv{\n     margin:90px 150px 0 300px;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n\n}\n\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\n.paragraph{\n    margin-top: 40px;\n    color: #afaeb0;\n    text-align: center;\n    line-height: 1.5;\n    font-weight: bold;\n    font-size: 17px;\n}\n.input:focus{\n  outline: none;\n}\n.input{\n    background-color: #fff;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 100%;\n    margin-left: 70px;\n    margin-top: 40px;\n}\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n      padding: 0 90px;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\na{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n</style>\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-7ae58e3a]{\n     margin:90px 150px 0 300px;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n}\n.header[data-v-7ae58e3a]{\n  border-bottom: 1px solid #ebebeb;\n}\n.paragraph[data-v-7ae58e3a]{\n    margin-top: 40px;\n    color: #afaeb0;\n    text-align: center;\n    line-height: 1.5;\n    font-weight: bold;\n    font-size: 17px;\n}\n.input[data-v-7ae58e3a]:focus{\n  outline: none;\n}\n.input[data-v-7ae58e3a]{\n    background-color: #fff;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 100%;\n    margin-left: 70px;\n    margin-top: 40px;\n}\nul[data-v-7ae58e3a]{\n  list-style-type:none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\nli[data-v-7ae58e3a]{\n      padding: 0 90px;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli[data-v-7ae58e3a]:active{\n  border-color:#4bc800;\n}\nli[data-v-7ae58e3a]:hover{\n  border-color: #929292;\n}\na[data-v-7ae58e3a]{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/modifyRoles.vue?b14c0174"],"names":[],"mappings":";AAqGA;KACA,0BAAA;KACA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,iBAAA;IACA,eAAA;IACA,mBAAA;IACA,iBAAA;IACA,kBAAA;IACA,gBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,YAAA;IACA,kBAAA;IACA,iBAAA;CACA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;MACA,gBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyRoles.vue","sourcesContent":["<template>\n  <div class=\"mainDiv\">\n    <div  class=\"header\">\n      <ul>\n           <li><a v-on:click=\"$parent.updateView('create-roles')\">Create roles</a></li>\n           <li><a v-on:click=\"$parent.updateView('modify-roles')\" style=\"color:#4bc800\">Modify Roles</a></li>\n        </ul>\n      </div>  \n    <div class=\"row\">\n        <div class=\"col-md-10\">\n            <select class=\"input\" v-model=\"role_id\">\n              <option v-for=\"role in roles\" v-bind:value=\"role.installer_role_id\">\n                {{role.installer_role_name}}\n              </option>\n            </select>\n        </div>    \n    </div>        \n    <div class=\"row\"> \n        <div class=\"col-md-12\"> \n            <p class=\"paragraph\">Select role to modify</p>\n            <form v-if=\"selectedRole.installer_role_id\" v-on:submit.prevent=\"onSubmit\">\n              <p>Role name</p>\n              <input type =\"hidden\" v-model=\"selectedRole.installer_role_id\">\n              <input type=\"text\" v-model.trim=\"selectedRole.installer_role_name\" required>\n              <p>Role weight</p>\n              <input type=\"number\" v-model.number=\"selectedRole.role_weight\" required>\n              <p>Minimum base</p>\n              <input type=\"number\" v-model.number=\"selectedRole.min_base\" required>\n              <p>Maximum base</p>\n              <input type=\"number\" v-model.number=\"selectedRole.max_base\" required>\n              <p>Individual bonus</p>\n              <input type=\"number\" v-model.number=\"selectedRole.individual_bonus\" required>\n              <p>Team bonus</p>\n              <input type=\"number\" v-model.number=\"selectedRole.team_bonus\" required>\n              <p>Bonus weight</p>\n              <input type=\"number\" v-model.number=\"selectedRole.bonus_weight\" required>\n              <button class=\"button\" type=\"submit\" value=\"Submit\">Create</button>\n            </form>    \n        </div>  \n     </div> \n  </div>\n</template>\n\n<script>\nimport axios from 'axios';\n\nexport default {\n  name: 'modify-roles',\n  data(){\n    return {\n      role_id: '',\n      roles: '',\n      selectedRole: {}\n    }\n  },\n  methods: {\n    onSubmit: function(){\n      axios({\n        method: 'put',\n        url: 'installers/roles/update',\n        data: {\n          installer_role_id: this.selectedRole.installer_role_id,\n          installer_role_name: this.selectedRole.installer_role_name,\n          role_weight: this.selectedRole.role_weight,\n          min_base: this.selectedRole.min_base,\n          max_base: this.selectedRole.max_base,\n          individual_bonus: this.selectedRole.individual_bonus,\n          team_bonus: this.selectedRole.team_bonus,\n          bonus_weight: this.selectedRole.bonus_weight\n        }\n      })\n      .then(req => {\n        console.log(req);\n      })\n      .catch(err => {\n        console.log(err);\n      })\n    }\n  },\n  watch: {\n    role_id(id) {\n      [this.selectedRole] = this.roles.filter(r => r.installer_role_id === id);\n    }\n  },\n  beforeMount(){\n    axios({\n      method: 'get',\n      url: '/installers/roles'\n    })\n    .then(req => {\n      this.roles = req.data.roles;\n      console.log(req.data.roles);\n    })\n    .catch(err => {\n      \n    })\n  }\n};\n</script>\n<style scoped>\n\n.mainDiv{\n     margin:90px 150px 0 300px;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n\n}\n\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\n.paragraph{\n    margin-top: 40px;\n    color: #afaeb0;\n    text-align: center;\n    line-height: 1.5;\n    font-weight: bold;\n    font-size: 17px;\n}\n.input:focus{\n  outline: none;\n}\n.input{\n    background-color: #fff;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 100%;\n    margin-left: 70px;\n    margin-top: 40px;\n}\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n      padding: 0 90px;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\na{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n</style>\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -21545,34 +21596,80 @@ exports.push([module.i, "\n.mainDiv[data-v-7ae58e3a]{\n     margin:90px 150px 0 
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: 'modify-roles',
   data: function data(){
-  	return {
+    return {
       role_id: '',
-      roles: ''
-  	}
+      roles: '',
+      selectedRole: {}
+    }
   },
   methods: {
-
+    onSubmit: function(){
+      __WEBPACK_IMPORTED_MODULE_0_axios___default()({
+        method: 'put',
+        url: 'installers/roles/update',
+        data: {
+          installer_role_id: this.selectedRole.installer_role_id,
+          installer_role_name: this.selectedRole.installer_role_name,
+          role_weight: this.selectedRole.role_weight,
+          min_base: this.selectedRole.min_base,
+          max_base: this.selectedRole.max_base,
+          individual_bonus: this.selectedRole.individual_bonus,
+          team_bonus: this.selectedRole.team_bonus,
+          bonus_weight: this.selectedRole.bonus_weight
+        }
+      })
+      .then(function (req) {
+        console.log(req);
+      })
+      .catch(function (err) {
+        console.log(err);
+      })
+    }
+  },
+  watch: {
+    role_id: function role_id(id) {
+      var assign;
+      (assign = this.roles.filter(function (r) { return r.installer_role_id === id; }), this.selectedRole = assign[0]);
+    }
   },
   beforeMount: function beforeMount(){
-  	var this$1 = this;
+    var this$1 = this;
 
-  	__WEBPACK_IMPORTED_MODULE_0_axios___default()({
-  		method: 'get',
-  		url: '/installers/roles'
-  	})
-  	.then(function (req) {
+    __WEBPACK_IMPORTED_MODULE_0_axios___default()({
+      method: 'get',
+      url: '/installers/roles'
+    })
+    .then(function (req) {
       this$1.roles = req.data.roles;
       console.log(req.data.roles);
-  	})
-  	.catch(function (err) {
-  		
-  	})
+    })
+    .catch(function (err) {
+      
+    })
   }
 });
 
@@ -21656,9 +21753,9 @@ var render = function() {
               { domProps: { value: role.installer_role_id } },
               [
                 _vm._v(
-                  "\n                " +
+                  "\n              " +
                     _vm._s(role.installer_role_name) +
-                    "\n              "
+                    "\n            "
                 )
               ]
             )
@@ -21667,21 +21764,282 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm._m(0)
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-12" }, [
-        _c("p", { staticClass: "paragraph" }, [_vm._v("Select role to modify")])
+        _c("p", { staticClass: "paragraph" }, [
+          _vm._v("Select role to modify")
+        ]),
+        _vm._v(" "),
+        _vm.selectedRole.installer_role_id
+          ? _c(
+              "form",
+              {
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    _vm.onSubmit($event)
+                  }
+                }
+              },
+              [
+                _c("p", [_vm._v("Role name")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.selectedRole.installer_role_id,
+                      expression: "selectedRole.installer_role_id"
+                    }
+                  ],
+                  attrs: { type: "hidden" },
+                  domProps: { value: _vm.selectedRole.installer_role_id },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.selectedRole,
+                        "installer_role_id",
+                        $event.target.value
+                      )
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model.trim",
+                      value: _vm.selectedRole.installer_role_name,
+                      expression: "selectedRole.installer_role_name",
+                      modifiers: { trim: true }
+                    }
+                  ],
+                  attrs: { type: "text", required: "" },
+                  domProps: { value: _vm.selectedRole.installer_role_name },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.selectedRole,
+                        "installer_role_name",
+                        $event.target.value.trim()
+                      )
+                    },
+                    blur: function($event) {
+                      _vm.$forceUpdate()
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("p", [_vm._v("Role weight")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model.number",
+                      value: _vm.selectedRole.role_weight,
+                      expression: "selectedRole.role_weight",
+                      modifiers: { number: true }
+                    }
+                  ],
+                  attrs: { type: "number", required: "" },
+                  domProps: { value: _vm.selectedRole.role_weight },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.selectedRole,
+                        "role_weight",
+                        _vm._n($event.target.value)
+                      )
+                    },
+                    blur: function($event) {
+                      _vm.$forceUpdate()
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("p", [_vm._v("Minimum base")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model.number",
+                      value: _vm.selectedRole.min_base,
+                      expression: "selectedRole.min_base",
+                      modifiers: { number: true }
+                    }
+                  ],
+                  attrs: { type: "number", required: "" },
+                  domProps: { value: _vm.selectedRole.min_base },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.selectedRole,
+                        "min_base",
+                        _vm._n($event.target.value)
+                      )
+                    },
+                    blur: function($event) {
+                      _vm.$forceUpdate()
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("p", [_vm._v("Maximum base")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model.number",
+                      value: _vm.selectedRole.max_base,
+                      expression: "selectedRole.max_base",
+                      modifiers: { number: true }
+                    }
+                  ],
+                  attrs: { type: "number", required: "" },
+                  domProps: { value: _vm.selectedRole.max_base },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.selectedRole,
+                        "max_base",
+                        _vm._n($event.target.value)
+                      )
+                    },
+                    blur: function($event) {
+                      _vm.$forceUpdate()
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("p", [_vm._v("Individual bonus")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model.number",
+                      value: _vm.selectedRole.individual_bonus,
+                      expression: "selectedRole.individual_bonus",
+                      modifiers: { number: true }
+                    }
+                  ],
+                  attrs: { type: "number", required: "" },
+                  domProps: { value: _vm.selectedRole.individual_bonus },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.selectedRole,
+                        "individual_bonus",
+                        _vm._n($event.target.value)
+                      )
+                    },
+                    blur: function($event) {
+                      _vm.$forceUpdate()
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("p", [_vm._v("Team bonus")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model.number",
+                      value: _vm.selectedRole.team_bonus,
+                      expression: "selectedRole.team_bonus",
+                      modifiers: { number: true }
+                    }
+                  ],
+                  attrs: { type: "number", required: "" },
+                  domProps: { value: _vm.selectedRole.team_bonus },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.selectedRole,
+                        "team_bonus",
+                        _vm._n($event.target.value)
+                      )
+                    },
+                    blur: function($event) {
+                      _vm.$forceUpdate()
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("p", [_vm._v("Bonus weight")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model.number",
+                      value: _vm.selectedRole.bonus_weight,
+                      expression: "selectedRole.bonus_weight",
+                      modifiers: { number: true }
+                    }
+                  ],
+                  attrs: { type: "number", required: "" },
+                  domProps: { value: _vm.selectedRole.bonus_weight },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(
+                        _vm.selectedRole,
+                        "bonus_weight",
+                        _vm._n($event.target.value)
+                      )
+                    },
+                    blur: function($event) {
+                      _vm.$forceUpdate()
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "button",
+                    attrs: { type: "submit", value: "Submit" }
+                  },
+                  [_vm._v("Create")]
+                )
+              ]
+            )
+          : _vm._e()
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
@@ -22158,7 +22516,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.job[data-v-41061bbf] {\n  display: inline-block;\n  height: auto;\n  width: 400px;\n  border: 4px double blue;\n  overflow: auto;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/modifyProject.vue?c99f0974"],"names":[],"mappings":";AAoHA;EACA,sBAAA;EACA,aAAA;EACA,aAAA;EACA,wBAAA;EACA,eAAA;CACA","file":"modifyProject.vue","sourcesContent":["<template>\n  \t<div class=\"mainDiv\">\n      <div  class=\"header\">\n          <ul>\n              <li><a v-on:click=\"$parent.updateView('add-hours')\">Enter Time Worked</a></li>\n             <li><a v-on:click=\"$parent.updateView('')\">Approve Time</a></li>\n             <li><a v-on:click=\"$parent.updateView('create-project')\">Create Project</a></li>\n             <li><a v-on:click=\"$parent.updateView('modify-project')\" style=\"color:#4bc800\">Modify project</a></li>\n              \n          </ul>\n          <div>\n      <h1>Modify a Project</h1>\n        <div class=\"job\" v-for=\"job in jobs\">\n          <form v-on:submit.prevent=\"onSubmit\">\n            <input type=\"hidden\" name=\"job_id\" :value=\"job.job_id\">\n            <p>Project Name</p>\n            <input type=\"text\" name=\"job_name\" :placeholder=\"job.job_name\" :value=\"job_name\">\n            <p>Start Date</p>\n            <input type=\"date\" name=\"start_date\"  :value=\"job.start_date\">\n            <p>End Date</p>\n            <input type=\"date\" name=\"end_date\" :value=\"job.end_date\">\n            <p>Hours Bid</p>\n            <input type=\"text\" name =\"hours_bid\" :value=\"job.hours_bid\">\n            <p>Estimated Start Date</p>\n            <input type=\"date\" name=\"est_start_date\" :value=\"job.est_start_date\">\n            <p>Estimated End Date</p>\n            <input type=\"date\" name=\"est_end_date\" :value=\"job.est_end_date\">\n            <p>Bill Rate</p>\n            <input type=\"text\" name=\"bill_rate\" :value=\"job.bill_rate\">\n            <p>Job Status</p>\n            <input type=\"text\" name=\"job_status\" :value=\"job.job_status\">\n            <p>Max Labor Cost</p>\n            <input type=\"text\" name=\"max_labor_cost\" :value=\"job.max_labor_cost\">\n            <input type=\"submit\" value=\"Submit\">\n          </form>\n        </div>\n      </div>\n        </div>\n  \t\t\n\t  </div>\n</template>\n\n<script>\nimport axios from 'axios';\n\nexport default {\n  name: 'modify-project',\n  props: [\"user\"],\n\n  data() {\n    return {\n\n      jobs: '',\n      job_name: '',\n      job_id: '',\n      start_date: '',\n      end_date: '',\n      hours_bid: '',\n      est_start_date: '',\n      est_end_date: '',\n      fk_customer_id: '',\n      bill_rate: '',\n      job_status: '',\n      max_labor_cost: ''\n\n    }\n  },\n  methods: {\n    onSubmit: function(){\n      console.log(this.job_id);\n      axios({\n      method: 'put',\n      url: '/jobs/update',\n      data: {\n      job_id: this.job_id,\n      job_name: this.job_name,\n      start_date: this.start_date,\n      end_date: this.end_date,\n      hours_bid: this.hours_bid,\n      est_start_date: this.est_start_date,\n      est_end_date: this.est_end_date,\n      fk_customer_id: this.fk_customer_id,\n      bill_rate: this.bill_rate,\n      job_status: this.job_status,\n      max_labor_cost: this.max_labor_cost\n      }\n    })\n    .then(req => {\n      if(req.data.ok){\n        console.log('Job added!');\n      };\n    })\n    .catch(err => {\n      console.log(err);\n    })\n    }\n  },\n  beforeMount() {\n  \taxios({\n  \t\tmethod: 'get',\n  \t\turl: '/jobs'\n  \t})\n  \t.then(req => {\n  \t\tconsole.log(req.data);\n      this.jobs = req.data.jobs;\n  \t})\n  \t.catch(err => {\n  \t\tconsole.log(err);\n  \t})\n  }\n};\n</script>\n<<<<<<< HEAD\n\n<style scoped>\n\n  .job {\n    display: inline-block;\n    height: auto;\n    width: 400px;\n    border: 4px double blue;\n    overflow: auto;\n  }\n</style>>\n=======\n<style scoped>\n\n.mainDiv{\n     margin:90px 50px 0 200px;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n\n}\n\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n      padding: 0 60px;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\na{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n</style>\n>>>>>>> 802442b046feca1bcd6f97923a1cf3076da6ce84\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.job[data-v-41061bbf] {\n  display: inline-block;\n  height: auto;\n  width: 400px;\n  border: 4px double blue;\n  overflow: auto;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/modifyProject.vue?49abe78c"],"names":[],"mappings":";AAkHA;EACA,sBAAA;EACA,aAAA;EACA,aAAA;EACA,wBAAA;EACA,eAAA;CACA","file":"modifyProject.vue","sourcesContent":["<template>\n  \t<div class=\"mainDiv\">\n      <div  class=\"header\">\n          <ul>\n            <li><a v-on:click=\"$parent.updateView('add-hours')\">Enter Time Worked</a></li>\n             <li><a v-on:click=\"$parent.updateView('')\">Approve Time</a></li>\n             <li><a v-on:click=\"$parent.updateView('create-project')\">Create Project</a></li>\n             <li><a v-on:click=\"$parent.updateView('modify-project')\" style=\"color:#4bc800\">Modify project</a></li>\n          </ul>\n      <div>\n      <h1>Modify a Project</h1>\n        <div class=\"job\" v-for=\"job in jobs\">\n          <form v-on:submit.prevent=\"onSubmit\">\n            <input type=\"number\" name=\"job_id\" v-model=\"job.job_id\">\n            <p>Project Name</p>\n            <input type=\"text\" name=\"job_name\" :placeholder=\"job.job_name\" v-model=\"job_name\">\n            <p>Start Date</p>\n            <input type=\"date\" name=\"start_date\"  v-model=\"job.start_date\">\n            <p>End Date</p>\n            <input type=\"date\" name=\"end_date\" v-model=\"job.end_date\">\n            <p>Hours Bid</p>\n            <input type=\"text\" name =\"hours_bid\" v-model=\"job.hours_bid\">\n            <p>Estimated Start Date</p>\n            <input type=\"date\" name=\"est_start_date\" v-model=\"job.est_start_date\">\n            <p>Estimated End Date</p>\n            <input type=\"date\" name=\"est_end_date\" v-model=\"job.est_end_date\">\n            <p>Bill Rate</p>\n            <input type=\"text\" name=\"bill_rate\" v-model=\"job.bill_rate\">\n            <p>Job Status</p>\n            <input type=\"text\" name=\"job_status\" v-model=\"job.job_status\">\n            <p>Max Labor Cost</p>\n            <input type=\"text\" name=\"max_labor_cost\" v-model=\"job.max_labor_cost\">\n            <input type=\"submit\" value=\"Submit\">\n          </form>\n        </div>\n      </div>\n        </div>\n  \t\t\n\t  </div>\n</template>\n\n<script>\nimport axios from 'axios';\n\nexport default {\n  name: 'modify-project',\n  props: [\"user\"],\n\n  data() {\n    return {\n\n      jobs: '',\n      job_name: '',\n      job_id: '',\n      start_date: '',\n      end_date: '',\n      hours_bid: '',\n      est_start_date: '',\n      est_end_date: '',\n      fk_customer_id: '',\n      bill_rate: '',\n      job_status: '',\n      max_labor_cost: ''\n\n    }\n  },\n  methods: {\n    onSubmit: function(){\n      console.log(this.job_id);\n      axios({\n      method: 'put',\n      url: '/jobs/update',\n      data: {\n      job_id: this.job_id,\n      job_name: this.job_name,\n      start_date: this.start_date,\n      end_date: this.end_date,\n      hours_bid: this.hours_bid,\n      est_start_date: this.est_start_date,\n      est_end_date: this.est_end_date,\n      fk_customer_id: this.fk_customer_id,\n      bill_rate: this.bill_rate,\n      job_status: this.job_status,\n      max_labor_cost: this.max_labor_cost\n      }\n    })\n    .then(req => {\n      if(req.data.ok){\n        console.log('Job added!');\n      };\n    })\n    .catch(err => {\n      console.log(err);\n    })\n    }\n  },\n  beforeMount() {\n  \taxios({\n  \t\tmethod: 'get',\n  \t\turl: '/jobs'\n  \t})\n  \t.then(req => {\n  \t\tconsole.log(req.data);\n      this.jobs = req.data.jobs;\n  \t})\n  \t.catch(err => {\n  \t\tconsole.log(err);\n  \t})\n  }\n};\n</script>\n\n<style scoped>\n\n  .job {\n    display: inline-block;\n    height: auto;\n    width: 400px;\n    border: 4px double blue;\n    overflow: auto;\n  }\n</style>\n\n<style scoped>\n\n.mainDiv{\n     margin:90px 50px 0 200px;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n\n}\n\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n      padding: 0 60px;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\na{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n</style>\n>>>>>>> 802442b046feca1bcd6f97923a1cf3076da6ce84\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -22198,7 +22556,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-41061bbf]{\n     margin:90px 50px 0 200px;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n}\n.header[data-v-41061bbf]{\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-41061bbf]{\n  list-style-type:none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\nli[data-v-41061bbf]{\n      padding: 0 60px;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli[data-v-41061bbf]:active{\n  border-color:#4bc800;\n}\nli[data-v-41061bbf]:hover{\n  border-color: #929292;\n}\na[data-v-41061bbf]{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/modifyProject.vue?c99f0974"],"names":[],"mappings":";AA+HA;KACA,yBAAA;KACA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;MACA,gBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyProject.vue","sourcesContent":["<template>\n  \t<div class=\"mainDiv\">\n      <div  class=\"header\">\n          <ul>\n              <li><a v-on:click=\"$parent.updateView('add-hours')\">Enter Time Worked</a></li>\n             <li><a v-on:click=\"$parent.updateView('')\">Approve Time</a></li>\n             <li><a v-on:click=\"$parent.updateView('create-project')\">Create Project</a></li>\n             <li><a v-on:click=\"$parent.updateView('modify-project')\" style=\"color:#4bc800\">Modify project</a></li>\n              \n          </ul>\n          <div>\n      <h1>Modify a Project</h1>\n        <div class=\"job\" v-for=\"job in jobs\">\n          <form v-on:submit.prevent=\"onSubmit\">\n            <input type=\"hidden\" name=\"job_id\" :value=\"job.job_id\">\n            <p>Project Name</p>\n            <input type=\"text\" name=\"job_name\" :placeholder=\"job.job_name\" :value=\"job_name\">\n            <p>Start Date</p>\n            <input type=\"date\" name=\"start_date\"  :value=\"job.start_date\">\n            <p>End Date</p>\n            <input type=\"date\" name=\"end_date\" :value=\"job.end_date\">\n            <p>Hours Bid</p>\n            <input type=\"text\" name =\"hours_bid\" :value=\"job.hours_bid\">\n            <p>Estimated Start Date</p>\n            <input type=\"date\" name=\"est_start_date\" :value=\"job.est_start_date\">\n            <p>Estimated End Date</p>\n            <input type=\"date\" name=\"est_end_date\" :value=\"job.est_end_date\">\n            <p>Bill Rate</p>\n            <input type=\"text\" name=\"bill_rate\" :value=\"job.bill_rate\">\n            <p>Job Status</p>\n            <input type=\"text\" name=\"job_status\" :value=\"job.job_status\">\n            <p>Max Labor Cost</p>\n            <input type=\"text\" name=\"max_labor_cost\" :value=\"job.max_labor_cost\">\n            <input type=\"submit\" value=\"Submit\">\n          </form>\n        </div>\n      </div>\n        </div>\n  \t\t\n\t  </div>\n</template>\n\n<script>\nimport axios from 'axios';\n\nexport default {\n  name: 'modify-project',\n  props: [\"user\"],\n\n  data() {\n    return {\n\n      jobs: '',\n      job_name: '',\n      job_id: '',\n      start_date: '',\n      end_date: '',\n      hours_bid: '',\n      est_start_date: '',\n      est_end_date: '',\n      fk_customer_id: '',\n      bill_rate: '',\n      job_status: '',\n      max_labor_cost: ''\n\n    }\n  },\n  methods: {\n    onSubmit: function(){\n      console.log(this.job_id);\n      axios({\n      method: 'put',\n      url: '/jobs/update',\n      data: {\n      job_id: this.job_id,\n      job_name: this.job_name,\n      start_date: this.start_date,\n      end_date: this.end_date,\n      hours_bid: this.hours_bid,\n      est_start_date: this.est_start_date,\n      est_end_date: this.est_end_date,\n      fk_customer_id: this.fk_customer_id,\n      bill_rate: this.bill_rate,\n      job_status: this.job_status,\n      max_labor_cost: this.max_labor_cost\n      }\n    })\n    .then(req => {\n      if(req.data.ok){\n        console.log('Job added!');\n      };\n    })\n    .catch(err => {\n      console.log(err);\n    })\n    }\n  },\n  beforeMount() {\n  \taxios({\n  \t\tmethod: 'get',\n  \t\turl: '/jobs'\n  \t})\n  \t.then(req => {\n  \t\tconsole.log(req.data);\n      this.jobs = req.data.jobs;\n  \t})\n  \t.catch(err => {\n  \t\tconsole.log(err);\n  \t})\n  }\n};\n</script>\n<<<<<<< HEAD\n\n<style scoped>\n\n  .job {\n    display: inline-block;\n    height: auto;\n    width: 400px;\n    border: 4px double blue;\n    overflow: auto;\n  }\n</style>>\n=======\n<style scoped>\n\n.mainDiv{\n     margin:90px 50px 0 200px;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n\n}\n\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n      padding: 0 60px;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\na{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n</style>\n>>>>>>> 802442b046feca1bcd6f97923a1cf3076da6ce84\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-41061bbf]{\n     margin:90px 50px 0 200px;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n}\n.header[data-v-41061bbf]{\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-41061bbf]{\n  list-style-type:none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\nli[data-v-41061bbf]{\n      padding: 0 60px;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli[data-v-41061bbf]:active{\n  border-color:#4bc800;\n}\nli[data-v-41061bbf]:hover{\n  border-color: #929292;\n}\na[data-v-41061bbf]{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/modifyProject.vue?49abe78c"],"names":[],"mappings":";AA6HA;KACA,yBAAA;KACA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;MACA,gBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyProject.vue","sourcesContent":["<template>\n  \t<div class=\"mainDiv\">\n      <div  class=\"header\">\n          <ul>\n            <li><a v-on:click=\"$parent.updateView('add-hours')\">Enter Time Worked</a></li>\n             <li><a v-on:click=\"$parent.updateView('')\">Approve Time</a></li>\n             <li><a v-on:click=\"$parent.updateView('create-project')\">Create Project</a></li>\n             <li><a v-on:click=\"$parent.updateView('modify-project')\" style=\"color:#4bc800\">Modify project</a></li>\n          </ul>\n      <div>\n      <h1>Modify a Project</h1>\n        <div class=\"job\" v-for=\"job in jobs\">\n          <form v-on:submit.prevent=\"onSubmit\">\n            <input type=\"number\" name=\"job_id\" v-model=\"job.job_id\">\n            <p>Project Name</p>\n            <input type=\"text\" name=\"job_name\" :placeholder=\"job.job_name\" v-model=\"job_name\">\n            <p>Start Date</p>\n            <input type=\"date\" name=\"start_date\"  v-model=\"job.start_date\">\n            <p>End Date</p>\n            <input type=\"date\" name=\"end_date\" v-model=\"job.end_date\">\n            <p>Hours Bid</p>\n            <input type=\"text\" name =\"hours_bid\" v-model=\"job.hours_bid\">\n            <p>Estimated Start Date</p>\n            <input type=\"date\" name=\"est_start_date\" v-model=\"job.est_start_date\">\n            <p>Estimated End Date</p>\n            <input type=\"date\" name=\"est_end_date\" v-model=\"job.est_end_date\">\n            <p>Bill Rate</p>\n            <input type=\"text\" name=\"bill_rate\" v-model=\"job.bill_rate\">\n            <p>Job Status</p>\n            <input type=\"text\" name=\"job_status\" v-model=\"job.job_status\">\n            <p>Max Labor Cost</p>\n            <input type=\"text\" name=\"max_labor_cost\" v-model=\"job.max_labor_cost\">\n            <input type=\"submit\" value=\"Submit\">\n          </form>\n        </div>\n      </div>\n        </div>\n  \t\t\n\t  </div>\n</template>\n\n<script>\nimport axios from 'axios';\n\nexport default {\n  name: 'modify-project',\n  props: [\"user\"],\n\n  data() {\n    return {\n\n      jobs: '',\n      job_name: '',\n      job_id: '',\n      start_date: '',\n      end_date: '',\n      hours_bid: '',\n      est_start_date: '',\n      est_end_date: '',\n      fk_customer_id: '',\n      bill_rate: '',\n      job_status: '',\n      max_labor_cost: ''\n\n    }\n  },\n  methods: {\n    onSubmit: function(){\n      console.log(this.job_id);\n      axios({\n      method: 'put',\n      url: '/jobs/update',\n      data: {\n      job_id: this.job_id,\n      job_name: this.job_name,\n      start_date: this.start_date,\n      end_date: this.end_date,\n      hours_bid: this.hours_bid,\n      est_start_date: this.est_start_date,\n      est_end_date: this.est_end_date,\n      fk_customer_id: this.fk_customer_id,\n      bill_rate: this.bill_rate,\n      job_status: this.job_status,\n      max_labor_cost: this.max_labor_cost\n      }\n    })\n    .then(req => {\n      if(req.data.ok){\n        console.log('Job added!');\n      };\n    })\n    .catch(err => {\n      console.log(err);\n    })\n    }\n  },\n  beforeMount() {\n  \taxios({\n  \t\tmethod: 'get',\n  \t\turl: '/jobs'\n  \t})\n  \t.then(req => {\n  \t\tconsole.log(req.data);\n      this.jobs = req.data.jobs;\n  \t})\n  \t.catch(err => {\n  \t\tconsole.log(err);\n  \t})\n  }\n};\n</script>\n\n<style scoped>\n\n  .job {\n    display: inline-block;\n    height: auto;\n    width: 400px;\n    border: 4px double blue;\n    overflow: auto;\n  }\n</style>\n\n<style scoped>\n\n.mainDiv{\n     margin:90px 50px 0 200px;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n\n}\n\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n      padding: 0 60px;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\na{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n</style>\n>>>>>>> 802442b046feca1bcd6f97923a1cf3076da6ce84\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -22210,7 +22568,6 @@ exports.push([module.i, "\n.mainDiv[data-v-41061bbf]{\n     margin:90px 50px 0 2
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-//
 //
 //
 //
@@ -22414,75 +22771,235 @@ var render = function() {
                 },
                 [
                   _c("input", {
-                    attrs: { type: "hidden", name: "job_id" },
-                    domProps: { value: job.job_id }
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: job.job_id,
+                        expression: "job.job_id"
+                      }
+                    ],
+                    attrs: { type: "number", name: "job_id" },
+                    domProps: { value: job.job_id },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(job, "job_id", $event.target.value)
+                      }
+                    }
                   }),
                   _vm._v(" "),
                   _c("p", [_vm._v("Project Name")]),
                   _vm._v(" "),
                   _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.job_name,
+                        expression: "job_name"
+                      }
+                    ],
                     attrs: {
                       type: "text",
                       name: "job_name",
                       placeholder: job.job_name
                     },
-                    domProps: { value: _vm.job_name }
+                    domProps: { value: _vm.job_name },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.job_name = $event.target.value
+                      }
+                    }
                   }),
                   _vm._v(" "),
                   _c("p", [_vm._v("Start Date")]),
                   _vm._v(" "),
                   _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: job.start_date,
+                        expression: "job.start_date"
+                      }
+                    ],
                     attrs: { type: "date", name: "start_date" },
-                    domProps: { value: job.start_date }
+                    domProps: { value: job.start_date },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(job, "start_date", $event.target.value)
+                      }
+                    }
                   }),
                   _vm._v(" "),
                   _c("p", [_vm._v("End Date")]),
                   _vm._v(" "),
                   _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: job.end_date,
+                        expression: "job.end_date"
+                      }
+                    ],
                     attrs: { type: "date", name: "end_date" },
-                    domProps: { value: job.end_date }
+                    domProps: { value: job.end_date },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(job, "end_date", $event.target.value)
+                      }
+                    }
                   }),
                   _vm._v(" "),
                   _c("p", [_vm._v("Hours Bid")]),
                   _vm._v(" "),
                   _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: job.hours_bid,
+                        expression: "job.hours_bid"
+                      }
+                    ],
                     attrs: { type: "text", name: "hours_bid" },
-                    domProps: { value: job.hours_bid }
+                    domProps: { value: job.hours_bid },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(job, "hours_bid", $event.target.value)
+                      }
+                    }
                   }),
                   _vm._v(" "),
                   _c("p", [_vm._v("Estimated Start Date")]),
                   _vm._v(" "),
                   _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: job.est_start_date,
+                        expression: "job.est_start_date"
+                      }
+                    ],
                     attrs: { type: "date", name: "est_start_date" },
-                    domProps: { value: job.est_start_date }
+                    domProps: { value: job.est_start_date },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(job, "est_start_date", $event.target.value)
+                      }
+                    }
                   }),
                   _vm._v(" "),
                   _c("p", [_vm._v("Estimated End Date")]),
                   _vm._v(" "),
                   _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: job.est_end_date,
+                        expression: "job.est_end_date"
+                      }
+                    ],
                     attrs: { type: "date", name: "est_end_date" },
-                    domProps: { value: job.est_end_date }
+                    domProps: { value: job.est_end_date },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(job, "est_end_date", $event.target.value)
+                      }
+                    }
                   }),
                   _vm._v(" "),
                   _c("p", [_vm._v("Bill Rate")]),
                   _vm._v(" "),
                   _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: job.bill_rate,
+                        expression: "job.bill_rate"
+                      }
+                    ],
                     attrs: { type: "text", name: "bill_rate" },
-                    domProps: { value: job.bill_rate }
+                    domProps: { value: job.bill_rate },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(job, "bill_rate", $event.target.value)
+                      }
+                    }
                   }),
                   _vm._v(" "),
                   _c("p", [_vm._v("Job Status")]),
                   _vm._v(" "),
                   _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: job.job_status,
+                        expression: "job.job_status"
+                      }
+                    ],
                     attrs: { type: "text", name: "job_status" },
-                    domProps: { value: job.job_status }
+                    domProps: { value: job.job_status },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(job, "job_status", $event.target.value)
+                      }
+                    }
                   }),
                   _vm._v(" "),
                   _c("p", [_vm._v("Max Labor Cost")]),
                   _vm._v(" "),
                   _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: job.max_labor_cost,
+                        expression: "job.max_labor_cost"
+                      }
+                    ],
                     attrs: { type: "text", name: "max_labor_cost" },
-                    domProps: { value: job.max_labor_cost }
+                    domProps: { value: job.max_labor_cost },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(job, "max_labor_cost", $event.target.value)
+                      }
+                    }
                   }),
                   _vm._v(" "),
                   _c("input", { attrs: { type: "submit", value: "Submit" } })

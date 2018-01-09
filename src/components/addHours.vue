@@ -9,7 +9,6 @@
             
         </ul>
       </div>
-
       		<!-- <h1>Add hours</h1> -->
       		<form v-on:submit.prevent="onSubmit" id="form">
           			<p class="input_heading">Job</p>

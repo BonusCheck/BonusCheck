@@ -11,25 +11,25 @@
       <h1>Modify a Project</h1>
         <div class="job" v-for="job in jobs">
           <form v-on:submit.prevent="onSubmit">
-            <input type="hidden" name="job_id" :value="job.job_id">
+            <input type="number" name="job_id" v-model="job.job_id">
             <p>Project Name</p>
-            <input type="text" name="job_name" :placeholder="job.job_name" :value="job_name">
+            <input type="text" name="job_name" :placeholder="job.job_name" v-model="job_name">
             <p>Start Date</p>
-            <input type="date" name="start_date"  :value="job.start_date">
+            <input type="date" name="start_date"  v-model="job.start_date">
             <p>End Date</p>
-            <input type="date" name="end_date" :value="job.end_date">
+            <input type="date" name="end_date" v-model="job.end_date">
             <p>Hours Bid</p>
-            <input type="text" name ="hours_bid" :value="job.hours_bid">
+            <input type="text" name ="hours_bid" v-model="job.hours_bid">
             <p>Estimated Start Date</p>
-            <input type="date" name="est_start_date" :value="job.est_start_date">
+            <input type="date" name="est_start_date" v-model="job.est_start_date">
             <p>Estimated End Date</p>
-            <input type="date" name="est_end_date" :value="job.est_end_date">
+            <input type="date" name="est_end_date" v-model="job.est_end_date">
             <p>Bill Rate</p>
-            <input type="text" name="bill_rate" :value="job.bill_rate">
+            <input type="text" name="bill_rate" v-model="job.bill_rate">
             <p>Job Status</p>
-            <input type="text" name="job_status" :value="job.job_status">
+            <input type="text" name="job_status" v-model="job.job_status">
             <p>Max Labor Cost</p>
-            <input type="text" name="max_labor_cost" :value="job.max_labor_cost">
+            <input type="text" name="max_labor_cost" v-model="job.max_labor_cost">
             <input type="submit" value="Submit">
           </form>
         </div>
@@ -109,7 +109,6 @@ export default {
   }
 };
 </script>
-<<<<<<< HEAD
 
 <style scoped>
 
@@ -120,8 +119,8 @@ export default {
     border: 4px double blue;
     overflow: auto;
   }
-</style>>
-=======
+</style>
+
 <style scoped>
 
 .mainDiv{
