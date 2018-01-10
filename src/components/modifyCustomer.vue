@@ -19,7 +19,7 @@
                 <input class="inputField" type="hidden" v-model="selectedRole.customer_id">
                 <p class="input_heading">Customer name</p>
                 <input class="inputField" type="text" v-model.trim="selectedRole.customer_name" required>
-                <button class="button" type="submit" value="Submit">Create</button>
+                <button class="button" type="submit" value="Submit">Update</button>
                 <p style="text-align:center;" class="hidden input_heading" id="confirmation"><img src="/dist/assets/images/yes.png"  alt="Logo">Customer updated successfully.</p>
               </form>
 	</div>
@@ -50,8 +50,10 @@ export default {
         }
       })
       .then(req => {
-        console.log(req);
+        if(req.status===200){
+          $('.inputField').val('');
         document.getElementById('confirmation').classList.remove('hidden');
+      };
       })
       .catch(err => {
         console.log(err);

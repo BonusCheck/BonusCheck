@@ -38,22 +38,18 @@
         <li class="has-children comments" v-if="user.roll == 'Admin' || 'Project Coordinator'">
           <a v-on:click="$parent.updateView('add-installer')"><i class="fa fa-tasks"></i> Installer</a>                   
         </li>
+         </li> 
+        <li class="has-children users">
+          <a  v-on:click="$parent.updateView('add-user')"><i class="fa fa-user"></i> User</a>       
+         
+        </li>
 
         <li class="has-children bookmarks" v-if="user.roll == 'Admin' || 'Project Coordinator' || 'Project Manager' || 'Installer'">
           <a  v-on:click="$parent.updateView('bonus-schedule')"><i class="fa fa-table"></i> Bonus</a>
           
-        </li> 
-		    <li class="has-children bookmarks" v-if="user.roll == 'Admin' || 'Project Coordinator'">
-          <a  v-on:click="$parent.updateView('payment-history')"><i class="fa fa-table"></i> Payments</a>
-          
-        </li> 
-        <li class="has-children users" v-if="user.roll == 'Admin' || 'Project Coordinator'">
-          <a  v-on:click="$parent.updateView('add-user')"><i class="fa fa-user"></i> User</a>       
-         
-        </li>
        
-        <li class="has-children users" v-if="user.roll == 'Admin' || 'Project Coordinator' || 'Project Manager' || 'Installer'">
-          <a  v-on:click="$parent.updateView('')"><i class="fa fa-user"></i> Jobs</a>       
+         <li class="has-children users">
+          <a v-on:click="$parent.updateView('create-roles')"><i class="fa fa-user"></i> Roles</a>       
           <!-- <ul>
            <li><a v-on:click="$parent.updateView('')">View transaction logs</a></li>
            <li><a v-on:click="$parent.updateView('')">View project data</a></li>

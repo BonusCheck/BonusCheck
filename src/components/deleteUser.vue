@@ -29,7 +29,7 @@
                     </div>           
                   
                     <div class="row row2">
-                      <p class="hidden" id="confirmation"><img src="/dist/assets/images/yes.png"  alt="Logo">User deleted successfully.</p>
+                      <p class="hidden input_heading" id="confirmation"><img src="/dist/assets/images/yes.png"  alt="Logo">User deleted successfully.</p>
                       <p class="paragraph">Choose user to delete.</p>
                     </div> 
                 </form>       
@@ -98,6 +98,12 @@ export default {
 }
 form{
   margin-top: 30px;
+}
+.input_heading{
+    color: #afaeb0;
+    text-align: center;
+    margin-top: 10px;
+    
 }
 .dropdown:focus{
   outline: none;
