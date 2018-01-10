@@ -53,7 +53,8 @@ jobsRouter.delete("/delete", function(req, res) {
 
 jobsRouter.put("/update", function(req, res) {
   var condition = "job_id = " + req.body.job_id;
-  var objColVals = req.body.data;
+  var objColVals = req.body;
+  console.log(req.body);
   job.update(objColVals, condition, function(result) {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404

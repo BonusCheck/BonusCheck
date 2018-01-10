@@ -9,34 +9,40 @@
           </ul>
       <div>
       <h1>Modify a Project</h1>
-        <div class="job" v-for="job in jobs">
-          <form v-on:submit.prevent="onSubmit">
-            <input type="number" name="job_id" v-model="job.job_id">
+       <div class="row">
+        <div class="col-md-10">
+            <select class="input" v-model="job_id">
+              <option v-for="job in jobs" v-bind:value="job.job_id">
+                {{job.job_name}}
+              </option>
+            </select>
+        </div>    
+    </div> 
+          <form v-if="selectedJob.job_id" v-on:submit.prevent="onSubmit">
+            <input type="hidden" v-model="selectedJob.job_id">
             <p>Project Name</p>
-            <input type="text" name="job_name" :placeholder="job.job_name" v-model="job_name">
+            <input type="text" name="job_name" v-model="selectedJob.job_name">
             <p>Start Date</p>
-            <input type="date" name="start_date"  v-model="job.start_date">
+            <input type="date" name="start_date" v-model="selectedJob.start_date | dateFormat">
             <p>End Date</p>
-            <input type="date" name="end_date" v-model="job.end_date">
+            <input type="date" name="end_date" v-model="selectedJob.end_date">
             <p>Hours Bid</p>
-            <input type="text" name ="hours_bid" v-model="job.hours_bid">
+            <input type="text" name ="hours_bid" v-model="selectedJob.hours_bid">
             <p>Estimated Start Date</p>
-            <input type="date" name="est_start_date" v-model="job.est_start_date">
+            <input type="date" name="est_start_date" v-model="selectedJob.est_start_date">
             <p>Estimated End Date</p>
-            <input type="date" name="est_end_date" v-model="job.est_end_date">
+            <input type="date" name="est_end_date" v-model="selectedJob.est_end_date">
             <p>Bill Rate</p>
-            <input type="text" name="bill_rate" v-model="job.bill_rate">
+            <input type="text" name="bill_rate" v-model="selectedJob.bill_rate">
             <p>Job Status</p>
-            <input type="text" name="job_status" v-model="job.job_status">
+            <input type="text" name="job_status" v-model="selectedJob.job_status">
             <p>Max Labor Cost</p>
-            <input type="text" name="max_labor_cost" v-model="job.max_labor_cost">
+            <input type="text" name="max_labor_cost" v-model="selectedJob.max_labor_cost">
             <input type="submit" value="Submit">
           </form>
-        </div>
       </div>
-        </div>
-  		
-	  </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -50,38 +56,39 @@ export default {
     return {
 
       jobs: '',
-      job_name: '',
       job_id: '',
-      start_date: '',
-      end_date: '',
-      hours_bid: '',
-      est_start_date: '',
-      est_end_date: '',
-      fk_customer_id: '',
-      bill_rate: '',
-      job_status: '',
-      max_labor_cost: ''
+      selectedJob: {}
 
     }
   },
+
+  filters: {
+  dateFormat: function (date) {
+    if (!date) return ''
+    date = date.toString()
+    return  date.slice(11)
+  }
+},
+
+  
   methods: {
     onSubmit: function(){
-      console.log(this.job_id);
+      
       axios({
       method: 'put',
       url: '/jobs/update',
       data: {
-      job_id: this.job_id,
-      job_name: this.job_name,
-      start_date: this.start_date,
-      end_date: this.end_date,
-      hours_bid: this.hours_bid,
-      est_start_date: this.est_start_date,
-      est_end_date: this.est_end_date,
-      fk_customer_id: this.fk_customer_id,
-      bill_rate: this.bill_rate,
-      job_status: this.job_status,
-      max_labor_cost: this.max_labor_cost
+      job_id: this.selectedJob.job_id,
+      job_name: this.selectedJob.job_name,
+      start_date: this.selectedJob.start_date,
+      end_date: this.selectedJob.end_date,
+      hours_bid: this.selectedJob.hours_bid,
+      est_start_date: this.selectedJob.est_start_date,
+      est_end_date: this.selectedJob.est_end_date,
+      fk_customer_id: this.selectedJob.fk_customer_id,
+      bill_rate: this.selectedJob.bill_rate,
+      job_status: this.selectedJob.job_status,
+      max_labor_cost: this.selectedJob.max_labor_cost
       }
     })
     .then(req => {
@@ -94,13 +101,19 @@ export default {
     })
     }
   },
+  watch: {
+    job_id(id) {
+      [this.selectedJob] = this.jobs.filter(r => r.job_id === id);
+    }
+  },
   beforeMount() {
   	axios({
   		method: 'get',
   		url: '/jobs'
   	})
   	.then(req => {
-  		console.log(req.data);
+  		console.log(req.data.est_end_date);
+      console.log(req.data.est_end_date);
       this.jobs = req.data.jobs;
   	})
   	.catch(err => {
