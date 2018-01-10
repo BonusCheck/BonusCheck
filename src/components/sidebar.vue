@@ -59,6 +59,14 @@
            <li><a v-on:click="$parent.updateView('')">View project data</a></li>
           </ul> -->
         </li>
+		    <li class="has-children bookmarks">
+          <a  v-on:click="$parent.updateView('payment-history')"><i class="fa fa-table"></i> Payments</a>
+          
+        </li> 
+        
+       
+        
+       
 
          <li class="has-children users" v-if="user.roll == 'Admin' || 'Project Coordinator'">
           <a  v-on:click="$parent.updateView('create-project')"><i class="fa fa-user"></i> Project</a>                 
@@ -205,6 +213,7 @@ a {
 .cd-side-nav{
   font-size: 20px;
   margin-top: 20px;
+  position: fixed;
 }
 .fa{
   margin-right: 13px;
@@ -563,7 +572,7 @@ Sidebar
 
 -------------------------------- */
 .cd-side-nav {
-  position: absolute;
+  position: fixed;
   z-index: 1;
   left: 0;
   top: 0;
@@ -695,6 +704,7 @@ Sidebar
     opacity: 1;
     overflow: visible;
     max-height: none;
+    position: fixed;
   }
   .cd-side-nav.nav-is-visible {
     box-shadow: none;
@@ -755,6 +765,7 @@ Sidebar
 @media only screen and (min-width: 1170px) {
   .cd-side-nav {
     width: 150px;
+    position: fixed;
   }
   .cd-logo img{
     margin-left: -16px;

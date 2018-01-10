@@ -2,10 +2,9 @@
   	<div class="mainDiv">
       <div  class="header">
           <ul>
-            <li><a v-on:click="$parent.updateView('add-hours')">Enter Time Worked</a></li>
-             <li><a v-on:click="$parent.updateView('')">Approve Time</a></li>
-             <li><a v-on:click="$parent.updateView('create-project')">Create Project</a></li>
-             <li><a v-on:click="$parent.updateView('modify-project')" style="color:#4bc800">Modify project</a></li>
+             <li><a v-on:click="$parent.updateView('add-user')" >Add User</a></li>
+           <li><a v-on:click="$parent.updateView('delete-user')">Delete User</a></li>
+           <li><a v-on:click="$parent.updateView('modify-project')" style="color:#4bc800">Modify project</a></li>
           </ul>
       <div>
       <h1>Modify a Project</h1>
@@ -123,6 +122,7 @@ export default {
 };
 </script>
 
+
 <style scoped>
 
   .job {
@@ -132,12 +132,14 @@ export default {
     border: 4px double blue;
     overflow: auto;
   }
-</style>
+</style>>
 
 <style scoped>
 
 .mainDiv{
-     margin:90px 50px 0 200px;
+     margin-top: 7%;
+     margin-right: 7%;
+     margin-left: 18%;
      box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
      height: 25%;
      background-color: #fff;
@@ -156,7 +158,8 @@ ul{
   justify-content: center;
 }
 li{
-      padding: 0 60px;
+    padding-left: 6%;
+    padding-right: 6%;
     line-height: 4;
     border-bottom: 3px solid transparent;
     margin-bottom: -10px;
@@ -174,4 +177,4 @@ a{
   font-weight: bold;
 }
 </style>
->>>>>>> 802442b046feca1bcd6f97923a1cf3076da6ce84
+

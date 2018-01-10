@@ -3,9 +3,10 @@
           <div  class="header">
             <ul>
                <li><a class="header_a" v-on:click="$parent.updateView('add-bonus')">Add Bonus</a></li>
-               <li><a class="header_a" v-on:click="$parent.updateView('paid-bonus')">Paid Bonus</a></li>
-               <li><a class="header_a" v-on:click="$parent.updateView('bonus-schedule')"  style="color:#4bc800">Unpaid Bonus</a></li>
+               <li><a class="header_a" v-on:click="$parent.updateView('paid-bonus')" style="color:#4bc800">Paid Bonus</a></li>
+               <li><a class="header_a" v-on:click="$parent.updateView('bonus-schedule')"  >Unpaid Bonus</a></li>
                <li><a class="header_a" v-on:click="$parent.updateView('all-bonus')">All Bonus</a></li>
+               <li><a class="header_a" v-on:click="$parent.updateView('create-payments')">Modify Bonus</a></li>
             </ul>
           </div>     
       
@@ -22,11 +23,11 @@
                                       <th class="text-center">Action</th>
                                   </tr>
                               </thead>
-                                <tr v-for="bonus in bonuses">
-                                    <td>{{ bonus.scheduled_payment_amount }}</td>
-                                    <td>{{ bonus.scheduled_pay_date }}</td>
-                                    <td>{{ bonus.payment_amount }}</td>
-                                    <td>{{ bonus.date_paid }}</td>
+                                <tr>
+                                    <td>ddddd</td>
+                                    <td>ddddd</td>
+                                    <td>dddd</td>
+                                    <td>dddd</td>
                                     <td class="text-center"><a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
                                 </tr>
                                 
@@ -38,27 +39,12 @@
 </template>
 
 <script>
-import axios from 'axios';
 
-export default {
-  name: 'bonus-schedule',
-  props: ["user"],
-  data() {
-    return {
-      bonuses: ''
-    }
-  },
-  beforeMount(){
-  	axios.get('/installers/payments')
-  	.then(req => {
-      this.bonuses = req.data.installer_payments;
-  		console.log(req.data.installer_payments);
-  	})
-  }
-};
-
+    export default {
+      name: 'paid-bonus'
+     
+    };
 </script>
-
 
 <style scoped>
 

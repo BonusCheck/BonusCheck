@@ -3,9 +3,11 @@
       <div  class="header">
         <ul>
             <li><a v-on:click="$parent.updateView('add-hours')" style="color:#4bc800">Enter Time Worked</a></li>
-           <li><a v-on:click="$parent.updateView('')">Approve Time</a></li>
-           <li><a v-on:click="$parent.updateView('create-project')">Create Project</a></li>
-           <li><a v-on:click="$parent.updateView('modify-project')">Modify project</a></li>
+           <!-- <li><a v-on:click="$parent.updateView('')">Approve Time</a></li> -->
+           <li><a v-on:click="$parent.updateView('view-time')">View time</a></li>
+           <li><a v-on:click="$parent.updateView('modify-time')">Modify time</a></li>
+           <li><a v-on:click="$parent.updateView('approve-time')">Approve time</a></li>
+           
             
         </ul>
       </div>
@@ -87,7 +89,9 @@ export default {
 <style scoped>
 
 .mainDiv{
-     margin:90px 50px 0 200px;
+     margin-top: 7%;
+     margin-right: 7%;
+     margin-left: 18%;
      box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
      height: 25%;
      background-color: #fff;
@@ -162,7 +166,8 @@ ul{
   justify-content: center;
 }
 li{
-      padding: 0 60px;
+      padding-left: 6%;
+    padding-right: 6%;
     line-height: 4;
     border-bottom: 3px solid transparent;
     margin-bottom: -10px;

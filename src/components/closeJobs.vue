@@ -2,27 +2,28 @@
 	<div class="mainDiv">
     <div  class="header">
 	    <ul>
-            <li><a v-on:click="$parent.updateView('payment-history')">View Payment History</a></li>
-            <li><a v-on:click="$parent.updateView('create-payments')">Create Payments</a></li>
-            <li><a v-on:click="$parent.updateView('modify-payments')">Modify Payments</a></li>
-            <li><a v-on:click="$parent.updateView('create-payment-types')">Create Payments Types</a></li>
-            <li><a v-on:click="$parent.updateView('modify-payment-types')" style="color:#4bc800">Modify Payment Types</a></li>
+           <li><a v-on:click="$parent.updateView('create-project')" >Create Project</a></li>
+           <li><a v-on:click="$parent.updateView('open-jobs')" >View open jobs</a></li>
+           <li><a v-on:click="$parent.updateView('close-jobs')" style="color:#4bc800">View close jobs</a></li>
+           <li><a v-on:click="$parent.updateView('all-jobs')">View all jobs</a></li>
           </ul>
        </div>   
-		<h1>Modify Payment Types</h1>
+		<h1>open jobs</h1>
 	</div>
 </template>
 
 <script>
 
 export default {
-  name: 'modify-payment-types'
+  name: 'close-jobs'
 };
 </script>
 <style scoped>
 
 .mainDiv{
-     margin:150px 50px 0 200px;
+     margin-top: 7%;
+     margin-right: 7%;
+     margin-left: 18%;
      box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
      height: 25%;
      background-color: #fff;
@@ -41,7 +42,8 @@ ul{
   justify-content: center;
 }
 li{
-      padding: 0 20px;
+    padding-left: 6%;
+    padding-right: 6%;
     line-height: 4;
     border-bottom: 3px solid transparent;
     margin-bottom: -10px;

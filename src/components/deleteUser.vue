@@ -4,6 +4,7 @@
                      <ul>
                        <li><a v-on:click="$parent.updateView('add-user')">Add User</a></li>
                        <li><a v-on:click="$parent.updateView('delete-user')" style="color:#4bc800">Delete User</a></li>
+                       <li><a v-on:click="$parent.updateView('modify-project')" >Modify project</a></li>
                     </ul>
                   </div>
   	        <!-- <h1>Delete User</h1>
@@ -85,7 +86,9 @@ export default {
 <style scoped>
 
 .mainDiv{
-     margin:150px 310px 0 400px;
+     margin-top: 7%;
+     margin-right: 7%;
+     margin-left: 18%;
      box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
      height: 25%;
      background-color: #fff;
@@ -149,7 +152,8 @@ ul{
   justify-content: center;
 }
 li{
-      padding: 0 90px;
+    padding-left: 6%;
+    padding-right: 6%;
     line-height: 4;
     border-bottom: 3px solid transparent;
     margin-bottom: -10px;

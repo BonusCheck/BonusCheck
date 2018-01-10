@@ -103,7 +103,7 @@ generalRouter.get("/session/data", function(req, res) {
 });
 
 
-generalRouter.get("/session/destroy", function(req, res){
+generalRouter.get("/logout", function(req, res){
  if (req.session.user_id) {
    req.session.destroy(function(err){
       res.redirect('/');

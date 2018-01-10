@@ -2,11 +2,12 @@
 	<div class="mainDiv">
    <div  class="header">
     <ul>
-            <li><a v-on:click="$parent.updateView('payment-history')">View Payment History</a></li>
-            <li><a v-on:click="$parent.updateView('create-payments')" style="color:#4bc800">Create Payments</a></li>
-            <li><a v-on:click="$parent.updateView('modify-payments')">Modify Payments</a></li>
-            <li><a v-on:click="$parent.updateView('create-payment-types')">Create Payments Types</a></li>
-            <li><a v-on:click="$parent.updateView('modify-payment-types')">Modify Payment Types</a></li>
+            <li><a class="header_a" v-on:click="$parent.updateView('add-bonus')">Add Bonus</a></li>
+               <li><a class="header_a" v-on:click="$parent.updateView('paid-bonus')" style="color:#4bc800">Paid Bonus</a></li>
+               <li><a class="header_a" v-on:click="$parent.updateView('bonus-schedule')"  >Unpaid Bonus</a></li>
+               <li><a class="header_a" v-on:click="$parent.updateView('all-bonus')">All Bonus</a></li>
+               <li><a class="header_a" v-on:click="$parent.updateView('create-payments')">Modify Bonus</a></li>
+            <!-- <li><a v-on:click="$parent.updateView('modify-payment-types')">Modify Payment Types</a></li> -->
           </ul>
       </div>    
 		 <p class="heading">Schedule a Payment</p>
@@ -129,7 +130,9 @@ export default {
 <style scoped>
 
 .mainDiv{
-     margin:130px 50px 0 200px;
+     margin-top: 7%;
+     margin-right: 7%;
+     margin-left: 18%;
      box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
      height: 25%;
      background-color: #fff;
@@ -211,7 +214,8 @@ ul{
   justify-content: center;
 }
 li{
-      padding: 0 20px;
+    padding-left: 7%;
+    padding-right: 8%;
     line-height: 4;
     border-bottom: 3px solid transparent;
     margin-bottom: -10px;
@@ -223,7 +227,7 @@ li:active{
 li:hover{
   border-color: #929292;
 }
-a{
+.header_a{
   color: #adadad;
   text-decoration: none;
   font-weight: bold;

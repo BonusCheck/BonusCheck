@@ -8,10 +8,23 @@
 
 <script>
 import sidebar from './components/sidebar';
+import viewRole from './components/viewRole';
+import paidBonus from './components/paidBonus';
+import allBonus from './components/allBonus';
+import viewCustomer from './components/viewCustomer';
+import viewInstaller from './components/viewInstaller';
+import modifyInstaller from './components/modifyInstaller';
 import addUser from './components/addUser';
+import openJobs from './components/openJobs';
+import closeJobs from './components/closeJobs';
+import allJobs from './components/allJobs';
+import addBonus from './components/addBonus';
 import deleteUser from './components/deleteUser';
 import addInstaller from './components/addInstaller';
 import addHours from './components/addHours';
+import viewTime from './components/viewTime';
+import modifyTime from './components/modifyTime';
+import approveTime from './components/approveTime';
 import bonusSchedule from './components/bonusSchedule';
 import paymentHistory from './components/paymentHistory';
 import createProject from './components/createProject';
@@ -25,7 +38,7 @@ import modifyBonuses from './components/modifyBonuses';
 import createPayments from './components/createPayments';
 import modifyPayments from './components/modifyPayments';
 import createPaymentTypes from './components/createPaymentTypes';
-import modifyPaymentTypes from './components/modifyPaymentTypes';
+// import modifyPaymentTypes from './components/modifyPaymentTypes';
 import schedulePayments from './components/schedulePayments'
 
 const axios = require('axios');
@@ -35,9 +48,22 @@ export default {
   components: {
     'side-bar': sidebar,
     'add-user': addUser,
+    'open-jobs': openJobs,
+    'close-jobs': closeJobs,
+    'all-jobs': allJobs,
+    'paid-bonus': paidBonus,
+    'all-bonus': allBonus,
+    'add-bonus': addBonus,
     'delete-user': deleteUser,
+    'view-customer': viewCustomer,
+    'view-roles': viewRole,
+    'view-installer': viewInstaller,
+    'modify-installer': modifyInstaller,
     'add-installer': addInstaller,
     'add-hours': addHours,
+    'view-time': viewTime,
+    'modify-time': modifyTime,
+    'approve-time': approveTime,
     'bonus-schedule': bonusSchedule,
     'payment-history': paymentHistory,
     'create-project': createProject,
@@ -52,7 +78,7 @@ export default {
     'schedule-payments': schedulePayments,
     'modify-payments': modifyPayments,
     'create-payment-types': createPaymentTypes,
-    'modify-payment-types': modifyPaymentTypes,
+    // 'modify-payment-types': modifyPaymentTypes,
   },
   data(){
     return {
@@ -95,10 +121,7 @@ export default {
 },
 mounted (){
   
-  ////
-
-
-   ///// 
+  
   }
 
 
