@@ -103,9 +103,12 @@ generalRouter.get("/session/data", function(req, res) {
 });
 
 
-// exports.logout = function(req, res){
-//    req.session.destroy(function(err){
-//        res.redirect('/');
-//    });
+generalRouter.get("/logout", function(req, res){
+ if (req.session.user_id) {
+   req.session.destroy(function(err){
+      res.redirect('/');
+   });
+ }
+});
 
 module.exports = generalRouter;
