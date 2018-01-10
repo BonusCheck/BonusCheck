@@ -1,20 +1,27 @@
 <template>
   <div class="mainDiv">
+      <div  class="header">
+         <ul>
+            <li><a v-on:click="$parent.updateView('add-installer')"  style="color:#4bc800">Add installer</a></li>
+            <li><a v-on:click="$parent.updateView('view-installer')"  >View installer</a></li>
+            
+          </ul>
+      </div>
    
-    <p class="heading">Add Installer</p>
-    <form v-on:submit.prevent="onSubmit" id="form">
-      <input class="inputField" type="text" name="first_name" placeholder="First name" v-model.trim="first_name" required>
-      <input class="inputField" type="text" name="last_name" placeholder="Last name" v-model.trim="last_name" required>
-      <input class="inputField" type="number" name="current_wage" placeholder="Current wage" v-model.number="current_wage" required>
-      <select class="dropdown" v-model.number="fk_installer_role_id" required>
-        <option class="option" v-for="role in roles" v-bind:value="role.installer_role_id">{{role.installer_role_name}}</option>
-      </select>
-      <select class="dropdown" v-model="fk_user_id" required>
-        <option class="option" v-for="user in users" v-bind:value="user.user_id">{{user.user_name}}</option>
-      </select>
-      <button class="button " type="submit" value="Submit">Submit</button>
-      <p class="hidden" id="confirmation">Added</p>
-    </form>
+          
+          <form v-on:submit.prevent="onSubmit" id="form">
+            <input class="inputField" type="text" name="first_name" placeholder="First name" v-model.trim="first_name" required>
+            <input class="inputField" type="text" name="last_name" placeholder="Last name" v-model.trim="last_name" required>
+            <input class="inputField" type="number" name="current_wage" placeholder="Current wage" v-model.number="current_wage" required>
+            <select class="dropdown" v-model.number="fk_installer_role_id" required>
+              <option class="option" v-for="role in roles" v-bind:value="role.installer_role_id">{{role.installer_role_name}}</option>
+            </select>
+            <select class="dropdown" v-model="fk_user_id" required>
+              <option class="option" v-for="user in users" v-bind:value="user.user_id">{{user.user_name}}</option>
+            </select>
+            <button class="button " type="submit" value="Submit">Submit</button>
+            <p class="hidden" id="confirmation">Added</p>
+          </form>
   </div>
 </template>
 
@@ -94,7 +101,9 @@ export default {
 <style scoped>
 
 .mainDiv{
-     margin:150px 310px 0 430px;
+     margin-top: 7%;
+     margin-right: 7%;
+     margin-left: 18%;
      box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
      height: 480px;
      background-color: #fff;
@@ -102,15 +111,10 @@ export default {
      padding: 20px;
 
 }
-.heading{
-    color: #afaeb0;
-    text-align: center;
-    line-height: 3.5;
-    border-bottom: 1px solid #ebebeb;
-    font-weight: bold;
-    font-size: 22px;
-
+form{
+  margin-top: 30px;
 }
+
 .inputField{
     background-color: #fff;
     border: 0;
@@ -155,6 +159,34 @@ export default {
     padding: 12px 18px 12px;
     width: 20%;
     margin-top: 10px;
+}
+.header{
+  border-bottom: 1px solid #ebebeb;
+    
+}
+ul{
+  list-style-type:none;
+  display: flex;
+  justify-content: center;
+}
+li{
+    padding-left: 7%;
+    padding-right: 8%;
+    line-height: 4;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -10px;
+}
+li:active{
+  border-color:#4bc800; 
+}
+
+li:hover{
+  border-color: #929292;
+}
+a{
+  color: #adadad;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 </style>

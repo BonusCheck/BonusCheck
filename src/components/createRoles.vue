@@ -104,7 +104,9 @@ export default {
 <style scoped>
 
 .mainDiv{
-     margin:90px 150px 0 300px;
+     margin-top: 7%;
+     margin-right: 7%;
+     margin-left: 18%;
      box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
      height: 25%;
      background-color: #fff;
@@ -185,7 +187,8 @@ ul{
   justify-content: center;
 }
 li{
-      padding: 0 90px;
+    padding-left: 7%;
+    padding-right: 8%;
     line-height: 4;
     border-bottom: 3px solid transparent;
     margin-bottom: -10px;

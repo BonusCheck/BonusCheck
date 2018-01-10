@@ -2,6 +2,13 @@
 	
     <div class="mainDiv"> 
 		<!-- <h1>Create a Customer</h1> -->
+    <div  class="header">
+      <ul>
+            <li><a v-on:click="$parent.updateView('create-customer')"  style="color:#4bc800">Add custome</a></li>
+            <li><a v-on:click="$parent.updateView('view-customer')"  >View customer</a></li>
+            
+          </ul>
+     </div> 
     
 		<form v-on:submit.prevent="onSubmit">
       <div class="row row1">
@@ -10,10 +17,11 @@
             </div>
             <div class="col-md-3">  
               <button class="button " type="submit" value="Submit">Submit</button>
-      		    <!-- <input type="submit" value="Submit"> -->
-            </div>  
+      		  </div>  
       </div>  
 		</form>
+      <p style="text-align:center;" class="hidden input_heading" id="confirmation"><img src="/dist/assets/images/yes.png"  alt="Logo">Customer added successfully.</p>
+
       <div class="row row2">
         <p class="paragraph" style="display: block;">
           <strong>Create a customer</strong> and add it to a project on Project Edit Page. <br>
@@ -50,7 +58,9 @@ export default {
       }
       })
       .then(req => {
-        if(req.data.ok){
+       if(req.status===200){
+          $('.inputField').val('');
+          document.getElementById('confirmation').classList.remove('hidden');
           console.log('Customer added!');
         };
       })
@@ -67,13 +77,17 @@ export default {
 <style scoped>
 
 .mainDiv{
-     margin:150px 50px 0 200px;
+     margin-left: 18%;
+     margin-top: 7%;
+     margin-right: 7%;
      box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
-     height: 200px;
      background-color: #fff;
      font-size: 16px;
      padding: 40px;
 
+}
+form{
+  margin-top: 30px;
 }
 .inputField{
     background-color: #fff;
@@ -118,6 +132,34 @@ export default {
     text-align: center;
     line-height: 1.5;
     margin-left: 3%;
+}
+.header{
+  border-bottom: 1px solid #ebebeb;
+    
+}
+ul{
+  list-style-type:none;
+  display: flex;
+  justify-content: center;
+}
+li{
+    padding-left: 7%;
+    padding-right: 8%;
+    line-height: 4;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -10px;
+}
+li:active{
+  border-color:#4bc800; 
+}
+
+li:hover{
+  border-color: #929292;
+}
+a{
+  color: #adadad;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 </style>

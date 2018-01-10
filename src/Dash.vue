@@ -8,7 +8,12 @@
 
 <script>
 import sidebar from './components/sidebar';
+import paidBonus from './components/paidBonus';
+import allBonus from './components/allBonus';
+import viewCustomer from './components/viewCustomer';
+import viewInstaller from './components/viewInstaller';
 import addUser from './components/addUser';
+import addBonus from './components/addBonus';
 import deleteUser from './components/deleteUser';
 import addInstaller from './components/addInstaller';
 import addHours from './components/addHours';
@@ -35,7 +40,12 @@ export default {
   components: {
     'side-bar': sidebar,
     'add-user': addUser,
+    'paid-bonus': paidBonus,
+    'all-bonus': allBonus,
+    'add-bonus': addBonus,
     'delete-user': deleteUser,
+    'view-customer': viewCustomer,
+    'view-installer': viewInstaller,
     'add-installer': addInstaller,
     'add-hours': addHours,
     'bonus-schedule': bonusSchedule,
