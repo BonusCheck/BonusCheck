@@ -42,6 +42,7 @@ import createPaymentTypes from './components/createPaymentTypes';
 import schedulePayments from './components/schedulePayments'
 
 const axios = require('axios');
+const dateFormat = require('date-fns/format');
 
 export default {
   name: 'Dash',
