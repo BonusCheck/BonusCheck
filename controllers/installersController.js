@@ -71,10 +71,8 @@ installerRouter.delete("/delete", function(req, res) {
 
 installerRouter.put("/update", function(req, res) {
   var condition = "installer_id = " + req.body.installer_id;
-
-  installer.update({
-    //HOW DO I TAKE IN RANDOM FILEDS HERE?  DO I COMPARE THE VALUES FIELD BY FIELD?
-  }, condition, function(result) {
+   var objColVals = req.body;
+  installer.update(objColVals, condition, function(result) {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();

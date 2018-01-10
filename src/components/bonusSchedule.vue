@@ -105,8 +105,8 @@ ul{
   justify-content: center;
 }
 li{
-    padding-left: 7%;
-    padding-right: 8%;
+    padding-left: 6%;
+    padding-right: 6%;
     line-height: 4;
     border-bottom: 3px solid transparent;
     margin-bottom: -10px;
