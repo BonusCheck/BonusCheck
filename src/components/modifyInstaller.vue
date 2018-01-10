@@ -20,8 +20,9 @@
                 <input class="inputField" type="hidden" v-model="selectedRole.installer_id">
                 <p class="input_heading">Installer name</p>
                 <input class="inputField" type="text" v-model.trim="selectedRole.first_name" required>
+                <p class="input_heading">Installer lastName</p>
                 <input class="inputField" type="text" v-model.trim="selectedRole.last_name" required>
-                <button class="button" type="submit" value="Submit">Create</button>
+                <button class="button" type="submit" value="Submit">Update</button>
                 <p style="text-align:center;" class="hidden input_heading" id="confirmation"><img src="/dist/assets/images/yes.png"  alt="Logo">Installer updated successfully.</p>
               </form>
   </div>
@@ -53,8 +54,10 @@ export default {
         }
       })
       .then(req => {
-        console.log(req);
+        if(req.status===200){
+          $('.inputField').val('');
         document.getElementById('confirmation').classList.remove('hidden');
+      };
       })
       .catch(err => {
         console.log(err);

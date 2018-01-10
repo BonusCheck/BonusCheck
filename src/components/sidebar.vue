@@ -37,15 +37,16 @@
         <li class="has-children comments">
           <a v-on:click="$parent.updateView('add-installer')"><i class="fa fa-tasks"></i> Installer</a>                   
         </li>
-
-        <li class="has-children bookmarks">
-          <a  v-on:click="$parent.updateView('add-bonus')"><i class="fa fa-table"></i> Bonus</a>
-          
-        </li> 
+         </li> 
         <li class="has-children users">
           <a  v-on:click="$parent.updateView('add-user')"><i class="fa fa-user"></i> User</a>       
          
         </li>
+
+        <li class="has-children bookmarks">
+          <a  v-on:click="$parent.updateView('add-bonus')"><i class="fa fa-table"></i> Bonus</a>
+          
+       
          <li class="has-children users">
           <a v-on:click="$parent.updateView('create-roles')"><i class="fa fa-user"></i> Roles</a>       
           <!-- <ul>

@@ -93,14 +93,7 @@ export default {
 form{
   margin-top: 30px;
 }
-/*.heading{
-    color: #afaeb0;
-    text-align: center;
-    line-height: 3.5;
-    font-weight: bold;
-    margin-top: 10px;
 
-}*/
 .input_heading{
     color: #afaeb0;
     margin-left: 18px;
