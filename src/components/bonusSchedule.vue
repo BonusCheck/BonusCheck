@@ -24,7 +24,7 @@
                               </thead>
                                 <tr v-for="bonus in bonuses">
                                     <td>{{ bonus.scheduled_payment_amount }}</td>
-                                    <td>{{ bonus.scheduled_pay_date }}</td>
+                                    <td>{{ date(bonus.scheduled_pay_date) }}</td>
                                     <td>{{ bonus.payment_amount }}</td>
                                     <td>{{ bonus.date_paid }}</td>
                                     <td class="text-center"><a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
@@ -39,20 +39,48 @@
 
 <script>
 import axios from 'axios';
+import dateFormat from 'date-fns/format';
 
 export default {
   name: 'bonus-schedule',
   props: ["user"],
   data() {
     return {
-      bonuses: ''
+      bonuses: '',
+      dates: ''
     }
+  },
+  methods: {
+
+    getDates: function() {
+
+      for (let k in this.bonuses) {
+        if ( k == 'date_paid' || 'scheduled_pay_date' ) {
+
+          this.$set(this.dates(k, this.bonuses[k]));
+          
+        }
+      }
+      
+    },
+
+    date: function(d) {
+
+      return dateFormat(d, ["MM-DD-YYYY"])
+    }
+
+
   },
   beforeMount(){
   	axios.get('/installers/payments')
   	.then(req => {
       this.bonuses = req.data.installer_payments;
-  		console.log(req.data.installer_payments);
+      this.getDates();
+      console.log(this.dates);
+
+      // this.$set(this.question[i].choice_in_random_order[j], 'is_success', false)
+
+  		console.log(dateFormat(req.data.installer_payments[0].date_paid, ['MM-DD-YYYY']));
   	})
   }
 };

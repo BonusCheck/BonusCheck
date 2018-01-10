@@ -34,6 +34,7 @@
 
 <script>
 
+import dateFormat from 'date-fns/format';
 import axios from 'axios';
 export default {
 
@@ -43,6 +44,7 @@ export default {
     return {
 
       bonuses: '',
+      dates: '',
       payment_id: '',
       selectedPayment: {}
     }
@@ -58,6 +60,9 @@ export default {
     axios.get('/installers/payments')
     .then(req => {
       this.bonuses = req.data.installer_payments;
+      // this.dates = req.data.installer_payments.date_paid;
+
+      console.log(req.data.installer_payments.date_paid);
       console.log(req.data.installer_payments);
     })
   },

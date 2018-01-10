@@ -2,9 +2,9 @@
   	<div class="mainDiv">
       <div  class="header">
           <ul>
-             <li><a v-on:click="$parent.updateView('add-user')" >Add User</a></li>
-           <li><a v-on:click="$parent.updateView('delete-user')">Delete User</a></li>
-           <li><a v-on:click="$parent.updateView('modify-project')" style="color:#4bc800">Modify project</a></li>
+            <li><a v-on:click="$parent.updateView('add-user')" >Add User</a></li>
+            <li><a v-on:click="$parent.updateView('delete-user')">Delete User</a></li>
+            <li><a v-on:click="$parent.updateView('modify-project')" style="color:#4bc800">Modify project</a></li>
           </ul>
       <div>
       <h1>Modify a Project</h1>
@@ -45,6 +45,8 @@
 </template>
 
 <script>
+
+import dateFormat from 'date-fns/format';
 import axios from 'axios';
 
 export default {
@@ -60,15 +62,6 @@ export default {
 
     }
   },
-
-  filters: {
-  dateFormat: function (date) {
-    if (!date) return ''
-    date = date.toString()
-    return  date.slice(11)
-  }
-},
-
   
   methods: {
     onSubmit: function(){
@@ -111,8 +104,8 @@ export default {
   		url: '/jobs'
   	})
   	.then(req => {
-  		console.log(req.data.est_end_date);
-      console.log(req.data.est_end_date);
+  		console.log(req.data.jobs[0].start_date);
+
       this.jobs = req.data.jobs;
   	})
   	.catch(err => {
