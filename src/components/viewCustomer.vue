@@ -29,7 +29,7 @@
                                 <td>{{ customer.date_created }}</td>
                                 <td>{{ customer.created_by_id }}</td>
                                 <td>{{ customer.date_modified }}</td>
-                                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" @click="deletecustomer(customer)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del
+                                <td class="text-center"><a href="#" @click="deletecustomer(customer)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del
                                 </a>
                                 </td>
                               
@@ -134,7 +134,7 @@ ul{
 }
 li{
     padding-left: 7%;
-    padding-right: 8%;
+    padding-right: 7%;
     line-height: 4;
     border-bottom: 3px solid transparent;
     margin-bottom: -10px;

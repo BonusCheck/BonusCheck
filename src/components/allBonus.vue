@@ -6,6 +6,7 @@
                <li><a class="header_a" v-on:click="$parent.updateView('paid-bonus')" style="color:#4bc800">Paid Bonus</a></li>
                <li><a class="header_a" v-on:click="$parent.updateView('bonus-schedule')"  >Unpaid Bonus</a></li>
                <li><a class="header_a" v-on:click="$parent.updateView('all-bonus')">All Bonus</a></li>
+               <li><a class="header_a" v-on:click="$parent.updateView('create-payments')">Modify Bonus</a></li>
             </ul>
           </div>     
       
@@ -27,7 +28,7 @@
                                     <td>ddddd</td>
                                     <td>dddd</td>
                                     <td>dddd</td>
-                                    <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+                                    <td class="text-center"><a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
                                 </tr>
                                 
                         </table>

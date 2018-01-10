@@ -111,7 +111,8 @@ form{
 }
 .input_heading{
     color: #afaeb0;
-    margin-left: 18px;
+    
+    margin-top: 30px;
     
     
    
@@ -142,7 +143,7 @@ ul{
 }
 li{
     padding-left: 7%;
-    padding-right: 8%;
+    padding-right: 7%;
     line-height: 4;
     border-bottom: 3px solid transparent;
     margin-bottom: -10px;

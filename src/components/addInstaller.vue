@@ -10,17 +10,22 @@
    
           
           <form v-on:submit.prevent="onSubmit" id="form">
+            <p class="input_heading">First Name</p>
             <input class="inputField" type="text" name="first_name" placeholder="First name" v-model.trim="first_name" required>
+            <p class="input_heading">Last Name</p>
             <input class="inputField" type="text" name="last_name" placeholder="Last name" v-model.trim="last_name" required>
+            <p class="input_heading">Current wage</p>
             <input class="inputField" type="number" name="current_wage" placeholder="Current wage" v-model.number="current_wage" required>
+            <p class="input_heading">Installer Role Name</p>
             <select class="dropdown" v-model.number="fk_installer_role_id" required>
               <option class="option" v-for="role in roles" v-bind:value="role.installer_role_id">{{role.installer_role_name}}</option>
             </select>
+            <p class="input_heading">User Name</p>
             <select class="dropdown" v-model="fk_user_id" required>
               <option class="option" v-for="user in users" v-bind:value="user.user_id">{{user.user_name}}</option>
             </select>
             <button class="button " type="submit" value="Submit">Submit</button>
-            <p class="hidden" id="confirmation">Added</p>
+            <p style="text-align:center;" class="hidden input_heading" id="confirmation"><img src="/dist/assets/images/yes.png"  alt="Logo">installer added successfully.</p>
           </form>
   </div>
 </template>
@@ -59,7 +64,7 @@ export default {
       })
       .then(req => {
         console.log(req.data);
-        document.getElementById('confirmation').innerHTML = this.first_name + ' added';
+        // document.getElementById('confirmation').innerHTML = this.first_name + ' added';
         document.getElementById('confirmation').classList.remove('hidden');
         this.first_name = '',
         this.last_name = '',
@@ -105,7 +110,7 @@ export default {
      margin-right: 7%;
      margin-left: 18%;
      box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
-     height: 480px;
+     
      background-color: #fff;
      font-size: 16px;
      padding: 20px;
@@ -114,6 +119,11 @@ export default {
 form{
   margin-top: 30px;
 }
+.input_heading{
+    color: #afaeb0;
+    margin-left: 18px;
+    
+ }   
 
 .inputField{
     background-color: #fff;

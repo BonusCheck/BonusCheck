@@ -4,7 +4,7 @@
            <ul>
               <li><a class="header_a" v-on:click="$parent.updateView('add-installer')"  >Add installer</a></li>
               <li><a class="header_a" v-on:click="$parent.updateView('view-installer')" style="color:#4bc800" >View installer</a></li>
-              <li><a v-on:click="$parent.updateView('modify-installer')"  >Modify installer</a></li>
+              <li><a class="header_a" v-on:click="$parent.updateView('modify-installer')"  >Modify installer</a></li>
               
             </ul>
         </div>
@@ -27,7 +27,7 @@
                                 <td>{{installer.last_name}}</td>
                                 <td>{{installer.current_wage}}</td>
                                 <td>{{installer.fk_installer_role_id}}</td>
-                                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" @click="deleteinstaller(installer)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+                                <td class="text-center"><a href="#" @click="deleteinstaller(installer)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
                             </tr>
                             
                     </table>
