@@ -4,9 +4,9 @@
 		<!-- <h1>Create a Customer</h1> -->
     <div  class="header">
       <ul>
-            <li><a v-on:click="$parent.updateView('create-customer')"  style="color:#4bc800">Add custome</a></li>
+            <li><a v-on:click="$parent.updateView('create-customer')"  style="color:#4bc800">Add customer</a></li>
             <li><a v-on:click="$parent.updateView('view-customer')"  >View customer</a></li>
-            
+            <li><a v-on:click="$parent.updateView('modify-customer')" >Modify customer</a></li>
           </ul>
      </div> 
     
@@ -27,9 +27,9 @@
           <strong>Create a customer</strong> and add it to a project on Project Edit Page. <br>
           This will allow you to <strong>filter and group</strong> your time by clients in reports.
         </p>  
-        /////
-        <li><a v-on:click="$parent.updateView('modify-customer')" style="color:#4bc800">Modify cust</a></li>
-        /////
+        
+        
+       
       </div>
 	</div>
   
@@ -107,6 +107,11 @@ form{
 }
 .inputField:focus{
   outline: none;
+}
+.input_heading{
+    color: #afaeb0;
+    margin-top: 10px;
+    
 }
 .button{
     color: #fff;

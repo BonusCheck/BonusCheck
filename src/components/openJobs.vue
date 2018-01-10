@@ -2,22 +2,20 @@
 	<div class="mainDiv">
     <div  class="header">
 	    <ul>
-            <li><a v-on:click="$parent.updateView('payment-history')" style="color:#4bc800">View Payment History</a></li>
-            <li><a v-on:click="$parent.updateView('create-payments')">Create Payments</a></li>
-            <li><a v-on:click="$parent.updateView('modify-payments')">Modify Payments</a></li>
-            <li><a v-on:click="$parent.updateView('create-payment-types')">Create Payments Types</a></li>
-            <!-- <li><a v-on:click="$parent.updateView('modify-payment-types')">Modify Payment Types</a></li> -->
+           <li><a v-on:click="$parent.updateView('create-project')" >Create Project</a></li>
+           <li><a v-on:click="$parent.updateView('open-jobs')" style="color:#4bc800">View open jobs</a></li>
+           <li><a v-on:click="$parent.updateView('close-jobs')">View close jobs</a></li>
+           <li><a v-on:click="$parent.updateView('all-jobs')">View all jobs</a></li>
           </ul>
-      </div>    
-		<h1>Payment History</h1>
+       </div>   
+		<h1>open jobs</h1>
 	</div>
 </template>
 
 <script>
 
 export default {
-  name: 'payment-history'
- 
+  name: 'open-jobs'
 };
 </script>
 <style scoped>

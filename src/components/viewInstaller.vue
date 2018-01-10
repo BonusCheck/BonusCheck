@@ -4,6 +4,7 @@
            <ul>
               <li><a class="header_a" v-on:click="$parent.updateView('add-installer')"  >Add installer</a></li>
               <li><a class="header_a" v-on:click="$parent.updateView('view-installer')" style="color:#4bc800" >View installer</a></li>
+              <li><a v-on:click="$parent.updateView('modify-installer')"  >Modify installer</a></li>
               
             </ul>
         </div>

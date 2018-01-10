@@ -52,24 +52,25 @@
         </li>
        
         <li class="has-children users">
-          <a  v-on:click="$parent.updateView('')"><i class="fa fa-user"></i> Jobs</a>       
+          <a  v-on:click="$parent.updateView('create-project')"><i class="fa fa-user"></i> Jobs</a>       
           <!-- <ul>
            <li><a v-on:click="$parent.updateView('')">View transaction logs</a></li>
            <li><a v-on:click="$parent.updateView('')">View project data</a></li>
           </ul> -->
         </li>
-
-         <li class="has-children users">
-          <a  v-on:click="$parent.updateView('create-project')"><i class="fa fa-user"></i> Project</a>                 
-        </li>
-
         <li class="has-children users">
-          <a v-on:click="$parent.updateView('create-roles')"><i class="fa fa-user"></i> Admin</a>       
+          <a v-on:click="$parent.updateView('create-roles')"><i class="fa fa-user"></i> Roles</a>       
           <!-- <ul>
            <li><a v-on:click="$parent.updateView('create-roles')">Create roles</a></li>
            <li><a v-on:click="$parent.updateView('modify-roles')">Modify Roles</a></li>
           </ul> -->
         </li>
+
+         <li class="has-children users">
+          <a  v-on:click="$parent.updateView('add-hours')"><i class="fa fa-user"></i> Time</a>                 
+        </li>
+
+        
     </ul>
     </nav>
         <!-- %%%%%%%%  Side NAVBAR END %%%%%%% -->

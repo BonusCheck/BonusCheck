@@ -1,22 +1,21 @@
 <template>
-	<div class="mainDiv">
-    <div  class="header">
-	    <ul>
-            <li><a v-on:click="$parent.updateView('payment-history')" style="color:#4bc800">View Payment History</a></li>
-            <li><a v-on:click="$parent.updateView('create-payments')">Create Payments</a></li>
-            <li><a v-on:click="$parent.updateView('modify-payments')">Modify Payments</a></li>
-            <li><a v-on:click="$parent.updateView('create-payment-types')">Create Payments Types</a></li>
-            <!-- <li><a v-on:click="$parent.updateView('modify-payment-types')">Modify Payment Types</a></li> -->
+  <div class="mainDiv">
+      <div  class="header">
+         <ul>
+            <li><a v-on:click="$parent.updateView('add-installer')"  >Add installer</a></li>
+            <li><a v-on:click="$parent.updateView('view-installer')"  >View installer</a></li>
+            <li><a v-on:click="$parent.updateView('modify-installer')" style="color:#4bc800"  >Modify installer</a></li>
+            
           </ul>
-      </div>    
-		<h1>Payment History</h1>
-	</div>
+      </div>
+       <h1>Modify installer</h1>
+  </div>
+ 
 </template>
-
 <script>
 
 export default {
-  name: 'payment-history'
+  name: 'modify-installer'
  
 };
 </script>

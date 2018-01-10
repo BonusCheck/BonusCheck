@@ -4,6 +4,8 @@
 	    <ul>
            <li><a v-on:click="$parent.updateView('create-roles')" style="color:#4bc800">Create roles</a></li>
            <li><a v-on:click="$parent.updateView('modify-roles')">Modify Roles</a></li>
+            <li><a v-on:click="$parent.updateView('view-roles')">View Roles</a></li>
+
         </ul>
       </div>  
 		<p class="heading">Create Installer Roles</p>

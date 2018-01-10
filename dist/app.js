@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 43);
+/******/ 	return __webpack_require__(__webpack_require__.s = 48);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -274,7 +274,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(53)
+var listToStyles = __webpack_require__(58)
 
 /*
 type StyleObject = {
@@ -479,7 +479,7 @@ function applyToTag (styleElement, obj) {
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(54);
+module.exports = __webpack_require__(59);
 
 /***/ }),
 /* 4 */
@@ -489,7 +489,7 @@ module.exports = __webpack_require__(54);
 
 
 var bind = __webpack_require__(10);
-var isBuffer = __webpack_require__(55);
+var isBuffer = __webpack_require__(60);
 
 /*global toString:true*/
 
@@ -989,7 +989,7 @@ process.umask = function() { return 0; };
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(4);
-var normalizeHeaderName = __webpack_require__(57);
+var normalizeHeaderName = __webpack_require__(62);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -1309,12 +1309,12 @@ module.exports = function bind(fn, thisArg) {
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(4);
-var settle = __webpack_require__(58);
-var buildURL = __webpack_require__(60);
-var parseHeaders = __webpack_require__(61);
-var isURLSameOrigin = __webpack_require__(62);
+var settle = __webpack_require__(63);
+var buildURL = __webpack_require__(65);
+var parseHeaders = __webpack_require__(66);
+var isURLSameOrigin = __webpack_require__(67);
 var createError = __webpack_require__(12);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(63);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(68);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -1411,7 +1411,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(64);
+      var cookies = __webpack_require__(69);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -1496,7 +1496,7 @@ module.exports = function xhrAdapter(config) {
 "use strict";
 
 
-var enhanceError = __webpack_require__(59);
+var enhanceError = __webpack_require__(64);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -1735,31 +1735,36 @@ var axios = __webpack_require__(3);
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_sidebar__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_paidBonus__ = __webpack_require__(86);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_allBonus__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_viewCustomer__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_viewInstaller__ = __webpack_require__(98);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_addUser__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_addBonus__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_deleteUser__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_addInstaller__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_addHours__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_bonusSchedule__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_paymentHistory__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_createProject__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_createCustomer__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_createRoles__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_modifyRoles__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_deleteRoles__ = __webpack_require__(146);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_modifyCustomer__ = __webpack_require__(148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_modifyProject__ = __webpack_require__(152);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_modifyBonuses__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_createPayments__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_modifyPayments__ = __webpack_require__(166);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_createPaymentTypes__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_modifyPaymentTypes__ = __webpack_require__(174);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_schedulePayments__ = __webpack_require__(178);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_sidebar__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_viewRole__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_paidBonus__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_allBonus__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_viewCustomer__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_viewInstaller__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_modifyInstaller__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_addUser__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_openJobs__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_closeJobs__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_allJobs__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_addBonus__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_deleteUser__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_addInstaller__ = __webpack_require__(139);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_addHours__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_bonusSchedule__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_paymentHistory__ = __webpack_require__(151);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_createProject__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_createCustomer__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_createRoles__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_modifyRoles__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_deleteRoles__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_modifyCustomer__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_modifyProject__ = __webpack_require__(177);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_modifyBonuses__ = __webpack_require__(183);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_createPayments__ = __webpack_require__(187);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_modifyPayments__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_createPaymentTypes__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_modifyPaymentTypes__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_schedulePayments__ = __webpack_require__(203);
 //
 //
 //
@@ -1768,6 +1773,11 @@ var axios = __webpack_require__(3);
 //
 //
 //
+
+
+
+
+
 
 
 
@@ -1801,30 +1811,35 @@ var axios = __webpack_require__(3);
   name: 'Dash',
   components: {
     'side-bar': __WEBPACK_IMPORTED_MODULE_0__components_sidebar__["a" /* default */],
-    'add-user': __WEBPACK_IMPORTED_MODULE_5__components_addUser__["a" /* default */],
-    'paid-bonus': __WEBPACK_IMPORTED_MODULE_1__components_paidBonus__["a" /* default */],
-    'all-bonus': __WEBPACK_IMPORTED_MODULE_2__components_allBonus__["a" /* default */],
-    'add-bonus': __WEBPACK_IMPORTED_MODULE_6__components_addBonus__["a" /* default */],
-    'delete-user': __WEBPACK_IMPORTED_MODULE_7__components_deleteUser__["a" /* default */],
-    'view-customer': __WEBPACK_IMPORTED_MODULE_3__components_viewCustomer__["a" /* default */],
-    'view-installer': __WEBPACK_IMPORTED_MODULE_4__components_viewInstaller__["a" /* default */],
-    'add-installer': __WEBPACK_IMPORTED_MODULE_8__components_addInstaller__["a" /* default */],
-    'add-hours': __WEBPACK_IMPORTED_MODULE_9__components_addHours__["a" /* default */],
-    'bonus-schedule': __WEBPACK_IMPORTED_MODULE_10__components_bonusSchedule__["a" /* default */],
-    'payment-history': __WEBPACK_IMPORTED_MODULE_11__components_paymentHistory__["a" /* default */],
-    'create-project': __WEBPACK_IMPORTED_MODULE_12__components_createProject__["a" /* default */],
-    'create-customer': __WEBPACK_IMPORTED_MODULE_13__components_createCustomer__["a" /* default */],
-    'create-roles': __WEBPACK_IMPORTED_MODULE_14__components_createRoles__["a" /* default */],
-    'modify-roles': __WEBPACK_IMPORTED_MODULE_15__components_modifyRoles__["a" /* default */],
-    'delete-roles': __WEBPACK_IMPORTED_MODULE_16__components_deleteRoles__["a" /* default */],
-    'modify-customer': __WEBPACK_IMPORTED_MODULE_17__components_modifyCustomer__["a" /* default */],
-    'modify-project': __WEBPACK_IMPORTED_MODULE_18__components_modifyProject__["a" /* default */],
-    'modify-bonuses': __WEBPACK_IMPORTED_MODULE_19__components_modifyBonuses__["a" /* default */],
-    'create-payments': __WEBPACK_IMPORTED_MODULE_20__components_createPayments__["a" /* default */],
-    'schedule-payments': __WEBPACK_IMPORTED_MODULE_24__components_schedulePayments__["a" /* default */],
-    'modify-payments': __WEBPACK_IMPORTED_MODULE_21__components_modifyPayments__["a" /* default */],
-    'create-payment-types': __WEBPACK_IMPORTED_MODULE_22__components_createPaymentTypes__["a" /* default */],
-    'modify-payment-types': __WEBPACK_IMPORTED_MODULE_23__components_modifyPaymentTypes__["a" /* default */],
+    'add-user': __WEBPACK_IMPORTED_MODULE_7__components_addUser__["a" /* default */],
+    'open-jobs': __WEBPACK_IMPORTED_MODULE_8__components_openJobs__["a" /* default */],
+    'close-jobs': __WEBPACK_IMPORTED_MODULE_9__components_closeJobs__["a" /* default */],
+    'all-jobs': __WEBPACK_IMPORTED_MODULE_10__components_allJobs__["a" /* default */],
+    'paid-bonus': __WEBPACK_IMPORTED_MODULE_2__components_paidBonus__["a" /* default */],
+    'all-bonus': __WEBPACK_IMPORTED_MODULE_3__components_allBonus__["a" /* default */],
+    'add-bonus': __WEBPACK_IMPORTED_MODULE_11__components_addBonus__["a" /* default */],
+    'delete-user': __WEBPACK_IMPORTED_MODULE_12__components_deleteUser__["a" /* default */],
+    'view-customer': __WEBPACK_IMPORTED_MODULE_4__components_viewCustomer__["a" /* default */],
+    'view-roles': __WEBPACK_IMPORTED_MODULE_1__components_viewRole__["a" /* default */],
+    'view-installer': __WEBPACK_IMPORTED_MODULE_5__components_viewInstaller__["a" /* default */],
+    'modify-installer': __WEBPACK_IMPORTED_MODULE_6__components_modifyInstaller__["a" /* default */],
+    'add-installer': __WEBPACK_IMPORTED_MODULE_13__components_addInstaller__["a" /* default */],
+    'add-hours': __WEBPACK_IMPORTED_MODULE_14__components_addHours__["a" /* default */],
+    'bonus-schedule': __WEBPACK_IMPORTED_MODULE_15__components_bonusSchedule__["a" /* default */],
+    'payment-history': __WEBPACK_IMPORTED_MODULE_16__components_paymentHistory__["a" /* default */],
+    'create-project': __WEBPACK_IMPORTED_MODULE_17__components_createProject__["a" /* default */],
+    'create-customer': __WEBPACK_IMPORTED_MODULE_18__components_createCustomer__["a" /* default */],
+    'create-roles': __WEBPACK_IMPORTED_MODULE_19__components_createRoles__["a" /* default */],
+    'modify-roles': __WEBPACK_IMPORTED_MODULE_20__components_modifyRoles__["a" /* default */],
+    'delete-roles': __WEBPACK_IMPORTED_MODULE_21__components_deleteRoles__["a" /* default */],
+    'modify-customer': __WEBPACK_IMPORTED_MODULE_22__components_modifyCustomer__["a" /* default */],
+    'modify-project': __WEBPACK_IMPORTED_MODULE_23__components_modifyProject__["a" /* default */],
+    'modify-bonuses': __WEBPACK_IMPORTED_MODULE_24__components_modifyBonuses__["a" /* default */],
+    'create-payments': __WEBPACK_IMPORTED_MODULE_25__components_createPayments__["a" /* default */],
+    'schedule-payments': __WEBPACK_IMPORTED_MODULE_29__components_schedulePayments__["a" /* default */],
+    'modify-payments': __WEBPACK_IMPORTED_MODULE_26__components_modifyPayments__["a" /* default */],
+    'create-payment-types': __WEBPACK_IMPORTED_MODULE_27__components_createPaymentTypes__["a" /* default */],
+    'modify-payment-types': __WEBPACK_IMPORTED_MODULE_28__components_modifyPaymentTypes__["a" /* default */],
   },
   data: function data(){
     return {
@@ -1968,6 +1983,7 @@ mounted: function mounted (){
 //
 //
 //
+//
 
 var axios = __webpack_require__(3);
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -2013,37 +2029,10 @@ var axios = __webpack_require__(3);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  name: 'paid-bonus'
- 
+  name: 'view-roles'
 });
 
 
@@ -2101,6 +2090,58 @@ var axios = __webpack_require__(3);
 
 /***/ }),
 /* 21 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  name: 'paid-bonus'
+ 
+});
+
+
+/***/ }),
+/* 22 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2203,12 +2244,13 @@ methods: {
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+//
 //
 //
 //
@@ -2323,12 +2365,40 @@ methods: {
 
 
 /***/ }),
-/* 23 */
+/* 24 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  name: 'modify-installer'
+ 
+});
+
+
+/***/ }),
+/* 25 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+//
 //
 //
 //
@@ -2411,7 +2481,85 @@ methods: {
 
 
 /***/ }),
-/* 24 */
+/* 26 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  name: 'open-jobs'
+});
+
+
+/***/ }),
+/* 27 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  name: 'close-jobs'
+});
+
+
+/***/ }),
+/* 28 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  name: 'all-jobs'
+});
+
+
+/***/ }),
+/* 29 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2554,12 +2702,13 @@ methods: {
 
 
 /***/ }),
-/* 25 */
+/* 30 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+//
 //
 //
 //
@@ -2650,7 +2799,7 @@ methods: {
 
 
 /***/ }),
-/* 26 */
+/* 31 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2762,7 +2911,7 @@ methods: {
 
 
 /***/ }),
-/* 27 */
+/* 32 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2860,7 +3009,7 @@ methods: {
 
 
 /***/ }),
-/* 28 */
+/* 33 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2930,7 +3079,7 @@ methods: {
 
 
 /***/ }),
-/* 29 */
+/* 34 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2958,12 +3107,15 @@ methods: {
 
 
 /***/ }),
-/* 30 */
+/* 35 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+//
+//
+//
 //
 //
 //
@@ -3096,7 +3248,7 @@ methods: {
 
 
 /***/ }),
-/* 31 */
+/* 36 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3183,12 +3335,14 @@ methods: {
 
 
 /***/ }),
-/* 32 */
+/* 37 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+//
+//
 //
 //
 //
@@ -3296,12 +3450,14 @@ methods: {
 
 
 /***/ }),
-/* 33 */
+/* 38 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+//
+//
 //
 //
 //
@@ -3406,7 +3562,7 @@ methods: {
 
 
 /***/ }),
-/* 34 */
+/* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3483,12 +3639,19 @@ methods: {
 
 
 /***/ }),
-/* 35 */
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3567,13 +3730,12 @@ methods: {
 
 
 /***/ }),
-/* 36 */
+/* 41 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-//
 //
 //
 //
@@ -3688,7 +3850,7 @@ methods: {
 
 
 /***/ }),
-/* 37 */
+/* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3713,7 +3875,7 @@ methods: {
 
 
 /***/ }),
-/* 38 */
+/* 43 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3853,7 +4015,7 @@ methods: {
 
 
 /***/ }),
-/* 39 */
+/* 44 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3895,7 +4057,7 @@ methods: {
 
 
 /***/ }),
-/* 40 */
+/* 45 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3969,7 +4131,7 @@ methods: {
 
 
 /***/ }),
-/* 41 */
+/* 46 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3996,7 +4158,7 @@ methods: {
 
 
 /***/ }),
-/* 42 */
+/* 47 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4126,18 +4288,18 @@ methods: {
 
 
 /***/ }),
-/* 43 */
+/* 48 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__App__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_router__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Home__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Login__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Signup__ = __webpack_require__(77);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Dash__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__App__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_router__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Home__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Login__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Signup__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Dash__ = __webpack_require__(86);
 
 
 
@@ -4192,13 +4354,13 @@ new __WEBPACK_IMPORTED_MODULE_1_vue__["a" /* default */]({
 
 
 /***/ }),
-/* 44 */
+/* 49 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue__ = __webpack_require__(7);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_04c2046b_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_04c2046b_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__ = __webpack_require__(50);
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -4244,7 +4406,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 45 */
+/* 50 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4266,7 +4428,7 @@ if (false) {
 }
 
 /***/ }),
-/* 46 */
+/* 51 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15080,10 +15242,10 @@ Vue$3.compile = compileToFunctions;
 
 /* harmony default export */ __webpack_exports__["a"] = (Vue$3);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(5), __webpack_require__(8), __webpack_require__(47).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(5), __webpack_require__(8), __webpack_require__(52).setImmediate))
 
 /***/ }),
-/* 47 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var apply = Function.prototype.apply;
@@ -15136,13 +15298,13 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(48);
+__webpack_require__(53);
 exports.setImmediate = setImmediate;
 exports.clearImmediate = clearImmediate;
 
 
 /***/ }),
-/* 48 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -15335,7 +15497,7 @@ exports.clearImmediate = clearImmediate;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(5)))
 
 /***/ }),
-/* 49 */
+/* 54 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17966,17 +18128,17 @@ if (inBrowser && window.Vue) {
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(5)))
 
 /***/ }),
-/* 50 */
+/* 55 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue__ = __webpack_require__(9);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_33885605_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Home_vue__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_33885605_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Home_vue__ = __webpack_require__(77);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(51)
+  __webpack_require__(56)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -18022,13 +18184,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 51 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(52);
+var content = __webpack_require__(57);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -18048,7 +18210,7 @@ if(false) {
 }
 
 /***/ }),
-/* 52 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -18062,7 +18224,7 @@ exports.push([module.i, "\nbody[data-v-33885605]{\n\t\t\n\t\tfont-family: \"Open
 
 
 /***/ }),
-/* 53 */
+/* 58 */
 /***/ (function(module, exports) {
 
 /**
@@ -18095,7 +18257,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 54 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18103,7 +18265,7 @@ module.exports = function listToStyles (parentId, list) {
 
 var utils = __webpack_require__(4);
 var bind = __webpack_require__(10);
-var Axios = __webpack_require__(56);
+var Axios = __webpack_require__(61);
 var defaults = __webpack_require__(6);
 
 /**
@@ -18138,14 +18300,14 @@ axios.create = function create(instanceConfig) {
 
 // Expose Cancel & CancelToken
 axios.Cancel = __webpack_require__(14);
-axios.CancelToken = __webpack_require__(70);
+axios.CancelToken = __webpack_require__(75);
 axios.isCancel = __webpack_require__(13);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(71);
+axios.spread = __webpack_require__(76);
 
 module.exports = axios;
 
@@ -18154,7 +18316,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 55 */
+/* 60 */
 /***/ (function(module, exports) {
 
 /*!
@@ -18181,7 +18343,7 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 56 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18189,8 +18351,8 @@ function isSlowBuffer (obj) {
 
 var defaults = __webpack_require__(6);
 var utils = __webpack_require__(4);
-var InterceptorManager = __webpack_require__(65);
-var dispatchRequest = __webpack_require__(66);
+var InterceptorManager = __webpack_require__(70);
+var dispatchRequest = __webpack_require__(71);
 
 /**
  * Create a new instance of Axios
@@ -18267,7 +18429,7 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 57 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18286,7 +18448,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 58 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18319,7 +18481,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 59 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18347,7 +18509,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 60 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18422,7 +18584,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 61 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18482,7 +18644,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 62 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18557,7 +18719,7 @@ module.exports = (
 
 
 /***/ }),
-/* 63 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18600,7 +18762,7 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 64 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18660,7 +18822,7 @@ module.exports = (
 
 
 /***/ }),
-/* 65 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18719,18 +18881,18 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 66 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(4);
-var transformData = __webpack_require__(67);
+var transformData = __webpack_require__(72);
 var isCancel = __webpack_require__(13);
 var defaults = __webpack_require__(6);
-var isAbsoluteURL = __webpack_require__(68);
-var combineURLs = __webpack_require__(69);
+var isAbsoluteURL = __webpack_require__(73);
+var combineURLs = __webpack_require__(74);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -18812,7 +18974,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 67 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18839,7 +19001,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 68 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18860,7 +19022,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 69 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18881,7 +19043,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 70 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18945,7 +19107,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 71 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18979,7 +19141,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 72 */
+/* 77 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19256,17 +19418,17 @@ if (false) {
 }
 
 /***/ }),
-/* 73 */
+/* 78 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Login_vue__ = __webpack_require__(15);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5b675133_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Login_vue__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5b675133_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Login_vue__ = __webpack_require__(81);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(74)
+  __webpack_require__(79)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -19312,13 +19474,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 74 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(75);
+var content = __webpack_require__(80);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -19338,7 +19500,7 @@ if(false) {
 }
 
 /***/ }),
-/* 75 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -19352,7 +19514,7 @@ exports.push([module.i, "\n.overlay[data-v-5b675133]{\n\t   \n\t    background-i
 
 
 /***/ }),
-/* 76 */
+/* 81 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19592,17 +19754,17 @@ if (false) {
 }
 
 /***/ }),
-/* 77 */
+/* 82 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Signup_vue__ = __webpack_require__(16);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5ddcc23e_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Signup_vue__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5ddcc23e_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Signup_vue__ = __webpack_require__(85);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(78)
+  __webpack_require__(83)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -19648,13 +19810,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 78 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(79);
+var content = __webpack_require__(84);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -19674,7 +19836,7 @@ if(false) {
 }
 
 /***/ }),
-/* 79 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -19688,7 +19850,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 /***/ }),
-/* 80 */
+/* 85 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19874,13 +20036,13 @@ if (false) {
 }
 
 /***/ }),
-/* 81 */
+/* 86 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Dash_vue__ = __webpack_require__(17);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_8c588190_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Dash_vue__ = __webpack_require__(180);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_8c588190_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Dash_vue__ = __webpack_require__(205);
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -19926,17 +20088,17 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 82 */
+/* 87 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_sidebar_vue__ = __webpack_require__(18);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7eea899c_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_sidebar_vue__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7eea899c_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_sidebar_vue__ = __webpack_require__(90);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(83)
+  __webpack_require__(88)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -19982,13 +20144,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 83 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(84);
+var content = __webpack_require__(89);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -20008,7 +20170,7 @@ if(false) {
 }
 
 /***/ }),
-/* 84 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -20016,13 +20178,13 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n /* -------------------------------- \n\nPrimary style\n\n-------------------------------- */\n*[data-v-7eea899c], *[data-v-7eea899c]::after, *[data-v-7eea899c]::before {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\nhtml[data-v-7eea899c] {\n  font-size: 62.5%;\n}\nbody[data-v-7eea899c] {\n  font-size: 1.6rem;\n  font-family: \"Open Sans\", sans-serif;\n  color: #3e454c;\n  background-color: #F5F5F5;\n}\nbody[data-v-7eea899c]::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\na[data-v-7eea899c] {\n  color: #1784c7;\n  text-decoration: none;\n}\n/*  ######  Side NAVBAR page style  ######  */\n#dashboard[data-v-7eea899c]{\n  -webkit-box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n          box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n    height: 100%;\n}\n#project[data-v-7eea899c]{\n  -webkit-box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n          box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#tables[data-v-7eea899c]{\n  -webkit-box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n          box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#user[data-v-7eea899c]{\n  -webkit-box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n          box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#admin[data-v-7eea899c]{\n  -webkit-box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n          box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n/*  ######  Side NAVBAR page style END ######  */\n.button[data-v-7eea899c]{\n  background-color: transparent;\n  color:#C8C8C8;\n  border: transparent;\n  height: 35px;\n  \n  font-size: 15px;\n  border : none;\n  outline: none;\n}\n.button[data-v-7eea899c]:active {\n  background-color: #323232;\n  border : none;\n  outline: none;\n}\n.button[data-v-7eea899c]:hover{\n  color: #ffffff;\n}\n.cd-side-nav[data-v-7eea899c]{\n  font-size: 20px;\n  margin-top: 20px;\n  position: fixed;\n}\n.fa[data-v-7eea899c]{\n  margin-right: 13px;\n}\n.cd-nav ul li a[data-v-7eea899c]{\n  color:#C8C8C8;\n}\n.cd-nav ul li a[data-v-7eea899c]:hover{\n  color: #ffffff;\n}\ninput[data-v-7eea899c] {\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 1.6rem;\n}\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-decoration,\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-cancel-button,\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-results-button,\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-results-decoration {\n  display: none;\n}\n/* -------------------------------- \n\nMain Page Content\n\n-------------------------------- */\n.cd-main-content .content-wrapper[data-v-7eea899c] {\n  padding: 45px 5% 3em;\n}\n.cd-main-content .content-wrapper h1[data-v-7eea899c] {\n  text-align: center;\n  padding: 3em 0;\n  font-size: 2rem;\n}\n.cd-main-content[data-v-7eea899c]::before {\n  /* never visible - used to check MQ in jQuery */\n  display: none;\n  content: 'mobile';\n}\n@media only screen and (min-width: 768px) {\n.cd-main-content .content-wrapper[data-v-7eea899c] {\n    margin-left: 110px;\n    margin-top: 80px;\n    padding-top: 155px;\n}\n.cd-main-content .content-wrapper h1[data-v-7eea899c] {\n    padding: 4em 0;\n    font-size: 3.2rem;\n    font-weight: 300;\n}\n.cd-main-content[data-v-7eea899c]::before {\n    content: 'tablet';\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-main-content .content-wrapper[data-v-7eea899c] {\n    margin-left: 200px;\n}\n.cd-main-content[data-v-7eea899c]::before {\n    content: 'desktop';\n}\n}\n/* -------------------------------- \n\nHeader\n\n-------------------------------- */\n.cd-main-header[data-v-7eea899c] {\n  position: absolute;\n  z-index: 2;\n  top: 0;\n  left: 0;\n  height: 45px;\n  width: 100%;\n  background: #FFFFFF;\n\n\n  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n\n\n          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.cd-main-header[data-v-7eea899c]::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\n/**/\n@media only screen and (min-width: 768px) \n{\n.cd-main-header[data-v-7eea899c] {\n    position: fixed;\n    height: 55px;\n    background-color:#323232;\n}\n}\n.cd-logo[data-v-7eea899c] {\n  float: left;\n  display: block;\n  margin: 11px 0 0 5%;\n}\n.cd-logo img[data-v-7eea899c] {\n  display: block;\n}\n@media only screen and (min-width: 768px) {\n.cd-logo[data-v-7eea899c] {\n    margin: 16px 0 0 36px;\n}\n}\n.cd-nav-trigger[data-v-7eea899c] {\n  /* navigation trigger - visible on mobile devices only */\n  float: right;\n  position: relative;\n  display: block;\n  width: 34px;\n  height: 44px;\n  margin-right: 5%;\n  /* hide text */\n  overflow: hidden;\n  white-space: nowrap;\n  color: transparent;\n}\n.cd-nav-trigger span[data-v-7eea899c], .cd-nav-trigger span[data-v-7eea899c]::before, .cd-nav-trigger span[data-v-7eea899c]::after {\n  /* hamburger icon in CSS */\n  position: absolute;\n  display: inline-block;\n  height: 3px;\n  width: 24px;\n  background:#323232;\n}\n.cd-nav-trigger span[data-v-7eea899c] {\n  /* line in the center */\n  position: absolute;\n  top: 50%;\n  right: 5px;\n  margin-top: -2px;\n  -webkit-transition: background 0.2s;\n  transition: background 0.2s;\n}\n.cd-nav-trigger span[data-v-7eea899c]::before, .cd-nav-trigger span[data-v-7eea899c]::after {\n  /* other 2 lines */\n  content: '';\n  right: 0;\n  /* Force Hardware Acceleration in WebKit */\n  -webkit-transform: translateZ(0);\n  transform: translateZ(0);\n  -webkit-backface-visibility: hidden;\n  backface-visibility: hidden;\n  -webkit-transform-origin: 0% 50%;\n  transform-origin: 0% 50%;\n  -webkit-transition: -webkit-transform 0.2s;\n  transition: -webkit-transform 0.2s;\n  transition: transform 0.2s;\n  transition: transform 0.2s, -webkit-transform 0.2s;\n}\n.cd-nav-trigger span[data-v-7eea899c]::before {\n  /* menu icon top line */\n  top: -6px;\n}\n.cd-nav-trigger span[data-v-7eea899c]::after {\n  /* menu icon bottom line */\n  top: 6px;\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c] {\n  /* hide line in the center */\n  background: rgba(255, 255, 255, 0);\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::before, .cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::after {\n  /* keep visible other 2 lines */\n  background: white;\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::before {\n  -webkit-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  transform: translateX(4px) translateY(-3px) rotate(45deg);\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::after {\n  -webkit-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  transform: translateX(4px) translateY(2px) rotate(-45deg);\n}\n@media only screen and (min-width: 768px) {\n.cd-nav-trigger[data-v-7eea899c] {\n    display: none;\n}\n}\n.cd-search[data-v-7eea899c] {\n  position: relative;\n  margin: 1.2em 5% 0.6em;\n}\n.cd-search.is-hidden[data-v-7eea899c] {\n  opacity: 0;\n}\n.cd-search[data-v-7eea899c]::before {\n  /* lens icon */\n  content: '';\n  position: absolute;\n  left: 8px;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n}\n.cd-search input[data-v-7eea899c] {\n  padding-left: 32px;\n  width: 100%;\n  height: 36px;\n  border: none;\n  border-radius: .25em;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  -ms-appearance: none;\n  -o-appearance: none;\n  appearance: none;\n}\n.cd-search input[data-v-7eea899c]:focus {\n  outline: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-search[data-v-7eea899c] {\n    float: left;\n    display: inline-block;\n    width: 250px;\n    height: 100%;\n    margin: 0 0 0 2.5em;\n}\n.cd-search.is-hidden[data-v-7eea899c] {\n    /* reset style */\n    opacity: 1;\n}\n.cd-search[data-v-7eea899c]::before {\n    background-position: 0 -16px;\n    left: 1em;\n}\n.cd-search form[data-v-7eea899c], .cd-search input[data-v-7eea899c] {\n    height: 100%;\n    width: 100%;\n}\n.cd-search input[data-v-7eea899c] {\n    border: none;\n    padding-left: 2.6em;\n    border-radius: 0;\n    background-color: #3e454c;\n    border-left: 1px solid #51575d;\n    color: #ffffff;\n}\n.cd-search input[data-v-7eea899c]::-webkit-input-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-7eea899c]::-moz-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-7eea899c]:-moz-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-7eea899c]:-ms-input-placeholder {\n    color: #777c81;\n}\n}\n/* -------------------------------- \n\nTop Navigation\n\n-------------------------------- */\n.cd-nav[data-v-7eea899c] {\n  /* top nav - not visible on mobile devices */\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-nav[data-v-7eea899c] {\n    display: block;\n    float: right;\n    height: 100%;\n}\n}\n.cd-top-nav > li > a[data-v-7eea899c]::before {\n  /* reset style */\n  display: none;\n}\n.cd-top-nav > li a[data-v-7eea899c] {\n  padding: 1em 5% !important;\n}\n.cd-top-nav img[data-v-7eea899c] {\n  /* avatar image */\n  position: absolute;\n  left: 1.8em;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 20px;\n  width: 20px;\n  border-radius: 50%;\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-top-nav[data-v-7eea899c] {\n    height: 100%;\n}\n.cd-top-nav a[data-v-7eea899c] {\n    display: block;\n    font-size: 1.4rem;\n    color: #ffffff;\n}\n.cd-top-nav > li[data-v-7eea899c] {\n    display: inline-block;\n    margin-right: 1em;\n    height: 100%;\n}\n.cd-top-nav > li[data-v-7eea899c]:last-of-type {\n    margin-right: 0;\n}\n.cd-top-nav > li a[data-v-7eea899c] {\n    padding: 1em .6em !important;\n}\n.cd-top-nav img[data-v-7eea899c] {\n    display: block;\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-top-nav li:not(.has-children) a[data-v-7eea899c]:hover {\n    color: #1784c7;\n}\n}\n/* -------------------------------- \n\nSidebar\n\n-------------------------------- */\n.cd-side-nav[data-v-7eea899c] {\n  position: fixed;\n  z-index: 1;\n  left: 0;\n  top: 0;\n  width: 100%;\n  padding: 45px 0 0;\n  background-color: #323232;\n  visibility: hidden;\n  opacity: 0;\n  max-height: 100vh;\n  overflow: hidden;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;\n  transition: opacity 0.2s 0s, visibility 0s 0.2s;\n}\n.cd-side-nav.nav-is-visible[data-v-7eea899c] {\n  opacity: 1;\n  visibility: visible;\n  overflow: visible;\n  -webkit-overflow-scrolling: touch;\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0s;\n  transition: opacity 0.2s 0s, visibility 0s 0s;\n  max-height: none;\n  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\n          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-side-nav > ul[data-v-7eea899c] {\n  padding: 0.6em 0;\n}\n.cd-side-nav > ul[data-v-7eea899c]:last-of-type {\n  padding-bottom: 0;\n}\n.cd-side-nav .cd-label[data-v-7eea899c], .cd-side-nav a[data-v-7eea899c] {\n  display: block;\n  padding: 1em 5%;\n}\n.cd-side-nav a[data-v-7eea899c] {\n  position: relative;\n  color: #ffffff;\n  font-size: 1.4rem;\n}\n.cd-side-nav ul.cd-top-nav > li:last-of-type > a[data-v-7eea899c] {\n  border-bottom: none;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c] {\n  padding-left: calc(5% + 24px);\n  border-bottom: 1px solid #373d44;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c]::before {\n  /* icon before item name */\n  position: absolute;\n  content: '';\n  left: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n}\n.cd-side-nav > ul > li.overview > a[data-v-7eea899c]::before {\n  background-position: -64px 0;\n}\n.cd-side-nav > ul > li.notifications > a[data-v-7eea899c]::before {\n  background-position: -80px 0;\n}\n.cd-side-nav > ul > li.comments > a[data-v-7eea899c]::before {\n  background-position: -48px 0;\n}\n.cd-side-nav > ul > li.bookmarks > a[data-v-7eea899c]::before {\n  background-position: -32px 0;\n}\n.cd-side-nav > ul > li.images > a[data-v-7eea899c]::before {\n  background-position: 0 0;\n}\n.cd-side-nav > ul > li.users > a[data-v-7eea899c]::before {\n  background-position: -16px 0;\n}\n.cd-side-nav .count[data-v-7eea899c] {\n  /* notification badge */\n  position: absolute;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  right: calc(5% + 16px + 0.4em);\n  padding: 0.2em 0.4em;\n  background-color: #ff7e66;\n  border-radius: .25em;\n  color: #ffffff;\n  font-weight: bold;\n  font-size: 1.2rem;\n  text-align: center;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c] {\n  display: block;\n  margin: 0 5%;\n  padding: 1em 0;\n  background-color: #1784c7;\n  border-radius: .25em;\n  border: none;\n  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);\n          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);\n  text-align: center;\n  color: #ffffff;\n  font-weight: bold;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c]::before {\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-side-nav[data-v-7eea899c] {\n    \n    float: left;\n    top: fixed;\n    width: 110px;\n    min-height: 100vh;\n    padding-top: 55px;\n    /* reset style */\n    visibility: visible;\n    opacity: 1;\n    overflow: visible;\n    max-height: none;\n    position: fixed;\n}\n.cd-side-nav.nav-is-visible[data-v-7eea899c] {\n    -webkit-box-shadow: none;\n            box-shadow: none;\n}\n.cd-side-nav.is-fixed[data-v-7eea899c] {\n    position: fixed;\n}\n.cd-side-nav > ul[data-v-7eea899c] {\n    /* reset style */\n    padding: 0;\n}\n.cd-side-nav .cd-label[data-v-7eea899c] {\n    /* remove labels on minified version of the sidebar */\n    display: none;\n}\n.cd-side-nav a[data-v-7eea899c] {\n    font-size: 1.2rem;\n    text-align: center;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c] {\n    padding: calc(2.2em + 24px) 0 2.4em;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c]::before {\n    left: 50%;\n    right: auto;\n    -webkit-transform: translateX(-50%);\n    transform: translateX(-50%);\n    top: 2.4em;\n}\n.cd-side-nav .active > a[data-v-7eea899c] {\n    /* current page */\n    -webkit-box-shadow: inset 3px 0 0 #1784c7;\n            box-shadow: inset 3px 0 0 #1784c7;\n    background-color: #33383e;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c] {\n    margin: 1em 10% 0;\n}\n.cd-side-nav .count[data-v-7eea899c] {\n    height: 8px;\n    width: 8px;\n    border-radius: 50%;\n    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n            box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n    padding: 0;\n    top: 2em;\n    -webkit-transform: translateX(-50%);\n    transform: translateX(-50%);\n    left: calc(50% + 5px);\n    right: auto;\n    color: transparent;\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-side-nav[data-v-7eea899c] {\n    width: 150px;\n    position: fixed;\n}\n.cd-logo img[data-v-7eea899c]{\n    margin-left: -16px;\n    margin-top: 3px;\n}\n.cd-side-nav > ul[data-v-7eea899c] {\n    padding: 0.6em 0;\n}\n.cd-side-nav > ul > li:not(.action-btn):hover > a[data-v-7eea899c] {\n    background-color: #33383e;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c] {\n    padding: 1em 1em 1em 42px;\n    text-align: left;\n    border-bottom: none;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c]::before {\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    transform: translateY(-50%);\n    left: 18px;\n}\n.cd-side-nav .cd-label[data-v-7eea899c] {\n    display: block;\n    padding: 1em 18px;\n}\n.cd-side-nav .action-btn[data-v-7eea899c] {\n    text-align: left;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c] {\n    margin: 0 18px;\n}\n.no-touch .cd-side-nav .action-btn a[data-v-7eea899c]:hover {\n    background-color: #1a93de;\n}\n.cd-side-nav .count[data-v-7eea899c] {\n    /* reset style */\n    color: #ffffff;\n    height: auto;\n    width: auto;\n    border-radius: .25em;\n    padding: .2em .4em;\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    transform: translateY(-50%);\n    right: 18px;\n    left: auto;\n    -webkit-box-shadow: none;\n            box-shadow: none;\n}\n}\n.has-children ul[data-v-7eea899c] {\n  position: relative;\n  width: 100%;\n  display: none;\n  background-color: #1c1f22;\n}\n.has-children > a[data-v-7eea899c]::after {\n  /* arrow icon */\n  position: absolute;\n  content: '';\n  height: 16px;\n  width: 16px;\n  right: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n}\n.has-children.selected > ul[data-v-7eea899c] {\n  display: block;\n}\n.has-children.selected > a[data-v-7eea899c]::after {\n  -webkit-transform: translateY(-50%) rotate(180deg);\n  transform: translateY(-50%) rotate(180deg);\n}\n@media only screen and (min-width: 768px) {\n.has-children[data-v-7eea899c] {\n    position: relative;\n}\n.has-children ul[data-v-7eea899c] {\n    position: absolute;\n    top: 0;\n    left: 100%;\n    width: 160px;\n    padding: 0;\n    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);\n            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);\n}\n.has-children ul a[data-v-7eea899c] {\n    text-align: left;\n    border: none;\n    padding: 1em;\n}\n.no-touch .has-children ul a[data-v-7eea899c]:hover {\n    color: #1784c7;\n}\n.has-children > a[data-v-7eea899c]::after {\n    display: none;\n    color: black;\n}\n.cd-side-nav .has-children.selected > a[data-v-7eea899c] {\n    /* focus state -> show sub pages */\n    background-color: #33383e;\n}\n.cd-top-nav .has-children[data-v-7eea899c] {\n    position: relative;\n    background-color: #323232;\n}\n.cd-top-nav .has-children > a[data-v-7eea899c] {\n    height: 100%;\n    padding: 0 calc(1.8em + 22px) 0 calc(1.8em + 26px) !important;\n    line-height: 55px;\n}\n.cd-top-nav .has-children > a[data-v-7eea899c]::after {\n    display: block;\n    right: 1.8em;\n}\n.cd-top-nav .has-children ul[data-v-7eea899c] {\n    background-color: #1c1f22;\n    width: 200px;\n    top: 100%;\n    right: 0;\n    left: auto;\n    -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);\n            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-top-nav .has-children ul a[data-v-7eea899c] {\n    padding-left: 18px !important;\n}\n}\n@media only screen and (min-width: 1170px) {\n.has-children > ul[data-v-7eea899c] {\n    width: 100%;\n    z-index: 1;\n}\n.has-children ul a[data-v-7eea899c] {\n    padding-left: 18px;\n}\n.has-children.active > ul[data-v-7eea899c] {\n    /* if the item is active, make the subnavigation visible */\n    position: relative;\n    display: block;\n    /* reset style */\n    left: 0;\n    -webkit-box-shadow: none;\n            box-shadow: none;\n}\n.no-touch .cd-side-nav .has-children:hover > ul[data-v-7eea899c], .cd-side-nav .has-children.hover > ul[data-v-7eea899c] {\n    /* show subnavigation on hover */\n    display: block;\n    opacity: 1;\n    visibility: visible;\n}\n}\n\n\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/sidebar.vue"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;CA4GA;;;;mCAIA;AACA;EACA,+BAAA;UAAA,uBAAA;CACA;AAEA;EACA,iBAAA;CACA;AAEA;EACA,kBAAA;EACA,qCAAA;EACA,eAAA;EACA,0BAAA;CACA;AACA;EACA,YAAA;EACA,YAAA;EACA,eAAA;CACA;AAEA;EACA,eAAA;EACA,sBAAA;CACA;AAEA,8CAAA;AAGA;EACA,iDAAA;UAAA,yCAAA;IACA,iBAAA;IACA,mBAAA;IACA,aAAA;CAGA;AACA;EACA,iDAAA;UAAA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,iDAAA;UAAA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,iDAAA;UAAA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,iDAAA;UAAA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA,iDAAA;AAEA;EACA,8BAAA;EACA,cAAA;EACA,oBAAA;EACA,aAAA;;EAEA,gBAAA;EACA,cAAA;EACA,cAAA;CAGA;AACA;EACA,0BAAA;EACA,cAAA;EACA,cAAA;CAGA;AACA;EACA,eAAA;CACA;AACA;EACA,gBAAA;EACA,iBAAA;EACA,gBAAA;CACA;AACA;EACA,mBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,eAAA;CACA;AAGA;EACA,qCAAA;EACA,kBAAA;CACA;AAEA;;;;EAIA,cAAA;CACA;AAEA;;;;mCAIA;AACA;EACA,qBAAA;CACA;AACA;EACA,mBAAA;EACA,eAAA;EACA,gBAAA;CACA;AACA;EACA,gDAAA;EACA,cAAA;EACA,kBAAA;CACA;AACA;AACA;IACA,mBAAA;IACA,iBAAA;IACA,mBAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;IACA,iBAAA;CACA;AACA;IACA,kBAAA;CACA;CACA;AACA;AACA;IACA,mBAAA;CACA;AACA;IACA,mBAAA;CACA;CACA;AAEA;;;;mCAIA;AAEA;EACA,mBAAA;EACA,WAAA;EACA,OAAA;EACA,QAAA;EACA,aAAA;EACA,YAAA;EACA,oBAAA;;;EAGA,iDAAA;;;UAAA,yCAAA;EACA,oCAAA;EACA,mCAAA;CACA;AACA;EACA,YAAA;EACA,YAAA;EACA,eAAA;CACA;AACA,IAAA;AAAA;;AAEA;IACA,gBAAA;IACA,aAAA;IACA,yBAAA;CACA;CACA;AAEA;EACA,YAAA;EACA,eAAA;EACA,oBAAA;CACA;AACA;EACA,eAAA;CACA;AACA;AACA;IACA,sBAAA;CACA;CACA;AAEA;EACA,yDAAA;EACA,aAAA;EACA,mBAAA;EACA,eAAA;EACA,YAAA;EACA,aAAA;EACA,iBAAA;EACA,eAAA;EACA,iBAAA;EACA,oBAAA;EACA,mBAAA;CACA;AACA;EACA,2BAAA;EACA,mBAAA;EACA,sBAAA;EACA,YAAA;EACA,YAAA;EACA,mBAAA;CACA;AACA;EACA,wBAAA;EACA,mBAAA;EACA,SAAA;EACA,WAAA;EACA,iBAAA;EACA,oCAAA;EAEA,4BAAA;CACA;AACA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,2CAAA;EACA,iCAAA;EAIA,yBAAA;EACA,oCAAA;EACA,4BAAA;EACA,iCAAA;EAIA,yBAAA;EACA,2CAAA;EAEA,mCAAA;EAAA,2BAAA;EAAA,mDAAA;CACA;AACA;EACA,wBAAA;EACA,UAAA;CACA;AACA;EACA,2BAAA;EACA,SAAA;CACA;AACA;EACA,6BAAA;EACA,mCAAA;CACA;AACA;EACA,gCAAA;EACA,kBAAA;CACA;AACA;EACA,kEAAA;EAIA,0DAAA;CACA;AACA;EACA,kEAAA;EAIA,0DAAA;CACA;AACA;AACA;IACA,cAAA;CACA;CACA;AAEA;EACA,mBAAA;EACA,uBAAA;CACA;AACA;EACA,WAAA;CACA;AACA;EACA,eAAA;EACA,YAAA;EACA,mBAAA;EACA,UAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,aAAA;EACA,YAAA;CAEA;AACA;EACA,mBAAA;EACA,YAAA;EACA,aAAA;EACA,aAAA;EACA,qBAAA;EACA,yBAAA;EACA,sBAAA;EACA,qBAAA;EACA,oBAAA;EACA,iBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;AACA;IACA,YAAA;IACA,sBAAA;IACA,aAAA;IACA,aAAA;IACA,oBAAA;CACA;AACA;IACA,iBAAA;IACA,WAAA;CACA;AACA;IACA,6BAAA;IACA,UAAA;CACA;AACA;IACA,aAAA;IACA,YAAA;CACA;AACA;IACA,aAAA;IACA,oBAAA;IACA,iBAAA;IACA,0BAAA;IACA,+BAAA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;CACA;AAEA;;;;mCAIA;AACA;EACA,6CAAA;EACA,cAAA;CACA;AACA;AACA;IACA,eAAA;IACA,aAAA;IACA,aAAA;CACA;CACA;AAEA;EACA,iBAAA;EACA,cAAA;CACA;AACA;EACA,2BAAA;CACA;AACA;EACA,kBAAA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,aAAA;EACA,YAAA;EACA,mBAAA;EACA,cAAA;CACA;AACA;AACA;IACA,aAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;IACA,eAAA;CACA;AACA;IACA,sBAAA;IACA,kBAAA;IACA,aAAA;CACA;AACA;IACA,gBAAA;CACA;AACA;IACA,6BAAA;CACA;AACA;IACA,eAAA;CACA;CACA;AACA;AACA;IACA,eAAA;CACA;CACA;AAEA;;;;mCAIA;AACA;EACA,gBAAA;EACA,WAAA;EACA,QAAA;EACA,OAAA;EACA,YAAA;EACA,kBAAA;EACA,0BAAA;EACA,mBAAA;EACA,WAAA;EACA,kBAAA;EACA,iBAAA;EACA,oCAAA;EACA,mCAAA;EACA,wDAAA;EAEA,gDAAA;CACA;AACA;EACA,WAAA;EACA,oBAAA;EACA,kBAAA;EACA,kCAAA;EACA,sDAAA;EAEA,8CAAA;EACA,iBAAA;EACA,kDAAA;UAAA,0CAAA;CACA;AACA;EACA,iBAAA;CACA;AACA;EACA,kBAAA;CACA;AACA;EACA,eAAA;EACA,gBAAA;CACA;AAEA;EACA,mBAAA;EACA,eAAA;EACA,kBAAA;CACA;AACA;EACA,oBAAA;CACA;AACA;EACA,8BAAA;EACA,iCAAA;CACA;AACA;EACA,2BAAA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,aAAA;EACA,YAAA;CAEA;AACA;EACA,6BAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,yBAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,wBAAA;EACA,mBAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,+BAAA;EACA,qBAAA;EACA,0BAAA;EACA,qBAAA;EACA,eAAA;EACA,kBAAA;EACA,kBAAA;EACA,mBAAA;CACA;AACA;EACA,eAAA;EACA,aAAA;EACA,eAAA;EACA,0BAAA;EACA,qBAAA;EACA,aAAA;EACA,yFAAA;UAAA,iFAAA;EACA,mBAAA;EACA,eAAA;EACA,kBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;AACA;;IAEA,YAAA;IACA,WAAA;IACA,aAAA;IACA,kBAAA;IACA,kBAAA;IACA,iBAAA;IACA,oBAAA;IACA,WAAA;IACA,kBAAA;IACA,iBAAA;IACA,gBAAA;CACA;AACA;IACA,yBAAA;YAAA,iBAAA;CACA;AACA;IACA,gBAAA;CACA;AACA;IACA,iBAAA;IACA,WAAA;CACA;AACA;IACA,sDAAA;IACA,cAAA;CACA;AACA;IACA,kBAAA;IACA,mBAAA;CACA;AACA;IACA,oCAAA;CACA;AACA;IACA,UAAA;IACA,YAAA;IACA,oCAAA;IAIA,4BAAA;IACA,WAAA;CACA;AACA;IACA,kBAAA;IACA,0CAAA;YAAA,kCAAA;IACA,0BAAA;CACA;AACA;IACA,kBAAA;CACA;AACA;IACA,YAAA;IACA,WAAA;IACA,mBAAA;IACA,+CAAA;YAAA,uCAAA;IACA,WAAA;IACA,SAAA;IACA,oCAAA;IAIA,4BAAA;IACA,sBAAA;IACA,YAAA;IACA,mBAAA;CACA;CACA;AACA;AACA;IACA,aAAA;IACA,gBAAA;CACA;AACA;IACA,mBAAA;IACA,gBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,0BAAA;IACA,iBAAA;IACA,oBAAA;CACA;AACA;IACA,SAAA;IACA,aAAA;IACA,oCAAA;IAIA,4BAAA;IACA,WAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,iBAAA;IACA,eAAA;IACA,aAAA;IACA,YAAA;IACA,qBAAA;IACA,mBAAA;IACA,SAAA;IACA,aAAA;IACA,oCAAA;IAIA,4BAAA;IACA,YAAA;IACA,WAAA;IACA,yBAAA;YAAA,iBAAA;CACA;CACA;AAEA;EACA,mBAAA;EACA,YAAA;EACA,cAAA;EACA,0BAAA;CACA;AACA;EACA,gBAAA;EACA,mBAAA;EACA,YAAA;EACA,aAAA;EACA,YAAA;EACA,UAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;CAEA;AACA;EACA,eAAA;CACA;AACA;EACA,mDAAA;EAIA,2CAAA;CACA;AACA;AACA;IACA,mBAAA;CACA;AACA;IACA,mBAAA;IACA,OAAA;IACA,WAAA;IACA,aAAA;IACA,WAAA;IACA,kDAAA;YAAA,0CAAA;CACA;AACA;IACA,iBAAA;IACA,aAAA;IACA,aAAA;CACA;AAGA;IACA,eAAA;CACA;AACA;IACA,cAAA;IACA,aAAA;CACA;AACA;IACA,mCAAA;IACA,0BAAA;CACA;AACA;IACA,mBAAA;IACA,0BAAA;CAEA;AACA;IACA,aAAA;IACA,8DAAA;IACA,kBAAA;CACA;AACA;IACA,eAAA;IACA,aAAA;CACA;AACA;IACA,0BAAA;IACA,aAAA;IACA,UAAA;IACA,SAAA;IACA,WAAA;IACA,kDAAA;YAAA,0CAAA;CACA;AACA;IACA,8BAAA;CACA;CACA;AACA;AACA;IACA,YAAA;IACA,WAAA;CACA;AACA;IACA,mBAAA;CACA;AACA;IACA,2DAAA;IACA,mBAAA;IACA,eAAA;IACA,iBAAA;IACA,QAAA;IACA,yBAAA;YAAA,iBAAA;CACA;AACA;IACA,iCAAA;IACA,eAAA;IACA,WAAA;IACA,oBAAA;CACA;CACA","file":"sidebar.vue","sourcesContent":["<template>\r\n  <div class=\"cd-side-nav\">\r\n     <!-- ####### Header NAVBAR ####### -->\r\n  <header class=\"cd-main-header\" >\r\n    <a href=\"#\" class=\"cd-logo\"><img style=\"margin-left:-80px; margin-top:-8px;\" src=\"/dist/assets/images/logo-trans.png\"  alt=\"Logo\"></a>       \r\n    <nav class=\"cd-nav\" >\r\n      <ul class=\"cd-top-nav\">\r\n         <li>\r\n             <a style=\"margin-top:6px;\" v-on:click=\"$parent.logout()\" class=\"btn btn-danger btn-md\">\r\n              <span class=\"glyphicon glyphicon-log-out\"></span> Log out\r\n             </a>\r\n        </li>\r\n         <li class=\"has-children account\">\r\n          <a href=\"#0\"  >\r\n            <img  src=\"/dist/assets/images/user.jpg\" alt=\"avatar\">\r\n            <div id='username'></div>\r\n          </a>\r\n        </li>  \r\n          <ul>\r\n           <!--  <li><a href=\"#0\">My Account</a></li>\r\n           <li><a href=\"#0\">Edit Account</a></li> -->\r\n            <!-- <li><a href=\"#0\">Logout</a></li> -->\r\n          </ul>\r\n        </li>\r\n      </ul>\r\n    </nav>\r\n  </header> \r\n  <!-- ###### Header NAVBAR END #######-->\r\n     \r\n    <!-- %%%%%%%%  Side NAVBAR %%%%%%% -->\r\n  <main class=\"cd-main-content\" >\r\n    <nav class=\"cd-side-nav\">\r\n      <ul>\r\n        <li class=\"has-children Overviews\">\r\n         <a v-on:click=\"$parent.updateView('create-customer')\"> <i class=\"fa fa-th-large\" ></i>Customer</a>                   \r\n        </li>       \r\n        <li class=\"has-children comments\">\r\n          <a v-on:click=\"$parent.updateView('add-installer')\"><i class=\"fa fa-tasks\"></i> Installer</a>                   \r\n        </li>\r\n\r\n        <li class=\"has-children bookmarks\">\r\n          <a  v-on:click=\"$parent.updateView('add-bonus')\"><i class=\"fa fa-table\"></i> Bonus</a>\r\n          \r\n        </li> \r\n\t\t    <li class=\"has-children bookmarks\">\r\n          <a  v-on:click=\"$parent.updateView('payment-history')\"><i class=\"fa fa-table\"></i> Payments</a>\r\n          \r\n        </li> \r\n        <li class=\"has-children users\">\r\n          <a  v-on:click=\"$parent.updateView('add-user')\"><i class=\"fa fa-user\"></i> User</a>       \r\n         \r\n        </li>\r\n       \r\n        <li class=\"has-children users\">\r\n          <a  v-on:click=\"$parent.updateView('')\"><i class=\"fa fa-user\"></i> Jobs</a>       \r\n          <!-- <ul>\r\n           <li><a v-on:click=\"$parent.updateView('')\">View transaction logs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('')\">View project data</a></li>\r\n          </ul> -->\r\n        </li>\r\n\r\n         <li class=\"has-children users\">\r\n          <a  v-on:click=\"$parent.updateView('create-project')\"><i class=\"fa fa-user\"></i> Project</a>                 \r\n        </li>\r\n\r\n        <li class=\"has-children users\">\r\n          <a v-on:click=\"$parent.updateView('create-roles')\"><i class=\"fa fa-user\"></i> Admin</a>       \r\n          <!-- <ul>\r\n           <li><a v-on:click=\"$parent.updateView('create-roles')\">Create roles</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('modify-roles')\">Modify Roles</a></li>\r\n          </ul> -->\r\n        </li>\r\n    </ul>\r\n    </nav>\r\n        <!-- %%%%%%%%  Side NAVBAR END %%%%%%% -->\r\n\r\n\r\n \r\n\r\n  </main> <!-- .cd-main-content -->\t\t\r\n  </div>\r\n</template>\r\n\r\n<script>\r\nconst axios = require('axios');\r\nexport default {\r\n  name: \"side-bar\",\r\n  beforeMount(){\r\n  axios.get('/session/data')\r\n   .then(req => {\r\n      console.log(\"Side Bar username\"+req.data.username);\r\n      $('#username').html(req.data.username);\r\n     \r\n      //If no session received, return home\r\n      if(!req.data.roll){\r\n        this.$router.push('/');\r\n      }\r\n\r\n     \r\n   })\r\n  .catch(function(err){\r\n    console.log(\"Error R\"+err);\r\n  });\r\n  }\r\n};\r\n\r\n</script>\r\n\r\n<style scoped>\r\n /* -------------------------------- \r\n\r\nPrimary style\r\n\r\n-------------------------------- */\r\n*, *::after, *::before {\r\n  box-sizing: border-box;\r\n}\r\n\r\nhtml {\r\n  font-size: 62.5%;\r\n}\r\n\r\nbody {\r\n  font-size: 1.6rem;\r\n  font-family: \"Open Sans\", sans-serif;\r\n  color: #3e454c;\r\n  background-color: #F5F5F5;\r\n}\r\nbody::after {\r\n  clear: both;\r\n  content: \"\";\r\n  display: table;\r\n}\r\n\r\na {\r\n  color: #1784c7;\r\n  text-decoration: none;\r\n}\r\n\r\n/*  ######  Side NAVBAR page style  ######  */\r\n\r\n\r\n#dashboard{\r\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\r\n    background: #fff;\r\n    margin-right: 40px;\r\n    height: 100%;\r\n\r\n\r\n}\r\n#project{\r\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\r\n    background: #fff;\r\n    margin-right: 40px;\r\n\r\n\r\n}\r\n#tables{\r\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\r\n    background: #fff;\r\n    margin-right: 40px;\r\n\r\n\r\n}\r\n#user{\r\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\r\n    background: #fff;\r\n    margin-right: 40px;\r\n\r\n\r\n}\r\n#admin{\r\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\r\n    background: #fff;\r\n    margin-right: 40px;\r\n\r\n\r\n}\r\n/*  ######  Side NAVBAR page style END ######  */\r\n\r\n.button{\r\n  background-color: transparent;\r\n  color:#C8C8C8;\r\n  border: transparent;\r\n  height: 35px;\r\n  \r\n  font-size: 15px;\r\n  border : none;\r\n  outline: none;\r\n\r\n\r\n}\r\n.button:active {\r\n  background-color: #323232;\r\n  border : none;\r\n  outline: none;\r\n  \r\n\r\n}\r\n.button:hover{\r\n  color: #ffffff;\r\n}\r\n.cd-side-nav{\r\n  font-size: 20px;\r\n  margin-top: 20px;\r\n  position: fixed;\r\n}\r\n.fa{\r\n  margin-right: 13px;\r\n}\r\n.cd-nav ul li a{\r\n  color:#C8C8C8;\r\n}\r\n.cd-nav ul li a:hover{\r\n  color: #ffffff;\r\n}\r\n\r\n\r\ninput {\r\n  font-family: \"Open Sans\", sans-serif;\r\n  font-size: 1.6rem;\r\n}\r\n\r\ninput[type=\"search\"]::-webkit-search-decoration,\r\ninput[type=\"search\"]::-webkit-search-cancel-button,\r\ninput[type=\"search\"]::-webkit-search-results-button,\r\ninput[type=\"search\"]::-webkit-search-results-decoration {\r\n  display: none;\r\n}\r\n\r\n/* -------------------------------- \r\n\r\nMain Page Content\r\n\r\n-------------------------------- */\r\n.cd-main-content .content-wrapper {\r\n  padding: 45px 5% 3em;\r\n}\r\n.cd-main-content .content-wrapper h1 {\r\n  text-align: center;\r\n  padding: 3em 0;\r\n  font-size: 2rem;\r\n}\r\n.cd-main-content::before {\r\n  /* never visible - used to check MQ in jQuery */\r\n  display: none;\r\n  content: 'mobile';\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-main-content .content-wrapper {\r\n    margin-left: 110px;\r\n    margin-top: 80px;\r\n    padding-top: 155px;\r\n  }\r\n  .cd-main-content .content-wrapper h1 {\r\n    padding: 4em 0;\r\n    font-size: 3.2rem;\r\n    font-weight: 300;\r\n  }\r\n  .cd-main-content::before {\r\n    content: 'tablet';\r\n  }\r\n}\r\n@media only screen and (min-width: 1170px) {\r\n  .cd-main-content .content-wrapper {\r\n    margin-left: 200px;\r\n  }\r\n  .cd-main-content::before {\r\n    content: 'desktop';\r\n  }\r\n}\r\n\r\n/* -------------------------------- \r\n\r\nHeader\r\n\r\n-------------------------------- */\r\n \r\n.cd-main-header {\r\n  position: absolute;\r\n  z-index: 2;\r\n  top: 0;\r\n  left: 0;\r\n  height: 45px;\r\n  width: 100%;\r\n  background: #FFFFFF;\r\n\r\n\r\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n}\r\n.cd-main-header::after {\r\n  clear: both;\r\n  content: \"\";\r\n  display: table;\r\n}\r\n/**/@media only screen and (min-width: 768px) \r\n{\r\n  .cd-main-header {\r\n    position: fixed;\r\n    height: 55px;\r\n    background-color:#323232;\r\n  }\r\n}\r\n\r\n.cd-logo {\r\n  float: left;\r\n  display: block;\r\n  margin: 11px 0 0 5%;\r\n}\r\n.cd-logo img {\r\n  display: block;\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-logo {\r\n    margin: 16px 0 0 36px;\r\n  }\r\n}\r\n\r\n.cd-nav-trigger {\r\n  /* navigation trigger - visible on mobile devices only */\r\n  float: right;\r\n  position: relative;\r\n  display: block;\r\n  width: 34px;\r\n  height: 44px;\r\n  margin-right: 5%;\r\n  /* hide text */\r\n  overflow: hidden;\r\n  white-space: nowrap;\r\n  color: transparent;\r\n}\r\n.cd-nav-trigger span, .cd-nav-trigger span::before, .cd-nav-trigger span::after {\r\n  /* hamburger icon in CSS */\r\n  position: absolute;\r\n  display: inline-block;\r\n  height: 3px;\r\n  width: 24px;\r\n  background:#323232;\r\n}\r\n.cd-nav-trigger span {\r\n  /* line in the center */\r\n  position: absolute;\r\n  top: 50%;\r\n  right: 5px;\r\n  margin-top: -2px;\r\n  -webkit-transition: background 0.2s;\r\n  -moz-transition: background 0.2s;\r\n  transition: background 0.2s;\r\n}\r\n.cd-nav-trigger span::before, .cd-nav-trigger span::after {\r\n  /* other 2 lines */\r\n  content: '';\r\n  right: 0;\r\n  /* Force Hardware Acceleration in WebKit */\r\n  -webkit-transform: translateZ(0);\r\n  -moz-transform: translateZ(0);\r\n  -ms-transform: translateZ(0);\r\n  -o-transform: translateZ(0);\r\n  transform: translateZ(0);\r\n  -webkit-backface-visibility: hidden;\r\n  backface-visibility: hidden;\r\n  -webkit-transform-origin: 0% 50%;\r\n  -moz-transform-origin: 0% 50%;\r\n  -ms-transform-origin: 0% 50%;\r\n  -o-transform-origin: 0% 50%;\r\n  transform-origin: 0% 50%;\r\n  -webkit-transition: -webkit-transform 0.2s;\r\n  -moz-transition: -moz-transform 0.2s;\r\n  transition: transform 0.2s;\r\n}\r\n.cd-nav-trigger span::before {\r\n  /* menu icon top line */\r\n  top: -6px;\r\n}\r\n.cd-nav-trigger span::after {\r\n  /* menu icon bottom line */\r\n  top: 6px;\r\n}\r\n.cd-nav-trigger.nav-is-visible span {\r\n  /* hide line in the center */\r\n  background: rgba(255, 255, 255, 0);\r\n}\r\n.cd-nav-trigger.nav-is-visible span::before, .cd-nav-trigger.nav-is-visible span::after {\r\n  /* keep visible other 2 lines */\r\n  background: white;\r\n}\r\n.cd-nav-trigger.nav-is-visible span::before {\r\n  -webkit-transform: translateX(4px) translateY(-3px) rotate(45deg);\r\n  -moz-transform: translateX(4px) translateY(-3px) rotate(45deg);\r\n  -ms-transform: translateX(4px) translateY(-3px) rotate(45deg);\r\n  -o-transform: translateX(4px) translateY(-3px) rotate(45deg);\r\n  transform: translateX(4px) translateY(-3px) rotate(45deg);\r\n}\r\n.cd-nav-trigger.nav-is-visible span::after {\r\n  -webkit-transform: translateX(4px) translateY(2px) rotate(-45deg);\r\n  -moz-transform: translateX(4px) translateY(2px) rotate(-45deg);\r\n  -ms-transform: translateX(4px) translateY(2px) rotate(-45deg);\r\n  -o-transform: translateX(4px) translateY(2px) rotate(-45deg);\r\n  transform: translateX(4px) translateY(2px) rotate(-45deg);\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-nav-trigger {\r\n    display: none;\r\n  }\r\n}\r\n\r\n.cd-search {\r\n  position: relative;\r\n  margin: 1.2em 5% 0.6em;\r\n}\r\n.cd-search.is-hidden {\r\n  opacity: 0;\r\n}\r\n.cd-search::before {\r\n  /* lens icon */\r\n  content: '';\r\n  position: absolute;\r\n  left: 8px;\r\n  top: 50%;\r\n  bottom: auto;\r\n  -webkit-transform: translateY(-50%);\r\n  -moz-transform: translateY(-50%);\r\n  -ms-transform: translateY(-50%);\r\n  -o-transform: translateY(-50%);\r\n  transform: translateY(-50%);\r\n  height: 16px;\r\n  width: 16px;\r\n \r\n}\r\n.cd-search input {\r\n  padding-left: 32px;\r\n  width: 100%;\r\n  height: 36px;\r\n  border: none;\r\n  border-radius: .25em;\r\n  -webkit-appearance: none;\r\n  -moz-appearance: none;\r\n  -ms-appearance: none;\r\n  -o-appearance: none;\r\n  appearance: none;\r\n}\r\n.cd-search input:focus {\r\n  outline: none;\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-search {\r\n    float: left;\r\n    display: inline-block;\r\n    width: 250px;\r\n    height: 100%;\r\n    margin: 0 0 0 2.5em;\r\n  }\r\n  .cd-search.is-hidden {\r\n    /* reset style */\r\n    opacity: 1;\r\n  }\r\n  .cd-search::before {\r\n    background-position: 0 -16px;\r\n    left: 1em;\r\n  }\r\n  .cd-search form, .cd-search input {\r\n    height: 100%;\r\n    width: 100%;\r\n  }\r\n  .cd-search input {\r\n    border: none;\r\n    padding-left: 2.6em;\r\n    border-radius: 0;\r\n    background-color: #3e454c;\r\n    border-left: 1px solid #51575d;\r\n    color: #ffffff;\r\n  }\r\n  .cd-search input::-webkit-input-placeholder {\r\n    color: #777c81;\r\n  }\r\n  .cd-search input::-moz-placeholder {\r\n    color: #777c81;\r\n  }\r\n  .cd-search input:-moz-placeholder {\r\n    color: #777c81;\r\n  }\r\n  .cd-search input:-ms-input-placeholder {\r\n    color: #777c81;\r\n  }\r\n}\r\n\r\n/* -------------------------------- \r\n\r\nTop Navigation\r\n\r\n-------------------------------- */\r\n.cd-nav {\r\n  /* top nav - not visible on mobile devices */\r\n  display: none;\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-nav {\r\n    display: block;\r\n    float: right;\r\n    height: 100%;\r\n  }\r\n}\r\n\r\n.cd-top-nav > li > a::before {\r\n  /* reset style */\r\n  display: none;\r\n}\r\n.cd-top-nav > li a {\r\n  padding: 1em 5% !important;\r\n}\r\n.cd-top-nav img {\r\n  /* avatar image */\r\n  position: absolute;\r\n  left: 1.8em;\r\n  top: 50%;\r\n  bottom: auto;\r\n  -webkit-transform: translateY(-50%);\r\n  -moz-transform: translateY(-50%);\r\n  -ms-transform: translateY(-50%);\r\n  -o-transform: translateY(-50%);\r\n  transform: translateY(-50%);\r\n  height: 20px;\r\n  width: 20px;\r\n  border-radius: 50%;\r\n  display: none;\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-top-nav {\r\n    height: 100%;\r\n  }\r\n  .cd-top-nav a {\r\n    display: block;\r\n    font-size: 1.4rem;\r\n    color: #ffffff;\r\n  }\r\n  .cd-top-nav > li {\r\n    display: inline-block;\r\n    margin-right: 1em;\r\n    height: 100%;\r\n  }\r\n  .cd-top-nav > li:last-of-type {\r\n    margin-right: 0;\r\n  }\r\n  .cd-top-nav > li a {\r\n    padding: 1em .6em !important;\r\n  }\r\n  .cd-top-nav img {\r\n    display: block;\r\n  }\r\n}\r\n@media only screen and (min-width: 1170px) {\r\n  .cd-top-nav li:not(.has-children) a:hover {\r\n    color: #1784c7;\r\n  }\r\n}\r\n\r\n/* -------------------------------- \r\n\r\nSidebar\r\n\r\n-------------------------------- */\r\n.cd-side-nav {\r\n  position: fixed;\r\n  z-index: 1;\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%;\r\n  padding: 45px 0 0;\r\n  background-color: #323232;\r\n  visibility: hidden;\r\n  opacity: 0;\r\n  max-height: 100vh;\r\n  overflow: hidden;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;\r\n  -moz-transition: opacity 0.2s 0s, visibility 0s 0.2s;\r\n  transition: opacity 0.2s 0s, visibility 0s 0.2s;\r\n}\r\n.cd-side-nav.nav-is-visible {\r\n  opacity: 1;\r\n  visibility: visible;\r\n  overflow: visible;\r\n  -webkit-overflow-scrolling: touch;\r\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0s;\r\n  -moz-transition: opacity 0.2s 0s, visibility 0s 0s;\r\n  transition: opacity 0.2s 0s, visibility 0s 0s;\r\n  max-height: none;\r\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\r\n}\r\n.cd-side-nav > ul {\r\n  padding: 0.6em 0;\r\n}\r\n.cd-side-nav > ul:last-of-type {\r\n  padding-bottom: 0;\r\n}\r\n.cd-side-nav .cd-label, .cd-side-nav a {\r\n  display: block;\r\n  padding: 1em 5%;\r\n}\r\n\r\n.cd-side-nav a {\r\n  position: relative;\r\n  color: #ffffff;\r\n  font-size: 1.4rem;\r\n}\r\n.cd-side-nav ul.cd-top-nav > li:last-of-type > a {\r\n  border-bottom: none;\r\n}\r\n.cd-side-nav > ul > li > a {\r\n  padding-left: calc(5% + 24px);\r\n  border-bottom: 1px solid #373d44;\r\n}\r\n.cd-side-nav > ul > li > a::before {\r\n  /* icon before item name */\r\n  position: absolute;\r\n  content: '';\r\n  left: 5%;\r\n  top: 50%;\r\n  bottom: auto;\r\n  -webkit-transform: translateY(-50%);\r\n  -moz-transform: translateY(-50%);\r\n  -ms-transform: translateY(-50%);\r\n  -o-transform: translateY(-50%);\r\n  transform: translateY(-50%);\r\n  height: 16px;\r\n  width: 16px;\r\n  \r\n}\r\n.cd-side-nav > ul > li.overview > a::before {\r\n  background-position: -64px 0;\r\n}\r\n.cd-side-nav > ul > li.notifications > a::before {\r\n  background-position: -80px 0;\r\n}\r\n.cd-side-nav > ul > li.comments > a::before {\r\n  background-position: -48px 0;\r\n}\r\n.cd-side-nav > ul > li.bookmarks > a::before {\r\n  background-position: -32px 0;\r\n}\r\n.cd-side-nav > ul > li.images > a::before {\r\n  background-position: 0 0;\r\n}\r\n.cd-side-nav > ul > li.users > a::before {\r\n  background-position: -16px 0;\r\n}\r\n.cd-side-nav .count {\r\n  /* notification badge */\r\n  position: absolute;\r\n  top: 50%;\r\n  bottom: auto;\r\n  -webkit-transform: translateY(-50%);\r\n  -moz-transform: translateY(-50%);\r\n  -ms-transform: translateY(-50%);\r\n  -o-transform: translateY(-50%);\r\n  transform: translateY(-50%);\r\n  right: calc(5% + 16px + 0.4em);\r\n  padding: 0.2em 0.4em;\r\n  background-color: #ff7e66;\r\n  border-radius: .25em;\r\n  color: #ffffff;\r\n  font-weight: bold;\r\n  font-size: 1.2rem;\r\n  text-align: center;\r\n}\r\n.cd-side-nav .action-btn a {\r\n  display: block;\r\n  margin: 0 5%;\r\n  padding: 1em 0;\r\n  background-color: #1784c7;\r\n  border-radius: .25em;\r\n  border: none;\r\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);\r\n  text-align: center;\r\n  color: #ffffff;\r\n  font-weight: bold;\r\n}\r\n.cd-side-nav .action-btn a::before {\r\n  display: none;\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-side-nav {\r\n    \r\n    float: left;\r\n    top: fixed;\r\n    width: 110px;\r\n    min-height: 100vh;\r\n    padding-top: 55px;\r\n    /* reset style */\r\n    visibility: visible;\r\n    opacity: 1;\r\n    overflow: visible;\r\n    max-height: none;\r\n    position: fixed;\r\n  }\r\n  .cd-side-nav.nav-is-visible {\r\n    box-shadow: none;\r\n  }\r\n  .cd-side-nav.is-fixed {\r\n    position: fixed;\r\n  }\r\n  .cd-side-nav > ul {\r\n    /* reset style */\r\n    padding: 0;\r\n  }\r\n  .cd-side-nav .cd-label {\r\n    /* remove labels on minified version of the sidebar */\r\n    display: none;\r\n  }\r\n  .cd-side-nav a {\r\n    font-size: 1.2rem;\r\n    text-align: center;\r\n  }\r\n  .cd-side-nav > ul > li > a {\r\n    padding: calc(2.2em + 24px) 0 2.4em;\r\n  }\r\n  .cd-side-nav > ul > li > a::before {\r\n    left: 50%;\r\n    right: auto;\r\n    -webkit-transform: translateX(-50%);\r\n    -moz-transform: translateX(-50%);\r\n    -ms-transform: translateX(-50%);\r\n    -o-transform: translateX(-50%);\r\n    transform: translateX(-50%);\r\n    top: 2.4em;\r\n  }\r\n  .cd-side-nav .active > a {\r\n    /* current page */\r\n    box-shadow: inset 3px 0 0 #1784c7;\r\n    background-color: #33383e;\r\n  }\r\n  .cd-side-nav .action-btn a {\r\n    margin: 1em 10% 0;\r\n  }\r\n  .cd-side-nav .count {\r\n    height: 8px;\r\n    width: 8px;\r\n    border-radius: 50%;\r\n    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\r\n    padding: 0;\r\n    top: 2em;\r\n    -webkit-transform: translateX(-50%);\r\n    -moz-transform: translateX(-50%);\r\n    -ms-transform: translateX(-50%);\r\n    -o-transform: translateX(-50%);\r\n    transform: translateX(-50%);\r\n    left: calc(50% + 5px);\r\n    right: auto;\r\n    color: transparent;\r\n  }\r\n}\r\n@media only screen and (min-width: 1170px) {\r\n  .cd-side-nav {\r\n    width: 150px;\r\n    position: fixed;\r\n  }\r\n  .cd-logo img{\r\n    margin-left: -16px;\r\n    margin-top: 3px;\r\n  }\r\n  .cd-side-nav > ul {\r\n    padding: 0.6em 0;\r\n  }\r\n  .cd-side-nav > ul > li:not(.action-btn):hover > a {\r\n    background-color: #33383e;\r\n  }\r\n  .cd-side-nav > ul > li > a {\r\n    padding: 1em 1em 1em 42px;\r\n    text-align: left;\r\n    border-bottom: none;\r\n  }\r\n  .cd-side-nav > ul > li > a::before {\r\n    top: 50%;\r\n    bottom: auto;\r\n    -webkit-transform: translateY(-50%);\r\n    -moz-transform: translateY(-50%);\r\n    -ms-transform: translateY(-50%);\r\n    -o-transform: translateY(-50%);\r\n    transform: translateY(-50%);\r\n    left: 18px;\r\n  }\r\n  .cd-side-nav .cd-label {\r\n    display: block;\r\n    padding: 1em 18px;\r\n  }\r\n  .cd-side-nav .action-btn {\r\n    text-align: left;\r\n  }\r\n  .cd-side-nav .action-btn a {\r\n    margin: 0 18px;\r\n  }\r\n  .no-touch .cd-side-nav .action-btn a:hover {\r\n    background-color: #1a93de;\r\n  }\r\n  .cd-side-nav .count {\r\n    /* reset style */\r\n    color: #ffffff;\r\n    height: auto;\r\n    width: auto;\r\n    border-radius: .25em;\r\n    padding: .2em .4em;\r\n    top: 50%;\r\n    bottom: auto;\r\n    -webkit-transform: translateY(-50%);\r\n    -moz-transform: translateY(-50%);\r\n    -ms-transform: translateY(-50%);\r\n    -o-transform: translateY(-50%);\r\n    transform: translateY(-50%);\r\n    right: 18px;\r\n    left: auto;\r\n    box-shadow: none;\r\n  }\r\n}\r\n\r\n.has-children ul {\r\n  position: relative;\r\n  width: 100%;\r\n  display: none;\r\n  background-color: #1c1f22;\r\n}\r\n.has-children > a::after {\r\n  /* arrow icon */\r\n  position: absolute;\r\n  content: '';\r\n  height: 16px;\r\n  width: 16px;\r\n  right: 5%;\r\n  top: 50%;\r\n  bottom: auto;\r\n  -webkit-transform: translateY(-50%);\r\n  -moz-transform: translateY(-50%);\r\n  -ms-transform: translateY(-50%);\r\n  -o-transform: translateY(-50%);\r\n  transform: translateY(-50%);\r\n  \r\n}\r\n.has-children.selected > ul {\r\n  display: block;\r\n}\r\n.has-children.selected > a::after {\r\n  -webkit-transform: translateY(-50%) rotate(180deg);\r\n  -moz-transform: translateY(-50%) rotate(180deg);\r\n  -ms-transform: translateY(-50%) rotate(180deg);\r\n  -o-transform: translateY(-50%) rotate(180deg);\r\n  transform: translateY(-50%) rotate(180deg);\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .has-children {\r\n    position: relative;\r\n  }\r\n  .has-children ul {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 100%;\r\n    width: 160px;\r\n    padding: 0;\r\n    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);\r\n  }\r\n  .has-children ul a {\r\n    text-align: left;\r\n    border: none;\r\n    padding: 1em;\r\n  }\r\n \r\n  \r\n  .no-touch .has-children ul a:hover {\r\n    color: #1784c7;\r\n  }\r\n  .has-children > a::after {\r\n    display: none;\r\n    color: black;\r\n  }\r\n  .cd-side-nav .has-children.selected > a {\r\n    /* focus state -> show sub pages */\r\n    background-color: #33383e;\r\n  }\r\n  .cd-top-nav .has-children {\r\n    position: relative;\r\n    background-color: #323232;\r\n\r\n  }\r\n  .cd-top-nav .has-children > a {\r\n    height: 100%;\r\n    padding: 0 calc(1.8em + 22px) 0 calc(1.8em + 26px) !important;\r\n    line-height: 55px;\r\n  }\r\n  .cd-top-nav .has-children > a::after {\r\n    display: block;\r\n    right: 1.8em;\r\n  }\r\n  .cd-top-nav .has-children ul {\r\n    background-color: #1c1f22;\r\n    width: 200px;\r\n    top: 100%;\r\n    right: 0;\r\n    left: auto;\r\n    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);\r\n  }\r\n  .cd-top-nav .has-children ul a {\r\n    padding-left: 18px !important;\r\n  }\r\n}\r\n@media only screen and (min-width: 1170px) {\r\n  .has-children > ul {\r\n    width: 100%;\r\n    z-index: 1;\r\n  }\r\n  .has-children ul a {\r\n    padding-left: 18px;\r\n  }\r\n  .has-children.active > ul {\r\n    /* if the item is active, make the subnavigation visible */\r\n    position: relative;\r\n    display: block;\r\n    /* reset style */\r\n    left: 0;\r\n    box-shadow: none;\r\n  }\r\n  .no-touch .cd-side-nav .has-children:hover > ul, .cd-side-nav .has-children.hover > ul {\r\n    /* show subnavigation on hover */\r\n    display: block;\r\n    opacity: 1;\r\n    visibility: visible;\r\n  }\r\n}\r\n\r\n\r\n</style>\r\n\r\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n /* -------------------------------- \n\nPrimary style\n\n-------------------------------- */\n*[data-v-7eea899c], *[data-v-7eea899c]::after, *[data-v-7eea899c]::before {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\nhtml[data-v-7eea899c] {\n  font-size: 62.5%;\n}\nbody[data-v-7eea899c] {\n  font-size: 1.6rem;\n  font-family: \"Open Sans\", sans-serif;\n  color: #3e454c;\n  background-color: #F5F5F5;\n}\nbody[data-v-7eea899c]::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\na[data-v-7eea899c] {\n  color: #1784c7;\n  text-decoration: none;\n}\n/*  ######  Side NAVBAR page style  ######  */\n#dashboard[data-v-7eea899c]{\n  -webkit-box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n          box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n    height: 100%;\n}\n#project[data-v-7eea899c]{\n  -webkit-box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n          box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#tables[data-v-7eea899c]{\n  -webkit-box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n          box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#user[data-v-7eea899c]{\n  -webkit-box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n          box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#admin[data-v-7eea899c]{\n  -webkit-box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n          box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n/*  ######  Side NAVBAR page style END ######  */\n.button[data-v-7eea899c]{\n  background-color: transparent;\n  color:#C8C8C8;\n  border: transparent;\n  height: 35px;\n  \n  font-size: 15px;\n  border : none;\n  outline: none;\n}\n.button[data-v-7eea899c]:active {\n  background-color: #323232;\n  border : none;\n  outline: none;\n}\n.button[data-v-7eea899c]:hover{\n  color: #ffffff;\n}\n.cd-side-nav[data-v-7eea899c]{\n  font-size: 20px;\n  margin-top: 20px;\n  position: fixed;\n}\n.fa[data-v-7eea899c]{\n  margin-right: 13px;\n}\n.cd-nav ul li a[data-v-7eea899c]{\n  color:#C8C8C8;\n}\n.cd-nav ul li a[data-v-7eea899c]:hover{\n  color: #ffffff;\n}\ninput[data-v-7eea899c] {\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 1.6rem;\n}\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-decoration,\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-cancel-button,\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-results-button,\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-results-decoration {\n  display: none;\n}\n/* -------------------------------- \n\nMain Page Content\n\n-------------------------------- */\n.cd-main-content .content-wrapper[data-v-7eea899c] {\n  padding: 45px 5% 3em;\n}\n.cd-main-content .content-wrapper h1[data-v-7eea899c] {\n  text-align: center;\n  padding: 3em 0;\n  font-size: 2rem;\n}\n.cd-main-content[data-v-7eea899c]::before {\n  /* never visible - used to check MQ in jQuery */\n  display: none;\n  content: 'mobile';\n}\n@media only screen and (min-width: 768px) {\n.cd-main-content .content-wrapper[data-v-7eea899c] {\n    margin-left: 110px;\n    margin-top: 80px;\n    padding-top: 155px;\n}\n.cd-main-content .content-wrapper h1[data-v-7eea899c] {\n    padding: 4em 0;\n    font-size: 3.2rem;\n    font-weight: 300;\n}\n.cd-main-content[data-v-7eea899c]::before {\n    content: 'tablet';\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-main-content .content-wrapper[data-v-7eea899c] {\n    margin-left: 200px;\n}\n.cd-main-content[data-v-7eea899c]::before {\n    content: 'desktop';\n}\n}\n/* -------------------------------- \n\nHeader\n\n-------------------------------- */\n.cd-main-header[data-v-7eea899c] {\n  position: absolute;\n  z-index: 2;\n  top: 0;\n  left: 0;\n  height: 45px;\n  width: 100%;\n  background: #FFFFFF;\n\n\n  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n\n\n          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.cd-main-header[data-v-7eea899c]::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\n/**/\n@media only screen and (min-width: 768px) \n{\n.cd-main-header[data-v-7eea899c] {\n    position: fixed;\n    height: 55px;\n    background-color:#323232;\n}\n}\n.cd-logo[data-v-7eea899c] {\n  float: left;\n  display: block;\n  margin: 11px 0 0 5%;\n}\n.cd-logo img[data-v-7eea899c] {\n  display: block;\n}\n@media only screen and (min-width: 768px) {\n.cd-logo[data-v-7eea899c] {\n    margin: 16px 0 0 36px;\n}\n}\n.cd-nav-trigger[data-v-7eea899c] {\n  /* navigation trigger - visible on mobile devices only */\n  float: right;\n  position: relative;\n  display: block;\n  width: 34px;\n  height: 44px;\n  margin-right: 5%;\n  /* hide text */\n  overflow: hidden;\n  white-space: nowrap;\n  color: transparent;\n}\n.cd-nav-trigger span[data-v-7eea899c], .cd-nav-trigger span[data-v-7eea899c]::before, .cd-nav-trigger span[data-v-7eea899c]::after {\n  /* hamburger icon in CSS */\n  position: absolute;\n  display: inline-block;\n  height: 3px;\n  width: 24px;\n  background:#323232;\n}\n.cd-nav-trigger span[data-v-7eea899c] {\n  /* line in the center */\n  position: absolute;\n  top: 50%;\n  right: 5px;\n  margin-top: -2px;\n  -webkit-transition: background 0.2s;\n  transition: background 0.2s;\n}\n.cd-nav-trigger span[data-v-7eea899c]::before, .cd-nav-trigger span[data-v-7eea899c]::after {\n  /* other 2 lines */\n  content: '';\n  right: 0;\n  /* Force Hardware Acceleration in WebKit */\n  -webkit-transform: translateZ(0);\n  transform: translateZ(0);\n  -webkit-backface-visibility: hidden;\n  backface-visibility: hidden;\n  -webkit-transform-origin: 0% 50%;\n  transform-origin: 0% 50%;\n  -webkit-transition: -webkit-transform 0.2s;\n  transition: -webkit-transform 0.2s;\n  transition: transform 0.2s;\n  transition: transform 0.2s, -webkit-transform 0.2s;\n}\n.cd-nav-trigger span[data-v-7eea899c]::before {\n  /* menu icon top line */\n  top: -6px;\n}\n.cd-nav-trigger span[data-v-7eea899c]::after {\n  /* menu icon bottom line */\n  top: 6px;\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c] {\n  /* hide line in the center */\n  background: rgba(255, 255, 255, 0);\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::before, .cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::after {\n  /* keep visible other 2 lines */\n  background: white;\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::before {\n  -webkit-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  transform: translateX(4px) translateY(-3px) rotate(45deg);\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::after {\n  -webkit-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  transform: translateX(4px) translateY(2px) rotate(-45deg);\n}\n@media only screen and (min-width: 768px) {\n.cd-nav-trigger[data-v-7eea899c] {\n    display: none;\n}\n}\n.cd-search[data-v-7eea899c] {\n  position: relative;\n  margin: 1.2em 5% 0.6em;\n}\n.cd-search.is-hidden[data-v-7eea899c] {\n  opacity: 0;\n}\n.cd-search[data-v-7eea899c]::before {\n  /* lens icon */\n  content: '';\n  position: absolute;\n  left: 8px;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n}\n.cd-search input[data-v-7eea899c] {\n  padding-left: 32px;\n  width: 100%;\n  height: 36px;\n  border: none;\n  border-radius: .25em;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  -ms-appearance: none;\n  -o-appearance: none;\n  appearance: none;\n}\n.cd-search input[data-v-7eea899c]:focus {\n  outline: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-search[data-v-7eea899c] {\n    float: left;\n    display: inline-block;\n    width: 250px;\n    height: 100%;\n    margin: 0 0 0 2.5em;\n}\n.cd-search.is-hidden[data-v-7eea899c] {\n    /* reset style */\n    opacity: 1;\n}\n.cd-search[data-v-7eea899c]::before {\n    background-position: 0 -16px;\n    left: 1em;\n}\n.cd-search form[data-v-7eea899c], .cd-search input[data-v-7eea899c] {\n    height: 100%;\n    width: 100%;\n}\n.cd-search input[data-v-7eea899c] {\n    border: none;\n    padding-left: 2.6em;\n    border-radius: 0;\n    background-color: #3e454c;\n    border-left: 1px solid #51575d;\n    color: #ffffff;\n}\n.cd-search input[data-v-7eea899c]::-webkit-input-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-7eea899c]::-moz-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-7eea899c]:-moz-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-7eea899c]:-ms-input-placeholder {\n    color: #777c81;\n}\n}\n/* -------------------------------- \n\nTop Navigation\n\n-------------------------------- */\n.cd-nav[data-v-7eea899c] {\n  /* top nav - not visible on mobile devices */\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-nav[data-v-7eea899c] {\n    display: block;\n    float: right;\n    height: 100%;\n}\n}\n.cd-top-nav > li > a[data-v-7eea899c]::before {\n  /* reset style */\n  display: none;\n}\n.cd-top-nav > li a[data-v-7eea899c] {\n  padding: 1em 5% !important;\n}\n.cd-top-nav img[data-v-7eea899c] {\n  /* avatar image */\n  position: absolute;\n  left: 1.8em;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 20px;\n  width: 20px;\n  border-radius: 50%;\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-top-nav[data-v-7eea899c] {\n    height: 100%;\n}\n.cd-top-nav a[data-v-7eea899c] {\n    display: block;\n    font-size: 1.4rem;\n    color: #ffffff;\n}\n.cd-top-nav > li[data-v-7eea899c] {\n    display: inline-block;\n    margin-right: 1em;\n    height: 100%;\n}\n.cd-top-nav > li[data-v-7eea899c]:last-of-type {\n    margin-right: 0;\n}\n.cd-top-nav > li a[data-v-7eea899c] {\n    padding: 1em .6em !important;\n}\n.cd-top-nav img[data-v-7eea899c] {\n    display: block;\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-top-nav li:not(.has-children) a[data-v-7eea899c]:hover {\n    color: #1784c7;\n}\n}\n/* -------------------------------- \n\nSidebar\n\n-------------------------------- */\n.cd-side-nav[data-v-7eea899c] {\n  position: fixed;\n  z-index: 1;\n  left: 0;\n  top: 0;\n  width: 100%;\n  padding: 45px 0 0;\n  background-color: #323232;\n  visibility: hidden;\n  opacity: 0;\n  max-height: 100vh;\n  overflow: hidden;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;\n  transition: opacity 0.2s 0s, visibility 0s 0.2s;\n}\n.cd-side-nav.nav-is-visible[data-v-7eea899c] {\n  opacity: 1;\n  visibility: visible;\n  overflow: visible;\n  -webkit-overflow-scrolling: touch;\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0s;\n  transition: opacity 0.2s 0s, visibility 0s 0s;\n  max-height: none;\n  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\n          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-side-nav > ul[data-v-7eea899c] {\n  padding: 0.6em 0;\n}\n.cd-side-nav > ul[data-v-7eea899c]:last-of-type {\n  padding-bottom: 0;\n}\n.cd-side-nav .cd-label[data-v-7eea899c], .cd-side-nav a[data-v-7eea899c] {\n  display: block;\n  padding: 1em 5%;\n}\n.cd-side-nav a[data-v-7eea899c] {\n  position: relative;\n  color: #ffffff;\n  font-size: 1.4rem;\n}\n.cd-side-nav ul.cd-top-nav > li:last-of-type > a[data-v-7eea899c] {\n  border-bottom: none;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c] {\n  padding-left: calc(5% + 24px);\n  border-bottom: 1px solid #373d44;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c]::before {\n  /* icon before item name */\n  position: absolute;\n  content: '';\n  left: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n}\n.cd-side-nav > ul > li.overview > a[data-v-7eea899c]::before {\n  background-position: -64px 0;\n}\n.cd-side-nav > ul > li.notifications > a[data-v-7eea899c]::before {\n  background-position: -80px 0;\n}\n.cd-side-nav > ul > li.comments > a[data-v-7eea899c]::before {\n  background-position: -48px 0;\n}\n.cd-side-nav > ul > li.bookmarks > a[data-v-7eea899c]::before {\n  background-position: -32px 0;\n}\n.cd-side-nav > ul > li.images > a[data-v-7eea899c]::before {\n  background-position: 0 0;\n}\n.cd-side-nav > ul > li.users > a[data-v-7eea899c]::before {\n  background-position: -16px 0;\n}\n.cd-side-nav .count[data-v-7eea899c] {\n  /* notification badge */\n  position: absolute;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  right: calc(5% + 16px + 0.4em);\n  padding: 0.2em 0.4em;\n  background-color: #ff7e66;\n  border-radius: .25em;\n  color: #ffffff;\n  font-weight: bold;\n  font-size: 1.2rem;\n  text-align: center;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c] {\n  display: block;\n  margin: 0 5%;\n  padding: 1em 0;\n  background-color: #1784c7;\n  border-radius: .25em;\n  border: none;\n  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);\n          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);\n  text-align: center;\n  color: #ffffff;\n  font-weight: bold;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c]::before {\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-side-nav[data-v-7eea899c] {\n    \n    float: left;\n    top: fixed;\n    width: 110px;\n    min-height: 100vh;\n    padding-top: 55px;\n    /* reset style */\n    visibility: visible;\n    opacity: 1;\n    overflow: visible;\n    max-height: none;\n    position: fixed;\n}\n.cd-side-nav.nav-is-visible[data-v-7eea899c] {\n    -webkit-box-shadow: none;\n            box-shadow: none;\n}\n.cd-side-nav.is-fixed[data-v-7eea899c] {\n    position: fixed;\n}\n.cd-side-nav > ul[data-v-7eea899c] {\n    /* reset style */\n    padding: 0;\n}\n.cd-side-nav .cd-label[data-v-7eea899c] {\n    /* remove labels on minified version of the sidebar */\n    display: none;\n}\n.cd-side-nav a[data-v-7eea899c] {\n    font-size: 1.2rem;\n    text-align: center;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c] {\n    padding: calc(2.2em + 24px) 0 2.4em;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c]::before {\n    left: 50%;\n    right: auto;\n    -webkit-transform: translateX(-50%);\n    transform: translateX(-50%);\n    top: 2.4em;\n}\n.cd-side-nav .active > a[data-v-7eea899c] {\n    /* current page */\n    -webkit-box-shadow: inset 3px 0 0 #1784c7;\n            box-shadow: inset 3px 0 0 #1784c7;\n    background-color: #33383e;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c] {\n    margin: 1em 10% 0;\n}\n.cd-side-nav .count[data-v-7eea899c] {\n    height: 8px;\n    width: 8px;\n    border-radius: 50%;\n    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n            box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n    padding: 0;\n    top: 2em;\n    -webkit-transform: translateX(-50%);\n    transform: translateX(-50%);\n    left: calc(50% + 5px);\n    right: auto;\n    color: transparent;\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-side-nav[data-v-7eea899c] {\n    width: 150px;\n    position: fixed;\n}\n.cd-logo img[data-v-7eea899c]{\n    margin-left: -16px;\n    margin-top: 3px;\n}\n.cd-side-nav > ul[data-v-7eea899c] {\n    padding: 0.6em 0;\n}\n.cd-side-nav > ul > li:not(.action-btn):hover > a[data-v-7eea899c] {\n    background-color: #33383e;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c] {\n    padding: 1em 1em 1em 42px;\n    text-align: left;\n    border-bottom: none;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c]::before {\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    transform: translateY(-50%);\n    left: 18px;\n}\n.cd-side-nav .cd-label[data-v-7eea899c] {\n    display: block;\n    padding: 1em 18px;\n}\n.cd-side-nav .action-btn[data-v-7eea899c] {\n    text-align: left;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c] {\n    margin: 0 18px;\n}\n.no-touch .cd-side-nav .action-btn a[data-v-7eea899c]:hover {\n    background-color: #1a93de;\n}\n.cd-side-nav .count[data-v-7eea899c] {\n    /* reset style */\n    color: #ffffff;\n    height: auto;\n    width: auto;\n    border-radius: .25em;\n    padding: .2em .4em;\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    transform: translateY(-50%);\n    right: 18px;\n    left: auto;\n    -webkit-box-shadow: none;\n            box-shadow: none;\n}\n}\n.has-children ul[data-v-7eea899c] {\n  position: relative;\n  width: 100%;\n  display: none;\n  background-color: #1c1f22;\n}\n.has-children > a[data-v-7eea899c]::after {\n  /* arrow icon */\n  position: absolute;\n  content: '';\n  height: 16px;\n  width: 16px;\n  right: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n}\n.has-children.selected > ul[data-v-7eea899c] {\n  display: block;\n}\n.has-children.selected > a[data-v-7eea899c]::after {\n  -webkit-transform: translateY(-50%) rotate(180deg);\n  transform: translateY(-50%) rotate(180deg);\n}\n@media only screen and (min-width: 768px) {\n.has-children[data-v-7eea899c] {\n    position: relative;\n}\n.has-children ul[data-v-7eea899c] {\n    position: absolute;\n    top: 0;\n    left: 100%;\n    width: 160px;\n    padding: 0;\n    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);\n            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);\n}\n.has-children ul a[data-v-7eea899c] {\n    text-align: left;\n    border: none;\n    padding: 1em;\n}\n.no-touch .has-children ul a[data-v-7eea899c]:hover {\n    color: #1784c7;\n}\n.has-children > a[data-v-7eea899c]::after {\n    display: none;\n    color: black;\n}\n.cd-side-nav .has-children.selected > a[data-v-7eea899c] {\n    /* focus state -> show sub pages */\n    background-color: #33383e;\n}\n.cd-top-nav .has-children[data-v-7eea899c] {\n    position: relative;\n    background-color: #323232;\n}\n.cd-top-nav .has-children > a[data-v-7eea899c] {\n    height: 100%;\n    padding: 0 calc(1.8em + 22px) 0 calc(1.8em + 26px) !important;\n    line-height: 55px;\n}\n.cd-top-nav .has-children > a[data-v-7eea899c]::after {\n    display: block;\n    right: 1.8em;\n}\n.cd-top-nav .has-children ul[data-v-7eea899c] {\n    background-color: #1c1f22;\n    width: 200px;\n    top: 100%;\n    right: 0;\n    left: auto;\n    -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);\n            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-top-nav .has-children ul a[data-v-7eea899c] {\n    padding-left: 18px !important;\n}\n}\n@media only screen and (min-width: 1170px) {\n.has-children > ul[data-v-7eea899c] {\n    width: 100%;\n    z-index: 1;\n}\n.has-children ul a[data-v-7eea899c] {\n    padding-left: 18px;\n}\n.has-children.active > ul[data-v-7eea899c] {\n    /* if the item is active, make the subnavigation visible */\n    position: relative;\n    display: block;\n    /* reset style */\n    left: 0;\n    -webkit-box-shadow: none;\n            box-shadow: none;\n}\n.no-touch .cd-side-nav .has-children:hover > ul[data-v-7eea899c], .cd-side-nav .has-children.hover > ul[data-v-7eea899c] {\n    /* show subnavigation on hover */\n    display: block;\n    opacity: 1;\n    visibility: visible;\n}\n}\n\n\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/sidebar.vue"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;CA6GA;;;;mCAIA;AACA;EACA,+BAAA;UAAA,uBAAA;CACA;AAEA;EACA,iBAAA;CACA;AAEA;EACA,kBAAA;EACA,qCAAA;EACA,eAAA;EACA,0BAAA;CACA;AACA;EACA,YAAA;EACA,YAAA;EACA,eAAA;CACA;AAEA;EACA,eAAA;EACA,sBAAA;CACA;AAEA,8CAAA;AAGA;EACA,iDAAA;UAAA,yCAAA;IACA,iBAAA;IACA,mBAAA;IACA,aAAA;CAGA;AACA;EACA,iDAAA;UAAA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,iDAAA;UAAA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,iDAAA;UAAA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,iDAAA;UAAA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA,iDAAA;AAEA;EACA,8BAAA;EACA,cAAA;EACA,oBAAA;EACA,aAAA;;EAEA,gBAAA;EACA,cAAA;EACA,cAAA;CAGA;AACA;EACA,0BAAA;EACA,cAAA;EACA,cAAA;CAGA;AACA;EACA,eAAA;CACA;AACA;EACA,gBAAA;EACA,iBAAA;EACA,gBAAA;CACA;AACA;EACA,mBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,eAAA;CACA;AAGA;EACA,qCAAA;EACA,kBAAA;CACA;AAEA;;;;EAIA,cAAA;CACA;AAEA;;;;mCAIA;AACA;EACA,qBAAA;CACA;AACA;EACA,mBAAA;EACA,eAAA;EACA,gBAAA;CACA;AACA;EACA,gDAAA;EACA,cAAA;EACA,kBAAA;CACA;AACA;AACA;IACA,mBAAA;IACA,iBAAA;IACA,mBAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;IACA,iBAAA;CACA;AACA;IACA,kBAAA;CACA;CACA;AACA;AACA;IACA,mBAAA;CACA;AACA;IACA,mBAAA;CACA;CACA;AAEA;;;;mCAIA;AAEA;EACA,mBAAA;EACA,WAAA;EACA,OAAA;EACA,QAAA;EACA,aAAA;EACA,YAAA;EACA,oBAAA;;;EAGA,iDAAA;;;UAAA,yCAAA;EACA,oCAAA;EACA,mCAAA;CACA;AACA;EACA,YAAA;EACA,YAAA;EACA,eAAA;CACA;AACA,IAAA;AAAA;;AAEA;IACA,gBAAA;IACA,aAAA;IACA,yBAAA;CACA;CACA;AAEA;EACA,YAAA;EACA,eAAA;EACA,oBAAA;CACA;AACA;EACA,eAAA;CACA;AACA;AACA;IACA,sBAAA;CACA;CACA;AAEA;EACA,yDAAA;EACA,aAAA;EACA,mBAAA;EACA,eAAA;EACA,YAAA;EACA,aAAA;EACA,iBAAA;EACA,eAAA;EACA,iBAAA;EACA,oBAAA;EACA,mBAAA;CACA;AACA;EACA,2BAAA;EACA,mBAAA;EACA,sBAAA;EACA,YAAA;EACA,YAAA;EACA,mBAAA;CACA;AACA;EACA,wBAAA;EACA,mBAAA;EACA,SAAA;EACA,WAAA;EACA,iBAAA;EACA,oCAAA;EAEA,4BAAA;CACA;AACA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,2CAAA;EACA,iCAAA;EAIA,yBAAA;EACA,oCAAA;EACA,4BAAA;EACA,iCAAA;EAIA,yBAAA;EACA,2CAAA;EAEA,mCAAA;EAAA,2BAAA;EAAA,mDAAA;CACA;AACA;EACA,wBAAA;EACA,UAAA;CACA;AACA;EACA,2BAAA;EACA,SAAA;CACA;AACA;EACA,6BAAA;EACA,mCAAA;CACA;AACA;EACA,gCAAA;EACA,kBAAA;CACA;AACA;EACA,kEAAA;EAIA,0DAAA;CACA;AACA;EACA,kEAAA;EAIA,0DAAA;CACA;AACA;AACA;IACA,cAAA;CACA;CACA;AAEA;EACA,mBAAA;EACA,uBAAA;CACA;AACA;EACA,WAAA;CACA;AACA;EACA,eAAA;EACA,YAAA;EACA,mBAAA;EACA,UAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,aAAA;EACA,YAAA;CAEA;AACA;EACA,mBAAA;EACA,YAAA;EACA,aAAA;EACA,aAAA;EACA,qBAAA;EACA,yBAAA;EACA,sBAAA;EACA,qBAAA;EACA,oBAAA;EACA,iBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;AACA;IACA,YAAA;IACA,sBAAA;IACA,aAAA;IACA,aAAA;IACA,oBAAA;CACA;AACA;IACA,iBAAA;IACA,WAAA;CACA;AACA;IACA,6BAAA;IACA,UAAA;CACA;AACA;IACA,aAAA;IACA,YAAA;CACA;AACA;IACA,aAAA;IACA,oBAAA;IACA,iBAAA;IACA,0BAAA;IACA,+BAAA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;CACA;AAEA;;;;mCAIA;AACA;EACA,6CAAA;EACA,cAAA;CACA;AACA;AACA;IACA,eAAA;IACA,aAAA;IACA,aAAA;CACA;CACA;AAEA;EACA,iBAAA;EACA,cAAA;CACA;AACA;EACA,2BAAA;CACA;AACA;EACA,kBAAA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,aAAA;EACA,YAAA;EACA,mBAAA;EACA,cAAA;CACA;AACA;AACA;IACA,aAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;IACA,eAAA;CACA;AACA;IACA,sBAAA;IACA,kBAAA;IACA,aAAA;CACA;AACA;IACA,gBAAA;CACA;AACA;IACA,6BAAA;CACA;AACA;IACA,eAAA;CACA;CACA;AACA;AACA;IACA,eAAA;CACA;CACA;AAEA;;;;mCAIA;AACA;EACA,gBAAA;EACA,WAAA;EACA,QAAA;EACA,OAAA;EACA,YAAA;EACA,kBAAA;EACA,0BAAA;EACA,mBAAA;EACA,WAAA;EACA,kBAAA;EACA,iBAAA;EACA,oCAAA;EACA,mCAAA;EACA,wDAAA;EAEA,gDAAA;CACA;AACA;EACA,WAAA;EACA,oBAAA;EACA,kBAAA;EACA,kCAAA;EACA,sDAAA;EAEA,8CAAA;EACA,iBAAA;EACA,kDAAA;UAAA,0CAAA;CACA;AACA;EACA,iBAAA;CACA;AACA;EACA,kBAAA;CACA;AACA;EACA,eAAA;EACA,gBAAA;CACA;AAEA;EACA,mBAAA;EACA,eAAA;EACA,kBAAA;CACA;AACA;EACA,oBAAA;CACA;AACA;EACA,8BAAA;EACA,iCAAA;CACA;AACA;EACA,2BAAA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,aAAA;EACA,YAAA;CAEA;AACA;EACA,6BAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,yBAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,wBAAA;EACA,mBAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,+BAAA;EACA,qBAAA;EACA,0BAAA;EACA,qBAAA;EACA,eAAA;EACA,kBAAA;EACA,kBAAA;EACA,mBAAA;CACA;AACA;EACA,eAAA;EACA,aAAA;EACA,eAAA;EACA,0BAAA;EACA,qBAAA;EACA,aAAA;EACA,yFAAA;UAAA,iFAAA;EACA,mBAAA;EACA,eAAA;EACA,kBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;AACA;;IAEA,YAAA;IACA,WAAA;IACA,aAAA;IACA,kBAAA;IACA,kBAAA;IACA,iBAAA;IACA,oBAAA;IACA,WAAA;IACA,kBAAA;IACA,iBAAA;IACA,gBAAA;CACA;AACA;IACA,yBAAA;YAAA,iBAAA;CACA;AACA;IACA,gBAAA;CACA;AACA;IACA,iBAAA;IACA,WAAA;CACA;AACA;IACA,sDAAA;IACA,cAAA;CACA;AACA;IACA,kBAAA;IACA,mBAAA;CACA;AACA;IACA,oCAAA;CACA;AACA;IACA,UAAA;IACA,YAAA;IACA,oCAAA;IAIA,4BAAA;IACA,WAAA;CACA;AACA;IACA,kBAAA;IACA,0CAAA;YAAA,kCAAA;IACA,0BAAA;CACA;AACA;IACA,kBAAA;CACA;AACA;IACA,YAAA;IACA,WAAA;IACA,mBAAA;IACA,+CAAA;YAAA,uCAAA;IACA,WAAA;IACA,SAAA;IACA,oCAAA;IAIA,4BAAA;IACA,sBAAA;IACA,YAAA;IACA,mBAAA;CACA;CACA;AACA;AACA;IACA,aAAA;IACA,gBAAA;CACA;AACA;IACA,mBAAA;IACA,gBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,0BAAA;IACA,iBAAA;IACA,oBAAA;CACA;AACA;IACA,SAAA;IACA,aAAA;IACA,oCAAA;IAIA,4BAAA;IACA,WAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,iBAAA;IACA,eAAA;IACA,aAAA;IACA,YAAA;IACA,qBAAA;IACA,mBAAA;IACA,SAAA;IACA,aAAA;IACA,oCAAA;IAIA,4BAAA;IACA,YAAA;IACA,WAAA;IACA,yBAAA;YAAA,iBAAA;CACA;CACA;AAEA;EACA,mBAAA;EACA,YAAA;EACA,cAAA;EACA,0BAAA;CACA;AACA;EACA,gBAAA;EACA,mBAAA;EACA,YAAA;EACA,aAAA;EACA,YAAA;EACA,UAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;CAEA;AACA;EACA,eAAA;CACA;AACA;EACA,mDAAA;EAIA,2CAAA;CACA;AACA;AACA;IACA,mBAAA;CACA;AACA;IACA,mBAAA;IACA,OAAA;IACA,WAAA;IACA,aAAA;IACA,WAAA;IACA,kDAAA;YAAA,0CAAA;CACA;AACA;IACA,iBAAA;IACA,aAAA;IACA,aAAA;CACA;AAGA;IACA,eAAA;CACA;AACA;IACA,cAAA;IACA,aAAA;CACA;AACA;IACA,mCAAA;IACA,0BAAA;CACA;AACA;IACA,mBAAA;IACA,0BAAA;CAEA;AACA;IACA,aAAA;IACA,8DAAA;IACA,kBAAA;CACA;AACA;IACA,eAAA;IACA,aAAA;CACA;AACA;IACA,0BAAA;IACA,aAAA;IACA,UAAA;IACA,SAAA;IACA,WAAA;IACA,kDAAA;YAAA,0CAAA;CACA;AACA;IACA,8BAAA;CACA;CACA;AACA;AACA;IACA,YAAA;IACA,WAAA;CACA;AACA;IACA,mBAAA;CACA;AACA;IACA,2DAAA;IACA,mBAAA;IACA,eAAA;IACA,iBAAA;IACA,QAAA;IACA,yBAAA;YAAA,iBAAA;CACA;AACA;IACA,iCAAA;IACA,eAAA;IACA,WAAA;IACA,oBAAA;CACA;CACA","file":"sidebar.vue","sourcesContent":["<template>\r\n  <div class=\"cd-side-nav\">\r\n     <!-- ####### Header NAVBAR ####### -->\r\n  <header class=\"cd-main-header\" >\r\n    <a href=\"#\" class=\"cd-logo\"><img style=\"margin-left:-80px; margin-top:-8px;\" src=\"/dist/assets/images/logo-trans.png\"  alt=\"Logo\"></a>       \r\n    <nav class=\"cd-nav\" >\r\n      <ul class=\"cd-top-nav\">\r\n         <li>\r\n             <a style=\"margin-top:6px;\" v-on:click=\"$parent.logout()\" class=\"btn btn-danger btn-md\">\r\n              <span class=\"glyphicon glyphicon-log-out\"></span> Log out\r\n             </a>\r\n        </li>\r\n         <li class=\"has-children account\">\r\n          <a href=\"#0\"  >\r\n            <img  src=\"/dist/assets/images/user.jpg\" alt=\"avatar\">\r\n            <div id='username'></div>\r\n          </a>\r\n        </li>  \r\n          <ul>\r\n           <!--  <li><a href=\"#0\">My Account</a></li>\r\n           <li><a href=\"#0\">Edit Account</a></li> -->\r\n            <!-- <li><a href=\"#0\">Logout</a></li> -->\r\n          </ul>\r\n        </li>\r\n      </ul>\r\n    </nav>\r\n  </header> \r\n  <!-- ###### Header NAVBAR END #######-->\r\n     \r\n    <!-- %%%%%%%%  Side NAVBAR %%%%%%% -->\r\n  <main class=\"cd-main-content\" >\r\n    <nav class=\"cd-side-nav\">\r\n      <ul>\r\n        <li class=\"has-children Overviews\">\r\n         <a v-on:click=\"$parent.updateView('create-customer')\"> <i class=\"fa fa-th-large\" ></i>Customer</a>                   \r\n        </li>       \r\n        <li class=\"has-children comments\">\r\n          <a v-on:click=\"$parent.updateView('add-installer')\"><i class=\"fa fa-tasks\"></i> Installer</a>                   \r\n        </li>\r\n\r\n        <li class=\"has-children bookmarks\">\r\n          <a  v-on:click=\"$parent.updateView('add-bonus')\"><i class=\"fa fa-table\"></i> Bonus</a>\r\n          \r\n        </li> \r\n\t\t    <li class=\"has-children bookmarks\">\r\n          <a  v-on:click=\"$parent.updateView('payment-history')\"><i class=\"fa fa-table\"></i> Payments</a>\r\n          \r\n        </li> \r\n        <li class=\"has-children users\">\r\n          <a  v-on:click=\"$parent.updateView('add-user')\"><i class=\"fa fa-user\"></i> User</a>       \r\n         \r\n        </li>\r\n       \r\n        <li class=\"has-children users\">\r\n          <a  v-on:click=\"$parent.updateView('create-project')\"><i class=\"fa fa-user\"></i> Jobs</a>       \r\n          <!-- <ul>\r\n           <li><a v-on:click=\"$parent.updateView('')\">View transaction logs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('')\">View project data</a></li>\r\n          </ul> -->\r\n        </li>\r\n        <li class=\"has-children users\">\r\n          <a v-on:click=\"$parent.updateView('create-roles')\"><i class=\"fa fa-user\"></i> Roles</a>       \r\n          <!-- <ul>\r\n           <li><a v-on:click=\"$parent.updateView('create-roles')\">Create roles</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('modify-roles')\">Modify Roles</a></li>\r\n          </ul> -->\r\n        </li>\r\n\r\n         <li class=\"has-children users\">\r\n          <a  v-on:click=\"$parent.updateView('add-hours')\"><i class=\"fa fa-user\"></i> Time</a>                 \r\n        </li>\r\n\r\n        \r\n    </ul>\r\n    </nav>\r\n        <!-- %%%%%%%%  Side NAVBAR END %%%%%%% -->\r\n\r\n\r\n \r\n\r\n  </main> <!-- .cd-main-content -->\t\t\r\n  </div>\r\n</template>\r\n\r\n<script>\r\nconst axios = require('axios');\r\nexport default {\r\n  name: \"side-bar\",\r\n  beforeMount(){\r\n  axios.get('/session/data')\r\n   .then(req => {\r\n      console.log(\"Side Bar username\"+req.data.username);\r\n      $('#username').html(req.data.username);\r\n     \r\n      //If no session received, return home\r\n      if(!req.data.roll){\r\n        this.$router.push('/');\r\n      }\r\n\r\n     \r\n   })\r\n  .catch(function(err){\r\n    console.log(\"Error R\"+err);\r\n  });\r\n  }\r\n};\r\n\r\n</script>\r\n\r\n<style scoped>\r\n /* -------------------------------- \r\n\r\nPrimary style\r\n\r\n-------------------------------- */\r\n*, *::after, *::before {\r\n  box-sizing: border-box;\r\n}\r\n\r\nhtml {\r\n  font-size: 62.5%;\r\n}\r\n\r\nbody {\r\n  font-size: 1.6rem;\r\n  font-family: \"Open Sans\", sans-serif;\r\n  color: #3e454c;\r\n  background-color: #F5F5F5;\r\n}\r\nbody::after {\r\n  clear: both;\r\n  content: \"\";\r\n  display: table;\r\n}\r\n\r\na {\r\n  color: #1784c7;\r\n  text-decoration: none;\r\n}\r\n\r\n/*  ######  Side NAVBAR page style  ######  */\r\n\r\n\r\n#dashboard{\r\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\r\n    background: #fff;\r\n    margin-right: 40px;\r\n    height: 100%;\r\n\r\n\r\n}\r\n#project{\r\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\r\n    background: #fff;\r\n    margin-right: 40px;\r\n\r\n\r\n}\r\n#tables{\r\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\r\n    background: #fff;\r\n    margin-right: 40px;\r\n\r\n\r\n}\r\n#user{\r\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\r\n    background: #fff;\r\n    margin-right: 40px;\r\n\r\n\r\n}\r\n#admin{\r\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\r\n    background: #fff;\r\n    margin-right: 40px;\r\n\r\n\r\n}\r\n/*  ######  Side NAVBAR page style END ######  */\r\n\r\n.button{\r\n  background-color: transparent;\r\n  color:#C8C8C8;\r\n  border: transparent;\r\n  height: 35px;\r\n  \r\n  font-size: 15px;\r\n  border : none;\r\n  outline: none;\r\n\r\n\r\n}\r\n.button:active {\r\n  background-color: #323232;\r\n  border : none;\r\n  outline: none;\r\n  \r\n\r\n}\r\n.button:hover{\r\n  color: #ffffff;\r\n}\r\n.cd-side-nav{\r\n  font-size: 20px;\r\n  margin-top: 20px;\r\n  position: fixed;\r\n}\r\n.fa{\r\n  margin-right: 13px;\r\n}\r\n.cd-nav ul li a{\r\n  color:#C8C8C8;\r\n}\r\n.cd-nav ul li a:hover{\r\n  color: #ffffff;\r\n}\r\n\r\n\r\ninput {\r\n  font-family: \"Open Sans\", sans-serif;\r\n  font-size: 1.6rem;\r\n}\r\n\r\ninput[type=\"search\"]::-webkit-search-decoration,\r\ninput[type=\"search\"]::-webkit-search-cancel-button,\r\ninput[type=\"search\"]::-webkit-search-results-button,\r\ninput[type=\"search\"]::-webkit-search-results-decoration {\r\n  display: none;\r\n}\r\n\r\n/* -------------------------------- \r\n\r\nMain Page Content\r\n\r\n-------------------------------- */\r\n.cd-main-content .content-wrapper {\r\n  padding: 45px 5% 3em;\r\n}\r\n.cd-main-content .content-wrapper h1 {\r\n  text-align: center;\r\n  padding: 3em 0;\r\n  font-size: 2rem;\r\n}\r\n.cd-main-content::before {\r\n  /* never visible - used to check MQ in jQuery */\r\n  display: none;\r\n  content: 'mobile';\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-main-content .content-wrapper {\r\n    margin-left: 110px;\r\n    margin-top: 80px;\r\n    padding-top: 155px;\r\n  }\r\n  .cd-main-content .content-wrapper h1 {\r\n    padding: 4em 0;\r\n    font-size: 3.2rem;\r\n    font-weight: 300;\r\n  }\r\n  .cd-main-content::before {\r\n    content: 'tablet';\r\n  }\r\n}\r\n@media only screen and (min-width: 1170px) {\r\n  .cd-main-content .content-wrapper {\r\n    margin-left: 200px;\r\n  }\r\n  .cd-main-content::before {\r\n    content: 'desktop';\r\n  }\r\n}\r\n\r\n/* -------------------------------- \r\n\r\nHeader\r\n\r\n-------------------------------- */\r\n \r\n.cd-main-header {\r\n  position: absolute;\r\n  z-index: 2;\r\n  top: 0;\r\n  left: 0;\r\n  height: 45px;\r\n  width: 100%;\r\n  background: #FFFFFF;\r\n\r\n\r\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n}\r\n.cd-main-header::after {\r\n  clear: both;\r\n  content: \"\";\r\n  display: table;\r\n}\r\n/**/@media only screen and (min-width: 768px) \r\n{\r\n  .cd-main-header {\r\n    position: fixed;\r\n    height: 55px;\r\n    background-color:#323232;\r\n  }\r\n}\r\n\r\n.cd-logo {\r\n  float: left;\r\n  display: block;\r\n  margin: 11px 0 0 5%;\r\n}\r\n.cd-logo img {\r\n  display: block;\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-logo {\r\n    margin: 16px 0 0 36px;\r\n  }\r\n}\r\n\r\n.cd-nav-trigger {\r\n  /* navigation trigger - visible on mobile devices only */\r\n  float: right;\r\n  position: relative;\r\n  display: block;\r\n  width: 34px;\r\n  height: 44px;\r\n  margin-right: 5%;\r\n  /* hide text */\r\n  overflow: hidden;\r\n  white-space: nowrap;\r\n  color: transparent;\r\n}\r\n.cd-nav-trigger span, .cd-nav-trigger span::before, .cd-nav-trigger span::after {\r\n  /* hamburger icon in CSS */\r\n  position: absolute;\r\n  display: inline-block;\r\n  height: 3px;\r\n  width: 24px;\r\n  background:#323232;\r\n}\r\n.cd-nav-trigger span {\r\n  /* line in the center */\r\n  position: absolute;\r\n  top: 50%;\r\n  right: 5px;\r\n  margin-top: -2px;\r\n  -webkit-transition: background 0.2s;\r\n  -moz-transition: background 0.2s;\r\n  transition: background 0.2s;\r\n}\r\n.cd-nav-trigger span::before, .cd-nav-trigger span::after {\r\n  /* other 2 lines */\r\n  content: '';\r\n  right: 0;\r\n  /* Force Hardware Acceleration in WebKit */\r\n  -webkit-transform: translateZ(0);\r\n  -moz-transform: translateZ(0);\r\n  -ms-transform: translateZ(0);\r\n  -o-transform: translateZ(0);\r\n  transform: translateZ(0);\r\n  -webkit-backface-visibility: hidden;\r\n  backface-visibility: hidden;\r\n  -webkit-transform-origin: 0% 50%;\r\n  -moz-transform-origin: 0% 50%;\r\n  -ms-transform-origin: 0% 50%;\r\n  -o-transform-origin: 0% 50%;\r\n  transform-origin: 0% 50%;\r\n  -webkit-transition: -webkit-transform 0.2s;\r\n  -moz-transition: -moz-transform 0.2s;\r\n  transition: transform 0.2s;\r\n}\r\n.cd-nav-trigger span::before {\r\n  /* menu icon top line */\r\n  top: -6px;\r\n}\r\n.cd-nav-trigger span::after {\r\n  /* menu icon bottom line */\r\n  top: 6px;\r\n}\r\n.cd-nav-trigger.nav-is-visible span {\r\n  /* hide line in the center */\r\n  background: rgba(255, 255, 255, 0);\r\n}\r\n.cd-nav-trigger.nav-is-visible span::before, .cd-nav-trigger.nav-is-visible span::after {\r\n  /* keep visible other 2 lines */\r\n  background: white;\r\n}\r\n.cd-nav-trigger.nav-is-visible span::before {\r\n  -webkit-transform: translateX(4px) translateY(-3px) rotate(45deg);\r\n  -moz-transform: translateX(4px) translateY(-3px) rotate(45deg);\r\n  -ms-transform: translateX(4px) translateY(-3px) rotate(45deg);\r\n  -o-transform: translateX(4px) translateY(-3px) rotate(45deg);\r\n  transform: translateX(4px) translateY(-3px) rotate(45deg);\r\n}\r\n.cd-nav-trigger.nav-is-visible span::after {\r\n  -webkit-transform: translateX(4px) translateY(2px) rotate(-45deg);\r\n  -moz-transform: translateX(4px) translateY(2px) rotate(-45deg);\r\n  -ms-transform: translateX(4px) translateY(2px) rotate(-45deg);\r\n  -o-transform: translateX(4px) translateY(2px) rotate(-45deg);\r\n  transform: translateX(4px) translateY(2px) rotate(-45deg);\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-nav-trigger {\r\n    display: none;\r\n  }\r\n}\r\n\r\n.cd-search {\r\n  position: relative;\r\n  margin: 1.2em 5% 0.6em;\r\n}\r\n.cd-search.is-hidden {\r\n  opacity: 0;\r\n}\r\n.cd-search::before {\r\n  /* lens icon */\r\n  content: '';\r\n  position: absolute;\r\n  left: 8px;\r\n  top: 50%;\r\n  bottom: auto;\r\n  -webkit-transform: translateY(-50%);\r\n  -moz-transform: translateY(-50%);\r\n  -ms-transform: translateY(-50%);\r\n  -o-transform: translateY(-50%);\r\n  transform: translateY(-50%);\r\n  height: 16px;\r\n  width: 16px;\r\n \r\n}\r\n.cd-search input {\r\n  padding-left: 32px;\r\n  width: 100%;\r\n  height: 36px;\r\n  border: none;\r\n  border-radius: .25em;\r\n  -webkit-appearance: none;\r\n  -moz-appearance: none;\r\n  -ms-appearance: none;\r\n  -o-appearance: none;\r\n  appearance: none;\r\n}\r\n.cd-search input:focus {\r\n  outline: none;\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-search {\r\n    float: left;\r\n    display: inline-block;\r\n    width: 250px;\r\n    height: 100%;\r\n    margin: 0 0 0 2.5em;\r\n  }\r\n  .cd-search.is-hidden {\r\n    /* reset style */\r\n    opacity: 1;\r\n  }\r\n  .cd-search::before {\r\n    background-position: 0 -16px;\r\n    left: 1em;\r\n  }\r\n  .cd-search form, .cd-search input {\r\n    height: 100%;\r\n    width: 100%;\r\n  }\r\n  .cd-search input {\r\n    border: none;\r\n    padding-left: 2.6em;\r\n    border-radius: 0;\r\n    background-color: #3e454c;\r\n    border-left: 1px solid #51575d;\r\n    color: #ffffff;\r\n  }\r\n  .cd-search input::-webkit-input-placeholder {\r\n    color: #777c81;\r\n  }\r\n  .cd-search input::-moz-placeholder {\r\n    color: #777c81;\r\n  }\r\n  .cd-search input:-moz-placeholder {\r\n    color: #777c81;\r\n  }\r\n  .cd-search input:-ms-input-placeholder {\r\n    color: #777c81;\r\n  }\r\n}\r\n\r\n/* -------------------------------- \r\n\r\nTop Navigation\r\n\r\n-------------------------------- */\r\n.cd-nav {\r\n  /* top nav - not visible on mobile devices */\r\n  display: none;\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-nav {\r\n    display: block;\r\n    float: right;\r\n    height: 100%;\r\n  }\r\n}\r\n\r\n.cd-top-nav > li > a::before {\r\n  /* reset style */\r\n  display: none;\r\n}\r\n.cd-top-nav > li a {\r\n  padding: 1em 5% !important;\r\n}\r\n.cd-top-nav img {\r\n  /* avatar image */\r\n  position: absolute;\r\n  left: 1.8em;\r\n  top: 50%;\r\n  bottom: auto;\r\n  -webkit-transform: translateY(-50%);\r\n  -moz-transform: translateY(-50%);\r\n  -ms-transform: translateY(-50%);\r\n  -o-transform: translateY(-50%);\r\n  transform: translateY(-50%);\r\n  height: 20px;\r\n  width: 20px;\r\n  border-radius: 50%;\r\n  display: none;\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-top-nav {\r\n    height: 100%;\r\n  }\r\n  .cd-top-nav a {\r\n    display: block;\r\n    font-size: 1.4rem;\r\n    color: #ffffff;\r\n  }\r\n  .cd-top-nav > li {\r\n    display: inline-block;\r\n    margin-right: 1em;\r\n    height: 100%;\r\n  }\r\n  .cd-top-nav > li:last-of-type {\r\n    margin-right: 0;\r\n  }\r\n  .cd-top-nav > li a {\r\n    padding: 1em .6em !important;\r\n  }\r\n  .cd-top-nav img {\r\n    display: block;\r\n  }\r\n}\r\n@media only screen and (min-width: 1170px) {\r\n  .cd-top-nav li:not(.has-children) a:hover {\r\n    color: #1784c7;\r\n  }\r\n}\r\n\r\n/* -------------------------------- \r\n\r\nSidebar\r\n\r\n-------------------------------- */\r\n.cd-side-nav {\r\n  position: fixed;\r\n  z-index: 1;\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%;\r\n  padding: 45px 0 0;\r\n  background-color: #323232;\r\n  visibility: hidden;\r\n  opacity: 0;\r\n  max-height: 100vh;\r\n  overflow: hidden;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;\r\n  -moz-transition: opacity 0.2s 0s, visibility 0s 0.2s;\r\n  transition: opacity 0.2s 0s, visibility 0s 0.2s;\r\n}\r\n.cd-side-nav.nav-is-visible {\r\n  opacity: 1;\r\n  visibility: visible;\r\n  overflow: visible;\r\n  -webkit-overflow-scrolling: touch;\r\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0s;\r\n  -moz-transition: opacity 0.2s 0s, visibility 0s 0s;\r\n  transition: opacity 0.2s 0s, visibility 0s 0s;\r\n  max-height: none;\r\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\r\n}\r\n.cd-side-nav > ul {\r\n  padding: 0.6em 0;\r\n}\r\n.cd-side-nav > ul:last-of-type {\r\n  padding-bottom: 0;\r\n}\r\n.cd-side-nav .cd-label, .cd-side-nav a {\r\n  display: block;\r\n  padding: 1em 5%;\r\n}\r\n\r\n.cd-side-nav a {\r\n  position: relative;\r\n  color: #ffffff;\r\n  font-size: 1.4rem;\r\n}\r\n.cd-side-nav ul.cd-top-nav > li:last-of-type > a {\r\n  border-bottom: none;\r\n}\r\n.cd-side-nav > ul > li > a {\r\n  padding-left: calc(5% + 24px);\r\n  border-bottom: 1px solid #373d44;\r\n}\r\n.cd-side-nav > ul > li > a::before {\r\n  /* icon before item name */\r\n  position: absolute;\r\n  content: '';\r\n  left: 5%;\r\n  top: 50%;\r\n  bottom: auto;\r\n  -webkit-transform: translateY(-50%);\r\n  -moz-transform: translateY(-50%);\r\n  -ms-transform: translateY(-50%);\r\n  -o-transform: translateY(-50%);\r\n  transform: translateY(-50%);\r\n  height: 16px;\r\n  width: 16px;\r\n  \r\n}\r\n.cd-side-nav > ul > li.overview > a::before {\r\n  background-position: -64px 0;\r\n}\r\n.cd-side-nav > ul > li.notifications > a::before {\r\n  background-position: -80px 0;\r\n}\r\n.cd-side-nav > ul > li.comments > a::before {\r\n  background-position: -48px 0;\r\n}\r\n.cd-side-nav > ul > li.bookmarks > a::before {\r\n  background-position: -32px 0;\r\n}\r\n.cd-side-nav > ul > li.images > a::before {\r\n  background-position: 0 0;\r\n}\r\n.cd-side-nav > ul > li.users > a::before {\r\n  background-position: -16px 0;\r\n}\r\n.cd-side-nav .count {\r\n  /* notification badge */\r\n  position: absolute;\r\n  top: 50%;\r\n  bottom: auto;\r\n  -webkit-transform: translateY(-50%);\r\n  -moz-transform: translateY(-50%);\r\n  -ms-transform: translateY(-50%);\r\n  -o-transform: translateY(-50%);\r\n  transform: translateY(-50%);\r\n  right: calc(5% + 16px + 0.4em);\r\n  padding: 0.2em 0.4em;\r\n  background-color: #ff7e66;\r\n  border-radius: .25em;\r\n  color: #ffffff;\r\n  font-weight: bold;\r\n  font-size: 1.2rem;\r\n  text-align: center;\r\n}\r\n.cd-side-nav .action-btn a {\r\n  display: block;\r\n  margin: 0 5%;\r\n  padding: 1em 0;\r\n  background-color: #1784c7;\r\n  border-radius: .25em;\r\n  border: none;\r\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);\r\n  text-align: center;\r\n  color: #ffffff;\r\n  font-weight: bold;\r\n}\r\n.cd-side-nav .action-btn a::before {\r\n  display: none;\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-side-nav {\r\n    \r\n    float: left;\r\n    top: fixed;\r\n    width: 110px;\r\n    min-height: 100vh;\r\n    padding-top: 55px;\r\n    /* reset style */\r\n    visibility: visible;\r\n    opacity: 1;\r\n    overflow: visible;\r\n    max-height: none;\r\n    position: fixed;\r\n  }\r\n  .cd-side-nav.nav-is-visible {\r\n    box-shadow: none;\r\n  }\r\n  .cd-side-nav.is-fixed {\r\n    position: fixed;\r\n  }\r\n  .cd-side-nav > ul {\r\n    /* reset style */\r\n    padding: 0;\r\n  }\r\n  .cd-side-nav .cd-label {\r\n    /* remove labels on minified version of the sidebar */\r\n    display: none;\r\n  }\r\n  .cd-side-nav a {\r\n    font-size: 1.2rem;\r\n    text-align: center;\r\n  }\r\n  .cd-side-nav > ul > li > a {\r\n    padding: calc(2.2em + 24px) 0 2.4em;\r\n  }\r\n  .cd-side-nav > ul > li > a::before {\r\n    left: 50%;\r\n    right: auto;\r\n    -webkit-transform: translateX(-50%);\r\n    -moz-transform: translateX(-50%);\r\n    -ms-transform: translateX(-50%);\r\n    -o-transform: translateX(-50%);\r\n    transform: translateX(-50%);\r\n    top: 2.4em;\r\n  }\r\n  .cd-side-nav .active > a {\r\n    /* current page */\r\n    box-shadow: inset 3px 0 0 #1784c7;\r\n    background-color: #33383e;\r\n  }\r\n  .cd-side-nav .action-btn a {\r\n    margin: 1em 10% 0;\r\n  }\r\n  .cd-side-nav .count {\r\n    height: 8px;\r\n    width: 8px;\r\n    border-radius: 50%;\r\n    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\r\n    padding: 0;\r\n    top: 2em;\r\n    -webkit-transform: translateX(-50%);\r\n    -moz-transform: translateX(-50%);\r\n    -ms-transform: translateX(-50%);\r\n    -o-transform: translateX(-50%);\r\n    transform: translateX(-50%);\r\n    left: calc(50% + 5px);\r\n    right: auto;\r\n    color: transparent;\r\n  }\r\n}\r\n@media only screen and (min-width: 1170px) {\r\n  .cd-side-nav {\r\n    width: 150px;\r\n    position: fixed;\r\n  }\r\n  .cd-logo img{\r\n    margin-left: -16px;\r\n    margin-top: 3px;\r\n  }\r\n  .cd-side-nav > ul {\r\n    padding: 0.6em 0;\r\n  }\r\n  .cd-side-nav > ul > li:not(.action-btn):hover > a {\r\n    background-color: #33383e;\r\n  }\r\n  .cd-side-nav > ul > li > a {\r\n    padding: 1em 1em 1em 42px;\r\n    text-align: left;\r\n    border-bottom: none;\r\n  }\r\n  .cd-side-nav > ul > li > a::before {\r\n    top: 50%;\r\n    bottom: auto;\r\n    -webkit-transform: translateY(-50%);\r\n    -moz-transform: translateY(-50%);\r\n    -ms-transform: translateY(-50%);\r\n    -o-transform: translateY(-50%);\r\n    transform: translateY(-50%);\r\n    left: 18px;\r\n  }\r\n  .cd-side-nav .cd-label {\r\n    display: block;\r\n    padding: 1em 18px;\r\n  }\r\n  .cd-side-nav .action-btn {\r\n    text-align: left;\r\n  }\r\n  .cd-side-nav .action-btn a {\r\n    margin: 0 18px;\r\n  }\r\n  .no-touch .cd-side-nav .action-btn a:hover {\r\n    background-color: #1a93de;\r\n  }\r\n  .cd-side-nav .count {\r\n    /* reset style */\r\n    color: #ffffff;\r\n    height: auto;\r\n    width: auto;\r\n    border-radius: .25em;\r\n    padding: .2em .4em;\r\n    top: 50%;\r\n    bottom: auto;\r\n    -webkit-transform: translateY(-50%);\r\n    -moz-transform: translateY(-50%);\r\n    -ms-transform: translateY(-50%);\r\n    -o-transform: translateY(-50%);\r\n    transform: translateY(-50%);\r\n    right: 18px;\r\n    left: auto;\r\n    box-shadow: none;\r\n  }\r\n}\r\n\r\n.has-children ul {\r\n  position: relative;\r\n  width: 100%;\r\n  display: none;\r\n  background-color: #1c1f22;\r\n}\r\n.has-children > a::after {\r\n  /* arrow icon */\r\n  position: absolute;\r\n  content: '';\r\n  height: 16px;\r\n  width: 16px;\r\n  right: 5%;\r\n  top: 50%;\r\n  bottom: auto;\r\n  -webkit-transform: translateY(-50%);\r\n  -moz-transform: translateY(-50%);\r\n  -ms-transform: translateY(-50%);\r\n  -o-transform: translateY(-50%);\r\n  transform: translateY(-50%);\r\n  \r\n}\r\n.has-children.selected > ul {\r\n  display: block;\r\n}\r\n.has-children.selected > a::after {\r\n  -webkit-transform: translateY(-50%) rotate(180deg);\r\n  -moz-transform: translateY(-50%) rotate(180deg);\r\n  -ms-transform: translateY(-50%) rotate(180deg);\r\n  -o-transform: translateY(-50%) rotate(180deg);\r\n  transform: translateY(-50%) rotate(180deg);\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .has-children {\r\n    position: relative;\r\n  }\r\n  .has-children ul {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 100%;\r\n    width: 160px;\r\n    padding: 0;\r\n    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);\r\n  }\r\n  .has-children ul a {\r\n    text-align: left;\r\n    border: none;\r\n    padding: 1em;\r\n  }\r\n \r\n  \r\n  .no-touch .has-children ul a:hover {\r\n    color: #1784c7;\r\n  }\r\n  .has-children > a::after {\r\n    display: none;\r\n    color: black;\r\n  }\r\n  .cd-side-nav .has-children.selected > a {\r\n    /* focus state -> show sub pages */\r\n    background-color: #33383e;\r\n  }\r\n  .cd-top-nav .has-children {\r\n    position: relative;\r\n    background-color: #323232;\r\n\r\n  }\r\n  .cd-top-nav .has-children > a {\r\n    height: 100%;\r\n    padding: 0 calc(1.8em + 22px) 0 calc(1.8em + 26px) !important;\r\n    line-height: 55px;\r\n  }\r\n  .cd-top-nav .has-children > a::after {\r\n    display: block;\r\n    right: 1.8em;\r\n  }\r\n  .cd-top-nav .has-children ul {\r\n    background-color: #1c1f22;\r\n    width: 200px;\r\n    top: 100%;\r\n    right: 0;\r\n    left: auto;\r\n    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);\r\n  }\r\n  .cd-top-nav .has-children ul a {\r\n    padding-left: 18px !important;\r\n  }\r\n}\r\n@media only screen and (min-width: 1170px) {\r\n  .has-children > ul {\r\n    width: 100%;\r\n    z-index: 1;\r\n  }\r\n  .has-children ul a {\r\n    padding-left: 18px;\r\n  }\r\n  .has-children.active > ul {\r\n    /* if the item is active, make the subnavigation visible */\r\n    position: relative;\r\n    display: block;\r\n    /* reset style */\r\n    left: 0;\r\n    box-shadow: none;\r\n  }\r\n  .no-touch .cd-side-nav .has-children:hover > ul, .cd-side-nav .has-children.hover > ul {\r\n    /* show subnavigation on hover */\r\n    display: block;\r\n    opacity: 1;\r\n    visibility: visible;\r\n  }\r\n}\r\n\r\n\r\n</style>\r\n\r\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 85 */
+/* 90 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20141,7 +20303,7 @@ var render = function() {
               {
                 on: {
                   click: function($event) {
-                    _vm.$parent.updateView("")
+                    _vm.$parent.updateView("create-project")
                   }
                 }
               },
@@ -20155,11 +20317,11 @@ var render = function() {
               {
                 on: {
                   click: function($event) {
-                    _vm.$parent.updateView("create-project")
+                    _vm.$parent.updateView("create-roles")
                   }
                 }
               },
-              [_c("i", { staticClass: "fa fa-user" }), _vm._v(" Project")]
+              [_c("i", { staticClass: "fa fa-user" }), _vm._v(" Roles")]
             )
           ]),
           _vm._v(" "),
@@ -20169,11 +20331,11 @@ var render = function() {
               {
                 on: {
                   click: function($event) {
-                    _vm.$parent.updateView("create-roles")
+                    _vm.$parent.updateView("add-hours")
                   }
                 }
               },
-              [_c("i", { staticClass: "fa fa-user" }), _vm._v(" Admin")]
+              [_c("i", { staticClass: "fa fa-user" }), _vm._v(" Time")]
             )
           ])
         ])
@@ -20219,17 +20381,184 @@ if (false) {
 }
 
 /***/ }),
-/* 86 */
+/* 91 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_paidBonus_vue__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_viewRole_vue__ = __webpack_require__(19);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_248ddd73_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_paidBonus_vue__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_35c28d2b_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_viewRole_vue__ = __webpack_require__(94);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(87)
+  __webpack_require__(92)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-35c28d2b"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_viewRole_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_35c28d2b_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_viewRole_vue__["a" /* default */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src\\components\\viewRole.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-35c28d2b", Component.options)
+  } else {
+    hotAPI.reload("data-v-35c28d2b", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+/* 92 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(93);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("0f3690d4", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-35c28d2b\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./viewRole.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-35c28d2b\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./viewRole.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 93 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(true);
+// imports
+
+
+// module
+exports.push([module.i, "\n.mainDiv[data-v-35c28d2b]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.header[data-v-35c28d2b]{\r\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-35c28d2b]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-35c28d2b]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-35c28d2b]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-35c28d2b]:hover{\r\n  border-color: #929292;\n}\na[data-v-35c28d2b]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/viewRole.vue"],"names":[],"mappings":";AAoBA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"viewRole.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n      <div  class=\"header\">\r\n\t       <ul>\r\n           <li><a v-on:click=\"$parent.updateView('create-roles')\" >Create roles</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('modify-roles')\">Modify Roles</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('view-roles')\" style=\"color:#4bc800\">View Roles</a></li>\r\n          </ul>\r\n      </div>   \r\n\t\t<h1>view roles</h1>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\n\r\nexport default {\r\n  name: 'view-roles'\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
+
+// exports
+
+
+/***/ }),
+/* 94 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "mainDiv" }, [
+    _c("div", { staticClass: "header" }, [
+      _c("ul", [
+        _c("li", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("create-roles")
+                }
+              }
+            },
+            [_vm._v("Create roles")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("modify-roles")
+                }
+              }
+            },
+            [_vm._v("Modify Roles")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              staticStyle: { color: "#4bc800" },
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("view-roles")
+                }
+              }
+            },
+            [_vm._v("View Roles")]
+          )
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("h1", [_vm._v("view roles")])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-35c28d2b", esExports)
+  }
+}
+
+/***/ }),
+/* 95 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_paidBonus_vue__ = __webpack_require__(20);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_248ddd73_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_paidBonus_vue__ = __webpack_require__(98);
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(96)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -20275,13 +20604,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 87 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(88);
+var content = __webpack_require__(97);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -20301,7 +20630,7 @@ if(false) {
 }
 
 /***/ }),
-/* 88 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -20315,7 +20644,7 @@ exports.push([module.i, "\n.mainDiv[data-v-248ddd73]{\r\n     \r\n     margin-to
 
 
 /***/ }),
-/* 89 */
+/* 98 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20459,17 +20788,17 @@ if (false) {
 }
 
 /***/ }),
-/* 90 */
+/* 99 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_allBonus_vue__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_allBonus_vue__ = __webpack_require__(21);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_231c1c24_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_allBonus_vue__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_231c1c24_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_allBonus_vue__ = __webpack_require__(102);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(91)
+  __webpack_require__(100)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -20515,13 +20844,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 91 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(92);
+var content = __webpack_require__(101);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -20541,7 +20870,7 @@ if(false) {
 }
 
 /***/ }),
-/* 92 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -20555,7 +20884,7 @@ exports.push([module.i, "\n.mainDiv[data-v-231c1c24]{\r\n     \r\n     margin-to
 
 
 /***/ }),
-/* 93 */
+/* 102 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20699,17 +21028,17 @@ if (false) {
 }
 
 /***/ }),
-/* 94 */
+/* 103 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_viewCustomer_vue__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_viewCustomer_vue__ = __webpack_require__(22);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1b9ec213_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_viewCustomer_vue__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1b9ec213_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_viewCustomer_vue__ = __webpack_require__(106);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(95)
+  __webpack_require__(104)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -20755,13 +21084,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 95 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(96);
+var content = __webpack_require__(105);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -20781,7 +21110,7 @@ if(false) {
 }
 
 /***/ }),
-/* 96 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -20789,13 +21118,13 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-1b9ec213]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     /*height: 200px;*/\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 40px;\n}\n.custab[data-v-1b9ec213]{\r\n    border: 1px solid #ccc;\r\n    padding: 5px;\r\n    margin: 5% 0;\r\n    -webkit-box-shadow: 3px 3px 2px #ccc;\r\n            box-shadow: 3px 3px 2px #ccc;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\n}\n.custab[data-v-1b9ec213]:hover{\r\n    -webkit-box-shadow: 3px 3px 0px transparent;\r\n            box-shadow: 3px 3px 0px transparent;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\n}\ntr[data-v-1b9ec213]:nth-child(even){\r\n      background-color: #f9f9f9;\n}\n.header[data-v-1b9ec213]{\r\n  border-bottom: 1px solid #ebebeb;\n}\ntd[data-v-1b9ec213]{\r\n    padding: 8px;\r\n    line-height: 1.42857143;\r\n    vertical-align: top;\r\n    border-top: 1px solid #ddd;\n}\nul[data-v-1b9ec213]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-1b9ec213]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-1b9ec213]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-1b9ec213]:hover{\r\n  border-color: #929292;\n}\n.header_a[data-v-1b9ec213]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}  \r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/viewCustomer.vue"],"names":[],"mappings":";AA6FA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,kBAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;IACA,uBAAA;IACA,aAAA;IACA,aAAA;IACA,qCAAA;YAAA,6BAAA;IACA,yBAAA;IAAA,iBAAA;CACA;AACA;IACA,4CAAA;YAAA,oCAAA;IACA,yBAAA;IAAA,iBAAA;CACA;AACA;MACA,0BAAA;CACA;AACA;EACA,iCAAA;CAEA;AACA;IACA,aAAA;IACA,wBAAA;IACA,oBAAA;IACA,2BAAA;CACA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AAEA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"viewCustomer.vue","sourcesContent":["<template >\r\n\t\r\n    <div class=\"mainDiv\"> \r\n\t\t<!-- <h1>Create a Customer</h1> -->\r\n          <div  class=\"header\">\r\n            <ul>\r\n                  <li><a class=\"header_a\" v-on:click=\"$parent.updateView('create-customer')\">Add customer</a></li>\r\n                  <li><a class=\"header_a\" v-on:click=\"$parent.updateView('view-customer')\" style=\"color:#4bc800\" >View customer</a></li>\r\n                  \r\n                </ul>\r\n          </div> \r\n          <div  class=\"container\">\r\n                <div class=\"row col-md-10 custyle\">\r\n                    <table class=\"table table-striped custab\">\r\n                          <thead>\r\n                              <tr>\r\n                                  <th>CustomerID</th>\r\n                                  <th>CustomerName</th>\r\n                                  <th>DateCreated</th>\r\n                                  <th>DateCreated</th>\r\n                                  <th>DateCreated</th>\r\n                                  <th class=\"text-center\">Action</th>\r\n                              </tr>\r\n                          </thead>\r\n                            <tr v-for=\"customer in customers\">\r\n                            \r\n                                <td>{{ customer.customer_id }} </td>\r\n                                <td>{{ customer.customer_name }}</td>\r\n                                <td>{{ customer.date_created }}</td>\r\n                                <td>{{ customer.created_by_id }}</td>\r\n                                <td>{{ customer.date_modified }}</td>\r\n                                <td class=\"text-center\"><a class='btn btn-info btn-xs' href=\"#\"><span class=\"glyphicon glyphicon-edit\"></span> Edit</a> <a href=\"#\" @click=\"deletecustomer(customer)\" class=\"btn btn-danger btn-xs\"><span class=\"glyphicon glyphicon-remove\"></span> Del\r\n                                </a>\r\n                                </td>\r\n                              \r\n                            </tr>\r\n                         \r\n                    </table>\r\n                </div>\r\n          </div>\r\n    \r\n\t\t</div> \r\n      \r\n  \r\n</template>\r\n<script>\r\n\r\n    import axios from 'axios';\r\n\r\n    export default {\r\n      name: 'view-customer',\r\n      props: [\"user\"],\r\n      data() {\r\n        return {\r\n          customer_id:'',\r\n          customers: ''\r\n        }\r\n      },\r\n    methods: {\r\n       deletecustomer (customer) {\r\n        // open the modal using the refs\r\n         this.customer_id = customer.customer_id;\r\n           axios({\r\n            method: 'delete',\r\n            url: '/customers/delete',\r\n            data: {\r\n              customer_id: this.customer_id\r\n            }\r\n          })\r\n          .then(req => {\r\n            this.customer_id = '';\r\n            this.getData();\r\n          })\r\n          .catch(err => {\r\n            console.log(err);\r\n          })\r\n       } ,\r\n       getData: function(){\r\n       axios.get('/customers')\r\n        .then(req => {\r\n          this.customers = req.data.customers;\r\n          console.log(req.data.customers);\r\n        })\r\n     }   \r\n      },\r\n      beforeMount(){\r\n        this.getData(); \r\n      }\r\n     \r\n    };\r\n</script>\r\n\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     /*height: 200px;*/\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 40px;\r\n\r\n}\r\n.custab{\r\n    border: 1px solid #ccc;\r\n    padding: 5px;\r\n    margin: 5% 0;\r\n    box-shadow: 3px 3px 2px #ccc;\r\n    transition: 0.5s;\r\n    }\r\n.custab:hover{\r\n    box-shadow: 3px 3px 0px transparent;\r\n    transition: 0.5s;\r\n    }\r\n  tr:nth-child(even){\r\n      background-color: #f9f9f9;\r\n    }\r\n  .header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\ntd{\r\n    padding: 8px;\r\n    line-height: 1.42857143;\r\n    vertical-align: top;\r\n    border-top: 1px solid #ddd;\r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\n\r\n.header_a{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}  \r\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-1b9ec213]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     /*height: 200px;*/\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 40px;\n}\n.custab[data-v-1b9ec213]{\r\n    border: 1px solid #ccc;\r\n    padding: 5px;\r\n    margin: 5% 0;\r\n    -webkit-box-shadow: 3px 3px 2px #ccc;\r\n            box-shadow: 3px 3px 2px #ccc;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\n}\n.custab[data-v-1b9ec213]:hover{\r\n    -webkit-box-shadow: 3px 3px 0px transparent;\r\n            box-shadow: 3px 3px 0px transparent;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\n}\ntr[data-v-1b9ec213]:nth-child(even){\r\n      background-color: #f9f9f9;\n}\n.header[data-v-1b9ec213]{\r\n  border-bottom: 1px solid #ebebeb;\n}\ntd[data-v-1b9ec213]{\r\n    padding: 8px;\r\n    line-height: 1.42857143;\r\n    vertical-align: top;\r\n    border-top: 1px solid #ddd;\n}\nul[data-v-1b9ec213]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-1b9ec213]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-1b9ec213]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-1b9ec213]:hover{\r\n  border-color: #929292;\n}\n.header_a[data-v-1b9ec213]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}  \r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/viewCustomer.vue"],"names":[],"mappings":";AA6FA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,kBAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;IACA,uBAAA;IACA,aAAA;IACA,aAAA;IACA,qCAAA;YAAA,6BAAA;IACA,yBAAA;IAAA,iBAAA;CACA;AACA;IACA,4CAAA;YAAA,oCAAA;IACA,yBAAA;IAAA,iBAAA;CACA;AACA;MACA,0BAAA;CACA;AACA;EACA,iCAAA;CAEA;AACA;IACA,aAAA;IACA,wBAAA;IACA,oBAAA;IACA,2BAAA;CACA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AAEA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"viewCustomer.vue","sourcesContent":["<template >\r\n\t\r\n    <div class=\"mainDiv\"> \r\n\t\t<!-- <h1>Create a Customer</h1> -->\r\n          <div  class=\"header\">\r\n            <ul>\r\n                  <li><a class=\"header_a\" v-on:click=\"$parent.updateView('create-customer')\">Add customer</a></li>\r\n                  <li><a class=\"header_a\" v-on:click=\"$parent.updateView('view-customer')\" style=\"color:#4bc800\" >View customer</a></li>\r\n                  <li><a class=\"header_a\" v-on:click=\"$parent.updateView('modify-customer')\" >Modify customer</a></li>\r\n                </ul>\r\n          </div> \r\n          <div  class=\"container\">\r\n                <div class=\"row col-md-10 custyle\">\r\n                    <table class=\"table table-striped custab\">\r\n                          <thead>\r\n                              <tr>\r\n                                  <th>CustomerID</th>\r\n                                  <th>CustomerName</th>\r\n                                  <th>DateCreated</th>\r\n                                  <th>DateCreated</th>\r\n                                  <th>DateCreated</th>\r\n                                  <th class=\"text-center\">Action</th>\r\n                              </tr>\r\n                          </thead>\r\n                            <tr v-for=\"customer in customers\">\r\n                            \r\n                                <td>{{ customer.customer_id }} </td>\r\n                                <td>{{ customer.customer_name }}</td>\r\n                                <td>{{ customer.date_created }}</td>\r\n                                <td>{{ customer.created_by_id }}</td>\r\n                                <td>{{ customer.date_modified }}</td>\r\n                                <td class=\"text-center\"><a class='btn btn-info btn-xs' href=\"#\"><span class=\"glyphicon glyphicon-edit\"></span> Edit</a> <a href=\"#\" @click=\"deletecustomer(customer)\" class=\"btn btn-danger btn-xs\"><span class=\"glyphicon glyphicon-remove\"></span> Del\r\n                                </a>\r\n                                </td>\r\n                              \r\n                            </tr>\r\n                         \r\n                    </table>\r\n                </div>\r\n          </div>\r\n    \r\n\t\t</div> \r\n      \r\n  \r\n</template>\r\n<script>\r\n\r\n    import axios from 'axios';\r\n\r\n    export default {\r\n      name: 'view-customer',\r\n      props: [\"user\"],\r\n      data() {\r\n        return {\r\n          customer_id:'',\r\n          customers: ''\r\n        }\r\n      },\r\n    methods: {\r\n       deletecustomer (customer) {\r\n        // open the modal using the refs\r\n         this.customer_id = customer.customer_id;\r\n           axios({\r\n            method: 'delete',\r\n            url: '/customers/delete',\r\n            data: {\r\n              customer_id: this.customer_id\r\n            }\r\n          })\r\n          .then(req => {\r\n            this.customer_id = '';\r\n            this.getData();\r\n          })\r\n          .catch(err => {\r\n            console.log(err);\r\n          })\r\n       } ,\r\n       getData: function(){\r\n       axios.get('/customers')\r\n        .then(req => {\r\n          this.customers = req.data.customers;\r\n          console.log(req.data.customers);\r\n        })\r\n     }   \r\n      },\r\n      beforeMount(){\r\n        this.getData(); \r\n      }\r\n     \r\n    };\r\n</script>\r\n\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     /*height: 200px;*/\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 40px;\r\n\r\n}\r\n.custab{\r\n    border: 1px solid #ccc;\r\n    padding: 5px;\r\n    margin: 5% 0;\r\n    box-shadow: 3px 3px 2px #ccc;\r\n    transition: 0.5s;\r\n    }\r\n.custab:hover{\r\n    box-shadow: 3px 3px 0px transparent;\r\n    transition: 0.5s;\r\n    }\r\n  tr:nth-child(even){\r\n      background-color: #f9f9f9;\r\n    }\r\n  .header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\ntd{\r\n    padding: 8px;\r\n    line-height: 1.42857143;\r\n    vertical-align: top;\r\n    border-top: 1px solid #ddd;\r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\n\r\n.header_a{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}  \r\n</style>"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 97 */
+/* 106 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20834,6 +21163,21 @@ var render = function() {
               }
             },
             [_vm._v("View customer")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              staticClass: "header_a",
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("modify-customer")
+                }
+              }
+            },
+            [_vm._v("Modify customer")]
           )
         ])
       ])
@@ -20931,17 +21275,17 @@ if (false) {
 }
 
 /***/ }),
-/* 98 */
+/* 107 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_viewInstaller_vue__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_viewInstaller_vue__ = __webpack_require__(23);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_d4e9e9ba_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_viewInstaller_vue__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_d4e9e9ba_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_viewInstaller_vue__ = __webpack_require__(110);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(99)
+  __webpack_require__(108)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -20987,13 +21331,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 99 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(100);
+var content = __webpack_require__(109);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -21013,7 +21357,7 @@ if(false) {
 }
 
 /***/ }),
-/* 100 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -21021,13 +21365,13 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-d4e9e9ba]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     /*height: 200px;*/\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 40px;\n}\n.custab[data-v-d4e9e9ba]{\r\n    border: 1px solid #ccc;\r\n    padding: 5px;\r\n    margin: 5% 0;\r\n    -webkit-box-shadow: 3px 3px 2px #ccc;\r\n            box-shadow: 3px 3px 2px #ccc;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\n}\n.custab[data-v-d4e9e9ba]:hover{\r\n    -webkit-box-shadow: 3px 3px 0px transparent;\r\n            box-shadow: 3px 3px 0px transparent;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\n}\ntr[data-v-d4e9e9ba]:nth-child(even){\r\n      background-color: #f9f9f9;\n}\n.header[data-v-d4e9e9ba]{\r\n  border-bottom: 1px solid #ebebeb;\n}\ntd[data-v-d4e9e9ba]{\r\n    padding: 8px;\r\n    line-height: 1.42857143;\r\n    vertical-align: top;\r\n    border-top: 1px solid #ddd;\n}\nul[data-v-d4e9e9ba]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-d4e9e9ba]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-d4e9e9ba]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-d4e9e9ba]:hover{\r\n  border-color: #929292;\n}\n.header_a[data-v-d4e9e9ba]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}  \r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/viewInstaller.vue"],"names":[],"mappings":";AA0GA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,kBAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;IACA,uBAAA;IACA,aAAA;IACA,aAAA;IACA,qCAAA;YAAA,6BAAA;IACA,yBAAA;IAAA,iBAAA;CACA;AACA;IACA,4CAAA;YAAA,oCAAA;IACA,yBAAA;IAAA,iBAAA;CACA;AACA;MACA,0BAAA;CACA;AACA;EACA,iCAAA;CAEA;AACA;IACA,aAAA;IACA,wBAAA;IACA,oBAAA;IACA,2BAAA;CACA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AAEA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"viewInstaller.vue","sourcesContent":["<template>\r\n    <div class=\"mainDiv\">\r\n        <div  class=\"header\">\r\n           <ul>\r\n              <li><a class=\"header_a\" v-on:click=\"$parent.updateView('add-installer')\"  >Add installer</a></li>\r\n              <li><a class=\"header_a\" v-on:click=\"$parent.updateView('view-installer')\" style=\"color:#4bc800\" >View installer</a></li>\r\n              \r\n            </ul>\r\n        </div>\r\n        <div class=\"container\">\r\n                <div class=\"row col-md-10 custyle\">\r\n                    <table class=\"table table-striped custab\">\r\n                          <thead>\r\n                              <tr>\r\n                                  <th>InstallerID</th>\r\n                                  <th>FirstName</th>\r\n                                  <th>LastName</th>\r\n                                  <th>CurrentWage</th>\r\n                                  <th>Role</th>\r\n                                  <th class=\"text-center\">Action</th>\r\n                              </tr>\r\n                          </thead>\r\n                            <tr v-for=\"installer in installers\">\r\n                                <td>{{installer.installer_id}}</td>\r\n                                <td>{{installer.first_name}}</td>\r\n                                <td>{{installer.last_name}}</td>\r\n                                <td>{{installer.current_wage}}</td>\r\n                                <td>{{installer.fk_installer_role_id}}</td>\r\n                                <td class=\"text-center\"><a class='btn btn-info btn-xs' href=\"#\"><span class=\"glyphicon glyphicon-edit\"></span> Edit</a> <a href=\"#\" @click=\"deleteinstaller(installer)\" class=\"btn btn-danger btn-xs\"><span class=\"glyphicon glyphicon-remove\"></span> Del</a></td>\r\n                            </tr>\r\n                            \r\n                    </table>\r\n                </div>\r\n        </div>          \r\n    </div>\r\n</template>\r\n<script>\r\n    import axios from 'axios';\r\n    export default {\r\n      name: 'view-installer',\r\n      data() {\r\n        return {\r\n          installer_id:'',\r\n          installers: '',\r\n          roles: ''\r\n        }\r\n      },\r\n    methods: {\r\n       deleteinstaller (installer) {\r\n        // open the modal using the refs\r\n         this.installer_id = installer.installer_id;\r\n           axios({\r\n            method: 'delete',\r\n            url: '/installers/delete',\r\n            data: {\r\n              installer_id: this.installer_id\r\n            }\r\n          })\r\n          .then(req => {\r\n            this.installer_id = '';\r\n            this.getData();\r\n          })\r\n          .catch(err => {\r\n            console.log(err);\r\n          })\r\n       } ,\r\n       getData: function(){\r\n       axios.get('/installers')\r\n        .then(req => {\r\n          this.installers = req.data.installers;\r\n          console.log(req.data.installers);\r\n        })\r\n      },\r\n      getRoleName: function(roleid){\r\n         var role_name = \"\";\r\n        for (var i=0; this.roles.length ; i++) {\r\n            if(this.roles[i].installer_role_id==roleid){\r\n             role_name= this.roles[i].installer_role_name;\r\n\r\n            }\r\n          return role_name;  \r\n         }\r\n      }   \r\n      },\r\n      beforeMount(){\r\n       \r\n        //Get role list\r\n        axios({\r\n          method: 'get',\r\n          url: '/installers/roles'\r\n        })\r\n        .then(req => {\r\n          this.roles = req.data.roles;\r\n          this.getData();\r\n        })\r\n        .catch(err => {\r\n          console.log(err);\r\n        });\r\n\r\n         \r\n      }\r\n     \r\n    };\r\n</script>\r\n\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     /*height: 200px;*/\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 40px;\r\n\r\n}\r\n.custab{\r\n    border: 1px solid #ccc;\r\n    padding: 5px;\r\n    margin: 5% 0;\r\n    box-shadow: 3px 3px 2px #ccc;\r\n    transition: 0.5s;\r\n    }\r\n.custab:hover{\r\n    box-shadow: 3px 3px 0px transparent;\r\n    transition: 0.5s;\r\n    }\r\n  tr:nth-child(even){\r\n      background-color: #f9f9f9;\r\n    }\r\n  .header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\ntd{\r\n    padding: 8px;\r\n    line-height: 1.42857143;\r\n    vertical-align: top;\r\n    border-top: 1px solid #ddd;\r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\n\r\n.header_a{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}  \r\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-d4e9e9ba]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     /*height: 200px;*/\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 40px;\n}\n.custab[data-v-d4e9e9ba]{\r\n    border: 1px solid #ccc;\r\n    padding: 5px;\r\n    margin: 5% 0;\r\n    -webkit-box-shadow: 3px 3px 2px #ccc;\r\n            box-shadow: 3px 3px 2px #ccc;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\n}\n.custab[data-v-d4e9e9ba]:hover{\r\n    -webkit-box-shadow: 3px 3px 0px transparent;\r\n            box-shadow: 3px 3px 0px transparent;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\n}\ntr[data-v-d4e9e9ba]:nth-child(even){\r\n      background-color: #f9f9f9;\n}\n.header[data-v-d4e9e9ba]{\r\n  border-bottom: 1px solid #ebebeb;\n}\ntd[data-v-d4e9e9ba]{\r\n    padding: 8px;\r\n    line-height: 1.42857143;\r\n    vertical-align: top;\r\n    border-top: 1px solid #ddd;\n}\nul[data-v-d4e9e9ba]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-d4e9e9ba]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-d4e9e9ba]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-d4e9e9ba]:hover{\r\n  border-color: #929292;\n}\n.header_a[data-v-d4e9e9ba]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}  \r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/viewInstaller.vue"],"names":[],"mappings":";AA2GA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,kBAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;IACA,uBAAA;IACA,aAAA;IACA,aAAA;IACA,qCAAA;YAAA,6BAAA;IACA,yBAAA;IAAA,iBAAA;CACA;AACA;IACA,4CAAA;YAAA,oCAAA;IACA,yBAAA;IAAA,iBAAA;CACA;AACA;MACA,0BAAA;CACA;AACA;EACA,iCAAA;CAEA;AACA;IACA,aAAA;IACA,wBAAA;IACA,oBAAA;IACA,2BAAA;CACA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AAEA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"viewInstaller.vue","sourcesContent":["<template>\r\n    <div class=\"mainDiv\">\r\n        <div  class=\"header\">\r\n           <ul>\r\n              <li><a class=\"header_a\" v-on:click=\"$parent.updateView('add-installer')\"  >Add installer</a></li>\r\n              <li><a class=\"header_a\" v-on:click=\"$parent.updateView('view-installer')\" style=\"color:#4bc800\" >View installer</a></li>\r\n              <li><a v-on:click=\"$parent.updateView('modify-installer')\"  >Modify installer</a></li>\r\n              \r\n            </ul>\r\n        </div>\r\n        <div class=\"container\">\r\n                <div class=\"row col-md-10 custyle\">\r\n                    <table class=\"table table-striped custab\">\r\n                          <thead>\r\n                              <tr>\r\n                                  <th>InstallerID</th>\r\n                                  <th>FirstName</th>\r\n                                  <th>LastName</th>\r\n                                  <th>CurrentWage</th>\r\n                                  <th>Role</th>\r\n                                  <th class=\"text-center\">Action</th>\r\n                              </tr>\r\n                          </thead>\r\n                            <tr v-for=\"installer in installers\">\r\n                                <td>{{installer.installer_id}}</td>\r\n                                <td>{{installer.first_name}}</td>\r\n                                <td>{{installer.last_name}}</td>\r\n                                <td>{{installer.current_wage}}</td>\r\n                                <td>{{installer.fk_installer_role_id}}</td>\r\n                                <td class=\"text-center\"><a class='btn btn-info btn-xs' href=\"#\"><span class=\"glyphicon glyphicon-edit\"></span> Edit</a> <a href=\"#\" @click=\"deleteinstaller(installer)\" class=\"btn btn-danger btn-xs\"><span class=\"glyphicon glyphicon-remove\"></span> Del</a></td>\r\n                            </tr>\r\n                            \r\n                    </table>\r\n                </div>\r\n        </div>          \r\n    </div>\r\n</template>\r\n<script>\r\n    import axios from 'axios';\r\n    export default {\r\n      name: 'view-installer',\r\n      data() {\r\n        return {\r\n          installer_id:'',\r\n          installers: '',\r\n          roles: ''\r\n        }\r\n      },\r\n    methods: {\r\n       deleteinstaller (installer) {\r\n        // open the modal using the refs\r\n         this.installer_id = installer.installer_id;\r\n           axios({\r\n            method: 'delete',\r\n            url: '/installers/delete',\r\n            data: {\r\n              installer_id: this.installer_id\r\n            }\r\n          })\r\n          .then(req => {\r\n            this.installer_id = '';\r\n            this.getData();\r\n          })\r\n          .catch(err => {\r\n            console.log(err);\r\n          })\r\n       } ,\r\n       getData: function(){\r\n       axios.get('/installers')\r\n        .then(req => {\r\n          this.installers = req.data.installers;\r\n          console.log(req.data.installers);\r\n        })\r\n      },\r\n      getRoleName: function(roleid){\r\n         var role_name = \"\";\r\n        for (var i=0; this.roles.length ; i++) {\r\n            if(this.roles[i].installer_role_id==roleid){\r\n             role_name= this.roles[i].installer_role_name;\r\n\r\n            }\r\n          return role_name;  \r\n         }\r\n      }   \r\n      },\r\n      beforeMount(){\r\n       \r\n        //Get role list\r\n        axios({\r\n          method: 'get',\r\n          url: '/installers/roles'\r\n        })\r\n        .then(req => {\r\n          this.roles = req.data.roles;\r\n          this.getData();\r\n        })\r\n        .catch(err => {\r\n          console.log(err);\r\n        });\r\n\r\n         \r\n      }\r\n     \r\n    };\r\n</script>\r\n\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     /*height: 200px;*/\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 40px;\r\n\r\n}\r\n.custab{\r\n    border: 1px solid #ccc;\r\n    padding: 5px;\r\n    margin: 5% 0;\r\n    box-shadow: 3px 3px 2px #ccc;\r\n    transition: 0.5s;\r\n    }\r\n.custab:hover{\r\n    box-shadow: 3px 3px 0px transparent;\r\n    transition: 0.5s;\r\n    }\r\n  tr:nth-child(even){\r\n      background-color: #f9f9f9;\r\n    }\r\n  .header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\ntd{\r\n    padding: 8px;\r\n    line-height: 1.42857143;\r\n    vertical-align: top;\r\n    border-top: 1px solid #ddd;\r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\n\r\n.header_a{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}  \r\n</style>"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 101 */
+/* 110 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21066,6 +21410,20 @@ var render = function() {
               }
             },
             [_vm._v("View installer")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("modify-installer")
+                }
+              }
+            },
+            [_vm._v("Modify installer")]
           )
         ])
       ])
@@ -21163,17 +21521,184 @@ if (false) {
 }
 
 /***/ }),
-/* 102 */
+/* 111 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_addUser_vue__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_modifyInstaller_vue__ = __webpack_require__(24);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4d71464c_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_addUser_vue__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5e2ccd2e_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_modifyInstaller_vue__ = __webpack_require__(114);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(103)
+  __webpack_require__(112)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-5e2ccd2e"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_modifyInstaller_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5e2ccd2e_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_modifyInstaller_vue__["a" /* default */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src\\components\\modifyInstaller.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5e2ccd2e", Component.options)
+  } else {
+    hotAPI.reload("data-v-5e2ccd2e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+/* 112 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(113);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("553e1c86", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5e2ccd2e\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./modifyInstaller.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5e2ccd2e\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./modifyInstaller.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 113 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(true);
+// imports
+
+
+// module
+exports.push([module.i, "\n.mainDiv[data-v-5e2ccd2e]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.header[data-v-5e2ccd2e]{\r\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-5e2ccd2e]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-5e2ccd2e]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-5e2ccd2e]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-5e2ccd2e]:hover{\r\n  border-color: #929292;\n}\na[data-v-5e2ccd2e]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/modifyInstaller.vue"],"names":[],"mappings":";AAsBA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyInstaller.vue","sourcesContent":["<template>\r\n  <div class=\"mainDiv\">\r\n      <div  class=\"header\">\r\n         <ul>\r\n            <li><a v-on:click=\"$parent.updateView('add-installer')\"  >Add installer</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('view-installer')\"  >View installer</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('modify-installer')\" style=\"color:#4bc800\"  >Modify installer</a></li>\r\n            \r\n          </ul>\r\n      </div>\r\n       <h1>Modify installer</h1>\r\n  </div>\r\n \r\n</template>\r\n<script>\r\n\r\nexport default {\r\n  name: 'modify-installer'\r\n \r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>\r\n"],"sourceRoot":""}]);
+
+// exports
+
+
+/***/ }),
+/* 114 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "mainDiv" }, [
+    _c("div", { staticClass: "header" }, [
+      _c("ul", [
+        _c("li", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("add-installer")
+                }
+              }
+            },
+            [_vm._v("Add installer")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("view-installer")
+                }
+              }
+            },
+            [_vm._v("View installer")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              staticStyle: { color: "#4bc800" },
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("modify-installer")
+                }
+              }
+            },
+            [_vm._v("Modify installer")]
+          )
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("h1", [_vm._v("Modify installer")])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-5e2ccd2e", esExports)
+  }
+}
+
+/***/ }),
+/* 115 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_addUser_vue__ = __webpack_require__(25);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4d71464c_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_addUser_vue__ = __webpack_require__(118);
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(116)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -21219,13 +21744,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 103 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(104);
+var content = __webpack_require__(117);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -21245,7 +21770,7 @@ if(false) {
 }
 
 /***/ }),
-/* 104 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -21253,13 +21778,13 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-4d71464c]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\nform[data-v-4d71464c]{\r\n  margin-top: 30px;\n}\r\n/*.heading{\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 3.5;\r\n    font-weight: bold;\r\n    margin-top: 10px;\r\n\r\n}*/\n.input_heading[data-v-4d71464c]{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\n}\n.header[data-v-4d71464c]{\r\n  border-bottom: 1px solid #ebebeb;\n}\n.inputField[data-v-4d71464c]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-4d71464c]:focus{\r\n  outline: none;\n}\n.button[data-v-4d71464c]:focus{\r\n  outline-color:  #4bc800;\n}\n.button[data-v-4d71464c]{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 20%;\r\n    margin-top: 10px;\n}\nul[data-v-4d71464c]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-4d71464c]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-4d71464c]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-4d71464c]:hover{\r\n  border-color: #929292;\n}\na[data-v-4d71464c]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/addUser.vue"],"names":[],"mappings":";AA+EA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AACA;;;;;;;GAOA;AACA;IACA,eAAA;IACA,kBAAA;CAKA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,YAAA;IACA,gBAAA;IACA,kBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;IACA,iBAAA;CACA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"addUser.vue","sourcesContent":["<template>\r\n  <div class=\"mainDiv\">\r\n   <div  class=\"header\">\r\n    <ul>\r\n           <li><a v-on:click=\"$parent.updateView('add-user')\" style=\"color:#4bc800\">Add User</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('delete-user')\">Delete User</a></li>\r\n    </ul>\r\n   </div> \r\n  \t<!-- <p class=\"heading\">Add User</p> -->\r\n    <form v-on:submit.prevent=\"onSubmit\">\r\n      <p class=\"input_heading\">Username</p>\r\n    \t<input class=\"inputField\" type=\"text\" name=\"user_name\" v-model=\"user_name\">\r\n      <p class=\"input_heading\">Password</p>\r\n    \t<input class=\"inputField\" type=\"password\" name =\"password\" v-model=\"password\">\r\n\r\n      <select v-model=\"fk_user_role_id\" required>\r\n        <option value='' placeholder=\"Choose a role\"></option>\r\n        <option v-for=\"role in roles\" v-bind:value=\"role.user_role_id\">\r\n          {{role.user_role_name}}\r\n        </option>\r\n      </select>\r\n\r\n    \t<button class=\"button\" type=\"submit\" value=\"Submit\">Add User</button>\r\n      <p style=\"text-align:center;\" class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">User added successfully.</p>\r\n    </form>\r\n  </div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: \"add-user\",\r\n  props: [\"user\"],\r\n  data(){\r\n    return {\r\n      user_name: '',\r\n      password: '',\r\n      fk_user_role_id: '',\r\n      roles: ''\r\n    }\r\n  },\r\n  methods: {\r\n    onSubmit: function(){\r\n      axios({\r\n        method: 'post',\r\n        url: '/users/add',\r\n        data: {\r\n        user_name: this.user_name,\r\n        password: this.password,\r\n        fk_user_role_id: this.fk_user_role_id\r\n      }\r\n      })\r\n      .then(req => {\r\n        if(req.data.ok){\r\n          document.getElementById('confirmation').classList.remove('hidden');\r\n        };\r\n      })\r\n      .catch(err => {\r\n        console.log(err);\r\n      })\r\n    }\r\n  },\r\n  beforeMount(){\r\n    axios({\r\n      method: 'get',\r\n      url: '/users/roles'\r\n    })\r\n    .then(req => {\r\n      this.roles = req.data.roles;\r\n      console.log(this.roles);\r\n    })\r\n    .catch(err => {\r\n      console.log(err);\r\n    })\r\n  }\r\n}; \r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\nform{\r\n  margin-top: 30px;\r\n}\r\n/*.heading{\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 3.5;\r\n    font-weight: bold;\r\n    margin-top: 10px;\r\n\r\n}*/\r\n.input_heading{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\r\n    \r\n    \r\n   \r\n\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n.button{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 20%;\r\n    margin-top: 10px;\r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>\r\n\r\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-4d71464c]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\nform[data-v-4d71464c]{\r\n  margin-top: 30px;\n}\r\n/*.heading{\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 3.5;\r\n    font-weight: bold;\r\n    margin-top: 10px;\r\n\r\n}*/\n.input_heading[data-v-4d71464c]{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\n}\n.header[data-v-4d71464c]{\r\n  border-bottom: 1px solid #ebebeb;\n}\n.inputField[data-v-4d71464c]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-4d71464c]:focus{\r\n  outline: none;\n}\n.button[data-v-4d71464c]:focus{\r\n  outline-color:  #4bc800;\n}\n.button[data-v-4d71464c]{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 20%;\r\n    margin-top: 10px;\n}\nul[data-v-4d71464c]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-4d71464c]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-4d71464c]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-4d71464c]:hover{\r\n  border-color: #929292;\n}\na[data-v-4d71464c]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/addUser.vue"],"names":[],"mappings":";AAgFA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AACA;;;;;;;GAOA;AACA;IACA,eAAA;IACA,kBAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,YAAA;IACA,gBAAA;IACA,kBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;IACA,iBAAA;CACA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"addUser.vue","sourcesContent":["<template>\r\n  <div class=\"mainDiv\">\r\n   <div  class=\"header\">\r\n    <ul>\r\n           <li><a v-on:click=\"$parent.updateView('add-user')\" style=\"color:#4bc800\">Add User</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('delete-user')\">Delete User</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('modify-project')\">Modify project</a></li>\r\n    </ul>\r\n   </div> \r\n  \t<!-- <p class=\"heading\">Add User</p> -->\r\n    <form v-on:submit.prevent=\"onSubmit\">\r\n      <p class=\"input_heading\">Username</p>\r\n    \t<input class=\"inputField\" type=\"text\" name=\"user_name\" v-model=\"user_name\">\r\n      <p class=\"input_heading\">Password</p>\r\n    \t<input class=\"inputField\" type=\"password\" name =\"password\" v-model=\"password\">\r\n      <p class=\"input_heading\">User role</p>\r\n      <select class=\"inputField\" v-model=\"fk_user_role_id\" required>\r\n        <option value='' placeholder=\"Choose a role\"></option>\r\n        <option v-for=\"role in roles\" v-bind:value=\"role.user_role_id\">\r\n          {{role.user_role_name}}\r\n        </option>\r\n      </select>\r\n\r\n    \t<button class=\"button\" type=\"submit\" value=\"Submit\">Add User</button>\r\n      <p style=\"text-align:center;\" class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">User added successfully.</p>\r\n    </form>\r\n  </div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: \"add-user\",\r\n  props: [\"user\"],\r\n  data(){\r\n    return {\r\n      user_name: '',\r\n      password: '',\r\n      fk_user_role_id: '',\r\n      roles: ''\r\n    }\r\n  },\r\n  methods: {\r\n    onSubmit: function(){\r\n      axios({\r\n        method: 'post',\r\n        url: '/users/add',\r\n        data: {\r\n        user_name: this.user_name,\r\n        password: this.password,\r\n        fk_user_role_id: this.fk_user_role_id\r\n      }\r\n      })\r\n      .then(req => {\r\n        if(req.data.ok){\r\n          document.getElementById('confirmation').classList.remove('hidden');\r\n        };\r\n      })\r\n      .catch(err => {\r\n        console.log(err);\r\n      })\r\n    }\r\n  },\r\n  beforeMount(){\r\n    axios({\r\n      method: 'get',\r\n      url: '/users/roles'\r\n    })\r\n    .then(req => {\r\n      this.roles = req.data.roles;\r\n      console.log(this.roles);\r\n    })\r\n    .catch(err => {\r\n      console.log(err);\r\n    })\r\n  }\r\n}; \r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\nform{\r\n  margin-top: 30px;\r\n}\r\n/*.heading{\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 3.5;\r\n    font-weight: bold;\r\n    margin-top: 10px;\r\n\r\n}*/\r\n.input_heading{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\r\n    \r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n.button{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 20%;\r\n    margin-top: 10px;\r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>\r\n\r\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 105 */
+/* 118 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21296,6 +21821,20 @@ var render = function() {
               }
             },
             [_vm._v("Delete User")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("modify-project")
+                }
+              }
+            },
+            [_vm._v("Modify project")]
           )
         ])
       ])
@@ -21360,6 +21899,8 @@ var render = function() {
           }
         }),
         _vm._v(" "),
+        _c("p", { staticClass: "input_heading" }, [_vm._v("User role")]),
+        _vm._v(" "),
         _c(
           "select",
           {
@@ -21371,6 +21912,7 @@ var render = function() {
                 expression: "fk_user_role_id"
               }
             ],
+            staticClass: "inputField",
             attrs: { required: "" },
             on: {
               change: function($event) {
@@ -21445,17 +21987,560 @@ if (false) {
 }
 
 /***/ }),
-/* 106 */
+/* 119 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_addBonus_vue__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_openJobs_vue__ = __webpack_require__(26);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_b5fe5a24_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_addBonus_vue__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_e72920a0_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_openJobs_vue__ = __webpack_require__(122);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(107)
+  __webpack_require__(120)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-e72920a0"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_openJobs_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_e72920a0_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_openJobs_vue__["a" /* default */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src\\components\\openJobs.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-e72920a0", Component.options)
+  } else {
+    hotAPI.reload("data-v-e72920a0", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+/* 120 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(121);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("31db4b50", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e72920a0\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./openJobs.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e72920a0\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./openJobs.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 121 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(true);
+// imports
+
+
+// module
+exports.push([module.i, "\n.mainDiv[data-v-e72920a0]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.header[data-v-e72920a0]{\r\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-e72920a0]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-e72920a0]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-e72920a0]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-e72920a0]:hover{\r\n  border-color: #929292;\n}\na[data-v-e72920a0]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/openJobs.vue"],"names":[],"mappings":";AAqBA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"openJobs.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n    <div  class=\"header\">\r\n\t    <ul>\r\n           <li><a v-on:click=\"$parent.updateView('create-project')\" >Create Project</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('open-jobs')\" style=\"color:#4bc800\">View open jobs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('close-jobs')\">View close jobs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('all-jobs')\">View all jobs</a></li>\r\n          </ul>\r\n       </div>   \r\n\t\t<h1>open jobs</h1>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\n\r\nexport default {\r\n  name: 'open-jobs'\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
+
+// exports
+
+
+/***/ }),
+/* 122 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "mainDiv" }, [
+    _c("div", { staticClass: "header" }, [
+      _c("ul", [
+        _c("li", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("create-project")
+                }
+              }
+            },
+            [_vm._v("Create Project")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              staticStyle: { color: "#4bc800" },
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("open-jobs")
+                }
+              }
+            },
+            [_vm._v("View open jobs")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("close-jobs")
+                }
+              }
+            },
+            [_vm._v("View close jobs")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("all-jobs")
+                }
+              }
+            },
+            [_vm._v("View all jobs")]
+          )
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("h1", [_vm._v("open jobs")])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-e72920a0", esExports)
+  }
+}
+
+/***/ }),
+/* 123 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_closeJobs_vue__ = __webpack_require__(27);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_ff0764a4_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_closeJobs_vue__ = __webpack_require__(126);
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(124)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-ff0764a4"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_closeJobs_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_ff0764a4_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_closeJobs_vue__["a" /* default */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src\\components\\closeJobs.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-ff0764a4", Component.options)
+  } else {
+    hotAPI.reload("data-v-ff0764a4", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+/* 124 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(125);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("4bb201c0", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ff0764a4\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./closeJobs.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-ff0764a4\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./closeJobs.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 125 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(true);
+// imports
+
+
+// module
+exports.push([module.i, "\n.mainDiv[data-v-ff0764a4]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.header[data-v-ff0764a4]{\r\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-ff0764a4]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-ff0764a4]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-ff0764a4]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-ff0764a4]:hover{\r\n  border-color: #929292;\n}\na[data-v-ff0764a4]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/closeJobs.vue"],"names":[],"mappings":";AAqBA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"closeJobs.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n    <div  class=\"header\">\r\n\t    <ul>\r\n           <li><a v-on:click=\"$parent.updateView('create-project')\" >Create Project</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('open-jobs')\" >View open jobs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('close-jobs')\" style=\"color:#4bc800\">View close jobs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('all-jobs')\">View all jobs</a></li>\r\n          </ul>\r\n       </div>   \r\n\t\t<h1>open jobs</h1>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\n\r\nexport default {\r\n  name: 'close-jobs'\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
+
+// exports
+
+
+/***/ }),
+/* 126 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "mainDiv" }, [
+    _c("div", { staticClass: "header" }, [
+      _c("ul", [
+        _c("li", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("create-project")
+                }
+              }
+            },
+            [_vm._v("Create Project")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("open-jobs")
+                }
+              }
+            },
+            [_vm._v("View open jobs")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              staticStyle: { color: "#4bc800" },
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("close-jobs")
+                }
+              }
+            },
+            [_vm._v("View close jobs")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("all-jobs")
+                }
+              }
+            },
+            [_vm._v("View all jobs")]
+          )
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("h1", [_vm._v("open jobs")])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-ff0764a4", esExports)
+  }
+}
+
+/***/ }),
+/* 127 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_allJobs_vue__ = __webpack_require__(28);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4289fa57_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_allJobs_vue__ = __webpack_require__(130);
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(128)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-4289fa57"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_allJobs_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4289fa57_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_allJobs_vue__["a" /* default */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src\\components\\allJobs.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4289fa57", Component.options)
+  } else {
+    hotAPI.reload("data-v-4289fa57", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+/* 128 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(129);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("3c82e83b", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4289fa57\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./allJobs.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4289fa57\",\"scoped\":true,\"hasInlineConfig\":false}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./allJobs.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 129 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(true);
+// imports
+
+
+// module
+exports.push([module.i, "\n.mainDiv[data-v-4289fa57]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.header[data-v-4289fa57]{\r\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-4289fa57]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-4289fa57]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-4289fa57]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-4289fa57]:hover{\r\n  border-color: #929292;\n}\na[data-v-4289fa57]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/allJobs.vue"],"names":[],"mappings":";AAqBA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"allJobs.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n    <div  class=\"header\">\r\n\t    <ul>\r\n           <li><a v-on:click=\"$parent.updateView('create-project')\" >Create Project</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('open-jobs')\" >View open jobs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('close-jobs')\" >View close jobs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('all-jobs')\" style=\"color:#4bc800\">View all jobs</a></li>\r\n          </ul>\r\n       </div>   \r\n\t\t<h1>open jobs</h1>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\n\r\nexport default {\r\n  name: 'all-jobs'\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
+
+// exports
+
+
+/***/ }),
+/* 130 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "mainDiv" }, [
+    _c("div", { staticClass: "header" }, [
+      _c("ul", [
+        _c("li", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("create-project")
+                }
+              }
+            },
+            [_vm._v("Create Project")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("open-jobs")
+                }
+              }
+            },
+            [_vm._v("View open jobs")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("close-jobs")
+                }
+              }
+            },
+            [_vm._v("View close jobs")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              staticStyle: { color: "#4bc800" },
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("all-jobs")
+                }
+              }
+            },
+            [_vm._v("View all jobs")]
+          )
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("h1", [_vm._v("open jobs")])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-4289fa57", esExports)
+  }
+}
+
+/***/ }),
+/* 131 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_addBonus_vue__ = __webpack_require__(29);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_b5fe5a24_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_addBonus_vue__ = __webpack_require__(134);
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(132)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -21501,13 +22586,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 107 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(108);
+var content = __webpack_require__(133);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -21527,7 +22612,7 @@ if(false) {
 }
 
 /***/ }),
-/* 108 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -21541,7 +22626,7 @@ exports.push([module.i, "\n.mainDiv[data-v-b5fe5a24]{\r\n     margin-top: 7%;\r\
 
 
 /***/ }),
-/* 109 */
+/* 134 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -21903,17 +22988,17 @@ if (false) {
 }
 
 /***/ }),
-/* 110 */
+/* 135 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_deleteUser_vue__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_deleteUser_vue__ = __webpack_require__(30);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_f52c95f4_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_deleteUser_vue__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_f52c95f4_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_deleteUser_vue__ = __webpack_require__(138);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(111)
+  __webpack_require__(136)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -21959,13 +23044,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 111 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(112);
+var content = __webpack_require__(137);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -21985,7 +23070,7 @@ if(false) {
 }
 
 /***/ }),
-/* 112 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -21993,13 +23078,13 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-f52c95f4]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\nform[data-v-f52c95f4]{\r\n  margin-top: 30px;\n}\n.dropdown[data-v-f52c95f4]:focus{\r\n  outline: none;\n}\n.dropdown[data-v-f52c95f4]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 100%;\n}\n.header[data-v-f52c95f4]{\r\n  border-bottom: 1px solid #ebebeb;\n}\n.paragraph[data-v-f52c95f4]{\r\n    margin-top: 40px;\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 1.5;\r\n    margin-left: 3%;\r\n    font-weight: bold;\r\n    font-size: 17px;\n}\n.row1[data-v-f52c95f4]{\r\n  margin-left: 10%;\n}\n.button[data-v-f52c95f4]{\r\n    color: #fff;\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    padding: 11.5px;\r\n    margin-left: -15px;\r\n    width: 100%;\r\n    margin-top: 14px;\n}\n.button[data-v-f52c95f4]:focus{\r\n  outline-color:  #4bc800;\n}\nul[data-v-f52c95f4]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-f52c95f4]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-f52c95f4]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-f52c95f4]:hover{\r\n  border-color: #929292;\n}\na[data-v-f52c95f4]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/deleteUser.vue"],"names":[],"mappings":";AAqFA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,YAAA;CACA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,iBAAA;IACA,eAAA;IACA,mBAAA;IACA,iBAAA;IACA,gBAAA;IACA,kBAAA;IACA,gBAAA;CACA;AACA;EACA,iBAAA;CAEA;AACA;IACA,YAAA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,gBAAA;IACA,mBAAA;IACA,YAAA;IACA,iBAAA;CAEA;AACA;EACA,wBAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"deleteUser.vue","sourcesContent":["<template>\r\n\t      <div class=\"mainDiv\">\r\n                  <div  class=\"header\">\r\n                     <ul>\r\n                       <li><a v-on:click=\"$parent.updateView('add-user')\">Add User</a></li>\r\n                       <li><a v-on:click=\"$parent.updateView('delete-user')\" style=\"color:#4bc800\">Delete User</a></li>\r\n                    </ul>\r\n                  </div>\r\n  \t        <!-- <h1>Delete User</h1>\r\n                \t<form v-on:submit.prevent=\"onSubmit\" id=\"form\">\r\n                \t\t<p>Choose user to delete:</p>\r\n                \t\t<select v-model=\"fk_user_id\" required>\r\n                \t\t\t<option v-for=\"user in users\" v-bind:value=\"user.user_id\">{{user.user_name}}</option>\r\n                \t\t</select>\r\n                \t\t<input type=\"submit\" value=\"Submit\">\r\n                    <p class=\"hidden\" id=\"confirmation\">Added</p>\r\n                \t</form> -->\r\n              \t  <form v-on:submit.prevent=\"onSubmit\" id=\"form\"> \r\n                    <div class=\"row row1\">\r\n                     <div class=\"col-md-8\">             \t\t  \r\n                \t\t  <select class=\"dropdown\" v-model=\"user_id\" required>\r\n                \t\t\t <option v-for=\"user in users\" v-bind:value=\"user.user_id\">{{user.user_name}}</option>\r\n                \t\t  </select>\r\n                     </div>\r\n                     <div class=\"col-md-3\"> \r\n                \t\t  <button class=\"button\" type=\"submit\" value=\"Submit\">Delete</button>\r\n                      </div>\r\n                    </div>           \r\n                  \r\n                    <div class=\"row row2\">\r\n                      <p class=\"hidden\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">User deleted successfully.</p>\r\n                      <p class=\"paragraph\">Choose user to delete.</p>\r\n                    </div> \r\n                </form>       \r\n        </div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'delete-user',\r\n  data(){\r\n  \treturn {\r\n  \t\tuser_id: '',\r\n  \t\tusers: ''\r\n  \t}\r\n  },\r\n  methods: {\r\n  \tonSubmit: function(){\r\n  \t\taxios({\r\n  \t\t\tmethod: 'delete',\r\n  \t\t\turl: '/users/delete',\r\n        data: {\r\n          user_id: this.user_id\r\n        }\r\n  \t\t})\r\n  \t\t.then(req => {\r\n  \t\t\tdocument.getElementById('confirmation').classList.remove('hidden');\r\n        this.user_id = '';\r\n        this.getData();\r\n  \t\t})\r\n  \t\t.catch(err => {\r\n  \t\t\tconsole.log(err);\r\n  \t\t})\r\n  \t},\r\n    getData: function(){\r\n      axios({\r\n        method: 'get',\r\n        url: '/users'\r\n      })\r\n      .then(req => {\r\n        this.users = req.data.users;\r\n      })\r\n      .catch(err => {\r\n        console.log(err);\r\n      })\r\n    }\r\n  },\r\n  beforeMount(){\r\n  \tthis.getData();\r\n  }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\nform{\r\n  margin-top: 30px;\r\n}\r\n.dropdown:focus{\r\n  outline: none;\r\n}\r\n.dropdown{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 100%;\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\n.paragraph{\r\n    margin-top: 40px;\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 1.5;\r\n    margin-left: 3%;\r\n    font-weight: bold;\r\n    font-size: 17px;\r\n}\r\n.row1{\r\n  margin-left: 10%;\r\n\r\n}\r\n.button{\r\n    color: #fff;\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    padding: 11.5px;\r\n    margin-left: -15px;\r\n    width: 100%;\r\n    margin-top: 14px;\r\n\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>\r\n\r\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-f52c95f4]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\nform[data-v-f52c95f4]{\r\n  margin-top: 30px;\n}\n.dropdown[data-v-f52c95f4]:focus{\r\n  outline: none;\n}\n.dropdown[data-v-f52c95f4]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 100%;\n}\n.header[data-v-f52c95f4]{\r\n  border-bottom: 1px solid #ebebeb;\n}\n.paragraph[data-v-f52c95f4]{\r\n    margin-top: 40px;\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 1.5;\r\n    margin-left: 3%;\r\n    font-weight: bold;\r\n    font-size: 17px;\n}\n.row1[data-v-f52c95f4]{\r\n  margin-left: 10%;\n}\n.button[data-v-f52c95f4]{\r\n    color: #fff;\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    padding: 11.5px;\r\n    margin-left: -15px;\r\n    width: 100%;\r\n    margin-top: 14px;\n}\n.button[data-v-f52c95f4]:focus{\r\n  outline-color:  #4bc800;\n}\nul[data-v-f52c95f4]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-f52c95f4]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-f52c95f4]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-f52c95f4]:hover{\r\n  border-color: #929292;\n}\na[data-v-f52c95f4]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/deleteUser.vue"],"names":[],"mappings":";AAsFA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,YAAA;CACA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,iBAAA;IACA,eAAA;IACA,mBAAA;IACA,iBAAA;IACA,gBAAA;IACA,kBAAA;IACA,gBAAA;CACA;AACA;EACA,iBAAA;CAEA;AACA;IACA,YAAA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,gBAAA;IACA,mBAAA;IACA,YAAA;IACA,iBAAA;CAEA;AACA;EACA,wBAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"deleteUser.vue","sourcesContent":["<template>\r\n\t      <div class=\"mainDiv\">\r\n                  <div  class=\"header\">\r\n                     <ul>\r\n                       <li><a v-on:click=\"$parent.updateView('add-user')\">Add User</a></li>\r\n                       <li><a v-on:click=\"$parent.updateView('delete-user')\" style=\"color:#4bc800\">Delete User</a></li>\r\n                       <li><a v-on:click=\"$parent.updateView('modify-project')\" >Modify project</a></li>\r\n                    </ul>\r\n                  </div>\r\n  \t        <!-- <h1>Delete User</h1>\r\n                \t<form v-on:submit.prevent=\"onSubmit\" id=\"form\">\r\n                \t\t<p>Choose user to delete:</p>\r\n                \t\t<select v-model=\"fk_user_id\" required>\r\n                \t\t\t<option v-for=\"user in users\" v-bind:value=\"user.user_id\">{{user.user_name}}</option>\r\n                \t\t</select>\r\n                \t\t<input type=\"submit\" value=\"Submit\">\r\n                    <p class=\"hidden\" id=\"confirmation\">Added</p>\r\n                \t</form> -->\r\n              \t  <form v-on:submit.prevent=\"onSubmit\" id=\"form\"> \r\n                    <div class=\"row row1\">\r\n                     <div class=\"col-md-8\">             \t\t  \r\n                \t\t  <select class=\"dropdown\" v-model=\"user_id\" required>\r\n                \t\t\t <option v-for=\"user in users\" v-bind:value=\"user.user_id\">{{user.user_name}}</option>\r\n                \t\t  </select>\r\n                     </div>\r\n                     <div class=\"col-md-3\"> \r\n                \t\t  <button class=\"button\" type=\"submit\" value=\"Submit\">Delete</button>\r\n                      </div>\r\n                    </div>           \r\n                  \r\n                    <div class=\"row row2\">\r\n                      <p class=\"hidden\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">User deleted successfully.</p>\r\n                      <p class=\"paragraph\">Choose user to delete.</p>\r\n                    </div> \r\n                </form>       \r\n        </div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'delete-user',\r\n  data(){\r\n  \treturn {\r\n  \t\tuser_id: '',\r\n  \t\tusers: ''\r\n  \t}\r\n  },\r\n  methods: {\r\n  \tonSubmit: function(){\r\n  \t\taxios({\r\n  \t\t\tmethod: 'delete',\r\n  \t\t\turl: '/users/delete',\r\n        data: {\r\n          user_id: this.user_id\r\n        }\r\n  \t\t})\r\n  \t\t.then(req => {\r\n  \t\t\tdocument.getElementById('confirmation').classList.remove('hidden');\r\n        this.user_id = '';\r\n        this.getData();\r\n  \t\t})\r\n  \t\t.catch(err => {\r\n  \t\t\tconsole.log(err);\r\n  \t\t})\r\n  \t},\r\n    getData: function(){\r\n      axios({\r\n        method: 'get',\r\n        url: '/users'\r\n      })\r\n      .then(req => {\r\n        this.users = req.data.users;\r\n      })\r\n      .catch(err => {\r\n        console.log(err);\r\n      })\r\n    }\r\n  },\r\n  beforeMount(){\r\n  \tthis.getData();\r\n  }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\nform{\r\n  margin-top: 30px;\r\n}\r\n.dropdown:focus{\r\n  outline: none;\r\n}\r\n.dropdown{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 100%;\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\n.paragraph{\r\n    margin-top: 40px;\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 1.5;\r\n    margin-left: 3%;\r\n    font-weight: bold;\r\n    font-size: 17px;\r\n}\r\n.row1{\r\n  margin-left: 10%;\r\n\r\n}\r\n.button{\r\n    color: #fff;\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    padding: 11.5px;\r\n    margin-left: -15px;\r\n    width: 100%;\r\n    margin-top: 14px;\r\n\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>\r\n\r\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 113 */
+/* 138 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22036,6 +23121,20 @@ var render = function() {
               }
             },
             [_vm._v("Delete User")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("modify-project")
+                }
+              }
+            },
+            [_vm._v("Modify project")]
           )
         ])
       ])
@@ -22140,17 +23239,17 @@ if (false) {
 }
 
 /***/ }),
-/* 114 */
+/* 139 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_addInstaller_vue__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_addInstaller_vue__ = __webpack_require__(31);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_78a34b52_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_addInstaller_vue__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_78a34b52_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_addInstaller_vue__ = __webpack_require__(142);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(115)
+  __webpack_require__(140)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -22196,13 +23295,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 115 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(116);
+var content = __webpack_require__(141);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -22222,7 +23321,7 @@ if(false) {
 }
 
 /***/ }),
-/* 116 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -22230,13 +23329,13 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-78a34b52]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 480px;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\nform[data-v-78a34b52]{\r\n  margin-top: 30px;\n}\n.inputField[data-v-78a34b52]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-78a34b52]:focus{\r\n  outline: none;\n}\n.dropdown[data-v-78a34b52]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.dropdown[data-v-78a34b52]:focus{\r\n\r\n  outline: none;\n}\n.button[data-v-78a34b52]:focus{\r\n  outline-color:  #4bc800;\n}\n.button[data-v-78a34b52]{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 20%;\r\n    margin-top: 10px;\n}\n.header[data-v-78a34b52]{\r\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-78a34b52]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-78a34b52]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-78a34b52]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-78a34b52]:hover{\r\n  border-color: #929292;\n}\na[data-v-78a34b52]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/addInstaller.vue"],"names":[],"mappings":";AAqGA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,cAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AAEA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;;EAEA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,YAAA;IACA,gBAAA;IACA,kBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;IACA,iBAAA;CACA;AACA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"addInstaller.vue","sourcesContent":["<template>\r\n  <div class=\"mainDiv\">\r\n      <div  class=\"header\">\r\n         <ul>\r\n            <li><a v-on:click=\"$parent.updateView('add-installer')\"  style=\"color:#4bc800\">Add installer</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('view-installer')\"  >View installer</a></li>\r\n            \r\n          </ul>\r\n      </div>\r\n   \r\n          \r\n          <form v-on:submit.prevent=\"onSubmit\" id=\"form\">\r\n            <input class=\"inputField\" type=\"text\" name=\"first_name\" placeholder=\"First name\" v-model.trim=\"first_name\" required>\r\n            <input class=\"inputField\" type=\"text\" name=\"last_name\" placeholder=\"Last name\" v-model.trim=\"last_name\" required>\r\n            <input class=\"inputField\" type=\"number\" name=\"current_wage\" placeholder=\"Current wage\" v-model.number=\"current_wage\" required>\r\n            <select class=\"dropdown\" v-model.number=\"fk_installer_role_id\" required>\r\n              <option class=\"option\" v-for=\"role in roles\" v-bind:value=\"role.installer_role_id\">{{role.installer_role_name}}</option>\r\n            </select>\r\n            <select class=\"dropdown\" v-model=\"fk_user_id\" required>\r\n              <option class=\"option\" v-for=\"user in users\" v-bind:value=\"user.user_id\">{{user.user_name}}</option>\r\n            </select>\r\n            <button class=\"button \" type=\"submit\" value=\"Submit\">Submit</button>\r\n            <p class=\"hidden\" id=\"confirmation\">Added</p>\r\n          </form>\r\n  </div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: \"add-installer\",\r\n  props: [\"user\"],\r\n  data(){\r\n    return {\r\n      first_name: '',\r\n      last_name: '',\r\n      current_wage: '',\r\n      fk_installer_role_id: '',\r\n      fk_user_id: '',\r\n      users: '',\r\n      roles: ''\r\n    }\r\n  },\r\n  methods: {\r\n    onSubmit: function(){\r\n      axios({\r\n        method: 'post',\r\n        url: '/installers/add',\r\n        data: {\r\n          created_by_id: this.user.userID,\r\n          modified_by_id: this.user.userID,\r\n          first_name: this.first_name,\r\n          last_name: this.last_name,\r\n          current_wage: this.current_wage,\r\n          fk_installer_role_id: this.fk_installer_role_id,\r\n          fk_user_id: this.fk_user_id\r\n        }\r\n      })\r\n      .then(req => {\r\n        console.log(req.data);\r\n        document.getElementById('confirmation').innerHTML = this.first_name + ' added';\r\n        document.getElementById('confirmation').classList.remove('hidden');\r\n        this.first_name = '',\r\n        this.last_name = '',\r\n        this.current_wage = '',\r\n        this.fk_installer_role_id = '',\r\n        this.fk_user_id = '';\r\n      })\r\n      .catch(err => {\r\n        console.log(err);\r\n      })\r\n    }\r\n  },\r\n  beforeMount(){\r\n    axios({\r\n      method: 'get',\r\n      url: '/users'\r\n    })\r\n    .then(req => {\r\n      this.users = req.data.users;\r\n    })\r\n    .catch(err => {\r\n      console.log(err);\r\n    })\r\n\r\n    //Get role list\r\n    axios({\r\n      method: 'get',\r\n      url: '/installers/roles'\r\n    })\r\n    .then(req => {\r\n      this.roles = req.data.roles;\r\n    })\r\n    .catch(err => {\r\n      console.log(err);\r\n    })\r\n  }\r\n}; \r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 480px;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\nform{\r\n  margin-top: 30px;\r\n}\r\n\r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.dropdown{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.dropdown:focus{\r\n\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n.button{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 20%;\r\n    margin-top: 10px;\r\n}\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n\r\n</style>\r\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-78a34b52]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 480px;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\nform[data-v-78a34b52]{\r\n  margin-top: 30px;\n}\n.inputField[data-v-78a34b52]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-78a34b52]:focus{\r\n  outline: none;\n}\n.dropdown[data-v-78a34b52]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.dropdown[data-v-78a34b52]:focus{\r\n\r\n  outline: none;\n}\n.button[data-v-78a34b52]:focus{\r\n  outline-color:  #4bc800;\n}\n.button[data-v-78a34b52]{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 20%;\r\n    margin-top: 10px;\n}\n.header[data-v-78a34b52]{\r\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-78a34b52]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-78a34b52]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-78a34b52]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-78a34b52]:hover{\r\n  border-color: #929292;\n}\na[data-v-78a34b52]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/addInstaller.vue"],"names":[],"mappings":";AAqGA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,cAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AAEA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;;EAEA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,YAAA;IACA,gBAAA;IACA,kBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;IACA,iBAAA;CACA;AACA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"addInstaller.vue","sourcesContent":["<template>\r\n  <div class=\"mainDiv\">\r\n      <div  class=\"header\">\r\n         <ul>\r\n            <li><a v-on:click=\"$parent.updateView('add-installer')\"  style=\"color:#4bc800\">Add installer</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('view-installer')\"  >View installer</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('modify-installer')\"  >Modify installer</a></li>\r\n          </ul>\r\n      </div>\r\n   \r\n          \r\n          <form v-on:submit.prevent=\"onSubmit\" id=\"form\">\r\n            <input class=\"inputField\" type=\"text\" name=\"first_name\" placeholder=\"First name\" v-model.trim=\"first_name\" required>\r\n            <input class=\"inputField\" type=\"text\" name=\"last_name\" placeholder=\"Last name\" v-model.trim=\"last_name\" required>\r\n            <input class=\"inputField\" type=\"number\" name=\"current_wage\" placeholder=\"Current wage\" v-model.number=\"current_wage\" required>\r\n            <select class=\"dropdown\" v-model.number=\"fk_installer_role_id\" required>\r\n              <option class=\"option\" v-for=\"role in roles\" v-bind:value=\"role.installer_role_id\">{{role.installer_role_name}}</option>\r\n            </select>\r\n            <select class=\"dropdown\" v-model=\"fk_user_id\" required>\r\n              <option class=\"option\" v-for=\"user in users\" v-bind:value=\"user.user_id\">{{user.user_name}}</option>\r\n            </select>\r\n            <button class=\"button \" type=\"submit\" value=\"Submit\">Submit</button>\r\n            <p class=\"hidden\" id=\"confirmation\">Added</p>\r\n          </form>\r\n  </div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: \"add-installer\",\r\n  props: [\"user\"],\r\n  data(){\r\n    return {\r\n      first_name: '',\r\n      last_name: '',\r\n      current_wage: '',\r\n      fk_installer_role_id: '',\r\n      fk_user_id: '',\r\n      users: '',\r\n      roles: ''\r\n    }\r\n  },\r\n  methods: {\r\n    onSubmit: function(){\r\n      axios({\r\n        method: 'post',\r\n        url: '/installers/add',\r\n        data: {\r\n          created_by_id: this.user.userID,\r\n          modified_by_id: this.user.userID,\r\n          first_name: this.first_name,\r\n          last_name: this.last_name,\r\n          current_wage: this.current_wage,\r\n          fk_installer_role_id: this.fk_installer_role_id,\r\n          fk_user_id: this.fk_user_id\r\n        }\r\n      })\r\n      .then(req => {\r\n        console.log(req.data);\r\n        document.getElementById('confirmation').innerHTML = this.first_name + ' added';\r\n        document.getElementById('confirmation').classList.remove('hidden');\r\n        this.first_name = '',\r\n        this.last_name = '',\r\n        this.current_wage = '',\r\n        this.fk_installer_role_id = '',\r\n        this.fk_user_id = '';\r\n      })\r\n      .catch(err => {\r\n        console.log(err);\r\n      })\r\n    }\r\n  },\r\n  beforeMount(){\r\n    axios({\r\n      method: 'get',\r\n      url: '/users'\r\n    })\r\n    .then(req => {\r\n      this.users = req.data.users;\r\n    })\r\n    .catch(err => {\r\n      console.log(err);\r\n    })\r\n\r\n    //Get role list\r\n    axios({\r\n      method: 'get',\r\n      url: '/installers/roles'\r\n    })\r\n    .then(req => {\r\n      this.roles = req.data.roles;\r\n    })\r\n    .catch(err => {\r\n      console.log(err);\r\n    })\r\n  }\r\n}; \r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 480px;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\nform{\r\n  margin-top: 30px;\r\n}\r\n\r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.dropdown{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.dropdown:focus{\r\n\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n.button{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 20%;\r\n    margin-top: 10px;\r\n}\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n\r\n</style>\r\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 117 */
+/* 142 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22273,6 +23372,20 @@ var render = function() {
               }
             },
             [_vm._v("View installer")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("modify-installer")
+                }
+              }
+            },
+            [_vm._v("Modify installer")]
           )
         ])
       ])
@@ -22491,17 +23604,17 @@ if (false) {
 }
 
 /***/ }),
-/* 118 */
+/* 143 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_addHours_vue__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_addHours_vue__ = __webpack_require__(32);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_e86efc44_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_addHours_vue__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_e86efc44_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_addHours_vue__ = __webpack_require__(146);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(119)
+  __webpack_require__(144)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -22547,13 +23660,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 119 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(120);
+var content = __webpack_require__(145);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -22573,7 +23686,7 @@ if(false) {
 }
 
 /***/ }),
-/* 120 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -22581,13 +23694,13 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-e86efc44]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\nform[data-v-e86efc44]{\r\n  margin-top: 30px;\n}\n.header[data-v-e86efc44]{\r\n  border-bottom: 1px solid #ebebeb;\n}\n.input_heading[data-v-e86efc44]{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\n}\n.inputField[data-v-e86efc44]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-e86efc44]:focus{\r\n  outline: none;\n}\n.button[data-v-e86efc44]:focus{\r\n  outline-color:  #4bc800;\n}\n.button[data-v-e86efc44]{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    margin-top: 10px;\n}\n.inputField[data-v-e86efc44]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-e86efc44]:focus{\r\n  outline: none;\n}\n.button[data-v-e86efc44]:focus{\r\n  outline-color:  #4bc800;\n}\nul[data-v-e86efc44]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-e86efc44]{\r\n      padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-e86efc44]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-e86efc44]:hover{\r\n  border-color: #929292;\n}\na[data-v-e86efc44]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/addHours.vue"],"names":[],"mappings":";AAuFA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,eAAA;IACA,kBAAA;CAEA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,YAAA;IACA,gBAAA;IACA,kBAAA;IACA,aAAA;IACA,wBAAA;IACA,iBAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AAEA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;MACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"addHours.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n      <div  class=\"header\">\r\n        <ul>\r\n            <li><a v-on:click=\"$parent.updateView('add-hours')\" style=\"color:#4bc800\">Enter Time Worked</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('')\">Approve Time</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('create-project')\">Create Project</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('modify-project')\">Modify project</a></li>\r\n            \r\n        </ul>\r\n      </div>\r\n      \t\t<!-- <h1>Add hours</h1> -->\r\n      \t\t<form v-on:submit.prevent=\"onSubmit\" id=\"form\">\r\n          \t\t\t<p class=\"input_heading\">Job</p>\r\n          \t\t\t<select class=\"inputField\" v-model=\"fk_job_id\" required>\r\n          \t\t\t\t<option v-for=\"job in jobs\" v-bind:value=\"job.job_id\">{{job.job_name}}</option>\r\n          \t\t\t</select>\r\n          \t\t\t<p class=\"input_heading\">Regular hours worked</p>\r\n          \t\t\t<input class=\"inputField\" type=\"number\" v-model.number=\"reg_hours_worked\" required>\r\n          \t\t\t<p class=\"input_heading\">Overtime hours worked</p>\r\n          \t\t\t<input class=\"inputField\" type=\"number\" v-model.number=\"ot_hours_worked\" required>\r\n          \t\t\t<p class=\"input_heading\">Work date</p>\r\n          \t\t\t<input class=\"inputField\" type=\"date\" v-model=\"work_date\" required>\r\n          \t\t\t <button class=\"button\" type=\"submit\" value=\"Submit\">Add hours</button>\r\n          \t\t\t<p class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Hours added</p>\r\n      \t\t</form>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'add-hours',\r\n  props: ['user'],\r\n  data(){\r\n  \treturn {\r\n\t  \treg_hours_worked: '',\r\n\t  \tot_hours_worked: '',\r\n\t  \twork_date: '',\r\n\t  \tfk_job_id: '',\r\n\t  \tjobs: ''\r\n  \t}\r\n  },\r\n  methods: {\r\n  \tonSubmit: function(){\r\n  \t\taxios({\r\n  \t\t\tmethod: 'post',\r\n  \t\t\turl: '/installers/hours/add',\r\n  \t\t\tdata: {\r\n  \t\t\t\tcreated_by_id: this.user.userID,\r\n  \t\t\t\tmodified_by_id: this.user.userID,\r\n  \t\t\t\treg_hours_worked: this.reg_hours_worked,\r\n  \t\t\t\tot_hours_worked: this.ot_hours_worked,\r\n  \t\t\t\twork_date: this.work_date,\r\n  \t\t\t\tfk_job_id: this.fk_job_id,\r\n  \t\t\t\tfk_installer_id: this.user.installerID\r\n  \t\t\t}\r\n  \t\t})\r\n  \t\t.then(req => {\r\n  \t\t\tdocument.getElementById('confirmation').classList.remove('hidden');\r\n  \t\t\tthis.reg_hours_worked = '',\r\n  \t\t\tthis.ot_hours_worked = '',\r\n  \t\t\tthis.work_date = '',\r\n  \t\t\tthis.fk_job_id = ''\r\n  \t\t})\r\n  \t\t.catch(err => {\r\n  \t\t\tconsole.log(err);\r\n  \t\t})\r\n  \t}\r\n  },\r\n  beforeMount(){\r\n  \taxios({\r\n  \t\tmethod: 'get',\r\n  \t\turl: '/jobs'\r\n  \t})\r\n  \t.then(req => {\r\n  \t\tconsole.log(req.data.jobs);\r\n  \t\tthis.jobs = req.data.jobs;\r\n  \t})\r\n  \t.catch(err => {\r\n  \t\tconsole.log(err);\r\n  \t})\r\n  }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\nform{\r\n  margin-top: 30px;\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\n.input_heading{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\r\n    \r\n }   \r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n.button{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    margin-top: 10px;\r\n}\r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n      padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-e86efc44]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\nform[data-v-e86efc44]{\r\n  margin-top: 30px;\n}\n.header[data-v-e86efc44]{\r\n  border-bottom: 1px solid #ebebeb;\n}\n.input_heading[data-v-e86efc44]{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\n}\n.inputField[data-v-e86efc44]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-e86efc44]:focus{\r\n  outline: none;\n}\n.button[data-v-e86efc44]:focus{\r\n  outline-color:  #4bc800;\n}\n.button[data-v-e86efc44]{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    margin-top: 10px;\n}\n.inputField[data-v-e86efc44]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-e86efc44]:focus{\r\n  outline: none;\n}\n.button[data-v-e86efc44]:focus{\r\n  outline-color:  #4bc800;\n}\nul[data-v-e86efc44]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-e86efc44]{\r\n      padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-e86efc44]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-e86efc44]:hover{\r\n  border-color: #929292;\n}\na[data-v-e86efc44]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/addHours.vue"],"names":[],"mappings":";AAuFA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,eAAA;IACA,kBAAA;CAEA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,YAAA;IACA,gBAAA;IACA,kBAAA;IACA,aAAA;IACA,wBAAA;IACA,iBAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AAEA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;MACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"addHours.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n      <div  class=\"header\">\r\n        <ul>\r\n            <li><a v-on:click=\"$parent.updateView('add-hours')\" style=\"color:#4bc800\">Enter Time Worked</a></li>\r\n           <!-- <li><a v-on:click=\"$parent.updateView('')\">Approve Time</a></li> -->\r\n           <li><a v-on:click=\"$parent.updateView('create-project')\">Create Project</a></li>\r\n           \r\n            \r\n        </ul>\r\n      </div>\r\n      \t\t<!-- <h1>Add hours</h1> -->\r\n      \t\t<form v-on:submit.prevent=\"onSubmit\" id=\"form\">\r\n          \t\t\t<p class=\"input_heading\">Job</p>\r\n          \t\t\t<select class=\"inputField\" v-model=\"fk_job_id\" required>\r\n          \t\t\t\t<option v-for=\"job in jobs\" v-bind:value=\"job.job_id\">{{job.job_name}}</option>\r\n          \t\t\t</select>\r\n          \t\t\t<p class=\"input_heading\">Regular hours worked</p>\r\n          \t\t\t<input class=\"inputField\" type=\"number\" v-model.number=\"reg_hours_worked\" required>\r\n          \t\t\t<p class=\"input_heading\">Overtime hours worked</p>\r\n          \t\t\t<input class=\"inputField\" type=\"number\" v-model.number=\"ot_hours_worked\" required>\r\n          \t\t\t<p class=\"input_heading\">Work date</p>\r\n          \t\t\t<input class=\"inputField\" type=\"date\" v-model=\"work_date\" required>\r\n          \t\t\t <button class=\"button\" type=\"submit\" value=\"Submit\">Add hours</button>\r\n          \t\t\t<p class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Hours added</p>\r\n      \t\t</form>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'add-hours',\r\n  props: ['user'],\r\n  data(){\r\n  \treturn {\r\n\t  \treg_hours_worked: '',\r\n\t  \tot_hours_worked: '',\r\n\t  \twork_date: '',\r\n\t  \tfk_job_id: '',\r\n\t  \tjobs: ''\r\n  \t}\r\n  },\r\n  methods: {\r\n  \tonSubmit: function(){\r\n  \t\taxios({\r\n  \t\t\tmethod: 'post',\r\n  \t\t\turl: '/installers/hours/add',\r\n  \t\t\tdata: {\r\n  \t\t\t\tcreated_by_id: this.user.userID,\r\n  \t\t\t\tmodified_by_id: this.user.userID,\r\n  \t\t\t\treg_hours_worked: this.reg_hours_worked,\r\n  \t\t\t\tot_hours_worked: this.ot_hours_worked,\r\n  \t\t\t\twork_date: this.work_date,\r\n  \t\t\t\tfk_job_id: this.fk_job_id,\r\n  \t\t\t\tfk_installer_id: this.user.installerID\r\n  \t\t\t}\r\n  \t\t})\r\n  \t\t.then(req => {\r\n  \t\t\tdocument.getElementById('confirmation').classList.remove('hidden');\r\n  \t\t\tthis.reg_hours_worked = '',\r\n  \t\t\tthis.ot_hours_worked = '',\r\n  \t\t\tthis.work_date = '',\r\n  \t\t\tthis.fk_job_id = ''\r\n  \t\t})\r\n  \t\t.catch(err => {\r\n  \t\t\tconsole.log(err);\r\n  \t\t})\r\n  \t}\r\n  },\r\n  beforeMount(){\r\n  \taxios({\r\n  \t\tmethod: 'get',\r\n  \t\turl: '/jobs'\r\n  \t})\r\n  \t.then(req => {\r\n  \t\tconsole.log(req.data.jobs);\r\n  \t\tthis.jobs = req.data.jobs;\r\n  \t})\r\n  \t.catch(err => {\r\n  \t\tconsole.log(err);\r\n  \t})\r\n  }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\nform{\r\n  margin-top: 30px;\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\n.input_heading{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\r\n    \r\n }   \r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n.button{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    margin-top: 10px;\r\n}\r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n      padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 121 */
+/* 146 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22619,39 +23732,11 @@ var render = function() {
             {
               on: {
                 click: function($event) {
-                  _vm.$parent.updateView("")
-                }
-              }
-            },
-            [_vm._v("Approve Time")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c(
-            "a",
-            {
-              on: {
-                click: function($event) {
                   _vm.$parent.updateView("create-project")
                 }
               }
             },
             [_vm._v("Create Project")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c(
-            "a",
-            {
-              on: {
-                click: function($event) {
-                  _vm.$parent.updateView("modify-project")
-                }
-              }
-            },
-            [_vm._v("Modify project")]
           )
         ])
       ])
@@ -22830,17 +23915,17 @@ if (false) {
 }
 
 /***/ }),
-/* 122 */
+/* 147 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bonusSchedule_vue__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bonusSchedule_vue__ = __webpack_require__(33);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_ffe549d4_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bonusSchedule_vue__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_ffe549d4_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bonusSchedule_vue__ = __webpack_require__(150);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(123)
+  __webpack_require__(148)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -22886,13 +23971,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 123 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(124);
+var content = __webpack_require__(149);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -22912,7 +23997,7 @@ if(false) {
 }
 
 /***/ }),
-/* 124 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -22926,7 +24011,7 @@ exports.push([module.i, "\n.mainDiv[data-v-ffe549d4]{\r\n     \r\n     margin-to
 
 
 /***/ }),
-/* 125 */
+/* 150 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23075,17 +24160,17 @@ if (false) {
 }
 
 /***/ }),
-/* 126 */
+/* 151 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_paymentHistory_vue__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_paymentHistory_vue__ = __webpack_require__(34);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_40c6bc9e_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_paymentHistory_vue__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_40c6bc9e_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_paymentHistory_vue__ = __webpack_require__(154);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(127)
+  __webpack_require__(152)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -23131,13 +24216,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 127 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(128);
+var content = __webpack_require__(153);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -23157,7 +24242,7 @@ if(false) {
 }
 
 /***/ }),
-/* 128 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -23165,13 +24250,13 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-40c6bc9e]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.header[data-v-40c6bc9e]{\r\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-40c6bc9e]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-40c6bc9e]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-40c6bc9e]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-40c6bc9e]:hover{\r\n  border-color: #929292;\n}\na[data-v-40c6bc9e]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/paymentHistory.vue"],"names":[],"mappings":";AAuBA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"paymentHistory.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n    <div  class=\"header\">\r\n\t    <ul>\r\n            <li><a v-on:click=\"$parent.updateView('payment-history')\" style=\"color:#4bc800\">View Payment History</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('create-payments')\">Create Payments</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('modify-payments')\">Modify Payments</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('create-payment-types')\">Create Payments Types</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('modify-payment-types')\">Modify Payment Types</a></li>\r\n          </ul>\r\n      </div>    \r\n\t\t<h1>Payment History</h1>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\n\r\nexport default {\r\n  name: 'payment-history'\r\n \r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>\r\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-40c6bc9e]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.header[data-v-40c6bc9e]{\r\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-40c6bc9e]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-40c6bc9e]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-40c6bc9e]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-40c6bc9e]:hover{\r\n  border-color: #929292;\n}\na[data-v-40c6bc9e]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/paymentHistory.vue"],"names":[],"mappings":";AAuBA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"paymentHistory.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n    <div  class=\"header\">\r\n\t    <ul>\r\n            <li><a v-on:click=\"$parent.updateView('payment-history')\" style=\"color:#4bc800\">View Payment History</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('create-payments')\">Create Payments</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('modify-payments')\">Modify Payments</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('create-payment-types')\">Create Payments Types</a></li>\r\n            <!-- <li><a v-on:click=\"$parent.updateView('modify-payment-types')\">Modify Payment Types</a></li> -->\r\n          </ul>\r\n      </div>    \r\n\t\t<h1>Payment History</h1>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\n\r\nexport default {\r\n  name: 'payment-history'\r\n \r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>\r\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 129 */
+/* 154 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23237,20 +24322,6 @@ var render = function() {
             },
             [_vm._v("Create Payments Types")]
           )
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c(
-            "a",
-            {
-              on: {
-                click: function($event) {
-                  _vm.$parent.updateView("modify-payment-types")
-                }
-              }
-            },
-            [_vm._v("Modify Payment Types")]
-          )
         ])
       ])
     ]),
@@ -23270,17 +24341,17 @@ if (false) {
 }
 
 /***/ }),
-/* 130 */
+/* 155 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_createProject_vue__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_createProject_vue__ = __webpack_require__(35);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7b4f963d_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_createProject_vue__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7b4f963d_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_createProject_vue__ = __webpack_require__(158);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(131)
+  __webpack_require__(156)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -23326,13 +24397,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 131 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(132);
+var content = __webpack_require__(157);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -23352,7 +24423,7 @@ if(false) {
 }
 
 /***/ }),
-/* 132 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -23360,13 +24431,13 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-7b4f963d]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\nform[data-v-7b4f963d]{\r\n  margin-top: 30px;\n}\n.header[data-v-7b4f963d]{\r\n  border-bottom: 1px solid #ebebeb;\n}\n.input_heading[data-v-7b4f963d]{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\n}\n.inputField[data-v-7b4f963d]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-7b4f963d]:focus{\r\n  outline: none;\n}\n.button[data-v-7b4f963d]:focus{\r\n  outline-color:  #4bc800;\n}\n.button[data-v-7b4f963d]{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    margin-top: 10px;\n}\n.inputField[data-v-7b4f963d]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-7b4f963d]:focus{\r\n  outline: none;\n}\n.button[data-v-7b4f963d]:focus{\r\n  outline-color:  #4bc800;\n}\nul[data-v-7b4f963d]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-7b4f963d]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n     margin-bottom: -10px;\n}\nli:active a[data-v-7b4f963d] {\r\n  color:#4bc800;\n}\nli[data-v-7b4f963d]:hover{\r\n  border-color: #4bc800;\n}\na[data-v-7b4f963d]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/createProject.vue"],"names":[],"mappings":";AAmIA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,eAAA;IACA,kBAAA;CAEA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,YAAA;IACA,gBAAA;IACA,kBAAA;IACA,aAAA;IACA,wBAAA;IACA,iBAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;KACA,qBAAA;CACA;AAEA;EACA,cAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"createProject.vue","sourcesContent":["<template>\r\n\t<div  class=\"mainDiv\">\r\n      <div  class=\"header\">\r\n        <ul>\r\n            <li><a v-on:click=\"$parent.updateView('add-hours')\">Enter Time Worked</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('')\">Approve Time</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('create-project')\" style=\"color:#4bc800\">Create Project</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('modify-project')\">Modify project</a></li>\r\n            \r\n        </ul>\r\n      </div>\r\n\t\t\r\n\t\t<form v-on:submit.prevent=\"onSubmit\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-6\">\r\n            \t<p class=\"input_heading\">Project Name</p>\r\n            \t<input class=\"inputField\" type=\"text\" name=\"job_name\" v-model.trim=\"job_name\">\r\n            </div> \r\n            <div class=\"col-md-6\"> \r\n            \t<p class=\"input_heading\">Start Date</p>\r\n            \t<input class=\"inputField\" type=\"date\" name=\"start_date\" v-model.trim=\"start_date\">\r\n            </div>  \r\n        </div>\r\n        <div class=\"row\"> \r\n            <div class=\"col-md-6\">     \r\n            \t<p class=\"input_heading\">End Date</p>\r\n            \t<input class=\"inputField\" type=\"date\" name=\"end_date\" v-model.trim=\"end_date\">\r\n            </div>\r\n            <div class=\"col-md-6\">  \r\n            \t<p class=\"input_heading\">Hours Bid</p>\r\n            \t<input class=\"inputField\" type=\"number\" name =\"hours_bid\" v-model.number=\"hours_bid\">\r\n            </div>  \r\n        </div>      \r\n        <div class=\"row\">\r\n            <div class=\"col-md-6\">\r\n            \t<p class=\"input_heading\">Estimated Start Date</p>\r\n            \t<input class=\"inputField\" type=\"date\" name=\"est_start_date\" v-model.trim=\"est_start_date\">\r\n            </div>\r\n            <div class=\"col-md-6\">  \r\n            \t<p class=\"input_heading\">Estimated End Date</p>\r\n            \t<input class=\"inputField\" type=\"date\" name=\"est_end_date\" v-model.trim=\"est_end_date\">\r\n            </div>  \r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-6\">      \r\n            \t<p class=\"input_heading\">Customer ID</p>\r\n            \t<input class=\"inputField\" type=\"number\" name=\"fk_customer_id\" v-model.number=\"fk_customer_id\">\r\n            </div>\r\n            <div class=\"col-md-6\">  \r\n            \t<p class=\"input_heading\">Bill Rate</p>\r\n            \t<input class=\"inputField\" type=\"text\" name=\"bill_rate\" v-model.trim=\"bill_rate\">\r\n            </div>\r\n        </div>    \r\n        <div class=\"row\">    \r\n            <div class=\"col-md-6\">  \r\n            \t<p class=\"input_heading\">Job Status</p>\r\n            \t<input class=\"inputField\" type=\"text\" name=\"job_status\" v-model.trim=\"job_status\">\r\n            </div> \r\n            <div class=\"col-md-6\"> \r\n            \t<p class=\"input_heading\">Max Labor Cost</p>\r\n            \t<input class=\"inputField\" type=\"number\" name=\"max_labor_cost\" v-model.number=\"max_labor_cost\">\r\n            </div> \r\n        </div>     \r\n\r\n            <button class=\"button\" type=\"submit\" value=\"Submit\">Create Project</button>\r\n             \r\n    </form>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\n\r\nimport axios from \"axios\";\r\n\r\nexport default {\r\n  name: 'create-project',\r\n  props: [\"user\"],\r\n  data() {\r\n    return {\r\n\r\n    \tcreated_by_id: this.user.userID,\r\n    \tmodified_by_id: this.user.userID, \r\n    \tjob_name: '',\r\n    \tstart_date: '',\r\n    \tend_date: '',\r\n    \thours_bid: '',\r\n    \test_start_date: '',\r\n    \test_end_date: '',\r\n    \tfk_customer_id: '',\r\n    \tbill_rate: '',\r\n    \tjob_status: '',\r\n    \tmax_labor_cost: ''\r\n    }\r\n  },\r\n  methods: {\r\n    onSubmit: function(){\r\n      console.log(this.start_date);\r\n      axios({\r\n        method: 'post',\r\n        url: '/jobs/add',\r\n        data: {\r\n        created_by_id: this.user.userID,\r\n    \tmodified_by_id: this.user.userID, \r\n    \tjob_name: this.job_name,\r\n    \tstart_date: this.start_date,\r\n    \tend_date: this.end_date,\r\n    \thours_bid: this.hours_bid,\r\n    \test_start_date: this.est_start_date,\r\n    \test_end_date: this.est_end_date,\r\n    \tfk_customer_id: this.fk_customer_id,\r\n    \tbill_rate: this.bill_rate,\r\n    \tjob_status: this.job_status,\r\n    \tmax_labor_cost: this.max_labor_cost\r\n      }\r\n      })\r\n      .then(req => {\r\n        if(req.data.ok){\r\n          console.log('Job added!');\r\n        };\r\n      })\r\n      .catch(err => {\r\n        console.log(err);\r\n      })\r\n    }\r\n  },\r\n  beforeMount(){\r\n  \tconsole.log(this);\r\n  }\r\n}; \r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\nform{\r\n  margin-top: 30px;\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\n.input_heading{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\r\n    \r\n }   \r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n.button{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    margin-top: 10px;\r\n}\r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n     margin-bottom: -10px;\r\n}\r\n\r\nli:active a {\r\n  color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #4bc800;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-7b4f963d]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\nform[data-v-7b4f963d]{\r\n  margin-top: 30px;\n}\n.header[data-v-7b4f963d]{\r\n  border-bottom: 1px solid #ebebeb;\n}\n.input_heading[data-v-7b4f963d]{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\n}\n.inputField[data-v-7b4f963d]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-7b4f963d]:focus{\r\n  outline: none;\n}\n.button[data-v-7b4f963d]:focus{\r\n  outline-color:  #4bc800;\n}\n.button[data-v-7b4f963d]{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    margin-top: 10px;\n}\n.inputField[data-v-7b4f963d]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-7b4f963d]:focus{\r\n  outline: none;\n}\n.button[data-v-7b4f963d]:focus{\r\n  outline-color:  #4bc800;\n}\nul[data-v-7b4f963d]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-7b4f963d]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n     margin-bottom: -10px;\n}\nli:active a[data-v-7b4f963d] {\r\n  color:#4bc800;\n}\nli[data-v-7b4f963d]:hover{\r\n  border-color: #4bc800;\n}\na[data-v-7b4f963d]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/createProject.vue"],"names":[],"mappings":";AAsIA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,eAAA;IACA,kBAAA;CAEA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,YAAA;IACA,gBAAA;IACA,kBAAA;IACA,aAAA;IACA,wBAAA;IACA,iBAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;KACA,qBAAA;CACA;AAEA;EACA,cAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"createProject.vue","sourcesContent":["<template>\r\n\t<div  class=\"mainDiv\">\r\n      <div  class=\"header\">\r\n        <ul>\r\n            <!-- <li><a v-on:click=\"$parent.updateView('add-hours')\">Enter Time Worked</a></li> -->\r\n           <!-- <li><a v-on:click=\"$parent.updateView('')\">Approve Time</a></li> -->\r\n           <li><a v-on:click=\"$parent.updateView('create-project')\" style=\"color:#4bc800\">Create Project</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('open-jobs')\">View open jobs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('close-jobs')\">View close jobs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('all-jobs')\">View all jobs</a></li>\r\n           \r\n            \r\n        </ul>\r\n      </div>\r\n\t\t\r\n\t\t<form v-on:submit.prevent=\"onSubmit\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-6\">\r\n            \t<p class=\"input_heading\">Project Name</p>\r\n            \t<input class=\"inputField\" type=\"text\" name=\"job_name\" v-model.trim=\"job_name\">\r\n            </div> \r\n            <div class=\"col-md-6\"> \r\n            \t<p class=\"input_heading\">Start Date</p>\r\n            \t<input class=\"inputField\" type=\"date\" name=\"start_date\" v-model.trim=\"start_date\">\r\n            </div>  \r\n        </div>\r\n        <div class=\"row\"> \r\n            <div class=\"col-md-6\">     \r\n            \t<p class=\"input_heading\">End Date</p>\r\n            \t<input class=\"inputField\" type=\"date\" name=\"end_date\" v-model.trim=\"end_date\">\r\n            </div>\r\n            <div class=\"col-md-6\">  \r\n            \t<p class=\"input_heading\">Hours Bid</p>\r\n            \t<input class=\"inputField\" type=\"number\" name =\"hours_bid\" v-model.number=\"hours_bid\">\r\n            </div>  \r\n        </div>      \r\n        <div class=\"row\">\r\n            <div class=\"col-md-6\">\r\n            \t<p class=\"input_heading\">Estimated Start Date</p>\r\n            \t<input class=\"inputField\" type=\"date\" name=\"est_start_date\" v-model.trim=\"est_start_date\">\r\n            </div>\r\n            <div class=\"col-md-6\">  \r\n            \t<p class=\"input_heading\">Estimated End Date</p>\r\n            \t<input class=\"inputField\" type=\"date\" name=\"est_end_date\" v-model.trim=\"est_end_date\">\r\n            </div>  \r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-6\">      \r\n            \t<p class=\"input_heading\">Customer ID</p>\r\n            \t<input class=\"inputField\" type=\"number\" name=\"fk_customer_id\" v-model.number=\"fk_customer_id\">\r\n            </div>\r\n            <div class=\"col-md-6\">  \r\n            \t<p class=\"input_heading\">Bill Rate</p>\r\n            \t<input class=\"inputField\" type=\"text\" name=\"bill_rate\" v-model.trim=\"bill_rate\">\r\n            </div>\r\n        </div>    \r\n        <div class=\"row\">    \r\n            <div class=\"col-md-6\">  \r\n            \t<p class=\"input_heading\">Job Status</p>\r\n            \t<input class=\"inputField\" type=\"text\" name=\"job_status\" v-model.trim=\"job_status\">\r\n            </div> \r\n            <div class=\"col-md-6\"> \r\n            \t<p class=\"input_heading\">Max Labor Cost</p>\r\n            \t<input class=\"inputField\" type=\"number\" name=\"max_labor_cost\" v-model.number=\"max_labor_cost\">\r\n            </div> \r\n        </div>     \r\n\r\n            <button class=\"button\" type=\"submit\" value=\"Submit\">Create Project</button>\r\n             \r\n    </form>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\n\r\nimport axios from \"axios\";\r\n\r\nexport default {\r\n  name: 'create-project',\r\n  props: [\"user\"],\r\n  data() {\r\n    return {\r\n\r\n    \tcreated_by_id: this.user.userID,\r\n    \tmodified_by_id: this.user.userID, \r\n    \tjob_name: '',\r\n    \tstart_date: '',\r\n    \tend_date: '',\r\n    \thours_bid: '',\r\n    \test_start_date: '',\r\n    \test_end_date: '',\r\n    \tfk_customer_id: '',\r\n    \tbill_rate: '',\r\n    \tjob_status: '',\r\n    \tmax_labor_cost: ''\r\n    }\r\n  },\r\n  methods: {\r\n    onSubmit: function(){\r\n      console.log(this.start_date);\r\n      axios({\r\n        method: 'post',\r\n        url: '/jobs/add',\r\n        data: {\r\n        created_by_id: this.user.userID,\r\n    \tmodified_by_id: this.user.userID, \r\n    \tjob_name: this.job_name,\r\n    \tstart_date: this.start_date,\r\n    \tend_date: this.end_date,\r\n    \thours_bid: this.hours_bid,\r\n    \test_start_date: this.est_start_date,\r\n    \test_end_date: this.est_end_date,\r\n    \tfk_customer_id: this.fk_customer_id,\r\n    \tbill_rate: this.bill_rate,\r\n    \tjob_status: this.job_status,\r\n    \tmax_labor_cost: this.max_labor_cost\r\n      }\r\n      })\r\n      .then(req => {\r\n        if(req.data.ok){\r\n          console.log('Job added!');\r\n        };\r\n      })\r\n      .catch(err => {\r\n        console.log(err);\r\n      })\r\n    }\r\n  },\r\n  beforeMount(){\r\n  \tconsole.log(this);\r\n  }\r\n}; \r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\nform{\r\n  margin-top: 30px;\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\n.input_heading{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\r\n    \r\n }   \r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n.button{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    margin-top: 10px;\r\n}\r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n     margin-bottom: -10px;\r\n}\r\n\r\nli:active a {\r\n  color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #4bc800;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 133 */
+/* 158 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23377,34 +24448,6 @@ var render = function() {
   return _c("div", { staticClass: "mainDiv" }, [
     _c("div", { staticClass: "header" }, [
       _c("ul", [
-        _c("li", [
-          _c(
-            "a",
-            {
-              on: {
-                click: function($event) {
-                  _vm.$parent.updateView("add-hours")
-                }
-              }
-            },
-            [_vm._v("Enter Time Worked")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c(
-            "a",
-            {
-              on: {
-                click: function($event) {
-                  _vm.$parent.updateView("")
-                }
-              }
-            },
-            [_vm._v("Approve Time")]
-          )
-        ]),
-        _vm._v(" "),
         _c("li", [
           _c(
             "a",
@@ -23426,11 +24469,39 @@ var render = function() {
             {
               on: {
                 click: function($event) {
-                  _vm.$parent.updateView("modify-project")
+                  _vm.$parent.updateView("open-jobs")
                 }
               }
             },
-            [_vm._v("Modify project")]
+            [_vm._v("View open jobs")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("close-jobs")
+                }
+              }
+            },
+            [_vm._v("View close jobs")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("all-jobs")
+                }
+              }
+            },
+            [_vm._v("View all jobs")]
           )
         ])
       ])
@@ -23784,17 +24855,17 @@ if (false) {
 }
 
 /***/ }),
-/* 134 */
+/* 159 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_createCustomer_vue__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_createCustomer_vue__ = __webpack_require__(36);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2226302c_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_createCustomer_vue__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2226302c_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_createCustomer_vue__ = __webpack_require__(162);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(135)
+  __webpack_require__(160)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -23840,13 +24911,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 135 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(136);
+var content = __webpack_require__(161);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -23866,7 +24937,7 @@ if(false) {
 }
 
 /***/ }),
-/* 136 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -23874,13 +24945,13 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-2226302c]{\r\n     margin-left: 18%;\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 40px;\n}\nform[data-v-2226302c]{\r\n  margin-top: 30px;\n}\n.inputField[data-v-2226302c]{\r\n    background-color: #fff;\r\n    font-family: Open Sans,Arial,sans-serif;\r\n    line-height: normal!important;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 0;\r\n    padding: 12px 18px 11px;\r\n    width: 100%;\n}\n.inputField[data-v-2226302c]:focus{\r\n  outline: none;\n}\n.button[data-v-2226302c]{\r\n    color: #fff;\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    padding: 9px;\r\n    margin-left: -30px;\r\n    width: 85%;\n}\n.button[data-v-2226302c]:focus{\r\n  outline-color:  #4bc800;\n}\n.row1[data-v-2226302c]{\r\n  margin-left: 26%;\n}\n.row2[data-v-2226302c]{\n}\n.paragraph[data-v-2226302c]{\r\n    margin-top: 40px;\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 1.5;\r\n    margin-left: 3%;\n}\n.header[data-v-2226302c]{\r\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-2226302c]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-2226302c]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-2226302c]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-2226302c]:hover{\r\n  border-color: #929292;\n}\na[data-v-2226302c]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/createCustomer.vue"],"names":[],"mappings":";AAgFA;KACA,iBAAA;KACA,eAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AACA;IACA,uBAAA;IACA,wCAAA;IACA,8BAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,UAAA;IACA,wBAAA;IACA,YAAA;CACA;AACA;EACA,cAAA;CACA;AACA;IACA,YAAA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,aAAA;IACA,mBAAA;IACA,WAAA;CAEA;AACA;EACA,wBAAA;CAEA;AACA;EACA,iBAAA;CAEA;AACA;CAEA;AACA;IACA,iBAAA;IACA,eAAA;IACA,mBAAA;IACA,iBAAA;IACA,gBAAA;CACA;AACA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"createCustomer.vue","sourcesContent":["<template >\r\n\t\r\n    <div class=\"mainDiv\"> \r\n\t\t<!-- <h1>Create a Customer</h1> -->\r\n    <div  class=\"header\">\r\n      <ul>\r\n            <li><a v-on:click=\"$parent.updateView('create-customer')\"  style=\"color:#4bc800\">Add custome</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('view-customer')\"  >View customer</a></li>\r\n            \r\n          </ul>\r\n     </div> \r\n    \r\n\t\t<form v-on:submit.prevent=\"onSubmit\">\r\n      <div class=\"row row1\">\r\n            <div class=\"col-md-6\">\r\n      \t\t   \t<input class=\"inputField\" type=\"text\" name=\"customer_name\" placeholder=\"Enter customer name...\" v-model.trim=\"customer_name\" required>\r\n            </div>\r\n            <div class=\"col-md-3\">  \r\n              <button class=\"button \" type=\"submit\" value=\"Submit\">Submit</button>\r\n      \t\t  </div>  \r\n      </div>  \r\n\t\t</form>\r\n      <p style=\"text-align:center;\" class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Customer added successfully.</p>\r\n\r\n      <div class=\"row row2\">\r\n        <p class=\"paragraph\" style=\"display: block;\">\r\n          <strong>Create a customer</strong> and add it to a project on Project Edit Page. <br>\r\n          This will allow you to <strong>filter and group</strong> your time by clients in reports.\r\n        </p>  \r\n        /////\r\n        <li><a v-on:click=\"$parent.updateView('modify-customer')\" style=\"color:#4bc800\">Modify cust</a></li>\r\n        /////\r\n      </div>\r\n\t</div>\r\n  \r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'create-customer',\r\n  props: ['user'],\r\n  data(){\r\n    return {\r\n      customer_name: '',\r\n      created_by_id: this.user.userID,\r\n      modified_by_id: this.user.userID\r\n    }\r\n  },\r\n  methods: {\r\n    onSubmit: function(){\r\n      console.log(this.customer_name);\r\n      axios({\r\n        method: 'post',\r\n        url: '/customers/add',\r\n        data: {\r\n        customer_name: this.customer_name,\r\n        created_by_id: this.created_by_id,\r\n        modified_by_id: this.modified_by_id\r\n      }\r\n      })\r\n      .then(req => {\r\n       if(req.status===200){\r\n          $('.inputField').val('');\r\n          document.getElementById('confirmation').classList.remove('hidden');\r\n          console.log('Customer added!');\r\n        };\r\n      })\r\n      .catch(err => {\r\n        console.log(err);\r\n      })\r\n    }\r\n  },\r\n  beforeMount(){\r\n  \tconsole.log(this);\r\n  }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-left: 18%;\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 40px;\r\n\r\n}\r\nform{\r\n  margin-top: 30px;\r\n}\r\n.inputField{\r\n    background-color: #fff;\r\n    font-family: Open Sans,Arial,sans-serif;\r\n    line-height: normal!important;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 0;\r\n    padding: 12px 18px 11px;\r\n    width: 100%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button{\r\n    color: #fff;\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    padding: 9px;\r\n    margin-left: -30px;\r\n    width: 85%;\r\n\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n.row1{\r\n  margin-left: 26%;\r\n\r\n}\r\n.row2{\r\n\r\n}\r\n.paragraph{\r\n    margin-top: 40px;\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 1.5;\r\n    margin-left: 3%;\r\n}\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n\r\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-2226302c]{\r\n     margin-left: 18%;\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 40px;\n}\nform[data-v-2226302c]{\r\n  margin-top: 30px;\n}\n.inputField[data-v-2226302c]{\r\n    background-color: #fff;\r\n    font-family: Open Sans,Arial,sans-serif;\r\n    line-height: normal!important;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 0;\r\n    padding: 12px 18px 11px;\r\n    width: 100%;\n}\n.inputField[data-v-2226302c]:focus{\r\n  outline: none;\n}\n.input_heading[data-v-2226302c]{\r\n    color: #afaeb0;\r\n    margin-top: 10px;\n}\n.button[data-v-2226302c]{\r\n    color: #fff;\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    padding: 9px;\r\n    margin-left: -30px;\r\n    width: 85%;\n}\n.button[data-v-2226302c]:focus{\r\n  outline-color:  #4bc800;\n}\n.row1[data-v-2226302c]{\r\n  margin-left: 26%;\n}\n.row2[data-v-2226302c]{\n}\n.paragraph[data-v-2226302c]{\r\n    margin-top: 40px;\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 1.5;\r\n    margin-left: 3%;\n}\n.header[data-v-2226302c]{\r\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-2226302c]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-2226302c]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-2226302c]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-2226302c]:hover{\r\n  border-color: #929292;\n}\na[data-v-2226302c]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/createCustomer.vue"],"names":[],"mappings":";AAgFA;KACA,iBAAA;KACA,eAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AACA;IACA,uBAAA;IACA,wCAAA;IACA,8BAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,UAAA;IACA,wBAAA;IACA,YAAA;CACA;AACA;EACA,cAAA;CACA;AACA;IACA,eAAA;IACA,iBAAA;CAEA;AACA;IACA,YAAA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,aAAA;IACA,mBAAA;IACA,WAAA;CAEA;AACA;EACA,wBAAA;CAEA;AACA;EACA,iBAAA;CAEA;AACA;CAEA;AACA;IACA,iBAAA;IACA,eAAA;IACA,mBAAA;IACA,iBAAA;IACA,gBAAA;CACA;AACA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"createCustomer.vue","sourcesContent":["<template >\r\n\t\r\n    <div class=\"mainDiv\"> \r\n\t\t<!-- <h1>Create a Customer</h1> -->\r\n    <div  class=\"header\">\r\n      <ul>\r\n            <li><a v-on:click=\"$parent.updateView('create-customer')\"  style=\"color:#4bc800\">Add customer</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('view-customer')\"  >View customer</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('modify-customer')\" >Modify customer</a></li>\r\n          </ul>\r\n     </div> \r\n    \r\n\t\t<form v-on:submit.prevent=\"onSubmit\">\r\n      <div class=\"row row1\">\r\n            <div class=\"col-md-6\">\r\n      \t\t   \t<input class=\"inputField\" type=\"text\" name=\"customer_name\" placeholder=\"Enter customer name...\" v-model.trim=\"customer_name\" required>\r\n            </div>\r\n            <div class=\"col-md-3\">  \r\n              <button class=\"button \" type=\"submit\" value=\"Submit\">Submit</button>\r\n      \t\t  </div>  \r\n      </div>  \r\n\t\t</form>\r\n      <p style=\"text-align:center;\" class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Customer added successfully.</p>\r\n\r\n      <div class=\"row row2\">\r\n        <p class=\"paragraph\" style=\"display: block;\">\r\n          <strong>Create a customer</strong> and add it to a project on Project Edit Page. <br>\r\n          This will allow you to <strong>filter and group</strong> your time by clients in reports.\r\n        </p>  \r\n        \r\n        \r\n       \r\n      </div>\r\n\t</div>\r\n  \r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'create-customer',\r\n  props: ['user'],\r\n  data(){\r\n    return {\r\n      customer_name: '',\r\n      created_by_id: this.user.userID,\r\n      modified_by_id: this.user.userID\r\n    }\r\n  },\r\n  methods: {\r\n    onSubmit: function(){\r\n      console.log(this.customer_name);\r\n      axios({\r\n        method: 'post',\r\n        url: '/customers/add',\r\n        data: {\r\n        customer_name: this.customer_name,\r\n        created_by_id: this.created_by_id,\r\n        modified_by_id: this.modified_by_id\r\n      }\r\n      })\r\n      .then(req => {\r\n       if(req.status===200){\r\n          $('.inputField').val('');\r\n          document.getElementById('confirmation').classList.remove('hidden');\r\n          console.log('Customer added!');\r\n        };\r\n      })\r\n      .catch(err => {\r\n        console.log(err);\r\n      })\r\n    }\r\n  },\r\n  beforeMount(){\r\n  \tconsole.log(this);\r\n  }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-left: 18%;\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 40px;\r\n\r\n}\r\nform{\r\n  margin-top: 30px;\r\n}\r\n.inputField{\r\n    background-color: #fff;\r\n    font-family: Open Sans,Arial,sans-serif;\r\n    line-height: normal!important;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 0;\r\n    padding: 12px 18px 11px;\r\n    width: 100%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.input_heading{\r\n    color: #afaeb0;\r\n    margin-top: 10px;\r\n    \r\n}\r\n.button{\r\n    color: #fff;\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    padding: 9px;\r\n    margin-left: -30px;\r\n    width: 85%;\r\n\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n.row1{\r\n  margin-left: 26%;\r\n\r\n}\r\n.row2{\r\n\r\n}\r\n.paragraph{\r\n    margin-top: 40px;\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 1.5;\r\n    margin-left: 3%;\r\n}\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n\r\n</style>"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 137 */
+/* 162 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23902,7 +24973,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("Add custome")]
+            [_vm._v("Add customer")]
           )
         ]),
         _vm._v(" "),
@@ -23917,6 +24988,20 @@ var render = function() {
               }
             },
             [_vm._v("View customer")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("modify-customer")
+                }
+              }
+            },
+            [_vm._v("Modify customer")]
           )
         ])
       ])
@@ -23974,25 +25059,7 @@ var render = function() {
     _vm._v(" "),
     _vm._m(1),
     _vm._v(" "),
-    _c("div", { staticClass: "row row2" }, [
-      _vm._m(2),
-      _vm._v("  \n        /////\n        "),
-      _c("li", [
-        _c(
-          "a",
-          {
-            staticStyle: { color: "#4bc800" },
-            on: {
-              click: function($event) {
-                _vm.$parent.updateView("modify-customer")
-              }
-            }
-          },
-          [_vm._v("Modify cust")]
-        )
-      ]),
-      _vm._v("\n        /////\n      ")
-    ])
+    _vm._m(2)
   ])
 }
 var staticRenderFns = [
@@ -24031,18 +25098,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "p",
-      { staticClass: "paragraph", staticStyle: { display: "block" } },
-      [
+    return _c("div", { staticClass: "row row2" }, [
+      _c("p", { staticClass: "paragraph", staticStyle: { display: "block" } }, [
         _c("strong", [_vm._v("Create a customer")]),
         _vm._v(" and add it to a project on Project Edit Page. "),
         _c("br"),
         _vm._v("\n          This will allow you to "),
         _c("strong", [_vm._v("filter and group")]),
         _vm._v(" your time by clients in reports.\n        ")
-      ]
-    )
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -24056,17 +25121,17 @@ if (false) {
 }
 
 /***/ }),
-/* 138 */
+/* 163 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_createRoles_vue__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_createRoles_vue__ = __webpack_require__(37);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_b5618a3e_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_createRoles_vue__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_b5618a3e_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_createRoles_vue__ = __webpack_require__(166);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(139)
+  __webpack_require__(164)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -24112,13 +25177,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 139 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(140);
+var content = __webpack_require__(165);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -24138,7 +25203,7 @@ if(false) {
 }
 
 /***/ }),
-/* 140 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -24146,13 +25211,13 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-b5618a3e]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.heading[data-v-b5618a3e]{\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 3.5;\r\n    font-size: 18px;\n}\nform[data-v-b5618a3e]{\r\n  margin-top: 30px;\n}\n.header[data-v-b5618a3e]{\r\n  border-bottom: 1px solid #ebebeb;\n}\n.input_heading[data-v-b5618a3e]{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\n}\n.inputField[data-v-b5618a3e]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-b5618a3e]:focus{\r\n  outline: none;\n}\n.button[data-v-b5618a3e]:focus{\r\n  outline-color:  #4bc800;\n}\n.button[data-v-b5618a3e]{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    margin-top: 10px;\r\n    width: 15%;\n}\n.inputField[data-v-b5618a3e]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 8px 18px 8px;\r\n    width: 97%;\n}\n.inputField[data-v-b5618a3e]:focus{\r\n  outline: none;\n}\n.button[data-v-b5618a3e]:focus{\r\n  outline-color:  #4bc800;\n}\nul[data-v-b5618a3e]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-b5618a3e]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-b5618a3e]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-b5618a3e]:hover{\r\n  border-color: #929292;\n}\na[data-v-b5618a3e]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/createRoles.vue"],"names":[],"mappings":";AAwGA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;IACA,eAAA;IACA,mBAAA;IACA,iBAAA;IACA,gBAAA;CAEA;AACA;EACA,iBAAA;CACA;AACA;EACA,iCAAA;CAEA;AACA;IACA,eAAA;IACA,kBAAA;CAEA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,YAAA;IACA,gBAAA;IACA,kBAAA;IACA,aAAA;IACA,wBAAA;IACA,iBAAA;IACA,WAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,sBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"createRoles.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n    <div  class=\"header\">\r\n\t    <ul>\r\n           <li><a v-on:click=\"$parent.updateView('create-roles')\" style=\"color:#4bc800\">Create roles</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('modify-roles')\">Modify Roles</a></li>\r\n        </ul>\r\n      </div>  \r\n\t\t<p class=\"heading\">Create Installer Roles</p>\r\n\t\t<form v-on:submit.prevent=\"onSubmit\" id=\"form\">\r\n      <div class=\"row\">\r\n          <div class=\"col-md-6\">\r\n        \t\t\t  <p class=\"input_heading\">Role name</p>\r\n            \t\t<input  class=\"inputField\" type=\"text\" v-model.trim=\"installer_role_name\">\r\n          </div>\r\n          <div class=\"col-md-6\">\r\n            \t\t<p class=\"input_heading\">Role weight</p>\r\n            \t\t<input  class=\"inputField\" type=\"number\" v-model.number=\"role_weight\">\r\n          </div>\r\n      </div> \r\n      <div class=\"row\"> \r\n          <div class=\"col-md-6\">\r\n            \t\t<p class=\"input_heading\">Minimum base</p>\r\n            \t\t<input  class=\"inputField\" type=\"number\" v-model.number=\"min_base\">\r\n          </div>\r\n          <div class=\"col-md-6\">      \r\n            \t\t<p class=\"input_heading\">Maximum base</p>\r\n            \t\t<input  class=\"inputField\" type=\"number\" v-model.number=\"max_base\">\r\n          </div>\r\n      </div>\r\n      <div class=\"row\">    \r\n          <div class=\"col-md-6\">      \r\n            \t\t<p class=\"input_heading\">Individual bonus</p>\r\n            \t\t<input  class=\"inputField\" type=\"number\" v-model.number=\"individual_bonus\">\r\n          </div>\r\n          <div class=\"col-md-6\">\r\n            \t\t<p class=\"input_heading\">Team bonus</p>\r\n            \t\t<input  class=\"inputField\" type=\"number\" v-model.number=\"team_bonus\">\r\n          </div>\r\n      </div>\r\n      <div class=\"row\">    \r\n          <div class=\"col-md-6\">\r\n            \t\t<p class=\"input_heading\">Bonus weight</p>\r\n            \t\t<input  class=\"inputField\" type=\"number\" v-model.number=\"bonus_weight\">\r\n          </div>\r\n      </div>    \r\n            \t\t<button class=\"button\" type=\"submit\" value=\"Submit\">Create</button>\r\n            \t\t<p style=\"text-align:center;\" class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Role added</p>\r\n    </form>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'create-roles',\r\n  props: ['user'],\r\n  data(){\r\n  \treturn {\r\n  \t\tinstaller_role_name: '',\r\n  \t\trole_weight: '',\r\n  \t\tmin_base: '',\r\n  \t\tmax_base: '',\r\n  \t\tindividual_bonus: '',\r\n  \t\tteam_bonus: '',\r\n  \t\tbonus_weight: ''\r\n  \t}\r\n  },\r\n  methods: {\r\n  \tonSubmit: function(){\r\n  \t\taxios({\r\n  \t\t\tmethod: 'post',\r\n  \t\t\turl: 'installers/roles/add',\r\n  \t\t\tdata: {\r\n  \t\t\t\tcreated_by_id: this.user.userID,\r\n  \t\t\t\tmodified_by_id: this.user.userID,\r\n  \t\t\t\tinstaller_role_name: this.installer_role_name,\r\n  \t\t\t\trole_weight: this.role_weight,\r\n  \t\t\t\tmin_base: this.min_base,\r\n  \t\t\t\tmax_base: this.max_base,\r\n  \t\t\t\tindividual_bonus: this.individual_bonus,\r\n  \t\t\t\tteam_bonus: this.team_bonus,\r\n  \t\t\t\tbonus_weight: this.bonus_weight\r\n  \t\t\t}\r\n  \t\t})\r\n  \t\t.then(req => {\r\n  \t\t\tdocument.getElementById('confirmation').classList.remove('hidden');\r\n  \t\t\tthis.installer_role_name = '';\r\n  \t\t\tthis.role_weight = '';\r\n  \t\t\tthis.min_base = '';\r\n  \t\t\tthis.max_base = '';\r\n  \t\t\tthis.individual_bonus = '';\r\n  \t\t\tthis.team_bonus = '';\r\n  \t\t\tthis.bonus_weight = '';\r\n  \t\t})\r\n  \t\t.catch(err => {\r\n  \t\t\tconsole.log(err);\r\n  \t\t})\r\n  \t}\r\n  }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n.heading{\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 3.5;\r\n    font-size: 18px;\r\n\r\n}\r\nform{\r\n  margin-top: 30px;\r\n}\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\n.input_heading{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\r\n    \r\n }   \r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n.button{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    margin-top: 10px;\r\n    width: 15%;\r\n}\r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 8px 18px 8px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>\r\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-b5618a3e]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.heading[data-v-b5618a3e]{\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 3.5;\r\n    font-size: 18px;\n}\nform[data-v-b5618a3e]{\r\n  margin-top: 30px;\n}\n.header[data-v-b5618a3e]{\r\n  border-bottom: 1px solid #ebebeb;\n}\n.input_heading[data-v-b5618a3e]{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\n}\n.inputField[data-v-b5618a3e]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-b5618a3e]:focus{\r\n  outline: none;\n}\n.button[data-v-b5618a3e]:focus{\r\n  outline-color:  #4bc800;\n}\n.button[data-v-b5618a3e]{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    margin-top: 10px;\r\n    width: 15%;\n}\n.inputField[data-v-b5618a3e]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 8px 18px 8px;\r\n    width: 97%;\n}\n.inputField[data-v-b5618a3e]:focus{\r\n  outline: none;\n}\n.button[data-v-b5618a3e]:focus{\r\n  outline-color:  #4bc800;\n}\nul[data-v-b5618a3e]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-b5618a3e]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-b5618a3e]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-b5618a3e]:hover{\r\n  border-color: #929292;\n}\na[data-v-b5618a3e]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/createRoles.vue"],"names":[],"mappings":";AA0GA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;IACA,eAAA;IACA,mBAAA;IACA,iBAAA;IACA,gBAAA;CAEA;AACA;EACA,iBAAA;CACA;AACA;EACA,iCAAA;CAEA;AACA;IACA,eAAA;IACA,kBAAA;CAEA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,YAAA;IACA,gBAAA;IACA,kBAAA;IACA,aAAA;IACA,wBAAA;IACA,iBAAA;IACA,WAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,sBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"createRoles.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n    <div  class=\"header\">\r\n\t    <ul>\r\n           <li><a v-on:click=\"$parent.updateView('create-roles')\" style=\"color:#4bc800\">Create roles</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('modify-roles')\">Modify Roles</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('view-roles')\">View Roles</a></li>\r\n\r\n        </ul>\r\n      </div>  \r\n\t\t<p class=\"heading\">Create Installer Roles</p>\r\n\t\t<form v-on:submit.prevent=\"onSubmit\" id=\"form\">\r\n      <div class=\"row\">\r\n          <div class=\"col-md-6\">\r\n        \t\t\t  <p class=\"input_heading\">Role name</p>\r\n            \t\t<input  class=\"inputField\" type=\"text\" v-model.trim=\"installer_role_name\">\r\n          </div>\r\n          <div class=\"col-md-6\">\r\n            \t\t<p class=\"input_heading\">Role weight</p>\r\n            \t\t<input  class=\"inputField\" type=\"number\" v-model.number=\"role_weight\">\r\n          </div>\r\n      </div> \r\n      <div class=\"row\"> \r\n          <div class=\"col-md-6\">\r\n            \t\t<p class=\"input_heading\">Minimum base</p>\r\n            \t\t<input  class=\"inputField\" type=\"number\" v-model.number=\"min_base\">\r\n          </div>\r\n          <div class=\"col-md-6\">      \r\n            \t\t<p class=\"input_heading\">Maximum base</p>\r\n            \t\t<input  class=\"inputField\" type=\"number\" v-model.number=\"max_base\">\r\n          </div>\r\n      </div>\r\n      <div class=\"row\">    \r\n          <div class=\"col-md-6\">      \r\n            \t\t<p class=\"input_heading\">Individual bonus</p>\r\n            \t\t<input  class=\"inputField\" type=\"number\" v-model.number=\"individual_bonus\">\r\n          </div>\r\n          <div class=\"col-md-6\">\r\n            \t\t<p class=\"input_heading\">Team bonus</p>\r\n            \t\t<input  class=\"inputField\" type=\"number\" v-model.number=\"team_bonus\">\r\n          </div>\r\n      </div>\r\n      <div class=\"row\">    \r\n          <div class=\"col-md-6\">\r\n            \t\t<p class=\"input_heading\">Bonus weight</p>\r\n            \t\t<input  class=\"inputField\" type=\"number\" v-model.number=\"bonus_weight\">\r\n          </div>\r\n      </div>    \r\n            \t\t<button class=\"button\" type=\"submit\" value=\"Submit\">Create</button>\r\n            \t\t<p style=\"text-align:center;\" class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Role added</p>\r\n    </form>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'create-roles',\r\n  props: ['user'],\r\n  data(){\r\n  \treturn {\r\n  \t\tinstaller_role_name: '',\r\n  \t\trole_weight: '',\r\n  \t\tmin_base: '',\r\n  \t\tmax_base: '',\r\n  \t\tindividual_bonus: '',\r\n  \t\tteam_bonus: '',\r\n  \t\tbonus_weight: ''\r\n  \t}\r\n  },\r\n  methods: {\r\n  \tonSubmit: function(){\r\n  \t\taxios({\r\n  \t\t\tmethod: 'post',\r\n  \t\t\turl: 'installers/roles/add',\r\n  \t\t\tdata: {\r\n  \t\t\t\tcreated_by_id: this.user.userID,\r\n  \t\t\t\tmodified_by_id: this.user.userID,\r\n  \t\t\t\tinstaller_role_name: this.installer_role_name,\r\n  \t\t\t\trole_weight: this.role_weight,\r\n  \t\t\t\tmin_base: this.min_base,\r\n  \t\t\t\tmax_base: this.max_base,\r\n  \t\t\t\tindividual_bonus: this.individual_bonus,\r\n  \t\t\t\tteam_bonus: this.team_bonus,\r\n  \t\t\t\tbonus_weight: this.bonus_weight\r\n  \t\t\t}\r\n  \t\t})\r\n  \t\t.then(req => {\r\n  \t\t\tdocument.getElementById('confirmation').classList.remove('hidden');\r\n  \t\t\tthis.installer_role_name = '';\r\n  \t\t\tthis.role_weight = '';\r\n  \t\t\tthis.min_base = '';\r\n  \t\t\tthis.max_base = '';\r\n  \t\t\tthis.individual_bonus = '';\r\n  \t\t\tthis.team_bonus = '';\r\n  \t\t\tthis.bonus_weight = '';\r\n  \t\t})\r\n  \t\t.catch(err => {\r\n  \t\t\tconsole.log(err);\r\n  \t\t})\r\n  \t}\r\n  }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n.heading{\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 3.5;\r\n    font-size: 18px;\r\n\r\n}\r\nform{\r\n  margin-top: 30px;\r\n}\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\n.input_heading{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\r\n    \r\n }   \r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n.button{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    margin-top: 10px;\r\n    width: 15%;\r\n}\r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 8px 18px 8px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>\r\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 141 */
+/* 166 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24189,6 +25254,20 @@ var render = function() {
               }
             },
             [_vm._v("Modify Roles")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("view-roles")
+                }
+              }
+            },
+            [_vm._v("View Roles")]
           )
         ])
       ])
@@ -24471,17 +25550,17 @@ if (false) {
 }
 
 /***/ }),
-/* 142 */
+/* 167 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_modifyRoles_vue__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_modifyRoles_vue__ = __webpack_require__(38);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7ae58e3a_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_modifyRoles_vue__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7ae58e3a_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_modifyRoles_vue__ = __webpack_require__(170);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(143)
+  __webpack_require__(168)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -24527,13 +25606,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 143 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(144);
+var content = __webpack_require__(169);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -24553,7 +25632,7 @@ if(false) {
 }
 
 /***/ }),
-/* 144 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -24561,13 +25640,13 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-7ae58e3a]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.header[data-v-7ae58e3a]{\r\n  border-bottom: 1px solid #ebebeb;\n}\n.paragraph[data-v-7ae58e3a]{\r\n    margin-top: 40px;\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 1.5;\r\n    font-weight: bold;\r\n    font-size: 17px;\n}\n.input[data-v-7ae58e3a]:focus{\r\n  outline: none;\n}\n.input[data-v-7ae58e3a]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 100%;\r\n    margin-left: 70px;\r\n    margin-top: 40px;\n}\nul[data-v-7ae58e3a]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-7ae58e3a]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-7ae58e3a]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-7ae58e3a]:hover{\r\n  border-color: #929292;\n}\na[data-v-7ae58e3a]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/modifyRoles.vue"],"names":[],"mappings":";AAoGA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,iBAAA;IACA,eAAA;IACA,mBAAA;IACA,iBAAA;IACA,kBAAA;IACA,gBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,YAAA;IACA,kBAAA;IACA,iBAAA;CACA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyRoles.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n    <div  class=\"header\">\r\n\t    <ul>\r\n           <li><a v-on:click=\"$parent.updateView('create-roles')\">Create roles</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('modify-roles')\" style=\"color:#4bc800\">Modify Roles</a></li>\r\n        </ul>\r\n      </div>  \r\n\t\t<div class=\"row\">\r\n        <div class=\"col-md-10\">\r\n            <select class=\"input\" v-model=\"role_id\">\r\n              <option v-for=\"role in roles\" v-bind:value=\"role.installer_role_id\">\r\n                {{role.installer_role_name}}\r\n              </option>\r\n            </select>\r\n        </div>    \r\n    </div>        \r\n    <div class=\"row\"> \r\n        <div class=\"col-md-12\"> \r\n            <p class=\"paragraph\">Select role to modify</p>\r\n            <form v-if=\"selectedRole.installer_role_id\" v-on:submit.prevent=\"onSubmit\">\r\n              <p>Role name</p>\r\n              <input type =\"hidden\" v-model=\"selectedRole.installer_role_id\">\r\n              <input type=\"text\" v-model.trim=\"selectedRole.installer_role_name\" required>\r\n              <p>Role weight</p>\r\n              <input type=\"number\" v-model.number=\"selectedRole.role_weight\" required>\r\n              <p>Minimum base</p>\r\n              <input type=\"number\" v-model.number=\"selectedRole.min_base\" required>\r\n              <p>Maximum base</p>\r\n              <input type=\"number\" v-model.number=\"selectedRole.max_base\" required>\r\n              <p>Individual bonus</p>\r\n              <input type=\"number\" v-model.number=\"selectedRole.individual_bonus\" required>\r\n              <p>Team bonus</p>\r\n              <input type=\"number\" v-model.number=\"selectedRole.team_bonus\" required>\r\n              <p>Bonus weight</p>\r\n              <input type=\"number\" v-model.number=\"selectedRole.bonus_weight\" required>\r\n              <button class=\"button\" type=\"submit\" value=\"Submit\">Create</button>\r\n            </form>    \r\n        </div>  \r\n     </div> \r\n\t</div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'modify-roles',\r\n  data(){\r\n  \treturn {\r\n      role_id: '',\r\n      roles: '',\r\n      selectedRole: {}\r\n  \t}\r\n  },\r\n  methods: {\r\n    onSubmit: function(){\r\n      axios({\r\n        method: 'put',\r\n        url: 'installers/roles/update',\r\n        data: {\r\n          installer_role_id: this.selectedRole.installer_role_id,\r\n          installer_role_name: this.selectedRole.installer_role_name,\r\n          role_weight: this.selectedRole.role_weight,\r\n          min_base: this.selectedRole.min_base,\r\n          max_base: this.selectedRole.max_base,\r\n          individual_bonus: this.selectedRole.individual_bonus,\r\n          team_bonus: this.selectedRole.team_bonus,\r\n          bonus_weight: this.selectedRole.bonus_weight\r\n        }\r\n      })\r\n      .then(req => {\r\n        console.log(req);\r\n      })\r\n      .catch(err => {\r\n        console.log(err);\r\n      })\r\n    }\r\n  },\r\n  watch: {\r\n    role_id(id) {\r\n      [this.selectedRole] = this.roles.filter(r => r.installer_role_id === id);\r\n    }\r\n  },\r\n  beforeMount(){\r\n  \taxios({\r\n  \t\tmethod: 'get',\r\n  \t\turl: '/installers/roles'\r\n  \t})\r\n  \t.then(req => {\r\n      this.roles = req.data.roles;\r\n      console.log(req.data.roles);\r\n  \t})\r\n  \t.catch(err => {\r\n  \t\t\r\n  \t})\r\n  }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\n.paragraph{\r\n    margin-top: 40px;\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 1.5;\r\n    font-weight: bold;\r\n    font-size: 17px;\r\n}\r\n.input:focus{\r\n  outline: none;\r\n}\r\n.input{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 100%;\r\n    margin-left: 70px;\r\n    margin-top: 40px;\r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>\r\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-7ae58e3a]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.header[data-v-7ae58e3a]{\r\n  border-bottom: 1px solid #ebebeb;\n}\n.paragraph[data-v-7ae58e3a]{\r\n    margin-top: 40px;\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 1.5;\r\n    font-weight: bold;\r\n    font-size: 17px;\n}\n.input[data-v-7ae58e3a]:focus{\r\n  outline: none;\n}\n.input[data-v-7ae58e3a]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 100%;\r\n    margin-left: 70px;\r\n    margin-top: 40px;\n}\nul[data-v-7ae58e3a]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-7ae58e3a]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-7ae58e3a]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-7ae58e3a]:hover{\r\n  border-color: #929292;\n}\na[data-v-7ae58e3a]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/modifyRoles.vue"],"names":[],"mappings":";AAsGA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,iBAAA;IACA,eAAA;IACA,mBAAA;IACA,iBAAA;IACA,kBAAA;IACA,gBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,YAAA;IACA,kBAAA;IACA,iBAAA;CACA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyRoles.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n    <div  class=\"header\">\r\n\t    <ul>\r\n           <li><a v-on:click=\"$parent.updateView('create-roles')\">Create roles</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('modify-roles')\" style=\"color:#4bc800\">Modify Roles</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('view-roles')\">View Roles</a></li>\r\n\r\n        </ul>\r\n      </div>  \r\n\t\t<div class=\"row\">\r\n        <div class=\"col-md-10\">\r\n            <select class=\"input\" v-model=\"role_id\">\r\n              <option v-for=\"role in roles\" v-bind:value=\"role.installer_role_id\">\r\n                {{role.installer_role_name}}\r\n              </option>\r\n            </select>\r\n        </div>    \r\n    </div>        \r\n    <div class=\"row\"> \r\n        <div class=\"col-md-12\"> \r\n            <p class=\"paragraph\">Select role to modify</p>\r\n            <form v-if=\"selectedRole.installer_role_id\" v-on:submit.prevent=\"onSubmit\">\r\n              <p>Role name</p>\r\n              <input type =\"hidden\" v-model=\"selectedRole.installer_role_id\">\r\n              <input type=\"text\" v-model.trim=\"selectedRole.installer_role_name\" required>\r\n              <p>Role weight</p>\r\n              <input type=\"number\" v-model.number=\"selectedRole.role_weight\" required>\r\n              <p>Minimum base</p>\r\n              <input type=\"number\" v-model.number=\"selectedRole.min_base\" required>\r\n              <p>Maximum base</p>\r\n              <input type=\"number\" v-model.number=\"selectedRole.max_base\" required>\r\n              <p>Individual bonus</p>\r\n              <input type=\"number\" v-model.number=\"selectedRole.individual_bonus\" required>\r\n              <p>Team bonus</p>\r\n              <input type=\"number\" v-model.number=\"selectedRole.team_bonus\" required>\r\n              <p>Bonus weight</p>\r\n              <input type=\"number\" v-model.number=\"selectedRole.bonus_weight\" required>\r\n              <button class=\"button\" type=\"submit\" value=\"Submit\">Create</button>\r\n            </form>    \r\n        </div>  \r\n     </div> \r\n\t</div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'modify-roles',\r\n  data(){\r\n  \treturn {\r\n      role_id: '',\r\n      roles: '',\r\n      selectedRole: {}\r\n  \t}\r\n  },\r\n  methods: {\r\n    onSubmit: function(){\r\n      axios({\r\n        method: 'put',\r\n        url: 'installers/roles/update',\r\n        data: {\r\n          installer_role_id: this.selectedRole.installer_role_id,\r\n          installer_role_name: this.selectedRole.installer_role_name,\r\n          role_weight: this.selectedRole.role_weight,\r\n          min_base: this.selectedRole.min_base,\r\n          max_base: this.selectedRole.max_base,\r\n          individual_bonus: this.selectedRole.individual_bonus,\r\n          team_bonus: this.selectedRole.team_bonus,\r\n          bonus_weight: this.selectedRole.bonus_weight\r\n        }\r\n      })\r\n      .then(req => {\r\n        console.log(req);\r\n      })\r\n      .catch(err => {\r\n        console.log(err);\r\n      })\r\n    }\r\n  },\r\n  watch: {\r\n    role_id(id) {\r\n      [this.selectedRole] = this.roles.filter(r => r.installer_role_id === id);\r\n    }\r\n  },\r\n  beforeMount(){\r\n  \taxios({\r\n  \t\tmethod: 'get',\r\n  \t\turl: '/installers/roles'\r\n  \t})\r\n  \t.then(req => {\r\n      this.roles = req.data.roles;\r\n      console.log(req.data.roles);\r\n  \t})\r\n  \t.catch(err => {\r\n  \t\t\r\n  \t})\r\n  }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\n.paragraph{\r\n    margin-top: 40px;\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 1.5;\r\n    font-weight: bold;\r\n    font-size: 17px;\r\n}\r\n.input:focus{\r\n  outline: none;\r\n}\r\n.input{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 100%;\r\n    margin-left: 70px;\r\n    margin-top: 40px;\r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>\r\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 145 */
+/* 170 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24604,6 +25683,20 @@ var render = function() {
               }
             },
             [_vm._v("Modify Roles")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("view-roles")
+                }
+              }
+            },
+            [_vm._v("View Roles")]
           )
         ])
       ])
@@ -24943,13 +26036,13 @@ if (false) {
 }
 
 /***/ }),
-/* 146 */
+/* 171 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_deleteRoles_vue__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_deleteRoles_vue__ = __webpack_require__(39);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2b432b12_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_deleteRoles_vue__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2b432b12_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_deleteRoles_vue__ = __webpack_require__(172);
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -24995,7 +26088,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 147 */
+/* 172 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25083,17 +26176,17 @@ if (false) {
 }
 
 /***/ }),
-/* 148 */
+/* 173 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_modifyCustomer_vue__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_modifyCustomer_vue__ = __webpack_require__(40);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3ff1dab0_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_modifyCustomer_vue__ = __webpack_require__(151);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3ff1dab0_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_modifyCustomer_vue__ = __webpack_require__(176);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(149)
+  __webpack_require__(174)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -25139,13 +26232,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 149 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(150);
+var content = __webpack_require__(175);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -25165,7 +26258,7 @@ if(false) {
 }
 
 /***/ }),
-/* 150 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -25173,13 +26266,13 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.temp[data-v-3ff1dab0] {\n  margin-left: 25%;\n}\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/modifyCustomer.vue"],"names":[],"mappings":";AA0EA;EACA,iBAAA;CACA","file":"modifyCustomer.vue","sourcesContent":["<template>\r\n\t<div class=\"temp\">\r\n\t\t<h1>Modify a Customer</h1>\r\n    <p>Select customer to modify</p>\r\n    <select v-model=\"customer_id\">\r\n      <option v-for=\"customer in customers\" v-bind:value=\"customer.customer_id\">\r\n        {{customer.customer_name}}\r\n      </option>\r\n    </select>\r\n\r\n    <form v-if=\"selectedRole.customer_id\" v-on:submit.prevent=\"onSubmit\">\r\n      <input type=\"hidden\" v-model=\"selectedRole.customer_id\">\r\n      <p>Customer name</p>\r\n      <input type=\"text\" v-model.trim=\"selectedRole.customer_name\" required>\r\n      <button class=\"button\" type=\"submit\" value=\"Submit\">Create</button>\r\n      <p class=\"hidden\" id=\"confirmation\">Customer updated</p>\r\n    </form>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'modify-customer',\r\n  props: ['user'],\r\n  data(){\r\n    return {\r\n      customer_id: '',\r\n      customers: '',\r\n      selectedRole: {}\r\n    }\r\n  },\r\n  methods: {\r\n    onSubmit: function(){\r\n      axios({\r\n        method: 'put',\r\n        url: 'customers/update',\r\n        data: {\r\n          customer_id: this.selectedRole.customer_id,\r\n          customer_name: this.selectedRole.customer_name,\r\n          modified_by_id: this.user.userID\r\n        }\r\n      })\r\n      .then(req => {\r\n        console.log(req);\r\n        document.getElementById('confirmation').classList.remove('hidden');\r\n      })\r\n      .catch(err => {\r\n        console.log(err);\r\n      })\r\n    }\r\n  },\r\n  watch: {\r\n    customer_id(id) {\r\n      [this.selectedRole] = this.customers.filter(r => r.customer_id === id);\r\n    }\r\n  },\r\n  beforeMount(){\r\n  \taxios({\r\n  \t\tmethod: 'get',\r\n  \t\turl: '/customers'\r\n  \t})\r\n  \t.then(req => {\r\n  \t\tthis.customers = req.data.customers;\r\n      console.log(this.customers);\r\n  \t})\r\n  \t.catch(err => {\r\n  \t\tconsole.log(err);\r\n  \t})\r\n  }\r\n};\r\n</script>\r\n\r\n<style scoped>\r\n  .temp {\r\n  margin-left: 25%;\r\n}\r\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-3ff1dab0]{\n     margin-left: 18%;\n     margin-top: 7%;\n     margin-right: 7%;\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     background-color: #fff;\n     font-size: 16px;\n     padding: 40px;\n}\nform[data-v-3ff1dab0]{\n  margin-top: 30px;\n}\n.inputField[data-v-3ff1dab0]{\n    background-color: #fff;\n    font-family: Open Sans,Arial,sans-serif;\n    line-height: normal!important;\n    border: 0;\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 0;\n    padding: 12px 18px 11px;\n    width: 100%;\n}\n.inputField[data-v-3ff1dab0]:focus{\n  outline: none;\n}\n.input_heading[data-v-3ff1dab0]{\n    color: #afaeb0;\n    margin-left: 18px;\n}\n.button[data-v-3ff1dab0]{\n    color: #fff;\n    background: #4bc800!important;\n    border: 0;\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\n            box-shadow: inset 0 -2px 0 #45b900!important;\n    padding: 9px;\n    margin-top: 20px;\n}\n.button[data-v-3ff1dab0]:focus{\n  outline-color:  #4bc800;\n}\n.header[data-v-3ff1dab0]{\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-3ff1dab0]{\n  list-style-type:none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\nli[data-v-3ff1dab0]{\n    padding-left: 7%;\n    padding-right: 8%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli[data-v-3ff1dab0]:active{\n  border-color:#4bc800;\n}\nli[data-v-3ff1dab0]:hover{\n  border-color: #929292;\n}\na[data-v-3ff1dab0]{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/modifyCustomer.vue"],"names":[],"mappings":";AAiFA;KACA,iBAAA;KACA,eAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AACA;IACA,uBAAA;IACA,wCAAA;IACA,8BAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,UAAA;IACA,wBAAA;IACA,YAAA;CACA;AACA;EACA,cAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;CAKA;AACA;IACA,YAAA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,aAAA;IACA,iBAAA;CAGA;AACA;EACA,wBAAA;CAEA;AACA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyCustomer.vue","sourcesContent":["<template>\r\n\t <div class=\"mainDiv\"> \r\n    <!-- <h1>Create a Customer</h1> -->\r\n          <div  class=\"header\">\r\n            <ul>\r\n                  <li><a v-on:click=\"$parent.updateView('create-customer')\"  >Add customer</a></li>\r\n                  <li><a v-on:click=\"$parent.updateView('view-customer')\"  >View customer</a></li>\r\n                  <li><a v-on:click=\"$parent.updateView('modify-customer')\" style=\"color:#4bc800\" >Modify customer</a></li>\r\n                </ul>\r\n           </div> \r\n              <p class=\"input_heading\">Select customer to modify</p>\r\n              <select class=\"inputField\" v-model=\"customer_id\">\r\n                <option v-for=\"customer in customers\" v-bind:value=\"customer.customer_id\">\r\n                  {{customer.customer_name}}\r\n                </option>\r\n              </select>\r\n\r\n              <form v-if=\"selectedRole.customer_id\" v-on:submit.prevent=\"onSubmit\">\r\n                <input class=\"inputField\" type=\"hidden\" v-model=\"selectedRole.customer_id\">\r\n                <p class=\"input_heading\">Customer name</p>\r\n                <input class=\"inputField\" type=\"text\" v-model.trim=\"selectedRole.customer_name\" required>\r\n                <button class=\"button\" type=\"submit\" value=\"Submit\">Create</button>\r\n                <p style=\"text-align:center;\" class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Customer updated successfully.</p>\r\n              </form>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'modify-customer',\r\n  props: ['user'],\r\n  data(){\r\n    return {\r\n      customer_id: '',\r\n      customers: '',\r\n      selectedRole: {}\r\n    }\r\n  },\r\n  methods: {\r\n    onSubmit: function(){\r\n      axios({\r\n        method: 'put',\r\n        url: 'customers/update',\r\n        data: {\r\n          customer_id: this.selectedRole.customer_id,\r\n          customer_name: this.selectedRole.customer_name,\r\n          modified_by_id: this.user.userID\r\n        }\r\n      })\r\n      .then(req => {\r\n        console.log(req);\r\n        document.getElementById('confirmation').classList.remove('hidden');\r\n      })\r\n      .catch(err => {\r\n        console.log(err);\r\n      })\r\n    }\r\n  },\r\n  watch: {\r\n    customer_id(id) {\r\n      [this.selectedRole] = this.customers.filter(r => r.customer_id === id);\r\n    }\r\n  },\r\n  beforeMount(){\r\n  \taxios({\r\n  \t\tmethod: 'get',\r\n  \t\turl: '/customers'\r\n  \t})\r\n  \t.then(req => {\r\n  \t\tthis.customers = req.data.customers;\r\n      console.log(this.customers);\r\n  \t})\r\n  \t.catch(err => {\r\n  \t\tconsole.log(err);\r\n  \t})\r\n  }\r\n};\r\n</script>\r\n\r\n<style scoped>\r\n .mainDiv{\r\n     margin-left: 18%;\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 40px;\r\n\r\n}\r\nform{\r\n  margin-top: 30px;\r\n}\r\n.inputField{\r\n    background-color: #fff;\r\n    font-family: Open Sans,Arial,sans-serif;\r\n    line-height: normal!important;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 0;\r\n    padding: 12px 18px 11px;\r\n    width: 100%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.input_heading{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\r\n    \r\n    \r\n   \r\n\r\n}\r\n.button{\r\n    color: #fff;\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    padding: 9px;\r\n    margin-top: 20px;\r\n   \r\n\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n\r\n</style>"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 151 */
+/* 176 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25187,10 +26280,57 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "temp" }, [
-    _c("h1", [_vm._v("Modify a Customer")]),
+  return _c("div", { staticClass: "mainDiv" }, [
+    _c("div", { staticClass: "header" }, [
+      _c("ul", [
+        _c("li", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("create-customer")
+                }
+              }
+            },
+            [_vm._v("Add customer")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("view-customer")
+                }
+              }
+            },
+            [_vm._v("View customer")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "a",
+            {
+              staticStyle: { color: "#4bc800" },
+              on: {
+                click: function($event) {
+                  _vm.$parent.updateView("modify-customer")
+                }
+              }
+            },
+            [_vm._v("Modify customer")]
+          )
+        ])
+      ])
+    ]),
     _vm._v(" "),
-    _c("p", [_vm._v("Select customer to modify")]),
+    _c("p", { staticClass: "input_heading" }, [
+      _vm._v("Select customer to modify")
+    ]),
     _vm._v(" "),
     _c(
       "select",
@@ -25203,6 +26343,7 @@ var render = function() {
             expression: "customer_id"
           }
         ],
+        staticClass: "inputField",
         on: {
           change: function($event) {
             var $$selectedVal = Array.prototype.filter
@@ -25221,7 +26362,11 @@ var render = function() {
       },
       _vm._l(_vm.customers, function(customer) {
         return _c("option", { domProps: { value: customer.customer_id } }, [
-          _vm._v("\n        " + _vm._s(customer.customer_name) + "\n      ")
+          _vm._v(
+            "\n                  " +
+              _vm._s(customer.customer_name) +
+              "\n                "
+          )
         ])
       })
     ),
@@ -25247,6 +26392,7 @@ var render = function() {
                   expression: "selectedRole.customer_id"
                 }
               ],
+              staticClass: "inputField",
               attrs: { type: "hidden" },
               domProps: { value: _vm.selectedRole.customer_id },
               on: {
@@ -25259,7 +26405,9 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _c("p", [_vm._v("Customer name")]),
+            _c("p", { staticClass: "input_heading" }, [
+              _vm._v("Customer name")
+            ]),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -25271,6 +26419,7 @@ var render = function() {
                   modifiers: { trim: true }
                 }
               ],
+              staticClass: "inputField",
               attrs: { type: "text", required: "" },
               domProps: { value: _vm.selectedRole.customer_name },
               on: {
@@ -25299,15 +26448,33 @@ var render = function() {
               [_vm._v("Create")]
             ),
             _vm._v(" "),
-            _c("p", { staticClass: "hidden", attrs: { id: "confirmation" } }, [
-              _vm._v("Customer updated")
-            ])
+            _vm._m(0)
           ]
         )
       : _vm._e()
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "hidden input_heading",
+        staticStyle: { "text-align": "center" },
+        attrs: { id: "confirmation" }
+      },
+      [
+        _c("img", {
+          attrs: { src: "/dist/assets/images/yes.png", alt: "Logo" }
+        }),
+        _vm._v("Customer updated successfully.")
+      ]
+    )
+  }
+]
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
@@ -25319,18 +26486,18 @@ if (false) {
 }
 
 /***/ }),
-/* 152 */
+/* 177 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_modifyProject_vue__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_modifyProject_vue__ = __webpack_require__(41);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_41061bbf_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_modifyProject_vue__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_41061bbf_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_modifyProject_vue__ = __webpack_require__(182);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(153)
-  __webpack_require__(155)
+  __webpack_require__(178)
+  __webpack_require__(180)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -25376,13 +26543,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 153 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(154);
+var content = __webpack_require__(179);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -25402,7 +26569,7 @@ if(false) {
 }
 
 /***/ }),
-/* 154 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -25410,19 +26577,19 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.job[data-v-41061bbf] {\n  display: inline-block;\n  height: auto;\n  width: 400px;\n  border: 4px double blue;\n  overflow: auto;\n}\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/modifyProject.vue"],"names":[],"mappings":";AAkHA;EACA,sBAAA;EACA,aAAA;EACA,aAAA;EACA,wBAAA;EACA,eAAA;CACA","file":"modifyProject.vue","sourcesContent":["<template>\r\n  \t<div class=\"mainDiv\">\r\n      <div  class=\"header\">\r\n          <ul>\r\n            <li><a v-on:click=\"$parent.updateView('add-hours')\">Enter Time Worked</a></li>\r\n             <li><a v-on:click=\"$parent.updateView('')\">Approve Time</a></li>\r\n             <li><a v-on:click=\"$parent.updateView('create-project')\">Create Project</a></li>\r\n             <li><a v-on:click=\"$parent.updateView('modify-project')\" style=\"color:#4bc800\">Modify project</a></li>\r\n          </ul>\r\n      <div>\r\n      <h1>Modify a Project</h1>\r\n        <div class=\"job\" v-for=\"job in jobs\">\r\n          <form v-on:submit.prevent=\"onSubmit\">\r\n            <input type=\"hidden\" name=\"job_id\" :value=\"job.job_id\">\r\n            <p>Project Name</p>\r\n            <input type=\"text\" name=\"job_name\" :placeholder=\"job.job_name\" :value=\"job_name\">\r\n            <p>Start Date</p>\r\n            <input type=\"date\" name=\"start_date\"  :value=\"job.start_date\">\r\n            <p>End Date</p>\r\n            <input type=\"date\" name=\"end_date\" :value=\"job.end_date\">\r\n            <p>Hours Bid</p>\r\n            <input type=\"text\" name =\"hours_bid\" :value=\"job.hours_bid\">\r\n            <p>Estimated Start Date</p>\r\n            <input type=\"date\" name=\"est_start_date\" :value=\"job.est_start_date\">\r\n            <p>Estimated End Date</p>\r\n            <input type=\"date\" name=\"est_end_date\" :value=\"job.est_end_date\">\r\n            <p>Bill Rate</p>\r\n            <input type=\"text\" name=\"bill_rate\" :value=\"job.bill_rate\">\r\n            <p>Job Status</p>\r\n            <input type=\"text\" name=\"job_status\" :value=\"job.job_status\">\r\n            <p>Max Labor Cost</p>\r\n            <input type=\"text\" name=\"max_labor_cost\" :value=\"job.max_labor_cost\">\r\n            <input type=\"submit\" value=\"Submit\">\r\n          </form>\r\n        </div>\r\n      </div>\r\n        </div>\r\n  \t\t\r\n\t  </div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'modify-project',\r\n  props: [\"user\"],\r\n\r\n  data() {\r\n    return {\r\n\r\n      jobs: '',\r\n      job_name: '',\r\n      job_id: '',\r\n      start_date: '',\r\n      end_date: '',\r\n      hours_bid: '',\r\n      est_start_date: '',\r\n      est_end_date: '',\r\n      fk_customer_id: '',\r\n      bill_rate: '',\r\n      job_status: '',\r\n      max_labor_cost: ''\r\n\r\n    }\r\n  },\r\n  methods: {\r\n    onSubmit: function(){\r\n      console.log(this.job_id);\r\n      axios({\r\n      method: 'put',\r\n      url: '/jobs/update',\r\n      data: {\r\n      job_id: this.job_id,\r\n      job_name: this.job_name,\r\n      start_date: this.start_date,\r\n      end_date: this.end_date,\r\n      hours_bid: this.hours_bid,\r\n      est_start_date: this.est_start_date,\r\n      est_end_date: this.est_end_date,\r\n      fk_customer_id: this.fk_customer_id,\r\n      bill_rate: this.bill_rate,\r\n      job_status: this.job_status,\r\n      max_labor_cost: this.max_labor_cost\r\n      }\r\n    })\r\n    .then(req => {\r\n      if(req.data.ok){\r\n        console.log('Job added!');\r\n      };\r\n    })\r\n    .catch(err => {\r\n      console.log(err);\r\n    })\r\n    }\r\n  },\r\n  beforeMount() {\r\n  \taxios({\r\n  \t\tmethod: 'get',\r\n  \t\turl: '/jobs'\r\n  \t})\r\n  \t.then(req => {\r\n  \t\tconsole.log(req.data);\r\n      this.jobs = req.data.jobs;\r\n  \t})\r\n  \t.catch(err => {\r\n  \t\tconsole.log(err);\r\n  \t})\r\n  }\r\n};\r\n</script>\r\n\r\n\r\n<style scoped>\r\n\r\n  .job {\r\n    display: inline-block;\r\n    height: auto;\r\n    width: 400px;\r\n    border: 4px double blue;\r\n    overflow: auto;\r\n  }\r\n</style>>\r\n\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>\r\n\r\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.job[data-v-41061bbf] {\n  display: inline-block;\n  height: auto;\n  width: 400px;\n  border: 4px double blue;\n  overflow: auto;\n}\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/modifyProject.vue"],"names":[],"mappings":";AAiHA;EACA,sBAAA;EACA,aAAA;EACA,aAAA;EACA,wBAAA;EACA,eAAA;CACA","file":"modifyProject.vue","sourcesContent":["<template>\r\n  \t<div class=\"mainDiv\">\r\n      <div  class=\"header\">\r\n          <ul>\r\n             <li><a v-on:click=\"$parent.updateView('add-user')\" >Add User</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('delete-user')\">Delete User</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('modify-project')\" style=\"color:#4bc800\">Modify project</a></li>\r\n          </ul>\r\n      <div>\r\n      <h1>Modify a Project</h1>\r\n        <div class=\"job\" v-for=\"job in jobs\">\r\n          <form v-on:submit.prevent=\"onSubmit\">\r\n            <input type=\"hidden\" name=\"job_id\" :value=\"job.job_id\">\r\n            <p>Project Name</p>\r\n            <input type=\"text\" name=\"job_name\" :placeholder=\"job.job_name\" :value=\"job_name\">\r\n            <p>Start Date</p>\r\n            <input type=\"date\" name=\"start_date\"  :value=\"job.start_date\">\r\n            <p>End Date</p>\r\n            <input type=\"date\" name=\"end_date\" :value=\"job.end_date\">\r\n            <p>Hours Bid</p>\r\n            <input type=\"text\" name =\"hours_bid\" :value=\"job.hours_bid\">\r\n            <p>Estimated Start Date</p>\r\n            <input type=\"date\" name=\"est_start_date\" :value=\"job.est_start_date\">\r\n            <p>Estimated End Date</p>\r\n            <input type=\"date\" name=\"est_end_date\" :value=\"job.est_end_date\">\r\n            <p>Bill Rate</p>\r\n            <input type=\"text\" name=\"bill_rate\" :value=\"job.bill_rate\">\r\n            <p>Job Status</p>\r\n            <input type=\"text\" name=\"job_status\" :value=\"job.job_status\">\r\n            <p>Max Labor Cost</p>\r\n            <input type=\"text\" name=\"max_labor_cost\" :value=\"job.max_labor_cost\">\r\n            <input type=\"submit\" value=\"Submit\">\r\n          </form>\r\n        </div>\r\n      </div>\r\n        </div>\r\n  \t\t\r\n\t  </div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'modify-project',\r\n  props: [\"user\"],\r\n\r\n  data() {\r\n    return {\r\n\r\n      jobs: '',\r\n      job_name: '',\r\n      job_id: '',\r\n      start_date: '',\r\n      end_date: '',\r\n      hours_bid: '',\r\n      est_start_date: '',\r\n      est_end_date: '',\r\n      fk_customer_id: '',\r\n      bill_rate: '',\r\n      job_status: '',\r\n      max_labor_cost: ''\r\n\r\n    }\r\n  },\r\n  methods: {\r\n    onSubmit: function(){\r\n      console.log(this.job_id);\r\n      axios({\r\n      method: 'put',\r\n      url: '/jobs/update',\r\n      data: {\r\n      job_id: this.job_id,\r\n      job_name: this.job_name,\r\n      start_date: this.start_date,\r\n      end_date: this.end_date,\r\n      hours_bid: this.hours_bid,\r\n      est_start_date: this.est_start_date,\r\n      est_end_date: this.est_end_date,\r\n      fk_customer_id: this.fk_customer_id,\r\n      bill_rate: this.bill_rate,\r\n      job_status: this.job_status,\r\n      max_labor_cost: this.max_labor_cost\r\n      }\r\n    })\r\n    .then(req => {\r\n      if(req.data.ok){\r\n        console.log('Job added!');\r\n      };\r\n    })\r\n    .catch(err => {\r\n      console.log(err);\r\n    })\r\n    }\r\n  },\r\n  beforeMount() {\r\n  \taxios({\r\n  \t\tmethod: 'get',\r\n  \t\turl: '/jobs'\r\n  \t})\r\n  \t.then(req => {\r\n  \t\tconsole.log(req.data);\r\n      this.jobs = req.data.jobs;\r\n  \t})\r\n  \t.catch(err => {\r\n  \t\tconsole.log(err);\r\n  \t})\r\n  }\r\n};\r\n</script>\r\n\r\n\r\n<style scoped>\r\n\r\n  .job {\r\n    display: inline-block;\r\n    height: auto;\r\n    width: 400px;\r\n    border: 4px double blue;\r\n    overflow: auto;\r\n  }\r\n</style>>\r\n\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>\r\n\r\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 155 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(156);
+var content = __webpack_require__(181);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -25442,7 +26609,7 @@ if(false) {
 }
 
 /***/ }),
-/* 156 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -25450,13 +26617,13 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-41061bbf]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.header[data-v-41061bbf]{\r\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-41061bbf]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-41061bbf]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-41061bbf]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-41061bbf]:hover{\r\n  border-color: #929292;\n}\na[data-v-41061bbf]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/modifyProject.vue"],"names":[],"mappings":";AA6HA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyProject.vue","sourcesContent":["<template>\r\n  \t<div class=\"mainDiv\">\r\n      <div  class=\"header\">\r\n          <ul>\r\n            <li><a v-on:click=\"$parent.updateView('add-hours')\">Enter Time Worked</a></li>\r\n             <li><a v-on:click=\"$parent.updateView('')\">Approve Time</a></li>\r\n             <li><a v-on:click=\"$parent.updateView('create-project')\">Create Project</a></li>\r\n             <li><a v-on:click=\"$parent.updateView('modify-project')\" style=\"color:#4bc800\">Modify project</a></li>\r\n          </ul>\r\n      <div>\r\n      <h1>Modify a Project</h1>\r\n        <div class=\"job\" v-for=\"job in jobs\">\r\n          <form v-on:submit.prevent=\"onSubmit\">\r\n            <input type=\"hidden\" name=\"job_id\" :value=\"job.job_id\">\r\n            <p>Project Name</p>\r\n            <input type=\"text\" name=\"job_name\" :placeholder=\"job.job_name\" :value=\"job_name\">\r\n            <p>Start Date</p>\r\n            <input type=\"date\" name=\"start_date\"  :value=\"job.start_date\">\r\n            <p>End Date</p>\r\n            <input type=\"date\" name=\"end_date\" :value=\"job.end_date\">\r\n            <p>Hours Bid</p>\r\n            <input type=\"text\" name =\"hours_bid\" :value=\"job.hours_bid\">\r\n            <p>Estimated Start Date</p>\r\n            <input type=\"date\" name=\"est_start_date\" :value=\"job.est_start_date\">\r\n            <p>Estimated End Date</p>\r\n            <input type=\"date\" name=\"est_end_date\" :value=\"job.est_end_date\">\r\n            <p>Bill Rate</p>\r\n            <input type=\"text\" name=\"bill_rate\" :value=\"job.bill_rate\">\r\n            <p>Job Status</p>\r\n            <input type=\"text\" name=\"job_status\" :value=\"job.job_status\">\r\n            <p>Max Labor Cost</p>\r\n            <input type=\"text\" name=\"max_labor_cost\" :value=\"job.max_labor_cost\">\r\n            <input type=\"submit\" value=\"Submit\">\r\n          </form>\r\n        </div>\r\n      </div>\r\n        </div>\r\n  \t\t\r\n\t  </div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'modify-project',\r\n  props: [\"user\"],\r\n\r\n  data() {\r\n    return {\r\n\r\n      jobs: '',\r\n      job_name: '',\r\n      job_id: '',\r\n      start_date: '',\r\n      end_date: '',\r\n      hours_bid: '',\r\n      est_start_date: '',\r\n      est_end_date: '',\r\n      fk_customer_id: '',\r\n      bill_rate: '',\r\n      job_status: '',\r\n      max_labor_cost: ''\r\n\r\n    }\r\n  },\r\n  methods: {\r\n    onSubmit: function(){\r\n      console.log(this.job_id);\r\n      axios({\r\n      method: 'put',\r\n      url: '/jobs/update',\r\n      data: {\r\n      job_id: this.job_id,\r\n      job_name: this.job_name,\r\n      start_date: this.start_date,\r\n      end_date: this.end_date,\r\n      hours_bid: this.hours_bid,\r\n      est_start_date: this.est_start_date,\r\n      est_end_date: this.est_end_date,\r\n      fk_customer_id: this.fk_customer_id,\r\n      bill_rate: this.bill_rate,\r\n      job_status: this.job_status,\r\n      max_labor_cost: this.max_labor_cost\r\n      }\r\n    })\r\n    .then(req => {\r\n      if(req.data.ok){\r\n        console.log('Job added!');\r\n      };\r\n    })\r\n    .catch(err => {\r\n      console.log(err);\r\n    })\r\n    }\r\n  },\r\n  beforeMount() {\r\n  \taxios({\r\n  \t\tmethod: 'get',\r\n  \t\turl: '/jobs'\r\n  \t})\r\n  \t.then(req => {\r\n  \t\tconsole.log(req.data);\r\n      this.jobs = req.data.jobs;\r\n  \t})\r\n  \t.catch(err => {\r\n  \t\tconsole.log(err);\r\n  \t})\r\n  }\r\n};\r\n</script>\r\n\r\n\r\n<style scoped>\r\n\r\n  .job {\r\n    display: inline-block;\r\n    height: auto;\r\n    width: 400px;\r\n    border: 4px double blue;\r\n    overflow: auto;\r\n  }\r\n</style>>\r\n\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>\r\n\r\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-41061bbf]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.header[data-v-41061bbf]{\r\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-41061bbf]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-41061bbf]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-41061bbf]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-41061bbf]:hover{\r\n  border-color: #929292;\n}\na[data-v-41061bbf]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/modifyProject.vue"],"names":[],"mappings":";AA4HA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyProject.vue","sourcesContent":["<template>\r\n  \t<div class=\"mainDiv\">\r\n      <div  class=\"header\">\r\n          <ul>\r\n             <li><a v-on:click=\"$parent.updateView('add-user')\" >Add User</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('delete-user')\">Delete User</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('modify-project')\" style=\"color:#4bc800\">Modify project</a></li>\r\n          </ul>\r\n      <div>\r\n      <h1>Modify a Project</h1>\r\n        <div class=\"job\" v-for=\"job in jobs\">\r\n          <form v-on:submit.prevent=\"onSubmit\">\r\n            <input type=\"hidden\" name=\"job_id\" :value=\"job.job_id\">\r\n            <p>Project Name</p>\r\n            <input type=\"text\" name=\"job_name\" :placeholder=\"job.job_name\" :value=\"job_name\">\r\n            <p>Start Date</p>\r\n            <input type=\"date\" name=\"start_date\"  :value=\"job.start_date\">\r\n            <p>End Date</p>\r\n            <input type=\"date\" name=\"end_date\" :value=\"job.end_date\">\r\n            <p>Hours Bid</p>\r\n            <input type=\"text\" name =\"hours_bid\" :value=\"job.hours_bid\">\r\n            <p>Estimated Start Date</p>\r\n            <input type=\"date\" name=\"est_start_date\" :value=\"job.est_start_date\">\r\n            <p>Estimated End Date</p>\r\n            <input type=\"date\" name=\"est_end_date\" :value=\"job.est_end_date\">\r\n            <p>Bill Rate</p>\r\n            <input type=\"text\" name=\"bill_rate\" :value=\"job.bill_rate\">\r\n            <p>Job Status</p>\r\n            <input type=\"text\" name=\"job_status\" :value=\"job.job_status\">\r\n            <p>Max Labor Cost</p>\r\n            <input type=\"text\" name=\"max_labor_cost\" :value=\"job.max_labor_cost\">\r\n            <input type=\"submit\" value=\"Submit\">\r\n          </form>\r\n        </div>\r\n      </div>\r\n        </div>\r\n  \t\t\r\n\t  </div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'modify-project',\r\n  props: [\"user\"],\r\n\r\n  data() {\r\n    return {\r\n\r\n      jobs: '',\r\n      job_name: '',\r\n      job_id: '',\r\n      start_date: '',\r\n      end_date: '',\r\n      hours_bid: '',\r\n      est_start_date: '',\r\n      est_end_date: '',\r\n      fk_customer_id: '',\r\n      bill_rate: '',\r\n      job_status: '',\r\n      max_labor_cost: ''\r\n\r\n    }\r\n  },\r\n  methods: {\r\n    onSubmit: function(){\r\n      console.log(this.job_id);\r\n      axios({\r\n      method: 'put',\r\n      url: '/jobs/update',\r\n      data: {\r\n      job_id: this.job_id,\r\n      job_name: this.job_name,\r\n      start_date: this.start_date,\r\n      end_date: this.end_date,\r\n      hours_bid: this.hours_bid,\r\n      est_start_date: this.est_start_date,\r\n      est_end_date: this.est_end_date,\r\n      fk_customer_id: this.fk_customer_id,\r\n      bill_rate: this.bill_rate,\r\n      job_status: this.job_status,\r\n      max_labor_cost: this.max_labor_cost\r\n      }\r\n    })\r\n    .then(req => {\r\n      if(req.data.ok){\r\n        console.log('Job added!');\r\n      };\r\n    })\r\n    .catch(err => {\r\n      console.log(err);\r\n    })\r\n    }\r\n  },\r\n  beforeMount() {\r\n  \taxios({\r\n  \t\tmethod: 'get',\r\n  \t\turl: '/jobs'\r\n  \t})\r\n  \t.then(req => {\r\n  \t\tconsole.log(req.data);\r\n      this.jobs = req.data.jobs;\r\n  \t})\r\n  \t.catch(err => {\r\n  \t\tconsole.log(err);\r\n  \t})\r\n  }\r\n};\r\n</script>\r\n\r\n\r\n<style scoped>\r\n\r\n  .job {\r\n    display: inline-block;\r\n    height: auto;\r\n    width: 400px;\r\n    border: 4px double blue;\r\n    overflow: auto;\r\n  }\r\n</style>>\r\n\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>\r\n\r\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 157 */
+/* 182 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25473,11 +26640,11 @@ var render = function() {
             {
               on: {
                 click: function($event) {
-                  _vm.$parent.updateView("add-hours")
+                  _vm.$parent.updateView("add-user")
                 }
               }
             },
-            [_vm._v("Enter Time Worked")]
+            [_vm._v("Add User")]
           )
         ]),
         _vm._v(" "),
@@ -25487,25 +26654,11 @@ var render = function() {
             {
               on: {
                 click: function($event) {
-                  _vm.$parent.updateView("")
+                  _vm.$parent.updateView("delete-user")
                 }
               }
             },
-            [_vm._v("Approve Time")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c(
-            "a",
-            {
-              on: {
-                click: function($event) {
-                  _vm.$parent.updateView("create-project")
-                }
-              }
-            },
-            [_vm._v("Create Project")]
+            [_vm._v("Delete User")]
           )
         ]),
         _vm._v(" "),
@@ -25638,17 +26791,17 @@ if (false) {
 }
 
 /***/ }),
-/* 158 */
+/* 183 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_modifyBonuses_vue__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_modifyBonuses_vue__ = __webpack_require__(42);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0a0357b3_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_modifyBonuses_vue__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0a0357b3_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_modifyBonuses_vue__ = __webpack_require__(186);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(159)
+  __webpack_require__(184)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -25694,13 +26847,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 159 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(160);
+var content = __webpack_require__(185);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -25720,7 +26873,7 @@ if(false) {
 }
 
 /***/ }),
-/* 160 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -25734,7 +26887,7 @@ exports.push([module.i, "\n.mainDiv[data-v-0a0357b3]{\r\n    margin-top: 7%;\r\n
 
 
 /***/ }),
-/* 161 */
+/* 186 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25805,17 +26958,17 @@ if (false) {
 }
 
 /***/ }),
-/* 162 */
+/* 187 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_createPayments_vue__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_createPayments_vue__ = __webpack_require__(43);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_c6a1908e_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_createPayments_vue__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_c6a1908e_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_createPayments_vue__ = __webpack_require__(190);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(163)
+  __webpack_require__(188)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -25861,13 +27014,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 163 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(164);
+var content = __webpack_require__(189);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -25887,7 +27040,7 @@ if(false) {
 }
 
 /***/ }),
-/* 164 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -25895,13 +27048,13 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-c6a1908e]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.heading[data-v-c6a1908e]{\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 3.5;\r\n    font-weight: bold;\r\n    font-size: 20px;\n}\n.header[data-v-c6a1908e]{\r\n  border-bottom: 1px solid #ebebeb;\n}\n.input_heading[data-v-c6a1908e]{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\n}\n.inputField[data-v-c6a1908e]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-c6a1908e]:focus{\r\n  outline: none;\n}\n.button[data-v-c6a1908e]:focus{\r\n  outline-color:  #4bc800;\n}\n.button[data-v-c6a1908e]{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 20%;\r\n    margin-top: 10px;\n}\n.inputField[data-v-c6a1908e]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-c6a1908e]:focus{\r\n  outline: none;\n}\n.button[data-v-c6a1908e]:focus{\r\n  outline-color:  #4bc800;\n}\nul[data-v-c6a1908e]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-c6a1908e]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-c6a1908e]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-c6a1908e]:hover{\r\n  border-color: #929292;\n}\na[data-v-c6a1908e]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/createPayments.vue"],"names":[],"mappings":";AAiIA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;IACA,eAAA;IACA,mBAAA;IACA,iBAAA;IACA,kBAAA;IACA,gBAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AAEA;IACA,eAAA;IACA,kBAAA;CAEA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,YAAA;IACA,gBAAA;IACA,kBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;IACA,iBAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AAEA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"createPayments.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n   <div  class=\"header\">\r\n    <ul>\r\n            <li><a v-on:click=\"$parent.updateView('payment-history')\">View Payment History</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('create-payments')\" style=\"color:#4bc800\">Create Payments</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('modify-payments')\">Modify Payments</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('create-payment-types')\">Create Payments Types</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('modify-payment-types')\">Modify Payment Types</a></li>\r\n          </ul>\r\n      </div>    \r\n\t\t <p class=\"heading\">Schedule a Payment</p>\r\n        <form v-on:submit.prevent=\"onSubmit\" id=\"form\">\r\n            <p class=\"input_heading\">Scheduled pay date</p>\r\n            <input class=\"inputField\" type=\"date\" v-model=\"scheduled_pay_date\">\r\n            <p class=\"input_heading\">Scheduled payment amount</p>\r\n            <input class=\"inputField\" type=\"number\" v-model.number=\"scheduled_payment_amount\">\r\n            <p class=\"input_heading\">Installer</p>\r\n            <select class=\"inputField\" v-model.number=\"fk_installer_id\">\r\n              <option v-for=\"installer in installers\" v-bind:value=\"installer.installer_id\">\r\n                {{installer.first_name}} {{installer.last_name}}\r\n              </option>\r\n            </select>\r\n            <p class=\"input_heading\">Payment type</p>\r\n            <select class=\"inputField\" v-model=\"fk_payment_type_id\">\r\n              <option v-for=\"payment_type in payment_types\" v-bind:value=\"payment_type.payment_type_id\">\r\n                {{payment_type.payment_type}}\r\n              </option>\r\n            </select>\r\n            <p class=\"input_heading\">Jobs</p>\r\n            <select class=\"inputField\" v-model=\"fk_job_id\">\r\n              <option v-for=\"job in jobs\" v-bind:value=\"job.job_id\">\r\n                {{job.job_name}}\r\n              </option>\r\n            </select>\r\n\r\n            <button class=\"button\" type=\"submit\" value=\"Submit\">Submit</button>\r\n            <p style=\"text-align:center;\" class=\"hidden\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Payment scheduled</p>\r\n        </form>\r\n\r\n</div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'create-payments',\r\n  props: ['user'],\r\n  data(){ \r\n  \treturn {\r\n\t\t  scheduled_pay_date: '',\r\n\t\t  scheduled_payment_amount: '',\r\n\t\t  fk_installer_id: '',\r\n\t\t  fk_payment_type_id: '',\r\n\t\t  fk_job_id: '',\r\n      installers: '',\r\n      payment_types: '',\r\n      jobs: ''\r\n\t\t}\r\n  },\r\n  methods: {\r\n  \tonSubmit: function(){\r\n  \t\taxios({\r\n  \t\t\tmethod: 'post',\r\n  \t\t\turl: 'installers/payments/schedule/add',\r\n  \t\t\tdata: {\r\n          created_by_id: this.user.userID,\r\n          modified_by_id: this.user.userID,\r\n          scheduled_pay_date: this.scheduled_pay_date,\r\n          scheduled_payment_amount: this.scheduled_payment_amount,\r\n          fk_installer_id: this.fk_installer_id,\r\n          fk_payment_type_id: this.fk_payment_type_id,\r\n          fk_job_id: this.fk_job_id\r\n  \t\t\t}\r\n  \t\t})\r\n      .then(req => {\r\n        document.getElementById('confirmation').classList.remove('hidden');\r\n        this.scheduled_pay_date = '';\r\n        this.scheduled_payment_amount = '';\r\n        this.fk_installer_id = '';\r\n        this.fk_payment_type_id = '';\r\n        this.fk_job_id = '';\r\n      })\r\n      .catch(err => {\r\n        console.log(err);\r\n      })\r\n  \t}\r\n  },\r\n  beforeMount(){\r\n    //Get installers\r\n    axios({\r\n      method: 'get',\r\n      url: '/installers/payments'\r\n    })\r\n    .then(req => {\r\n      console.log(req.data)\r\n    })\r\n    .catch(err => {\r\n      console.log(err);\r\n    })\r\n\r\n    //Get payment types\r\n    axios({\r\n      method: 'get',\r\n      url: '/payment-types'\r\n    })\r\n    .then(req => {\r\n      this.payment_types = req.data.payment_types;\r\n    })\r\n    .catch(err => {\r\n      console.log(err);\r\n    })\r\n\r\n    //Get jobs\r\n    axios({\r\n      method: 'get',\r\n      url: '/jobs'\r\n    })\r\n    .then(req => {\r\n      this.jobs = req.data.jobs;\r\n    })\r\n    .catch(err => {\r\n      console.log(err);\r\n    })\r\n  }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n.heading{\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 3.5;\r\n    font-weight: bold;\r\n    font-size: 20px;\r\n\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\n\r\n.input_heading{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\r\n    \r\n }   \r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n.button{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 20%;\r\n    margin-top: 10px;\r\n}\r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-c6a1908e]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.heading[data-v-c6a1908e]{\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 3.5;\r\n    font-weight: bold;\r\n    font-size: 20px;\n}\n.header[data-v-c6a1908e]{\r\n  border-bottom: 1px solid #ebebeb;\n}\n.input_heading[data-v-c6a1908e]{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\n}\n.inputField[data-v-c6a1908e]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-c6a1908e]:focus{\r\n  outline: none;\n}\n.button[data-v-c6a1908e]:focus{\r\n  outline-color:  #4bc800;\n}\n.button[data-v-c6a1908e]{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 20%;\r\n    margin-top: 10px;\n}\n.inputField[data-v-c6a1908e]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-c6a1908e]:focus{\r\n  outline: none;\n}\n.button[data-v-c6a1908e]:focus{\r\n  outline-color:  #4bc800;\n}\nul[data-v-c6a1908e]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-c6a1908e]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-c6a1908e]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-c6a1908e]:hover{\r\n  border-color: #929292;\n}\na[data-v-c6a1908e]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/createPayments.vue"],"names":[],"mappings":";AAiIA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;IACA,eAAA;IACA,mBAAA;IACA,iBAAA;IACA,kBAAA;IACA,gBAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AAEA;IACA,eAAA;IACA,kBAAA;CAEA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,YAAA;IACA,gBAAA;IACA,kBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;IACA,iBAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AAEA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"createPayments.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n   <div  class=\"header\">\r\n    <ul>\r\n            <li><a v-on:click=\"$parent.updateView('payment-history')\">View Payment History</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('create-payments')\" style=\"color:#4bc800\">Create Payments</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('modify-payments')\">Modify Payments</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('create-payment-types')\">Create Payments Types</a></li>\r\n            <!-- <li><a v-on:click=\"$parent.updateView('modify-payment-types')\">Modify Payment Types</a></li> -->\r\n          </ul>\r\n      </div>    \r\n\t\t <p class=\"heading\">Schedule a Payment</p>\r\n        <form v-on:submit.prevent=\"onSubmit\" id=\"form\">\r\n            <p class=\"input_heading\">Scheduled pay date</p>\r\n            <input class=\"inputField\" type=\"date\" v-model=\"scheduled_pay_date\">\r\n            <p class=\"input_heading\">Scheduled payment amount</p>\r\n            <input class=\"inputField\" type=\"number\" v-model.number=\"scheduled_payment_amount\">\r\n            <p class=\"input_heading\">Installer</p>\r\n            <select class=\"inputField\" v-model.number=\"fk_installer_id\">\r\n              <option v-for=\"installer in installers\" v-bind:value=\"installer.installer_id\">\r\n                {{installer.first_name}} {{installer.last_name}}\r\n              </option>\r\n            </select>\r\n            <p class=\"input_heading\">Payment type</p>\r\n            <select class=\"inputField\" v-model=\"fk_payment_type_id\">\r\n              <option v-for=\"payment_type in payment_types\" v-bind:value=\"payment_type.payment_type_id\">\r\n                {{payment_type.payment_type}}\r\n              </option>\r\n            </select>\r\n            <p class=\"input_heading\">Jobs</p>\r\n            <select class=\"inputField\" v-model=\"fk_job_id\">\r\n              <option v-for=\"job in jobs\" v-bind:value=\"job.job_id\">\r\n                {{job.job_name}}\r\n              </option>\r\n            </select>\r\n\r\n            <button class=\"button\" type=\"submit\" value=\"Submit\">Submit</button>\r\n            <p style=\"text-align:center;\" class=\"hidden\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Payment scheduled</p>\r\n        </form>\r\n\r\n</div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'create-payments',\r\n  props: ['user'],\r\n  data(){ \r\n  \treturn {\r\n\t\t  scheduled_pay_date: '',\r\n\t\t  scheduled_payment_amount: '',\r\n\t\t  fk_installer_id: '',\r\n\t\t  fk_payment_type_id: '',\r\n\t\t  fk_job_id: '',\r\n      installers: '',\r\n      payment_types: '',\r\n      jobs: ''\r\n\t\t}\r\n  },\r\n  methods: {\r\n  \tonSubmit: function(){\r\n  \t\taxios({\r\n  \t\t\tmethod: 'post',\r\n  \t\t\turl: 'installers/payments/schedule/add',\r\n  \t\t\tdata: {\r\n          created_by_id: this.user.userID,\r\n          modified_by_id: this.user.userID,\r\n          scheduled_pay_date: this.scheduled_pay_date,\r\n          scheduled_payment_amount: this.scheduled_payment_amount,\r\n          fk_installer_id: this.fk_installer_id,\r\n          fk_payment_type_id: this.fk_payment_type_id,\r\n          fk_job_id: this.fk_job_id\r\n  \t\t\t}\r\n  \t\t})\r\n      .then(req => {\r\n        document.getElementById('confirmation').classList.remove('hidden');\r\n        this.scheduled_pay_date = '';\r\n        this.scheduled_payment_amount = '';\r\n        this.fk_installer_id = '';\r\n        this.fk_payment_type_id = '';\r\n        this.fk_job_id = '';\r\n      })\r\n      .catch(err => {\r\n        console.log(err);\r\n      })\r\n  \t}\r\n  },\r\n  beforeMount(){\r\n    //Get installers\r\n    axios({\r\n      method: 'get',\r\n      url: '/installers/payments'\r\n    })\r\n    .then(req => {\r\n      console.log(req.data)\r\n    })\r\n    .catch(err => {\r\n      console.log(err);\r\n    })\r\n\r\n    //Get payment types\r\n    axios({\r\n      method: 'get',\r\n      url: '/payment-types'\r\n    })\r\n    .then(req => {\r\n      this.payment_types = req.data.payment_types;\r\n    })\r\n    .catch(err => {\r\n      console.log(err);\r\n    })\r\n\r\n    //Get jobs\r\n    axios({\r\n      method: 'get',\r\n      url: '/jobs'\r\n    })\r\n    .then(req => {\r\n      this.jobs = req.data.jobs;\r\n    })\r\n    .catch(err => {\r\n      console.log(err);\r\n    })\r\n  }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n.heading{\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 3.5;\r\n    font-weight: bold;\r\n    font-size: 20px;\r\n\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\n\r\n.input_heading{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\r\n    \r\n }   \r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n.button{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 20%;\r\n    margin-top: 10px;\r\n}\r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 165 */
+/* 190 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25966,20 +27119,6 @@ var render = function() {
               }
             },
             [_vm._v("Create Payments Types")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c(
-            "a",
-            {
-              on: {
-                click: function($event) {
-                  _vm.$parent.updateView("modify-payment-types")
-                }
-              }
-            },
-            [_vm._v("Modify Payment Types")]
           )
         ])
       ])
@@ -26230,17 +27369,17 @@ if (false) {
 }
 
 /***/ }),
-/* 166 */
+/* 191 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_modifyPayments_vue__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_modifyPayments_vue__ = __webpack_require__(44);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_e46d3b12_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_modifyPayments_vue__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_e46d3b12_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_modifyPayments_vue__ = __webpack_require__(194);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(167)
+  __webpack_require__(192)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -26286,13 +27425,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 167 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(168);
+var content = __webpack_require__(193);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -26312,7 +27451,7 @@ if(false) {
 }
 
 /***/ }),
-/* 168 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -26320,13 +27459,13 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-e46d3b12]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.header[data-v-e46d3b12]{\r\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-e46d3b12]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-e46d3b12]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-e46d3b12]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-e46d3b12]:hover{\r\n  border-color: #929292;\n}\na[data-v-e46d3b12]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/modifyPayments.vue"],"names":[],"mappings":";AAmCA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyPayments.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n  <div  class=\"header\">\r\n    <ul>\r\n            <li><a v-on:click=\"$parent.updateView('payment-history')\">View Payment History</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('create-payments')\">Create Payments</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('modify-payments')\" style=\"color:#4bc800\">Modify Payments</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('create-payment-types')\">Create Payments Types</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('modify-payment-types')\">Modify Payment Types</a></li>\r\n          </ul>\r\n      </div>    \r\n\t\t<h1>Modify Payments</h1>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'modify-payments',\r\n  beforeMount(){\r\n  \taxios({\r\n  \t\tmethod: 'get',\r\n  \t\turl: '/payments'\r\n  \t})\r\n  \t.then(req => {\r\n  \t\t\r\n  \t})\r\n  \t.catch(err => {\r\n  \t\tconsole.log(err);\r\n  \t})\r\n  }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-e46d3b12]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.header[data-v-e46d3b12]{\r\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-e46d3b12]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-e46d3b12]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-e46d3b12]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-e46d3b12]:hover{\r\n  border-color: #929292;\n}\na[data-v-e46d3b12]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/modifyPayments.vue"],"names":[],"mappings":";AAmCA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyPayments.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n  <div  class=\"header\">\r\n    <ul>\r\n            <li><a v-on:click=\"$parent.updateView('payment-history')\">View Payment History</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('create-payments')\">Create Payments</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('modify-payments')\" style=\"color:#4bc800\">Modify Payments</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('create-payment-types')\">Create Payments Types</a></li>\r\n            <!-- <li><a v-on:click=\"$parent.updateView('modify-payment-types')\">Modify Payment Types</a></li> -->\r\n          </ul>\r\n      </div>    \r\n\t\t<h1>Modify Payments</h1>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'modify-payments',\r\n  beforeMount(){\r\n  \taxios({\r\n  \t\tmethod: 'get',\r\n  \t\turl: '/payments'\r\n  \t})\r\n  \t.then(req => {\r\n  \t\t\r\n  \t})\r\n  \t.catch(err => {\r\n  \t\tconsole.log(err);\r\n  \t})\r\n  }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 169 */
+/* 194 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -26392,20 +27531,6 @@ var render = function() {
             },
             [_vm._v("Create Payments Types")]
           )
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c(
-            "a",
-            {
-              on: {
-                click: function($event) {
-                  _vm.$parent.updateView("modify-payment-types")
-                }
-              }
-            },
-            [_vm._v("Modify Payment Types")]
-          )
         ])
       ])
     ]),
@@ -26425,17 +27550,17 @@ if (false) {
 }
 
 /***/ }),
-/* 170 */
+/* 195 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_createPaymentTypes_vue__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_createPaymentTypes_vue__ = __webpack_require__(45);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3d7b14c2_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_createPaymentTypes_vue__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3d7b14c2_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_createPaymentTypes_vue__ = __webpack_require__(198);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(171)
+  __webpack_require__(196)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -26481,13 +27606,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 171 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(172);
+var content = __webpack_require__(197);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -26507,7 +27632,7 @@ if(false) {
 }
 
 /***/ }),
-/* 172 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -26515,13 +27640,13 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-3d7b14c2]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\nform[data-v-3d7b14c2]{\r\n  margin-top: 30px;\n}\n.header[data-v-3d7b14c2]{\r\n  border-bottom: 1px solid #ebebeb;\n}\n.paragraph[data-v-3d7b14c2]{\r\n    margin-top: 40px;\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 1.5;\r\n    margin-right: 12%;\r\n    font-weight: bold;\r\n    font-size: 17px;\n}\n.row1[data-v-3d7b14c2]{\r\n  margin-left: 10%;\n}\n.input[data-v-3d7b14c2]:focus{\r\n  outline: none;\n}\n.input[data-v-3d7b14c2]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 100%;\n}\n.button[data-v-3d7b14c2]{\r\n    color: #fff;\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    padding: 12px;\r\n    margin-left: -15px;\r\n    width: 50%;\r\n    margin-top: 14px;\n}\n.button[data-v-3d7b14c2]:focus{\r\n  outline-color:  #4bc800;\n}\nul[data-v-3d7b14c2]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-3d7b14c2]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-3d7b14c2]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-3d7b14c2]:hover{\r\n  border-color: #929292;\n}\na[data-v-3d7b14c2]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/createPaymentTypes.vue"],"names":[],"mappings":";AAiEA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,iBAAA;IACA,eAAA;IACA,mBAAA;IACA,iBAAA;IACA,kBAAA;IACA,kBAAA;IACA,gBAAA;CACA;AACA;EACA,iBAAA;CAEA;AACA;EACA,cAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,YAAA;CACA;AACA;IACA,YAAA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,cAAA;IACA,mBAAA;IACA,WAAA;IACA,iBAAA;CAEA;AACA;EACA,wBAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"createPaymentTypes.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n    <div  class=\"header\">\r\n\t    <ul>\r\n            <li><a v-on:click=\"$parent.updateView('payment-history')\">View Payment History</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('create-payments')\">Create Payments</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('modify-payments')\">Modify Payments</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('create-payment-types')\" style=\"color:#4bc800\">Create Payments Types</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('modify-payment-types')\">Modify Payment Types</a></li>\r\n          </ul>\r\n       </div>   \r\n\t\t\r\n\t\t<form v-on:submit.prevent=\"onSubmit\" id=\"form\">\r\n       <div class=\"row row1\">\r\n          <div class=\"col-md-8\">\r\n      \t\t\t  <input class=\"input\" type=\"text\" v-model.trim=\"payment_type\">\r\n          </div> \r\n           <div class=\"col-md-3\"> \r\n      \t\t\t  <button class=\"button\" type=\"submit\" value=\"Submit\">Submit</button>\r\n           </div> \r\n           <div class=\"row\">\r\n    \t\t\t    <p style=\"text-align:center;\" class=\"hidden\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Payment type added</p>\r\n           </div> \r\n           <div class=\"row\">  \r\n              <p class=\"paragraph\">Create payment Types</p>\r\n           </div> \r\n        </div>      \r\n\t\t</form>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'create-payment-types',\r\n  props: ['user'],\r\n  data(){\r\n  \treturn {\r\n  \t\tpayment_type: ''\r\n  \t}\r\n  },\r\n  methods: {\r\n  \tonSubmit: function(){\r\n  \t\taxios({\r\n  \t\t\tmethod: 'post',\r\n  \t\t\turl: '/payments/add',\r\n  \t\t\tdata: {\r\n  \t\t\t\tcreated_by_id: this.user.userID,\r\n  \t\t\t\tmodified_by_id: this.user.userID,\r\n  \t\t\t\tpayment_type: this.payment_type\r\n  \t\t\t}\r\n  \t\t})\r\n  \t\t.then(req => {\r\n  \t\t\tdocument.getElementById('confirmation').classList.remove('hidden');\r\n  \t\t\tthis.payment_type = '';\r\n  \t\t})\r\n  \t\t.catch(err => {\r\n  \t\t\tconsole.log(err);\r\n  \t\t})\r\n  \t}\r\n  }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\nform{\r\n  margin-top: 30px;\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\n.paragraph{\r\n    margin-top: 40px;\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 1.5;\r\n    margin-right: 12%;\r\n    font-weight: bold;\r\n    font-size: 17px;\r\n}\r\n.row1{\r\n  margin-left: 10%;\r\n\r\n}\r\n.input:focus{\r\n  outline: none;\r\n}\r\n.input{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 100%;\r\n}\r\n.button{\r\n    color: #fff;\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    padding: 12px;\r\n    margin-left: -15px;\r\n    width: 50%;\r\n    margin-top: 14px;\r\n\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>\r\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-3d7b14c2]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\nform[data-v-3d7b14c2]{\r\n  margin-top: 30px;\n}\n.header[data-v-3d7b14c2]{\r\n  border-bottom: 1px solid #ebebeb;\n}\n.paragraph[data-v-3d7b14c2]{\r\n    margin-top: 40px;\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 1.5;\r\n    margin-right: 12%;\r\n    font-weight: bold;\r\n    font-size: 17px;\n}\n.row1[data-v-3d7b14c2]{\r\n  margin-left: 10%;\n}\n.input[data-v-3d7b14c2]:focus{\r\n  outline: none;\n}\n.input[data-v-3d7b14c2]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 100%;\n}\n.button[data-v-3d7b14c2]{\r\n    color: #fff;\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    padding: 12px;\r\n    margin-left: -15px;\r\n    width: 50%;\r\n    margin-top: 14px;\n}\n.button[data-v-3d7b14c2]:focus{\r\n  outline-color:  #4bc800;\n}\nul[data-v-3d7b14c2]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-3d7b14c2]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-3d7b14c2]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-3d7b14c2]:hover{\r\n  border-color: #929292;\n}\na[data-v-3d7b14c2]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/createPaymentTypes.vue"],"names":[],"mappings":";AAiEA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,iBAAA;IACA,eAAA;IACA,mBAAA;IACA,iBAAA;IACA,kBAAA;IACA,kBAAA;IACA,gBAAA;CACA;AACA;EACA,iBAAA;CAEA;AACA;EACA,cAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,YAAA;CACA;AACA;IACA,YAAA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,cAAA;IACA,mBAAA;IACA,WAAA;IACA,iBAAA;CAEA;AACA;EACA,wBAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"createPaymentTypes.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n    <div  class=\"header\">\r\n\t    <ul>\r\n            <li><a v-on:click=\"$parent.updateView('payment-history')\">View Payment History</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('create-payments')\">Create Payments</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('modify-payments')\">Modify Payments</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('create-payment-types')\" style=\"color:#4bc800\">Create Payments Types</a></li>\r\n            <!-- <li><a v-on:click=\"$parent.updateView('modify-payment-types')\">Modify Payment Types</a></li> -->\r\n          </ul>\r\n       </div>   \r\n\t\t\r\n\t\t<form v-on:submit.prevent=\"onSubmit\" id=\"form\">\r\n       <div class=\"row row1\">\r\n          <div class=\"col-md-8\">\r\n      \t\t\t  <input class=\"input\" type=\"text\" v-model.trim=\"payment_type\">\r\n          </div> \r\n           <div class=\"col-md-3\"> \r\n      \t\t\t  <button class=\"button\" type=\"submit\" value=\"Submit\">Submit</button>\r\n           </div> \r\n           <div class=\"row\">\r\n    \t\t\t    <p style=\"text-align:center;\" class=\"hidden\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Payment type added</p>\r\n           </div> \r\n           <div class=\"row\">  \r\n              <p class=\"paragraph\">Create payment Types</p>\r\n           </div> \r\n        </div>      \r\n\t\t</form>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'create-payment-types',\r\n  props: ['user'],\r\n  data(){\r\n  \treturn {\r\n  \t\tpayment_type: ''\r\n  \t}\r\n  },\r\n  methods: {\r\n  \tonSubmit: function(){\r\n  \t\taxios({\r\n  \t\t\tmethod: 'post',\r\n  \t\t\turl: '/payments/add',\r\n  \t\t\tdata: {\r\n  \t\t\t\tcreated_by_id: this.user.userID,\r\n  \t\t\t\tmodified_by_id: this.user.userID,\r\n  \t\t\t\tpayment_type: this.payment_type\r\n  \t\t\t}\r\n  \t\t})\r\n  \t\t.then(req => {\r\n  \t\t\tdocument.getElementById('confirmation').classList.remove('hidden');\r\n  \t\t\tthis.payment_type = '';\r\n  \t\t})\r\n  \t\t.catch(err => {\r\n  \t\t\tconsole.log(err);\r\n  \t\t})\r\n  \t}\r\n  }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\nform{\r\n  margin-top: 30px;\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\n.paragraph{\r\n    margin-top: 40px;\r\n    color: #afaeb0;\r\n    text-align: center;\r\n    line-height: 1.5;\r\n    margin-right: 12%;\r\n    font-weight: bold;\r\n    font-size: 17px;\r\n}\r\n.row1{\r\n  margin-left: 10%;\r\n\r\n}\r\n.input:focus{\r\n  outline: none;\r\n}\r\n.input{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 100%;\r\n}\r\n.button{\r\n    color: #fff;\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    padding: 12px;\r\n    margin-left: -15px;\r\n    width: 50%;\r\n    margin-top: 14px;\r\n\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>\r\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 173 */
+/* 198 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -26586,20 +27711,6 @@ var render = function() {
               }
             },
             [_vm._v("Create Payments Types")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c(
-            "a",
-            {
-              on: {
-                click: function($event) {
-                  _vm.$parent.updateView("modify-payment-types")
-                }
-              }
-            },
-            [_vm._v("Modify Payment Types")]
           )
         ])
       ])
@@ -26710,17 +27821,17 @@ if (false) {
 }
 
 /***/ }),
-/* 174 */
+/* 199 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_modifyPaymentTypes_vue__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_modifyPaymentTypes_vue__ = __webpack_require__(46);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0fad115d_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_modifyPaymentTypes_vue__ = __webpack_require__(177);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0fad115d_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_modifyPaymentTypes_vue__ = __webpack_require__(202);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(175)
+  __webpack_require__(200)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -26766,13 +27877,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 175 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(176);
+var content = __webpack_require__(201);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -26792,7 +27903,7 @@ if(false) {
 }
 
 /***/ }),
-/* 176 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(true);
@@ -26800,13 +27911,13 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-0fad115d]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.header[data-v-0fad115d]{\r\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-0fad115d]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-0fad115d]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-0fad115d]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-0fad115d]:hover{\r\n  border-color: #929292;\n}\na[data-v-0fad115d]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/modifyPaymentTypes.vue"],"names":[],"mappings":";AAsBA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyPaymentTypes.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n    <div  class=\"header\">\r\n\t    <ul>\r\n            <li><a v-on:click=\"$parent.updateView('payment-history')\">View Payment History</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('create-payments')\">Create Payments</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('modify-payments')\">Modify Payments</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('create-payment-types')\">Create Payments Types</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('modify-payment-types')\" style=\"color:#4bc800\">Modify Payment Types</a></li>\r\n          </ul>\r\n       </div>   \r\n\t\t<h1>Modify Payment Types</h1>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\n\r\nexport default {\r\n  name: 'modify-payment-types'\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-0fad115d]{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.header[data-v-0fad115d]{\r\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-0fad115d]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-0fad115d]{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\n}\nli[data-v-0fad115d]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-0fad115d]:hover{\r\n  border-color: #929292;\n}\na[data-v-0fad115d]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/modifyPaymentTypes.vue"],"names":[],"mappings":";AAsBA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyPaymentTypes.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n    <div  class=\"header\">\r\n\t    <ul>\r\n            <li><a v-on:click=\"$parent.updateView('payment-history')\">View Payment History</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('create-payments')\">Create Payments</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('modify-payments')\">Modify Payments</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('create-payment-types')\">Create Payments Types</a></li>\r\n            <!-- <li><a v-on:click=\"$parent.updateView('modify-payment-types')\" style=\"color:#4bc800\">Modify Payment Types</a></li> -->\r\n          </ul>\r\n       </div>   \r\n\t\t<h1>Modify Payment Types</h1>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\n\r\nexport default {\r\n  name: 'modify-payment-types'\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-top: 7%;\r\n     margin-right: 7%;\r\n     margin-left: 18%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     height: 25%;\r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 7%;\r\n    padding-right: 8%;\r\n    line-height: 4;\r\n    border-bottom: 3px solid transparent;\r\n    margin-bottom: -10px;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
-/* 177 */
+/* 202 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -26871,21 +27982,6 @@ var render = function() {
             },
             [_vm._v("Create Payments Types")]
           )
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c(
-            "a",
-            {
-              staticStyle: { color: "#4bc800" },
-              on: {
-                click: function($event) {
-                  _vm.$parent.updateView("modify-payment-types")
-                }
-              }
-            },
-            [_vm._v("Modify Payment Types")]
-          )
         ])
       ])
     ]),
@@ -26905,13 +28001,13 @@ if (false) {
 }
 
 /***/ }),
-/* 178 */
+/* 203 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_schedulePayments_vue__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__buble_loader_node_modules_vue_loader_lib_selector_type_script_index_0_schedulePayments_vue__ = __webpack_require__(47);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7c2aba58_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_schedulePayments_vue__ = __webpack_require__(179);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7c2aba58_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_schedulePayments_vue__ = __webpack_require__(204);
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -26957,7 +28053,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 179 */
+/* 204 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27178,7 +28274,7 @@ if (false) {
 }
 
 /***/ }),
-/* 180 */
+/* 205 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

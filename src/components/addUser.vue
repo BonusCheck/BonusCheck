@@ -4,6 +4,7 @@
     <ul>
            <li><a v-on:click="$parent.updateView('add-user')" style="color:#4bc800">Add User</a></li>
            <li><a v-on:click="$parent.updateView('delete-user')">Delete User</a></li>
+           <li><a v-on:click="$parent.updateView('modify-project')">Modify project</a></li>
     </ul>
    </div> 
   	<!-- <p class="heading">Add User</p> -->
@@ -12,8 +13,8 @@
     	<input class="inputField" type="text" name="user_name" v-model="user_name">
       <p class="input_heading">Password</p>
     	<input class="inputField" type="password" name ="password" v-model="password">
-
-      <select v-model="fk_user_role_id" required>
+      <p class="input_heading">User role</p>
+      <select class="inputField" v-model="fk_user_role_id" required>
         <option value='' placeholder="Choose a role"></option>
         <option v-for="role in roles" v-bind:value="role.user_role_id">
           {{role.user_role_name}}
@@ -104,9 +105,6 @@ form{
     color: #afaeb0;
     margin-left: 18px;
     
-    
-   
-
 }
 
 .header{

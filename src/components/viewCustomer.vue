@@ -6,7 +6,7 @@
             <ul>
                   <li><a class="header_a" v-on:click="$parent.updateView('create-customer')">Add customer</a></li>
                   <li><a class="header_a" v-on:click="$parent.updateView('view-customer')" style="color:#4bc800" >View customer</a></li>
-                  
+                  <li><a class="header_a" v-on:click="$parent.updateView('modify-customer')" >Modify customer</a></li>
                 </ul>
           </div> 
           <div  class="container">

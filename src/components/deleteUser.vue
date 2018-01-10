@@ -4,6 +4,7 @@
                      <ul>
                        <li><a v-on:click="$parent.updateView('add-user')">Add User</a></li>
                        <li><a v-on:click="$parent.updateView('delete-user')" style="color:#4bc800">Delete User</a></li>
+                       <li><a v-on:click="$parent.updateView('modify-project')" >Modify project</a></li>
                     </ul>
                   </div>
   	        <!-- <h1>Delete User</h1>

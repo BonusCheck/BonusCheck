@@ -6,7 +6,7 @@
             <li><a v-on:click="$parent.updateView('create-payments')" style="color:#4bc800">Create Payments</a></li>
             <li><a v-on:click="$parent.updateView('modify-payments')">Modify Payments</a></li>
             <li><a v-on:click="$parent.updateView('create-payment-types')">Create Payments Types</a></li>
-            <li><a v-on:click="$parent.updateView('modify-payment-types')">Modify Payment Types</a></li>
+            <!-- <li><a v-on:click="$parent.updateView('modify-payment-types')">Modify Payment Types</a></li> -->
           </ul>
       </div>    
 		 <p class="heading">Schedule a Payment</p>
