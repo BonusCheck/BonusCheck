@@ -23,27 +23,27 @@
       <div class="row"> 
           <div class="col-md-6">
             		<p class="input_heading">Minimum base</p>
-            		<input  class="inputField" type="number" v-model.number="min_base">
+            		<input  class="inputField" type="number" step="0.01" v-model.number="min_base">
           </div>
           <div class="col-md-6">      
             		<p class="input_heading">Maximum base</p>
-            		<input  class="inputField" type="number" v-model.number="max_base">
+            		<input  class="inputField" type="number" step="0.01" v-model.number="max_base">
           </div>
       </div>
       <div class="row">    
           <div class="col-md-6">      
             		<p class="input_heading">Individual bonus</p>
-            		<input  class="inputField" type="number" v-model.number="individual_bonus">
+            		<input  class="inputField" type="number" step="0.01" v-model.number="individual_bonus">
           </div>
           <div class="col-md-6">
             		<p class="input_heading">Team bonus</p>
-            		<input  class="inputField" type="number" v-model.number="team_bonus">
+            		<input  class="inputField" type="number" step="0.01" v-model.number="team_bonus">
           </div>
       </div>
       <div class="row">    
           <div class="col-md-6">
             		<p class="input_heading">Bonus weight</p>
-            		<input  class="inputField" type="number" v-model.number="bonus_weight">
+            		<input  class="inputField" type="number" step="0.01" v-model.number="bonus_weight">
           </div>
       </div>    
             		<button class="button" type="submit" value="Submit">Create</button>
@@ -130,11 +130,11 @@ export default {
 <style scoped>
 
 .mainDiv{
-     margin-top: 7%;
-     margin-right: 7%;
-     margin-left: 18%;
+     margin-left: 12%;
+     margin-top: 5%;
+     margin-right: 5%;
      box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
-     height: 25%;
+    
      background-color: #fff;
      font-size: 16px;
      padding: 20px;
@@ -215,9 +215,10 @@ ul{
 li{
     padding-left: 6%;
     padding-right: 6%;
-    line-height: 4;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    text-align: center;
     border-bottom: 3px solid transparent;
-    margin-bottom: -10px;
 }
 li:active{
   border-color:#4bc800; 

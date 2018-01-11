@@ -61,7 +61,7 @@
             </div> 
             <div class="col-md-6"> 
             	<p class="input_heading">Max Labor Cost</p>
-            	<input class="inputField" type="number" name="max_labor_cost" v-model.number="max_labor_cost">
+            	<input class="inputField" type="number" step="0.01" name="max_labor_cost" v-model.number="max_labor_cost">
             </div> 
         </div>     
 
@@ -134,11 +134,11 @@ export default {
 <style scoped>
 
 .mainDiv{
-     margin-top: 7%;
-     margin-right: 7%;
-     margin-left: 18%;
+     margin-left: 12%;
+     margin-top: 5%;
+     margin-right: 5%;
      box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
-     height: 25%;
+     
      background-color: #fff;
      font-size: 16px;
      padding: 20px;
@@ -212,9 +212,10 @@ ul{
 li{
     padding-left: 6%;
     padding-right: 6%;
-    line-height: 4;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    text-align: center;
     border-bottom: 3px solid transparent;
-     margin-bottom: -10px;
 }
 
 li:active a {

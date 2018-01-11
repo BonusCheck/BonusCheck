@@ -25,9 +25,7 @@ generalRouter.get("/", function(req, res) {
     res.send(layout);
   });
 
-generalRouter.get("/:path", function(req, res){
-  res.send(layout);
-})
+
 
 //***********************************************************************************************************
 // API ROUTES
@@ -36,36 +34,47 @@ generalRouter.get("/:path", function(req, res){
 //AUTHENTICATION ROUTE - POST AND GET
 
 generalRouter.post("/auth", function(req, res) {
+  var sessData = '';
+  sessData.valid = true;
   user.auth(req.body.user_name, function(data) {
-    const password = data[0].password,
-          username = data[0].user_name;
     // console.log("Data");
     // console.log(data[0].password);
-    if (bcrypt.compareSync(req.body.password, password)) {
-      // console.log("Username");
-      // console.log(username);
-      user.some(username, function(data) {
-        // var vueObject = {
-        //   user: data
-        // };
-        var sessData = req.session;
-        sessData.user_id = data[0].user_id;
-        sessData.user_name = data[0].user_name;
-        sessData.user_role_name = data[0].user_role_name;
-        //Not sure if below will work yet until we have a user logon.
-      installer.single(data[0].user_id, function(data2) {
-        var vueObject =  {
-          user: data,
-          installer: data2
-        }
-        
-        sessData.installer_id = data2[0].installer_id;
+    if (data[0]) {
+      const username = data[0].user_name;
+      const password = data[0].password;
+      if (bcrypt.compareSync(req.body.password, password)) {
+        // console.log("Username");
+        // console.log(username);
+        user.some(username, function(data) {
+          // var vueObject = {
+          //   user: data
+          // };
+          sessData = req.session;
+          sessData.user_id = data[0].user_id;
+          sessData.user_name = data[0].user_name;
+          sessData.user_role_name = data[0].user_role_name;
+          //Not sure if below will work yet until we have a user logon.
+        installer.single(data[0].user_id, function(data2) {
+          var vueObject =  {
+            user: data,
+            installer: data2
+          }
+          
+         sessData.installer_id = data2[0].installer_id;
+          console.log(sessData.installer_id);
+          console.log(vueObject);
+          res.redirect("/dash");
+        });
         console.log(sessData.installer_id);
-        console.log(vueObject);
-        res.redirect("/dash");
-      });
-      console.log(sessData.installer_id);
-      });
+        });
+      }else {
+        console.log("Password Doesn't match BIOTCH!!!");
+        sessData.valid = false;
+        res.json(sessData.valid);
+      }
+    }else {
+      console.log("No such user fuckers!");
+      sessData.valid = false;
     }
   });
 });
@@ -110,5 +119,9 @@ generalRouter.get("/logout", function(req, res){
    });
  }
 });
+
+generalRouter.get("/:path", function(req, res){
+  res.send(layout);
+})
 
 module.exports = generalRouter;

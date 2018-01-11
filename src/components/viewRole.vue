@@ -8,22 +8,21 @@
           </ul>
       </div> 
       <div  class="container">
-                <div class="row col-md-10 custyle">
+                <div class="row  custyle">
                     <table class="table table-striped custab">
-                          <thead>
-                              <tr>
-                                  <th>installerID</th>
-                                  <th>installerRoleName</th>
-                                  <th>Role Weight</th>
-                                  <th>Min base</th>
-                                  <th>Max base</th>
-                                  <th>Individual Bonus</th>
-                                  <th>Team Bonus</th>
-                                  <th class="text-center">Action</th>
-                              </tr>
-                          </thead>
+                            <thead>
+                                <tr>
+                                    <th>installerID</th>
+                                    <th>installerRoleName</th>
+                                    <th>Role Weight</th>
+                                    <th>Min base</th>
+                                    <th>Max base</th>
+                                    <th>Individual Bonus</th>
+                                    <th>Team Bonus</th>
+                                    <th class="text-center">Action</th>
+                                </tr>
+                            </thead>
                             <tr v-for="role in roles">
-                            
                                 <td>{{ role.installer_role_id }} </td>
                                 <td>{{ role.installer_role_name }}</td>
                                 <td>{{ role.role_weight }}</td>
@@ -34,9 +33,7 @@
                                 <td class="text-center"><a href="#" @click="deleterole(role)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del
                                 </a>
                                 </td>
-                              
                             </tr>
-                         
                     </table>
                 </div>
           </div>  
@@ -91,9 +88,9 @@ export default {
 <style scoped>
 
 .mainDiv{
-     margin-top: 7%;
-     margin-right: 7%;
-     margin-left: 18%;
+     margin-left: 12%;
+     margin-top: 5%;
+     margin-right: 5%;
      box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
     
      background-color: #fff;
@@ -120,7 +117,10 @@ export default {
   tr:nth-child(even){
       background-color: #f9f9f9;
     }
-    td{
+  table{
+    width: 91%;
+  }  
+  td{
     padding: 8px;
     line-height: 1.42857143;
     vertical-align: top;
@@ -138,9 +138,10 @@ ul{
 li{
     padding-left: 6%;
     padding-right: 6%;
-    line-height: 4;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    text-align: center;
     border-bottom: 3px solid transparent;
-    margin-bottom: -10px;
 }
 li:active{
   border-color:#4bc800; 

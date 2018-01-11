@@ -15,7 +15,7 @@
             <p class="input_heading">Scheduled pay date</p>
             <input class="inputField" type="date" v-model="scheduled_pay_date">
             <p class="input_heading">Scheduled payment amount</p>
-            <input class="inputField" type="number" v-model.number="scheduled_payment_amount">
+            <input class="inputField" type="number" step="0.01" v-model.number="scheduled_payment_amount">
             <p class="input_heading">Installer</p>
             <select class="inputField" v-model.number="fk_installer_id">
               <option v-for="installer in installers" v-bind:value="installer.installer_id">
@@ -130,11 +130,11 @@ export default {
 <style scoped>
 
 .mainDiv{
-     margin-top: 7%;
-     margin-right: 7%;
-     margin-left: 18%;
+     margin-left: 12%;
+     margin-top: 5%;
+     margin-right: 5%;
      box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
-     height: 25%;
+     
      background-color: #fff;
      font-size: 16px;
      padding: 20px;
@@ -214,11 +214,12 @@ ul{
   justify-content: center;
 }
 li{
-    padding-left: 7%;
-    padding-right: 8%;
-    line-height: 4;
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    text-align: center;
     border-bottom: 3px solid transparent;
-    margin-bottom: -10px;
 }
 li:active{
   border-color:#4bc800; 

@@ -32,43 +32,34 @@
     <nav class="cd-side-nav">
       <ul>
         <li class="has-children Overviews">
-         <a v-on:click="$parent.updateView('create-customer')"> <i class="fa fa-th-large" ></i>Customer</a>                   
+         <a v-on:click="$parent.updateView('create-customer')"> <i class="fa fa-address-card fa-lg" ></i>Customer</a>                   
         </li>       
         <li class="has-children comments">
-          <a v-on:click="$parent.updateView('add-installer')"><i class="fa fa-tasks"></i> Installer</a>                   
+          <a v-on:click="$parent.updateView('add-installer')"><i class="fa fa-tasks fa-lg"></i> Installer</a>                   
         </li>
          </li> 
         <li class="has-children users">
-          <a  v-on:click="$parent.updateView('add-user')"><i class="fa fa-user"></i> User</a>       
+          <a  v-on:click="$parent.updateView('add-user')"><i class="fa fa-user fa-lg"></i> User</a>       
          
         </li>
          <li class="has-children users">
-          <a v-on:click="$parent.updateView('create-roles')"><i class="fa fa-user"></i> Roles</a> 
+          <a v-on:click="$parent.updateView('create-roles')"><i class="fa fa-users fa-lg"></i> Roles</a> 
           </li>
           <li class="has-children bookmarks">
-          <a  v-on:click="$parent.updateView('payment-history')"><i class="fa fa-table"></i> Payments</a>
+          <a  v-on:click="$parent.updateView('payment-history')"><i class="fa fa-usd fa-lg"></i> Payments</a>
           
         </li>
 
         <li class="has-children bookmarks">
-          <a  v-on:click="$parent.updateView('add-bonus')"><i class="fa fa-table"></i> Bonus</a>
+          <a  v-on:click="$parent.updateView('add-bonus')"><i class="fa fa-money fa-lg"></i> Bonus</a>
                     
         </li>
         <li class="has-children users">
-          <a  v-on:click="$parent.updateView('create-project')"><i class="fa fa-user"></i> Jobs</a>       
-          <!-- <ul>
-           <li><a v-on:click="$parent.updateView('')">View transaction logs</a></li>
-           <li><a v-on:click="$parent.updateView('')">View project data</a></li>
-          </ul> -->
+          <a  v-on:click="$parent.updateView('create-project')"><i class="fa fa-briefcase fa-lg"></i> Jobs</a>       
+         
         </li>
-		     
-        
-       
-        
-       
-
-         <li class="has-children users">
-          <a  v-on:click="$parent.updateView('add-hours')"><i class="fa fa-user"></i> Time</a>                 
+                 <li class="has-children users">
+          <a  v-on:click="$parent.updateView('add-hours')"><i class="fa fa-clock-o "></i> Time</a>                 
         </li>
 
         
@@ -210,11 +201,9 @@ a {
 .fa{
   margin-right: 13px;
 }
-.cd-nav ul li a{
-  color:#C8C8C8;
-}
+
 .cd-nav ul li a:hover{
-  color: #ffffff;
+  color: #e6e6e6;
 }
 
 
