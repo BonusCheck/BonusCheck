@@ -65,7 +65,7 @@
        
 
          <li class="has-children users" v-if="user.roll == 'Admin' || 'Project Coordinator'">
-          <a  v-on:click="$parent.updateView('create-project')"><i class="fa fa-user"></i> Project</a>                 
+          <a  v-on:click="$parent.updateView('all-project')"><i class="fa fa-user"></i> Project</a>                 
         </li>
 
         <li class="has-children users" v-if="user.roll == 'Admin' || 'Project Coordinator'">

@@ -18512,7 +18512,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n /* -------------------------------- \n\nPrimary style\n\n-------------------------------- */\n*[data-v-7eea899c], *[data-v-7eea899c]::after, *[data-v-7eea899c]::before {\n  box-sizing: border-box;\n}\nhtml[data-v-7eea899c] {\n  font-size: 62.5%;\n}\nbody[data-v-7eea899c] {\n  font-size: 1.6rem;\n  font-family: \"Open Sans\", sans-serif;\n  color: #3e454c;\n  background-color: #F5F5F5;\n}\nbody[data-v-7eea899c]::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\na[data-v-7eea899c] {\n  color: #1784c7;\n  text-decoration: none;\n}\n/*  ######  Side NAVBAR page style  ######  */\n#dashboard[data-v-7eea899c]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n    height: 100%;\n}\n#project[data-v-7eea899c]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#tables[data-v-7eea899c]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#user[data-v-7eea899c]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#admin[data-v-7eea899c]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n/*  ######  Side NAVBAR page style END ######  */\n.button[data-v-7eea899c]{\n  background-color: transparent;\n  color:#C8C8C8;\n  border: transparent;\n  height: 35px;\n  \n  font-size: 15px;\n  border : none;\n  outline: none;\n}\n.button[data-v-7eea899c]:active {\n  background-color: #323232;\n  border : none;\n  outline: none;\n}\n.button[data-v-7eea899c]:hover{\n  color: #ffffff;\n}\n.cd-side-nav[data-v-7eea899c]{\n  font-size: 20px;\n  margin-top: 20px;\n  position: fixed;\n}\n.fa[data-v-7eea899c]{\n  margin-right: 13px;\n}\n.cd-nav ul li a[data-v-7eea899c]{\n  color:#C8C8C8;\n}\n.cd-nav ul li a[data-v-7eea899c]:hover{\n  color: #ffffff;\n}\ninput[data-v-7eea899c] {\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 1.6rem;\n}\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-decoration,\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-cancel-button,\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-results-button,\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-results-decoration {\n  display: none;\n}\n/* -------------------------------- \n\nMain Page Content\n\n-------------------------------- */\n.cd-main-content .content-wrapper[data-v-7eea899c] {\n  padding: 45px 5% 3em;\n}\n.cd-main-content .content-wrapper h1[data-v-7eea899c] {\n  text-align: center;\n  padding: 3em 0;\n  font-size: 2rem;\n}\n.cd-main-content[data-v-7eea899c]::before {\n  /* never visible - used to check MQ in jQuery */\n  display: none;\n  content: 'mobile';\n}\n@media only screen and (min-width: 768px) {\n.cd-main-content .content-wrapper[data-v-7eea899c] {\n    margin-left: 110px;\n    margin-top: 80px;\n    padding-top: 155px;\n}\n.cd-main-content .content-wrapper h1[data-v-7eea899c] {\n    padding: 4em 0;\n    font-size: 3.2rem;\n    font-weight: 300;\n}\n.cd-main-content[data-v-7eea899c]::before {\n    content: 'tablet';\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-main-content .content-wrapper[data-v-7eea899c] {\n    margin-left: 200px;\n}\n.cd-main-content[data-v-7eea899c]::before {\n    content: 'desktop';\n}\n}\n/* -------------------------------- \n\nHeader\n\n-------------------------------- */\n.cd-main-header[data-v-7eea899c] {\n  position: absolute;\n  z-index: 2;\n  top: 0;\n  left: 0;\n  height: 45px;\n  width: 100%;\n  background: #FFFFFF;\n\n\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.cd-main-header[data-v-7eea899c]::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\n/**/\n@media only screen and (min-width: 768px) \n{\n.cd-main-header[data-v-7eea899c] {\n    position: fixed;\n    height: 55px;\n    background-color:#323232;\n}\n}\n.cd-logo[data-v-7eea899c] {\n  float: left;\n  display: block;\n  margin: 11px 0 0 5%;\n}\n.cd-logo img[data-v-7eea899c] {\n  display: block;\n}\n@media only screen and (min-width: 768px) {\n.cd-logo[data-v-7eea899c] {\n    margin: 16px 0 0 36px;\n}\n}\n.cd-nav-trigger[data-v-7eea899c] {\n  /* navigation trigger - visible on mobile devices only */\n  float: right;\n  position: relative;\n  display: block;\n  width: 34px;\n  height: 44px;\n  margin-right: 5%;\n  /* hide text */\n  overflow: hidden;\n  white-space: nowrap;\n  color: transparent;\n}\n.cd-nav-trigger span[data-v-7eea899c], .cd-nav-trigger span[data-v-7eea899c]::before, .cd-nav-trigger span[data-v-7eea899c]::after {\n  /* hamburger icon in CSS */\n  position: absolute;\n  display: inline-block;\n  height: 3px;\n  width: 24px;\n  background:#323232;\n}\n.cd-nav-trigger span[data-v-7eea899c] {\n  /* line in the center */\n  position: absolute;\n  top: 50%;\n  right: 5px;\n  margin-top: -2px;\n  transition: background 0.2s;\n}\n.cd-nav-trigger span[data-v-7eea899c]::before, .cd-nav-trigger span[data-v-7eea899c]::after {\n  /* other 2 lines */\n  content: '';\n  right: 0;\n  /* Force Hardware Acceleration in WebKit */\n  -webkit-transform: translateZ(0);\n  transform: translateZ(0);\n  -webkit-backface-visibility: hidden;\n  backface-visibility: hidden;\n  -webkit-transform-origin: 0% 50%;\n  transform-origin: 0% 50%;\n  transition: -webkit-transform 0.2s;\n  transition: transform 0.2s;\n  transition: transform 0.2s, -webkit-transform 0.2s;\n}\n.cd-nav-trigger span[data-v-7eea899c]::before {\n  /* menu icon top line */\n  top: -6px;\n}\n.cd-nav-trigger span[data-v-7eea899c]::after {\n  /* menu icon bottom line */\n  top: 6px;\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c] {\n  /* hide line in the center */\n  background: rgba(255, 255, 255, 0);\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::before, .cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::after {\n  /* keep visible other 2 lines */\n  background: white;\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::before {\n  -webkit-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  transform: translateX(4px) translateY(-3px) rotate(45deg);\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::after {\n  -webkit-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  transform: translateX(4px) translateY(2px) rotate(-45deg);\n}\n@media only screen and (min-width: 768px) {\n.cd-nav-trigger[data-v-7eea899c] {\n    display: none;\n}\n}\n.cd-search[data-v-7eea899c] {\n  position: relative;\n  margin: 1.2em 5% 0.6em;\n}\n.cd-search.is-hidden[data-v-7eea899c] {\n  opacity: 0;\n}\n.cd-search[data-v-7eea899c]::before {\n  /* lens icon */\n  content: '';\n  position: absolute;\n  left: 8px;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n}\n.cd-search input[data-v-7eea899c] {\n  padding-left: 32px;\n  width: 100%;\n  height: 36px;\n  border: none;\n  border-radius: .25em;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  -ms-appearance: none;\n  -o-appearance: none;\n  appearance: none;\n}\n.cd-search input[data-v-7eea899c]:focus {\n  outline: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-search[data-v-7eea899c] {\n    float: left;\n    display: inline-block;\n    width: 250px;\n    height: 100%;\n    margin: 0 0 0 2.5em;\n}\n.cd-search.is-hidden[data-v-7eea899c] {\n    /* reset style */\n    opacity: 1;\n}\n.cd-search[data-v-7eea899c]::before {\n    background-position: 0 -16px;\n    left: 1em;\n}\n.cd-search form[data-v-7eea899c], .cd-search input[data-v-7eea899c] {\n    height: 100%;\n    width: 100%;\n}\n.cd-search input[data-v-7eea899c] {\n    border: none;\n    padding-left: 2.6em;\n    border-radius: 0;\n    background-color: #3e454c;\n    border-left: 1px solid #51575d;\n    color: #ffffff;\n}\n.cd-search input[data-v-7eea899c]::-webkit-input-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-7eea899c]::-moz-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-7eea899c]:-moz-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-7eea899c]:-ms-input-placeholder {\n    color: #777c81;\n}\n}\n/* -------------------------------- \n\nTop Navigation\n\n-------------------------------- */\n.cd-nav[data-v-7eea899c] {\n  /* top nav - not visible on mobile devices */\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-nav[data-v-7eea899c] {\n    display: block;\n    float: right;\n    height: 100%;\n}\n}\n.cd-top-nav > li > a[data-v-7eea899c]::before {\n  /* reset style */\n  display: none;\n}\n.cd-top-nav > li a[data-v-7eea899c] {\n  padding: 1em 5% !important;\n}\n.cd-top-nav img[data-v-7eea899c] {\n  /* avatar image */\n  position: absolute;\n  left: 1.8em;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 20px;\n  width: 20px;\n  border-radius: 50%;\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-top-nav[data-v-7eea899c] {\n    height: 100%;\n}\n.cd-top-nav a[data-v-7eea899c] {\n    display: block;\n    font-size: 1.4rem;\n    color: #ffffff;\n}\n.cd-top-nav > li[data-v-7eea899c] {\n    display: inline-block;\n    margin-right: 1em;\n    height: 100%;\n}\n.cd-top-nav > li[data-v-7eea899c]:last-of-type {\n    margin-right: 0;\n}\n.cd-top-nav > li a[data-v-7eea899c] {\n    padding: 1em .6em !important;\n}\n.cd-top-nav img[data-v-7eea899c] {\n    display: block;\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-top-nav li:not(.has-children) a[data-v-7eea899c]:hover {\n    color: #1784c7;\n}\n}\n/* -------------------------------- \n\nSidebar\n\n-------------------------------- */\n.cd-side-nav[data-v-7eea899c] {\n  position: fixed;\n  z-index: 1;\n  left: 0;\n  top: 0;\n  width: 100%;\n  padding: 45px 0 0;\n  background-color: #323232;\n  visibility: hidden;\n  opacity: 0;\n  max-height: 100vh;\n  overflow: hidden;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  transition: opacity 0.2s 0s, visibility 0s 0.2s;\n}\n.cd-side-nav.nav-is-visible[data-v-7eea899c] {\n  opacity: 1;\n  visibility: visible;\n  overflow: visible;\n  -webkit-overflow-scrolling: touch;\n  transition: opacity 0.2s 0s, visibility 0s 0s;\n  max-height: none;\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-side-nav > ul[data-v-7eea899c] {\n  padding: 0.6em 0;\n}\n.cd-side-nav > ul[data-v-7eea899c]:last-of-type {\n  padding-bottom: 0;\n}\n.cd-side-nav .cd-label[data-v-7eea899c], .cd-side-nav a[data-v-7eea899c] {\n  display: block;\n  padding: 1em 5%;\n}\n.cd-side-nav a[data-v-7eea899c] {\n  position: relative;\n  color: #ffffff;\n  font-size: 1.4rem;\n}\n.cd-side-nav ul.cd-top-nav > li:last-of-type > a[data-v-7eea899c] {\n  border-bottom: none;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c] {\n  padding-left: calc(5% + 24px);\n  border-bottom: 1px solid #373d44;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c]::before {\n  /* icon before item name */\n  position: absolute;\n  content: '';\n  left: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n}\n.cd-side-nav > ul > li.overview > a[data-v-7eea899c]::before {\n  background-position: -64px 0;\n}\n.cd-side-nav > ul > li.notifications > a[data-v-7eea899c]::before {\n  background-position: -80px 0;\n}\n.cd-side-nav > ul > li.comments > a[data-v-7eea899c]::before {\n  background-position: -48px 0;\n}\n.cd-side-nav > ul > li.bookmarks > a[data-v-7eea899c]::before {\n  background-position: -32px 0;\n}\n.cd-side-nav > ul > li.images > a[data-v-7eea899c]::before {\n  background-position: 0 0;\n}\n.cd-side-nav > ul > li.users > a[data-v-7eea899c]::before {\n  background-position: -16px 0;\n}\n.cd-side-nav .count[data-v-7eea899c] {\n  /* notification badge */\n  position: absolute;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  right: calc(5% + 16px + 0.4em);\n  padding: 0.2em 0.4em;\n  background-color: #ff7e66;\n  border-radius: .25em;\n  color: #ffffff;\n  font-weight: bold;\n  font-size: 1.2rem;\n  text-align: center;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c] {\n  display: block;\n  margin: 0 5%;\n  padding: 1em 0;\n  background-color: #1784c7;\n  border-radius: .25em;\n  border: none;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);\n  text-align: center;\n  color: #ffffff;\n  font-weight: bold;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c]::before {\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-side-nav[data-v-7eea899c] {\n    \n    float: left;\n    top: fixed;\n    width: 110px;\n    min-height: 100vh;\n    padding-top: 55px;\n    /* reset style */\n    visibility: visible;\n    opacity: 1;\n    overflow: visible;\n    max-height: none;\n    position: fixed;\n}\n.cd-side-nav.nav-is-visible[data-v-7eea899c] {\n    box-shadow: none;\n}\n.cd-side-nav.is-fixed[data-v-7eea899c] {\n    position: fixed;\n}\n.cd-side-nav > ul[data-v-7eea899c] {\n    /* reset style */\n    padding: 0;\n}\n.cd-side-nav .cd-label[data-v-7eea899c] {\n    /* remove labels on minified version of the sidebar */\n    display: none;\n}\n.cd-side-nav a[data-v-7eea899c] {\n    font-size: 1.2rem;\n    text-align: center;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c] {\n    padding: calc(2.2em + 24px) 0 2.4em;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c]::before {\n    left: 50%;\n    right: auto;\n    -webkit-transform: translateX(-50%);\n    transform: translateX(-50%);\n    top: 2.4em;\n}\n.cd-side-nav .active > a[data-v-7eea899c] {\n    /* current page */\n    box-shadow: inset 3px 0 0 #1784c7;\n    background-color: #33383e;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c] {\n    margin: 1em 10% 0;\n}\n.cd-side-nav .count[data-v-7eea899c] {\n    height: 8px;\n    width: 8px;\n    border-radius: 50%;\n    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n    padding: 0;\n    top: 2em;\n    -webkit-transform: translateX(-50%);\n    transform: translateX(-50%);\n    left: calc(50% + 5px);\n    right: auto;\n    color: transparent;\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-side-nav[data-v-7eea899c] {\n    width: 150px;\n    position: fixed;\n}\n.cd-logo img[data-v-7eea899c]{\n    margin-left: -16px;\n    margin-top: 3px;\n}\n.cd-side-nav > ul[data-v-7eea899c] {\n    padding: 0.6em 0;\n}\n.cd-side-nav > ul > li:not(.action-btn):hover > a[data-v-7eea899c] {\n    background-color: #33383e;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c] {\n    padding: 1em 1em 1em 42px;\n    text-align: left;\n    border-bottom: none;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c]::before {\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    transform: translateY(-50%);\n    left: 18px;\n}\n.cd-side-nav .cd-label[data-v-7eea899c] {\n    display: block;\n    padding: 1em 18px;\n}\n.cd-side-nav .action-btn[data-v-7eea899c] {\n    text-align: left;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c] {\n    margin: 0 18px;\n}\n.no-touch .cd-side-nav .action-btn a[data-v-7eea899c]:hover {\n    background-color: #1a93de;\n}\n.cd-side-nav .count[data-v-7eea899c] {\n    /* reset style */\n    color: #ffffff;\n    height: auto;\n    width: auto;\n    border-radius: .25em;\n    padding: .2em .4em;\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    transform: translateY(-50%);\n    right: 18px;\n    left: auto;\n    box-shadow: none;\n}\n}\n.has-children ul[data-v-7eea899c] {\n  position: relative;\n  width: 100%;\n  display: none;\n  background-color: #1c1f22;\n}\n.has-children > a[data-v-7eea899c]::after {\n  /* arrow icon */\n  position: absolute;\n  content: '';\n  height: 16px;\n  width: 16px;\n  right: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n}\n.has-children.selected > ul[data-v-7eea899c] {\n  display: block;\n}\n.has-children.selected > a[data-v-7eea899c]::after {\n  -webkit-transform: translateY(-50%) rotate(180deg);\n  transform: translateY(-50%) rotate(180deg);\n}\n@media only screen and (min-width: 768px) {\n.has-children[data-v-7eea899c] {\n    position: relative;\n}\n.has-children ul[data-v-7eea899c] {\n    position: absolute;\n    top: 0;\n    left: 100%;\n    width: 160px;\n    padding: 0;\n    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);\n}\n.has-children ul a[data-v-7eea899c] {\n    text-align: left;\n    border: none;\n    padding: 1em;\n}\n.no-touch .has-children ul a[data-v-7eea899c]:hover {\n    color: #1784c7;\n}\n.has-children > a[data-v-7eea899c]::after {\n    display: none;\n    color: black;\n}\n.cd-side-nav .has-children.selected > a[data-v-7eea899c] {\n    /* focus state -> show sub pages */\n    background-color: #33383e;\n}\n.cd-top-nav .has-children[data-v-7eea899c] {\n    position: relative;\n    background-color: #323232;\n}\n.cd-top-nav .has-children > a[data-v-7eea899c] {\n    height: 100%;\n    padding: 0 calc(1.8em + 22px) 0 calc(1.8em + 26px) !important;\n    line-height: 55px;\n}\n.cd-top-nav .has-children > a[data-v-7eea899c]::after {\n    display: block;\n    right: 1.8em;\n}\n.cd-top-nav .has-children ul[data-v-7eea899c] {\n    background-color: #1c1f22;\n    width: 200px;\n    top: 100%;\n    right: 0;\n    left: auto;\n    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-top-nav .has-children ul a[data-v-7eea899c] {\n    padding-left: 18px !important;\n}\n}\n@media only screen and (min-width: 1170px) {\n.has-children > ul[data-v-7eea899c] {\n    width: 100%;\n    z-index: 1;\n}\n.has-children ul a[data-v-7eea899c] {\n    padding-left: 18px;\n}\n.has-children.active > ul[data-v-7eea899c] {\n    /* if the item is active, make the subnavigation visible */\n    position: relative;\n    display: block;\n    /* reset style */\n    left: 0;\n    box-shadow: none;\n}\n.no-touch .cd-side-nav .has-children:hover > ul[data-v-7eea899c], .cd-side-nav .has-children.hover > ul[data-v-7eea899c] {\n    /* show subnavigation on hover */\n    display: block;\n    opacity: 1;\n    visibility: visible;\n}\n}\n\n\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/sidebar.vue?661f56c7"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;CAuHA;;;;mCAIA;AACA;EACA,uBAAA;CACA;AAEA;EACA,iBAAA;CACA;AAEA;EACA,kBAAA;EACA,qCAAA;EACA,eAAA;EACA,0BAAA;CACA;AACA;EACA,YAAA;EACA,YAAA;EACA,eAAA;CACA;AAEA;EACA,eAAA;EACA,sBAAA;CACA;AAEA,8CAAA;AAGA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;IACA,aAAA;CAGA;AACA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA,iDAAA;AAEA;EACA,8BAAA;EACA,cAAA;EACA,oBAAA;EACA,aAAA;;EAEA,gBAAA;EACA,cAAA;EACA,cAAA;CAGA;AACA;EACA,0BAAA;EACA,cAAA;EACA,cAAA;CAGA;AACA;EACA,eAAA;CACA;AACA;EACA,gBAAA;EACA,iBAAA;EACA,gBAAA;CACA;AACA;EACA,mBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,eAAA;CACA;AAGA;EACA,qCAAA;EACA,kBAAA;CACA;AAEA;;;;EAIA,cAAA;CACA;AAEA;;;;mCAIA;AACA;EACA,qBAAA;CACA;AACA;EACA,mBAAA;EACA,eAAA;EACA,gBAAA;CACA;AACA;EACA,gDAAA;EACA,cAAA;EACA,kBAAA;CACA;AACA;AACA;IACA,mBAAA;IACA,iBAAA;IACA,mBAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;IACA,iBAAA;CACA;AACA;IACA,kBAAA;CACA;CACA;AACA;AACA;IACA,mBAAA;CACA;AACA;IACA,mBAAA;CACA;CACA;AAEA;;;;mCAIA;AAEA;EACA,mBAAA;EACA,WAAA;EACA,OAAA;EACA,QAAA;EACA,aAAA;EACA,YAAA;EACA,oBAAA;;;EAGA,yCAAA;EACA,oCAAA;EACA,mCAAA;CACA;AACA;EACA,YAAA;EACA,YAAA;EACA,eAAA;CACA;AACA,IAAA;AAAA;;AAEA;IACA,gBAAA;IACA,aAAA;IACA,yBAAA;CACA;CACA;AAEA;EACA,YAAA;EACA,eAAA;EACA,oBAAA;CACA;AACA;EACA,eAAA;CACA;AACA;AACA;IACA,sBAAA;CACA;CACA;AAEA;EACA,yDAAA;EACA,aAAA;EACA,mBAAA;EACA,eAAA;EACA,YAAA;EACA,aAAA;EACA,iBAAA;EACA,eAAA;EACA,iBAAA;EACA,oBAAA;EACA,mBAAA;CACA;AACA;EACA,2BAAA;EACA,mBAAA;EACA,sBAAA;EACA,YAAA;EACA,YAAA;EACA,mBAAA;CACA;AACA;EACA,wBAAA;EACA,mBAAA;EACA,SAAA;EACA,WAAA;EACA,iBAAA;EAGA,4BAAA;CACA;AACA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,2CAAA;EACA,iCAAA;EAIA,yBAAA;EACA,oCAAA;EACA,4BAAA;EACA,iCAAA;EAIA,yBAAA;EAGA,mCAAA;EAAA,2BAAA;EAAA,mDAAA;CACA;AACA;EACA,wBAAA;EACA,UAAA;CACA;AACA;EACA,2BAAA;EACA,SAAA;CACA;AACA;EACA,6BAAA;EACA,mCAAA;CACA;AACA;EACA,gCAAA;EACA,kBAAA;CACA;AACA;EACA,kEAAA;EAIA,0DAAA;CACA;AACA;EACA,kEAAA;EAIA,0DAAA;CACA;AACA;AACA;IACA,cAAA;CACA;CACA;AAEA;EACA,mBAAA;EACA,uBAAA;CACA;AACA;EACA,WAAA;CACA;AACA;EACA,eAAA;EACA,YAAA;EACA,mBAAA;EACA,UAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,aAAA;EACA,YAAA;CAEA;AACA;EACA,mBAAA;EACA,YAAA;EACA,aAAA;EACA,aAAA;EACA,qBAAA;EACA,yBAAA;EACA,sBAAA;EACA,qBAAA;EACA,oBAAA;EACA,iBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;AACA;IACA,YAAA;IACA,sBAAA;IACA,aAAA;IACA,aAAA;IACA,oBAAA;CACA;AACA;IACA,iBAAA;IACA,WAAA;CACA;AACA;IACA,6BAAA;IACA,UAAA;CACA;AACA;IACA,aAAA;IACA,YAAA;CACA;AACA;IACA,aAAA;IACA,oBAAA;IACA,iBAAA;IACA,0BAAA;IACA,+BAAA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;CACA;AAEA;;;;mCAIA;AACA;EACA,6CAAA;EACA,cAAA;CACA;AACA;AACA;IACA,eAAA;IACA,aAAA;IACA,aAAA;CACA;CACA;AAEA;EACA,iBAAA;EACA,cAAA;CACA;AACA;EACA,2BAAA;CACA;AACA;EACA,kBAAA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,aAAA;EACA,YAAA;EACA,mBAAA;EACA,cAAA;CACA;AACA;AACA;IACA,aAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;IACA,eAAA;CACA;AACA;IACA,sBAAA;IACA,kBAAA;IACA,aAAA;CACA;AACA;IACA,gBAAA;CACA;AACA;IACA,6BAAA;CACA;AACA;IACA,eAAA;CACA;CACA;AACA;AACA;IACA,eAAA;CACA;CACA;AAEA;;;;mCAIA;AACA;EACA,gBAAA;EACA,WAAA;EACA,QAAA;EACA,OAAA;EACA,YAAA;EACA,kBAAA;EACA,0BAAA;EACA,mBAAA;EACA,WAAA;EACA,kBAAA;EACA,iBAAA;EACA,oCAAA;EACA,mCAAA;EAGA,gDAAA;CACA;AACA;EACA,WAAA;EACA,oBAAA;EACA,kBAAA;EACA,kCAAA;EAGA,8CAAA;EACA,iBAAA;EACA,0CAAA;CACA;AACA;EACA,iBAAA;CACA;AACA;EACA,kBAAA;CACA;AACA;EACA,eAAA;EACA,gBAAA;CACA;AAEA;EACA,mBAAA;EACA,eAAA;EACA,kBAAA;CACA;AACA;EACA,oBAAA;CACA;AACA;EACA,8BAAA;EACA,iCAAA;CACA;AACA;EACA,2BAAA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,aAAA;EACA,YAAA;CAEA;AACA;EACA,6BAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,yBAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,wBAAA;EACA,mBAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,+BAAA;EACA,qBAAA;EACA,0BAAA;EACA,qBAAA;EACA,eAAA;EACA,kBAAA;EACA,kBAAA;EACA,mBAAA;CACA;AACA;EACA,eAAA;EACA,aAAA;EACA,eAAA;EACA,0BAAA;EACA,qBAAA;EACA,aAAA;EACA,iFAAA;EACA,mBAAA;EACA,eAAA;EACA,kBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;AACA;;IAEA,YAAA;IACA,WAAA;IACA,aAAA;IACA,kBAAA;IACA,kBAAA;IACA,iBAAA;IACA,oBAAA;IACA,WAAA;IACA,kBAAA;IACA,iBAAA;IACA,gBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,gBAAA;CACA;AACA;IACA,iBAAA;IACA,WAAA;CACA;AACA;IACA,sDAAA;IACA,cAAA;CACA;AACA;IACA,kBAAA;IACA,mBAAA;CACA;AACA;IACA,oCAAA;CACA;AACA;IACA,UAAA;IACA,YAAA;IACA,oCAAA;IAIA,4BAAA;IACA,WAAA;CACA;AACA;IACA,kBAAA;IACA,kCAAA;IACA,0BAAA;CACA;AACA;IACA,kBAAA;CACA;AACA;IACA,YAAA;IACA,WAAA;IACA,mBAAA;IACA,uCAAA;IACA,WAAA;IACA,SAAA;IACA,oCAAA;IAIA,4BAAA;IACA,sBAAA;IACA,YAAA;IACA,mBAAA;CACA;CACA;AACA;AACA;IACA,aAAA;IACA,gBAAA;CACA;AACA;IACA,mBAAA;IACA,gBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,0BAAA;IACA,iBAAA;IACA,oBAAA;CACA;AACA;IACA,SAAA;IACA,aAAA;IACA,oCAAA;IAIA,4BAAA;IACA,WAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,iBAAA;IACA,eAAA;IACA,aAAA;IACA,YAAA;IACA,qBAAA;IACA,mBAAA;IACA,SAAA;IACA,aAAA;IACA,oCAAA;IAIA,4BAAA;IACA,YAAA;IACA,WAAA;IACA,iBAAA;CACA;CACA;AAEA;EACA,mBAAA;EACA,YAAA;EACA,cAAA;EACA,0BAAA;CACA;AACA;EACA,gBAAA;EACA,mBAAA;EACA,YAAA;EACA,aAAA;EACA,YAAA;EACA,UAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;CAEA;AACA;EACA,eAAA;CACA;AACA;EACA,mDAAA;EAIA,2CAAA;CACA;AACA;AACA;IACA,mBAAA;CACA;AACA;IACA,mBAAA;IACA,OAAA;IACA,WAAA;IACA,aAAA;IACA,WAAA;IACA,0CAAA;CACA;AACA;IACA,iBAAA;IACA,aAAA;IACA,aAAA;CACA;AAGA;IACA,eAAA;CACA;AACA;IACA,cAAA;IACA,aAAA;CACA;AACA;IACA,mCAAA;IACA,0BAAA;CACA;AACA;IACA,mBAAA;IACA,0BAAA;CAEA;AACA;IACA,aAAA;IACA,8DAAA;IACA,kBAAA;CACA;AACA;IACA,eAAA;IACA,aAAA;CACA;AACA;IACA,0BAAA;IACA,aAAA;IACA,UAAA;IACA,SAAA;IACA,WAAA;IACA,0CAAA;CACA;AACA;IACA,8BAAA;CACA;CACA;AACA;AACA;IACA,YAAA;IACA,WAAA;CACA;AACA;IACA,mBAAA;CACA;AACA;IACA,2DAAA;IACA,mBAAA;IACA,eAAA;IACA,iBAAA;IACA,QAAA;IACA,iBAAA;CACA;AACA;IACA,iCAAA;IACA,eAAA;IACA,WAAA;IACA,oBAAA;CACA;CACA","file":"sidebar.vue","sourcesContent":["<template>\n  <div class=\"cd-side-nav\">\n     <!-- ####### Header NAVBAR ####### -->\n  <header class=\"cd-main-header\" >\n    <a href=\"#\" class=\"cd-logo\"><img style=\"margin-left:-80px; margin-top:-8px;\" src=\"/dist/assets/images/logo-trans.png\"  alt=\"Logo\"></a>       \n    <nav class=\"cd-nav\" >\n      <ul class=\"cd-top-nav\">\n         <li>\n             <a style=\"margin-top:6px;\" v-on:click=\"$parent.logout()\" class=\"btn btn-danger btn-md\">\n              <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n             </a>\n        </li>\n         <li class=\"has-children account\">\n          <a href=\"#0\"  >\n            <img  src=\"/dist/assets/images/user.jpg\" alt=\"avatar\">\n            <div id='username'></div>\n          </a>\n        </li>  \n          <ul>\n           <!--  <li><a href=\"#0\">My Account</a></li>\n           <li><a href=\"#0\">Edit Account</a></li> -->\n            <!-- <li><a href=\"#0\">Logout</a></li> -->\n          </ul>\n        </li>\n      </ul>\n    </nav>\n  </header> \n  <!-- ###### Header NAVBAR END #######-->\n     \n    <!-- %%%%%%%%  Side NAVBAR %%%%%%% -->\n  <main class=\"cd-main-content\" >\n    <nav class=\"cd-side-nav\">\n      <input type=\"hidden\" name=\"user.installerID\" v-model=\"user.roll\">\n      <ul>\n        <li class=\"has-children Overviews\" v-if=\"user.roll == 'Admin' || 'Project Coordinator'\">\n         <a v-on:click=\"$parent.updateView('create-customer')\"> <i class=\"fa fa-th-large\" ></i>Customer</a>                   \n        </li>       \n        <li class=\"has-children comments\" v-if=\"user.roll == 'Admin' || 'Project Coordinator'\">\n          <a v-on:click=\"$parent.updateView('add-installer')\"><i class=\"fa fa-tasks\"></i> Installer</a>                   \n        </li>\n\n        <li class=\"has-children bookmarks\" v-if=\"user.roll == 'Admin' || 'Project Coordinator' || 'Project Manager' || 'Installer'\">\n          <a  v-on:click=\"$parent.updateView('bonus-schedule')\"><i class=\"fa fa-table\"></i> Bonus</a>\n          \n        </li> \n\t\t    <li class=\"has-children bookmarks\" v-if=\"user.roll == 'Admin' || 'Project Coordinator'\">\n          <a  v-on:click=\"$parent.updateView('payment-history')\"><i class=\"fa fa-table\"></i> Payments</a>\n          \n        </li> \n        <li class=\"has-children users\" v-if=\"user.roll == 'Admin' || 'Project Coordinator'\">\n          <a  v-on:click=\"$parent.updateView('add-user')\"><i class=\"fa fa-user\"></i> User</a>       \n         \n        </li>\n       \n        <li class=\"has-children users\" v-if=\"user.roll == 'Admin' || 'Project Coordinator' || 'Project Manager' || 'Installer'\">\n          <a  v-on:click=\"$parent.updateView('')\"><i class=\"fa fa-user\"></i> Jobs</a>       \n          <!-- <ul>\n           <li><a v-on:click=\"$parent.updateView('')\">View transaction logs</a></li>\n           <li><a v-on:click=\"$parent.updateView('')\">View project data</a></li>\n          </ul> -->\n        </li>\n\t\t    <li class=\"has-children bookmarks\">\n          <a  v-on:click=\"$parent.updateView('payment-history')\"><i class=\"fa fa-table\"></i> Payments</a>\n          \n        </li> \n        \n       \n        \n       \n\n         <li class=\"has-children users\" v-if=\"user.roll == 'Admin' || 'Project Coordinator'\">\n          <a  v-on:click=\"$parent.updateView('create-project')\"><i class=\"fa fa-user\"></i> Project</a>                 \n        </li>\n\n        <li class=\"has-children users\" v-if=\"user.roll == 'Admin' || 'Project Coordinator'\">\n          <a v-on:click=\"$parent.updateView('create-roles')\"><i class=\"fa fa-user\"></i> Admin</a>       \n          <!-- <ul>\n           <li><a v-on:click=\"$parent.updateView('create-roles')\">Create roles</a></li>\n           <li><a v-on:click=\"$parent.updateView('modify-roles')\">Modify Roles</a></li>\n          </ul> -->\n        </li>\n    </ul>\n    </nav>\n        <!-- %%%%%%%%  Side NAVBAR END %%%%%%% -->\n\n\n \n\n  </main> <!-- .cd-main-content -->\t\t\n  </div>\n</template>\n\n<script>\nconst axios = require('axios');\nexport default {\n  name: \"side-bar\",\n  props: [\"user\"],\n  beforeMount(){\n  axios.get('/session/data')\n   .then(req => {\n      console.log(\"Side Bar username\"+req.data.username);\n      $('#username').html(req.data.username);\n     \n      //If no session received, return home\n      if(!req.data.roll){\n        this.$router.push('/');\n      }\n\n     \n   })\n  .catch(function(err){\n    console.log(\"Error R\"+err);\n  });\n  }\n};\n\n</script>\n\n<style scoped>\n /* -------------------------------- \n\nPrimary style\n\n-------------------------------- */\n*, *::after, *::before {\n  box-sizing: border-box;\n}\n\nhtml {\n  font-size: 62.5%;\n}\n\nbody {\n  font-size: 1.6rem;\n  font-family: \"Open Sans\", sans-serif;\n  color: #3e454c;\n  background-color: #F5F5F5;\n}\nbody::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\n\na {\n  color: #1784c7;\n  text-decoration: none;\n}\n\n/*  ######  Side NAVBAR page style  ######  */\n\n\n#dashboard{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n    height: 100%;\n\n\n}\n#project{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n#tables{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n#user{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n#admin{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n/*  ######  Side NAVBAR page style END ######  */\n\n.button{\n  background-color: transparent;\n  color:#C8C8C8;\n  border: transparent;\n  height: 35px;\n  \n  font-size: 15px;\n  border : none;\n  outline: none;\n\n\n}\n.button:active {\n  background-color: #323232;\n  border : none;\n  outline: none;\n  \n\n}\n.button:hover{\n  color: #ffffff;\n}\n.cd-side-nav{\n  font-size: 20px;\n  margin-top: 20px;\n  position: fixed;\n}\n.fa{\n  margin-right: 13px;\n}\n.cd-nav ul li a{\n  color:#C8C8C8;\n}\n.cd-nav ul li a:hover{\n  color: #ffffff;\n}\n\n\ninput {\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 1.6rem;\n}\n\ninput[type=\"search\"]::-webkit-search-decoration,\ninput[type=\"search\"]::-webkit-search-cancel-button,\ninput[type=\"search\"]::-webkit-search-results-button,\ninput[type=\"search\"]::-webkit-search-results-decoration {\n  display: none;\n}\n\n/* -------------------------------- \n\nMain Page Content\n\n-------------------------------- */\n.cd-main-content .content-wrapper {\n  padding: 45px 5% 3em;\n}\n.cd-main-content .content-wrapper h1 {\n  text-align: center;\n  padding: 3em 0;\n  font-size: 2rem;\n}\n.cd-main-content::before {\n  /* never visible - used to check MQ in jQuery */\n  display: none;\n  content: 'mobile';\n}\n@media only screen and (min-width: 768px) {\n  .cd-main-content .content-wrapper {\n    margin-left: 110px;\n    margin-top: 80px;\n    padding-top: 155px;\n  }\n  .cd-main-content .content-wrapper h1 {\n    padding: 4em 0;\n    font-size: 3.2rem;\n    font-weight: 300;\n  }\n  .cd-main-content::before {\n    content: 'tablet';\n  }\n}\n@media only screen and (min-width: 1170px) {\n  .cd-main-content .content-wrapper {\n    margin-left: 200px;\n  }\n  .cd-main-content::before {\n    content: 'desktop';\n  }\n}\n\n/* -------------------------------- \n\nHeader\n\n-------------------------------- */\n \n.cd-main-header {\n  position: absolute;\n  z-index: 2;\n  top: 0;\n  left: 0;\n  height: 45px;\n  width: 100%;\n  background: #FFFFFF;\n\n\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.cd-main-header::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\n/**/@media only screen and (min-width: 768px) \n{\n  .cd-main-header {\n    position: fixed;\n    height: 55px;\n    background-color:#323232;\n  }\n}\n\n.cd-logo {\n  float: left;\n  display: block;\n  margin: 11px 0 0 5%;\n}\n.cd-logo img {\n  display: block;\n}\n@media only screen and (min-width: 768px) {\n  .cd-logo {\n    margin: 16px 0 0 36px;\n  }\n}\n\n.cd-nav-trigger {\n  /* navigation trigger - visible on mobile devices only */\n  float: right;\n  position: relative;\n  display: block;\n  width: 34px;\n  height: 44px;\n  margin-right: 5%;\n  /* hide text */\n  overflow: hidden;\n  white-space: nowrap;\n  color: transparent;\n}\n.cd-nav-trigger span, .cd-nav-trigger span::before, .cd-nav-trigger span::after {\n  /* hamburger icon in CSS */\n  position: absolute;\n  display: inline-block;\n  height: 3px;\n  width: 24px;\n  background:#323232;\n}\n.cd-nav-trigger span {\n  /* line in the center */\n  position: absolute;\n  top: 50%;\n  right: 5px;\n  margin-top: -2px;\n  -webkit-transition: background 0.2s;\n  -moz-transition: background 0.2s;\n  transition: background 0.2s;\n}\n.cd-nav-trigger span::before, .cd-nav-trigger span::after {\n  /* other 2 lines */\n  content: '';\n  right: 0;\n  /* Force Hardware Acceleration in WebKit */\n  -webkit-transform: translateZ(0);\n  -moz-transform: translateZ(0);\n  -ms-transform: translateZ(0);\n  -o-transform: translateZ(0);\n  transform: translateZ(0);\n  -webkit-backface-visibility: hidden;\n  backface-visibility: hidden;\n  -webkit-transform-origin: 0% 50%;\n  -moz-transform-origin: 0% 50%;\n  -ms-transform-origin: 0% 50%;\n  -o-transform-origin: 0% 50%;\n  transform-origin: 0% 50%;\n  -webkit-transition: -webkit-transform 0.2s;\n  -moz-transition: -moz-transform 0.2s;\n  transition: transform 0.2s;\n}\n.cd-nav-trigger span::before {\n  /* menu icon top line */\n  top: -6px;\n}\n.cd-nav-trigger span::after {\n  /* menu icon bottom line */\n  top: 6px;\n}\n.cd-nav-trigger.nav-is-visible span {\n  /* hide line in the center */\n  background: rgba(255, 255, 255, 0);\n}\n.cd-nav-trigger.nav-is-visible span::before, .cd-nav-trigger.nav-is-visible span::after {\n  /* keep visible other 2 lines */\n  background: white;\n}\n.cd-nav-trigger.nav-is-visible span::before {\n  -webkit-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  -moz-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  -ms-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  -o-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  transform: translateX(4px) translateY(-3px) rotate(45deg);\n}\n.cd-nav-trigger.nav-is-visible span::after {\n  -webkit-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  -moz-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  -ms-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  -o-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  transform: translateX(4px) translateY(2px) rotate(-45deg);\n}\n@media only screen and (min-width: 768px) {\n  .cd-nav-trigger {\n    display: none;\n  }\n}\n\n.cd-search {\n  position: relative;\n  margin: 1.2em 5% 0.6em;\n}\n.cd-search.is-hidden {\n  opacity: 0;\n}\n.cd-search::before {\n  /* lens icon */\n  content: '';\n  position: absolute;\n  left: 8px;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n \n}\n.cd-search input {\n  padding-left: 32px;\n  width: 100%;\n  height: 36px;\n  border: none;\n  border-radius: .25em;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  -ms-appearance: none;\n  -o-appearance: none;\n  appearance: none;\n}\n.cd-search input:focus {\n  outline: none;\n}\n@media only screen and (min-width: 768px) {\n  .cd-search {\n    float: left;\n    display: inline-block;\n    width: 250px;\n    height: 100%;\n    margin: 0 0 0 2.5em;\n  }\n  .cd-search.is-hidden {\n    /* reset style */\n    opacity: 1;\n  }\n  .cd-search::before {\n    background-position: 0 -16px;\n    left: 1em;\n  }\n  .cd-search form, .cd-search input {\n    height: 100%;\n    width: 100%;\n  }\n  .cd-search input {\n    border: none;\n    padding-left: 2.6em;\n    border-radius: 0;\n    background-color: #3e454c;\n    border-left: 1px solid #51575d;\n    color: #ffffff;\n  }\n  .cd-search input::-webkit-input-placeholder {\n    color: #777c81;\n  }\n  .cd-search input::-moz-placeholder {\n    color: #777c81;\n  }\n  .cd-search input:-moz-placeholder {\n    color: #777c81;\n  }\n  .cd-search input:-ms-input-placeholder {\n    color: #777c81;\n  }\n}\n\n/* -------------------------------- \n\nTop Navigation\n\n-------------------------------- */\n.cd-nav {\n  /* top nav - not visible on mobile devices */\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n  .cd-nav {\n    display: block;\n    float: right;\n    height: 100%;\n  }\n}\n\n.cd-top-nav > li > a::before {\n  /* reset style */\n  display: none;\n}\n.cd-top-nav > li a {\n  padding: 1em 5% !important;\n}\n.cd-top-nav img {\n  /* avatar image */\n  position: absolute;\n  left: 1.8em;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 20px;\n  width: 20px;\n  border-radius: 50%;\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n  .cd-top-nav {\n    height: 100%;\n  }\n  .cd-top-nav a {\n    display: block;\n    font-size: 1.4rem;\n    color: #ffffff;\n  }\n  .cd-top-nav > li {\n    display: inline-block;\n    margin-right: 1em;\n    height: 100%;\n  }\n  .cd-top-nav > li:last-of-type {\n    margin-right: 0;\n  }\n  .cd-top-nav > li a {\n    padding: 1em .6em !important;\n  }\n  .cd-top-nav img {\n    display: block;\n  }\n}\n@media only screen and (min-width: 1170px) {\n  .cd-top-nav li:not(.has-children) a:hover {\n    color: #1784c7;\n  }\n}\n\n/* -------------------------------- \n\nSidebar\n\n-------------------------------- */\n.cd-side-nav {\n  position: fixed;\n  z-index: 1;\n  left: 0;\n  top: 0;\n  width: 100%;\n  padding: 45px 0 0;\n  background-color: #323232;\n  visibility: hidden;\n  opacity: 0;\n  max-height: 100vh;\n  overflow: hidden;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;\n  -moz-transition: opacity 0.2s 0s, visibility 0s 0.2s;\n  transition: opacity 0.2s 0s, visibility 0s 0.2s;\n}\n.cd-side-nav.nav-is-visible {\n  opacity: 1;\n  visibility: visible;\n  overflow: visible;\n  -webkit-overflow-scrolling: touch;\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0s;\n  -moz-transition: opacity 0.2s 0s, visibility 0s 0s;\n  transition: opacity 0.2s 0s, visibility 0s 0s;\n  max-height: none;\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-side-nav > ul {\n  padding: 0.6em 0;\n}\n.cd-side-nav > ul:last-of-type {\n  padding-bottom: 0;\n}\n.cd-side-nav .cd-label, .cd-side-nav a {\n  display: block;\n  padding: 1em 5%;\n}\n\n.cd-side-nav a {\n  position: relative;\n  color: #ffffff;\n  font-size: 1.4rem;\n}\n.cd-side-nav ul.cd-top-nav > li:last-of-type > a {\n  border-bottom: none;\n}\n.cd-side-nav > ul > li > a {\n  padding-left: calc(5% + 24px);\n  border-bottom: 1px solid #373d44;\n}\n.cd-side-nav > ul > li > a::before {\n  /* icon before item name */\n  position: absolute;\n  content: '';\n  left: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n  \n}\n.cd-side-nav > ul > li.overview > a::before {\n  background-position: -64px 0;\n}\n.cd-side-nav > ul > li.notifications > a::before {\n  background-position: -80px 0;\n}\n.cd-side-nav > ul > li.comments > a::before {\n  background-position: -48px 0;\n}\n.cd-side-nav > ul > li.bookmarks > a::before {\n  background-position: -32px 0;\n}\n.cd-side-nav > ul > li.images > a::before {\n  background-position: 0 0;\n}\n.cd-side-nav > ul > li.users > a::before {\n  background-position: -16px 0;\n}\n.cd-side-nav .count {\n  /* notification badge */\n  position: absolute;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  right: calc(5% + 16px + 0.4em);\n  padding: 0.2em 0.4em;\n  background-color: #ff7e66;\n  border-radius: .25em;\n  color: #ffffff;\n  font-weight: bold;\n  font-size: 1.2rem;\n  text-align: center;\n}\n.cd-side-nav .action-btn a {\n  display: block;\n  margin: 0 5%;\n  padding: 1em 0;\n  background-color: #1784c7;\n  border-radius: .25em;\n  border: none;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);\n  text-align: center;\n  color: #ffffff;\n  font-weight: bold;\n}\n.cd-side-nav .action-btn a::before {\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n  .cd-side-nav {\n    \n    float: left;\n    top: fixed;\n    width: 110px;\n    min-height: 100vh;\n    padding-top: 55px;\n    /* reset style */\n    visibility: visible;\n    opacity: 1;\n    overflow: visible;\n    max-height: none;\n    position: fixed;\n  }\n  .cd-side-nav.nav-is-visible {\n    box-shadow: none;\n  }\n  .cd-side-nav.is-fixed {\n    position: fixed;\n  }\n  .cd-side-nav > ul {\n    /* reset style */\n    padding: 0;\n  }\n  .cd-side-nav .cd-label {\n    /* remove labels on minified version of the sidebar */\n    display: none;\n  }\n  .cd-side-nav a {\n    font-size: 1.2rem;\n    text-align: center;\n  }\n  .cd-side-nav > ul > li > a {\n    padding: calc(2.2em + 24px) 0 2.4em;\n  }\n  .cd-side-nav > ul > li > a::before {\n    left: 50%;\n    right: auto;\n    -webkit-transform: translateX(-50%);\n    -moz-transform: translateX(-50%);\n    -ms-transform: translateX(-50%);\n    -o-transform: translateX(-50%);\n    transform: translateX(-50%);\n    top: 2.4em;\n  }\n  .cd-side-nav .active > a {\n    /* current page */\n    box-shadow: inset 3px 0 0 #1784c7;\n    background-color: #33383e;\n  }\n  .cd-side-nav .action-btn a {\n    margin: 1em 10% 0;\n  }\n  .cd-side-nav .count {\n    height: 8px;\n    width: 8px;\n    border-radius: 50%;\n    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n    padding: 0;\n    top: 2em;\n    -webkit-transform: translateX(-50%);\n    -moz-transform: translateX(-50%);\n    -ms-transform: translateX(-50%);\n    -o-transform: translateX(-50%);\n    transform: translateX(-50%);\n    left: calc(50% + 5px);\n    right: auto;\n    color: transparent;\n  }\n}\n@media only screen and (min-width: 1170px) {\n  .cd-side-nav {\n    width: 150px;\n    position: fixed;\n  }\n  .cd-logo img{\n    margin-left: -16px;\n    margin-top: 3px;\n  }\n  .cd-side-nav > ul {\n    padding: 0.6em 0;\n  }\n  .cd-side-nav > ul > li:not(.action-btn):hover > a {\n    background-color: #33383e;\n  }\n  .cd-side-nav > ul > li > a {\n    padding: 1em 1em 1em 42px;\n    text-align: left;\n    border-bottom: none;\n  }\n  .cd-side-nav > ul > li > a::before {\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    -moz-transform: translateY(-50%);\n    -ms-transform: translateY(-50%);\n    -o-transform: translateY(-50%);\n    transform: translateY(-50%);\n    left: 18px;\n  }\n  .cd-side-nav .cd-label {\n    display: block;\n    padding: 1em 18px;\n  }\n  .cd-side-nav .action-btn {\n    text-align: left;\n  }\n  .cd-side-nav .action-btn a {\n    margin: 0 18px;\n  }\n  .no-touch .cd-side-nav .action-btn a:hover {\n    background-color: #1a93de;\n  }\n  .cd-side-nav .count {\n    /* reset style */\n    color: #ffffff;\n    height: auto;\n    width: auto;\n    border-radius: .25em;\n    padding: .2em .4em;\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    -moz-transform: translateY(-50%);\n    -ms-transform: translateY(-50%);\n    -o-transform: translateY(-50%);\n    transform: translateY(-50%);\n    right: 18px;\n    left: auto;\n    box-shadow: none;\n  }\n}\n\n.has-children ul {\n  position: relative;\n  width: 100%;\n  display: none;\n  background-color: #1c1f22;\n}\n.has-children > a::after {\n  /* arrow icon */\n  position: absolute;\n  content: '';\n  height: 16px;\n  width: 16px;\n  right: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  \n}\n.has-children.selected > ul {\n  display: block;\n}\n.has-children.selected > a::after {\n  -webkit-transform: translateY(-50%) rotate(180deg);\n  -moz-transform: translateY(-50%) rotate(180deg);\n  -ms-transform: translateY(-50%) rotate(180deg);\n  -o-transform: translateY(-50%) rotate(180deg);\n  transform: translateY(-50%) rotate(180deg);\n}\n@media only screen and (min-width: 768px) {\n  .has-children {\n    position: relative;\n  }\n  .has-children ul {\n    position: absolute;\n    top: 0;\n    left: 100%;\n    width: 160px;\n    padding: 0;\n    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);\n  }\n  .has-children ul a {\n    text-align: left;\n    border: none;\n    padding: 1em;\n  }\n \n  \n  .no-touch .has-children ul a:hover {\n    color: #1784c7;\n  }\n  .has-children > a::after {\n    display: none;\n    color: black;\n  }\n  .cd-side-nav .has-children.selected > a {\n    /* focus state -> show sub pages */\n    background-color: #33383e;\n  }\n  .cd-top-nav .has-children {\n    position: relative;\n    background-color: #323232;\n\n  }\n  .cd-top-nav .has-children > a {\n    height: 100%;\n    padding: 0 calc(1.8em + 22px) 0 calc(1.8em + 26px) !important;\n    line-height: 55px;\n  }\n  .cd-top-nav .has-children > a::after {\n    display: block;\n    right: 1.8em;\n  }\n  .cd-top-nav .has-children ul {\n    background-color: #1c1f22;\n    width: 200px;\n    top: 100%;\n    right: 0;\n    left: auto;\n    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);\n  }\n  .cd-top-nav .has-children ul a {\n    padding-left: 18px !important;\n  }\n}\n@media only screen and (min-width: 1170px) {\n  .has-children > ul {\n    width: 100%;\n    z-index: 1;\n  }\n  .has-children ul a {\n    padding-left: 18px;\n  }\n  .has-children.active > ul {\n    /* if the item is active, make the subnavigation visible */\n    position: relative;\n    display: block;\n    /* reset style */\n    left: 0;\n    box-shadow: none;\n  }\n  .no-touch .cd-side-nav .has-children:hover > ul, .cd-side-nav .has-children.hover > ul {\n    /* show subnavigation on hover */\n    display: block;\n    opacity: 1;\n    visibility: visible;\n  }\n}\n\n\n</style>\n\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n /* -------------------------------- \n\nPrimary style\n\n-------------------------------- */\n*[data-v-7eea899c], *[data-v-7eea899c]::after, *[data-v-7eea899c]::before {\n  box-sizing: border-box;\n}\nhtml[data-v-7eea899c] {\n  font-size: 62.5%;\n}\nbody[data-v-7eea899c] {\n  font-size: 1.6rem;\n  font-family: \"Open Sans\", sans-serif;\n  color: #3e454c;\n  background-color: #F5F5F5;\n}\nbody[data-v-7eea899c]::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\na[data-v-7eea899c] {\n  color: #1784c7;\n  text-decoration: none;\n}\n/*  ######  Side NAVBAR page style  ######  */\n#dashboard[data-v-7eea899c]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n    height: 100%;\n}\n#project[data-v-7eea899c]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#tables[data-v-7eea899c]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#user[data-v-7eea899c]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#admin[data-v-7eea899c]{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n/*  ######  Side NAVBAR page style END ######  */\n.button[data-v-7eea899c]{\n  background-color: transparent;\n  color:#C8C8C8;\n  border: transparent;\n  height: 35px;\n  \n  font-size: 15px;\n  border : none;\n  outline: none;\n}\n.button[data-v-7eea899c]:active {\n  background-color: #323232;\n  border : none;\n  outline: none;\n}\n.button[data-v-7eea899c]:hover{\n  color: #ffffff;\n}\n.cd-side-nav[data-v-7eea899c]{\n  font-size: 20px;\n  margin-top: 20px;\n  position: fixed;\n}\n.fa[data-v-7eea899c]{\n  margin-right: 13px;\n}\n.cd-nav ul li a[data-v-7eea899c]{\n  color:#C8C8C8;\n}\n.cd-nav ul li a[data-v-7eea899c]:hover{\n  color: #ffffff;\n}\ninput[data-v-7eea899c] {\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 1.6rem;\n}\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-decoration,\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-cancel-button,\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-results-button,\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-results-decoration {\n  display: none;\n}\n/* -------------------------------- \n\nMain Page Content\n\n-------------------------------- */\n.cd-main-content .content-wrapper[data-v-7eea899c] {\n  padding: 45px 5% 3em;\n}\n.cd-main-content .content-wrapper h1[data-v-7eea899c] {\n  text-align: center;\n  padding: 3em 0;\n  font-size: 2rem;\n}\n.cd-main-content[data-v-7eea899c]::before {\n  /* never visible - used to check MQ in jQuery */\n  display: none;\n  content: 'mobile';\n}\n@media only screen and (min-width: 768px) {\n.cd-main-content .content-wrapper[data-v-7eea899c] {\n    margin-left: 110px;\n    margin-top: 80px;\n    padding-top: 155px;\n}\n.cd-main-content .content-wrapper h1[data-v-7eea899c] {\n    padding: 4em 0;\n    font-size: 3.2rem;\n    font-weight: 300;\n}\n.cd-main-content[data-v-7eea899c]::before {\n    content: 'tablet';\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-main-content .content-wrapper[data-v-7eea899c] {\n    margin-left: 200px;\n}\n.cd-main-content[data-v-7eea899c]::before {\n    content: 'desktop';\n}\n}\n/* -------------------------------- \n\nHeader\n\n-------------------------------- */\n.cd-main-header[data-v-7eea899c] {\n  position: absolute;\n  z-index: 2;\n  top: 0;\n  left: 0;\n  height: 45px;\n  width: 100%;\n  background: #FFFFFF;\n\n\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.cd-main-header[data-v-7eea899c]::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\n/**/\n@media only screen and (min-width: 768px) \n{\n.cd-main-header[data-v-7eea899c] {\n    position: fixed;\n    height: 55px;\n    background-color:#323232;\n}\n}\n.cd-logo[data-v-7eea899c] {\n  float: left;\n  display: block;\n  margin: 11px 0 0 5%;\n}\n.cd-logo img[data-v-7eea899c] {\n  display: block;\n}\n@media only screen and (min-width: 768px) {\n.cd-logo[data-v-7eea899c] {\n    margin: 16px 0 0 36px;\n}\n}\n.cd-nav-trigger[data-v-7eea899c] {\n  /* navigation trigger - visible on mobile devices only */\n  float: right;\n  position: relative;\n  display: block;\n  width: 34px;\n  height: 44px;\n  margin-right: 5%;\n  /* hide text */\n  overflow: hidden;\n  white-space: nowrap;\n  color: transparent;\n}\n.cd-nav-trigger span[data-v-7eea899c], .cd-nav-trigger span[data-v-7eea899c]::before, .cd-nav-trigger span[data-v-7eea899c]::after {\n  /* hamburger icon in CSS */\n  position: absolute;\n  display: inline-block;\n  height: 3px;\n  width: 24px;\n  background:#323232;\n}\n.cd-nav-trigger span[data-v-7eea899c] {\n  /* line in the center */\n  position: absolute;\n  top: 50%;\n  right: 5px;\n  margin-top: -2px;\n  transition: background 0.2s;\n}\n.cd-nav-trigger span[data-v-7eea899c]::before, .cd-nav-trigger span[data-v-7eea899c]::after {\n  /* other 2 lines */\n  content: '';\n  right: 0;\n  /* Force Hardware Acceleration in WebKit */\n  -webkit-transform: translateZ(0);\n  transform: translateZ(0);\n  -webkit-backface-visibility: hidden;\n  backface-visibility: hidden;\n  -webkit-transform-origin: 0% 50%;\n  transform-origin: 0% 50%;\n  transition: -webkit-transform 0.2s;\n  transition: transform 0.2s;\n  transition: transform 0.2s, -webkit-transform 0.2s;\n}\n.cd-nav-trigger span[data-v-7eea899c]::before {\n  /* menu icon top line */\n  top: -6px;\n}\n.cd-nav-trigger span[data-v-7eea899c]::after {\n  /* menu icon bottom line */\n  top: 6px;\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c] {\n  /* hide line in the center */\n  background: rgba(255, 255, 255, 0);\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::before, .cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::after {\n  /* keep visible other 2 lines */\n  background: white;\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::before {\n  -webkit-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  transform: translateX(4px) translateY(-3px) rotate(45deg);\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::after {\n  -webkit-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  transform: translateX(4px) translateY(2px) rotate(-45deg);\n}\n@media only screen and (min-width: 768px) {\n.cd-nav-trigger[data-v-7eea899c] {\n    display: none;\n}\n}\n.cd-search[data-v-7eea899c] {\n  position: relative;\n  margin: 1.2em 5% 0.6em;\n}\n.cd-search.is-hidden[data-v-7eea899c] {\n  opacity: 0;\n}\n.cd-search[data-v-7eea899c]::before {\n  /* lens icon */\n  content: '';\n  position: absolute;\n  left: 8px;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n}\n.cd-search input[data-v-7eea899c] {\n  padding-left: 32px;\n  width: 100%;\n  height: 36px;\n  border: none;\n  border-radius: .25em;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  -ms-appearance: none;\n  -o-appearance: none;\n  appearance: none;\n}\n.cd-search input[data-v-7eea899c]:focus {\n  outline: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-search[data-v-7eea899c] {\n    float: left;\n    display: inline-block;\n    width: 250px;\n    height: 100%;\n    margin: 0 0 0 2.5em;\n}\n.cd-search.is-hidden[data-v-7eea899c] {\n    /* reset style */\n    opacity: 1;\n}\n.cd-search[data-v-7eea899c]::before {\n    background-position: 0 -16px;\n    left: 1em;\n}\n.cd-search form[data-v-7eea899c], .cd-search input[data-v-7eea899c] {\n    height: 100%;\n    width: 100%;\n}\n.cd-search input[data-v-7eea899c] {\n    border: none;\n    padding-left: 2.6em;\n    border-radius: 0;\n    background-color: #3e454c;\n    border-left: 1px solid #51575d;\n    color: #ffffff;\n}\n.cd-search input[data-v-7eea899c]::-webkit-input-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-7eea899c]::-moz-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-7eea899c]:-moz-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-7eea899c]:-ms-input-placeholder {\n    color: #777c81;\n}\n}\n/* -------------------------------- \n\nTop Navigation\n\n-------------------------------- */\n.cd-nav[data-v-7eea899c] {\n  /* top nav - not visible on mobile devices */\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-nav[data-v-7eea899c] {\n    display: block;\n    float: right;\n    height: 100%;\n}\n}\n.cd-top-nav > li > a[data-v-7eea899c]::before {\n  /* reset style */\n  display: none;\n}\n.cd-top-nav > li a[data-v-7eea899c] {\n  padding: 1em 5% !important;\n}\n.cd-top-nav img[data-v-7eea899c] {\n  /* avatar image */\n  position: absolute;\n  left: 1.8em;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 20px;\n  width: 20px;\n  border-radius: 50%;\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-top-nav[data-v-7eea899c] {\n    height: 100%;\n}\n.cd-top-nav a[data-v-7eea899c] {\n    display: block;\n    font-size: 1.4rem;\n    color: #ffffff;\n}\n.cd-top-nav > li[data-v-7eea899c] {\n    display: inline-block;\n    margin-right: 1em;\n    height: 100%;\n}\n.cd-top-nav > li[data-v-7eea899c]:last-of-type {\n    margin-right: 0;\n}\n.cd-top-nav > li a[data-v-7eea899c] {\n    padding: 1em .6em !important;\n}\n.cd-top-nav img[data-v-7eea899c] {\n    display: block;\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-top-nav li:not(.has-children) a[data-v-7eea899c]:hover {\n    color: #1784c7;\n}\n}\n/* -------------------------------- \n\nSidebar\n\n-------------------------------- */\n.cd-side-nav[data-v-7eea899c] {\n  position: fixed;\n  z-index: 1;\n  left: 0;\n  top: 0;\n  width: 100%;\n  padding: 45px 0 0;\n  background-color: #323232;\n  visibility: hidden;\n  opacity: 0;\n  max-height: 100vh;\n  overflow: hidden;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  transition: opacity 0.2s 0s, visibility 0s 0.2s;\n}\n.cd-side-nav.nav-is-visible[data-v-7eea899c] {\n  opacity: 1;\n  visibility: visible;\n  overflow: visible;\n  -webkit-overflow-scrolling: touch;\n  transition: opacity 0.2s 0s, visibility 0s 0s;\n  max-height: none;\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-side-nav > ul[data-v-7eea899c] {\n  padding: 0.6em 0;\n}\n.cd-side-nav > ul[data-v-7eea899c]:last-of-type {\n  padding-bottom: 0;\n}\n.cd-side-nav .cd-label[data-v-7eea899c], .cd-side-nav a[data-v-7eea899c] {\n  display: block;\n  padding: 1em 5%;\n}\n.cd-side-nav a[data-v-7eea899c] {\n  position: relative;\n  color: #ffffff;\n  font-size: 1.4rem;\n}\n.cd-side-nav ul.cd-top-nav > li:last-of-type > a[data-v-7eea899c] {\n  border-bottom: none;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c] {\n  padding-left: calc(5% + 24px);\n  border-bottom: 1px solid #373d44;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c]::before {\n  /* icon before item name */\n  position: absolute;\n  content: '';\n  left: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n}\n.cd-side-nav > ul > li.overview > a[data-v-7eea899c]::before {\n  background-position: -64px 0;\n}\n.cd-side-nav > ul > li.notifications > a[data-v-7eea899c]::before {\n  background-position: -80px 0;\n}\n.cd-side-nav > ul > li.comments > a[data-v-7eea899c]::before {\n  background-position: -48px 0;\n}\n.cd-side-nav > ul > li.bookmarks > a[data-v-7eea899c]::before {\n  background-position: -32px 0;\n}\n.cd-side-nav > ul > li.images > a[data-v-7eea899c]::before {\n  background-position: 0 0;\n}\n.cd-side-nav > ul > li.users > a[data-v-7eea899c]::before {\n  background-position: -16px 0;\n}\n.cd-side-nav .count[data-v-7eea899c] {\n  /* notification badge */\n  position: absolute;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  right: calc(5% + 16px + 0.4em);\n  padding: 0.2em 0.4em;\n  background-color: #ff7e66;\n  border-radius: .25em;\n  color: #ffffff;\n  font-weight: bold;\n  font-size: 1.2rem;\n  text-align: center;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c] {\n  display: block;\n  margin: 0 5%;\n  padding: 1em 0;\n  background-color: #1784c7;\n  border-radius: .25em;\n  border: none;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);\n  text-align: center;\n  color: #ffffff;\n  font-weight: bold;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c]::before {\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-side-nav[data-v-7eea899c] {\n    \n    float: left;\n    top: fixed;\n    width: 110px;\n    min-height: 100vh;\n    padding-top: 55px;\n    /* reset style */\n    visibility: visible;\n    opacity: 1;\n    overflow: visible;\n    max-height: none;\n    position: fixed;\n}\n.cd-side-nav.nav-is-visible[data-v-7eea899c] {\n    box-shadow: none;\n}\n.cd-side-nav.is-fixed[data-v-7eea899c] {\n    position: fixed;\n}\n.cd-side-nav > ul[data-v-7eea899c] {\n    /* reset style */\n    padding: 0;\n}\n.cd-side-nav .cd-label[data-v-7eea899c] {\n    /* remove labels on minified version of the sidebar */\n    display: none;\n}\n.cd-side-nav a[data-v-7eea899c] {\n    font-size: 1.2rem;\n    text-align: center;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c] {\n    padding: calc(2.2em + 24px) 0 2.4em;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c]::before {\n    left: 50%;\n    right: auto;\n    -webkit-transform: translateX(-50%);\n    transform: translateX(-50%);\n    top: 2.4em;\n}\n.cd-side-nav .active > a[data-v-7eea899c] {\n    /* current page */\n    box-shadow: inset 3px 0 0 #1784c7;\n    background-color: #33383e;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c] {\n    margin: 1em 10% 0;\n}\n.cd-side-nav .count[data-v-7eea899c] {\n    height: 8px;\n    width: 8px;\n    border-radius: 50%;\n    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n    padding: 0;\n    top: 2em;\n    -webkit-transform: translateX(-50%);\n    transform: translateX(-50%);\n    left: calc(50% + 5px);\n    right: auto;\n    color: transparent;\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-side-nav[data-v-7eea899c] {\n    width: 150px;\n    position: fixed;\n}\n.cd-logo img[data-v-7eea899c]{\n    margin-left: -16px;\n    margin-top: 3px;\n}\n.cd-side-nav > ul[data-v-7eea899c] {\n    padding: 0.6em 0;\n}\n.cd-side-nav > ul > li:not(.action-btn):hover > a[data-v-7eea899c] {\n    background-color: #33383e;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c] {\n    padding: 1em 1em 1em 42px;\n    text-align: left;\n    border-bottom: none;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c]::before {\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    transform: translateY(-50%);\n    left: 18px;\n}\n.cd-side-nav .cd-label[data-v-7eea899c] {\n    display: block;\n    padding: 1em 18px;\n}\n.cd-side-nav .action-btn[data-v-7eea899c] {\n    text-align: left;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c] {\n    margin: 0 18px;\n}\n.no-touch .cd-side-nav .action-btn a[data-v-7eea899c]:hover {\n    background-color: #1a93de;\n}\n.cd-side-nav .count[data-v-7eea899c] {\n    /* reset style */\n    color: #ffffff;\n    height: auto;\n    width: auto;\n    border-radius: .25em;\n    padding: .2em .4em;\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    transform: translateY(-50%);\n    right: 18px;\n    left: auto;\n    box-shadow: none;\n}\n}\n.has-children ul[data-v-7eea899c] {\n  position: relative;\n  width: 100%;\n  display: none;\n  background-color: #1c1f22;\n}\n.has-children > a[data-v-7eea899c]::after {\n  /* arrow icon */\n  position: absolute;\n  content: '';\n  height: 16px;\n  width: 16px;\n  right: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n}\n.has-children.selected > ul[data-v-7eea899c] {\n  display: block;\n}\n.has-children.selected > a[data-v-7eea899c]::after {\n  -webkit-transform: translateY(-50%) rotate(180deg);\n  transform: translateY(-50%) rotate(180deg);\n}\n@media only screen and (min-width: 768px) {\n.has-children[data-v-7eea899c] {\n    position: relative;\n}\n.has-children ul[data-v-7eea899c] {\n    position: absolute;\n    top: 0;\n    left: 100%;\n    width: 160px;\n    padding: 0;\n    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);\n}\n.has-children ul a[data-v-7eea899c] {\n    text-align: left;\n    border: none;\n    padding: 1em;\n}\n.no-touch .has-children ul a[data-v-7eea899c]:hover {\n    color: #1784c7;\n}\n.has-children > a[data-v-7eea899c]::after {\n    display: none;\n    color: black;\n}\n.cd-side-nav .has-children.selected > a[data-v-7eea899c] {\n    /* focus state -> show sub pages */\n    background-color: #33383e;\n}\n.cd-top-nav .has-children[data-v-7eea899c] {\n    position: relative;\n    background-color: #323232;\n}\n.cd-top-nav .has-children > a[data-v-7eea899c] {\n    height: 100%;\n    padding: 0 calc(1.8em + 22px) 0 calc(1.8em + 26px) !important;\n    line-height: 55px;\n}\n.cd-top-nav .has-children > a[data-v-7eea899c]::after {\n    display: block;\n    right: 1.8em;\n}\n.cd-top-nav .has-children ul[data-v-7eea899c] {\n    background-color: #1c1f22;\n    width: 200px;\n    top: 100%;\n    right: 0;\n    left: auto;\n    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-top-nav .has-children ul a[data-v-7eea899c] {\n    padding-left: 18px !important;\n}\n}\n@media only screen and (min-width: 1170px) {\n.has-children > ul[data-v-7eea899c] {\n    width: 100%;\n    z-index: 1;\n}\n.has-children ul a[data-v-7eea899c] {\n    padding-left: 18px;\n}\n.has-children.active > ul[data-v-7eea899c] {\n    /* if the item is active, make the subnavigation visible */\n    position: relative;\n    display: block;\n    /* reset style */\n    left: 0;\n    box-shadow: none;\n}\n.no-touch .cd-side-nav .has-children:hover > ul[data-v-7eea899c], .cd-side-nav .has-children.hover > ul[data-v-7eea899c] {\n    /* show subnavigation on hover */\n    display: block;\n    opacity: 1;\n    visibility: visible;\n}\n}\n\n\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/sidebar.vue?36b2a64e"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;CAmHA;;;;mCAIA;AACA;EACA,uBAAA;CACA;AAEA;EACA,iBAAA;CACA;AAEA;EACA,kBAAA;EACA,qCAAA;EACA,eAAA;EACA,0BAAA;CACA;AACA;EACA,YAAA;EACA,YAAA;EACA,eAAA;CACA;AAEA;EACA,eAAA;EACA,sBAAA;CACA;AAEA,8CAAA;AAGA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;IACA,aAAA;CAGA;AACA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA,iDAAA;AAEA;EACA,8BAAA;EACA,cAAA;EACA,oBAAA;EACA,aAAA;;EAEA,gBAAA;EACA,cAAA;EACA,cAAA;CAGA;AACA;EACA,0BAAA;EACA,cAAA;EACA,cAAA;CAGA;AACA;EACA,eAAA;CACA;AACA;EACA,gBAAA;EACA,iBAAA;EACA,gBAAA;CACA;AACA;EACA,mBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,eAAA;CACA;AAGA;EACA,qCAAA;EACA,kBAAA;CACA;AAEA;;;;EAIA,cAAA;CACA;AAEA;;;;mCAIA;AACA;EACA,qBAAA;CACA;AACA;EACA,mBAAA;EACA,eAAA;EACA,gBAAA;CACA;AACA;EACA,gDAAA;EACA,cAAA;EACA,kBAAA;CACA;AACA;AACA;IACA,mBAAA;IACA,iBAAA;IACA,mBAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;IACA,iBAAA;CACA;AACA;IACA,kBAAA;CACA;CACA;AACA;AACA;IACA,mBAAA;CACA;AACA;IACA,mBAAA;CACA;CACA;AAEA;;;;mCAIA;AAEA;EACA,mBAAA;EACA,WAAA;EACA,OAAA;EACA,QAAA;EACA,aAAA;EACA,YAAA;EACA,oBAAA;;;EAGA,yCAAA;EACA,oCAAA;EACA,mCAAA;CACA;AACA;EACA,YAAA;EACA,YAAA;EACA,eAAA;CACA;AACA,IAAA;AAAA;;AAEA;IACA,gBAAA;IACA,aAAA;IACA,yBAAA;CACA;CACA;AAEA;EACA,YAAA;EACA,eAAA;EACA,oBAAA;CACA;AACA;EACA,eAAA;CACA;AACA;AACA;IACA,sBAAA;CACA;CACA;AAEA;EACA,yDAAA;EACA,aAAA;EACA,mBAAA;EACA,eAAA;EACA,YAAA;EACA,aAAA;EACA,iBAAA;EACA,eAAA;EACA,iBAAA;EACA,oBAAA;EACA,mBAAA;CACA;AACA;EACA,2BAAA;EACA,mBAAA;EACA,sBAAA;EACA,YAAA;EACA,YAAA;EACA,mBAAA;CACA;AACA;EACA,wBAAA;EACA,mBAAA;EACA,SAAA;EACA,WAAA;EACA,iBAAA;EAGA,4BAAA;CACA;AACA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,2CAAA;EACA,iCAAA;EAIA,yBAAA;EACA,oCAAA;EACA,4BAAA;EACA,iCAAA;EAIA,yBAAA;EAGA,mCAAA;EAAA,2BAAA;EAAA,mDAAA;CACA;AACA;EACA,wBAAA;EACA,UAAA;CACA;AACA;EACA,2BAAA;EACA,SAAA;CACA;AACA;EACA,6BAAA;EACA,mCAAA;CACA;AACA;EACA,gCAAA;EACA,kBAAA;CACA;AACA;EACA,kEAAA;EAIA,0DAAA;CACA;AACA;EACA,kEAAA;EAIA,0DAAA;CACA;AACA;AACA;IACA,cAAA;CACA;CACA;AAEA;EACA,mBAAA;EACA,uBAAA;CACA;AACA;EACA,WAAA;CACA;AACA;EACA,eAAA;EACA,YAAA;EACA,mBAAA;EACA,UAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,aAAA;EACA,YAAA;CAEA;AACA;EACA,mBAAA;EACA,YAAA;EACA,aAAA;EACA,aAAA;EACA,qBAAA;EACA,yBAAA;EACA,sBAAA;EACA,qBAAA;EACA,oBAAA;EACA,iBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;AACA;IACA,YAAA;IACA,sBAAA;IACA,aAAA;IACA,aAAA;IACA,oBAAA;CACA;AACA;IACA,iBAAA;IACA,WAAA;CACA;AACA;IACA,6BAAA;IACA,UAAA;CACA;AACA;IACA,aAAA;IACA,YAAA;CACA;AACA;IACA,aAAA;IACA,oBAAA;IACA,iBAAA;IACA,0BAAA;IACA,+BAAA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;CACA;AAEA;;;;mCAIA;AACA;EACA,6CAAA;EACA,cAAA;CACA;AACA;AACA;IACA,eAAA;IACA,aAAA;IACA,aAAA;CACA;CACA;AAEA;EACA,iBAAA;EACA,cAAA;CACA;AACA;EACA,2BAAA;CACA;AACA;EACA,kBAAA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,aAAA;EACA,YAAA;EACA,mBAAA;EACA,cAAA;CACA;AACA;AACA;IACA,aAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;IACA,eAAA;CACA;AACA;IACA,sBAAA;IACA,kBAAA;IACA,aAAA;CACA;AACA;IACA,gBAAA;CACA;AACA;IACA,6BAAA;CACA;AACA;IACA,eAAA;CACA;CACA;AACA;AACA;IACA,eAAA;CACA;CACA;AAEA;;;;mCAIA;AACA;EACA,gBAAA;EACA,WAAA;EACA,QAAA;EACA,OAAA;EACA,YAAA;EACA,kBAAA;EACA,0BAAA;EACA,mBAAA;EACA,WAAA;EACA,kBAAA;EACA,iBAAA;EACA,oCAAA;EACA,mCAAA;EAGA,gDAAA;CACA;AACA;EACA,WAAA;EACA,oBAAA;EACA,kBAAA;EACA,kCAAA;EAGA,8CAAA;EACA,iBAAA;EACA,0CAAA;CACA;AACA;EACA,iBAAA;CACA;AACA;EACA,kBAAA;CACA;AACA;EACA,eAAA;EACA,gBAAA;CACA;AAEA;EACA,mBAAA;EACA,eAAA;EACA,kBAAA;CACA;AACA;EACA,oBAAA;CACA;AACA;EACA,8BAAA;EACA,iCAAA;CACA;AACA;EACA,2BAAA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,aAAA;EACA,YAAA;CAEA;AACA;EACA,6BAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,yBAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,wBAAA;EACA,mBAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,+BAAA;EACA,qBAAA;EACA,0BAAA;EACA,qBAAA;EACA,eAAA;EACA,kBAAA;EACA,kBAAA;EACA,mBAAA;CACA;AACA;EACA,eAAA;EACA,aAAA;EACA,eAAA;EACA,0BAAA;EACA,qBAAA;EACA,aAAA;EACA,iFAAA;EACA,mBAAA;EACA,eAAA;EACA,kBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;AACA;;IAEA,YAAA;IACA,WAAA;IACA,aAAA;IACA,kBAAA;IACA,kBAAA;IACA,iBAAA;IACA,oBAAA;IACA,WAAA;IACA,kBAAA;IACA,iBAAA;IACA,gBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,gBAAA;CACA;AACA;IACA,iBAAA;IACA,WAAA;CACA;AACA;IACA,sDAAA;IACA,cAAA;CACA;AACA;IACA,kBAAA;IACA,mBAAA;CACA;AACA;IACA,oCAAA;CACA;AACA;IACA,UAAA;IACA,YAAA;IACA,oCAAA;IAIA,4BAAA;IACA,WAAA;CACA;AACA;IACA,kBAAA;IACA,kCAAA;IACA,0BAAA;CACA;AACA;IACA,kBAAA;CACA;AACA;IACA,YAAA;IACA,WAAA;IACA,mBAAA;IACA,uCAAA;IACA,WAAA;IACA,SAAA;IACA,oCAAA;IAIA,4BAAA;IACA,sBAAA;IACA,YAAA;IACA,mBAAA;CACA;CACA;AACA;AACA;IACA,aAAA;IACA,gBAAA;CACA;AACA;IACA,mBAAA;IACA,gBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,0BAAA;IACA,iBAAA;IACA,oBAAA;CACA;AACA;IACA,SAAA;IACA,aAAA;IACA,oCAAA;IAIA,4BAAA;IACA,WAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,iBAAA;IACA,eAAA;IACA,aAAA;IACA,YAAA;IACA,qBAAA;IACA,mBAAA;IACA,SAAA;IACA,aAAA;IACA,oCAAA;IAIA,4BAAA;IACA,YAAA;IACA,WAAA;IACA,iBAAA;CACA;CACA;AAEA;EACA,mBAAA;EACA,YAAA;EACA,cAAA;EACA,0BAAA;CACA;AACA;EACA,gBAAA;EACA,mBAAA;EACA,YAAA;EACA,aAAA;EACA,YAAA;EACA,UAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;CAEA;AACA;EACA,eAAA;CACA;AACA;EACA,mDAAA;EAIA,2CAAA;CACA;AACA;AACA;IACA,mBAAA;CACA;AACA;IACA,mBAAA;IACA,OAAA;IACA,WAAA;IACA,aAAA;IACA,WAAA;IACA,0CAAA;CACA;AACA;IACA,iBAAA;IACA,aAAA;IACA,aAAA;CACA;AAGA;IACA,eAAA;CACA;AACA;IACA,cAAA;IACA,aAAA;CACA;AACA;IACA,mCAAA;IACA,0BAAA;CACA;AACA;IACA,mBAAA;IACA,0BAAA;CAEA;AACA;IACA,aAAA;IACA,8DAAA;IACA,kBAAA;CACA;AACA;IACA,eAAA;IACA,aAAA;CACA;AACA;IACA,0BAAA;IACA,aAAA;IACA,UAAA;IACA,SAAA;IACA,WAAA;IACA,0CAAA;CACA;AACA;IACA,8BAAA;CACA;CACA;AACA;AACA;IACA,YAAA;IACA,WAAA;CACA;AACA;IACA,mBAAA;CACA;AACA;IACA,2DAAA;IACA,mBAAA;IACA,eAAA;IACA,iBAAA;IACA,QAAA;IACA,iBAAA;CACA;AACA;IACA,iCAAA;IACA,eAAA;IACA,WAAA;IACA,oBAAA;CACA;CACA","file":"sidebar.vue","sourcesContent":["<template>\n  <div class=\"cd-side-nav\">\n     <!-- ####### Header NAVBAR ####### -->\n  <header class=\"cd-main-header\" >\n    <a href=\"#\" class=\"cd-logo\"><img style=\"margin-left:-80px; margin-top:-8px;\" src=\"/dist/assets/images/logo-trans.png\"  alt=\"Logo\"></a>       \n    <nav class=\"cd-nav\" >\n      <ul class=\"cd-top-nav\">\n         <li>\n             <a style=\"margin-top:6px;\" v-on:click=\"$parent.logout()\" class=\"btn btn-danger btn-md\">\n              <span class=\"glyphicon glyphicon-log-out\"></span> Log out\n             </a>\n        </li>\n         <li class=\"has-children account\">\n          <a href=\"#0\"  >\n            <img  src=\"/dist/assets/images/user.jpg\" alt=\"avatar\">\n            <div id='username'></div>\n          </a>\n        </li>  \n          <ul>\n           <!--  <li><a href=\"#0\">My Account</a></li>\n           <li><a href=\"#0\">Edit Account</a></li> -->\n            <!-- <li><a href=\"#0\">Logout</a></li> -->\n          </ul>\n        </li>\n      </ul>\n    </nav>\n  </header> \n  <!-- ###### Header NAVBAR END #######-->\n     \n    <!-- %%%%%%%%  Side NAVBAR %%%%%%% -->\n  <main class=\"cd-main-content\" >\n    <nav class=\"cd-side-nav\">\n      <input type=\"hidden\" name=\"user.installerID\" v-model=\"user.roll\">\n      <ul>\n        <li class=\"has-children Overviews\" v-if=\"user.roll == 'Admin' || 'Project Coordinator'\">\n         <a v-on:click=\"$parent.updateView('create-customer')\"> <i class=\"fa fa-th-large\" ></i>Customer</a>                   \n        </li>       \n        <li class=\"has-children comments\" v-if=\"user.roll == 'Admin' || 'Project Coordinator'\">\n          <a v-on:click=\"$parent.updateView('add-installer')\"><i class=\"fa fa-tasks\"></i> Installer</a>                   \n        </li>\n         </li> \n        <li class=\"has-children users\">\n          <a  v-on:click=\"$parent.updateView('add-user')\"><i class=\"fa fa-user\"></i> User</a>       \n         \n        </li>\n\n        <li class=\"has-children bookmarks\" v-if=\"user.roll == 'Admin' || 'Project Coordinator' || 'Project Manager' || 'Installer'\">\n          <a  v-on:click=\"$parent.updateView('bonus-schedule')\"><i class=\"fa fa-table\"></i> Bonus</a>\n          \n       \n         <li class=\"has-children users\">\n          <a v-on:click=\"$parent.updateView('create-roles')\"><i class=\"fa fa-user\"></i> Roles</a>       \n          <!-- <ul>\n           <li><a v-on:click=\"$parent.updateView('')\">View transaction logs</a></li>\n           <li><a v-on:click=\"$parent.updateView('')\">View project data</a></li>\n          </ul> -->\n        </li>\n\t\t    <li class=\"has-children bookmarks\">\n          <a  v-on:click=\"$parent.updateView('payment-history')\"><i class=\"fa fa-table\"></i> Payments</a>\n          \n        </li> \n        \n       \n        \n       \n\n         <li class=\"has-children users\" v-if=\"user.roll == 'Admin' || 'Project Coordinator'\">\n          <a  v-on:click=\"$parent.updateView('all-project')\"><i class=\"fa fa-user\"></i> Project</a>                 \n        </li>\n\n        <li class=\"has-children users\" v-if=\"user.roll == 'Admin' || 'Project Coordinator'\">\n          <a v-on:click=\"$parent.updateView('create-roles')\"><i class=\"fa fa-user\"></i> Admin</a>       \n          <!-- <ul>\n           <li><a v-on:click=\"$parent.updateView('create-roles')\">Create roles</a></li>\n           <li><a v-on:click=\"$parent.updateView('modify-roles')\">Modify Roles</a></li>\n          </ul> -->\n        </li>\n    </ul>\n    </nav>\n        <!-- %%%%%%%%  Side NAVBAR END %%%%%%% -->\n\n\n \n\n  </main> <!-- .cd-main-content -->\t\t\n  </div>\n</template>\n\n<script>\nconst axios = require('axios');\nexport default {\n  name: \"side-bar\",\n  props: [\"user\"],\n  beforeMount(){\n  axios.get('/session/data')\n   .then(req => {\n      console.log(\"Side Bar username\"+req.data.username);\n      $('#username').html(req.data.username);\n     \n      //If no session received, return home\n      if(!req.data.roll){\n        this.$router.push('/');\n      }\n\n     \n   })\n  .catch(function(err){\n    console.log(\"Error R\"+err);\n  });\n  }\n};\n\n</script>\n\n<style scoped>\n /* -------------------------------- \n\nPrimary style\n\n-------------------------------- */\n*, *::after, *::before {\n  box-sizing: border-box;\n}\n\nhtml {\n  font-size: 62.5%;\n}\n\nbody {\n  font-size: 1.6rem;\n  font-family: \"Open Sans\", sans-serif;\n  color: #3e454c;\n  background-color: #F5F5F5;\n}\nbody::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\n\na {\n  color: #1784c7;\n  text-decoration: none;\n}\n\n/*  ######  Side NAVBAR page style  ######  */\n\n\n#dashboard{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n    height: 100%;\n\n\n}\n#project{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n#tables{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n#user{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n#admin{\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n\n\n}\n/*  ######  Side NAVBAR page style END ######  */\n\n.button{\n  background-color: transparent;\n  color:#C8C8C8;\n  border: transparent;\n  height: 35px;\n  \n  font-size: 15px;\n  border : none;\n  outline: none;\n\n\n}\n.button:active {\n  background-color: #323232;\n  border : none;\n  outline: none;\n  \n\n}\n.button:hover{\n  color: #ffffff;\n}\n.cd-side-nav{\n  font-size: 20px;\n  margin-top: 20px;\n  position: fixed;\n}\n.fa{\n  margin-right: 13px;\n}\n.cd-nav ul li a{\n  color:#C8C8C8;\n}\n.cd-nav ul li a:hover{\n  color: #ffffff;\n}\n\n\ninput {\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 1.6rem;\n}\n\ninput[type=\"search\"]::-webkit-search-decoration,\ninput[type=\"search\"]::-webkit-search-cancel-button,\ninput[type=\"search\"]::-webkit-search-results-button,\ninput[type=\"search\"]::-webkit-search-results-decoration {\n  display: none;\n}\n\n/* -------------------------------- \n\nMain Page Content\n\n-------------------------------- */\n.cd-main-content .content-wrapper {\n  padding: 45px 5% 3em;\n}\n.cd-main-content .content-wrapper h1 {\n  text-align: center;\n  padding: 3em 0;\n  font-size: 2rem;\n}\n.cd-main-content::before {\n  /* never visible - used to check MQ in jQuery */\n  display: none;\n  content: 'mobile';\n}\n@media only screen and (min-width: 768px) {\n  .cd-main-content .content-wrapper {\n    margin-left: 110px;\n    margin-top: 80px;\n    padding-top: 155px;\n  }\n  .cd-main-content .content-wrapper h1 {\n    padding: 4em 0;\n    font-size: 3.2rem;\n    font-weight: 300;\n  }\n  .cd-main-content::before {\n    content: 'tablet';\n  }\n}\n@media only screen and (min-width: 1170px) {\n  .cd-main-content .content-wrapper {\n    margin-left: 200px;\n  }\n  .cd-main-content::before {\n    content: 'desktop';\n  }\n}\n\n/* -------------------------------- \n\nHeader\n\n-------------------------------- */\n \n.cd-main-header {\n  position: absolute;\n  z-index: 2;\n  top: 0;\n  left: 0;\n  height: 45px;\n  width: 100%;\n  background: #FFFFFF;\n\n\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.cd-main-header::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\n/**/@media only screen and (min-width: 768px) \n{\n  .cd-main-header {\n    position: fixed;\n    height: 55px;\n    background-color:#323232;\n  }\n}\n\n.cd-logo {\n  float: left;\n  display: block;\n  margin: 11px 0 0 5%;\n}\n.cd-logo img {\n  display: block;\n}\n@media only screen and (min-width: 768px) {\n  .cd-logo {\n    margin: 16px 0 0 36px;\n  }\n}\n\n.cd-nav-trigger {\n  /* navigation trigger - visible on mobile devices only */\n  float: right;\n  position: relative;\n  display: block;\n  width: 34px;\n  height: 44px;\n  margin-right: 5%;\n  /* hide text */\n  overflow: hidden;\n  white-space: nowrap;\n  color: transparent;\n}\n.cd-nav-trigger span, .cd-nav-trigger span::before, .cd-nav-trigger span::after {\n  /* hamburger icon in CSS */\n  position: absolute;\n  display: inline-block;\n  height: 3px;\n  width: 24px;\n  background:#323232;\n}\n.cd-nav-trigger span {\n  /* line in the center */\n  position: absolute;\n  top: 50%;\n  right: 5px;\n  margin-top: -2px;\n  -webkit-transition: background 0.2s;\n  -moz-transition: background 0.2s;\n  transition: background 0.2s;\n}\n.cd-nav-trigger span::before, .cd-nav-trigger span::after {\n  /* other 2 lines */\n  content: '';\n  right: 0;\n  /* Force Hardware Acceleration in WebKit */\n  -webkit-transform: translateZ(0);\n  -moz-transform: translateZ(0);\n  -ms-transform: translateZ(0);\n  -o-transform: translateZ(0);\n  transform: translateZ(0);\n  -webkit-backface-visibility: hidden;\n  backface-visibility: hidden;\n  -webkit-transform-origin: 0% 50%;\n  -moz-transform-origin: 0% 50%;\n  -ms-transform-origin: 0% 50%;\n  -o-transform-origin: 0% 50%;\n  transform-origin: 0% 50%;\n  -webkit-transition: -webkit-transform 0.2s;\n  -moz-transition: -moz-transform 0.2s;\n  transition: transform 0.2s;\n}\n.cd-nav-trigger span::before {\n  /* menu icon top line */\n  top: -6px;\n}\n.cd-nav-trigger span::after {\n  /* menu icon bottom line */\n  top: 6px;\n}\n.cd-nav-trigger.nav-is-visible span {\n  /* hide line in the center */\n  background: rgba(255, 255, 255, 0);\n}\n.cd-nav-trigger.nav-is-visible span::before, .cd-nav-trigger.nav-is-visible span::after {\n  /* keep visible other 2 lines */\n  background: white;\n}\n.cd-nav-trigger.nav-is-visible span::before {\n  -webkit-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  -moz-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  -ms-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  -o-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  transform: translateX(4px) translateY(-3px) rotate(45deg);\n}\n.cd-nav-trigger.nav-is-visible span::after {\n  -webkit-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  -moz-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  -ms-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  -o-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  transform: translateX(4px) translateY(2px) rotate(-45deg);\n}\n@media only screen and (min-width: 768px) {\n  .cd-nav-trigger {\n    display: none;\n  }\n}\n\n.cd-search {\n  position: relative;\n  margin: 1.2em 5% 0.6em;\n}\n.cd-search.is-hidden {\n  opacity: 0;\n}\n.cd-search::before {\n  /* lens icon */\n  content: '';\n  position: absolute;\n  left: 8px;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n \n}\n.cd-search input {\n  padding-left: 32px;\n  width: 100%;\n  height: 36px;\n  border: none;\n  border-radius: .25em;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  -ms-appearance: none;\n  -o-appearance: none;\n  appearance: none;\n}\n.cd-search input:focus {\n  outline: none;\n}\n@media only screen and (min-width: 768px) {\n  .cd-search {\n    float: left;\n    display: inline-block;\n    width: 250px;\n    height: 100%;\n    margin: 0 0 0 2.5em;\n  }\n  .cd-search.is-hidden {\n    /* reset style */\n    opacity: 1;\n  }\n  .cd-search::before {\n    background-position: 0 -16px;\n    left: 1em;\n  }\n  .cd-search form, .cd-search input {\n    height: 100%;\n    width: 100%;\n  }\n  .cd-search input {\n    border: none;\n    padding-left: 2.6em;\n    border-radius: 0;\n    background-color: #3e454c;\n    border-left: 1px solid #51575d;\n    color: #ffffff;\n  }\n  .cd-search input::-webkit-input-placeholder {\n    color: #777c81;\n  }\n  .cd-search input::-moz-placeholder {\n    color: #777c81;\n  }\n  .cd-search input:-moz-placeholder {\n    color: #777c81;\n  }\n  .cd-search input:-ms-input-placeholder {\n    color: #777c81;\n  }\n}\n\n/* -------------------------------- \n\nTop Navigation\n\n-------------------------------- */\n.cd-nav {\n  /* top nav - not visible on mobile devices */\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n  .cd-nav {\n    display: block;\n    float: right;\n    height: 100%;\n  }\n}\n\n.cd-top-nav > li > a::before {\n  /* reset style */\n  display: none;\n}\n.cd-top-nav > li a {\n  padding: 1em 5% !important;\n}\n.cd-top-nav img {\n  /* avatar image */\n  position: absolute;\n  left: 1.8em;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 20px;\n  width: 20px;\n  border-radius: 50%;\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n  .cd-top-nav {\n    height: 100%;\n  }\n  .cd-top-nav a {\n    display: block;\n    font-size: 1.4rem;\n    color: #ffffff;\n  }\n  .cd-top-nav > li {\n    display: inline-block;\n    margin-right: 1em;\n    height: 100%;\n  }\n  .cd-top-nav > li:last-of-type {\n    margin-right: 0;\n  }\n  .cd-top-nav > li a {\n    padding: 1em .6em !important;\n  }\n  .cd-top-nav img {\n    display: block;\n  }\n}\n@media only screen and (min-width: 1170px) {\n  .cd-top-nav li:not(.has-children) a:hover {\n    color: #1784c7;\n  }\n}\n\n/* -------------------------------- \n\nSidebar\n\n-------------------------------- */\n.cd-side-nav {\n  position: fixed;\n  z-index: 1;\n  left: 0;\n  top: 0;\n  width: 100%;\n  padding: 45px 0 0;\n  background-color: #323232;\n  visibility: hidden;\n  opacity: 0;\n  max-height: 100vh;\n  overflow: hidden;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;\n  -moz-transition: opacity 0.2s 0s, visibility 0s 0.2s;\n  transition: opacity 0.2s 0s, visibility 0s 0.2s;\n}\n.cd-side-nav.nav-is-visible {\n  opacity: 1;\n  visibility: visible;\n  overflow: visible;\n  -webkit-overflow-scrolling: touch;\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0s;\n  -moz-transition: opacity 0.2s 0s, visibility 0s 0s;\n  transition: opacity 0.2s 0s, visibility 0s 0s;\n  max-height: none;\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-side-nav > ul {\n  padding: 0.6em 0;\n}\n.cd-side-nav > ul:last-of-type {\n  padding-bottom: 0;\n}\n.cd-side-nav .cd-label, .cd-side-nav a {\n  display: block;\n  padding: 1em 5%;\n}\n\n.cd-side-nav a {\n  position: relative;\n  color: #ffffff;\n  font-size: 1.4rem;\n}\n.cd-side-nav ul.cd-top-nav > li:last-of-type > a {\n  border-bottom: none;\n}\n.cd-side-nav > ul > li > a {\n  padding-left: calc(5% + 24px);\n  border-bottom: 1px solid #373d44;\n}\n.cd-side-nav > ul > li > a::before {\n  /* icon before item name */\n  position: absolute;\n  content: '';\n  left: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n  \n}\n.cd-side-nav > ul > li.overview > a::before {\n  background-position: -64px 0;\n}\n.cd-side-nav > ul > li.notifications > a::before {\n  background-position: -80px 0;\n}\n.cd-side-nav > ul > li.comments > a::before {\n  background-position: -48px 0;\n}\n.cd-side-nav > ul > li.bookmarks > a::before {\n  background-position: -32px 0;\n}\n.cd-side-nav > ul > li.images > a::before {\n  background-position: 0 0;\n}\n.cd-side-nav > ul > li.users > a::before {\n  background-position: -16px 0;\n}\n.cd-side-nav .count {\n  /* notification badge */\n  position: absolute;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  right: calc(5% + 16px + 0.4em);\n  padding: 0.2em 0.4em;\n  background-color: #ff7e66;\n  border-radius: .25em;\n  color: #ffffff;\n  font-weight: bold;\n  font-size: 1.2rem;\n  text-align: center;\n}\n.cd-side-nav .action-btn a {\n  display: block;\n  margin: 0 5%;\n  padding: 1em 0;\n  background-color: #1784c7;\n  border-radius: .25em;\n  border: none;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);\n  text-align: center;\n  color: #ffffff;\n  font-weight: bold;\n}\n.cd-side-nav .action-btn a::before {\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n  .cd-side-nav {\n    \n    float: left;\n    top: fixed;\n    width: 110px;\n    min-height: 100vh;\n    padding-top: 55px;\n    /* reset style */\n    visibility: visible;\n    opacity: 1;\n    overflow: visible;\n    max-height: none;\n    position: fixed;\n  }\n  .cd-side-nav.nav-is-visible {\n    box-shadow: none;\n  }\n  .cd-side-nav.is-fixed {\n    position: fixed;\n  }\n  .cd-side-nav > ul {\n    /* reset style */\n    padding: 0;\n  }\n  .cd-side-nav .cd-label {\n    /* remove labels on minified version of the sidebar */\n    display: none;\n  }\n  .cd-side-nav a {\n    font-size: 1.2rem;\n    text-align: center;\n  }\n  .cd-side-nav > ul > li > a {\n    padding: calc(2.2em + 24px) 0 2.4em;\n  }\n  .cd-side-nav > ul > li > a::before {\n    left: 50%;\n    right: auto;\n    -webkit-transform: translateX(-50%);\n    -moz-transform: translateX(-50%);\n    -ms-transform: translateX(-50%);\n    -o-transform: translateX(-50%);\n    transform: translateX(-50%);\n    top: 2.4em;\n  }\n  .cd-side-nav .active > a {\n    /* current page */\n    box-shadow: inset 3px 0 0 #1784c7;\n    background-color: #33383e;\n  }\n  .cd-side-nav .action-btn a {\n    margin: 1em 10% 0;\n  }\n  .cd-side-nav .count {\n    height: 8px;\n    width: 8px;\n    border-radius: 50%;\n    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n    padding: 0;\n    top: 2em;\n    -webkit-transform: translateX(-50%);\n    -moz-transform: translateX(-50%);\n    -ms-transform: translateX(-50%);\n    -o-transform: translateX(-50%);\n    transform: translateX(-50%);\n    left: calc(50% + 5px);\n    right: auto;\n    color: transparent;\n  }\n}\n@media only screen and (min-width: 1170px) {\n  .cd-side-nav {\n    width: 150px;\n    position: fixed;\n  }\n  .cd-logo img{\n    margin-left: -16px;\n    margin-top: 3px;\n  }\n  .cd-side-nav > ul {\n    padding: 0.6em 0;\n  }\n  .cd-side-nav > ul > li:not(.action-btn):hover > a {\n    background-color: #33383e;\n  }\n  .cd-side-nav > ul > li > a {\n    padding: 1em 1em 1em 42px;\n    text-align: left;\n    border-bottom: none;\n  }\n  .cd-side-nav > ul > li > a::before {\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    -moz-transform: translateY(-50%);\n    -ms-transform: translateY(-50%);\n    -o-transform: translateY(-50%);\n    transform: translateY(-50%);\n    left: 18px;\n  }\n  .cd-side-nav .cd-label {\n    display: block;\n    padding: 1em 18px;\n  }\n  .cd-side-nav .action-btn {\n    text-align: left;\n  }\n  .cd-side-nav .action-btn a {\n    margin: 0 18px;\n  }\n  .no-touch .cd-side-nav .action-btn a:hover {\n    background-color: #1a93de;\n  }\n  .cd-side-nav .count {\n    /* reset style */\n    color: #ffffff;\n    height: auto;\n    width: auto;\n    border-radius: .25em;\n    padding: .2em .4em;\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    -moz-transform: translateY(-50%);\n    -ms-transform: translateY(-50%);\n    -o-transform: translateY(-50%);\n    transform: translateY(-50%);\n    right: 18px;\n    left: auto;\n    box-shadow: none;\n  }\n}\n\n.has-children ul {\n  position: relative;\n  width: 100%;\n  display: none;\n  background-color: #1c1f22;\n}\n.has-children > a::after {\n  /* arrow icon */\n  position: absolute;\n  content: '';\n  height: 16px;\n  width: 16px;\n  right: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  -moz-transform: translateY(-50%);\n  -ms-transform: translateY(-50%);\n  -o-transform: translateY(-50%);\n  transform: translateY(-50%);\n  \n}\n.has-children.selected > ul {\n  display: block;\n}\n.has-children.selected > a::after {\n  -webkit-transform: translateY(-50%) rotate(180deg);\n  -moz-transform: translateY(-50%) rotate(180deg);\n  -ms-transform: translateY(-50%) rotate(180deg);\n  -o-transform: translateY(-50%) rotate(180deg);\n  transform: translateY(-50%) rotate(180deg);\n}\n@media only screen and (min-width: 768px) {\n  .has-children {\n    position: relative;\n  }\n  .has-children ul {\n    position: absolute;\n    top: 0;\n    left: 100%;\n    width: 160px;\n    padding: 0;\n    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);\n  }\n  .has-children ul a {\n    text-align: left;\n    border: none;\n    padding: 1em;\n  }\n \n  \n  .no-touch .has-children ul a:hover {\n    color: #1784c7;\n  }\n  .has-children > a::after {\n    display: none;\n    color: black;\n  }\n  .cd-side-nav .has-children.selected > a {\n    /* focus state -> show sub pages */\n    background-color: #33383e;\n  }\n  .cd-top-nav .has-children {\n    position: relative;\n    background-color: #323232;\n\n  }\n  .cd-top-nav .has-children > a {\n    height: 100%;\n    padding: 0 calc(1.8em + 22px) 0 calc(1.8em + 26px) !important;\n    line-height: 55px;\n  }\n  .cd-top-nav .has-children > a::after {\n    display: block;\n    right: 1.8em;\n  }\n  .cd-top-nav .has-children ul {\n    background-color: #1c1f22;\n    width: 200px;\n    top: 100%;\n    right: 0;\n    left: auto;\n    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);\n  }\n  .cd-top-nav .has-children ul a {\n    padding-left: 18px !important;\n  }\n}\n@media only screen and (min-width: 1170px) {\n  .has-children > ul {\n    width: 100%;\n    z-index: 1;\n  }\n  .has-children ul a {\n    padding-left: 18px;\n  }\n  .has-children.active > ul {\n    /* if the item is active, make the subnavigation visible */\n    position: relative;\n    display: block;\n    /* reset style */\n    left: 0;\n    box-shadow: none;\n  }\n  .no-touch .cd-side-nav .has-children:hover > ul, .cd-side-nav .has-children.hover > ul {\n    /* show subnavigation on hover */\n    display: block;\n    opacity: 1;\n    visibility: visible;\n  }\n}\n\n\n</style>\n\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -18522,10 +18522,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-//
-//
-//
-//
 //
 //
 //
@@ -18745,6 +18741,20 @@ var render = function() {
               ])
             : _vm._e(),
           _vm._v(" "),
+          _c("li", { staticClass: "has-children users" }, [
+            _c(
+              "a",
+              {
+                on: {
+                  click: function($event) {
+                    _vm.$parent.updateView("add-user")
+                  }
+                }
+              },
+              [_c("i", { staticClass: "fa fa-user" }), _vm._v(" User")]
+            )
+          ]),
+          _vm._v(" "),
           _vm.user.roll == "Admin" ||
           "Project Coordinator" ||
           "Project Manager" ||
@@ -18763,57 +18773,19 @@ var render = function() {
                 )
               ])
             : _vm._e(),
-          _vm._v(" "),
-          _vm.user.roll == "Admin" || "Project Coordinator"
-            ? _c("li", { staticClass: "has-children bookmarks" }, [
-                _c(
-                  "a",
-                  {
-                    on: {
-                      click: function($event) {
-                        _vm.$parent.updateView("payment-history")
-                      }
-                    }
-                  },
-                  [_c("i", { staticClass: "fa fa-table" }), _vm._v(" Payments")]
-                )
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _vm.user.roll == "Admin" || "Project Coordinator"
-            ? _c("li", { staticClass: "has-children users" }, [
-                _c(
-                  "a",
-                  {
-                    on: {
-                      click: function($event) {
-                        _vm.$parent.updateView("add-user")
-                      }
-                    }
-                  },
-                  [_c("i", { staticClass: "fa fa-user" }), _vm._v(" User")]
-                )
-              ])
-            : _vm._e(),
-          _vm._v(" "),
-          _vm.user.roll == "Admin" ||
-          "Project Coordinator" ||
-          "Project Manager" ||
-          "Installer"
-            ? _c("li", { staticClass: "has-children users" }, [
-                _c(
-                  "a",
-                  {
-                    on: {
-                      click: function($event) {
-                        _vm.$parent.updateView("")
-                      }
-                    }
-                  },
-                  [_c("i", { staticClass: "fa fa-user" }), _vm._v(" Jobs")]
-                )
-              ])
-            : _vm._e(),
+          _c("li", { staticClass: "has-children users" }, [
+            _c(
+              "a",
+              {
+                on: {
+                  click: function($event) {
+                    _vm.$parent.updateView("create-roles")
+                  }
+                }
+              },
+              [_c("i", { staticClass: "fa fa-user" }), _vm._v(" Roles")]
+            )
+          ]),
           _vm._v(" "),
           _c("li", { staticClass: "has-children bookmarks" }, [
             _c(
@@ -18836,7 +18808,7 @@ var render = function() {
                   {
                     on: {
                       click: function($event) {
-                        _vm.$parent.updateView("create-project")
+                        _vm.$parent.updateView("all-project")
                       }
                     }
                   },
@@ -20455,7 +20427,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-5e2ccd2e]{\n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n}\nform[data-v-5e2ccd2e]{\n  margin-top: 30px;\n}\n.inputField[data-v-5e2ccd2e]{\n    background-color: #fff;\n    font-family: Open Sans,Arial,sans-serif;\n    line-height: normal!important;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 0;\n    padding: 12px 18px 11px;\n    width: 100%;\n}\n.inputField[data-v-5e2ccd2e]:focus{\n  outline: none;\n}\n.input_heading[data-v-5e2ccd2e]{\n    color: #afaeb0;\n    \n    margin-top: 30px;\n}\n.button[data-v-5e2ccd2e]{\n    color: #fff;\n    background: #4bc800!important;\n    border: 0;\n    box-shadow: inset 0 -2px 0 #45b900!important;\n    padding: 9px;\n    margin-top: 20px;\n}\n.button[data-v-5e2ccd2e]:focus{\n  outline-color:  #4bc800;\n}\n.header[data-v-5e2ccd2e]{\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-5e2ccd2e]{\n  list-style-type:none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\nli[data-v-5e2ccd2e]{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli[data-v-5e2ccd2e]:active{\n  border-color:#4bc800;\n}\nli[data-v-5e2ccd2e]:hover{\n  border-color: #929292;\n}\na[data-v-5e2ccd2e]{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/modifyInstaller.vue?484487cd"],"names":[],"mappings":";AAuFA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AACA;IACA,uBAAA;IACA,wCAAA;IACA,8BAAA;IACA,UAAA;IACA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,UAAA;IACA,wBAAA;IACA,YAAA;CACA;AACA;EACA,cAAA;CACA;AACA;IACA,eAAA;;IAEA,iBAAA;CAKA;AACA;IACA,YAAA;IACA,8BAAA;IACA,UAAA;IACA,6CAAA;IACA,aAAA;IACA,iBAAA;CAGA;AACA;EACA,wBAAA;CAEA;AACA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyInstaller.vue","sourcesContent":["<template>\n  <div class=\"mainDiv\">\n      <div  class=\"header\">\n         <ul>\n            <li><a v-on:click=\"$parent.updateView('add-installer')\"  >Add installer</a></li>\n            <li><a v-on:click=\"$parent.updateView('view-installer')\"  >View installer</a></li>\n            <li><a v-on:click=\"$parent.updateView('modify-installer')\" style=\"color:#4bc800\"  >Modify installer</a></li>\n            \n          </ul>\n      </div>\n       <h1>Modify installer</h1>\n        <p class=\"input_heading\">Select installer to modify</p>\n              <select class=\"inputField\" v-model=\"installer_id\">\n                <option v-for=\"installer in installers\" v-bind:value=\"installer.installer_id\">\n                  {{installer.first_name}} {{installer.last_name}}\n                </option>\n              </select>\n\n              <form v-if=\"selectedRole.installer_id\" v-on:submit.prevent=\"onSubmit\">\n                <input class=\"inputField\" type=\"hidden\" v-model=\"selectedRole.installer_id\">\n                <p class=\"input_heading\">Installer name</p>\n                <input class=\"inputField\" type=\"text\" v-model.trim=\"selectedRole.first_name\" required>\n                <input class=\"inputField\" type=\"text\" v-model.trim=\"selectedRole.last_name\" required>\n                <button class=\"button\" type=\"submit\" value=\"Submit\">Create</button>\n                <p style=\"text-align:center;\" class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Installer updated successfully.</p>\n              </form>\n  </div>\n \n</template>\n<script>\nimport axios from 'axios';\n\nexport default {\n  name: 'modify-installer',\n  props: ['user'],\n  data(){\n    return {\n      installer_id: '',\n      installers: '',\n      selectedRole: {}\n    }\n  },\n  methods: {\n    onSubmit: function(){\n      axios({\n        method: 'put',\n        url: 'installers/update',\n        data: {\n          installer_id: this.selectedRole.installer_id,\n          first_name: this.selectedRole.first_name,\n          last_name: this.selectedRole.last_name,\n          modified_by_id: this.user.userID\n        }\n      })\n      .then(req => {\n        console.log(req);\n        document.getElementById('confirmation').classList.remove('hidden');\n      })\n      .catch(err => {\n        console.log(err);\n      })\n    }\n  },\n  watch: {\n    installer_id(id) {\n      [this.selectedRole] = this.installers.filter(r => r.installer_id === id);\n    }\n  },\n  beforeMount(){\n    axios({\n      method: 'get',\n      url: '/installers'\n    })\n    .then(req => {\n      this.installers = req.data.installers;\n      console.log(this.installers);\n    })\n    .catch(err => {\n      console.log(err);\n    })\n  }\n};\n \n\n</script>\n<style scoped>\n\n.mainDiv{\n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n\n}\nform{\n  margin-top: 30px;\n}\n.inputField{\n    background-color: #fff;\n    font-family: Open Sans,Arial,sans-serif;\n    line-height: normal!important;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 0;\n    padding: 12px 18px 11px;\n    width: 100%;\n}\n.inputField:focus{\n  outline: none;\n}\n.input_heading{\n    color: #afaeb0;\n    \n    margin-top: 30px;\n    \n    \n   \n\n}\n.button{\n    color: #fff;\n    background: #4bc800!important;\n    border: 0;\n    box-shadow: inset 0 -2px 0 #45b900!important;\n    padding: 9px;\n    margin-top: 20px;\n   \n\n}\n.button:focus{\n  outline-color:  #4bc800;\n\n}\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\na{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n</style>\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-5e2ccd2e]{\n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n}\nform[data-v-5e2ccd2e]{\n  margin-top: 30px;\n}\n.inputField[data-v-5e2ccd2e]{\n    background-color: #fff;\n    font-family: Open Sans,Arial,sans-serif;\n    line-height: normal!important;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 0;\n    padding: 12px 18px 11px;\n    width: 100%;\n}\n.inputField[data-v-5e2ccd2e]:focus{\n  outline: none;\n}\n.input_heading[data-v-5e2ccd2e]{\n    color: #afaeb0;\n    \n    margin-top: 30px;\n}\n.button[data-v-5e2ccd2e]{\n    color: #fff;\n    background: #4bc800!important;\n    border: 0;\n    box-shadow: inset 0 -2px 0 #45b900!important;\n    padding: 9px;\n    margin-top: 20px;\n}\n.button[data-v-5e2ccd2e]:focus{\n  outline-color:  #4bc800;\n}\n.header[data-v-5e2ccd2e]{\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-5e2ccd2e]{\n  list-style-type:none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\nli[data-v-5e2ccd2e]{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli[data-v-5e2ccd2e]:active{\n  border-color:#4bc800;\n}\nli[data-v-5e2ccd2e]:hover{\n  border-color: #929292;\n}\na[data-v-5e2ccd2e]{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/modifyInstaller.vue?1b333fa3"],"names":[],"mappings":";AA0FA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AACA;IACA,uBAAA;IACA,wCAAA;IACA,8BAAA;IACA,UAAA;IACA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,UAAA;IACA,wBAAA;IACA,YAAA;CACA;AACA;EACA,cAAA;CACA;AACA;IACA,eAAA;;IAEA,iBAAA;CAKA;AACA;IACA,YAAA;IACA,8BAAA;IACA,UAAA;IACA,6CAAA;IACA,aAAA;IACA,iBAAA;CAGA;AACA;EACA,wBAAA;CAEA;AACA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyInstaller.vue","sourcesContent":["<template>\n  <div class=\"mainDiv\">\n      <div  class=\"header\">\n         <ul>\n            <li><a v-on:click=\"$parent.updateView('add-installer')\"  >Add installer</a></li>\n            <li><a v-on:click=\"$parent.updateView('view-installer')\"  >View installer</a></li>\n            <li><a v-on:click=\"$parent.updateView('modify-installer')\" style=\"color:#4bc800\"  >Modify installer</a></li>\n            \n          </ul>\n      </div>\n       <h1>Modify installer</h1>\n        <p class=\"input_heading\">Select installer to modify</p>\n              <select class=\"inputField\" v-model=\"installer_id\">\n                <option v-for=\"installer in installers\" v-bind:value=\"installer.installer_id\">\n                  {{installer.first_name}} {{installer.last_name}}\n                </option>\n              </select>\n\n              <form v-if=\"selectedRole.installer_id\" v-on:submit.prevent=\"onSubmit\">\n                <input class=\"inputField\" type=\"hidden\" v-model=\"selectedRole.installer_id\">\n                <p class=\"input_heading\">Installer name</p>\n                <input class=\"inputField\" type=\"text\" v-model.trim=\"selectedRole.first_name\" required>\n                <p class=\"input_heading\">Installer lastName</p>\n                <input class=\"inputField\" type=\"text\" v-model.trim=\"selectedRole.last_name\" required>\n                <button class=\"button\" type=\"submit\" value=\"Submit\">Update</button>\n                <p style=\"text-align:center;\" class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Installer updated successfully.</p>\n              </form>\n  </div>\n \n</template>\n<script>\nimport axios from 'axios';\n\nexport default {\n  name: 'modify-installer',\n  props: ['user'],\n  data(){\n    return {\n      installer_id: '',\n      installers: '',\n      selectedRole: {}\n    }\n  },\n  methods: {\n    onSubmit: function(){\n      axios({\n        method: 'put',\n        url: 'installers/update',\n        data: {\n          installer_id: this.selectedRole.installer_id,\n          first_name: this.selectedRole.first_name,\n          last_name: this.selectedRole.last_name,\n          modified_by_id: this.user.userID\n        }\n      })\n      .then(req => {\n        if(req.status===200){\n          $('.inputField').val('');\n        document.getElementById('confirmation').classList.remove('hidden');\n      };\n      })\n      .catch(err => {\n        console.log(err);\n      })\n    }\n  },\n  watch: {\n    installer_id(id) {\n      [this.selectedRole] = this.installers.filter(r => r.installer_id === id);\n    }\n  },\n  beforeMount(){\n    axios({\n      method: 'get',\n      url: '/installers'\n    })\n    .then(req => {\n      this.installers = req.data.installers;\n      console.log(this.installers);\n    })\n    .catch(err => {\n      console.log(err);\n    })\n  }\n};\n \n\n</script>\n<style scoped>\n\n.mainDiv{\n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n\n}\nform{\n  margin-top: 30px;\n}\n.inputField{\n    background-color: #fff;\n    font-family: Open Sans,Arial,sans-serif;\n    line-height: normal!important;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 0;\n    padding: 12px 18px 11px;\n    width: 100%;\n}\n.inputField:focus{\n  outline: none;\n}\n.input_heading{\n    color: #afaeb0;\n    \n    margin-top: 30px;\n    \n    \n   \n\n}\n.button{\n    color: #fff;\n    background: #4bc800!important;\n    border: 0;\n    box-shadow: inset 0 -2px 0 #45b900!important;\n    padding: 9px;\n    margin-top: 20px;\n   \n\n}\n.button:focus{\n  outline-color:  #4bc800;\n\n}\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\na{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n</style>\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -20467,6 +20439,7 @@ exports.push([module.i, "\n.mainDiv[data-v-5e2ccd2e]{\n     margin-top: 7%;\n   
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+//
 //
 //
 //
@@ -20522,8 +20495,10 @@ exports.push([module.i, "\n.mainDiv[data-v-5e2ccd2e]{\n     margin-top: 7%;\n   
         }
       })
       .then(function (req) {
-        console.log(req);
+        if(req.status===200){
+          $('.inputField').val('');
         document.getElementById('confirmation').classList.remove('hidden');
+      };
       })
       .catch(function (err) {
         console.log(err);
@@ -20732,6 +20707,10 @@ var render = function() {
               }
             }),
             _vm._v(" "),
+            _c("p", { staticClass: "input_heading" }, [
+              _vm._v("Installer lastName")
+            ]),
+            _vm._v(" "),
             _c("input", {
               directives: [
                 {
@@ -20768,7 +20747,7 @@ var render = function() {
                 staticClass: "button",
                 attrs: { type: "submit", value: "Submit" }
               },
-              [_vm._v("Create")]
+              [_vm._v("Update")]
             ),
             _vm._v(" "),
             _vm._m(0)
@@ -20898,7 +20877,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-4d71464c]{\n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n}\nform[data-v-4d71464c]{\n  margin-top: 30px;\n}\n/*.heading{\n    color: #afaeb0;\n    text-align: center;\n    line-height: 3.5;\n    font-weight: bold;\n    margin-top: 10px;\n\n}*/\n.input_heading[data-v-4d71464c]{\n    color: #afaeb0;\n    margin-left: 18px;\n}\n.header[data-v-4d71464c]{\n  border-bottom: 1px solid #ebebeb;\n}\n.inputField[data-v-4d71464c]{\n    background-color: #fff;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 97%;\n}\n.inputField[data-v-4d71464c]:focus{\n  outline: none;\n}\n.button[data-v-4d71464c]:focus{\n  outline-color:  #4bc800;\n}\n.button[data-v-4d71464c]{\n    background: #4bc800!important;\n    border: 0;\n    box-shadow: inset 0 -2px 0 #45b900!important;\n    color: #fff;\n    font-size: 17px;\n    font-weight: bold;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 20%;\n    margin-top: 10px;\n}\nul[data-v-4d71464c]{\n  list-style-type:none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\nli[data-v-4d71464c]{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli[data-v-4d71464c]:active{\n  border-color:#4bc800;\n}\nli[data-v-4d71464c]:hover{\n  border-color: #929292;\n}\na[data-v-4d71464c]{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/addUser.vue?bfe85904"],"names":[],"mappings":";AAiFA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AACA;;;;;;;GAOA;AACA;IACA,eAAA;IACA,kBAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,uBAAA;IACA,UAAA;IACA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;IACA,8BAAA;IACA,UAAA;IACA,6CAAA;IACA,YAAA;IACA,gBAAA;IACA,kBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;IACA,iBAAA;CACA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"addUser.vue","sourcesContent":["<template>\n  <div class=\"mainDiv\">\n   <div  class=\"header\">\n    <ul>\n           <li><a v-on:click=\"$parent.updateView('add-user')\" style=\"color:#4bc800\">Add User</a></li>\n           <li><a v-on:click=\"$parent.updateView('delete-user')\">Delete User</a></li>\n           <li><a v-on:click=\"$parent.updateView('modify-project')\">Modify project</a></li>\n    </ul>\n   </div> \n  \t<!-- <p class=\"heading\">Add User</p> -->\n    <form v-on:submit.prevent=\"onSubmit\">\n      <p class=\"input_heading\">Username</p>\n    \t<input class=\"inputField\" type=\"text\" name=\"user_name\" v-model=\"user_name\">\n      <p class=\"input_heading\">Password</p>\n    \t<input class=\"inputField\" type=\"password\" name =\"password\" v-model=\"password\">\n      <p class=\"input_heading\">User role</p>\n      <select class=\"inputField\" v-model=\"fk_user_role_id\" required>\n        <option value='' placeholder=\"Choose a role\"></option>\n        <option v-for=\"role in roles\" v-bind:value=\"role.user_role_id\">\n          {{role.user_role_name}}\n        </option>\n      </select>\n\n    \t<button class=\"button\" type=\"submit\" value=\"Submit\">Add User</button>\n      <p style=\"text-align:center;\" class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">User added successfully.</p>\n    </form>\n  </div>\n</template>\n\n<script>\nimport axios from 'axios';\n\nexport default {\n  name: \"add-user\",\n  props: [\"user\"],\n  data(){\n    return {\n      user_name: '',\n      password: '',\n      fk_user_role_id: '',\n      roles: ''\n    }\n  },\n  methods: {\n    onSubmit: function(){\n      axios({\n        method: 'post',\n        url: '/users/add',\n        data: {\n        user_name: this.user_name,\n        password: this.password,\n        fk_user_role_id: this.fk_user_role_id\n      }\n      })\n      .then(req => {\n        if(req.data.ok){\n          document.getElementById('confirmation').classList.remove('hidden');\n        };\n      })\n      .catch(err => {\n        console.log(err);\n      })\n    }\n  },\n  beforeMount(){\n    axios({\n      method: 'get',\n      url: '/users/roles'\n    })\n    .then(req => {\n      this.roles = req.data.roles;\n      console.log(this.roles);\n    })\n    .catch(err => {\n      console.log(err);\n    })\n  }\n}; \n</script>\n<style scoped>\n\n.mainDiv{\n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n\n}\nform{\n  margin-top: 30px;\n}\n/*.heading{\n    color: #afaeb0;\n    text-align: center;\n    line-height: 3.5;\n    font-weight: bold;\n    margin-top: 10px;\n\n}*/\n.input_heading{\n    color: #afaeb0;\n    margin-left: 18px;\n    \n}\n\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\n.inputField{\n    background-color: #fff;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 97%;\n}\n.inputField:focus{\n  outline: none;\n}\n.button:focus{\n  outline-color:  #4bc800;\n\n}\n.button{\n    background: #4bc800!important;\n    border: 0;\n    box-shadow: inset 0 -2px 0 #45b900!important;\n    color: #fff;\n    font-size: 17px;\n    font-weight: bold;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 20%;\n    margin-top: 10px;\n}\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\na{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n</style>\n\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-4d71464c]{\n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n}\nform[data-v-4d71464c]{\n  margin-top: 30px;\n}\n.input_heading[data-v-4d71464c]{\n    color: #afaeb0;\n    margin-left: 18px;\n}\n.header[data-v-4d71464c]{\n  border-bottom: 1px solid #ebebeb;\n}\n.inputField[data-v-4d71464c]{\n    background-color: #fff;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 97%;\n}\n.inputField[data-v-4d71464c]:focus{\n  outline: none;\n}\n.button[data-v-4d71464c]:focus{\n  outline-color:  #4bc800;\n}\n.button[data-v-4d71464c]{\n    background: #4bc800!important;\n    border: 0;\n    box-shadow: inset 0 -2px 0 #45b900!important;\n    color: #fff;\n    font-size: 17px;\n    font-weight: bold;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 20%;\n    margin-top: 10px;\n}\nul[data-v-4d71464c]{\n  list-style-type:none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\nli[data-v-4d71464c]{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli[data-v-4d71464c]:active{\n  border-color:#4bc800;\n}\nli[data-v-4d71464c]:hover{\n  border-color: #929292;\n}\na[data-v-4d71464c]{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/addUser.vue?0da0b1c9"],"names":[],"mappings":";AAiFA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AAEA;IACA,eAAA;IACA,kBAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,uBAAA;IACA,UAAA;IACA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;IACA,8BAAA;IACA,UAAA;IACA,6CAAA;IACA,YAAA;IACA,gBAAA;IACA,kBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;IACA,iBAAA;CACA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"addUser.vue","sourcesContent":["<template>\n  <div class=\"mainDiv\">\n   <div  class=\"header\">\n    <ul>\n           <li><a v-on:click=\"$parent.updateView('add-user')\" style=\"color:#4bc800\">Add User</a></li>\n           <li><a v-on:click=\"$parent.updateView('delete-user')\">Delete User</a></li>\n           <li v-if=\"user.roll === 'Admin' || 'Project-Cooridnator'\"><a v-on:click=\"$parent.updateView('modify-project')\">Modify project</a></li>\n    </ul>\n   </div> \n  \t<!-- <p class=\"heading\">Add User</p> -->\n    <form v-on:submit.prevent=\"onSubmit\">\n      <p class=\"input_heading\">Username</p>\n    \t<input class=\"inputField\" type=\"text\" name=\"user_name\" v-model=\"user_name\">\n      <p class=\"input_heading\">Password</p>\n    \t<input class=\"inputField\" type=\"password\" name =\"password\" v-model=\"password\">\n      <p class=\"input_heading\">User role</p>\n      <select class=\"inputField\" v-model=\"fk_user_role_id\" required>\n        <option value='' placeholder=\"Choose a role\"></option>\n        <option v-for=\"role in roles\" v-bind:value=\"role.user_role_id\">\n          {{role.user_role_name}}\n        </option>\n      </select>\n\n    \t<button class=\"button\" type=\"submit\" value=\"Submit\">Add User</button>\n      <p style=\"text-align:center;\" class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">User added successfully.</p>\n    </form>\n  </div>\n</template>\n\n<script>\nimport axios from 'axios';\n\nexport default {\n  name: \"add-user\",\n  props: [\"user\"],\n  data(){\n    return {\n      user_name: '',\n      password: '',\n      fk_user_role_id: '',\n      roles: ''\n    }\n  },\n  methods: {\n    onSubmit: function(){\n      axios({\n        method: 'post',\n        url: '/users/add',\n        data: {\n        user_name: this.user_name,\n        password: this.password,\n        fk_user_role_id: this.fk_user_role_id\n      }\n      })\n      .then(req => {\n        if(req.data.ok){\n          document.getElementById('confirmation').classList.remove('hidden');\n        };\n      })\n      .catch(err => {\n        console.log(err);\n      })\n    }\n  },\n  beforeMount(){\n    axios({\n      method: 'get',\n      url: '/users/roles'\n    })\n    .then(req => {\n      this.roles = req.data.roles;\n      console.log(this.roles);\n    })\n    .catch(err => {\n      console.log(err);\n    })\n  }\n}; \n</script>\n<style scoped>\n\n.mainDiv{\n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n\n}\nform{\n  margin-top: 30px;\n}\n\n.input_heading{\n    color: #afaeb0;\n    margin-left: 18px;\n    \n}\n\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\n.inputField{\n    background-color: #fff;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 97%;\n}\n.inputField:focus{\n  outline: none;\n}\n.button:focus{\n  outline-color:  #4bc800;\n\n}\n.button{\n    background: #4bc800!important;\n    border: 0;\n    box-shadow: inset 0 -2px 0 #45b900!important;\n    color: #fff;\n    font-size: 17px;\n    font-weight: bold;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 20%;\n    margin-top: 10px;\n}\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\na{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n</style>\n\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -21033,19 +21012,21 @@ var render = function() {
           )
         ]),
         _vm._v(" "),
-        _c("li", [
-          _c(
-            "a",
-            {
-              on: {
-                click: function($event) {
-                  _vm.$parent.updateView("modify-project")
-                }
-              }
-            },
-            [_vm._v("Modify project")]
-          )
-        ])
+        _vm.user.roll === "Admin" || "Project-Cooridnator"
+          ? _c("li", [
+              _c(
+                "a",
+                {
+                  on: {
+                    click: function($event) {
+                      _vm.$parent.updateView("modify-project")
+                    }
+                  }
+                },
+                [_vm._v("Modify project")]
+              )
+            ])
+          : _vm._e()
       ])
     ]),
     _vm._v(" "),
@@ -21697,7 +21678,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-4289fa57]{\n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n}\n.header[data-v-4289fa57]{\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-4289fa57]{\n  list-style-type:none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\nli[data-v-4289fa57]{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli[data-v-4289fa57]:active{\n  border-color:#4bc800;\n}\nli[data-v-4289fa57]:hover{\n  border-color: #929292;\n}\na[data-v-4289fa57]{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/allJobs.vue?aff33274"],"names":[],"mappings":";AAsBA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"allJobs.vue","sourcesContent":["<template>\n\t<div class=\"mainDiv\">\n    <div  class=\"header\">\n\t    <ul>\n           <li><a v-on:click=\"$parent.updateView('create-project')\" >Create Project</a></li>\n           <li><a v-on:click=\"$parent.updateView('open-jobs')\" >View open jobs</a></li>\n           <li><a v-on:click=\"$parent.updateView('close-jobs')\" >View close jobs</a></li>\n           <li><a v-on:click=\"$parent.updateView('all-jobs')\" style=\"color:#4bc800\">View all jobs</a></li>\n          </ul>\n       </div>   \n\t\t<h1>open jobs</h1>\n\t</div>\n</template>\n\n<script>\n\nexport default {\n  name: 'all-jobs'\n};\n</script>\n<style scoped>\n\n.mainDiv{\n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n\n}\n\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\na{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-4289fa57]{\n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n}\n.header[data-v-4289fa57]{\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-4289fa57]{\n  list-style-type:none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\nli[data-v-4289fa57]{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli[data-v-4289fa57]:active{\n  border-color:#4bc800;\n}\nli[data-v-4289fa57]:hover{\n  border-color: #929292;\n}\na[data-v-4289fa57]{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/allJobs.vue?30072c8a"],"names":[],"mappings":";AAuBA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"allJobs.vue","sourcesContent":["<template>\n\t<div class=\"mainDiv\">\n    <div  class=\"header\">\n\t    <ul>\n           <liv-if=\"user.roll == 'Admin' || 'Project Coordinator'\"><a v-on:click=\"$parent.updateView('create-project')\" >Create Project</a></li>\n           <li><a v-on:click=\"$parent.updateView('open-jobs')\" >View open jobs</a></li>\n           <li><a v-on:click=\"$parent.updateView('close-jobs')\" >View close jobs</a></li>\n           <li><a v-on:click=\"$parent.updateView('all-jobs')\" style=\"color:#4bc800\">View all jobs</a></li>\n          </ul>\n       </div>   \n\t\t<h1>open jobs</h1>\n\t</div>\n</template>\n\n<script>\n\nexport default {\n  name: 'all-jobs',\n  props: ['user'],\n};\n</script>\n<style scoped>\n\n.mainDiv{\n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n\n}\n\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\na{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n</style>"],"sourceRoot":""}]);
 
 // exports
 
@@ -21724,7 +21705,8 @@ exports.push([module.i, "\n.mainDiv[data-v-4289fa57]{\n     margin-top: 7%;\n   
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  name: 'all-jobs'
+  name: 'all-jobs',
+  props: ['user'],
 });
 
 
@@ -21740,19 +21722,18 @@ var render = function() {
   return _c("div", { staticClass: "mainDiv" }, [
     _c("div", { staticClass: "header" }, [
       _c("ul", [
-        _c("li", [
-          _c(
-            "a",
-            {
-              on: {
-                click: function($event) {
-                  _vm.$parent.updateView("create-project")
-                }
+        _vm._v("=\"user.roll == 'Admin' || 'Project Coordinator'\">"),
+        _c(
+          "a",
+          {
+            on: {
+              click: function($event) {
+                _vm.$parent.updateView("create-project")
               }
-            },
-            [_vm._v("Create Project")]
-          )
-        ]),
+            }
+          },
+          [_vm._v("Create Project")]
+        ),
         _vm._v(" "),
         _c("li", [
           _c(
@@ -22503,7 +22484,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-f52c95f4]{\n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n}\nform[data-v-f52c95f4]{\n  margin-top: 30px;\n}\n.dropdown[data-v-f52c95f4]:focus{\n  outline: none;\n}\n.dropdown[data-v-f52c95f4]{\n    background-color: #fff;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 100%;\n}\n.header[data-v-f52c95f4]{\n  border-bottom: 1px solid #ebebeb;\n}\n.paragraph[data-v-f52c95f4]{\n    margin-top: 40px;\n    color: #afaeb0;\n    text-align: center;\n    line-height: 1.5;\n    margin-left: 3%;\n    font-weight: bold;\n    font-size: 17px;\n}\n.row1[data-v-f52c95f4]{\n  margin-left: 10%;\n}\n.button[data-v-f52c95f4]{\n    color: #fff;\n    background: #4bc800!important;\n    border: 0;\n    box-shadow: inset 0 -2px 0 #45b900!important;\n    padding: 11.5px;\n    margin-left: -15px;\n    width: 100%;\n    margin-top: 14px;\n}\n.button[data-v-f52c95f4]:focus{\n  outline-color:  #4bc800;\n}\nul[data-v-f52c95f4]{\n  list-style-type:none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\nli[data-v-f52c95f4]{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli[data-v-f52c95f4]:active{\n  border-color:#4bc800;\n}\nli[data-v-f52c95f4]:hover{\n  border-color: #929292;\n}\na[data-v-f52c95f4]{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/deleteUser.vue?f145e254"],"names":[],"mappings":";AAuFA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,YAAA;CACA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,iBAAA;IACA,eAAA;IACA,mBAAA;IACA,iBAAA;IACA,gBAAA;IACA,kBAAA;IACA,gBAAA;CACA;AACA;EACA,iBAAA;CAEA;AACA;IACA,YAAA;IACA,8BAAA;IACA,UAAA;IACA,6CAAA;IACA,gBAAA;IACA,mBAAA;IACA,YAAA;IACA,iBAAA;CAEA;AACA;EACA,wBAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"deleteUser.vue","sourcesContent":["<template>\n\t      <div class=\"mainDiv\">\n                  <div  class=\"header\">\n                     <ul>\n                       <li><a v-on:click=\"$parent.updateView('add-user')\">Add User</a></li>\n                       <li><a v-on:click=\"$parent.updateView('delete-user')\" style=\"color:#4bc800\">Delete User</a></li>\n                       <li><a v-on:click=\"$parent.updateView('modify-project')\" >Modify project</a></li>\n                    </ul>\n                  </div>\n  \t        <!-- <h1>Delete User</h1>\n                \t<form v-on:submit.prevent=\"onSubmit\" id=\"form\">\n                \t\t<p>Choose user to delete:</p>\n                \t\t<select v-model=\"fk_user_id\" required>\n                \t\t\t<option v-for=\"user in users\" v-bind:value=\"user.user_id\">{{user.user_name}}</option>\n                \t\t</select>\n                \t\t<input type=\"submit\" value=\"Submit\">\n                    <p class=\"hidden\" id=\"confirmation\">Added</p>\n                \t</form> -->\n              \t  <form v-on:submit.prevent=\"onSubmit\" id=\"form\"> \n                    <div class=\"row row1\">\n                     <div class=\"col-md-8\">             \t\t  \n                \t\t  <select class=\"dropdown\" v-model=\"user_id\" required>\n                \t\t\t <option v-for=\"user in users\" v-bind:value=\"user.user_id\">{{user.user_name}}</option>\n                \t\t  </select>\n                     </div>\n                     <div class=\"col-md-3\"> \n                \t\t  <button class=\"button\" type=\"submit\" value=\"Submit\">Delete</button>\n                      </div>\n                    </div>           \n                  \n                    <div class=\"row row2\">\n                      <p class=\"hidden\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">User deleted successfully.</p>\n                      <p class=\"paragraph\">Choose user to delete.</p>\n                    </div> \n                </form>       \n        </div>\n</template>\n\n<script>\nimport axios from 'axios';\n\nexport default {\n  name: 'delete-user',\n  data(){\n  \treturn {\n  \t\tuser_id: '',\n  \t\tusers: ''\n  \t}\n  },\n  methods: {\n  \tonSubmit: function(){\n  \t\taxios({\n  \t\t\tmethod: 'delete',\n  \t\t\turl: '/users/delete',\n        data: {\n          user_id: this.user_id\n        }\n  \t\t})\n  \t\t.then(req => {\n  \t\t\tdocument.getElementById('confirmation').classList.remove('hidden');\n        this.user_id = '';\n        this.getData();\n  \t\t})\n  \t\t.catch(err => {\n  \t\t\tconsole.log(err);\n  \t\t})\n  \t},\n    getData: function(){\n      axios({\n        method: 'get',\n        url: '/users'\n      })\n      .then(req => {\n        this.users = req.data.users;\n      })\n      .catch(err => {\n        console.log(err);\n      })\n    }\n  },\n  beforeMount(){\n  \tthis.getData();\n  }\n};\n</script>\n<style scoped>\n\n.mainDiv{\n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n\n}\nform{\n  margin-top: 30px;\n}\n.dropdown:focus{\n  outline: none;\n}\n.dropdown{\n    background-color: #fff;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 100%;\n}\n\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\n.paragraph{\n    margin-top: 40px;\n    color: #afaeb0;\n    text-align: center;\n    line-height: 1.5;\n    margin-left: 3%;\n    font-weight: bold;\n    font-size: 17px;\n}\n.row1{\n  margin-left: 10%;\n\n}\n.button{\n    color: #fff;\n    background: #4bc800!important;\n    border: 0;\n    box-shadow: inset 0 -2px 0 #45b900!important;\n    padding: 11.5px;\n    margin-left: -15px;\n    width: 100%;\n    margin-top: 14px;\n\n}\n.button:focus{\n  outline-color:  #4bc800;\n\n}\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\na{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n</style>\n\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-f52c95f4]{\n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n}\nform[data-v-f52c95f4]{\n  margin-top: 30px;\n}\n.input_heading[data-v-f52c95f4]{\n    color: #afaeb0;\n    text-align: center;\n    margin-top: 10px;\n}\n.dropdown[data-v-f52c95f4]:focus{\n  outline: none;\n}\n.dropdown[data-v-f52c95f4]{\n    background-color: #fff;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 100%;\n}\n.header[data-v-f52c95f4]{\n  border-bottom: 1px solid #ebebeb;\n}\n.paragraph[data-v-f52c95f4]{\n    margin-top: 40px;\n    color: #afaeb0;\n    text-align: center;\n    line-height: 1.5;\n    margin-left: 3%;\n    font-weight: bold;\n    font-size: 17px;\n}\n.row1[data-v-f52c95f4]{\n  margin-left: 10%;\n}\n.button[data-v-f52c95f4]{\n    color: #fff;\n    background: #4bc800!important;\n    border: 0;\n    box-shadow: inset 0 -2px 0 #45b900!important;\n    padding: 11.5px;\n    margin-left: -15px;\n    width: 100%;\n    margin-top: 14px;\n}\n.button[data-v-f52c95f4]:focus{\n  outline-color:  #4bc800;\n}\nul[data-v-f52c95f4]{\n  list-style-type:none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\nli[data-v-f52c95f4]{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli[data-v-f52c95f4]:active{\n  border-color:#4bc800;\n}\nli[data-v-f52c95f4]:hover{\n  border-color: #929292;\n}\na[data-v-f52c95f4]{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/deleteUser.vue?2e926cfe"],"names":[],"mappings":";AAuFA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AACA;IACA,eAAA;IACA,mBAAA;IACA,iBAAA;CAEA;AACA;EACA,cAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,YAAA;CACA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,iBAAA;IACA,eAAA;IACA,mBAAA;IACA,iBAAA;IACA,gBAAA;IACA,kBAAA;IACA,gBAAA;CACA;AACA;EACA,iBAAA;CAEA;AACA;IACA,YAAA;IACA,8BAAA;IACA,UAAA;IACA,6CAAA;IACA,gBAAA;IACA,mBAAA;IACA,YAAA;IACA,iBAAA;CAEA;AACA;EACA,wBAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"deleteUser.vue","sourcesContent":["<template>\n\t      <div class=\"mainDiv\">\n                  <div  class=\"header\">\n                     <ul>\n                       <li><a v-on:click=\"$parent.updateView('add-user')\">Add User</a></li>\n                       <li><a v-on:click=\"$parent.updateView('delete-user')\" style=\"color:#4bc800\">Delete User</a></li>\n                       <li><a v-on:click=\"$parent.updateView('modify-project')\" >Modify project</a></li>\n                    </ul>\n                  </div>\n  \t        <!-- <h1>Delete User</h1>\n                \t<form v-on:submit.prevent=\"onSubmit\" id=\"form\">\n                \t\t<p>Choose user to delete:</p>\n                \t\t<select v-model=\"fk_user_id\" required>\n                \t\t\t<option v-for=\"user in users\" v-bind:value=\"user.user_id\">{{user.user_name}}</option>\n                \t\t</select>\n                \t\t<input type=\"submit\" value=\"Submit\">\n                    <p class=\"hidden\" id=\"confirmation\">Added</p>\n                \t</form> -->\n              \t  <form v-on:submit.prevent=\"onSubmit\" id=\"form\"> \n                    <div class=\"row row1\">\n                     <div class=\"col-md-8\">             \t\t  \n                \t\t  <select class=\"dropdown\" v-model=\"user_id\" required>\n                \t\t\t <option v-for=\"user in users\" v-bind:value=\"user.user_id\">{{user.user_name}}</option>\n                \t\t  </select>\n                     </div>\n                     <div class=\"col-md-3\"> \n                \t\t  <button class=\"button\" type=\"submit\" value=\"Submit\">Delete</button>\n                      </div>\n                    </div>           \n                  \n                    <div class=\"row row2\">\n                      <p class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">User deleted successfully.</p>\n                      <p class=\"paragraph\">Choose user to delete.</p>\n                    </div> \n                </form>       \n        </div>\n</template>\n\n<script>\nimport axios from 'axios';\n\nexport default {\n  name: 'delete-user',\n  data(){\n  \treturn {\n  \t\tuser_id: '',\n  \t\tusers: ''\n  \t}\n  },\n  methods: {\n  \tonSubmit: function(){\n  \t\taxios({\n  \t\t\tmethod: 'delete',\n  \t\t\turl: '/users/delete',\n        data: {\n          user_id: this.user_id\n        }\n  \t\t})\n  \t\t.then(req => {\n  \t\t\tdocument.getElementById('confirmation').classList.remove('hidden');\n        this.user_id = '';\n        this.getData();\n  \t\t})\n  \t\t.catch(err => {\n  \t\t\tconsole.log(err);\n  \t\t})\n  \t},\n    getData: function(){\n      axios({\n        method: 'get',\n        url: '/users'\n      })\n      .then(req => {\n        this.users = req.data.users;\n      })\n      .catch(err => {\n        console.log(err);\n      })\n    }\n  },\n  beforeMount(){\n  \tthis.getData();\n  }\n};\n</script>\n<style scoped>\n\n.mainDiv{\n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n\n}\nform{\n  margin-top: 30px;\n}\n.input_heading{\n    color: #afaeb0;\n    text-align: center;\n    margin-top: 10px;\n    \n}\n.dropdown:focus{\n  outline: none;\n}\n.dropdown{\n    background-color: #fff;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 100%;\n}\n\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\n.paragraph{\n    margin-top: 40px;\n    color: #afaeb0;\n    text-align: center;\n    line-height: 1.5;\n    margin-left: 3%;\n    font-weight: bold;\n    font-size: 17px;\n}\n.row1{\n  margin-left: 10%;\n\n}\n.button{\n    color: #fff;\n    background: #4bc800!important;\n    border: 0;\n    box-shadow: inset 0 -2px 0 #45b900!important;\n    padding: 11.5px;\n    margin-left: -15px;\n    width: 100%;\n    margin-top: 14px;\n\n}\n.button:focus{\n  outline-color:  #4bc800;\n\n}\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\na{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n</style>\n\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -22739,12 +22720,16 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row row2" }, [
-      _c("p", { staticClass: "hidden", attrs: { id: "confirmation" } }, [
-        _c("img", {
-          attrs: { src: "/dist/assets/images/yes.png", alt: "Logo" }
-        }),
-        _vm._v("User deleted successfully.")
-      ]),
+      _c(
+        "p",
+        { staticClass: "hidden input_heading", attrs: { id: "confirmation" } },
+        [
+          _c("img", {
+            attrs: { src: "/dist/assets/images/yes.png", alt: "Logo" }
+          }),
+          _vm._v("User deleted successfully.")
+        ]
+      ),
       _vm._v(" "),
       _c("p", { staticClass: "paragraph" }, [_vm._v("Choose user to delete.")])
     ])
@@ -24426,7 +24411,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-ffe549d4]{\n     \n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n}\n.custab[data-v-ffe549d4]{\n    border: 1px solid #ccc;\n    padding: 5px;\n    margin: 5% 0;\n    box-shadow: 3px 3px 2px #ccc;\n    transition: 0.5s;\n}\n.custab[data-v-ffe549d4]:hover{\n    box-shadow: 3px 3px 0px transparent;\n    transition: 0.5s;\n}\ntr[data-v-ffe549d4]:nth-child(even){\n      background-color: #f9f9f9;\n}\ntd[data-v-ffe549d4]{\n    padding: 8px;\n    line-height: 1.42857143;\n    vertical-align: top;\n    border-top: 1px solid #ddd;\n}\n.header[data-v-ffe549d4]{\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-ffe549d4]{\n  list-style-type:none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\nli[data-v-ffe549d4]{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli[data-v-ffe549d4]:active{\n  border-color:#4bc800;\n}\nli[data-v-ffe549d4]:hover{\n  border-color: #929292;\n}\n.header_a[data-v-ffe549d4]{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/bonusSchedule.vue?76c014a9"],"names":[],"mappings":";AA2FA;;KAEA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;IACA,uBAAA;IACA,aAAA;IACA,aAAA;IACA,6BAAA;IACA,iBAAA;CACA;AACA;IACA,oCAAA;IACA,iBAAA;CACA;AACA;MACA,0BAAA;CACA;AACA;IACA,aAAA;IACA,wBAAA;IACA,oBAAA;IACA,2BAAA;CACA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"bonusSchedule.vue","sourcesContent":["<template>\n\t  <div class=\"mainDiv\">\n          <div  class=\"header\">\n            <ul>\n               <li><a class=\"header_a\" v-on:click=\"$parent.updateView('add-bonus')\">Add Bonus</a></li>\n               <li><a class=\"header_a\" v-on:click=\"$parent.updateView('paid-bonus')\">Paid Bonus</a></li>\n               <li><a class=\"header_a\" v-on:click=\"$parent.updateView('bonus-schedule')\"  style=\"color:#4bc800\">Unpaid Bonus</a></li>\n               <li><a class=\"header_a\" v-on:click=\"$parent.updateView('all-bonus')\">All Bonus</a></li>\n            </ul>\n          </div>     \n      \n      \n          <div  class=\"container\">\n                    <div class=\"row col-md-10 custyle\">\n                        <table class=\"table table-striped custab\">\n                              <thead>\n                                  <tr>\n                                      <th>Scheduled payment amount</th>\n                                      <th>Scheduled Pay Date</th>\n                                      <th>Total Bonus</th>\n                                      <th>Date Paid</th>\n                                      <th class=\"text-center\">Action</th>\n                                  </tr>\n                              </thead>\n                                <tr v-for=\"bonus in bonuses\">\n                                    <td>{{ bonus.scheduled_payment_amount }}</td>\n                                    <td>{{ date(bonus.scheduled_pay_date) }}</td>\n                                    <td>{{ bonus.payment_amount }}</td>\n                                    <td>{{ bonus.date_paid }}</td>\n                                    <td class=\"text-center\"><a href=\"#\" class=\"btn btn-danger btn-xs\"><span class=\"glyphicon glyphicon-remove\"></span> Del</a></td>\n                                </tr>\n                                \n                        </table>\n                    </div>\n              </div>\n\n    </div>\n</template>\n\n<script>\nimport axios from 'axios';\nimport dateFormat from 'date-fns/format';\n\nexport default {\n  name: 'bonus-schedule',\n  props: [\"user\"],\n  data() {\n    return {\n      bonuses: '',\n      dates: ''\n    }\n  },\n  methods: {\n\n    getDates: function() {\n\n      for (let k in this.bonuses) {\n        if ( k == 'date_paid' || 'scheduled_pay_date' ) {\n\n          this.$set(this.dates(k, this.bonuses[k]));\n        }\n      }\n      \n    },\n\n    date: function(d) {\n\n      return dateFormat(d, [\"MM-DD-YYYY\"])\n    }\n\n\n  },\n  beforeMount(){\n  \taxios.get('/installers/payments')\n  \t.then(req => {\n      this.bonuses = req.data.installer_payments;\n      this.getDates();\n      console.log(this.dates);\n\n      // this.$set(this.question[i].choice_in_random_order[j], 'is_success', false)\n\n  \t\tconsole.log(dateFormat(req.data.installer_payments[0].date_paid, ['MM-DD-YYYY']));\n  \t})\n  }\n};\n\n</script>\n\n\n<style scoped>\n\n.mainDiv{\n     \n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n\n}\n.custab{\n    border: 1px solid #ccc;\n    padding: 5px;\n    margin: 5% 0;\n    box-shadow: 3px 3px 2px #ccc;\n    transition: 0.5s;\n    }\n.custab:hover{\n    box-shadow: 3px 3px 0px transparent;\n    transition: 0.5s;\n    }\n  tr:nth-child(even){\n      background-color: #f9f9f9;\n    }\n  td{\n    padding: 8px;\n    line-height: 1.42857143;\n    vertical-align: top;\n    border-top: 1px solid #ddd;\n}  \n\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\n.header_a{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n</style>\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-ffe549d4]{\n     \n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n}\n.custab[data-v-ffe549d4]{\n    border: 1px solid #ccc;\n    padding: 5px;\n    margin: 5% 0;\n    box-shadow: 3px 3px 2px #ccc;\n    transition: 0.5s;\n}\n.custab[data-v-ffe549d4]:hover{\n    box-shadow: 3px 3px 0px transparent;\n    transition: 0.5s;\n}\ntr[data-v-ffe549d4]:nth-child(even){\n      background-color: #f9f9f9;\n}\ntd[data-v-ffe549d4]{\n    padding: 8px;\n    line-height: 1.42857143;\n    vertical-align: top;\n    border-top: 1px solid #ddd;\n}\n.header[data-v-ffe549d4]{\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-ffe549d4]{\n  list-style-type:none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\nli[data-v-ffe549d4]{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli[data-v-ffe549d4]:active{\n  border-color:#4bc800;\n}\nli[data-v-ffe549d4]:hover{\n  border-color: #929292;\n}\n.header_a[data-v-ffe549d4]{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/bonusSchedule.vue?73f300a0"],"names":[],"mappings":";AA4EA;;KAEA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;IACA,uBAAA;IACA,aAAA;IACA,aAAA;IACA,6BAAA;IACA,iBAAA;CACA;AACA;IACA,oCAAA;IACA,iBAAA;CACA;AACA;MACA,0BAAA;CACA;AACA;IACA,aAAA;IACA,wBAAA;IACA,oBAAA;IACA,2BAAA;CACA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"bonusSchedule.vue","sourcesContent":["<template>\n\t  <div class=\"mainDiv\">\n          <div  class=\"header\">\n            <ul>\n               <li v-if=\"user.roll == 'Admin' || 'Project Coordinator'\"><a class=\"header_a\" v-on:click=\"$parent.updateView('add-bonus')\">Add Bonus</a></li>\n               <li><a class=\"header_a\" v-on:click=\"$parent.updateView('paid-bonus')\">Paid Bonus</a></li>\n               <li><a class=\"header_a\" v-on:click=\"$parent.updateView('bonus-schedule')\"  style=\"color:#4bc800\">Unpaid Bonus</a></li>\n               <li><a class=\"header_a\" v-on:click=\"$parent.updateView('modify-bonuses')\">All Bonus</a></li>\n            </ul>\n          </div>     \n      \n      \n          <div  class=\"container\">\n                    <div class=\"row col-md-10 custyle\">\n                        <table class=\"table table-striped custab\">\n                              <thead>\n                                  <tr>\n                                      <th>Scheduled payment amount</th>\n                                      <th>Scheduled Pay Date</th>\n                                      <th>Total Bonus</th>\n                                      <th>Date Paid</th>\n                                      <th class=\"text-center\">Action</th>\n                                  </tr>\n                              </thead>\n                                <tr v-for=\"bonus in bonuses\">\n                                    <td>{{ bonus.scheduled_payment_amount }}</td>\n                                    <td>{{ date(bonus.scheduled_pay_date) }}</td>\n                                    <td>{{ bonus.payment_amount }}</td>\n                                    <td>{{ date(bonus.date_paid) }}</td>\n                                    <td class=\"text-center\"><a href=\"#\" class=\"btn btn-danger btn-xs\"><span class=\"glyphicon glyphicon-remove\"></span> Del</a></td>\n                                </tr>\n                                \n                        </table>\n                    </div>\n              </div>\n\n    </div>\n</template>\n\n<script>\nimport axios from 'axios';\nimport dateFormat from 'date-fns/format';\n\nexport default {\n  name: 'bonus-schedule',\n  props: [\"user\"],\n  data() {\n    return {\n      bonuses: '',\n      dates: ''\n    }\n  },\n  methods: {\n\n    date: function(d) {\n\n      return dateFormat(d, [\"YYYY-MM-DD\"])\n\n    }\n\n\n  },\n  beforeMount(){\n  \taxios.get('/installers/payments')\n  \t.then(req => {\n      this.bonuses = req.data.installer_payments;\n  \t\t\n  \t})\n  }\n};\n\n</script>\n\n\n<style scoped>\n\n.mainDiv{\n     \n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n\n}\n.custab{\n    border: 1px solid #ccc;\n    padding: 5px;\n    margin: 5% 0;\n    box-shadow: 3px 3px 2px #ccc;\n    transition: 0.5s;\n    }\n.custab:hover{\n    box-shadow: 3px 3px 0px transparent;\n    transition: 0.5s;\n    }\n  tr:nth-child(even){\n      background-color: #f9f9f9;\n    }\n  td{\n    padding: 8px;\n    line-height: 1.42857143;\n    vertical-align: top;\n    border-top: 1px solid #ddd;\n}  \n\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\n.header_a{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n</style>\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -24494,22 +24479,10 @@ exports.push([module.i, "\n.mainDiv[data-v-ffe549d4]{\n     \n     margin-top: 7
   },
   methods: {
 
-    getDates: function() {
-      var this$1 = this;
-
-
-      for (var k in this$1.bonuses) {
-        if ( k == 'date_paid' || 'scheduled_pay_date' ) {
-
-          this$1.$set(this$1.dates(k, this$1.bonuses[k]));
-        }
-      }
-      
-    },
-
     date: function(d) {
 
-      return __WEBPACK_IMPORTED_MODULE_1_date_fns_format___default()(d, ["MM-DD-YYYY"])
+      return __WEBPACK_IMPORTED_MODULE_1_date_fns_format___default()(d, ["YYYY-MM-DD"])
+
     }
 
 
@@ -24520,12 +24493,7 @@ exports.push([module.i, "\n.mainDiv[data-v-ffe549d4]{\n     \n     margin-top: 7
   	__WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/installers/payments')
   	.then(function (req) {
       this$1.bonuses = req.data.installer_payments;
-      this$1.getDates();
-      console.log(this$1.dates);
-
-      // this.$set(this.question[i].choice_in_random_order[j], 'is_success', false)
-
-  		console.log(__WEBPACK_IMPORTED_MODULE_1_date_fns_format___default()(req.data.installer_payments[0].date_paid, ['MM-DD-YYYY']));
+  		
   	})
   }
 });
@@ -25101,20 +25069,22 @@ var render = function() {
   return _c("div", { staticClass: "mainDiv" }, [
     _c("div", { staticClass: "header" }, [
       _c("ul", [
-        _c("li", [
-          _c(
-            "a",
-            {
-              staticClass: "header_a",
-              on: {
-                click: function($event) {
-                  _vm.$parent.updateView("add-bonus")
-                }
-              }
-            },
-            [_vm._v("Add Bonus")]
-          )
-        ]),
+        _vm.user.roll == "Admin" || "Project Coordinator"
+          ? _c("li", [
+              _c(
+                "a",
+                {
+                  staticClass: "header_a",
+                  on: {
+                    click: function($event) {
+                      _vm.$parent.updateView("add-bonus")
+                    }
+                  }
+                },
+                [_vm._v("Add Bonus")]
+              )
+            ])
+          : _vm._e(),
         _vm._v(" "),
         _c("li", [
           _c(
@@ -25154,7 +25124,7 @@ var render = function() {
               staticClass: "header_a",
               on: {
                 click: function($event) {
-                  _vm.$parent.updateView("all-bonus")
+                  _vm.$parent.updateView("modify-bonuses")
                 }
               }
             },
@@ -25180,7 +25150,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(bonus.payment_amount))]),
                 _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(bonus.date_paid))]),
+                _c("td", [_vm._v(_vm._s(_vm.date(bonus.date_paid)))]),
                 _vm._v(" "),
                 _vm._m(1, true)
               ])
@@ -27879,7 +27849,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-3ff1dab0]{\n     margin-left: 18%;\n     margin-top: 7%;\n     margin-right: 7%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     background-color: #fff;\n     font-size: 16px;\n     padding: 40px;\n}\nform[data-v-3ff1dab0]{\n  margin-top: 30px;\n}\n.inputField[data-v-3ff1dab0]{\n    background-color: #fff;\n    font-family: Open Sans,Arial,sans-serif;\n    line-height: normal!important;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 0;\n    padding: 12px 18px 11px;\n    width: 100%;\n}\n.inputField[data-v-3ff1dab0]:focus{\n  outline: none;\n}\n.input_heading[data-v-3ff1dab0]{\n    color: #afaeb0;\n    \n    margin-top: 30px;\n}\n.button[data-v-3ff1dab0]{\n    color: #fff;\n    background: #4bc800!important;\n    border: 0;\n    box-shadow: inset 0 -2px 0 #45b900!important;\n    padding: 9px;\n    margin-top: 20px;\n}\n.button[data-v-3ff1dab0]:focus{\n  outline-color:  #4bc800;\n}\n.header[data-v-3ff1dab0]{\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-3ff1dab0]{\n  list-style-type:none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\nli[data-v-3ff1dab0]{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli[data-v-3ff1dab0]:active{\n  border-color:#4bc800;\n}\nli[data-v-3ff1dab0]:hover{\n  border-color: #929292;\n}\na[data-v-3ff1dab0]{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/modifyCustomer.vue?fae4eb4e"],"names":[],"mappings":";AAkFA;KACA,iBAAA;KACA,eAAA;KACA,iBAAA;KACA,yCAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AACA;IACA,uBAAA;IACA,wCAAA;IACA,8BAAA;IACA,UAAA;IACA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,UAAA;IACA,wBAAA;IACA,YAAA;CACA;AACA;EACA,cAAA;CACA;AACA;IACA,eAAA;;IAEA,iBAAA;CAKA;AACA;IACA,YAAA;IACA,8BAAA;IACA,UAAA;IACA,6CAAA;IACA,aAAA;IACA,iBAAA;CAGA;AACA;EACA,wBAAA;CAEA;AACA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyCustomer.vue","sourcesContent":["<template>\n\t <div class=\"mainDiv\"> \n    <!-- <h1>Create a Customer</h1> -->\n          <div  class=\"header\">\n            <ul>\n                  <li><a v-on:click=\"$parent.updateView('create-customer')\"  >Add customer</a></li>\n                  <li><a v-on:click=\"$parent.updateView('view-customer')\"  >View customer</a></li>\n                  <li><a v-on:click=\"$parent.updateView('modify-customer')\" style=\"color:#4bc800\" >Modify customer</a></li>\n                </ul>\n           </div> \n              <p class=\"input_heading\">Select customer to modify</p>\n              <select class=\"inputField\" v-model=\"customer_id\">\n                <option v-for=\"customer in customers\" v-bind:value=\"customer.customer_id\">\n                  {{customer.customer_name}}\n                </option>\n              </select>\n\n              <form v-if=\"selectedRole.customer_id\" v-on:submit.prevent=\"onSubmit\">\n                <input class=\"inputField\" type=\"hidden\" v-model=\"selectedRole.customer_id\">\n                <p class=\"input_heading\">Customer name</p>\n                <input class=\"inputField\" type=\"text\" v-model.trim=\"selectedRole.customer_name\" required>\n                <button class=\"button\" type=\"submit\" value=\"Submit\">Create</button>\n                <p style=\"text-align:center;\" class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Customer updated successfully.</p>\n              </form>\n\t</div>\n</template>\n\n<script>\nimport axios from 'axios';\n\nexport default {\n  name: 'modify-customer',\n  props: ['user'],\n  data(){\n    return {\n      customer_id: '',\n      customers: '',\n      selectedRole: {}\n    }\n  },\n  methods: {\n    onSubmit: function(){\n      axios({\n        method: 'put',\n        url: 'customers/update',\n        data: {\n          customer_id: this.selectedRole.customer_id,\n          customer_name: this.selectedRole.customer_name,\n          modified_by_id: this.user.userID\n        }\n      })\n      .then(req => {\n        console.log(req);\n        document.getElementById('confirmation').classList.remove('hidden');\n      })\n      .catch(err => {\n        console.log(err);\n      })\n    }\n  },\n  watch: {\n    customer_id(id) {\n      [this.selectedRole] = this.customers.filter(r => r.customer_id === id);\n    }\n  },\n  beforeMount(){\n  \taxios({\n  \t\tmethod: 'get',\n  \t\turl: '/customers'\n  \t})\n  \t.then(req => {\n  \t\tthis.customers = req.data.customers;\n      console.log(this.customers);\n  \t})\n  \t.catch(err => {\n  \t\tconsole.log(err);\n  \t})\n  }\n};\n</script>\n\n<style scoped>\n .mainDiv{\n     margin-left: 18%;\n     margin-top: 7%;\n     margin-right: 7%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     background-color: #fff;\n     font-size: 16px;\n     padding: 40px;\n\n}\nform{\n  margin-top: 30px;\n}\n.inputField{\n    background-color: #fff;\n    font-family: Open Sans,Arial,sans-serif;\n    line-height: normal!important;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 0;\n    padding: 12px 18px 11px;\n    width: 100%;\n}\n.inputField:focus{\n  outline: none;\n}\n.input_heading{\n    color: #afaeb0;\n    \n    margin-top: 30px;\n    \n    \n   \n\n}\n.button{\n    color: #fff;\n    background: #4bc800!important;\n    border: 0;\n    box-shadow: inset 0 -2px 0 #45b900!important;\n    padding: 9px;\n    margin-top: 20px;\n   \n\n}\n.button:focus{\n  outline-color:  #4bc800;\n\n}\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\na{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-3ff1dab0]{\n     margin-left: 18%;\n     margin-top: 7%;\n     margin-right: 7%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     background-color: #fff;\n     font-size: 16px;\n     padding: 40px;\n}\nform[data-v-3ff1dab0]{\n  margin-top: 30px;\n}\n.inputField[data-v-3ff1dab0]{\n    background-color: #fff;\n    font-family: Open Sans,Arial,sans-serif;\n    line-height: normal!important;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 0;\n    padding: 12px 18px 11px;\n    width: 100%;\n}\n.inputField[data-v-3ff1dab0]:focus{\n  outline: none;\n}\n.input_heading[data-v-3ff1dab0]{\n    color: #afaeb0;\n    \n    margin-top: 30px;\n}\n.button[data-v-3ff1dab0]{\n    color: #fff;\n    background: #4bc800!important;\n    border: 0;\n    box-shadow: inset 0 -2px 0 #45b900!important;\n    padding: 9px;\n    margin-top: 20px;\n}\n.button[data-v-3ff1dab0]:focus{\n  outline-color:  #4bc800;\n}\n.header[data-v-3ff1dab0]{\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-3ff1dab0]{\n  list-style-type:none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\nli[data-v-3ff1dab0]{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli[data-v-3ff1dab0]:active{\n  border-color:#4bc800;\n}\nli[data-v-3ff1dab0]:hover{\n  border-color: #929292;\n}\na[data-v-3ff1dab0]{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/modifyCustomer.vue?eb9053de"],"names":[],"mappings":";AAoFA;KACA,iBAAA;KACA,eAAA;KACA,iBAAA;KACA,yCAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AACA;IACA,uBAAA;IACA,wCAAA;IACA,8BAAA;IACA,UAAA;IACA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,UAAA;IACA,wBAAA;IACA,YAAA;CACA;AACA;EACA,cAAA;CACA;AACA;IACA,eAAA;;IAEA,iBAAA;CAKA;AACA;IACA,YAAA;IACA,8BAAA;IACA,UAAA;IACA,6CAAA;IACA,aAAA;IACA,iBAAA;CAGA;AACA;EACA,wBAAA;CAEA;AACA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyCustomer.vue","sourcesContent":["<template>\n\t <div class=\"mainDiv\"> \n    <!-- <h1>Create a Customer</h1> -->\n          <div  class=\"header\">\n            <ul>\n                  <li><a v-on:click=\"$parent.updateView('create-customer')\"  >Add customer</a></li>\n                  <li><a v-on:click=\"$parent.updateView('view-customer')\"  >View customer</a></li>\n                  <li><a v-on:click=\"$parent.updateView('modify-customer')\" style=\"color:#4bc800\" >Modify customer</a></li>\n                </ul>\n           </div> \n              <p class=\"input_heading\">Select customer to modify</p>\n              <select class=\"inputField\" v-model=\"customer_id\">\n                <option v-for=\"customer in customers\" v-bind:value=\"customer.customer_id\">\n                  {{customer.customer_name}}\n                </option>\n              </select>\n\n              <form v-if=\"selectedRole.customer_id\" v-on:submit.prevent=\"onSubmit\">\n                <input class=\"inputField\" type=\"hidden\" v-model=\"selectedRole.customer_id\">\n                <p class=\"input_heading\">Customer name</p>\n                <input class=\"inputField\" type=\"text\" v-model.trim=\"selectedRole.customer_name\" required>\n                <button class=\"button\" type=\"submit\" value=\"Submit\">Update</button>\n                <p style=\"text-align:center;\" class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Customer updated successfully.</p>\n              </form>\n\t</div>\n</template>\n\n<script>\nimport axios from 'axios';\n\nexport default {\n  name: 'modify-customer',\n  props: ['user'],\n  data(){\n    return {\n      customer_id: '',\n      customers: '',\n      selectedRole: {}\n    }\n  },\n  methods: {\n    onSubmit: function(){\n      axios({\n        method: 'put',\n        url: 'customers/update',\n        data: {\n          customer_id: this.selectedRole.customer_id,\n          customer_name: this.selectedRole.customer_name,\n          modified_by_id: this.user.userID\n        }\n      })\n      .then(req => {\n        if(req.status===200){\n          $('.inputField').val('');\n        document.getElementById('confirmation').classList.remove('hidden');\n      };\n      })\n      .catch(err => {\n        console.log(err);\n      })\n    }\n  },\n  watch: {\n    customer_id(id) {\n      [this.selectedRole] = this.customers.filter(r => r.customer_id === id);\n    }\n  },\n  beforeMount(){\n  \taxios({\n  \t\tmethod: 'get',\n  \t\turl: '/customers'\n  \t})\n  \t.then(req => {\n  \t\tthis.customers = req.data.customers;\n      console.log(this.customers);\n  \t})\n  \t.catch(err => {\n  \t\tconsole.log(err);\n  \t})\n  }\n};\n</script>\n\n<style scoped>\n .mainDiv{\n     margin-left: 18%;\n     margin-top: 7%;\n     margin-right: 7%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     background-color: #fff;\n     font-size: 16px;\n     padding: 40px;\n\n}\nform{\n  margin-top: 30px;\n}\n.inputField{\n    background-color: #fff;\n    font-family: Open Sans,Arial,sans-serif;\n    line-height: normal!important;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 0;\n    padding: 12px 18px 11px;\n    width: 100%;\n}\n.inputField:focus{\n  outline: none;\n}\n.input_heading{\n    color: #afaeb0;\n    \n    margin-top: 30px;\n    \n    \n   \n\n}\n.button{\n    color: #fff;\n    background: #4bc800!important;\n    border: 0;\n    box-shadow: inset 0 -2px 0 #45b900!important;\n    padding: 9px;\n    margin-top: 20px;\n   \n\n}\n.button:focus{\n  outline-color:  #4bc800;\n\n}\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\na{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n\n</style>"],"sourceRoot":""}]);
 
 // exports
 
@@ -27943,8 +27913,10 @@ exports.push([module.i, "\n.mainDiv[data-v-3ff1dab0]{\n     margin-left: 18%;\n 
         }
       })
       .then(function (req) {
-        console.log(req);
+        if(req.status===200){
+          $('.inputField').val('');
         document.getElementById('confirmation').classList.remove('hidden');
+      };
       })
       .catch(function (err) {
         console.log(err);
@@ -28149,7 +28121,7 @@ var render = function() {
                 staticClass: "button",
                 attrs: { type: "submit", value: "Submit" }
               },
-              [_vm._v("Create")]
+              [_vm._v("Update")]
             ),
             _vm._v(" "),
             _vm._m(0)
@@ -28280,7 +28252,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.job[data-v-41061bbf] {\n  display: inline-block;\n  height: auto;\n  width: 400px;\n  border: 4px double blue;\n  overflow: auto;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/modifyProject.vue?56e617cd"],"names":[],"mappings":";AAwHA;EACA,sBAAA;EACA,aAAA;EACA,aAAA;EACA,wBAAA;EACA,eAAA;CACA","file":"modifyProject.vue","sourcesContent":["<template>\n  \t<div class=\"mainDiv\">\n      <div  class=\"header\">\n          <ul>\n            <li><a v-on:click=\"$parent.updateView('add-user')\" >Add User</a></li>\n            <li><a v-on:click=\"$parent.updateView('delete-user')\">Delete User</a></li>\n            <li><a v-on:click=\"$parent.updateView('modify-project')\" style=\"color:#4bc800\">Modify project</a></li>\n          </ul>\n      <div>\n      <h1>Modify a Project</h1>\n       <div class=\"row\">\n        <div class=\"col-md-10\">\n            <select class=\"input\" v-model=\"job_id\">\n              <option v-for=\"job in jobs\" v-bind:value=\"job.job_id\">\n                {{job.job_name}}\n              </option>\n            </select>\n        </div>    \n    </div> \n          <form v-if=\"selectedJob.job_id\" v-on:submit.prevent=\"onSubmit\">\n            <input type=\"hidden\" v-model=\"selectedJob.job_id\">\n            <p>Project Name</p>\n            <input type=\"text\" name=\"job_name\" v-model=\"selectedJob.job_name\">\n            <p>Start Date</p>\n            <input type=\"date\" name=\"start_date\" v-model=\"selectedJob.start_date | dateFormat\">\n            <p>End Date</p>\n            <input type=\"date\" name=\"end_date\" v-model=\"selectedJob.end_date\">\n            <p>Hours Bid</p>\n            <input type=\"text\" name =\"hours_bid\" v-model=\"selectedJob.hours_bid\">\n            <p>Estimated Start Date</p>\n            <input type=\"date\" name=\"est_start_date\" v-model=\"selectedJob.est_start_date\">\n            <p>Estimated End Date</p>\n            <input type=\"date\" name=\"est_end_date\" v-model=\"selectedJob.est_end_date\">\n            <p>Bill Rate</p>\n            <input type=\"text\" name=\"bill_rate\" v-model=\"selectedJob.bill_rate\">\n            <p>Job Status</p>\n            <input type=\"text\" name=\"job_status\" v-model=\"selectedJob.job_status\">\n            <p>Max Labor Cost</p>\n            <input type=\"text\" name=\"max_labor_cost\" v-model=\"selectedJob.max_labor_cost\">\n            <input type=\"submit\" value=\"Submit\">\n          </form>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script>\n\nimport dateFormat from 'date-fns/format';\nimport axios from 'axios';\n\nexport default {\n  name: 'modify-project',\n  props: [\"user\"],\n\n  data() {\n    return {\n\n      jobs: '',\n      job_id: '',\n      selectedJob: {}\n\n    }\n  },\n  \n  methods: {\n    onSubmit: function(){\n      \n      axios({\n      method: 'put',\n      url: '/jobs/update',\n      data: {\n      job_id: this.selectedJob.job_id,\n      job_name: this.selectedJob.job_name,\n      start_date: this.selectedJob.start_date,\n      end_date: this.selectedJob.end_date,\n      hours_bid: this.selectedJob.hours_bid,\n      est_start_date: this.selectedJob.est_start_date,\n      est_end_date: this.selectedJob.est_end_date,\n      fk_customer_id: this.selectedJob.fk_customer_id,\n      bill_rate: this.selectedJob.bill_rate,\n      job_status: this.selectedJob.job_status,\n      max_labor_cost: this.selectedJob.max_labor_cost\n      }\n    })\n    .then(req => {\n      if(req.data.ok){\n        console.log('Job added!');\n      };\n    })\n    .catch(err => {\n      console.log(err);\n    })\n    }\n  },\n  watch: {\n    job_id(id) {\n      [this.selectedJob] = this.jobs.filter(r => r.job_id === id);\n    }\n  },\n  beforeMount() {\n  \taxios({\n  \t\tmethod: 'get',\n  \t\turl: '/jobs'\n  \t})\n  \t.then(req => {\n  \t\tconsole.log(req.data.jobs[0].start_date);\n\n      this.jobs = req.data.jobs;\n  \t})\n  \t.catch(err => {\n  \t\tconsole.log(err);\n  \t})\n  }\n};\n</script>\n\n\n<style scoped>\n\n  .job {\n    display: inline-block;\n    height: auto;\n    width: 400px;\n    border: 4px double blue;\n    overflow: auto;\n  }\n</style>>\n\n<style scoped>\n\n.mainDiv{\n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n\n}\n\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\na{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n</style>\n\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.job[data-v-41061bbf] {\n  display: inline-block;\n  height: auto;\n  width: 400px;\n  border: 4px double blue;\n  overflow: auto;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/modifyProject.vue?3a2698e0"],"names":[],"mappings":";AAwNA;EACA,sBAAA;EACA,aAAA;EACA,aAAA;EACA,wBAAA;EACA,eAAA;CACA","file":"modifyProject.vue","sourcesContent":["<template>\n  \t<div class=\"mainDiv\">\n      <div  class=\"header\">\n          <ul>\n            <li><a v-on:click=\"$parent.updateView('add-user')\" >Add User</a></li>\n            <li><a v-on:click=\"$parent.updateView('delete-user')\">Delete User</a></li>\n            <li><a v-on:click=\"$parent.updateView('modify-project')\" style=\"color:#4bc800\">Modify project</a></li>\n          </ul>\n      </div>\n           <p class=\"input_heading\">Select project to modify</p>\n              <select class=\"inputField\" v-model=\"job_id\">\n                <option v-for=\"job in jobs\" v-bind:value=\"job.job_id\">\n                  {{job.job_name}}\n                </option>\n              </select>\n\n              <form v-if=\"selectedRole.job_id\" v-on:submit.prevent=\"onSubmit\">\n                <input class=\"inputField\" type=\"hidden\" v-model=\"selectedRole.job_id\">\n                <p class=\"input_heading\">Project name</p>\n                <input class=\"inputField\" type=\"text\" v-model.trim=\"selectedRole.job_name\" required>\n                <p class=\"input_heading\">Hours Bid</p>\n                <input class=\"inputField\" type=\"text\" v-model.trim=\"selectedRole.hours_bid\" required>\n                <p class=\"input_heading\">Estimated Start Date</p>\n                <input class=\"inputField\" type=\"date\" v-model=\"selectedRole.est_end_date\" required>\n                <p class=\"input_heading\">Bill rate</p>\n                <input class=\"inputField\" type=\"text\" v-model.trim=\"selectedRole.bill_rate\" required>\n                <p class=\"input_heading\">Job status</p>\n                <input class=\"inputField\" type=\"text\" v-model.trim=\"selectedRole.job_status\" required>\n                <p class=\"input_heading\">Max labor cost</p>\n                <input class=\"inputField\" type=\"text\" v-model.trim=\"selectedRole.max_labor_cost\" required>\n                <button class=\"button\" type=\"submit\" value=\"Submit\">Update</button>\n                <p style=\"text-align:center;\" class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Project updated successfully.</p>\n              </form>\n      \n       <!--  <div class=\"job\" v-for=\"job in jobs\">\n          <form v-on:submit.prevent=\"onSubmit\">\n            <input type=\"hidden\" name=\"job_id\" :value=\"job.job_id\">\n            <p>Project Name</p>\n            <input type=\"text\" name=\"job_name\" v-model=\"selectedJob.job_name\">\n            <p>Start Date</p>\n            <input type=\"date\" name=\"start_date\" v-model=\"selectedJob.start_date | dateFormat\">\n            <p>End Date</p>\n            <input type=\"date\" name=\"end_date\" v-model=\"selectedJob.end_date\">\n            <p>Hours Bid</p>\n            <input type=\"text\" name =\"hours_bid\" v-model=\"selectedJob.hours_bid\">\n            <p>Estimated Start Date</p>\n            <input type=\"date\" name=\"est_start_date\" v-model=\"selectedJob.est_start_date\">\n            <p>Estimated End Date</p>\n            <input type=\"date\" name=\"est_end_date\" v-model=\"selectedJob.est_end_date\">\n            <p>Bill Rate</p>\n            <input type=\"text\" name=\"bill_rate\" v-model=\"selectedJob.bill_rate\">\n            <p>Job Status</p>\n            <input type=\"text\" name=\"job_status\" v-model=\"selectedJob.job_status\">\n            <p>Max Labor Cost</p>\n            <input type=\"text\" name=\"max_labor_cost\" v-model=\"selectedJob.max_labor_cost\">\n            <input type=\"submit\" value=\"Submit\">\n          </form>\n      </div>\n        </div>\n  \t\t -->\n\t  </div>\n</template>\n\n<script>\n\nimport dateFormat from 'date-fns/format';\nimport axios from 'axios';\n\nexport default {\n  name: 'modify-project',\n  props: [\"user\"],\n   data(){\n    return {\n      job_id: '',\n      jobs: '',\n      selectedRole: {}\n    }\n  },\n  \n  methods: {\n\n    date: function(d) {\n\n      return dateFormat(d, [\"YYYY-MM-DD\"])\n\n    },\n\n    getDates: function() {\n\n      for (let i = 0; i < this.jobs.length; i++) {\n      \n          this.jobs[i].est_start_date = this.date(this.jobs[i].est_start_date);\n          this.jobs[i].est_end_date = this.date(this.jobs[i].est_end_date);\n        }\n  \n    },\n\n    onSubmit: function(){\n      axios({\n        method: 'put',\n        url: 'jobs/update',\n        data: {\n          job_id: this.selectedRole.job_id,\n          job_name: this.selectedRole.job_name,\n          hours_bid: this.selectedRole.hours_bid,\n          est_start_date: this.selectedRole.est_start_date,\n          est_end_date: this.selectedRole.est_end_date,\n          bill_rate: this.selectedRole.bill_rate,\n          job_status: this.selectedRole.job_status,\n          max_labor_cost: this.selectedRole.max_labor_cost,\n          modified_by_id: this.user.userID\n        }\n      })\n      .then(req => {\n        if(req.status===200){\n          $('.inputField').val('');\n        document.getElementById('confirmation').classList.remove('hidden');\n      };\n      })\n      .catch(err => {\n        console.log(err);\n      })\n    }\n  },\n  watch: {\n    job_id(id) {\n      [this.selectedRole] = this.jobs.filter(r => r.job_id === id);\n    }\n  },\n  beforeMount(){\n    axios({\n      method: 'get',\n      url: '/jobs'\n    })\n    .then(req => {\n      this.jobs = req.data.jobs;\n      this.getDates();\n      console.log(this.user.roll)\n\n      console.log(this.date(req.data.jobs.est_end_date))\n      console.log(this.jobs);\n    })\n    .catch(err => {\n      console.log(err);\n    })\n  }\n};\n\n//   data() {\n//     return {\n\n//       jobs: '',\n//       job_name: '',\n//       job_id: '',\n//       start_date: '',\n//       end_date: '',\n//       hours_bid: '',\n//       est_start_date: '',\n//       est_end_date: '',\n//       fk_customer_id: '',\n//       bill_rate: '',\n//       job_status: '',\n//       max_labor_cost: ''\n\n//     }\n//   },\n//   methods: {\n//     onSubmit: function(){\n//       console.log(this.job_id);\n//       axios({\n//       method: 'put',\n//       url: '/jobs/update',\n//       data: {\n//       job_id: this.job_id,\n//       job_name: this.job_name,\n//       start_date: this.start_date,\n//       end_date: this.end_date,\n//       hours_bid: this.hours_bid,\n//       est_start_date: this.est_start_date,\n//       est_end_date: this.est_end_date,\n//       fk_customer_id: this.fk_customer_id,\n//       bill_rate: this.bill_rate,\n//       job_status: this.job_status,\n//       max_labor_cost: this.max_labor_cost\n//       }\n//     })\n//     .then(req => {\n//       if(req.data.ok){\n//         console.log('Job added!');\n//       };\n//     })\n//     .catch(err => {\n//       console.log(err);\n//     })\n//     }\n//   },\n//   beforeMount() {\n//   \taxios({\n//   \t\tmethod: 'get',\n//   \t\turl: '/jobs'\n//   \t})\n//   \t.then(req => {\n//   \t\tconsole.log(req.data);\n//       this.jobs = req.data.jobs;\n//   \t})\n//   \t.catch(err => {\n//   \t\tconsole.log(err);\n//   \t})\n//   }\n// };\n\n</script>\n\n\n<style scoped>\n\n  .job {\n    display: inline-block;\n    height: auto;\n    width: 400px;\n    border: 4px double blue;\n    overflow: auto;\n  }\n</style>>\n\n<style scoped>\n\n.mainDiv{\n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n\n}\nform{\n  margin-top: 30px;\n}\n\n.input_heading{\n    color: #afaeb0;\n    margin-left: 18px;\n    \n}\n\n\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\n.inputField{\n    background-color: #fff;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 97%;\n}\n.inputField:focus{\n  outline: none;\n}\n.button:focus{\n  outline-color:  #4bc800;\n\n}\n.button{\n    background: #4bc800!important;\n    border: 0;\n    box-shadow: inset 0 -2px 0 #45b900!important;\n    color: #fff;\n    font-size: 17px;\n    font-weight: bold;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 20%;\n    margin-top: 10px;\n}\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\na{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n</style>\n\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -28320,7 +28292,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-41061bbf]{\n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n}\n.header[data-v-41061bbf]{\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-41061bbf]{\n  list-style-type:none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\nli[data-v-41061bbf]{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli[data-v-41061bbf]:active{\n  border-color:#4bc800;\n}\nli[data-v-41061bbf]:hover{\n  border-color: #929292;\n}\na[data-v-41061bbf]{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/modifyProject.vue?56e617cd"],"names":[],"mappings":";AAmIA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyProject.vue","sourcesContent":["<template>\n  \t<div class=\"mainDiv\">\n      <div  class=\"header\">\n          <ul>\n            <li><a v-on:click=\"$parent.updateView('add-user')\" >Add User</a></li>\n            <li><a v-on:click=\"$parent.updateView('delete-user')\">Delete User</a></li>\n            <li><a v-on:click=\"$parent.updateView('modify-project')\" style=\"color:#4bc800\">Modify project</a></li>\n          </ul>\n      <div>\n      <h1>Modify a Project</h1>\n       <div class=\"row\">\n        <div class=\"col-md-10\">\n            <select class=\"input\" v-model=\"job_id\">\n              <option v-for=\"job in jobs\" v-bind:value=\"job.job_id\">\n                {{job.job_name}}\n              </option>\n            </select>\n        </div>    \n    </div> \n          <form v-if=\"selectedJob.job_id\" v-on:submit.prevent=\"onSubmit\">\n            <input type=\"hidden\" v-model=\"selectedJob.job_id\">\n            <p>Project Name</p>\n            <input type=\"text\" name=\"job_name\" v-model=\"selectedJob.job_name\">\n            <p>Start Date</p>\n            <input type=\"date\" name=\"start_date\" v-model=\"selectedJob.start_date | dateFormat\">\n            <p>End Date</p>\n            <input type=\"date\" name=\"end_date\" v-model=\"selectedJob.end_date\">\n            <p>Hours Bid</p>\n            <input type=\"text\" name =\"hours_bid\" v-model=\"selectedJob.hours_bid\">\n            <p>Estimated Start Date</p>\n            <input type=\"date\" name=\"est_start_date\" v-model=\"selectedJob.est_start_date\">\n            <p>Estimated End Date</p>\n            <input type=\"date\" name=\"est_end_date\" v-model=\"selectedJob.est_end_date\">\n            <p>Bill Rate</p>\n            <input type=\"text\" name=\"bill_rate\" v-model=\"selectedJob.bill_rate\">\n            <p>Job Status</p>\n            <input type=\"text\" name=\"job_status\" v-model=\"selectedJob.job_status\">\n            <p>Max Labor Cost</p>\n            <input type=\"text\" name=\"max_labor_cost\" v-model=\"selectedJob.max_labor_cost\">\n            <input type=\"submit\" value=\"Submit\">\n          </form>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script>\n\nimport dateFormat from 'date-fns/format';\nimport axios from 'axios';\n\nexport default {\n  name: 'modify-project',\n  props: [\"user\"],\n\n  data() {\n    return {\n\n      jobs: '',\n      job_id: '',\n      selectedJob: {}\n\n    }\n  },\n  \n  methods: {\n    onSubmit: function(){\n      \n      axios({\n      method: 'put',\n      url: '/jobs/update',\n      data: {\n      job_id: this.selectedJob.job_id,\n      job_name: this.selectedJob.job_name,\n      start_date: this.selectedJob.start_date,\n      end_date: this.selectedJob.end_date,\n      hours_bid: this.selectedJob.hours_bid,\n      est_start_date: this.selectedJob.est_start_date,\n      est_end_date: this.selectedJob.est_end_date,\n      fk_customer_id: this.selectedJob.fk_customer_id,\n      bill_rate: this.selectedJob.bill_rate,\n      job_status: this.selectedJob.job_status,\n      max_labor_cost: this.selectedJob.max_labor_cost\n      }\n    })\n    .then(req => {\n      if(req.data.ok){\n        console.log('Job added!');\n      };\n    })\n    .catch(err => {\n      console.log(err);\n    })\n    }\n  },\n  watch: {\n    job_id(id) {\n      [this.selectedJob] = this.jobs.filter(r => r.job_id === id);\n    }\n  },\n  beforeMount() {\n  \taxios({\n  \t\tmethod: 'get',\n  \t\turl: '/jobs'\n  \t})\n  \t.then(req => {\n  \t\tconsole.log(req.data.jobs[0].start_date);\n\n      this.jobs = req.data.jobs;\n  \t})\n  \t.catch(err => {\n  \t\tconsole.log(err);\n  \t})\n  }\n};\n</script>\n\n\n<style scoped>\n\n  .job {\n    display: inline-block;\n    height: auto;\n    width: 400px;\n    border: 4px double blue;\n    overflow: auto;\n  }\n</style>>\n\n<style scoped>\n\n.mainDiv{\n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n\n}\n\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\na{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n</style>\n\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-41061bbf]{\n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n}\nform[data-v-41061bbf]{\n  margin-top: 30px;\n}\n.input_heading[data-v-41061bbf]{\n    color: #afaeb0;\n    margin-left: 18px;\n}\n.header[data-v-41061bbf]{\n  border-bottom: 1px solid #ebebeb;\n}\n.inputField[data-v-41061bbf]{\n    background-color: #fff;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 97%;\n}\n.inputField[data-v-41061bbf]:focus{\n  outline: none;\n}\n.button[data-v-41061bbf]:focus{\n  outline-color:  #4bc800;\n}\n.button[data-v-41061bbf]{\n    background: #4bc800!important;\n    border: 0;\n    box-shadow: inset 0 -2px 0 #45b900!important;\n    color: #fff;\n    font-size: 17px;\n    font-weight: bold;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 20%;\n    margin-top: 10px;\n}\nul[data-v-41061bbf]{\n  list-style-type:none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\nli[data-v-41061bbf]{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli[data-v-41061bbf]:active{\n  border-color:#4bc800;\n}\nli[data-v-41061bbf]:hover{\n  border-color: #929292;\n}\na[data-v-41061bbf]{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/modifyProject.vue?3a2698e0"],"names":[],"mappings":";AAmOA;KACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AAEA;IACA,eAAA;IACA,kBAAA;CAEA;AAGA;EACA,iCAAA;CAEA;AACA;IACA,uBAAA;IACA,UAAA;IACA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;IACA,8BAAA;IACA,UAAA;IACA,6CAAA;IACA,YAAA;IACA,gBAAA;IACA,kBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;IACA,iBAAA;CACA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyProject.vue","sourcesContent":["<template>\n  \t<div class=\"mainDiv\">\n      <div  class=\"header\">\n          <ul>\n            <li><a v-on:click=\"$parent.updateView('add-user')\" >Add User</a></li>\n            <li><a v-on:click=\"$parent.updateView('delete-user')\">Delete User</a></li>\n            <li><a v-on:click=\"$parent.updateView('modify-project')\" style=\"color:#4bc800\">Modify project</a></li>\n          </ul>\n      </div>\n           <p class=\"input_heading\">Select project to modify</p>\n              <select class=\"inputField\" v-model=\"job_id\">\n                <option v-for=\"job in jobs\" v-bind:value=\"job.job_id\">\n                  {{job.job_name}}\n                </option>\n              </select>\n\n              <form v-if=\"selectedRole.job_id\" v-on:submit.prevent=\"onSubmit\">\n                <input class=\"inputField\" type=\"hidden\" v-model=\"selectedRole.job_id\">\n                <p class=\"input_heading\">Project name</p>\n                <input class=\"inputField\" type=\"text\" v-model.trim=\"selectedRole.job_name\" required>\n                <p class=\"input_heading\">Hours Bid</p>\n                <input class=\"inputField\" type=\"text\" v-model.trim=\"selectedRole.hours_bid\" required>\n                <p class=\"input_heading\">Estimated Start Date</p>\n                <input class=\"inputField\" type=\"date\" v-model=\"selectedRole.est_end_date\" required>\n                <p class=\"input_heading\">Bill rate</p>\n                <input class=\"inputField\" type=\"text\" v-model.trim=\"selectedRole.bill_rate\" required>\n                <p class=\"input_heading\">Job status</p>\n                <input class=\"inputField\" type=\"text\" v-model.trim=\"selectedRole.job_status\" required>\n                <p class=\"input_heading\">Max labor cost</p>\n                <input class=\"inputField\" type=\"text\" v-model.trim=\"selectedRole.max_labor_cost\" required>\n                <button class=\"button\" type=\"submit\" value=\"Submit\">Update</button>\n                <p style=\"text-align:center;\" class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Project updated successfully.</p>\n              </form>\n      \n       <!--  <div class=\"job\" v-for=\"job in jobs\">\n          <form v-on:submit.prevent=\"onSubmit\">\n            <input type=\"hidden\" name=\"job_id\" :value=\"job.job_id\">\n            <p>Project Name</p>\n            <input type=\"text\" name=\"job_name\" v-model=\"selectedJob.job_name\">\n            <p>Start Date</p>\n            <input type=\"date\" name=\"start_date\" v-model=\"selectedJob.start_date | dateFormat\">\n            <p>End Date</p>\n            <input type=\"date\" name=\"end_date\" v-model=\"selectedJob.end_date\">\n            <p>Hours Bid</p>\n            <input type=\"text\" name =\"hours_bid\" v-model=\"selectedJob.hours_bid\">\n            <p>Estimated Start Date</p>\n            <input type=\"date\" name=\"est_start_date\" v-model=\"selectedJob.est_start_date\">\n            <p>Estimated End Date</p>\n            <input type=\"date\" name=\"est_end_date\" v-model=\"selectedJob.est_end_date\">\n            <p>Bill Rate</p>\n            <input type=\"text\" name=\"bill_rate\" v-model=\"selectedJob.bill_rate\">\n            <p>Job Status</p>\n            <input type=\"text\" name=\"job_status\" v-model=\"selectedJob.job_status\">\n            <p>Max Labor Cost</p>\n            <input type=\"text\" name=\"max_labor_cost\" v-model=\"selectedJob.max_labor_cost\">\n            <input type=\"submit\" value=\"Submit\">\n          </form>\n      </div>\n        </div>\n  \t\t -->\n\t  </div>\n</template>\n\n<script>\n\nimport dateFormat from 'date-fns/format';\nimport axios from 'axios';\n\nexport default {\n  name: 'modify-project',\n  props: [\"user\"],\n   data(){\n    return {\n      job_id: '',\n      jobs: '',\n      selectedRole: {}\n    }\n  },\n  \n  methods: {\n\n    date: function(d) {\n\n      return dateFormat(d, [\"YYYY-MM-DD\"])\n\n    },\n\n    getDates: function() {\n\n      for (let i = 0; i < this.jobs.length; i++) {\n      \n          this.jobs[i].est_start_date = this.date(this.jobs[i].est_start_date);\n          this.jobs[i].est_end_date = this.date(this.jobs[i].est_end_date);\n        }\n  \n    },\n\n    onSubmit: function(){\n      axios({\n        method: 'put',\n        url: 'jobs/update',\n        data: {\n          job_id: this.selectedRole.job_id,\n          job_name: this.selectedRole.job_name,\n          hours_bid: this.selectedRole.hours_bid,\n          est_start_date: this.selectedRole.est_start_date,\n          est_end_date: this.selectedRole.est_end_date,\n          bill_rate: this.selectedRole.bill_rate,\n          job_status: this.selectedRole.job_status,\n          max_labor_cost: this.selectedRole.max_labor_cost,\n          modified_by_id: this.user.userID\n        }\n      })\n      .then(req => {\n        if(req.status===200){\n          $('.inputField').val('');\n        document.getElementById('confirmation').classList.remove('hidden');\n      };\n      })\n      .catch(err => {\n        console.log(err);\n      })\n    }\n  },\n  watch: {\n    job_id(id) {\n      [this.selectedRole] = this.jobs.filter(r => r.job_id === id);\n    }\n  },\n  beforeMount(){\n    axios({\n      method: 'get',\n      url: '/jobs'\n    })\n    .then(req => {\n      this.jobs = req.data.jobs;\n      this.getDates();\n      console.log(this.user.roll)\n\n      console.log(this.date(req.data.jobs.est_end_date))\n      console.log(this.jobs);\n    })\n    .catch(err => {\n      console.log(err);\n    })\n  }\n};\n\n//   data() {\n//     return {\n\n//       jobs: '',\n//       job_name: '',\n//       job_id: '',\n//       start_date: '',\n//       end_date: '',\n//       hours_bid: '',\n//       est_start_date: '',\n//       est_end_date: '',\n//       fk_customer_id: '',\n//       bill_rate: '',\n//       job_status: '',\n//       max_labor_cost: ''\n\n//     }\n//   },\n//   methods: {\n//     onSubmit: function(){\n//       console.log(this.job_id);\n//       axios({\n//       method: 'put',\n//       url: '/jobs/update',\n//       data: {\n//       job_id: this.job_id,\n//       job_name: this.job_name,\n//       start_date: this.start_date,\n//       end_date: this.end_date,\n//       hours_bid: this.hours_bid,\n//       est_start_date: this.est_start_date,\n//       est_end_date: this.est_end_date,\n//       fk_customer_id: this.fk_customer_id,\n//       bill_rate: this.bill_rate,\n//       job_status: this.job_status,\n//       max_labor_cost: this.max_labor_cost\n//       }\n//     })\n//     .then(req => {\n//       if(req.data.ok){\n//         console.log('Job added!');\n//       };\n//     })\n//     .catch(err => {\n//       console.log(err);\n//     })\n//     }\n//   },\n//   beforeMount() {\n//   \taxios({\n//   \t\tmethod: 'get',\n//   \t\turl: '/jobs'\n//   \t})\n//   \t.then(req => {\n//   \t\tconsole.log(req.data);\n//       this.jobs = req.data.jobs;\n//   \t})\n//   \t.catch(err => {\n//   \t\tconsole.log(err);\n//   \t})\n//   }\n// };\n\n</script>\n\n\n<style scoped>\n\n  .job {\n    display: inline-block;\n    height: auto;\n    width: 400px;\n    border: 4px double blue;\n    overflow: auto;\n  }\n</style>>\n\n<style scoped>\n\n.mainDiv{\n     margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n\n}\nform{\n  margin-top: 30px;\n}\n\n.input_heading{\n    color: #afaeb0;\n    margin-left: 18px;\n    \n}\n\n\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\n.inputField{\n    background-color: #fff;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 97%;\n}\n.inputField:focus{\n  outline: none;\n}\n.button:focus{\n  outline-color:  #4bc800;\n\n}\n.button{\n    background: #4bc800!important;\n    border: 0;\n    box-shadow: inset 0 -2px 0 #45b900!important;\n    color: #fff;\n    font-size: 17px;\n    font-weight: bold;\n    margin: 15px;\n    padding: 12px 18px 12px;\n    width: 20%;\n    margin-top: 10px;\n}\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n    padding-left: 6%;\n    padding-right: 6%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\na{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n</style>\n\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -28380,6 +28352,23 @@ exports.push([module.i, "\n.mainDiv[data-v-41061bbf]{\n     margin-top: 7%;\n   
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -28388,70 +28377,151 @@ exports.push([module.i, "\n.mainDiv[data-v-41061bbf]{\n     margin-top: 7%;\n   
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: 'modify-project',
   props: ["user"],
-
-  data: function data() {
+   data: function data(){
     return {
-
-      jobs: '',
       job_id: '',
-      selectedJob: {}
-
+      jobs: '',
+      selectedRole: {}
     }
   },
   
   methods: {
-    onSubmit: function(){
+
+    date: function(d) {
+
+      return __WEBPACK_IMPORTED_MODULE_0_date_fns_format___default()(d, ["YYYY-MM-DD"])
+
+    },
+
+    getDates: function() {
+      var this$1 = this;
+
+
+      for (var i = 0; i < this.jobs.length; i++) {
       
+          this$1.jobs[i].est_start_date = this$1.date(this$1.jobs[i].est_start_date);
+          this$1.jobs[i].est_end_date = this$1.date(this$1.jobs[i].est_end_date);
+        }
+  
+    },
+
+    onSubmit: function(){
       __WEBPACK_IMPORTED_MODULE_1_axios___default()({
-      method: 'put',
-      url: '/jobs/update',
-      data: {
-      job_id: this.selectedJob.job_id,
-      job_name: this.selectedJob.job_name,
-      start_date: this.selectedJob.start_date,
-      end_date: this.selectedJob.end_date,
-      hours_bid: this.selectedJob.hours_bid,
-      est_start_date: this.selectedJob.est_start_date,
-      est_end_date: this.selectedJob.est_end_date,
-      fk_customer_id: this.selectedJob.fk_customer_id,
-      bill_rate: this.selectedJob.bill_rate,
-      job_status: this.selectedJob.job_status,
-      max_labor_cost: this.selectedJob.max_labor_cost
-      }
-    })
-    .then(function (req) {
-      if(req.data.ok){
-        console.log('Job added!');
+        method: 'put',
+        url: 'jobs/update',
+        data: {
+          job_id: this.selectedRole.job_id,
+          job_name: this.selectedRole.job_name,
+          hours_bid: this.selectedRole.hours_bid,
+          est_start_date: this.selectedRole.est_start_date,
+          est_end_date: this.selectedRole.est_end_date,
+          bill_rate: this.selectedRole.bill_rate,
+          job_status: this.selectedRole.job_status,
+          max_labor_cost: this.selectedRole.max_labor_cost,
+          modified_by_id: this.user.userID
+        }
+      })
+      .then(function (req) {
+        if(req.status===200){
+          $('.inputField').val('');
+        document.getElementById('confirmation').classList.remove('hidden');
       };
-    })
-    .catch(function (err) {
-      console.log(err);
-    })
+      })
+      .catch(function (err) {
+        console.log(err);
+      })
     }
   },
   watch: {
     job_id: function job_id(id) {
       var assign;
-      (assign = this.jobs.filter(function (r) { return r.job_id === id; }), this.selectedJob = assign[0]);
+      (assign = this.jobs.filter(function (r) { return r.job_id === id; }), this.selectedRole = assign[0]);
     }
   },
-  beforeMount: function beforeMount() {
-  	var this$1 = this;
+  beforeMount: function beforeMount(){
+    var this$1 = this;
 
-  	__WEBPACK_IMPORTED_MODULE_1_axios___default()({
-  		method: 'get',
-  		url: '/jobs'
-  	})
-  	.then(function (req) {
-  		console.log(req.data.jobs[0].start_date);
-
+    __WEBPACK_IMPORTED_MODULE_1_axios___default()({
+      method: 'get',
+      url: '/jobs'
+    })
+    .then(function (req) {
       this$1.jobs = req.data.jobs;
-  	})
-  	.catch(function (err) {
-  		console.log(err);
-  	})
+      this$1.getDates();
+      console.log(this$1.user.roll)
+
+      console.log(this$1.date(req.data.jobs.est_end_date))
+      console.log(this$1.jobs);
+    })
+    .catch(function (err) {
+      console.log(err);
+    })
   }
 });
+
+//   data() {
+//     return {
+
+//       jobs: '',
+//       job_name: '',
+//       job_id: '',
+//       start_date: '',
+//       end_date: '',
+//       hours_bid: '',
+//       est_start_date: '',
+//       est_end_date: '',
+//       fk_customer_id: '',
+//       bill_rate: '',
+//       job_status: '',
+//       max_labor_cost: ''
+
+//     }
+//   },
+//   methods: {
+//     onSubmit: function(){
+//       console.log(this.job_id);
+//       axios({
+//       method: 'put',
+//       url: '/jobs/update',
+//       data: {
+//       job_id: this.job_id,
+//       job_name: this.job_name,
+//       start_date: this.start_date,
+//       end_date: this.end_date,
+//       hours_bid: this.hours_bid,
+//       est_start_date: this.est_start_date,
+//       est_end_date: this.est_end_date,
+//       fk_customer_id: this.fk_customer_id,
+//       bill_rate: this.bill_rate,
+//       job_status: this.job_status,
+//       max_labor_cost: this.max_labor_cost
+//       }
+//     })
+//     .then(req => {
+//       if(req.data.ok){
+//         console.log('Job added!');
+//       };
+//     })
+//     .catch(err => {
+//       console.log(err);
+//     })
+//     }
+//   },
+//   beforeMount() {
+//   	axios({
+//   		method: 'get',
+//   		url: '/jobs'
+//   	})
+//   	.then(req => {
+//   		console.log(req.data);
+//       this.jobs = req.data.jobs;
+//   	})
+//   	.catch(err => {
+//   		console.log(err);
+//   	})
+//   }
+// };
+
 
 
 /***/ }),
@@ -28508,331 +28578,312 @@ var render = function() {
             [_vm._v("Modify project")]
           )
         ])
-      ]),
-      _vm._v(" "),
-      _c("div", [
-        _c("h1", [_vm._v("Modify a Project")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-10" }, [
-            _c(
-              "select",
-              {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.job_id,
-                    expression: "job_id"
-                  }
-                ],
-                staticClass: "input",
-                on: {
-                  change: function($event) {
-                    var $$selectedVal = Array.prototype.filter
-                      .call($event.target.options, function(o) {
-                        return o.selected
-                      })
-                      .map(function(o) {
-                        var val = "_value" in o ? o._value : o.value
-                        return val
-                      })
-                    _vm.job_id = $event.target.multiple
-                      ? $$selectedVal
-                      : $$selectedVal[0]
-                  }
-                }
-              },
-              _vm._l(_vm.jobs, function(job) {
-                return _c("option", { domProps: { value: job.job_id } }, [
-                  _vm._v(
-                    "\n              " + _vm._s(job.job_name) + "\n            "
-                  )
-                ])
-              })
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _vm.selectedJob.job_id
-          ? _c(
-              "form",
-              {
-                on: {
-                  submit: function($event) {
-                    $event.preventDefault()
-                    _vm.onSubmit($event)
-                  }
-                }
-              },
-              [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.selectedJob.job_id,
-                      expression: "selectedJob.job_id"
-                    }
-                  ],
-                  attrs: { type: "hidden" },
-                  domProps: { value: _vm.selectedJob.job_id },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.selectedJob, "job_id", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("p", [_vm._v("Project Name")]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.selectedJob.job_name,
-                      expression: "selectedJob.job_name"
-                    }
-                  ],
-                  attrs: { type: "text", name: "job_name" },
-                  domProps: { value: _vm.selectedJob.job_name },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.selectedJob, "job_name", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("p", [_vm._v("Start Date")]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.selectedJob.start_date | _vm.dateFormat,
-                      expression: "selectedJob.start_date | dateFormat"
-                    }
-                  ],
-                  attrs: { type: "date", name: "start_date" },
-                  domProps: {
-                    value: _vm.selectedJob.start_date | _vm.dateFormat
-                  },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(
-                        _vm.selectedJob,
-                        "start_date | dateFormat",
-                        $event.target.value
-                      )
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("p", [_vm._v("End Date")]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.selectedJob.end_date,
-                      expression: "selectedJob.end_date"
-                    }
-                  ],
-                  attrs: { type: "date", name: "end_date" },
-                  domProps: { value: _vm.selectedJob.end_date },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.selectedJob, "end_date", $event.target.value)
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("p", [_vm._v("Hours Bid")]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.selectedJob.hours_bid,
-                      expression: "selectedJob.hours_bid"
-                    }
-                  ],
-                  attrs: { type: "text", name: "hours_bid" },
-                  domProps: { value: _vm.selectedJob.hours_bid },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(
-                        _vm.selectedJob,
-                        "hours_bid",
-                        $event.target.value
-                      )
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("p", [_vm._v("Estimated Start Date")]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.selectedJob.est_start_date,
-                      expression: "selectedJob.est_start_date"
-                    }
-                  ],
-                  attrs: { type: "date", name: "est_start_date" },
-                  domProps: { value: _vm.selectedJob.est_start_date },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(
-                        _vm.selectedJob,
-                        "est_start_date",
-                        $event.target.value
-                      )
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("p", [_vm._v("Estimated End Date")]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.selectedJob.est_end_date,
-                      expression: "selectedJob.est_end_date"
-                    }
-                  ],
-                  attrs: { type: "date", name: "est_end_date" },
-                  domProps: { value: _vm.selectedJob.est_end_date },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(
-                        _vm.selectedJob,
-                        "est_end_date",
-                        $event.target.value
-                      )
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("p", [_vm._v("Bill Rate")]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.selectedJob.bill_rate,
-                      expression: "selectedJob.bill_rate"
-                    }
-                  ],
-                  attrs: { type: "text", name: "bill_rate" },
-                  domProps: { value: _vm.selectedJob.bill_rate },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(
-                        _vm.selectedJob,
-                        "bill_rate",
-                        $event.target.value
-                      )
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("p", [_vm._v("Job Status")]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.selectedJob.job_status,
-                      expression: "selectedJob.job_status"
-                    }
-                  ],
-                  attrs: { type: "text", name: "job_status" },
-                  domProps: { value: _vm.selectedJob.job_status },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(
-                        _vm.selectedJob,
-                        "job_status",
-                        $event.target.value
-                      )
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("p", [_vm._v("Max Labor Cost")]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.selectedJob.max_labor_cost,
-                      expression: "selectedJob.max_labor_cost"
-                    }
-                  ],
-                  attrs: { type: "text", name: "max_labor_cost" },
-                  domProps: { value: _vm.selectedJob.max_labor_cost },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(
-                        _vm.selectedJob,
-                        "max_labor_cost",
-                        $event.target.value
-                      )
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", { attrs: { type: "submit", value: "Submit" } })
-              ]
-            )
-          : _vm._e()
       ])
-    ])
+    ]),
+    _vm._v(" "),
+    _c("p", { staticClass: "input_heading" }, [
+      _vm._v("Select project to modify")
+    ]),
+    _vm._v(" "),
+    _c(
+      "select",
+      {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.job_id,
+            expression: "job_id"
+          }
+        ],
+        staticClass: "inputField",
+        on: {
+          change: function($event) {
+            var $$selectedVal = Array.prototype.filter
+              .call($event.target.options, function(o) {
+                return o.selected
+              })
+              .map(function(o) {
+                var val = "_value" in o ? o._value : o.value
+                return val
+              })
+            _vm.job_id = $event.target.multiple
+              ? $$selectedVal
+              : $$selectedVal[0]
+          }
+        }
+      },
+      _vm._l(_vm.jobs, function(job) {
+        return _c("option", { domProps: { value: job.job_id } }, [
+          _vm._v(
+            "\n                  " + _vm._s(job.job_name) + "\n                "
+          )
+        ])
+      })
+    ),
+    _vm._v(" "),
+    _vm.selectedRole.job_id
+      ? _c(
+          "form",
+          {
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                _vm.onSubmit($event)
+              }
+            }
+          },
+          [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.selectedRole.job_id,
+                  expression: "selectedRole.job_id"
+                }
+              ],
+              staticClass: "inputField",
+              attrs: { type: "hidden" },
+              domProps: { value: _vm.selectedRole.job_id },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.selectedRole, "job_id", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("p", { staticClass: "input_heading" }, [_vm._v("Project name")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model.trim",
+                  value: _vm.selectedRole.job_name,
+                  expression: "selectedRole.job_name",
+                  modifiers: { trim: true }
+                }
+              ],
+              staticClass: "inputField",
+              attrs: { type: "text", required: "" },
+              domProps: { value: _vm.selectedRole.job_name },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.selectedRole,
+                    "job_name",
+                    $event.target.value.trim()
+                  )
+                },
+                blur: function($event) {
+                  _vm.$forceUpdate()
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("p", { staticClass: "input_heading" }, [_vm._v("Hours Bid")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model.trim",
+                  value: _vm.selectedRole.hours_bid,
+                  expression: "selectedRole.hours_bid",
+                  modifiers: { trim: true }
+                }
+              ],
+              staticClass: "inputField",
+              attrs: { type: "text", required: "" },
+              domProps: { value: _vm.selectedRole.hours_bid },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.selectedRole,
+                    "hours_bid",
+                    $event.target.value.trim()
+                  )
+                },
+                blur: function($event) {
+                  _vm.$forceUpdate()
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("p", { staticClass: "input_heading" }, [
+              _vm._v("Estimated Start Date")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.selectedRole.est_end_date,
+                  expression: "selectedRole.est_end_date"
+                }
+              ],
+              staticClass: "inputField",
+              attrs: { type: "date", required: "" },
+              domProps: { value: _vm.selectedRole.est_end_date },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.selectedRole,
+                    "est_end_date",
+                    $event.target.value
+                  )
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("p", { staticClass: "input_heading" }, [_vm._v("Bill rate")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model.trim",
+                  value: _vm.selectedRole.bill_rate,
+                  expression: "selectedRole.bill_rate",
+                  modifiers: { trim: true }
+                }
+              ],
+              staticClass: "inputField",
+              attrs: { type: "text", required: "" },
+              domProps: { value: _vm.selectedRole.bill_rate },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.selectedRole,
+                    "bill_rate",
+                    $event.target.value.trim()
+                  )
+                },
+                blur: function($event) {
+                  _vm.$forceUpdate()
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("p", { staticClass: "input_heading" }, [_vm._v("Job status")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model.trim",
+                  value: _vm.selectedRole.job_status,
+                  expression: "selectedRole.job_status",
+                  modifiers: { trim: true }
+                }
+              ],
+              staticClass: "inputField",
+              attrs: { type: "text", required: "" },
+              domProps: { value: _vm.selectedRole.job_status },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.selectedRole,
+                    "job_status",
+                    $event.target.value.trim()
+                  )
+                },
+                blur: function($event) {
+                  _vm.$forceUpdate()
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("p", { staticClass: "input_heading" }, [
+              _vm._v("Max labor cost")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model.trim",
+                  value: _vm.selectedRole.max_labor_cost,
+                  expression: "selectedRole.max_labor_cost",
+                  modifiers: { trim: true }
+                }
+              ],
+              staticClass: "inputField",
+              attrs: { type: "text", required: "" },
+              domProps: { value: _vm.selectedRole.max_labor_cost },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.selectedRole,
+                    "max_labor_cost",
+                    $event.target.value.trim()
+                  )
+                },
+                blur: function($event) {
+                  _vm.$forceUpdate()
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "button",
+                attrs: { type: "submit", value: "Submit" }
+              },
+              [_vm._v("Update")]
+            ),
+            _vm._v(" "),
+            _vm._m(0)
+          ]
+        )
+      : _vm._e()
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "hidden input_heading",
+        staticStyle: { "text-align": "center" },
+        attrs: { id: "confirmation" }
+      },
+      [
+        _c("img", {
+          attrs: { src: "/dist/assets/images/yes.png", alt: "Logo" }
+        }),
+        _vm._v("Project updated successfully.")
+      ]
+    )
+  }
+]
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
@@ -28933,7 +28984,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-0a0357b3]{\n    margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n}\n.header[data-v-0a0357b3]{\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-0a0357b3]{\n  list-style-type:none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\nli[data-v-0a0357b3]{\n    padding-left: 7%;\n    padding-right: 8%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli[data-v-0a0357b3]:active{\n  border-color:#4bc800;\n}\nli[data-v-0a0357b3]:hover{\n  border-color: #929292;\n}\na[data-v-0a0357b3]{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/modifyBonuses.vue?0a93f19b"],"names":[],"mappings":";AAkGA;IACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyBonuses.vue","sourcesContent":["<template>\n\t<div class=\"mainDiv\">\n    <div  class=\"header\">\n\t    <ul>\n            <li><a v-on:click=\"$parent.updateView('modify-bonuses')\"  style=\"color:#4bc800\">Modify Bonuses</a></li>\n            <li><a v-on:click=\"$parent.updateView('')\"  >View Bonus History</a></li>\n            <li><a v-on:click=\"$parent.updateView('bonus-schedule')\"  >View Bonus Schedule</a></li>\n          </ul>\n     </div>     \n\t\t<h1>Modify Bonuses</h1>\n    <div class=\"row\">\n        <div class=\"col-md-10\">\n            <select class=\"input\" v-model=\"payment_id\">\n              <option v-for=\"bonus in bonuses\" v-bind:value=\"bonus.payment_id\">\n                {{bonus.payment_id}}\n              </option>\n            </select> \n          <form v-if=\"selectedPayment.payment_id\" v-on:submit.prevent=\"onSubmit\">\n            <input type='hidden' v-model=\"selectedPayment.fk_payment_type_id\">\n            <input type=\"hidden\" v-model=\"selectedPayment.payment_id\">\n            <p>Scheduled Payment Date</p>\n            <input type=\"date\" name=\"scheduled_pay_date\" v-model=\"selectedPayment.scheduled_pay_date\">\n            <p>Payment Amount</p>s\n            <input type=\"number\" name=\"payment_amount\" v-model=\"selectedPayment.payment_amount\">\n            <p>Date Paid</p>\n            <input type=\"date\" name=\"date_paid\" v-model=\"selectedPayment.date_paid\">\n            <input type=\"submit\" value=\"Submit\">\n          </form>\n      </div>\n        </div>    \n    </div> \n\t</div>\n</template>\n\n<script>\n\nimport dateFormat from 'date-fns/format';\nimport axios from 'axios';\nexport default {\n\n  name: 'modify-bonuses',\n  props: [\"user\"],\n  data() {\n    return {\n\n      bonuses: '',\n      dates: '',\n      payment_id: '',\n      selectedPayment: {}\n    }\n  },\n\n  watch: {\n    payment_id(id) {\n      [this.selectedPayment] = this.bonuses.filter(r => r.payment_id === id);\n    }\n  },\n\n  beforeMount() {\n    axios.get('/installers/payments')\n    .then(req => {\n      this.bonuses = req.data.installer_payments;\n      // this.dates = req.data.installer_payments.date_paid;\n\n      console.log(req.data.installer_payments.date_paid);\n      console.log(req.data.installer_payments);\n    })\n  },\n\n  methods: {\n    onSubmit: function(){\n      \n      axios({\n      method: 'put',\n      url: '/payments/update',\n      data: {\n      \n      payment_type_id: this.selectedPayment.fk_payment_type_id,\n      scheduled_pay_date: this.selectedPayment.scheduled_pay_date,\n      payment_amount: this.selectedPayment.payment_amount,\n      date_paid: this.selectedPayment.date_paid,\n      modified_by_id: this.user.userID,\n      }\n    })\n    .then(req => {\n      if(req.data.ok){\n        console.log('Job added!');\n      };\n    })\n    .catch(err => {\n      console.log(err);\n    })\n    }\n  },\n};\n</script>\n<style scoped>\n\n.mainDiv{\n    margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n\n}\n\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n    padding-left: 7%;\n    padding-right: 8%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\na{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-0a0357b3]{\n    margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n}\n.header[data-v-0a0357b3]{\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-0a0357b3]{\n  list-style-type:none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\nli[data-v-0a0357b3]{\n    padding-left: 7%;\n    padding-right: 8%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli[data-v-0a0357b3]:active{\n  border-color:#4bc800;\n}\nli[data-v-0a0357b3]:hover{\n  border-color: #929292;\n}\na[data-v-0a0357b3]{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/modifyBonuses.vue?66dee034"],"names":[],"mappings":";AAgHA;IACA,eAAA;KACA,iBAAA;KACA,iBAAA;KACA,yCAAA;KACA,YAAA;KACA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,eAAA;IACA,qCAAA;IACA,qBAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyBonuses.vue","sourcesContent":["<template>\n\t<div class=\"mainDiv\">\n    <div  class=\"header\">\n\t    <ul>\n            <li><a v-on:click=\"$parent.updateView('modify-bonuses')\"  style=\"color:#4bc800\">Modify Bonuses</a></li>\n            <li><a v-on:click=\"$parent.updateView('')\"  >View Bonus History</a></li>\n            <li><a v-on:click=\"$parent.updateView('bonus-schedule')\"  >View Bonus Schedule</a></li>\n          </ul>\n     </div>     \n\t\t<h1>Modify Bonuses</h1>\n    <div class=\"row\">\n        <div class=\"col-md-10\">\n            <select class=\"input\" v-model=\"payment_id\">\n              <option v-for=\"bonus in bonuses\" v-bind:value=\"bonus.payment_id\">\n                {{bonus.payment_id}}\n              </option>\n            </select> \n          <form v-if=\"selectedPayment.payment_id\" v-on:submit.prevent=\"onSubmit\">\n            <input type='hidden' v-model=\"selectedPayment.fk_payment_type_id\">\n            <input type=\"hidden\" v-model=\"selectedPayment.payment_id\">\n            <p>Scheduled Payment Date</p>\n            <input type=\"date\" name=\"scheduled_pay_date\" v-model=\"selectedPayment.scheduled_pay_date\">\n            <p>Payment Amount</p>s\n            <input type=\"number\" name=\"payment_amount\" v-model=\"selectedPayment.payment_amount\">\n            <p>Date Paid</p>\n            <input type=\"date\" name=\"date_paid\" v-model=\"selectedPayment.date_paid\">\n            <input type=\"submit\" value=\"Submit\">\n          </form>\n      </div>\n        </div>    \n    </div> \n\t</div>\n</template>\n\n<script>\n\nimport dateFormat from 'date-fns/format';\nimport axios from 'axios';\nexport default {\n\n  name: 'modify-bonuses',\n  props: [\"user\"],\n  data() {\n    return {\n\n      bonuses: '',\n      payment_id: '',\n      selectedPayment: {}\n    }\n  },\n\n  watch: {\n    payment_id(id) {\n      [this.selectedPayment] = this.bonuses.filter(r => r.payment_id === id);\n    }\n  },\n\n  beforeMount() {\n    axios.get('/installers/payments')\n    .then(req => {\n      this.bonuses = req.data.installer_payments;\n      this.getDates();\n    })\n  },\n\n  methods: {\n    onSubmit: function(){\n      \n      axios({\n      method: 'put',\n      url: '/payments/update',\n      data: {\n      \n      payment_type_id: this.selectedPayment.fk_payment_type_id,\n      scheduled_pay_date: this.selectedPayment.scheduled_pay_date,\n      payment_amount: this.selectedPayment.payment_amount,\n      date_paid: this.selectedPayment.date_paid,\n      modified_by_id: this.user.userID,\n      }\n    })\n    .then(req => {\n      if(req.data.ok){\n        console.log('Job added!');\n      };\n    })\n    .catch(err => {\n      console.log(err);\n    })\n    },\n\n     date: function(d) {\n\n      return dateFormat(d, [\"YYYY-MM-DD\"])\n\n    },\n\n    getDates: function() {\n\n      for (let i = 0; i < this.bonuses.length; i++) {\n      \n          this.bonuses[i].date_paid = this.date(this.bonuses[i].date_paid);\n          this.bonuses[i].scheduled_pay_date = this.date(this.bonuses[i].scheduled_pay_date);\n\n          console.log(this.bonuses[i].date_paid)\n        }\n  \n      }\n  },\n};\n</script>\n<style scoped>\n\n.mainDiv{\n    margin-top: 7%;\n     margin-right: 7%;\n     margin-left: 18%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     height: 25%;\n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n\n}\n\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n    padding-left: 7%;\n    padding-right: 8%;\n    line-height: 4;\n    border-bottom: 3px solid transparent;\n    margin-bottom: -10px;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\na{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n</style>"],"sourceRoot":""}]);
 
 // exports
 
@@ -28993,7 +29044,6 @@ exports.push([module.i, "\n.mainDiv[data-v-0a0357b3]{\n    margin-top: 7%;\n    
     return {
 
       bonuses: '',
-      dates: '',
       payment_id: '',
       selectedPayment: {}
     }
@@ -29012,10 +29062,7 @@ exports.push([module.i, "\n.mainDiv[data-v-0a0357b3]{\n    margin-top: 7%;\n    
     __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/installers/payments')
     .then(function (req) {
       this$1.bonuses = req.data.installer_payments;
-      // this.dates = req.data.installer_payments.date_paid;
-
-      console.log(req.data.installer_payments.date_paid);
-      console.log(req.data.installer_payments);
+      this$1.getDates();
     })
   },
 
@@ -29042,7 +29089,27 @@ exports.push([module.i, "\n.mainDiv[data-v-0a0357b3]{\n    margin-top: 7%;\n    
     .catch(function (err) {
       console.log(err);
     })
-    }
+    },
+
+     date: function(d) {
+
+      return __WEBPACK_IMPORTED_MODULE_0_date_fns_format___default()(d, ["YYYY-MM-DD"])
+
+    },
+
+    getDates: function() {
+      var this$1 = this;
+
+
+      for (var i = 0; i < this.bonuses.length; i++) {
+      
+          this$1.bonuses[i].date_paid = this$1.date(this$1.bonuses[i].date_paid);
+          this$1.bonuses[i].scheduled_pay_date = this$1.date(this$1.bonuses[i].scheduled_pay_date);
+
+          console.log(this$1.bonuses[i].date_paid)
+        }
+  
+      }
   },
 });
 

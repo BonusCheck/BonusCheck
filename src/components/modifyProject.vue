@@ -20,8 +20,8 @@
                 <input class="inputField" type="text" v-model.trim="selectedRole.job_name" required>
                 <p class="input_heading">Hours Bid</p>
                 <input class="inputField" type="text" v-model.trim="selectedRole.hours_bid" required>
-                <!-- <p class="input_heading">Estimated Start Date</p>
-                <input class="inputField" type="date" v-model.trim="selectedRole.est_start_date" required> -->
+                <p class="input_heading">Estimated Start Date</p>
+                <input class="inputField" type="date" v-model="selectedRole.est_end_date" required>
                 <p class="input_heading">Bill rate</p>
                 <input class="inputField" type="text" v-model.trim="selectedRole.bill_rate" required>
                 <p class="input_heading">Job status</p>
@@ -78,6 +78,23 @@ export default {
   },
   
   methods: {
+
+    date: function(d) {
+
+      return dateFormat(d, ["YYYY-MM-DD"])
+
+    },
+
+    getDates: function() {
+
+      for (let i = 0; i < this.jobs.length; i++) {
+      
+          this.jobs[i].est_start_date = this.date(this.jobs[i].est_start_date);
+          this.jobs[i].est_end_date = this.date(this.jobs[i].est_end_date);
+        }
+  
+    },
+
     onSubmit: function(){
       axios({
         method: 'put',
@@ -86,7 +103,8 @@ export default {
           job_id: this.selectedRole.job_id,
           job_name: this.selectedRole.job_name,
           hours_bid: this.selectedRole.hours_bid,
-          // est_end_date: this.selectedRole.est_end_date,
+          est_start_date: this.selectedRole.est_start_date,
+          est_end_date: this.selectedRole.est_end_date,
           bill_rate: this.selectedRole.bill_rate,
           job_status: this.selectedRole.job_status,
           max_labor_cost: this.selectedRole.max_labor_cost,
@@ -116,6 +134,10 @@ export default {
     })
     .then(req => {
       this.jobs = req.data.jobs;
+      this.getDates();
+      console.log(this.user.roll)
+
+      console.log(this.date(req.data.jobs.est_end_date))
       console.log(this.jobs);
     })
     .catch(err => {

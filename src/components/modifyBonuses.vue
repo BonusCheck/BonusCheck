@@ -44,7 +44,6 @@ export default {
     return {
 
       bonuses: '',
-      dates: '',
       payment_id: '',
       selectedPayment: {}
     }
@@ -60,10 +59,7 @@ export default {
     axios.get('/installers/payments')
     .then(req => {
       this.bonuses = req.data.installer_payments;
-      // this.dates = req.data.installer_payments.date_paid;
-
-      console.log(req.data.installer_payments.date_paid);
-      console.log(req.data.installer_payments);
+      this.getDates();
     })
   },
 
@@ -90,7 +86,25 @@ export default {
     .catch(err => {
       console.log(err);
     })
-    }
+    },
+
+     date: function(d) {
+
+      return dateFormat(d, ["YYYY-MM-DD"])
+
+    },
+
+    getDates: function() {
+
+      for (let i = 0; i < this.bonuses.length; i++) {
+      
+          this.bonuses[i].date_paid = this.date(this.bonuses[i].date_paid);
+          this.bonuses[i].scheduled_pay_date = this.date(this.bonuses[i].scheduled_pay_date);
+
+          console.log(this.bonuses[i].date_paid)
+        }
+  
+      }
   },
 };
 </script>

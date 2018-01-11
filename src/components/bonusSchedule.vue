@@ -2,10 +2,10 @@
 	  <div class="mainDiv">
           <div  class="header">
             <ul>
-               <li><a class="header_a" v-on:click="$parent.updateView('add-bonus')">Add Bonus</a></li>
+               <li v-if="user.roll == 'Admin' || 'Project Coordinator'"><a class="header_a" v-on:click="$parent.updateView('add-bonus')">Add Bonus</a></li>
                <li><a class="header_a" v-on:click="$parent.updateView('paid-bonus')">Paid Bonus</a></li>
                <li><a class="header_a" v-on:click="$parent.updateView('bonus-schedule')"  style="color:#4bc800">Unpaid Bonus</a></li>
-               <li><a class="header_a" v-on:click="$parent.updateView('all-bonus')">All Bonus</a></li>
+               <li><a class="header_a" v-on:click="$parent.updateView('modify-bonuses')">All Bonus</a></li>
             </ul>
           </div>     
       
@@ -26,7 +26,7 @@
                                     <td>{{ bonus.scheduled_payment_amount }}</td>
                                     <td>{{ date(bonus.scheduled_pay_date) }}</td>
                                     <td>{{ bonus.payment_amount }}</td>
-                                    <td>{{ bonus.date_paid }}</td>
+                                    <td>{{ date(bonus.date_paid) }}</td>
                                     <td class="text-center"><a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
                                 </tr>
                                 
@@ -52,21 +52,10 @@ export default {
   },
   methods: {
 
-    getDates: function() {
-
-      for (let k in this.bonuses) {
-        if ( k == 'date_paid' || 'scheduled_pay_date' ) {
-
-          this.$set(this.dates(k, this.bonuses[k]));
-          
-        }
-      }
-      
-    },
-
     date: function(d) {
 
-      return dateFormat(d, ["MM-DD-YYYY"])
+      return dateFormat(d, ["YYYY-MM-DD"])
+
     }
 
 
@@ -75,12 +64,7 @@ export default {
   	axios.get('/installers/payments')
   	.then(req => {
       this.bonuses = req.data.installer_payments;
-      this.getDates();
-      console.log(this.dates);
-
-      // this.$set(this.question[i].choice_in_random_order[j], 'is_success', false)
-
-  		console.log(dateFormat(req.data.installer_payments[0].date_paid, ['MM-DD-YYYY']));
+  		
   	})
   }
 };
