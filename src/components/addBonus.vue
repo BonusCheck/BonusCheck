@@ -38,7 +38,7 @@
           </div>
           <div class="col-md-6">      
             		<p class="input_heading">Scheduled payment amount</p>
-            		<input  class="inputField" type="number" v-model.number="scheduled_payment_amount">
+            		<input  step="0.01" class="inputField" type="number" v-model.number="scheduled_payment_amount">
           </div>
       </div>
       <div class="row">    

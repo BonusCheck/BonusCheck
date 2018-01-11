@@ -15,7 +15,7 @@
             <p class="input_heading">Scheduled pay date</p>
             <input class="inputField" type="date" v-model="scheduled_pay_date">
             <p class="input_heading">Scheduled payment amount</p>
-            <input class="inputField" type="number" v-model.number="scheduled_payment_amount">
+            <input class="inputField" type="number" step="0.01" v-model.number="scheduled_payment_amount">
             <p class="input_heading">Installer</p>
             <select class="inputField" v-model.number="fk_installer_id">
               <option v-for="installer in installers" v-bind:value="installer.installer_id">

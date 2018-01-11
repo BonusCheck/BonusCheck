@@ -61,7 +61,7 @@
             </div> 
             <div class="col-md-6"> 
             	<p class="input_heading">Max Labor Cost</p>
-            	<input class="inputField" type="number" name="max_labor_cost" v-model.number="max_labor_cost">
+            	<input class="inputField" type="number" step="0.01" name="max_labor_cost" v-model.number="max_labor_cost">
             </div> 
         </div>     
 
