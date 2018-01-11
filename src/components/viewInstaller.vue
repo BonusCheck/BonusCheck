@@ -140,6 +140,10 @@ td{
     line-height: 1.42857143;
     vertical-align: top;
     border-top: 1px solid #ddd;
+    text-align: center;
+}
+th{
+  text-align: center;
 }
 ul{
   list-style-type:none;

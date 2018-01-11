@@ -8,23 +8,22 @@
             
           </ul>
       </div>
-       <h1>Modify installer</h1>
-        <p class="input_heading">Select installer to modify</p>
-              <select class="inputField" v-model="installer_id">
-                <option v-for="installer in installers" v-bind:value="installer.installer_id">
-                  {{installer.first_name}} {{installer.last_name}}
-                </option>
-              </select>
+            <p class="input_heading">Select installer to modify</p>
+                  <select class="inputField" v-model="installer_id">
+                    <option v-for="installer in installers" v-bind:value="installer.installer_id">
+                      {{installer.first_name}} {{installer.last_name}}
+                    </option>
+                  </select>
 
-              <form v-if="selectedRole.installer_id" v-on:submit.prevent="onSubmit">
-                <input class="inputField" type="hidden" v-model="selectedRole.installer_id">
-                <p class="input_heading">Installer name</p>
-                <input class="inputField" type="text" v-model.trim="selectedRole.first_name" required>
-                <p class="input_heading">Installer lastName</p>
-                <input class="inputField" type="text" v-model.trim="selectedRole.last_name" required>
-                <button class="button" type="submit" value="Submit">Update</button>
-                <p style="text-align:center;" class="hidden input_heading" id="confirmation"><img src="/dist/assets/images/yes.png"  alt="Logo">Installer updated successfully.</p>
-              </form>
+                  <form v-if="selectedRole.installer_id" v-on:submit.prevent="onSubmit">
+                    <input class="inputField" type="hidden" v-model="selectedRole.installer_id">
+                    <p class="input_heading">Installer name</p>
+                    <input class="inputField" type="text" v-model.trim="selectedRole.first_name" required>
+                    <p class="input_heading">Installer lastName</p>
+                    <input class="inputField" type="text" v-model.trim="selectedRole.last_name" required>
+                    <button class="button" type="submit" value="Submit">Update</button>
+                    <p style="text-align:center;" class="hidden input_heading" id="confirmation"><img src="/dist/assets/images/yes.png"  alt="Logo">Installer updated successfully.</p>
+                  </form>
   </div>
  
 </template>

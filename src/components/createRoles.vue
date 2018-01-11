@@ -100,6 +100,30 @@ export default {
   			console.log(err);
   		})
   	}
+  },
+  beforeMount(){
+    axios({
+      method: 'get',
+      url: '/users'
+    })
+    .then(req => {
+      this.users = req.data.users;
+    })
+    .catch(err => {
+      console.log(err);
+    })
+
+    //Get role list
+    axios({
+      method: 'get',
+      url: '/installers/roles'
+    })
+    .then(req => {
+      this.roles = req.data.roles;
+    })
+    .catch(err => {
+      console.log(err);
+    })
   }
 };
 </script>

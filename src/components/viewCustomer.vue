@@ -17,8 +17,7 @@
                                   <th>CustomerID</th>
                                   <th>CustomerName</th>
                                   <th>DateCreated</th>
-                                  <th>DateCreated</th>
-                                  <th>DateCreated</th>
+                                  <th>DateModified</th>
                                   <th class="text-center">Action</th>
                               </tr>
                           </thead>
@@ -27,7 +26,6 @@
                                 <td>{{ customer.customer_id }} </td>
                                 <td>{{ customer.customer_name }}</td>
                                 <td>{{ customer.date_created }}</td>
-                                <td>{{ customer.created_by_id }}</td>
                                 <td>{{ customer.date_modified }}</td>
                                 <td class="text-center"><a href="#" @click="deletecustomer(customer)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del
                                 </a>
@@ -126,6 +124,10 @@ td{
     line-height: 1.42857143;
     vertical-align: top;
     border-top: 1px solid #ddd;
+    text-align: center;
+}
+th{
+  text-align: center;
 }
 ul{
   list-style-type:none;
