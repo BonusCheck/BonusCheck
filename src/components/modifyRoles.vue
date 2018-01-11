@@ -27,15 +27,15 @@
               <p>Role weight</p>
               <input type="number" v-model.number="selectedRole.role_weight" required>
               <p>Minimum base</p>
-              <input type="number" v-model.number="selectedRole.min_base" required>
+              <input type="number" step="0.01" v-model.number="selectedRole.min_base" required>
               <p>Maximum base</p>
-              <input type="number" v-model.number="selectedRole.max_base" required>
+              <input type="number" step="0.01" v-model.number="selectedRole.max_base" required>
               <p>Individual bonus</p>
-              <input type="number" v-model.number="selectedRole.individual_bonus" required>
+              <input type="number" step="0.01" v-model.number="selectedRole.individual_bonus" required>
               <p>Team bonus</p>
-              <input type="number" v-model.number="selectedRole.team_bonus" required>
+              <input type="number" step="0.01" v-model.number="selectedRole.team_bonus" required>
               <p>Bonus weight</p>
-              <input type="number" v-model.number="selectedRole.bonus_weight" required>
+              <input type="number" step="0.01" v-model.number="selectedRole.bonus_weight" required>
               <button class="button" type="submit" value="Submit">Create</button>
             </form>    
         </div>  

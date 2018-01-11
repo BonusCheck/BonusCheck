@@ -18,9 +18,9 @@
           				<option v-for="job in jobs" v-bind:value="job.job_id">{{job.job_name}}</option>
           			</select>
           			<p class="input_heading">Regular hours worked</p>
-          			<input class="inputField" type="number" v-model.number="reg_hours_worked" required>
+          			<input class="inputField" type="number" step="0.1" v-model.number="reg_hours_worked" required>
           			<p class="input_heading">Overtime hours worked</p>
-          			<input class="inputField" type="number" v-model.number="ot_hours_worked" required>
+          			<input class="inputField" type="number" step="0.1" v-model.number="ot_hours_worked" required>
           			<p class="input_heading">Work date</p>
           			<input class="inputField" type="date" v-model="work_date" required>
           			 <button class="button" type="submit" value="Submit">Add hours</button>

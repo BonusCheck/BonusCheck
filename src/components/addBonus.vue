@@ -8,10 +8,9 @@
            <li><a v-on:click="$parent.updateView('all-bonus')">All Bonus</a></li>
         </ul>
       </div>  
-		<p class="heading">Add Bonus</p>
+		
 		<form v-on:submit.prevent="onSubmit" id="form">
-      <div class="row">
-          <div class="col-md-6">
+     
         			  <p class="input_heading">Installer Name</p>
             		<select class="inputField" v-model="fk_installer_id" required>
                     <option value='' placeholder="Choose a role"></option>
@@ -19,8 +18,7 @@
                      {{installer.first_name}} {{installer.last_name}}
                    </option>
                 </select>
-          </div>
-          <div class="col-md-6">
+          
                 <p class="input_heading">Job name</p>
                 <select class="inputField" v-model="fk_job_id" required>
                     <option value='' placeholder="Choose a role"></option>
@@ -28,21 +26,23 @@
                       {{job.job_name}}
                    </option>
                 </select>
-          </div>
           
-      </div> 
-      <div class="row"> 
-          <div class="col-md-6">
+          <!-- <div class="col-md-6">
             		<p class="input_heading">scheduled pay date</p>
             		<input  class="inputField" type="date" v-model.number="scheduled_pay_date">
-          </div>
-          <div class="col-md-6">      
+          </div> -->
+               
             		<p class="input_heading">Scheduled payment amount</p>
-            		<input  class="inputField" type="number" v-model.number="scheduled_payment_amount">
+<<<<<<< HEAD
+            		<input  step="0.01" class="inputField" type="number" v-model.number="scheduled_payment_amount">
           </div>
       </div>
       <div class="row">    
           <div class="col-md-6">      
+=======
+            		<input  class="inputField" type="number" v-model.number="scheduled_payment_amount">
+                
+>>>>>>> 7cc695f88b8e1447a58f9d02120b6c782809863d
             		<p class="input_heading">Payment type</p>
             		<select class="inputField" v-model="fk_payment_type_id" required>
                     <option value='' placeholder="Choose a role"></option>
@@ -50,9 +50,7 @@
                       {{payment_type.payment_type}}
                    </option>
                 </select>
-          </div>
           
-      </div>
          
             		<button class="button" type="submit" value="Submit">Add</button>
             		<p style="text-align:center;" class="hidden input_heading" id="confirmation"><img src="/dist/assets/images/yes.png"  alt="Logo">Bonus added</p>
@@ -74,7 +72,7 @@
           fk_payment_type_id:'',
           fk_job_id:'',
           scheduled_payment_amount:'',
-          scheduled_pay_date:'',
+          // scheduled_pay_date:'',
           created_by_id:'', 
           modified_by_id:''
         }
@@ -89,13 +87,14 @@
               fk_payment_type_id: this.fk_payment_type_id,
               fk_job_id: this.fk_job_id,
               scheduled_payment_amount: this.scheduled_payment_amount,
-              scheduled_pay_date: '01/01/2018',
+              // scheduled_pay_date: '01/01/2018',
               created_by_id:this.user.userID, 
               modified_by_id:this.user.userID
           }
           })
           .then(req => {
-            if(req.data.ok){
+            if(req.status===200){
+              $('.inputField').val('');
               document.getElementById('confirmation').classList.remove('hidden');
             };
           })

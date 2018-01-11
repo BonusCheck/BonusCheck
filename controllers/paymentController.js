@@ -54,10 +54,8 @@ paymentRouter.delete("/delete", function(req, res) {
 
 paymentRouter.put("/update", function(req, res) {
   var condition = "payment_type_id = " + req.body.payment_type_id;
-
-  payment_type.update({
-    //HOW DO I TAKE IN RANDOM FILEDS HERE?  DO I COMPARE THE VALUES FIELD BY FIELD?
-  }, condition, function(result) {
+  var objColVals = req.body;
+  payment_type.update(objColVals, condition, function(result) {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();

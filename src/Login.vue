@@ -42,6 +42,9 @@
 							<input type="password" placeholder="Password" required id="password" v-model.trim="password"/>
 						</div>
 						<div>
+							<p id="error" class="hidden">Login failed!</p>
+						</div>
+						<div>
 							<input type="submit" class="login" value="Log in" />
 							<a style="color: #FF0000 ;" href="#">
 								Forgot password?
@@ -62,7 +65,15 @@ export default {
   data(){
   	return {
   		username: '',
-  		password: ''
+  		password: '',
+  		valid: '',
+  	}
+  },
+  watch: {
+  	valid(valid){
+  		if(!valid){
+  			document.getElementById('error').classList.remove('hidden');
+  		}
   	}
   },
   methods: {
