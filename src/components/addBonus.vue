@@ -27,22 +27,12 @@
                    </option>
                 </select>
           
-          <!-- <div class="col-md-6">
-            		<p class="input_heading">scheduled pay date</p>
-            		<input  class="inputField" type="date" v-model.number="scheduled_pay_date">
-          </div> -->
+                <div class="col-md-6">
+                  		<p class="input_heading">scheduled pay date</p>
+                  		<input  class="inputField" type="date" v-model.number="scheduled_pay_date">
+                </div>
                
             		<p class="input_heading">Scheduled payment amount</p>
-<<<<<<< HEAD
-            		<input  step="0.01" class="inputField" type="number" v-model.number="scheduled_payment_amount">
-          </div>
-      </div>
-      <div class="row">    
-          <div class="col-md-6">      
-=======
-            		<input  class="inputField" type="number" v-model.number="scheduled_payment_amount">
-                
->>>>>>> 7cc695f88b8e1447a58f9d02120b6c782809863d
             		<p class="input_heading">Payment type</p>
             		<select class="inputField" v-model="fk_payment_type_id" required>
                     <option value='' placeholder="Choose a role"></option>
@@ -72,7 +62,7 @@
           fk_payment_type_id:'',
           fk_job_id:'',
           scheduled_payment_amount:'',
-          // scheduled_pay_date:'',
+          scheduled_pay_date:'',
           created_by_id:'', 
           modified_by_id:''
         }
@@ -87,7 +77,7 @@
               fk_payment_type_id: this.fk_payment_type_id,
               fk_job_id: this.fk_job_id,
               scheduled_payment_amount: this.scheduled_payment_amount,
-              // scheduled_pay_date: '01/01/2018',
+              scheduled_pay_date: this.scheduled_pay_date,
               created_by_id:this.user.userID, 
               modified_by_id:this.user.userID
           }
@@ -101,7 +91,24 @@
           .catch(err => {
             console.log(err);
           })
-        }
+        },
+
+        date: function(d) {
+
+          return dateFormat(d, ["YYYY-MM-DD"])
+
+        },
+
+        getDates: function() {
+
+          for (let i = 0; i < this.jobs.length; i++) {
+          
+              this.jobs[i].scheduled_pay_date = this.date(this.jobs[i].scheduled_pay_date);
+
+              console.log(this.jobs[i].date_paid)
+            }
+      
+          }
       },
        beforeMount(){
 

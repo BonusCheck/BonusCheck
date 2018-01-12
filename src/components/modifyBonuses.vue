@@ -2,7 +2,7 @@
 	<div class="mainDiv">
     <div  class="header">
 	    <ul>
-            <li><a v-on:click="$parent.updateView('modify-bonuses')"  style="color:#4bc800">Modify Bonuses</a></li>
+            <li v-if="user.roll == 'Admin' || 'Project Coordinator'"><a v-on:click="$parent.updateView('modify-bonuses')"  style="color:#4bc800">Modify Bonuses</a></li>
             <li><a v-on:click="$parent.updateView('')"  >View Bonus History</a></li>
             <li><a v-on:click="$parent.updateView('bonus-schedule')"  >View Bonus Schedule</a></li>
           </ul>
