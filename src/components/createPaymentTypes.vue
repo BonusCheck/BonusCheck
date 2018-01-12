@@ -2,20 +2,21 @@
 	<div class="mainDiv">
       <div  class="header">
   	    <ul>
+              <li><a v-on:click="$parent.updateView('create-payment-types')" style="color:#4bc800">Create Payments Types</a></li>
               <li><a v-on:click="$parent.updateView('payment-history')">View Payment </a></li>
               
               <li><a v-on:click="$parent.updateView('modify-payments')">Modify Payments</a></li>
-              <li><a v-on:click="$parent.updateView('create-payment-types')" style="color:#4bc800">Create Payments Types</a></li>
+              
               <!-- <li><a v-on:click="$parent.updateView('modify-payment-types')">Modify Payment Types</a></li> -->
             </ul>
          </div>   
 		
       		<form v-on:submit.prevent="onSubmit" id="form">
              <div class="row row1">
-                <div class="col-md-8">
+                <div class="col-md-8 col-sm-8 col-xs-8">
             			  <input class="input" type="text" v-model.trim="payment_type">
                 </div> 
-                 <div class="col-md-3"> 
+                 <div class="col-md-3 col-xs-3 col-sm-3"> 
             			  <button class="button" type="submit" value="Submit">Submit</button>
                  </div>            
               </div> 
@@ -146,7 +147,7 @@ form{
     box-shadow: inset 0 -2px 0 #45b900!important;
     padding: 12px;
     margin-left: -15px;
-    width: 50%;
+    width: 120px;
     margin-top: 14px;
 
 }

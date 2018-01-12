@@ -53,7 +53,8 @@ export default {
       }
       })
       .then(req => {
-        if(req.data.ok){
+        if(req.status===200){
+          $('.inputField').val('');
           document.getElementById('confirmation').classList.remove('hidden');
         };
       })

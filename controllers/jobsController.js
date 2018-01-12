@@ -29,9 +29,14 @@ jobsRouter.get("/", function(req, res) {
 jobsRouter.post("/add", function(req, res) {
   console.log(req);
   job.create([
-    "created_by_id", "modified_by_id", "job_name", "start_date", "end_date", "hours_bid", "est_start_date", "est_end_date", "fk_customer_id", "bill_rate", "job_status", "max_labor_cost"
+    "created_by_id", "modified_by_id", "job_name",  "hours_bid",
+      "fk_customer_id", "bill_rate", "job_status", "max_labor_cost",
+      "start_date", "end_date", "est_start_date", "est_end_date"
   ], [
-    req.body.created_by_id, req.body.modified_by_id, req.body.job_name, req.body.start_date, req.body.end_date, req.body.hours_bid, req.body.est_start_date, req.body.est_end_date, req.body.fk_customer_id, req.body.bill_rate, req.body.job_status, req.body.max_labor_cost
+    req.body.created_by_id, req.body.modified_by_id, req.body.job_name, req.body.hours_bid,  
+    req.body.fk_customer_id, req.body.bill_rate, req.body.job_status, req.body.max_labor_cost,
+    req.body.start_date, req.body.end_date, req.body.est_start_date, req.body.est_end_date
+
   ], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });

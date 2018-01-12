@@ -2,15 +2,16 @@
 	<div class="mainDiv">
     <div  class="header">
 	    <ul>
+            <li><a v-on:click="$parent.updateView('create-payment-types')">Create Payments Types</a></li>
             <li><a v-on:click="$parent.updateView('payment-history')" style="color:#4bc800">View Payment </a></li>
             
             <li><a v-on:click="$parent.updateView('modify-payments')">Modify Payments</a></li>
-            <li><a v-on:click="$parent.updateView('create-payment-types')">Create Payments Types</a></li>
+            
             <!-- <li><a v-on:click="$parent.updateView('modify-payment-types')">Modify Payment Types</a></li> -->
           </ul>
       </div>
       <div  class="container">
-                <div class="row col-md-10 custyle">
+                <div class="row  custyle">
                     <table class="table table-striped custab">
                           <thead>
                               <tr>
@@ -25,8 +26,8 @@
                             
                                 <td>{{ payment.payment_type_id }} </td>
                                 <td>{{ payment.payment_type }}</td>
-                                <td>{{ payment.date_created }}</td>
-                                <td>{{ payment.date_modified }}</td>
+                                <td>{{ date(payment.date_created) }}</td>
+                                <td>{{ date(payment.date_modified) }}</td>
                                 <td class="text-center"><a href="#" @click="deletepayment(payment)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del
                                 </a>
                                 </td>
@@ -42,6 +43,7 @@
 
 <script>
 
+import dateFormat from 'date-fns/format';
 import axios from 'axios';
 
 export default {
@@ -54,7 +56,7 @@ export default {
         }
       },
     methods: {
-       deletepayment (Payment) {
+       deletepayment (payment) {
         // open the modal using the refs
          this.payment_type_id = payment.payment_type_id;
            axios({
@@ -72,6 +74,9 @@ export default {
             console.log(err);
           })
        } ,
+       date: function(d) {
+          return dateFormat(d, ["YYYY-MM-DD"])
+        },
        getData: function(){
        axios.get('/payment-types')
         .then(req => {
@@ -117,10 +122,13 @@ export default {
   border-bottom: 1px solid #ebebeb;
     
 }
+table{
+  width: 91%;
+}
 td{
     padding: 8px;
     line-height: 1.42857143;
-    vertical-align: top;
+    
     border-top: 1px solid #ddd;
     text-align: center;
 }

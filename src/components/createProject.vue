@@ -19,45 +19,54 @@
             	<p class="input_heading">Project Name</p>
             	<input class="inputField" type="text" name="job_name" v-model.trim="job_name">
             </div> 
-            <div class="col-md-6"> 
-            	<p class="input_heading">Start Date</p>
-            	<input class="inputField" type="date" name="start_date" v-model.trim="start_date">
-            </div>  
-        </div>
-        <div class="row"> 
-            <div class="col-md-6">     
-            	<p class="input_heading">End Date</p>
-            	<input class="inputField" type="date" name="end_date" v-model.trim="end_date">
-            </div>
             <div class="col-md-6">  
-            	<p class="input_heading">Hours Bid</p>
-            	<input class="inputField" type="number" name ="hours_bid" v-model.number="hours_bid">
+              <p class="input_heading">Hours Bid</p>
+              <input class="inputField" type="number" name ="hours_bid" v-model.number="hours_bid">
+            </div> 
+             
+        </div>
+       <div class="row">
+        <div class="col-md-6"> 
+              <p class="input_heading">Start Date</p>
+              <input class="inputField" type="date" name="start_date" v-model.trim="start_date">
             </div>  
+            <div class="col-md-6">     
+              <p class="input_heading">End Date</p>
+              <input class="inputField" type="date" name="end_date" v-model.trim="end_date">
+            </div>
+             
         </div>      
         <div class="row">
             <div class="col-md-6">
-            	<p class="input_heading">Estimated Start Date</p>
-            	<input class="inputField" type="date" name="est_start_date" v-model.trim="est_start_date">
+              <p class="input_heading">Estimated Start Date</p>
+              <input class="inputField" type="date" name="est_start_date" v-model.trim="est_start_date">
             </div>
             <div class="col-md-6">  
-            	<p class="input_heading">Estimated End Date</p>
-            	<input class="inputField" type="date" name="est_end_date" v-model.trim="est_end_date">
+              <p class="input_heading">Estimated End Date</p>
+              <input class="inputField" type="date" name="est_end_date" v-model.trim="est_end_date">
             </div>  
-        </div>
+        </div> 
         <div class="row">
             <div class="col-md-6">      
-            	<p class="input_heading">Customer ID</p>
-            	<input class="inputField" type="number" name="fk_customer_id" v-model.number="fk_customer_id">
+            	<p class="input_heading">Customer </p>
+              <select class=" inputField dropdown" v-model="fk_customer_id" required>
+                <option class="option" v-for="customer in customers" v-bind:value="customer.customer_id">{{customer.customer_name}}</option>
+              </select>
+
             </div>
             <div class="col-md-6">  
             	<p class="input_heading">Bill Rate</p>
-            	<input class="inputField" type="text" name="bill_rate" v-model.trim="bill_rate">
+            	<input class="inputField" type="number" name="bill_rate" v-model.number="bill_rate">
             </div>
         </div>    
         <div class="row">    
             <div class="col-md-6">  
             	<p class="input_heading">Job Status</p>
-            	<input class="inputField" type="text" name="job_status" v-model.trim="job_status">
+            
+             <select class="dropdown inputField" v-model="job_status" required>
+              <option class="option" value="Open">Open</option>
+              <option class="option" value="Close">Close</option>
+            </select>
             </div> 
             <div class="col-md-6"> 
             	<p class="input_heading">Max Labor Cost</p>
@@ -66,6 +75,7 @@
         </div>     
 
             <button class="button" type="submit" value="Submit">Create Project</button>
+            <p style="text-align:center;" class="hidden input_heading" id="confirmation"><img src="/dist/assets/images/yes.png"  alt="Logo">Project added</p>
              
     </form>
 	</div>
@@ -88,11 +98,12 @@ export default {
     	end_date: '',
     	hours_bid: '',
     	est_start_date: '',
-    	est_end_date: '',
+    	 est_end_date: '',
     	fk_customer_id: '',
     	bill_rate: '',
     	job_status: '',
-    	max_labor_cost: ''
+    	max_labor_cost: '',
+      customers: {}
     }
   },
   methods: {
@@ -102,7 +113,7 @@ export default {
         method: 'post',
         url: '/jobs/add',
         data: {
-        created_by_id: this.user.userID,
+      created_by_id: this.user.userID,
     	modified_by_id: this.user.userID, 
     	job_name: this.job_name,
     	start_date: this.start_date,
@@ -117,8 +128,10 @@ export default {
       }
       })
       .then(req => {
-        if(req.data.ok){
-          console.log('Job added!');
+        if(req.status===200){
+          $('.inputField').val('');
+          document.getElementById('confirmation').classList.remove('hidden');
+          console.log('Customer added!');
         };
       })
       .catch(err => {
@@ -128,6 +141,16 @@ export default {
   },
   beforeMount(){
   	console.log(this);
+    axios({
+      method: 'get',
+      url: '/customers'
+    })
+    .then(req => {
+      this.customers = req.data.customers;
+    })
+    .catch(err => {
+      console.log(err);
+    })
   }
 }; 
 </script>

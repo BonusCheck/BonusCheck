@@ -2,10 +2,11 @@
 	<div class="mainDiv">
   <div  class="header">
     <ul>
+            <li><a v-on:click="$parent.updateView('create-payment-types')">Create Payments Types</a></li>
             <li><a v-on:click="$parent.updateView('payment-history')">View Payment </a></li>
             
             <li><a v-on:click="$parent.updateView('modify-payments')" style="color:#4bc800">Modify Payments</a></li>
-            <li><a v-on:click="$parent.updateView('create-payment-types')">Create Payments Types</a></li>
+            
             <!-- <li><a v-on:click="$parent.updateView('modify-payment-types')">Modify Payment Types</a></li> -->
           </ul>
       </div>    

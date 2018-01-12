@@ -47,41 +47,25 @@
           <a v-on:click="$parent.updateView('create-roles')"><i class="fa fa-users fa-lg"></i> Roles</a> 
           </li>
           <li class="has-children bookmarks">
-          <a  v-on:click="$parent.updateView('payment-history')"><i class="fa fa-usd fa-lg"></i> Payments</a>
+          <a  v-on:click="$parent.updateView('create-payment-types')"><i class="fa fa-usd fa-lg"></i> Payments</a>
           
         </li>
 
         <li class="has-children bookmarks" v-if="user.roll == 'Admin' || 'Project Coordinator' || 'Project Manager' || 'Installer'">
-          <a  v-on:click="$parent.updateView('bonus-schedule')"><i class="fa fa-table"></i> Bonus</a>
-          
-       
-         <li class="has-children users">
-          <a v-on:click="$parent.updateView('create-roles')"><i class="fa fa-user"></i> Roles</a>       
-          <!-- <ul>
-           <li><a v-on:click="$parent.updateView('')">View transaction logs</a></li>
-           <li><a v-on:click="$parent.updateView('')">View project data</a></li>
-          </ul> -->
-        </li>
-		    <li class="has-children bookmarks">
-          <a  v-on:click="$parent.updateView('payment-history')"><i class="fa fa-table"></i> Payments</a>
-          
-        </li> 
-        
-       
-        
-       
-
-         <li class="has-children users" v-if="user.roll == 'Admin' || 'Project Coordinator'">
-          <a  v-on:click="$parent.updateView('all-project')"><i class="fa fa-user"></i> Project</a>                 
+          <a  v-on:click="$parent.updateView('add-bonus')"><i class="fa fa-money fa-lg"></i> Bonus</a>
+                    
         </li>
 
-        <li class="has-children users" v-if="user.roll == 'Admin' || 'Project Coordinator'">
-          <a v-on:click="$parent.updateView('create-roles')"><i class="fa fa-user"></i> Admin</a>       
-          <!-- <ul>
-           <li><a v-on:click="$parent.updateView('create-roles')">Create roles</a></li>
-           <li><a v-on:click="$parent.updateView('modify-roles')">Modify Roles</a></li>
-          </ul> -->
+        <li class="has-children users" v-if="user.roll == 'Admin' || 'Project Coordinator' || 'Project Manager' || 'Installer'">
+          <a  v-on:click="$parent.updateView('create-project')"><i class="fa fa-briefcase fa-lg"></i> Jobs</a>       
+         
         </li>
+
+        <li class="has-children users">
+          <a  v-on:click="$parent.updateView('add-hours')"><i class="fa fa-clock-o "></i> Time</a>                 
+        </li>
+		    
+     
     </ul>
     </nav>
         <!-- %%%%%%%%  Side NAVBAR END %%%%%%% -->
@@ -544,7 +528,7 @@ Top Navigation
   .cd-top-nav a {
     display: block;
     font-size: 1.4rem;
-    color: #ffffff;
+    color: #adadad;
   }
   .cd-top-nav > li {
     display: inline-block;
@@ -623,6 +607,8 @@ Sidebar
 .cd-side-nav > ul > li > a {
   padding-left: calc(5% + 24px);
   border-bottom: 1px solid #373d44;
+  font-size: 13px;
+  font-weight: bold;
 }
 .cd-side-nav > ul > li > a::before {
   /* icon before item name */

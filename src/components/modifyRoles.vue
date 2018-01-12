@@ -8,9 +8,8 @@
 
         </ul>
       </div>  
-    <div class="row">
-        <div class="col-md-10">
-            <select class="input" v-model="role_id">
+            <p class="input_heading">Select Role to modify</p>
+            <select class="inputField" v-model="role_id">
               <option v-for="role in roles" v-bind:value="role.installer_role_id">
                 {{role.installer_role_name}}
               </option>
@@ -35,8 +34,7 @@
                     <button class="button" type="submit" value="Submit">Update</button>
                     <p style="text-align:center;" class="hidden input_heading" id="confirmation"><img src="/dist/assets/images/yes.png"  alt="Logo">Installer updated successfully.</p>
             </form>    
-        </div>  
-     </div> 
+         
   </div>
 </template>
 
