@@ -22,7 +22,7 @@
                                           <th class="text-center">Action</th>
                                       </tr>
                                   </thead>
-                                  <tr v-for="customer in customers">                              
+                                  <tr v-for="customer in customers">                             
                                       <td>{{ customer.customer_id }} </td>
                                       <td>{{ customer.customer_name }}</td>
                                       <td>{{ customer.date_created }}</td>
@@ -124,7 +124,7 @@ table{
 td{
     padding: 8px;
     line-height: 1.42857143;
-    vertical-align: top;
+    
     border-top: 1px solid #ddd;
     text-align: center;
 }

@@ -3,10 +3,10 @@
    <div  class="header">
     <ul>
             <li><a class="header_a" v-on:click="$parent.updateView('add-bonus')">Add Bonus</a></li>
-               <li><a class="header_a" v-on:click="$parent.updateView('paid-bonus')" style="color:#4bc800">Paid Bonus</a></li>
+               <li><a class="header_a" v-on:click="$parent.updateView('paid-bonus')" >Paid Bonus</a></li>
                <li><a class="header_a" v-on:click="$parent.updateView('bonus-schedule')"  >Unpaid Bonus</a></li>
                <li><a class="header_a" v-on:click="$parent.updateView('all-bonus')">All Bonus</a></li>
-               <li><a class="header_a" v-on:click="$parent.updateView('create-payments')">Modify Bonus</a></li>
+               <li><a class="header_a" v-on:click="$parent.updateView('create-payments')" style="color:#4bc800">Modify Bonus</a></li>
             <!-- <li><a v-on:click="$parent.updateView('modify-payment-types')">Modify Payment Types</a></li> -->
           </ul>
       </div>    
@@ -214,8 +214,8 @@ ul{
   justify-content: center;
 }
 li{
-    padding-left: 6%;
-    padding-right: 6%;
+    padding-left: 4%;
+    padding-right: 4%;
     padding-bottom: 2%;
     padding-top: 2%;
     text-align: center;

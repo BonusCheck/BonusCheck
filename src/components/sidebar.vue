@@ -46,7 +46,7 @@
           <a v-on:click="$parent.updateView('create-roles')"><i class="fa fa-users fa-lg"></i> Roles</a> 
           </li>
           <li class="has-children bookmarks">
-          <a  v-on:click="$parent.updateView('payment-history')"><i class="fa fa-usd fa-lg"></i> Payments</a>
+          <a  v-on:click="$parent.updateView('create-payment-types')"><i class="fa fa-usd fa-lg"></i> Payments</a>
           
         </li>
 
@@ -524,7 +524,7 @@ Top Navigation
   .cd-top-nav a {
     display: block;
     font-size: 1.4rem;
-    color: #ffffff;
+    color: #adadad;
   }
   .cd-top-nav > li {
     display: inline-block;
@@ -603,6 +603,8 @@ Sidebar
 .cd-side-nav > ul > li > a {
   padding-left: calc(5% + 24px);
   border-bottom: 1px solid #373d44;
+  font-size: 13px;
+  font-weight: bold;
 }
 .cd-side-nav > ul > li > a::before {
   /* icon before item name */

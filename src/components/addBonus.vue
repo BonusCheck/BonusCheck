@@ -6,6 +6,7 @@
            <li><a v-on:click="$parent.updateView('paid-bonus')">Paid Bonus</a></li>
            <li><a v-on:click="$parent.updateView('bonus-schedule')" >Unpaid Bonus</a></li>
            <li><a v-on:click="$parent.updateView('all-bonus')">All Bonus</a></li>
+           <li><a class="header_a" v-on:click="$parent.updateView('create-payments')">Modify Bonus</a></li>
         </ul>
       </div>  
 		
@@ -27,21 +28,22 @@
                    </option>
                 </select>
           
-          <!-- <div class="col-md-6">
-            		<p class="input_heading">scheduled pay date</p>
-            		<input  class="inputField" type="date" v-model.number="scheduled_pay_date">
-          </div> -->
+                <p class="input_heading">Scheduled pay date</p>
+                    <input  class="inputField" type="date" v-model="scheduled_pay_date">
+
+                 <p class="input_heading">Scheduled payment amount</p>
+
+                <input  step="0.01" class="inputField" type="number" v-model.number="scheduled_payment_amount">
+
+                <p class="input_heading">Actual pay date</p>
+                    <input  class="inputField" type="date" v-model="date_paid">
+              
+                <p class="input_heading">Actual Payment</p>
+                		<input  class="inputField" type="number" v-model.number="payment_amount">
+              
                
-            		<p class="input_heading">Scheduled payment amount</p>
-
-            		<input  step="0.01" class="inputField" type="number" v-model.number="scheduled_payment_amount">
-        <!--   </div>
-      </div>
-      <div class="row">    
-          <div class="col-md-6">      
-
-            		<input  class="inputField" type="number" v-model.number="scheduled_payment_amount"> -->
-                
+            	
+                    
 
             		<p class="input_heading">Payment type</p>
             		<select class="inputField" v-model="fk_payment_type_id" required>
@@ -72,7 +74,9 @@
           fk_payment_type_id:'',
           fk_job_id:'',
           scheduled_payment_amount:'',
-          // scheduled_pay_date:'',
+          payment_amount:'',
+          scheduled_pay_date:'',
+          date_paid:'',
           created_by_id:'', 
           modified_by_id:''
         }
@@ -87,7 +91,9 @@
               fk_payment_type_id: this.fk_payment_type_id,
               fk_job_id: this.fk_job_id,
               scheduled_payment_amount: this.scheduled_payment_amount,
-              // scheduled_pay_date: '01/01/2018',
+              payment_amount: this.payment_amount,
+              scheduled_pay_date: this.scheduled_pay_date,
+              date_paid: this.date_paid,
               created_by_id:this.user.userID, 
               modified_by_id:this.user.userID
           }
@@ -216,8 +222,8 @@ ul{
   justify-content: center;
 }
 li{
-    padding-left: 6%;
-    padding-right: 6%;
+    padding-left: 4%;
+    padding-right: 4%;
     padding-bottom: 2%;
     padding-top: 2%;
     text-align: center;

@@ -6,28 +6,25 @@
                <li><a class="header_a" v-on:click="$parent.updateView('paid-bonus')">Paid Bonus</a></li>
                <li><a class="header_a" v-on:click="$parent.updateView('bonus-schedule')"  style="color:#4bc800">Unpaid Bonus</a></li>
                <li><a class="header_a" v-on:click="$parent.updateView('all-bonus')">All Bonus</a></li>
+               <li><a class="header_a" v-on:click="$parent.updateView('create-payments')">Modify Bonus</a></li>
             </ul>
           </div>     
       
       
           <div  class="container">
-                    <div class="row col-md-10 custyle">
+                    <div class="row custyle">
                         <table class="table table-striped custab">
                               <thead>
                                   <tr>
-                                      <th>Scheduled payment amount</th>
-                                      <th>Scheduled Pay Date</th>
-                                      <th>Total Bonus</th>
-                                      <th>Date Paid</th>
+                                      <th>Scheduled Payment </th>
+                                      <th>Scheduled Date</th>                                      
                                       <th class="text-center">Action</th>
                                   </tr>
                               </thead>
                                 <tr v-for="bonus in bonuses">
                                     <td>{{ bonus.scheduled_payment_amount }}</td>
-                                    <td>{{ bonus.scheduled_pay_date }}</td>
-                                    <td>{{ bonus.payment_amount }}</td>
-                                    <td>{{ bonus.date_paid }}</td>
-                                    <td class="text-center"><a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+                                    <td>{{ bonus.scheduled_pay_date }}</td>                                    
+                                    <td class="text-center"><a href="#"  @click="deletebonus(bonus)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
                                 </tr>
                                 
                         </table>
@@ -48,12 +45,32 @@ export default {
       bonuses: ''
     }
   },
+  methods: {
+   deletebonus (bonus) {
+      axios({
+        method: 'delete',
+        url: '/installers/payments/delete',
+        data: {
+          payment_id: bonus.payment_id
+        }
+      })
+      .then(req => {
+        this.getData();
+      })
+      .catch(err => {
+        console.log(err);
+      })
+   } ,
+   getData: function(){
+    axios.get('/installers/payments')
+      .then(req => {
+        this.bonuses = req.data.installer_payments;
+        console.log(req.data.installer_payments);
+      })
+    }
+  },
   beforeMount(){
-  	axios.get('/installers/payments')
-  	.then(req => {
-      this.bonuses = req.data.installer_payments;
-  		console.log(req.data.installer_payments);
-  	})
+     this.getData();
   }
 };
 
@@ -99,14 +116,17 @@ export default {
   border-bottom: 1px solid #ebebeb;
     
 }
+table{
+  width: 91%;
+}
 ul{
   list-style-type:none;
   display: flex;
   justify-content: center;
 }
 li{
-    padding-left: 6%;
-    padding-right: 6%;
+    padding-left: 4%;
+    padding-right: 4%;
     padding-bottom: 2%;
     padding-top: 2%;
     text-align: center;

@@ -1,5 +1,5 @@
 <template>
-	  <div class="mainDiv">
+    <div class="mainDiv">
           <div  class="header">
             <ul>
                <li><a class="header_a" v-on:click="$parent.updateView('add-bonus')">Add Bonus</a></li>
@@ -12,23 +12,23 @@
       
       
           <div  class="container">
-                    <div class="row col-md-10 custyle">
+                    <div class="row custyle">
                         <table class="table table-striped custab">
                               <thead>
                                   <tr>
-                                      <th>Scheduled payment amount</th>
-                                      <th>Scheduled Pay Date</th>
-                                      <th>Total Bonus</th>
+                                      <th>Scheduled Payment </th>
+                                      <th>Scheduled Date</th>
+                                      <th>Actual Payment</th>
                                       <th>Date Paid</th>
                                       <th class="text-center">Action</th>
                                   </tr>
                               </thead>
-                                <tr>
-                                    <td>ddddd</td>
-                                    <td>ddddd</td>
-                                    <td>dddd</td>
-                                    <td>dddd</td>
-                                    <td class="text-center"><a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+                                <tr v-for="bonus in bonuses">
+                                    <td> {{ bonus.scheduled_payment_amount }}</td>
+                                    <td> {{bonus.scheduled_pay_date }}</td>
+                                    <td> {{ bonus.payment_amount }}</td>
+                                    <td> {{ bonus.date_paid }}</td>
+                                    <td class="text-center"><a href="#"  @click="deletebonus(bonus)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
                                 </tr>
                                 
                         </table>
@@ -39,9 +39,43 @@
 </template>
 
 <script>
+    import axios from 'axios';
 
     export default {
-      name: 'paid-bonus'
+      name: 'paid-bonus',
+  props: ["user"],
+  data() {
+    return {
+      bonuses: ''
+    }
+  },
+methods: {
+   deletebonus (bonus) {
+      axios({
+        method: 'delete',
+        url: '/installers/payments/delete',
+        data: {
+          payment_id: bonus.payment_id
+        }
+      })
+      .then(req => {
+        this.getData();
+      })
+      .catch(err => {
+        console.log(err);
+      })
+   } ,
+   getData: function(){
+    axios.get('/installers/payments')
+      .then(req => {
+        this.bonuses = req.data.installer_payments;
+        console.log(req.data.installer_payments);
+      })
+    }
+  },
+  beforeMount(){
+     this.getData();
+  }
      
     };
 </script>
@@ -85,14 +119,17 @@
   border-bottom: 1px solid #ebebeb;
     
 }
+table{
+  width: 91%;
+}
 ul{
   list-style-type:none;
   display: flex;
   justify-content: center;
 }
 li{
-    padding-left: 6%;
-    padding-right: 6%;
+    padding-left: 4%;
+    padding-right: 4%;
     padding-bottom: 2%;
     padding-top: 2%;
     text-align: center;

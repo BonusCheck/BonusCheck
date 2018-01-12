@@ -19,20 +19,22 @@
             	<p class="input_heading">Project Name</p>
             	<input class="inputField" type="text" name="job_name" v-model.trim="job_name">
             </div> 
-            <div class="col-md-6"> 
-            	<p class="input_heading">Start Date</p>
-            	<input class="inputField" type="date" name="start_date" v-model.trim="start_date">
-            </div>  
+            <div class="col-md-6">  
+              <p class="input_heading">Hours Bid</p>
+              <input class="inputField" type="number" name ="hours_bid" v-model.number="hours_bid">
+            </div> 
+             
         </div>
-        <div class="row"> 
+        <!-- <div class="row">
+        <div class="col-md-6"> 
+              <p class="input_heading">Start Date</p>
+              <input class="inputField" type="date" name="start_date" v-model.trim="start_date">
+            </div>  
             <div class="col-md-6">     
             	<p class="input_heading">End Date</p>
             	<input class="inputField" type="date" name="end_date" v-model.trim="end_date">
             </div>
-            <div class="col-md-6">  
-            	<p class="input_heading">Hours Bid</p>
-            	<input class="inputField" type="number" name ="hours_bid" v-model.number="hours_bid">
-            </div>  
+             
         </div>      
         <div class="row">
             <div class="col-md-6">
@@ -43,7 +45,7 @@
             	<p class="input_heading">Estimated End Date</p>
             	<input class="inputField" type="date" name="est_end_date" v-model.trim="est_end_date">
             </div>  
-        </div>
+        </div> -->
         <div class="row">
             <div class="col-md-6">      
             	<p class="input_heading">Customer ID</p>
@@ -66,6 +68,7 @@
         </div>     
 
             <button class="button" type="submit" value="Submit">Create Project</button>
+            <p style="text-align:center;" class="hidden input_heading" id="confirmation"><img src="/dist/assets/images/yes.png"  alt="Logo">Project added</p>
              
     </form>
 	</div>
@@ -84,11 +87,11 @@ export default {
     	created_by_id: this.user.userID,
     	modified_by_id: this.user.userID, 
     	job_name: '',
-    	start_date: '',
-    	end_date: '',
+    	// start_date: '',
+    	// end_date: '',
     	hours_bid: '',
-    	est_start_date: '',
-    	est_end_date: '',
+    	// est_start_date: '',
+    	// est_end_date: '',
     	fk_customer_id: '',
     	bill_rate: '',
     	job_status: '',
@@ -102,14 +105,14 @@ export default {
         method: 'post',
         url: '/jobs/add',
         data: {
-        created_by_id: this.user.userID,
+      created_by_id: this.user.userID,
     	modified_by_id: this.user.userID, 
     	job_name: this.job_name,
-    	start_date: this.start_date,
-    	end_date: this.end_date,
+    	// start_date: this.start_date,
+    	// end_date: this.end_date,
     	hours_bid: this.hours_bid,
-    	est_start_date: this.est_start_date,
-    	est_end_date: this.est_end_date,
+    	// est_start_date: this.est_start_date,
+    	// est_end_date: this.est_end_date,
     	fk_customer_id: this.fk_customer_id,
     	bill_rate: this.bill_rate,
     	job_status: this.job_status,
@@ -117,8 +120,10 @@ export default {
       }
       })
       .then(req => {
-        if(req.data.ok){
-          console.log('Job added!');
+        if(req.status===200){
+          $('.inputField').val('');
+          document.getElementById('confirmation').classList.remove('hidden');
+          console.log('Customer added!');
         };
       })
       .catch(err => {

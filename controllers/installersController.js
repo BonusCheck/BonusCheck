@@ -150,9 +150,9 @@ installerRouter.get("/payments", function(req, res) {
 
 installerRouter.post("/payments/schedule/add", function(req, res) {
   installer_pmt.create([
-    "created_by_id", "modified_by_id"/*, "scheduled_pay_date"*/, "scheduled_payment_amount", "fk_installer_id", "fk_payment_type_id", "fk_job_id"
+    "created_by_id", "modified_by_id", "scheduled_pay_date", "date_paid", "scheduled_payment_amount", "payment_amount","fk_installer_id", "fk_payment_type_id", "fk_job_id"
   ], [
-    req.body.created_by_id, req.body.modified_by_id/*, req.body.scheduled_pay_date*/, req.body.scheduled_payment_amount, req.body.fk_installer_id, req.body.fk_payment_type_id, req.body.fk_job_id
+    req.body.created_by_id, req.body.modified_by_id, req.body.scheduled_pay_date, req.body.date_paid,req.body.scheduled_payment_amount, req.body.payment_amount, req.body.fk_installer_id, req.body.fk_payment_type_id, req.body.fk_job_id
   ], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
@@ -160,7 +160,7 @@ installerRouter.post("/payments/schedule/add", function(req, res) {
 });
 
 installerRouter.delete("/payments/delete", function(req, res) {
-  var condition = "payment_id = " + req.body.installer_hours_id;
+  var condition = "payment_id = " + req.body.payment_id;
 
   installer_pmt.delete(condition, function(result) {
     if (result.affectedRows == 0) {
