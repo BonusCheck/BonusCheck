@@ -6,7 +6,7 @@
     <nav class="cd-nav" >
       <ul class="cd-top-nav">
          <li>
-             <a style="margin-top:6px;" v-on:click="$parent.logout()" class="btn btn-danger btn-md">
+             <a style="margin-top:6px;" @click="logout()" class="btn btn-danger btn-md">
               <span class="glyphicon glyphicon-log-out"></span> Log out
              </a>
         </li>
@@ -82,6 +82,20 @@ const axios = require('axios');
 export default {
   name: "side-bar",
   props: ["user"],
+  methods: {
+     logout () {
+          axios.get('/logout')
+         .then(req => {
+            console.log("logged out");
+            $('#username').html(req.data.username);     
+            this.$router.push('/');     
+                     
+         })
+        .catch(function(err){
+          console.log("Error R"+err);
+        });
+     }
+  },
   beforeMount(){
   axios.get('/session/data')
    .then(req => {

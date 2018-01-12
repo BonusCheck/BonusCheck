@@ -26,6 +26,7 @@
 
     <!-- Heading container -->
 	<div class="home-container">
+	  <div class="opacity">
         <div class="overlay">    
             <section class="title">
             	<h1>Lorem ipsum dolor </h1>
@@ -34,7 +35,8 @@
                     <a target="_blank" href="/employee-recognition-guide">transform employee recognition</a>
                 </h2>
             </section>
-        </div>      
+        </div>
+      </div>        
     </div>
 	 <!-- Heading container END -->
 
@@ -152,7 +154,8 @@ export default {
 			
 	}
 	.home-container{
-	    background-image: url(https://www.pega.com/sites/pega.com/files/banking-case-study-bg.jpg);
+	    background-image: url("/dist/assets/images/4.jpg");
+	    background-color: rgba(0, 0, 0, 0.5);
 	    background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center center;
@@ -160,7 +163,17 @@ export default {
 	    top:0;
 	    bottom: 0;
 		height: 90vh;
+		width: 100%;
 		z-index: -10;	
+	}
+	.opacity{
+		position: absolute;
+		background-color: rgba(0,0,0,0.5);
+	    top:0;
+	    bottom: 0;
+		height: 90vh;
+		width: 100%;
+		z-index: -5;
 	}
 	.overlay{
 		position: absolute;
