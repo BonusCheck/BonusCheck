@@ -10,32 +10,29 @@
                 </ul>
           </div> 
           <div  class="container">
-                <div class="row col-md-10 custyle">
-                    <table class="table table-striped custab">
-                          <thead>
-                              <tr>
-                                  <th>CustomerID</th>
-                                  <th>CustomerName</th>
-                                  <th>DateCreated</th>
-                                  <th>DateCreated</th>
-                                  <th>DateCreated</th>
-                                  <th class="text-center">Action</th>
-                              </tr>
-                          </thead>
-                            <tr v-for="customer in customers">
-                            
-                                <td>{{ customer.customer_id }} </td>
-                                <td>{{ customer.customer_name }}</td>
-                                <td>{{ customer.date_created }}</td>
-                                <td>{{ customer.created_by_id }}</td>
-                                <td>{{ customer.date_modified }}</td>
-                                <td class="text-center"><a href="#" @click="deletecustomer(customer)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del
-                                </a>
-                                </td>
-                              
-                            </tr>
-                         
-                    </table>
+                <div class="row  custyle">
+                    
+                        <table class="table table-striped custab">
+                                  <thead>
+                                      <tr>
+                                          <th>CustomerID</th>
+                                          <th>CustomerName</th>
+                                          <th>DateCreated</th>
+                                          <th>DateModified</th>
+                                          <th class="text-center">Action</th>
+                                      </tr>
+                                  </thead>
+                                  <tr v-for="customer in customers">                              
+                                      <td>{{ customer.customer_id }} </td>
+                                      <td>{{ customer.customer_name }}</td>
+                                      <td>{{ customer.date_created }}</td>
+                                      <td>{{ customer.date_modified }}</td>
+                                      <td class="text-center"><a href="#" @click="deletecustomer(customer)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del
+                                      </a>
+                                      </td>                                
+                                  </tr>                           
+                        </table>
+                    
                 </div>
           </div>
     
@@ -93,9 +90,9 @@
 <style scoped>
 
 .mainDiv{
-     margin-top: 7%;
-     margin-right: 7%;
-     margin-left: 18%;
+     margin-left: 12%;
+     margin-top: 5%;
+     margin-right: 5%;
      box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
      /*height: 200px;*/
      background-color: #fff;
@@ -121,11 +118,18 @@
   border-bottom: 1px solid #ebebeb;
     
 }
+table{
+  width: 91%;
+}
 td{
     padding: 8px;
     line-height: 1.42857143;
     vertical-align: top;
     border-top: 1px solid #ddd;
+    text-align: center;
+}
+th{
+  text-align: center;
 }
 ul{
   list-style-type:none;
@@ -135,9 +139,10 @@ ul{
 li{
     padding-left: 6%;
     padding-right: 6%;
-    line-height: 4;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    text-align: center;
     border-bottom: 3px solid transparent;
-    margin-bottom: -10px;
 }
 li:active{
   border-color:#4bc800; 

@@ -40,8 +40,15 @@
         </li>
          </li> 
         <li class="has-children users">
-          <a  v-on:click="$parent.updateView('add-user')"><i class="fa fa-user"></i> User</a>       
+          <a  v-on:click="$parent.updateView('add-user')"><i class="fa fa-user fa-lg"></i> User</a>       
          
+        </li>
+         <li class="has-children users">
+          <a v-on:click="$parent.updateView('create-roles')"><i class="fa fa-users fa-lg"></i> Roles</a> 
+          </li>
+          <li class="has-children bookmarks">
+          <a  v-on:click="$parent.updateView('payment-history')"><i class="fa fa-usd fa-lg"></i> Payments</a>
+          
         </li>
 
         <li class="has-children bookmarks" v-if="user.roll == 'Admin' || 'Project Coordinator' || 'Project Manager' || 'Installer'">
@@ -214,11 +221,9 @@ a {
 .fa{
   margin-right: 13px;
 }
-.cd-nav ul li a{
-  color:#C8C8C8;
-}
+
 .cd-nav ul li a:hover{
-  color: #ffffff;
+  color: #e6e6e6;
 }
 
 

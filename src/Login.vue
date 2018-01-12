@@ -3,7 +3,7 @@
 	    <!-- Navbar starts -->       
 	    <nav class="navbar navbar-fixed-top">
 		    <div class="container">		       
-	            <a class="navbar-brand " href="index.html"><img src="/dist/assets/images/logo-web3.gif"></a>
+	            <a class="navbar-brand " href="index.html"><img style="margin-top:5px;" src="/dist/assets/images/logo-web3.gif"></a>
 	           	<button  class="navbar-toggle" data-toggle="collapse" data-target="#navbar-item"  >
 		            <span class="sr-only">Toggle navigation</span>
 		            <span class="icon-bar"></span>
@@ -23,15 +23,15 @@
 	    <!-- Navbar END -->
 			      			      		        
 	    <div class="row">
-			<div class="col-md-6 col-sm-6 title">
+			<!-- <div class="col-md-6 col-sm-6 title">
 	            	<h1>Lorem ipsum dolor </h1>
 	            	<h2 class="home-hero-subtitle">
 	                   elit scripta suavitate his ea dico veritus no usu
 	                    <a target="_blank" href="/employee-recognition-guide">transform employee recognition</a>
 	                </h2>
 	                		    	
-			</div>
-		    <div class="col-md-6 col-sm-6 login-col">
+			</div> -->
+		    <div class="col-md-12 col-sm-12 login-col">
 				<section id="content">
 					<form v-on:submit.prevent="onSubmit" id="form">
 						<h1>Login </h1>
@@ -180,7 +180,9 @@ export default {
 		font-size: 18px;
 		width: 80%;
 	}
-
+    .navbar-toggle span{
+		background-color: #000;
+	}
 	
 	/*NAVBAR END*/
 
@@ -225,12 +227,14 @@ export default {
 		-o-box-shadow: 0 1px 0 #fff inset;
 		box-shadow: 0 1px 0 #fff inset;
 		border: 1px solid #c4c6ca;
-		margin-top: 220px;
-		padding: 25px 0 0;
+		margin: 0;
+		padding: 65px 0 0;
 		position: relative;
 		text-align: center;
 		text-shadow: 0 1px 0 #fff;
-		width: 500px;
+		width: 33%;
+	    margin-left: 33%;
+	    margin-top: 15%;
 
 
 	}

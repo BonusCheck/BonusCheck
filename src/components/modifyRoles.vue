@@ -15,28 +15,25 @@
                 {{role.installer_role_name}}
               </option>
             </select>
-        </div>    
-    </div>        
-    <div class="row"> 
-        <div class="col-md-12"> 
-            <p class="paragraph">Select role to modify</p>
-            <form v-if="selectedRole.installer_role_id" v-on:submit.prevent="onSubmit">
-              <p>Role name</p>
-              <input type ="hidden" v-model="selectedRole.installer_role_id">
-              <input type="text" v-model.trim="selectedRole.installer_role_name" required>
-              <p>Role weight</p>
-              <input type="number" v-model.number="selectedRole.role_weight" required>
-              <p>Minimum base</p>
-              <input type="number" step="0.01" v-model.number="selectedRole.min_base" required>
-              <p>Maximum base</p>
-              <input type="number" step="0.01" v-model.number="selectedRole.max_base" required>
-              <p>Individual bonus</p>
-              <input type="number" step="0.01" v-model.number="selectedRole.individual_bonus" required>
-              <p>Team bonus</p>
-              <input type="number" step="0.01" v-model.number="selectedRole.team_bonus" required>
-              <p>Bonus weight</p>
-              <input type="number" step="0.01" v-model.number="selectedRole.bonus_weight" required>
-              <button class="button" type="submit" value="Submit">Create</button>
+            
+            <form v-if="selectedRole.installer_role_id" v-on:submit.prevent="onSubmit">              
+                    <input class="inputField" type ="hidden" v-model="selectedRole.installer_role_id">
+                    <p class="input_heading">Role name</p>
+                    <input class="inputField" type="text" v-model.trim="selectedRole.installer_role_name" required>
+                    <p class="input_heading">Role weight</p>
+                    <input class="inputField" type="text" v-model.number="selectedRole.role_weight" required>
+                    <p class="input_heading">Minimum base</p>
+                    <input class="inputField" type="text" v-model.number="selectedRole.min_base" required>
+                    <p class="input_heading">Maximum base</p>
+                    <input class="inputField" type="text" v-model.number="selectedRole.max_base" required>
+                    <p class="input_heading">Individual bonus</p>
+                    <input class="inputField" type="text" v-model.number="selectedRole.individual_bonus" required>
+                    <p class="input_heading">Team bonus</p>
+                    <input class="inputField" type="text" v-model.number="selectedRole.team_bonus" required>
+                    <p class="input_heading">Bonus weight</p>
+                    <input class="inputField" type="text" v-model.number="selectedRole.bonus_weight" required>
+                    <button class="button" type="submit" value="Submit">Update</button>
+                    <p style="text-align:center;" class="hidden input_heading" id="confirmation"><img src="/dist/assets/images/yes.png"  alt="Logo">Installer updated successfully.</p>
             </form>    
         </div>  
      </div> 
@@ -72,7 +69,10 @@ export default {
         }
       })
       .then(req => {
-        console.log(req);
+        if(req.status===200){
+          $('.inputField').val('');
+        document.getElementById('confirmation').classList.remove('hidden');
+      };
       })
       .catch(err => {
         console.log(err);
@@ -102,11 +102,11 @@ export default {
 <style scoped>
 
 .mainDiv{
-     margin-top: 7%;
-     margin-right: 7%;
-     margin-left: 18%;
+     margin-left: 12%;
+     margin-top: 5%;
+     margin-right: 5%;
      box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
-     height: 25%;
+     
      background-color: #fff;
      font-size: 16px;
      padding: 20px;
@@ -117,30 +117,51 @@ export default {
   border-bottom: 1px solid #ebebeb;
     
 }
-.paragraph{
-    margin-top: 40px;
-    color: #afaeb0;
-    text-align: center;
-    line-height: 1.5;
-    font-weight: bold;
-    font-size: 17px;
+
+
+form{
+  margin-top: 30px;
 }
-.input:focus{
-  outline: none;
-}
-.input{
+.inputField{
     background-color: #fff;
+    font-family: Open Sans,Arial,sans-serif;
+    line-height: normal!important;
     border: 0;
     box-shadow: 0 1px 5px hsla(0,0%,20%,.5);
     color: #222;
     display: block;
     font-size: 14px;
-    margin: 15px;
-    padding: 12px 18px 12px;
+    margin: 0;
+    padding: 12px 18px 11px;
     width: 100%;
-    margin-left: 70px;
-    margin-top: 40px;
 }
+.inputField:focus{
+  outline: none;
+}
+.input_heading{
+    color: #afaeb0;
+    
+    margin-top: 30px;
+    
+    
+   
+
+}
+.button{
+    color: #fff;
+    background: #4bc800!important;
+    border: 0;
+    box-shadow: inset 0 -2px 0 #45b900!important;
+    padding: 9px;
+    margin-top: 20px;
+   
+
+}
+.button:focus{
+  outline-color:  #4bc800;
+
+}
+
 ul{
   list-style-type:none;
   display: flex;
@@ -149,9 +170,10 @@ ul{
 li{
     padding-left: 6%;
     padding-right: 6%;
-    line-height: 4;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    text-align: center;
     border-bottom: 3px solid transparent;
-    margin-bottom: -10px;
 }
 li:active{
   border-color:#4bc800; 

@@ -2,7 +2,7 @@
   <div>
   	<nav class="navbar navbar-fixed-top">
       <div class="container">		           
-    	<a class="navbar-brand " href="#page-top"><img src="/dist/assets/images/logo-web3.gif"></a>
+    	<a class="navbar-brand " href="#page-top"><img style="margin-top:5px;" src="/dist/assets/images/logo-web3.gif"></a>
     	<button  class="navbar-toggle" data-toggle="collapse" data-target="#navbar-item"  >
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
@@ -134,7 +134,7 @@ export default {
 	  	   });
 	  	   sr.reveal('.showcase-btn',{
 	  	   	duration: 2000,
-	  	   	delay:2000,
+	  	   	
 	  	   	origin: 'bottom'
 	  	   });
 
@@ -280,6 +280,9 @@ export default {
 		font-size: 24px;
 		font-size: 20px;
 		line-height: 1.7;
+		margin-left: -5px;
+		margin-top: 10px;
+
 
 	}
 

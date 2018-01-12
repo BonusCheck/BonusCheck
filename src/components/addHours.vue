@@ -89,11 +89,11 @@ export default {
 <style scoped>
 
 .mainDiv{
-     margin-top: 7%;
-     margin-right: 7%;
-     margin-left: 18%;
+     margin-left: 12%;
+     margin-top: 5%;
+     margin-right: 5%;
      box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
-     height: 25%;
+     
      background-color: #fff;
      font-size: 16px;
      padding: 20px;
@@ -166,11 +166,12 @@ ul{
   justify-content: center;
 }
 li{
-      padding-left: 6%;
+    padding-left: 6%;
     padding-right: 6%;
-    line-height: 4;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    text-align: center;
     border-bottom: 3px solid transparent;
-    margin-bottom: -10px;
 }
 li:active{
   border-color:#4bc800; 

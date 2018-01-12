@@ -1,31 +1,28 @@
 <template>
 	<div class="mainDiv">
-    <div  class="header">
-	    <ul>
-            <li><a v-on:click="$parent.updateView('payment-history')">View Payment History</a></li>
-            
-            <li><a v-on:click="$parent.updateView('modify-payments')">Modify Payments</a></li>
-            <li><a v-on:click="$parent.updateView('create-payment-types')" style="color:#4bc800">Create Payments Types</a></li>
-            <!-- <li><a v-on:click="$parent.updateView('modify-payment-types')">Modify Payment Types</a></li> -->
-          </ul>
-       </div>   
+      <div  class="header">
+  	    <ul>
+              <li><a v-on:click="$parent.updateView('payment-history')">View Payment </a></li>
+              
+              <li><a v-on:click="$parent.updateView('modify-payments')">Modify Payments</a></li>
+              <li><a v-on:click="$parent.updateView('create-payment-types')" style="color:#4bc800">Create Payments Types</a></li>
+              <!-- <li><a v-on:click="$parent.updateView('modify-payment-types')">Modify Payment Types</a></li> -->
+            </ul>
+         </div>   
 		
-		<form v-on:submit.prevent="onSubmit" id="form">
-       <div class="row row1">
-          <div class="col-md-8">
-      			  <input class="input" type="text" v-model.trim="payment_type">
-          </div> 
-           <div class="col-md-3"> 
-      			  <button class="button" type="submit" value="Submit">Submit</button>
-           </div> 
-           <div class="row">
-    			    <p style="text-align:center;" class="hidden" id="confirmation"><img src="/dist/assets/images/yes.png"  alt="Logo">Payment type added</p>
-           </div> 
-           <div class="row">  
-              <p class="paragraph">Create payment Types</p>
-           </div> 
-        </div>      
-		</form>
+      		<form v-on:submit.prevent="onSubmit" id="form">
+             <div class="row row1">
+                <div class="col-md-8">
+            			  <input class="input" type="text" v-model.trim="payment_type">
+                </div> 
+                 <div class="col-md-3"> 
+            			  <button class="button" type="submit" value="Submit">Submit</button>
+                 </div>            
+              </div> 
+          </form>
+          <p style="text-align:center;" class="hidden input_heading" id="confirmation"><img src="/dist/assets/images/yes.png"  alt="Logo">Payment type added successfully.</p> 
+          <p class="paragraph" style="display: block;">Creat payment type</p>    
+		
 	</div>
 </template>
 
@@ -37,14 +34,16 @@ export default {
   props: ['user'],
   data(){
   	return {
-  		payment_type: ''
+  		payment_type: '',
+      created_by_id: this.user.userID,
+      modified_by_id: this.user.userID
   	}
   },
   methods: {
   	onSubmit: function(){
   		axios({
   			method: 'post',
-  			url: '/payments/add',
+  			url: '/payment-types/add',
   			data: {
   				created_by_id: this.user.userID,
   				modified_by_id: this.user.userID,
@@ -52,24 +51,33 @@ export default {
   			}
   		})
   		.then(req => {
+        if(req.status===200){
+          $('.inputField').val('');
   			document.getElementById('confirmation').classList.remove('hidden');
-  			this.payment_type = '';
+  			
+      };
   		})
   		.catch(err => {
   			console.log(err);
   		})
   	}
+  },
+  beforeMount(){
+    console.log(this);
   }
+
+
+
 };
 </script>
 <style scoped>
 
 .mainDiv{
-     margin-top: 7%;
-     margin-right: 7%;
-     margin-left: 18%;
+     margin-left: 12%;
+     margin-top: 5%;
+     margin-right: 5%;
      box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
-     height: 25%;
+    
      background-color: #fff;
      font-size: 16px;
      padding: 20px;
@@ -77,6 +85,27 @@ export default {
 }
 form{
   margin-top: 30px;
+}
+.inputField{
+    background-color: #fff;
+    font-family: Open Sans,Arial,sans-serif;
+    line-height: normal!important;
+    border: 0;
+    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);
+    color: #222;
+    display: block;
+    font-size: 14px;
+    margin: 0;
+    padding: 12px 18px 11px;
+    width: 100%;
+}
+.inputField:focus{
+  outline: none;
+}
+.input_heading{
+    color: #afaeb0;
+    margin-top: 10px;
+    
 }
 
 .header{
@@ -131,11 +160,12 @@ ul{
   justify-content: center;
 }
 li{
-    padding-left: 5%;
-    padding-right: 5%;
-    line-height: 4;
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    text-align: center;
     border-bottom: 3px solid transparent;
-    margin-bottom: -10px;
 }
 li:active{
   border-color:#4bc800; 

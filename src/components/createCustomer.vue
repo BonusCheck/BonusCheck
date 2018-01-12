@@ -12,10 +12,10 @@
     
 		<form v-on:submit.prevent="onSubmit">
       <div class="row row1">
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-6 col-xs-6">
       		   	<input class="inputField" type="text" name="customer_name" placeholder="Enter customer name..." v-model.trim="customer_name" required>
             </div>
-            <div class="col-md-3">  
+            <div class="col-md-3 col-sm-3 col-xs-3">  
               <button class="button " type="submit" value="Submit">Submit</button>
       		  </div>  
       </div>  
@@ -24,8 +24,7 @@
 
       <div class="row row2">
         <p class="paragraph" style="display: block;">
-          <strong>Create a customer</strong> and add it to a project on Project Edit Page. <br>
-          This will allow you to <strong>filter and group</strong> your time by clients in reports.
+          <strong>Create a customer</strong> 
         </p>  
         
         
@@ -80,9 +79,9 @@ export default {
 <style scoped>
 
 .mainDiv{
-     margin-left: 18%;
-     margin-top: 7%;
-     margin-right: 7%;
+     margin-left: 12%;
+     margin-top: 5%;
+     margin-right: 5%;
      box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
      background-color: #fff;
      font-size: 16px;
@@ -120,7 +119,7 @@ form{
     box-shadow: inset 0 -2px 0 #45b900!important;
     padding: 9px;
     margin-left: -30px;
-    width: 85%;
+    width: 120px;
 
 }
 .button:focus{
@@ -131,9 +130,7 @@ form{
   margin-left: 26%;
 
 }
-.row2{
 
-}
 .paragraph{
     margin-top: 40px;
     color: #afaeb0;
@@ -153,9 +150,10 @@ ul{
 li{
     padding-left: 6%;
     padding-right: 6%;
-    line-height: 4;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    text-align: center;
     border-bottom: 3px solid transparent;
-    margin-bottom: -10px;
 }
 li:active{
   border-color:#4bc800; 
