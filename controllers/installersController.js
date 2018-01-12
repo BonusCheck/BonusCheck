@@ -120,19 +120,21 @@ installerRouter.delete("/hours/delete", function(req, res) {
   });
 });
 
-installerRouter.put("/hours/update", function(req, res) {
-  var condition = "installers_hours_id = " + req.body.installer_hours_id;
 
-  installer_hrs.update({
-    //HOW DO I TAKE IN RANDOM FILEDS HERE?  DO I COMPARE THE VALUES FIELD BY FIELD?
-  }, condition, function(result) {
-    if (result.changedRows == 0) {
+
+installerRouter.put("/hours/update", function(req, res) {
+  var condition = "installers_hours_id = " + req.body.installers_hours_id;
+  var objColVals = req.body;
+  console.log(req.body);
+
+  installer_hrs.update(objColVals, condition, function(result) {
+     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
     } else {
       res.status(200).end();
     }
-  });
+});
 });
 //***********************************************************************************************************
 

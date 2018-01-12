@@ -159,24 +159,8 @@ form{
     padding: 12px 18px 12px;
     margin-top: 10px;
 }
-.inputField{
-    background-color: #fff;
-    border: 0;
-    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);
-    color: #222;
-    display: block;
-    font-size: 14px;
-    margin: 15px;
-    padding: 12px 18px 12px;
-    width: 97%;
-}
-.inputField:focus{
-  outline: none;
-}
-.button:focus{
-  outline-color:  #4bc800;
 
-}
+
 
 ul{
   list-style-type:none;
