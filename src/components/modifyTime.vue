@@ -6,7 +6,7 @@
            <!-- <li><a v-on:click="$parent.updateView('')">Approve Time</a></li> -->
            <li><a v-on:click="$parent.updateView('view-time')">View time</a></li>
            <li><a v-on:click="$parent.updateView('modify-time')"  style="color:#4bc800">Modify time</a></li>
-           <li><a v-on:click="$parent.updateView('approve-time')">Approve time</a></li>          
+           <!-- <li><a v-on:click="$parent.updateView('approve-time')">Approve time</a></li>   -->        
         </ul>        
       </div>
       <p class="input_heading">Select Installer</p>
@@ -21,7 +21,7 @@
                     <p class="input_heading">Overtime hours worked</p>
                     <input class="inputField" type="text" v-model.number="selectedRole.ot_hours_worked" required>
                     <p class="input_heading">Work date</p>
-                    <input class="inputField" type="text" v-model="selectedRole.work_date" required>
+                    <input class="inputField" type="date" v-model="selectedRole.work_date" required>
                     
                     <button class="button" type="submit" value="Submit">Update</button>
                     <p style="text-align:center;" class="hidden input_heading" id="confirmation"><img src="/dist/assets/images/yes.png"  alt="Logo"> Updated successfully.</p>

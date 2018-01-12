@@ -26,15 +26,16 @@
 
     <!-- Heading container -->
 	<div class="home-container">
+	  <div class="opacity">
         <div class="overlay">    
             <section class="title">
-            	<h1>Lorem ipsum dolor </h1>
+            	<h1>WHBD</h1>
             	<h2 class="home-hero-subtitle">
-                   elit scripta suavitate his ea dico veritus no usu
-                    <a target="_blank" href="/employee-recognition-guide">transform employee recognition</a>
+                   Global Intelligent Building Design, Build, and Implementation Roll Out Company
                 </h2>
             </section>
-        </div>      
+        </div>
+      </div>        
     </div>
 	 <!-- Heading container END -->
 
@@ -49,8 +50,8 @@
       	  </div>
       	  <div class="col-md-6 col-sm-6 readme">
       	    <div class="showcase-right">
-      	       <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h1>
-      	       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </p>
+      	       <h1>WHBD is a US based company that specializes in technology based role outs on a global scale. </h1>
+      	       <p>With over 1,600 partners globally WHBD can deliver multi-site, multi-disciplined turnkey solutions.  The founding partners of WHBD have decades of experience in the IT Infrastructure and Low Voltage Cabling disciplines so the vision of creating a global solution for intelligent buildings has become a reality for the partners. </p>
        	    </div>
        	    <br>
        	    <a href="" class="btn btn-danger btn-default btn-lg showcase-btn">Read More</a>
@@ -152,7 +153,8 @@ export default {
 			
 	}
 	.home-container{
-	    background-image: url(https://www.pega.com/sites/pega.com/files/banking-case-study-bg.jpg);
+	    background-image: url("/dist/assets/images/4.jpg");
+	    background-color: rgba(0, 0, 0, 0.5);
 	    background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center center;
@@ -160,7 +162,17 @@ export default {
 	    top:0;
 	    bottom: 0;
 		height: 90vh;
+		width: 100%;
 		z-index: -10;	
+	}
+	.opacity{
+		position: absolute;
+		background-color: rgba(0,0,0,0.5);
+	    top:0;
+	    bottom: 0;
+		height: 90vh;
+		width: 100%;
+		z-index: -5;
 	}
 	.overlay{
 		position: absolute;

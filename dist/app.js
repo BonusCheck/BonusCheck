@@ -174,6 +174,12 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(66);
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports) {
 
 /*
@@ -255,7 +261,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -474,12 +480,6 @@ function applyToTag (styleElement, obj) {
   }
 }
 
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(66);
 
 /***/ }),
 /* 4 */
@@ -1823,8 +1823,10 @@ module.exports = g;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+//
+//
 //
 //
 //
@@ -2307,8 +2309,10 @@ module.exports = Cancel;
 //
 //
 //
+//
+//
 
-var axios = __webpack_require__(3);
+var axios = __webpack_require__(1);
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: 'login',
@@ -2415,7 +2419,7 @@ var axios = __webpack_require__(3);
 //
 //
 
-var axios = __webpack_require__(3);
+var axios = __webpack_require__(1);
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: 'Signup',
@@ -2512,7 +2516,7 @@ var axios = __webpack_require__(3);
 // import modifyPaymentTypes from './components/modifyPaymentTypes';
 
 
-var axios = __webpack_require__(3);
+var axios = __webpack_require__(1);
 var dateFormat = __webpack_require__(5);
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -2689,10 +2693,26 @@ mounted: function mounted (){
 //
 //
 
-var axios = __webpack_require__(3);
+var axios = __webpack_require__(1);
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: "side-bar",
   props: ["user"],
+  methods: {
+     logout: function logout () {
+          var this$1 = this;
+
+          axios.get('/logout')
+         .then(function (req) {
+            console.log("logged out");
+            $('#username').html(req.data.username);     
+            this$1.$router.push('/');     
+                     
+         })
+        .catch(function(err){
+          console.log("Error R"+err);
+        });
+     }
+  },
   beforeMount: function beforeMount(){
   var this$1 = this;
 
@@ -2721,7 +2741,7 @@ var axios = __webpack_require__(3);
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
@@ -2822,7 +2842,7 @@ var axios = __webpack_require__(3);
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_date_fns_format__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_date_fns_format___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_date_fns_format__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 //
 //
@@ -3002,7 +3022,7 @@ module.exports = getISOYear
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_date_fns_format__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_date_fns_format___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_date_fns_format__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 //
 //
@@ -3103,7 +3123,7 @@ beforeMount: function beforeMount(){
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
@@ -3203,7 +3223,7 @@ methods: {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
@@ -3323,7 +3343,7 @@ methods: {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
@@ -3421,7 +3441,7 @@ methods: {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
@@ -3511,7 +3531,7 @@ methods: {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
@@ -3607,7 +3627,7 @@ methods: {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
@@ -3703,7 +3723,7 @@ methods: {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
@@ -3801,7 +3821,7 @@ methods: {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_date_fns_format__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_date_fns_format___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_date_fns_format__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 //
 //
@@ -3966,7 +3986,7 @@ methods: {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
@@ -4063,7 +4083,7 @@ methods: {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
@@ -4180,7 +4200,7 @@ methods: {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
@@ -4298,6 +4318,33 @@ methods: {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4317,7 +4364,73 @@ methods: {
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  name: 'view-time'
+  name: 'view-time',
+      data: function data() {
+        return {
+          installers_hours_id:'',
+          hours: '',
+          
+        }
+      },
+    methods: {
+       deletehour: function deletehour (hour) {
+         var this$1 = this;
+
+        // open the modal using the refs
+         this.installers_hours_id = hour.installers_hours_id;
+           __WEBPACK_IMPORTED_MODULE_0_axios___default()({
+            method: 'delete',
+            url: '/installers/hours/delete',
+            data: {
+              installers_hours_id: this.installers_hours_id
+            }
+          })
+          .then(function (req) {
+            this$1.installers_hours_id = '';
+            this$1.getData();
+          })
+          .catch(function (err) {
+            console.log(err);
+          })
+       } ,
+       getData: function(){
+       var this$1 = this;
+
+       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/installers/hours')
+        .then(function (req) {
+          this$1.hours = req.data.installer_hours;
+          console.log(req.data.installer_hours);
+        })
+      },
+      // getRoleName: function(roleid){
+      //    var role_name = "";
+      //   for (var i=0; this.roles.length ; i++) {
+      //       if(this.roles[i].installer_role_id==roleid){
+      //        role_name= this.roles[i].installer_role_name;
+
+      //       }
+      //     return role_name;  
+      //    }
+      // }   
+      },
+      beforeMount: function beforeMount(){
+       
+        this.getData(); 
+        // //Get role list
+        // axios({
+        //   method: 'get',
+        //   url: '/installers/roles'
+        // })
+        // .then(req => {
+        //   this.roles = req.data.roles;
+        //   this.getData();
+        // })
+        // .catch(err => {
+        //   console.log(err);
+        // });
+
+         
+      }
  
 });
 
@@ -4327,6 +4440,24 @@ methods: {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4346,7 +4477,59 @@ methods: {
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  name: 'modify-time'
+  name: 'modify-time',
+  data: function data(){
+    return {
+      fk_installer_id: '',
+      hours: '',
+      selectedRole: {}
+    }
+  },
+  methods: {
+    onSubmit: function(){
+      __WEBPACK_IMPORTED_MODULE_0_axios___default()({
+        method: 'put',
+        url: 'installers/hours/update',
+        data: {
+          installers_hours_id: this.selectedRole.installers_hours_id,
+          reg_hours_worked: this.selectedRole.reg_hours_worked,
+          ot_hours_worked: this.selectedRole.ot_hours_worked,
+          work_date: this.selectedRole.work_date
+         
+        }
+      })
+      .then(function (req) {
+        if(req.status===200){
+          $('.inputField').val('');
+        document.getElementById('confirmation').classList.remove('hidden');
+      };
+      })
+      .catch(function (err) {
+        console.log(err);
+      })
+    }
+  },
+  watch: {
+    fk_installer_id: function fk_installer_id(id) {
+      var assign;
+      (assign = this.hours.filter(function (r) { return r.installers_hours_id === id; }), this.selectedRole = assign[0]);
+    }
+  },
+  beforeMount: function beforeMount(){
+    var this$1 = this;
+
+    __WEBPACK_IMPORTED_MODULE_0_axios___default()({
+      method: 'get',
+      url: '/installers/hours'
+    })
+    .then(function (req) {
+      this$1.hours = req.data.installer_hours;
+      console.log(req.data.installer_hours);
+    })
+    .catch(function (err) {
+      
+    })
+  }
  
 });
 
@@ -4385,7 +4568,7 @@ methods: {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_date_fns_format__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_date_fns_format___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_date_fns_format__);
@@ -4486,7 +4669,7 @@ methods: {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_date_fns_format__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_date_fns_format___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_date_fns_format__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 //
 //
@@ -4591,7 +4774,7 @@ methods: {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
@@ -4757,7 +4940,7 @@ methods: {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
@@ -4843,7 +5026,7 @@ methods: {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
@@ -4984,10 +5167,8 @@ methods: {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-//
-//
 //
 //
 //
@@ -5096,7 +5277,7 @@ methods: {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
@@ -5173,7 +5354,7 @@ methods: {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
@@ -5268,7 +5449,7 @@ methods: {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_date_fns_format__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_date_fns_format___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_date_fns_format__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 //
 //
@@ -5412,7 +5593,7 @@ methods: {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_date_fns_format__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_date_fns_format___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_date_fns_format__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
 //
 //
@@ -5535,7 +5716,7 @@ methods: {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
@@ -5676,7 +5857,7 @@ methods: {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
@@ -5774,7 +5955,7 @@ methods: {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
@@ -5855,7 +6036,7 @@ methods: {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
@@ -19887,7 +20068,7 @@ var content = __webpack_require__(64);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("2b8ba894", content, false);
+var update = __webpack_require__(3)("2b8ba894", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -19906,12 +20087,12 @@ if(false) {
 /* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
 // module
-exports.push([module.i, "\nbody[data-v-33885605]{\n\t\t\n\t\tfont-family: \"Open Sans\", sans-serif;\n}\n.home-container[data-v-33885605]{\n\t    background-image: url(https://www.pega.com/sites/pega.com/files/banking-case-study-bg.jpg);\n\t    background-repeat: no-repeat;\n\t\tbackground-size: cover;\n\t\tbackground-position: center center;\n\t\tposition: relative;\n\t    top:0;\n\t    bottom: 0;\n\t\theight: 90vh;\n\t\tz-index: -10;\n}\n.overlay[data-v-33885605]{\n\t\tposition: absolute;\n\t\t\n\t\ttop:0;\n\t    bottom: 0;\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tz-index: -5;\n}\n\t/*Body and background image END*/\n\t/*NAVBAR START*/\n.navbar-brand[data-v-33885605]{\n\t\tmargin-top: -10px;\n}\n.navbar[data-v-33885605]{\n\t\tbackground-color: #fff;\n\t\tposition: fixed;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n\t\tmargin-top: 20px;\n}\n.nav li a[data-v-33885605]{\n\t\tcolor: #000;\n\t\tfont-size: 20px;\n}\n.nav li a[data-v-33885605]:hover {\n\ttext-decoration: none;\n}\n.btn-danger[data-v-33885605]{\n\n\t\tborder-radius: 10px;\n\t\tfont-weight: 800;\t\n\t\tline-height: 1.7;\n\t\tmargin-left: 40px;\n\t\tfont-size: 18px;\n\t\twidth: 80%;\n}\n.btn-danger[data-v-33885605]:hover{\n \tbackground-color: #d43f3a;\n}\n\t/*NAVBAR  END*/\n\t/*HEADING TEXT START*/\n.title[data-v-33885605]{\n\t   \n\t   margin-top: 300px;\n\t   text-align: center;\n}\n.title h1[data-v-33885605]{\n\t\tfont-size: 45px;\n\t\tline-height: 45px;\n\t\tcolor: #fff;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n}\n.title h2[data-v-33885605]{\n\t\tfont-size: 27px;\n\t\tline-height: 27px;\n\t\tletter-spacing: -0.5px;\n\t\tcolor: #aaa;\n}\n.title a[data-v-33885605]{\n\t\tcolor: inherit;\n\t\ttext-decoration: underline;\n}\n\t/*HEADING TEXT END*/\n\t/*LAPTOP row style start*/\n#showcase[data-v-33885605]{\n\t\tmargin-top: 40px;\n}\n#showcase h1[data-v-33885605]{\n\t\tfont-size: 40px;\n\t\tmargin-bottom: 20px;\n}\n#showcase img[data-v-33885605]{\n\t\twidth: 95%;\n\t\tmargin-top: 40px;\n}\n.showcase-right h1[data-v-33885605]{\n\t\tfont-size: 31px;\n\t\tline-height: 45px;\n\t\tcolor: #333;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n}\n.showcase-right p[data-v-33885605]{\n\t\tfont-size: 22px;\n\t\tline-height: 27px;\n\t\tletter-spacing: -0.5px;\n\t\tcolor: #aaa;\n}\n#showcase .showcase-right[data-v-33885605]{\n\t\tmargin-top: 90px;\n}\n.btn[data-v-33885605]{\n\t\tbackground-color: #7ABA05;\n\t\tcolor: #fff;\n\t\tborder: 2px solid transparent;\n\t\tborder-radius: 80px;\n\t\tfont-weight: 800;\n\t\twidth: 40%;\n\t\tfont-size: 24px;\n\t\tfont-size: 20px;\n\t\tline-height: 1.7;\n\t\tmargin-left: -5px;\n\t\tmargin-top: 10px;\n}\n\t/*LAPTOP row style END*/\n\t/**---------fotter----------*/\n#main-footer[data-v-33885605]{\n\n\t    background-color: #333;\n\t    text-align: center;\n\t    margin-top: 140px;\n}\n#main-footer[data-v-33885605]{\n\n\t    background-color: #333;\n\t    text-align: center;\n}\n#social-nav[data-v-33885605]{\n\t\t\n\t\twidth: 340px;\n\t\tpadding: 40px 10px 20px;\n\t\tmargin:0 auto;\n\t\tcolor: #bfbfbf;\n}\n#social-nav p[data-v-33885605]{\n\t\t\n\t\t\n\t\tmargin-left: 40px;\n}\nnav ul[data-v-33885605] {\n\t\tlist-style: none;\n}\nnav ul li[data-v-33885605] {\n\t\tfloat: left;\n}\n#copyright[data-v-33885605] {\n\n\t\tmargin-left: 50px;\n\t\tcolor: #666;\n}\n.logo[data-v-33885605]{\n\t\tmargin: 10px;\n}\n.navbar-toggle[data-v-33885605]{\n\t\tborder: none;\n}\n.navbar-toggle span[data-v-33885605]{\n\t\tbackground-color: #000;\n}\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/src/Home.vue"],"names":[],"mappings":";AAmJA;;EAEA,qCAAA;CAEA;AACA;KACA,2FAAA;KACA,6BAAA;EACA,uBAAA;EACA,mCAAA;EACA,mBAAA;KACA,MAAA;KACA,UAAA;EACA,aAAA;EACA,aAAA;CACA;AACA;EACA,mBAAA;;EAEA,MAAA;KACA,UAAA;EACA,aAAA;EACA,YAAA;EACA,YAAA;CAEA;CACA,iCAAA;CAGA,gBAAA;AACA;EACA,kBAAA;CAEA;AACA;EACA,uBAAA;EACA,gBAAA;EACA,iBAAA;EACA,qBAAA;EACA,iBAAA;CACA;AACA;EACA,YAAA;EACA,gBAAA;CAEA;AACA;CACA,sBAAA;CACA;AAEA;;EAEA,oBAAA;EACA,iBAAA;EACA,iBAAA;EACA,kBAAA;EACA,gBAAA;EACA,WAAA;CAEA;AACA;EACA,0BAAA;CACA;CACA,eAAA;CAGA,sBAAA;AACA;;IAEA,kBAAA;IACA,mBAAA;CACA;AACA;EACA,gBAAA;EACA,kBAAA;EACA,YAAA;EACA,iBAAA;EACA,qBAAA;CAEA;AACA;EACA,gBAAA;EACA,kBAAA;EACA,uBAAA;EACA,YAAA;CAEA;AACA;EACA,eAAA;EACA,2BAAA;CAEA;CAEA,oBAAA;CAEA,0BAAA;AACA;EACA,iBAAA;CACA;AACA;EACA,gBAAA;EACA,oBAAA;CACA;AACA;EACA,WAAA;EACA,iBAAA;CAEA;AACA;EACA,gBAAA;EACA,kBAAA;EACA,YAAA;EACA,iBAAA;EACA,qBAAA;CACA;AACA;EACA,gBAAA;EACA,kBAAA;EACA,uBAAA;EACA,YAAA;CACA;AACA;EACA,iBAAA;CACA;AACA;EACA,0BAAA;EACA,YAAA;EACA,8BAAA;EACA,oBAAA;EACA,iBAAA;EACA,WAAA;EACA,gBAAA;EACA,gBAAA;EACA,iBAAA;EACA,kBAAA;EACA,iBAAA;CAGA;CAEA,wBAAA;CACA,8BAAA;AACA;;KAEA,uBAAA;KACA,mBAAA;KACA,kBAAA;CACA;AAGA;;KAEA,uBAAA;KACA,mBAAA;CACA;AACA;;EAEA,aAAA;EACA,wBAAA;EACA,cAAA;EACA,eAAA;CACA;AACA;;;EAGA,kBAAA;CACA;AACA;EACA,iBAAA;CAEA;AACA;EACA,YAAA;CACA;AAEA;;EAEA,kBAAA;EACA,YAAA;CACA;AACA;EACA,aAAA;CACA;AACA;EACA,aAAA;CAEA;AACA;EACA,uBAAA;CACA","file":"Home.vue","sourcesContent":["<template>\r\n  <div>\r\n  \t<nav class=\"navbar navbar-fixed-top\">\r\n      <div class=\"container\">\t\t           \r\n    \t<a class=\"navbar-brand \" href=\"#page-top\"><img style=\"margin-top:5px;\" src=\"/dist/assets/images/logo-web3.gif\"></a>\r\n    \t<button  class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#navbar-item\"  >\r\n            <span class=\"sr-only\">Toggle navigation</span>\r\n            <span class=\"icon-bar\"></span>\r\n            <span class=\"icon-bar\"></span>\r\n            <span class=\"icon-bar\"></span>\r\n          </button>\r\n        <div id=\"navbar-item\" class=\"collapse navbar-collapse\">\r\n          <ul class=\"nav navbar-nav navbar-right\">\r\n            <li ><router-link :to=\"'jobs'\">Home</router-link></li>\r\n            <li><a   href=\"#\">Contact</a></li>\r\n            <li ><a  href=\"#\"><router-link :to=\"'signup'\"  >Sign up</router-link></a></li>\r\n            <li>\r\n            \t<button class='btn-danger navbar-btn'><router-link :to=\"'login'\"  ><a style=\"color: #fff;\">Log in</a></router-link></button>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n      </div>\r\n    </nav>\r\n\r\n    <!-- Navbar END -->\r\n\r\n    <!-- Heading container -->\r\n\t<div class=\"home-container\">\r\n        <div class=\"overlay\">    \r\n            <section class=\"title\">\r\n            \t<h1>Lorem ipsum dolor </h1>\r\n            \t<h2 class=\"home-hero-subtitle\">\r\n                   elit scripta suavitate his ea dico veritus no usu\r\n                    <a target=\"_blank\" href=\"/employee-recognition-guide\">transform employee recognition</a>\r\n                </h2>\r\n            </section>\r\n        </div>      \r\n    </div>\r\n\t <!-- Heading container END -->\r\n\r\n    <!-- Section starts for laptop row -->\r\n    <section id=\"showcase\">\r\n      <div class=\"container\">\r\n      \t<div class=\"row\">\r\n      \t  <div class=\"col-md-6 col-sm-6\">\r\n      \t    <div class=\"showcase-left\">\r\n      \t       <img src=\"/dist/assets/images/laptop5.png\">\r\n       \t    </div>\r\n      \t  </div>\r\n      \t  <div class=\"col-md-6 col-sm-6 readme\">\r\n      \t    <div class=\"showcase-right\">\r\n      \t       <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h1>\r\n      \t       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </p>\r\n       \t    </div>\r\n       \t    <br>\r\n       \t    <a href=\"\" class=\"btn btn-danger btn-default btn-lg showcase-btn\">Read More</a>\r\n      \t  </div>      \t\t\r\n      \t</div>\r\n      </div>    \t\r\n    </section>\r\n\r\n    <!-- Section END for first row -->\r\n\r\n    <!-- footer -->\r\n    <footer id=\"main-footer\">\r\n        <nav id=\"social-nav\" class=\"clearfix\">\r\n            <p>Follow Us On:</p>\t                \r\n            <ul>\r\n                <li>\r\n                  <a href=\"\" title=\"Twitter\" class=\"social-button round twitter\">\r\n                  <div class=\"logo icon-twitter\"><img src=\"/dist/assets/images/twitter.png\"></div>\r\n                  </a>\r\n                </li>\r\n                <li>\r\n                   <a href=\"\" title=\"Facebook\" class=\"social-button round facebook\">\r\n                   <div class=\"logo icon-facebook\"><img src=\"/dist/assets/images/goggle.png\"></div>\r\n                   </a>\r\n                </li>\r\n                <li>\r\n                   <a href=\"\" title=\"Google Plus\" class=\"social-button round google-plus\">\r\n                   <div class=\"logo icon-google\"><img src=\"/dist/assets/images/facebook.png\"></div>\r\n                   </a>\r\n                </li>\r\n                <li>\r\n                   <a href=\"\" title=\"Linked In\" class=\"social-button round linked-in\">\r\n                   <div class=\"logo icon-linkedin\"><img src=\"/dist/assets/images/linkedin.png\"></div>\r\n                   </a>\r\n                </li>\r\n            </ul>\r\n        </nav>\r\n          <p id=\"copyright\">Terms of Service | Privacy Policy |\r\n           © 2017 Survey Planet, LLC. All Rights Reserved</p>\r\n    </footer>\r\n  </div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'home',\r\n  beforeMount(){\r\n  \taxios.get('/session/data')\r\n  \t.then(req => {\r\n  \t\tif(req.data.roll){\r\n  \t\t\tthis.$router.push('/dash');\r\n  \t\t}\r\n  \t});\r\n  },\r\n  mounted (){\r\n  \tthis.$nextTick(() => {\r\n  \t\twindow.sr = ScrollReveal();\r\n\t  \t   sr.reveal('.navbar-brand',{\r\n\t  \t   \tduration: 2000,\r\n\t  \t   \torigin: 'left'\r\n\t  \t   });\r\n         sr.reveal('.collapse',{\r\n          duration: 2000,\r\n          origin: 'right'\r\n         });\r\n\t  \t   sr.reveal('.title',{\r\n\t  \t   \tduration: 2000,\r\n\t  \t   \torigin: 'bottom'\r\n\t  \t   });\r\n\t  \t   sr.reveal('.showcase-left',{\r\n\t  \t   \tduration: 2000,\r\n\t  \t   \torigin: 'left',\r\n\t  \t   \tdistance: '300px'\r\n\t  \t   });\r\n\t  \t   sr.reveal('.showcase-right',{\r\n\t  \t   \tduration: 2000,\r\n\t  \t   \torigin: 'right',\r\n\t  \t   \tdistance: '300px'\r\n\t  \t   });\r\n\t  \t   sr.reveal('.showcase-btn',{\r\n\t  \t   \tduration: 2000,\r\n\t  \t   \t\r\n\t  \t   \torigin: 'bottom'\r\n\t  \t   });\r\n\r\n  \t\t})\r\n  \t}\r\n\r\n  }\r\n\r\n</script>\r\n\r\n<style scoped>\r\n\tbody{\r\n\t\t\r\n\t\tfont-family: \"Open Sans\", sans-serif;\r\n\t\t\t\r\n\t}\r\n\t.home-container{\r\n\t    background-image: url(https://www.pega.com/sites/pega.com/files/banking-case-study-bg.jpg);\r\n\t    background-repeat: no-repeat;\r\n\t\tbackground-size: cover;\r\n\t\tbackground-position: center center;\r\n\t\tposition: relative;\r\n\t    top:0;\r\n\t    bottom: 0;\r\n\t\theight: 90vh;\r\n\t\tz-index: -10;\t\r\n\t}\r\n\t.overlay{\r\n\t\tposition: absolute;\r\n\t\t\r\n\t\ttop:0;\r\n\t    bottom: 0;\r\n\t\theight: 100%;\r\n\t\twidth: 100%;\r\n\t\tz-index: -5;\r\n\r\n\t}\r\n\t/*Body and background image END*/\r\n\r\n\r\n\t/*NAVBAR START*/\r\n\t.navbar-brand{\r\n\t\tmargin-top: -10px;\r\n\t\t\r\n\t}\r\n\t.navbar{\r\n\t\tbackground-color: #fff;\r\n\t\tposition: fixed;\r\n\t\tfont-weight: 800;\r\n\t\tletter-spacing: -1px;\r\n\t\tmargin-top: 20px;\r\n\t}\r\n\t.nav li a{\r\n\t\tcolor: #000;\r\n\t\tfont-size: 20px;\r\n\t\t\t\r\n\t}\r\n\t.nav li a:hover {\r\n\ttext-decoration: none;\r\n\t}\r\n\r\n\t.btn-danger{\r\n\r\n\t\tborder-radius: 10px;\r\n\t\tfont-weight: 800;\t\r\n\t\tline-height: 1.7;\r\n\t\tmargin-left: 40px;\r\n\t\tfont-size: 18px;\r\n\t\twidth: 80%;\r\n\t\t\r\n\t}\r\n .btn-danger:hover{\r\n \tbackground-color: #d43f3a;\r\n }\r\n\t/*NAVBAR  END*/\r\n\r\n\r\n\t/*HEADING TEXT START*/\r\n\t.title{\r\n\t   \r\n\t   margin-top: 300px;\r\n\t   text-align: center;\r\n\t}\r\n\t.title h1{\r\n\t\tfont-size: 45px;\r\n\t\tline-height: 45px;\r\n\t\tcolor: #fff;\r\n\t\tfont-weight: 800;\r\n\t\tletter-spacing: -1px;\r\n\t\t\r\n\t}\r\n\t.title h2{\r\n\t\tfont-size: 27px;\r\n\t\tline-height: 27px;\r\n\t\tletter-spacing: -0.5px;\r\n\t\tcolor: #aaa;\r\n\r\n\t}\r\n\t.title a{\r\n\t\tcolor: inherit;\r\n\t\ttext-decoration: underline;\r\n\r\n\t}\r\n\r\n\t/*HEADING TEXT END*/\r\n\r\n\t/*LAPTOP row style start*/\r\n\t#showcase{\r\n\t\tmargin-top: 40px;\r\n\t}\r\n\t#showcase h1{\r\n\t\tfont-size: 40px;\r\n\t\tmargin-bottom: 20px;\r\n\t}\r\n\t#showcase img{\r\n\t\twidth: 95%;\r\n\t\tmargin-top: 40px;\r\n\r\n\t}\r\n\t.showcase-right h1{\r\n\t\tfont-size: 31px;\r\n\t\tline-height: 45px;\r\n\t\tcolor: #333;\r\n\t\tfont-weight: 800;\r\n\t\tletter-spacing: -1px;\r\n\t}\r\n\t.showcase-right p{\r\n\t\tfont-size: 22px;\r\n\t\tline-height: 27px;\r\n\t\tletter-spacing: -0.5px;\r\n\t\tcolor: #aaa;\r\n\t}\r\n\t#showcase .showcase-right{\r\n\t\tmargin-top: 90px;\r\n\t}\r\n\t.btn{\r\n\t\tbackground-color: #7ABA05;\r\n\t\tcolor: #fff;\r\n\t\tborder: 2px solid transparent;\r\n\t\tborder-radius: 80px;\r\n\t\tfont-weight: 800;\r\n\t\twidth: 40%;\r\n\t\tfont-size: 24px;\r\n\t\tfont-size: 20px;\r\n\t\tline-height: 1.7;\r\n\t\tmargin-left: -5px;\r\n\t\tmargin-top: 10px;\r\n\r\n\r\n\t}\r\n\r\n\t/*LAPTOP row style END*/\r\n\t/**---------fotter----------*/\r\n\t#main-footer{\r\n\r\n\t    background-color: #333;\r\n\t    text-align: center;\r\n\t    margin-top: 140px;\r\n\t}\r\n\r\n\r\n\t#main-footer{\r\n\r\n\t    background-color: #333;\r\n\t    text-align: center;\r\n\t}\r\n\t#social-nav{\r\n\t\t\r\n\t\twidth: 340px;\r\n\t\tpadding: 40px 10px 20px;\r\n\t\tmargin:0 auto;\r\n\t\tcolor: #bfbfbf;\r\n\t}\r\n\t#social-nav p{\r\n\t\t\r\n\t\t\r\n\t\tmargin-left: 40px;\r\n\t}\r\n\tnav ul {\r\n\t\tlist-style: none;\r\n\r\n\t}\r\n\t nav ul li {\r\n\t\tfloat: left;\r\n\t}\r\n\r\n\t#copyright {\r\n\r\n\t\tmargin-left: 50px;\r\n\t\tcolor: #666;\r\n\t}\r\n\t.logo{\r\n\t\tmargin: 10px;\r\n\t}\r\n\t.navbar-toggle{\r\n\t\tborder: none;\r\n\t\t\r\n\t}\r\n\t.navbar-toggle span{\r\n\t\tbackground-color: #000;\r\n\t}\r\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\nbody[data-v-33885605]{\n\t\t\n\t\tfont-family: \"Open Sans\", sans-serif;\n}\n.home-container[data-v-33885605]{\n\t    background-image: url(\"/dist/assets/images/4.jpg\");\n\t    background-color: rgba(0, 0, 0, 0.5);\n\t    background-repeat: no-repeat;\n\t\tbackground-size: cover;\n\t\tbackground-position: center center;\n\t\tposition: relative;\n\t    top:0;\n\t    bottom: 0;\n\t\theight: 90vh;\n\t\twidth: 100%;\n\t\tz-index: -10;\n}\n.opacity[data-v-33885605]{\n\t\tposition: absolute;\n\t\tbackground-color: rgba(0,0,0,0.5);\n\t    top:0;\n\t    bottom: 0;\n\t\theight: 90vh;\n\t\twidth: 100%;\n\t\tz-index: -5;\n}\n.overlay[data-v-33885605]{\n\t\tposition: absolute;\n\t\t\n\t\ttop:0;\n\t    bottom: 0;\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tz-index: -5;\n}\n\t/*Body and background image END*/\n\t/*NAVBAR START*/\n.navbar-brand[data-v-33885605]{\n\t\tmargin-top: -10px;\n}\n.navbar[data-v-33885605]{\n\t\tbackground-color: #fff;\n\t\tposition: fixed;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n\t\tmargin-top: 20px;\n}\n.nav li a[data-v-33885605]{\n\t\tcolor: #000;\n\t\tfont-size: 20px;\n}\n.nav li a[data-v-33885605]:hover {\n\ttext-decoration: none;\n}\n.btn-danger[data-v-33885605]{\n\n\t\tborder-radius: 10px;\n\t\tfont-weight: 800;\t\n\t\tline-height: 1.7;\n\t\tmargin-left: 40px;\n\t\tfont-size: 18px;\n\t\twidth: 80%;\n}\n.btn-danger[data-v-33885605]:hover{\n \tbackground-color: #d43f3a;\n}\n\t/*NAVBAR  END*/\n\t/*HEADING TEXT START*/\n.title[data-v-33885605]{\n\t   \n\t   margin-top: 300px;\n\t   text-align: center;\n}\n.title h1[data-v-33885605]{\n\t\tfont-size: 45px;\n\t\tline-height: 45px;\n\t\tcolor: #fff;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n}\n.title h2[data-v-33885605]{\n\t\tfont-size: 27px;\n\t\tline-height: 27px;\n\t\tletter-spacing: -0.5px;\n\t\tcolor: #aaa;\n}\n.title a[data-v-33885605]{\n\t\tcolor: inherit;\n\t\ttext-decoration: underline;\n}\n\t/*HEADING TEXT END*/\n\t/*LAPTOP row style start*/\n#showcase[data-v-33885605]{\n\t\tmargin-top: 40px;\n}\n#showcase h1[data-v-33885605]{\n\t\tfont-size: 40px;\n\t\tmargin-bottom: 20px;\n}\n#showcase img[data-v-33885605]{\n\t\twidth: 95%;\n\t\tmargin-top: 40px;\n}\n.showcase-right h1[data-v-33885605]{\n\t\tfont-size: 31px;\n\t\tline-height: 45px;\n\t\tcolor: #333;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n}\n.showcase-right p[data-v-33885605]{\n\t\tfont-size: 22px;\n\t\tline-height: 27px;\n\t\tletter-spacing: -0.5px;\n\t\tcolor: #aaa;\n}\n#showcase .showcase-right[data-v-33885605]{\n\t\tmargin-top: 90px;\n}\n.btn[data-v-33885605]{\n\t\tbackground-color: #7ABA05;\n\t\tcolor: #fff;\n\t\tborder: 2px solid transparent;\n\t\tborder-radius: 80px;\n\t\tfont-weight: 800;\n\t\twidth: 40%;\n\t\tfont-size: 24px;\n\t\tfont-size: 20px;\n\t\tline-height: 1.7;\n\t\tmargin-left: -5px;\n\t\tmargin-top: 10px;\n}\n\t/*LAPTOP row style END*/\n\t/**---------fotter----------*/\n#main-footer[data-v-33885605]{\n\n\t    background-color: #333;\n\t    text-align: center;\n\t    margin-top: 140px;\n}\n#main-footer[data-v-33885605]{\n\n\t    background-color: #333;\n\t    text-align: center;\n}\n#social-nav[data-v-33885605]{\n\t\t\n\t\twidth: 340px;\n\t\tpadding: 40px 10px 20px;\n\t\tmargin:0 auto;\n\t\tcolor: #bfbfbf;\n}\n#social-nav p[data-v-33885605]{\n\t\t\n\t\t\n\t\tmargin-left: 40px;\n}\nnav ul[data-v-33885605] {\n\t\tlist-style: none;\n}\nnav ul li[data-v-33885605] {\n\t\tfloat: left;\n}\n#copyright[data-v-33885605] {\n\n\t\tmargin-left: 50px;\n\t\tcolor: #666;\n}\n.logo[data-v-33885605]{\n\t\tmargin: 10px;\n}\n.navbar-toggle[data-v-33885605]{\n\t\tborder: none;\n}\n.navbar-toggle span[data-v-33885605]{\n\t\tbackground-color: #000;\n}\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/src/Home.vue"],"names":[],"mappings":";AAqJA;;EAEA,qCAAA;CAEA;AACA;KACA,mDAAA;KACA,qCAAA;KACA,6BAAA;EACA,uBAAA;EACA,mCAAA;EACA,mBAAA;KACA,MAAA;KACA,UAAA;EACA,aAAA;EACA,YAAA;EACA,aAAA;CACA;AACA;EACA,mBAAA;EACA,kCAAA;KACA,MAAA;KACA,UAAA;EACA,aAAA;EACA,YAAA;EACA,YAAA;CACA;AACA;EACA,mBAAA;;EAEA,MAAA;KACA,UAAA;EACA,aAAA;EACA,YAAA;EACA,YAAA;CAEA;CACA,iCAAA;CAGA,gBAAA;AACA;EACA,kBAAA;CAEA;AACA;EACA,uBAAA;EACA,gBAAA;EACA,iBAAA;EACA,qBAAA;EACA,iBAAA;CACA;AACA;EACA,YAAA;EACA,gBAAA;CAEA;AACA;CACA,sBAAA;CACA;AAEA;;EAEA,oBAAA;EACA,iBAAA;EACA,iBAAA;EACA,kBAAA;EACA,gBAAA;EACA,WAAA;CAEA;AACA;EACA,0BAAA;CACA;CACA,eAAA;CAGA,sBAAA;AACA;;IAEA,kBAAA;IACA,mBAAA;CACA;AACA;EACA,gBAAA;EACA,kBAAA;EACA,YAAA;EACA,iBAAA;EACA,qBAAA;CAEA;AACA;EACA,gBAAA;EACA,kBAAA;EACA,uBAAA;EACA,YAAA;CAEA;AACA;EACA,eAAA;EACA,2BAAA;CAEA;CAEA,oBAAA;CAEA,0BAAA;AACA;EACA,iBAAA;CACA;AACA;EACA,gBAAA;EACA,oBAAA;CACA;AACA;EACA,WAAA;EACA,iBAAA;CAEA;AACA;EACA,gBAAA;EACA,kBAAA;EACA,YAAA;EACA,iBAAA;EACA,qBAAA;CACA;AACA;EACA,gBAAA;EACA,kBAAA;EACA,uBAAA;EACA,YAAA;CACA;AACA;EACA,iBAAA;CACA;AACA;EACA,0BAAA;EACA,YAAA;EACA,8BAAA;EACA,oBAAA;EACA,iBAAA;EACA,WAAA;EACA,gBAAA;EACA,gBAAA;EACA,iBAAA;EACA,kBAAA;EACA,iBAAA;CAGA;CAEA,wBAAA;CACA,8BAAA;AACA;;KAEA,uBAAA;KACA,mBAAA;KACA,kBAAA;CACA;AAGA;;KAEA,uBAAA;KACA,mBAAA;CACA;AACA;;EAEA,aAAA;EACA,wBAAA;EACA,cAAA;EACA,eAAA;CACA;AACA;;;EAGA,kBAAA;CACA;AACA;EACA,iBAAA;CAEA;AACA;EACA,YAAA;CACA;AAEA;;EAEA,kBAAA;EACA,YAAA;CACA;AACA;EACA,aAAA;CACA;AACA;EACA,aAAA;CAEA;AACA;EACA,uBAAA;CACA","file":"Home.vue","sourcesContent":["<template>\r\n  <div>\r\n  \t<nav class=\"navbar navbar-fixed-top\">\r\n      <div class=\"container\">\t\t           \r\n    \t<a class=\"navbar-brand \" href=\"#page-top\"><img style=\"margin-top:5px;\" src=\"/dist/assets/images/logo-web3.gif\"></a>\r\n    \t<button  class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#navbar-item\"  >\r\n            <span class=\"sr-only\">Toggle navigation</span>\r\n            <span class=\"icon-bar\"></span>\r\n            <span class=\"icon-bar\"></span>\r\n            <span class=\"icon-bar\"></span>\r\n          </button>\r\n        <div id=\"navbar-item\" class=\"collapse navbar-collapse\">\r\n          <ul class=\"nav navbar-nav navbar-right\">\r\n            <li ><router-link :to=\"'jobs'\">Home</router-link></li>\r\n            <li><a   href=\"#\">Contact</a></li>\r\n            <li ><a  href=\"#\"><router-link :to=\"'signup'\"  >Sign up</router-link></a></li>\r\n            <li>\r\n            \t<button class='btn-danger navbar-btn'><router-link :to=\"'login'\"  ><a style=\"color: #fff;\">Log in</a></router-link></button>\r\n            </li>\r\n          </ul>\r\n        </div>\r\n      </div>\r\n    </nav>\r\n\r\n    <!-- Navbar END -->\r\n\r\n    <!-- Heading container -->\r\n\t<div class=\"home-container\">\r\n\t  <div class=\"opacity\">\r\n        <div class=\"overlay\">    \r\n            <section class=\"title\">\r\n            \t<h1>Lorem ipsum dolor </h1>\r\n            \t<h2 class=\"home-hero-subtitle\">\r\n                   elit scripta suavitate his ea dico veritus no usu\r\n                    <a target=\"_blank\" href=\"/employee-recognition-guide\">transform employee recognition</a>\r\n                </h2>\r\n            </section>\r\n        </div>\r\n      </div>        \r\n    </div>\r\n\t <!-- Heading container END -->\r\n\r\n    <!-- Section starts for laptop row -->\r\n    <section id=\"showcase\">\r\n      <div class=\"container\">\r\n      \t<div class=\"row\">\r\n      \t  <div class=\"col-md-6 col-sm-6\">\r\n      \t    <div class=\"showcase-left\">\r\n      \t       <img src=\"/dist/assets/images/laptop5.png\">\r\n       \t    </div>\r\n      \t  </div>\r\n      \t  <div class=\"col-md-6 col-sm-6 readme\">\r\n      \t    <div class=\"showcase-right\">\r\n      \t       <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h1>\r\n      \t       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </p>\r\n       \t    </div>\r\n       \t    <br>\r\n       \t    <a href=\"\" class=\"btn btn-danger btn-default btn-lg showcase-btn\">Read More</a>\r\n      \t  </div>      \t\t\r\n      \t</div>\r\n      </div>    \t\r\n    </section>\r\n\r\n    <!-- Section END for first row -->\r\n\r\n    <!-- footer -->\r\n    <footer id=\"main-footer\">\r\n        <nav id=\"social-nav\" class=\"clearfix\">\r\n            <p>Follow Us On:</p>\t                \r\n            <ul>\r\n                <li>\r\n                  <a href=\"\" title=\"Twitter\" class=\"social-button round twitter\">\r\n                  <div class=\"logo icon-twitter\"><img src=\"/dist/assets/images/twitter.png\"></div>\r\n                  </a>\r\n                </li>\r\n                <li>\r\n                   <a href=\"\" title=\"Facebook\" class=\"social-button round facebook\">\r\n                   <div class=\"logo icon-facebook\"><img src=\"/dist/assets/images/goggle.png\"></div>\r\n                   </a>\r\n                </li>\r\n                <li>\r\n                   <a href=\"\" title=\"Google Plus\" class=\"social-button round google-plus\">\r\n                   <div class=\"logo icon-google\"><img src=\"/dist/assets/images/facebook.png\"></div>\r\n                   </a>\r\n                </li>\r\n                <li>\r\n                   <a href=\"\" title=\"Linked In\" class=\"social-button round linked-in\">\r\n                   <div class=\"logo icon-linkedin\"><img src=\"/dist/assets/images/linkedin.png\"></div>\r\n                   </a>\r\n                </li>\r\n            </ul>\r\n        </nav>\r\n          <p id=\"copyright\">Terms of Service | Privacy Policy |\r\n           © 2017 Survey Planet, LLC. All Rights Reserved</p>\r\n    </footer>\r\n  </div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'home',\r\n  beforeMount(){\r\n  \taxios.get('/session/data')\r\n  \t.then(req => {\r\n  \t\tif(req.data.roll){\r\n  \t\t\tthis.$router.push('/dash');\r\n  \t\t}\r\n  \t});\r\n  },\r\n  mounted (){\r\n  \tthis.$nextTick(() => {\r\n  \t\twindow.sr = ScrollReveal();\r\n\t  \t   sr.reveal('.navbar-brand',{\r\n\t  \t   \tduration: 2000,\r\n\t  \t   \torigin: 'left'\r\n\t  \t   });\r\n         sr.reveal('.collapse',{\r\n          duration: 2000,\r\n          origin: 'right'\r\n         });\r\n\t  \t   sr.reveal('.title',{\r\n\t  \t   \tduration: 2000,\r\n\t  \t   \torigin: 'bottom'\r\n\t  \t   });\r\n\t  \t   sr.reveal('.showcase-left',{\r\n\t  \t   \tduration: 2000,\r\n\t  \t   \torigin: 'left',\r\n\t  \t   \tdistance: '300px'\r\n\t  \t   });\r\n\t  \t   sr.reveal('.showcase-right',{\r\n\t  \t   \tduration: 2000,\r\n\t  \t   \torigin: 'right',\r\n\t  \t   \tdistance: '300px'\r\n\t  \t   });\r\n\t  \t   sr.reveal('.showcase-btn',{\r\n\t  \t   \tduration: 2000,\r\n\t  \t   \t\r\n\t  \t   \torigin: 'bottom'\r\n\t  \t   });\r\n\r\n  \t\t})\r\n  \t}\r\n\r\n  }\r\n\r\n</script>\r\n\r\n<style scoped>\r\n\tbody{\r\n\t\t\r\n\t\tfont-family: \"Open Sans\", sans-serif;\r\n\t\t\t\r\n\t}\r\n\t.home-container{\r\n\t    background-image: url(\"/dist/assets/images/4.jpg\");\r\n\t    background-color: rgba(0, 0, 0, 0.5);\r\n\t    background-repeat: no-repeat;\r\n\t\tbackground-size: cover;\r\n\t\tbackground-position: center center;\r\n\t\tposition: relative;\r\n\t    top:0;\r\n\t    bottom: 0;\r\n\t\theight: 90vh;\r\n\t\twidth: 100%;\r\n\t\tz-index: -10;\t\r\n\t}\r\n\t.opacity{\r\n\t\tposition: absolute;\r\n\t\tbackground-color: rgba(0,0,0,0.5);\r\n\t    top:0;\r\n\t    bottom: 0;\r\n\t\theight: 90vh;\r\n\t\twidth: 100%;\r\n\t\tz-index: -5;\r\n\t}\r\n\t.overlay{\r\n\t\tposition: absolute;\r\n\t\t\r\n\t\ttop:0;\r\n\t    bottom: 0;\r\n\t\theight: 100%;\r\n\t\twidth: 100%;\r\n\t\tz-index: -5;\r\n\r\n\t}\r\n\t/*Body and background image END*/\r\n\r\n\r\n\t/*NAVBAR START*/\r\n\t.navbar-brand{\r\n\t\tmargin-top: -10px;\r\n\t\t\r\n\t}\r\n\t.navbar{\r\n\t\tbackground-color: #fff;\r\n\t\tposition: fixed;\r\n\t\tfont-weight: 800;\r\n\t\tletter-spacing: -1px;\r\n\t\tmargin-top: 20px;\r\n\t}\r\n\t.nav li a{\r\n\t\tcolor: #000;\r\n\t\tfont-size: 20px;\r\n\t\t\t\r\n\t}\r\n\t.nav li a:hover {\r\n\ttext-decoration: none;\r\n\t}\r\n\r\n\t.btn-danger{\r\n\r\n\t\tborder-radius: 10px;\r\n\t\tfont-weight: 800;\t\r\n\t\tline-height: 1.7;\r\n\t\tmargin-left: 40px;\r\n\t\tfont-size: 18px;\r\n\t\twidth: 80%;\r\n\t\t\r\n\t}\r\n .btn-danger:hover{\r\n \tbackground-color: #d43f3a;\r\n }\r\n\t/*NAVBAR  END*/\r\n\r\n\r\n\t/*HEADING TEXT START*/\r\n\t.title{\r\n\t   \r\n\t   margin-top: 300px;\r\n\t   text-align: center;\r\n\t}\r\n\t.title h1{\r\n\t\tfont-size: 45px;\r\n\t\tline-height: 45px;\r\n\t\tcolor: #fff;\r\n\t\tfont-weight: 800;\r\n\t\tletter-spacing: -1px;\r\n\t\t\r\n\t}\r\n\t.title h2{\r\n\t\tfont-size: 27px;\r\n\t\tline-height: 27px;\r\n\t\tletter-spacing: -0.5px;\r\n\t\tcolor: #aaa;\r\n\r\n\t}\r\n\t.title a{\r\n\t\tcolor: inherit;\r\n\t\ttext-decoration: underline;\r\n\r\n\t}\r\n\r\n\t/*HEADING TEXT END*/\r\n\r\n\t/*LAPTOP row style start*/\r\n\t#showcase{\r\n\t\tmargin-top: 40px;\r\n\t}\r\n\t#showcase h1{\r\n\t\tfont-size: 40px;\r\n\t\tmargin-bottom: 20px;\r\n\t}\r\n\t#showcase img{\r\n\t\twidth: 95%;\r\n\t\tmargin-top: 40px;\r\n\r\n\t}\r\n\t.showcase-right h1{\r\n\t\tfont-size: 31px;\r\n\t\tline-height: 45px;\r\n\t\tcolor: #333;\r\n\t\tfont-weight: 800;\r\n\t\tletter-spacing: -1px;\r\n\t}\r\n\t.showcase-right p{\r\n\t\tfont-size: 22px;\r\n\t\tline-height: 27px;\r\n\t\tletter-spacing: -0.5px;\r\n\t\tcolor: #aaa;\r\n\t}\r\n\t#showcase .showcase-right{\r\n\t\tmargin-top: 90px;\r\n\t}\r\n\t.btn{\r\n\t\tbackground-color: #7ABA05;\r\n\t\tcolor: #fff;\r\n\t\tborder: 2px solid transparent;\r\n\t\tborder-radius: 80px;\r\n\t\tfont-weight: 800;\r\n\t\twidth: 40%;\r\n\t\tfont-size: 24px;\r\n\t\tfont-size: 20px;\r\n\t\tline-height: 1.7;\r\n\t\tmargin-left: -5px;\r\n\t\tmargin-top: 10px;\r\n\r\n\r\n\t}\r\n\r\n\t/*LAPTOP row style END*/\r\n\t/**---------fotter----------*/\r\n\t#main-footer{\r\n\r\n\t    background-color: #333;\r\n\t    text-align: center;\r\n\t    margin-top: 140px;\r\n\t}\r\n\r\n\r\n\t#main-footer{\r\n\r\n\t    background-color: #333;\r\n\t    text-align: center;\r\n\t}\r\n\t#social-nav{\r\n\t\t\r\n\t\twidth: 340px;\r\n\t\tpadding: 40px 10px 20px;\r\n\t\tmargin:0 auto;\r\n\t\tcolor: #bfbfbf;\r\n\t}\r\n\t#social-nav p{\r\n\t\t\r\n\t\t\r\n\t\tmargin-left: 40px;\r\n\t}\r\n\tnav ul {\r\n\t\tlist-style: none;\r\n\r\n\t}\r\n\t nav ul li {\r\n\t\tfloat: left;\r\n\t}\r\n\r\n\t#copyright {\r\n\r\n\t\tmargin-left: 50px;\r\n\t\tcolor: #666;\r\n\t}\r\n\t.logo{\r\n\t\tmargin: 10px;\r\n\t}\r\n\t.navbar-toggle{\r\n\t\tborder: none;\r\n\t\t\r\n\t}\r\n\t.navbar-toggle span{\r\n\t\tbackground-color: #000;\r\n\t}\r\n</style>"],"sourceRoot":""}]);
 
 // exports
 
@@ -21105,6 +21286,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "home-container" }, [
+<<<<<<< HEAD
       _c("div", { staticClass: "overlay" }, [
         _c("section", { staticClass: "title" }, [
           _c("h1", [_vm._v("Lorem ipsum dolor ")]),
@@ -21121,6 +21303,28 @@ var staticRenderFns = [
               },
               [_vm._v("transform employee recognition")]
             )
+=======
+      _c("div", { staticClass: "opacity" }, [
+        _c("div", { staticClass: "overlay" }, [
+          _c("section", { staticClass: "title" }, [
+            _c("h1", [_vm._v("Lorem ipsum dolor ")]),
+            _vm._v(" "),
+            _c("h2", { staticClass: "home-hero-subtitle" }, [
+              _vm._v(
+                "\n                   elit scripta suavitate his ea dico veritus no usu\n                    "
+              ),
+              _c(
+                "a",
+                {
+                  attrs: {
+                    target: "_blank",
+                    href: "/employee-recognition-guide"
+                  }
+                },
+                [_vm._v("transform employee recognition")]
+              )
+            ])
+>>>>>>> d5f584db1462729194aa169ba267397210840f21
           ])
         ])
       ])
@@ -21389,7 +21593,7 @@ var content = __webpack_require__(87);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("4c3e4158", content, false);
+var update = __webpack_require__(3)("4c3e4158", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -21408,12 +21612,12 @@ if(false) {
 /* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
 // module
-exports.push([module.i, "\n.overlay[data-v-5b675133]{\n\t   \n\t    background-image: url(https://www.pega.com/sites/pega.com/files/banking-case-study-bg.jpg);\n    background-repeat: no-repeat;\n\tbackground-size: cover;\n\tbackground-position: center center;\n\tposition: fixed;\n    top:0;\n    bottom: 0;\n\theight:100%;\n\tz-index: -10;\n\twidth:100%;\n}\n\n\n\t/*NAVBAR START*/\n.navbar-brand[data-v-5b675133]{\n\t\tmargin-top: -10px;\n}\n.navbar[data-v-5b675133]{\n\t\tbackground-color: #fff;\n\t\tposition: fixed;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n\t\tmargin-top: 20px;\n}\n.nav li a[data-v-5b675133]{\n\t\tcolor: #000;\n\t\tfont-size: 20px;\n}\n.nav li a[data-v-5b675133]:hover {\n\ttext-decoration: none;\n}\n.title[data-v-5b675133]{\n\t   \n\t   margin-top: 260px;\n\t   text-align: center;\n}\n.title h1[data-v-5b675133]{\n\t\tfont-size: 45px;\n\t\tline-height: 45px;\n\t\tcolor: #fff;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n}\n.title h2[data-v-5b675133]{\n\t\tfont-size: 27px;\n\t\tfont-weight: bold;\n\t\tline-height: 27px;\n\t\tletter-spacing: -0.5px;\n\t\tcolor: #C0C0C0;\n}\n.title a[data-v-5b675133]{\n\t\tcolor: inherit;\n\t\ttext-decoration: underline;\n}\n.btn-danger[data-v-5b675133]{\n\t\tborder-radius: 10px;\n\t\tfont-weight: 800;\t\n\t\tline-height: 1.7;\n\t\tmargin-left: 40px;\n\t\tfont-size: 18px;\n\t\twidth: 80%;\n}\n.navbar-toggle span[data-v-5b675133]{\n\t\tbackground-color: #000;\n}\n\n\n\t/*NAVBAR END*/\n\n\n\t/*LOGIN BOX START*/\nh1[data-v-5b675133]{ font-size:28px;\n}\nh2[data-v-5b675133]{ font-size:26px;\n}\nh3[data-v-5b675133]{ font-size:18px;\n}\nh4[data-v-5b675133]{ font-size:16px;\n}\nh5[data-v-5b675133]{ font-size:14px;\n}\nh6[data-v-5b675133]{ font-size:12px;\n}\nh1[data-v-5b675133],h2[data-v-5b675133],h3[data-v-5b675133],h4[data-v-5b675133],h5[data-v-5b675133],h6[data-v-5b675133]{ color:#563D64;\n}\nsmall[data-v-5b675133]{ font-size:10px;\n}\nb[data-v-5b675133], strong[data-v-5b675133]{ font-weight:bold;\n}\na[data-v-5b675133]{ text-decoration: none;\n}\na[data-v-5b675133]:hover{ text-decoration: underline;\n}\n.left[data-v-5b675133] { float:left;\n}\n.right[data-v-5b675133] { float:right;\n}\n.alignleft[data-v-5b675133] { float: left; margin-right: 15px;\n}\n.alignright[data-v-5b675133] { float: right; margin-left: 15px;\n}\n.clearfix[data-v-5b675133]:after,\n\tform[data-v-5b675133]:after {\n\t\tcontent: \".\";\n\t\tdisplay: block;\n\t\theight: 0;\n\t\tclear: both;\n\t\tvisibility: hidden;\n}\n#content[data-v-5b675133] {\n\t\tbackground: #f9f9f9;\n\t\tbackground: -webkit-gradient(linear,  left top, left bottom,  from(rgba(248,248,248,1)),to(rgba(249,249,249,1)));\n\t\tbackground: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );\n\t\t-webkit-box-shadow: 0 1px 0 #fff inset;\n\t\t-ms-box-shadow: 0 1px 0 #fff inset;\n\t\t-o-box-shadow: 0 1px 0 #fff inset;\n\t\tbox-shadow: 0 1px 0 #fff inset;\n\t\tborder: 1px solid #c4c6ca;\n\t\tmargin: 0;\n\t\tpadding: 65px 0 0;\n\t\tposition: relative;\n\t\ttext-align: center;\n\t\ttext-shadow: 0 1px 0 #fff;\n\t\twidth: 33%;\n\t    margin-left: 33%;\n\t    margin-top: 15%;\n}\n#content h1[data-v-5b675133] {\n\t\tcolor: #7E7E7E;\n\t\tfont: bold 25px Helvetica, Arial, sans-serif;\n\t\tletter-spacing: -0.05em;\n\t\tline-height: 20px;\n\t\tmargin: 10px 0 30px;\n}\n#content h1[data-v-5b675133]:before,\n\t#content h1[data-v-5b675133]:after {\n\t\tcontent: \"\";\n\t\theight: 1px;\n\t\tposition: absolute;\n\t\ttop: 10px;\n\t\twidth: 27%;\n}\n#content h1[data-v-5b675133]:after {\n\t\tbackground: rgb(126,126,126);\n\t\tbackground: -webkit-gradient(linear,  left top, right top,  from(rgba(126,126,126,1)),to(rgba(255,255,255,1)));\n\t\tbackground: linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t    right: 0;\n}\n#content h1[data-v-5b675133]:before {\n\t\tbackground: rgb(126,126,126);\n\t\tbackground: -webkit-gradient(linear,  right top, left top,  from(rgba(126,126,126,1)),to(rgba(255,255,255,1)));\n\t\tbackground: linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t    left: 0;\n}\n#content[data-v-5b675133]:after,\n\t#content[data-v-5b675133]:before {\n\t\tbackground: #f9f9f9;\n\t\tbackground: -webkit-gradient(linear,  left top, left bottom,  from(rgba(248,248,248,1)),to(rgba(249,249,249,1)));\n\t\tbackground: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );\n\t\tborder: 1px solid #c4c6ca;\n\t\tcontent: \"\";\n\t\tdisplay: block;\n\t\theight: 100%;\n\t\tleft: -1px;\n\t\tposition: absolute;\n\t\twidth: 100%;\n}\n#content[data-v-5b675133]:after {\n\t\t-webkit-transform: rotate(2deg);\n\t\ttransform: rotate(2deg);\n\t\ttop: 0;\n\t\tz-index: -1;\n}\n#content[data-v-5b675133]:before {\n\t\t-webkit-transform: rotate(-3deg);\n\t\ttransform: rotate(-3deg);\n\t\ttop: 0;\n\t\tz-index: -2;\n}\n#content form[data-v-5b675133] { margin: 0 20px; position: relative\n}\n#content form input[type=\"text\"][data-v-5b675133],\n\t#content form input[type=\"password\"][data-v-5b675133] {\n\t\tborder-radius: 3px;\n\t\t-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\tbox-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-webkit-transition: all 0.5s ease;\n\t\ttransition: all 0.5s ease;\n\t\tbackground: #eae7e7 url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) no-repeat;\n\t\tborder: 1px solid #c8c8c8;\n\t\tcolor: #777;\n\t\tfont: 13px Helvetica, Arial, sans-serif;\n\t\tmargin: 0 0 20px;\n\t\tpadding: 15px 10px 15px 40px;\n\t\twidth: 90%;\n}\n#content form input[type=\"text\"][data-v-5b675133]:focus,\n\t#content form input[type=\"password\"][data-v-5b675133]:focus {\n\t\t-webkit-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-ms-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-o-box-shadow: 0 0 2px #ed1c24 inset;\n\t\tbox-shadow: 0 0 2px #ed1c24 inset;\n\t\tbackground-color: #fff;\n\t\tborder: 1px solid #ed1c24;\n\t\toutline: none;\n}\n#username[data-v-5b675133] { background-position: 10px 10px !important\n}\n#password[data-v-5b675133] { background-position: 10px -53px !important\n}\n#content form input[type=\"submit\"][data-v-5b675133] {\n\t\tbackground: rgb(254,231,154);\n\t\tbackground: -webkit-gradient(linear,  left top, left bottom,  from(rgba(254,231,154,1)),to(rgba(254,193,81,1)));\n\t\tbackground: linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fee79a', endColorstr='#fec151',GradientType=0 );\n\t\tborder-radius: 30px;\n\t\t-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-ms-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-o-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\tbox-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\tborder: 1px solid #D69E31;\n\t\tcolor: #85592e;\n\t\tcursor: pointer;\n\t\tfloat: left;\n\t\tfont: bold 15px Helvetica, Arial, sans-serif;\n\t\theight: 35px;\n\t\tmargin: 20px 0 35px 15px;\n\t\tposition: relative;\n\t\ttext-shadow: 0 1px 0 rgba(255,255,255,0.5);\n\t\twidth: 120px;\n}\n#content form input[type=\"submit\"][data-v-5b675133]:hover {\n\t\tbackground: rgb(254,193,81);\n\t\tbackground: -webkit-gradient(linear,  left top, left bottom,  from(rgba(254,193,81,1)),to(rgba(254,231,154,1)));\n\t\tbackground: linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec151', endColorstr='#fee79a',GradientType=0 );\n}\n#content form div a[data-v-5b675133] {\n\t\tcolor: #004a80;\n\t    float: right;\n\t    font-size: 12px;\n\t    margin: 30px 15px 0 0;\n\t    text-decoration: underline;\n}\n.button[data-v-5b675133] {\n\t\tbackground: rgb(247,249,250);\n\t\tbackground: -webkit-gradient(linear,  left top, left bottom,  from(rgba(247,249,250,1)),to(rgba(240,240,240,1)));\n\t\tbackground: linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f9fa', endColorstr='#f0f0f0',GradientType=0 );\n\t\t-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-ms-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-o-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\tbox-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\tborder-radius: 0 0 5px 5px;\n\t\tborder-top: 1px solid #CFD5D9;\n\t\tpadding: 15px 0;\n}\n.button a[data-v-5b675133] {\n\t\tbackground: url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) 0 -112px no-repeat;\n\t\tcolor: #7E7E7E;\n\t\tfont-size: 17px;\n\t\tpadding: 2px 0 2px 40px;\n\t\ttext-decoration: none;\n\t\t-webkit-transition: all 0.3s ease;\n\t\ttransition: all 0.3s ease;\n}\n.button a[data-v-5b675133]:hover {\n\t\tbackground-position: 0 -135px;\n\t\tcolor: #00aeef;\n}\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/src/Login.vue"],"names":[],"mappings":";AA6GA;;KAEA,2FAAA;IACA,6BAAA;CACA,uBAAA;CACA,mCAAA;CACA,gBAAA;IACA,MAAA;IACA,UAAA;CACA,YAAA;CACA,aAAA;CACA,WAAA;CACA;;;CAGA,gBAAA;AACA;EACA,kBAAA;CAEA;AACA;EACA,uBAAA;EACA,gBAAA;EACA,iBAAA;EACA,qBAAA;EACA,iBAAA;CACA;AACA;EACA,YAAA;EACA,gBAAA;CAEA;AACA;CACA,sBAAA;CACA;AAGA;;IAEA,kBAAA;IACA,mBAAA;CACA;AACA;EACA,gBAAA;EACA,kBAAA;EACA,YAAA;EACA,iBAAA;EACA,qBAAA;CAEA;AACA;EACA,gBAAA;EACA,kBAAA;EACA,kBAAA;EACA,uBAAA;EACA,eAAA;CAEA;AACA;EACA,eAAA;EACA,2BAAA;CAEA;AAEA;EACA,oBAAA;EACA,iBAAA;EACA,iBAAA;EACA,kBAAA;EACA,gBAAA;EACA,WAAA;CACA;AACA;EACA,uBAAA;CACA;;;CAEA,cAAA;;;CAGA,mBAAA;AACA,qBAAA,eAAA;CAAA;AACA,qBAAA,eAAA;CAAA;AACA,qBAAA,eAAA;CAAA;AACA,qBAAA,eAAA;CAAA;AACA,qBAAA,eAAA;CAAA;AACA,qBAAA,eAAA;CAAA;AACA,yHAAA,cAAA;CAAA;AACA,wBAAA,eAAA;CAAA;AACA,6CAAA,iBAAA;CAAA;AACA,oBAAA,sBAAA;CAAA;AACA,0BAAA,2BAAA;CAAA;AACA,yBAAA,WAAA;CAAA;AACA,0BAAA,YAAA;CAAA;AACA,8BAAA,YAAA,CAAA,mBAAA;CAAA;AACA,+BAAA,aAAA,CAAA,kBAAA;CAAA;AACA;;EAEA,aAAA;EACA,eAAA;EACA,UAAA;EACA,YAAA;EACA,mBAAA;CACA;AAGA;EACA,oBAAA;EAKA,iHAAA;EAAA,mFAAA;EACA,oHAAA;EACA,uCAAA;EAEA,mCAAA;EACA,kCAAA;EACA,+BAAA;EACA,0BAAA;EACA,UAAA;EACA,kBAAA;EACA,mBAAA;EACA,mBAAA;EACA,0BAAA;EACA,WAAA;KACA,iBAAA;KACA,gBAAA;CAGA;AACA;EACA,eAAA;EACA,6CAAA;EACA,wBAAA;EACA,kBAAA;EACA,oBAAA;CACA;AACA;;EAEA,YAAA;EACA,YAAA;EACA,mBAAA;EACA,UAAA;EACA,WAAA;CACA;AACA;EACA,6BAAA;EAKA,+GAAA;EAAA,oFAAA;KACA,SAAA;CACA;AACA;EACA,6BAAA;EAKA,+GAAA;EAAA,qFAAA;KACA,QAAA;CACA;AACA;;EAEA,oBAAA;EAKA,iHAAA;EAAA,mFAAA;EACA,oHAAA;EACA,0BAAA;EACA,YAAA;EACA,eAAA;EACA,aAAA;EACA,WAAA;EACA,mBAAA;EACA,YAAA;CACA;AACA;EACA,gCAAA;EAIA,wBAAA;EACA,OAAA;EACA,YAAA;CACA;AACA;EACA,iCAAA;EAIA,yBAAA;EACA,OAAA;EACA,YAAA;CACA;AACA,iCAAA,eAAA,CAAA,kBAAA;CAAA;AACA;;EAMA,mBAAA;EACA,oEAAA;EAEA,gEAAA;EACA,+DAAA;EACA,4DAAA;EACA,kCAAA;EAIA,0BAAA;EACA,yFAAA;EACA,0BAAA;EACA,YAAA;EACA,wCAAA;EACA,iBAAA;EACA,6BAAA;EACA,WAAA;CACA;AACA;;EAEA,0CAAA;EAEA,sCAAA;EACA,qCAAA;EACA,kCAAA;EACA,uBAAA;EACA,0BAAA;EACA,cAAA;CACA;AACA,6BAAA,yCAAA;CAAA;AACA,6BAAA,0CAAA;CAAA;AACA;EACA,6BAAA;EAKA,gHAAA;EAAA,kFAAA;EACA,oHAAA;EAKA,oBAAA;EACA,wDAAA;EAEA,oDAAA;EACA,mDAAA;EACA,gDAAA;EACA,0BAAA;EACA,eAAA;EACA,gBAAA;EACA,YAAA;EACA,6CAAA;EACA,aAAA;EACA,yBAAA;EACA,mBAAA;EACA,2CAAA;EACA,aAAA;CACA;AACA;EACA,4BAAA;EAKA,gHAAA;EAAA,kFAAA;EACA,oHAAA;CACA;AACA;EACA,eAAA;KACA,aAAA;KACA,gBAAA;KACA,sBAAA;KACA,2BAAA;CACA;AACA;EACA,6BAAA;EAKA,iHAAA;EAAA,mFAAA;EACA,oHAAA;EACA,oDAAA;EAEA,gDAAA;EACA,+CAAA;EACA,4CAAA;EAKA,2BAAA;EACA,8BAAA;EACA,gBAAA;CACA;AACA;EACA,0FAAA;EACA,eAAA;EACA,gBAAA;EACA,wBAAA;EACA,sBAAA;EACA,kCAAA;EAIA,0BAAA;CACA;AACA;EACA,8BAAA;EACA,eAAA;CACA","file":"Login.vue","sourcesContent":["<template>\r\n  <div class=\"overlay\">\r\n\t    <!-- Navbar starts -->       \r\n\t    <nav class=\"navbar navbar-fixed-top\">\r\n\t\t    <div class=\"container\">\t\t       \r\n\t            <a class=\"navbar-brand \" href=\"index.html\"><img style=\"margin-top:5px;\" src=\"/dist/assets/images/logo-web3.gif\"></a>\r\n\t           \t<button  class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#navbar-item\"  >\r\n\t\t            <span class=\"sr-only\">Toggle navigation</span>\r\n\t\t            <span class=\"icon-bar\"></span>\r\n\t\t            <span class=\"icon-bar\"></span>\r\n\t\t            <span class=\"icon-bar\"></span>\r\n\t\t        </button>\t\t          \r\n\t\t\t    <div id=\"navbar-item\" class=\"collapse  navbar-collapse\">\r\n\t\t\t          <ul class=\"nav navbar-nav navbar-right\">\r\n\t\t\t            <li ><router-link :to=\"'home'\">Home</router-link></li>\r\n\t\t\t            <li><a   href=\"#\">Contact</a></li>\r\n\t\t\t            <li ><a  href=\"#\"><router-link :to=\"'signup'\"  >Sign up</router-link></a></li>\r\n\t\t\t            <li><button class=\" btn-danger navbar-btn \"><a style=\"color: #fff;\" href=\"#\">Log in</a></button></li>\r\n\t\t\t          </ul>\r\n\t\t\t    </div><!--/.nav-collapse -->\r\n\t        </div>\r\n\t    </nav>\r\n\t    <!-- Navbar END -->\r\n\t\t\t      \t\t\t      \t\t        \r\n\t    <div class=\"row\">\r\n\t\t\t<!-- <div class=\"col-md-6 col-sm-6 title\">\r\n\t            \t<h1>Lorem ipsum dolor </h1>\r\n\t            \t<h2 class=\"home-hero-subtitle\">\r\n\t                   elit scripta suavitate his ea dico veritus no usu\r\n\t                    <a target=\"_blank\" href=\"/employee-recognition-guide\">transform employee recognition</a>\r\n\t                </h2>\r\n\t                \t\t    \t\r\n\t\t\t</div> -->\r\n\t\t    <div class=\"col-md-12 col-sm-12 login-col\">\r\n\t\t\t\t<section id=\"content\">\r\n\t\t\t\t\t<form v-on:submit.prevent=\"onSubmit\" id=\"form\">\r\n\t\t\t\t\t\t<h1>Login </h1>\r\n\t\t\t\t\t\t<div>\r\n\t\t\t\t\t\t\t<input type=\"text\" placeholder=\"Username\" required id=\"username\" v-model.trim=\"username\"/>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div>\r\n\t\t\t\t\t\t\t<input type=\"password\" placeholder=\"Password\" required id=\"password\" v-model.trim=\"password\"/>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div>\r\n\t\t\t\t\t\t\t<p id=\"error\" class=\"hidden\">Login failed!</p>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div>\r\n\t\t\t\t\t\t\t<input type=\"submit\" class=\"login\" value=\"Log in\" />\r\n\t\t\t\t\t\t\t<a style=\"color: #FF0000 ;\" href=\"#\">\r\n\t\t\t\t\t\t\t\tForgot password?\r\n\t\t\t\t\t\t\t</a>\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</form><!-- form -->\t\t\t\r\n\t\t\t\t</section><!-- content -->\r\n\t\t\t</div>\t\r\n\t    </div>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\nconst axios = require('axios');\r\n\r\nexport default {\r\n  name: 'login',\r\n  data(){\r\n  \treturn {\r\n  \t\tusername: '',\r\n  \t\tpassword: '',\r\n  \t\tvalid: '',\r\n  \t}\r\n  },\r\n  watch: {\r\n  \tvalid(valid){\r\n  \t\tif(!valid){\r\n  \t\t\tdocument.getElementById('error').classList.remove('hidden');\r\n  \t\t}\r\n  \t}\r\n  },\r\n  methods: {\r\n  \tonSubmit: function(){\r\n  \t\taxios({\r\n  \t\t\tmethod: 'post',\r\n  \t\t\turl: '/auth',\r\n  \t\t\tdata: {\r\n  \t\t\t\tuser_name: this.username,\r\n  \t\t\t\tpassword: this.password\r\n  \t\t\t}\r\n  \t\t})\r\n  \t\t.then(req => {\r\n  \t\t\tthis.$router.push('/dash');\r\n  \t\t})\r\n  \t\t.catch(err => {\r\n  \t\t\tconsole.log(err);\r\n  \t\t})\r\n  \t}\r\n  },\r\n  beforeMount(){\r\n  \taxios.get('/session/data')\r\n  \t.then(req => {\r\n  \t\tif(req.data.roll){\r\n  \t\t\tthis.$router.push('/dash')\r\n  \t\t}\r\n  \t});\r\n  }\r\n};\r\n</script>\r\n\r\n\r\n\r\n<style scoped>\r\n\t.overlay{\r\n\t   \r\n\t    background-image: url(https://www.pega.com/sites/pega.com/files/banking-case-study-bg.jpg);\r\n    background-repeat: no-repeat;\r\n\tbackground-size: cover;\r\n\tbackground-position: center center;\r\n\tposition: fixed;\r\n    top:0;\r\n    bottom: 0;\r\n\theight:100%;\r\n\tz-index: -10;\r\n\twidth:100%;\r\n\t}\r\n\r\n\r\n\t/*NAVBAR START*/\r\n\t.navbar-brand{\r\n\t\tmargin-top: -10px;\r\n\t\t\r\n\t}\r\n\t.navbar{\r\n\t\tbackground-color: #fff;\r\n\t\tposition: fixed;\r\n\t\tfont-weight: 800;\r\n\t\tletter-spacing: -1px;\r\n\t\tmargin-top: 20px;\r\n\t}\r\n\t.nav li a{\r\n\t\tcolor: #000;\r\n\t\tfont-size: 20px;\r\n\t\t\t\r\n\t}\r\n\t.nav li a:hover {\r\n\ttext-decoration: none;\r\n\t}\r\n\r\n\r\n\t.title{\r\n\t   \r\n\t   margin-top: 260px;\r\n\t   text-align: center;\r\n\t}\r\n\t.title h1{\r\n\t\tfont-size: 45px;\r\n\t\tline-height: 45px;\r\n\t\tcolor: #fff;\r\n\t\tfont-weight: 800;\r\n\t\tletter-spacing: -1px;\r\n\t\t\r\n\t}\r\n\t.title h2{\r\n\t\tfont-size: 27px;\r\n\t\tfont-weight: bold;\r\n\t\tline-height: 27px;\r\n\t\tletter-spacing: -0.5px;\r\n\t\tcolor: #C0C0C0;\r\n\r\n\t}\r\n\t.title a{\r\n\t\tcolor: inherit;\r\n\t\ttext-decoration: underline;\r\n\r\n\t}\r\n\r\n\t.btn-danger{\r\n\t\tborder-radius: 10px;\r\n\t\tfont-weight: 800;\t\r\n\t\tline-height: 1.7;\r\n\t\tmargin-left: 40px;\r\n\t\tfont-size: 18px;\r\n\t\twidth: 80%;\r\n\t}\r\n    .navbar-toggle span{\r\n\t\tbackground-color: #000;\r\n\t}\r\n\t\r\n\t/*NAVBAR END*/\r\n\r\n\r\n\t/*LOGIN BOX START*/\r\n\th1{ font-size:28px;}\r\n\th2{ font-size:26px;}\r\n\th3{ font-size:18px;}\r\n\th4{ font-size:16px;}\r\n\th5{ font-size:14px;}\r\n\th6{ font-size:12px;}\r\n\th1,h2,h3,h4,h5,h6{ color:#563D64;}\r\n\tsmall{ font-size:10px;}\r\n\tb, strong{ font-weight:bold;}\r\n\ta{ text-decoration: none; }\r\n\ta:hover{ text-decoration: underline; }\r\n\t.left { float:left; }\r\n\t.right { float:right; }\r\n\t.alignleft { float: left; margin-right: 15px; }\r\n\t.alignright { float: right; margin-left: 15px; }\r\n\t.clearfix:after,\r\n\tform:after {\r\n\t\tcontent: \".\";\r\n\t\tdisplay: block;\r\n\t\theight: 0;\r\n\t\tclear: both;\r\n\t\tvisibility: hidden;\r\n\t}\r\n\r\n\r\n\t#content {\r\n\t\tbackground: #f9f9f9;\r\n\t\tbackground: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);\r\n\t\tbackground: -webkit-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\r\n\t\tbackground: -o-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\r\n\t\tbackground: -ms-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\r\n\t\tbackground: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\r\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );\r\n\t\t-webkit-box-shadow: 0 1px 0 #fff inset;\r\n\t\t-moz-box-shadow: 0 1px 0 #fff inset;\r\n\t\t-ms-box-shadow: 0 1px 0 #fff inset;\r\n\t\t-o-box-shadow: 0 1px 0 #fff inset;\r\n\t\tbox-shadow: 0 1px 0 #fff inset;\r\n\t\tborder: 1px solid #c4c6ca;\r\n\t\tmargin: 0;\r\n\t\tpadding: 65px 0 0;\r\n\t\tposition: relative;\r\n\t\ttext-align: center;\r\n\t\ttext-shadow: 0 1px 0 #fff;\r\n\t\twidth: 33%;\r\n\t    margin-left: 33%;\r\n\t    margin-top: 15%;\r\n\r\n\r\n\t}\r\n\t#content h1 {\r\n\t\tcolor: #7E7E7E;\r\n\t\tfont: bold 25px Helvetica, Arial, sans-serif;\r\n\t\tletter-spacing: -0.05em;\r\n\t\tline-height: 20px;\r\n\t\tmargin: 10px 0 30px;\r\n\t}\r\n\t#content h1:before,\r\n\t#content h1:after {\r\n\t\tcontent: \"\";\r\n\t\theight: 1px;\r\n\t\tposition: absolute;\r\n\t\ttop: 10px;\r\n\t\twidth: 27%;\r\n\t}\r\n\t#content h1:after {\r\n\t\tbackground: rgb(126,126,126);\r\n\t\tbackground: -moz-linear-gradient(left,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);\r\n\t\tbackground: -webkit-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\r\n\t\tbackground: -o-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\r\n\t\tbackground: -ms-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\r\n\t\tbackground: linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\r\n\t    right: 0;\r\n\t}\r\n\t#content h1:before {\r\n\t\tbackground: rgb(126,126,126);\r\n\t\tbackground: -moz-linear-gradient(right,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);\r\n\t\tbackground: -webkit-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\r\n\t\tbackground: -o-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\r\n\t\tbackground: -ms-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\r\n\t\tbackground: linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\r\n\t    left: 0;\r\n\t}\r\n\t#content:after,\r\n\t#content:before {\r\n\t\tbackground: #f9f9f9;\r\n\t\tbackground: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);\r\n\t\tbackground: -webkit-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\r\n\t\tbackground: -o-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\r\n\t\tbackground: -ms-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\r\n\t\tbackground: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\r\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );\r\n\t\tborder: 1px solid #c4c6ca;\r\n\t\tcontent: \"\";\r\n\t\tdisplay: block;\r\n\t\theight: 100%;\r\n\t\tleft: -1px;\r\n\t\tposition: absolute;\r\n\t\twidth: 100%;\r\n\t}\r\n\t#content:after {\r\n\t\t-webkit-transform: rotate(2deg);\r\n\t\t-moz-transform: rotate(2deg);\r\n\t\t-ms-transform: rotate(2deg);\r\n\t\t-o-transform: rotate(2deg);\r\n\t\ttransform: rotate(2deg);\r\n\t\ttop: 0;\r\n\t\tz-index: -1;\r\n\t}\r\n\t#content:before {\r\n\t\t-webkit-transform: rotate(-3deg);\r\n\t\t-moz-transform: rotate(-3deg);\r\n\t\t-ms-transform: rotate(-3deg);\r\n\t\t-o-transform: rotate(-3deg);\r\n\t\ttransform: rotate(-3deg);\r\n\t\ttop: 0;\r\n\t\tz-index: -2;\r\n\t}\r\n\t#content form { margin: 0 20px; position: relative }\r\n\t#content form input[type=\"text\"],\r\n\t#content form input[type=\"password\"] {\r\n\t\t-webkit-border-radius: 3px;\r\n\t\t-moz-border-radius: 3px;\r\n\t\t-ms-border-radius: 3px;\r\n\t\t-o-border-radius: 3px;\r\n\t\tborder-radius: 3px;\r\n\t\t-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\r\n\t\t-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\r\n\t\t-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\r\n\t\t-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\r\n\t\tbox-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\r\n\t\t-webkit-transition: all 0.5s ease;\r\n\t\t-moz-transition: all 0.5s ease;\r\n\t\t-ms-transition: all 0.5s ease;\r\n\t\t-o-transition: all 0.5s ease;\r\n\t\ttransition: all 0.5s ease;\r\n\t\tbackground: #eae7e7 url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) no-repeat;\r\n\t\tborder: 1px solid #c8c8c8;\r\n\t\tcolor: #777;\r\n\t\tfont: 13px Helvetica, Arial, sans-serif;\r\n\t\tmargin: 0 0 20px;\r\n\t\tpadding: 15px 10px 15px 40px;\r\n\t\twidth: 90%;\r\n\t}\r\n\t#content form input[type=\"text\"]:focus,\r\n\t#content form input[type=\"password\"]:focus {\r\n\t\t-webkit-box-shadow: 0 0 2px #ed1c24 inset;\r\n\t\t-moz-box-shadow: 0 0 2px #ed1c24 inset;\r\n\t\t-ms-box-shadow: 0 0 2px #ed1c24 inset;\r\n\t\t-o-box-shadow: 0 0 2px #ed1c24 inset;\r\n\t\tbox-shadow: 0 0 2px #ed1c24 inset;\r\n\t\tbackground-color: #fff;\r\n\t\tborder: 1px solid #ed1c24;\r\n\t\toutline: none;\r\n\t}\r\n\t#username { background-position: 10px 10px !important }\r\n\t#password { background-position: 10px -53px !important }\r\n\t#content form input[type=\"submit\"] {\r\n\t\tbackground: rgb(254,231,154);\r\n\t\tbackground: -moz-linear-gradient(top,  rgba(254,231,154,1) 0%, rgba(254,193,81,1) 100%);\r\n\t\tbackground: -webkit-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\r\n\t\tbackground: -o-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\r\n\t\tbackground: -ms-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\r\n\t\tbackground: linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\r\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fee79a', endColorstr='#fec151',GradientType=0 );\r\n\t\t-webkit-border-radius: 30px;\r\n\t\t-moz-border-radius: 30px;\r\n\t\t-ms-border-radius: 30px;\r\n\t\t-o-border-radius: 30px;\r\n\t\tborder-radius: 30px;\r\n\t\t-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\r\n\t\t-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\r\n\t\t-ms-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\r\n\t\t-o-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\r\n\t\tbox-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\r\n\t\tborder: 1px solid #D69E31;\r\n\t\tcolor: #85592e;\r\n\t\tcursor: pointer;\r\n\t\tfloat: left;\r\n\t\tfont: bold 15px Helvetica, Arial, sans-serif;\r\n\t\theight: 35px;\r\n\t\tmargin: 20px 0 35px 15px;\r\n\t\tposition: relative;\r\n\t\ttext-shadow: 0 1px 0 rgba(255,255,255,0.5);\r\n\t\twidth: 120px;\r\n\t}\r\n\t#content form input[type=\"submit\"]:hover {\r\n\t\tbackground: rgb(254,193,81);\r\n\t\tbackground: -moz-linear-gradient(top,  rgba(254,193,81,1) 0%, rgba(254,231,154,1) 100%);\r\n\t\tbackground: -webkit-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\r\n\t\tbackground: -o-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\r\n\t\tbackground: -ms-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\r\n\t\tbackground: linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\r\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec151', endColorstr='#fee79a',GradientType=0 );\r\n\t}\r\n\t#content form div a {\r\n\t\tcolor: #004a80;\r\n\t    float: right;\r\n\t    font-size: 12px;\r\n\t    margin: 30px 15px 0 0;\r\n\t    text-decoration: underline;\r\n\t}\r\n\t.button {\r\n\t\tbackground: rgb(247,249,250);\r\n\t\tbackground: -moz-linear-gradient(top,  rgba(247,249,250,1) 0%, rgba(240,240,240,1) 100%);\r\n\t\tbackground: -webkit-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\r\n\t\tbackground: -o-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\r\n\t\tbackground: -ms-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\r\n\t\tbackground: linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\r\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f9fa', endColorstr='#f0f0f0',GradientType=0 );\r\n\t\t-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\r\n\t\t-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\r\n\t\t-ms-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\r\n\t\t-o-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\r\n\t\tbox-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\r\n\t\t-webkit-border-radius: 0 0 5px 5px;\r\n\t\t-moz-border-radius: 0 0 5px 5px;\r\n\t\t-o-border-radius: 0 0 5px 5px;\r\n\t\t-ms-border-radius: 0 0 5px 5px;\r\n\t\tborder-radius: 0 0 5px 5px;\r\n\t\tborder-top: 1px solid #CFD5D9;\r\n\t\tpadding: 15px 0;\r\n\t}\r\n\t.button a {\r\n\t\tbackground: url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) 0 -112px no-repeat;\r\n\t\tcolor: #7E7E7E;\r\n\t\tfont-size: 17px;\r\n\t\tpadding: 2px 0 2px 40px;\r\n\t\ttext-decoration: none;\r\n\t\t-webkit-transition: all 0.3s ease;\r\n\t\t-moz-transition: all 0.3s ease;\r\n\t\t-ms-transition: all 0.3s ease;\r\n\t\t-o-transition: all 0.3s ease;\r\n\t\ttransition: all 0.3s ease;\r\n\t}\r\n\t.button a:hover {\r\n\t\tbackground-position: 0 -135px;\r\n\t\tcolor: #00aeef;\r\n}\r\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.overlay[data-v-5b675133]{\n\t   \n\tbackground-image: url(\"/dist/assets/images/5.jpg\");\n\tbackground-color: rgba(0, 0, 0, 0.5);\n    background-repeat: no-repeat;\n\tbackground-size: cover;\n\tbackground-position: center center;\n\tposition: fixed;\n    top:0;\n    bottom: 0;\n\theight:100%;\n\tz-index: -10;\n\twidth:100%;\n}\n.opacity[data-v-5b675133]{\n\t\tposition: absolute;\n\t\tbackground-color: rgba(0,0,0,0.5);\n\t    top:0;\n\t    bottom: 0;\n\t\theight: 100%;\n\t\twidth: 100%;\n\t\tz-index: -5;\n}\n\t/*NAVBAR START*/\n.navbar-brand[data-v-5b675133]{\n\t\tmargin-top: -10px;\n}\n.navbar[data-v-5b675133]{\n\t\tbackground-color: #fff;\n\t\tposition: fixed;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n\t\tmargin-top: 20px;\n}\n.nav li a[data-v-5b675133]{\n\t\tcolor: #000;\n\t\tfont-size: 20px;\n}\n.nav li a[data-v-5b675133]:hover {\n\ttext-decoration: none;\n}\n.title[data-v-5b675133]{\n\t   \n\t   margin-top: 260px;\n\t   text-align: center;\n}\n.title h1[data-v-5b675133]{\n\t\tfont-size: 45px;\n\t\tline-height: 45px;\n\t\tcolor: #fff;\n\t\tfont-weight: 800;\n\t\tletter-spacing: -1px;\n}\n.title h2[data-v-5b675133]{\n\t\tfont-size: 27px;\n\t\tfont-weight: bold;\n\t\tline-height: 27px;\n\t\tletter-spacing: -0.5px;\n\t\tcolor: #C0C0C0;\n}\n.title a[data-v-5b675133]{\n\t\tcolor: inherit;\n\t\ttext-decoration: underline;\n}\n.btn-danger[data-v-5b675133]{\n\t\tborder-radius: 10px;\n\t\tfont-weight: 800;\t\n\t\tline-height: 1.7;\n\t\tmargin-left: 40px;\n\t\tfont-size: 18px;\n\t\twidth: 80%;\n}\n.navbar-toggle span[data-v-5b675133]{\n\t\tbackground-color: #000;\n}\n\t/*NAVBAR END*/\n\t/*LOGIN BOX START*/\nh1[data-v-5b675133]{ font-size:28px;\n}\nh2[data-v-5b675133]{ font-size:26px;\n}\nh3[data-v-5b675133]{ font-size:18px;\n}\nh4[data-v-5b675133]{ font-size:16px;\n}\nh5[data-v-5b675133]{ font-size:14px;\n}\nh6[data-v-5b675133]{ font-size:12px;\n}\nh1[data-v-5b675133],h2[data-v-5b675133],h3[data-v-5b675133],h4[data-v-5b675133],h5[data-v-5b675133],h6[data-v-5b675133]{ color:#563D64;\n}\nsmall[data-v-5b675133]{ font-size:10px;\n}\nb[data-v-5b675133], strong[data-v-5b675133]{ font-weight:bold;\n}\na[data-v-5b675133]{ text-decoration: none;\n}\na[data-v-5b675133]:hover{ text-decoration: underline;\n}\n.left[data-v-5b675133] { float:left;\n}\n.right[data-v-5b675133] { float:right;\n}\n.alignleft[data-v-5b675133] { float: left; margin-right: 15px;\n}\n.alignright[data-v-5b675133] { float: right; margin-left: 15px;\n}\n.clearfix[data-v-5b675133]:after,\n\tform[data-v-5b675133]:after {\n\t\tcontent: \".\";\n\t\tdisplay: block;\n\t\theight: 0;\n\t\tclear: both;\n\t\tvisibility: hidden;\n}\n#content[data-v-5b675133] {\n\t\tbackground: #f9f9f9;\n\t\tbackground: -webkit-gradient(linear,  left top, left bottom,  from(rgba(248,248,248,1)),to(rgba(249,249,249,1)));\n\t\tbackground: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );\n\t\t-webkit-box-shadow: 0 1px 0 #fff inset;\n\t\t-ms-box-shadow: 0 1px 0 #fff inset;\n\t\t-o-box-shadow: 0 1px 0 #fff inset;\n\t\tbox-shadow: 0 1px 0 #fff inset;\n\t\tborder: 1px solid #c4c6ca;\n\t\tmargin: 0;\n\t\tpadding: 65px 0 0;\n\t\tposition: relative;\n\t\ttext-align: center;\n\t\ttext-shadow: 0 1px 0 #fff;\n\t\twidth: 33%;\n\t    margin-left: 33%;\n\t    margin-top: 15%;\n}\n#content h1[data-v-5b675133] {\n\t\tcolor: #7E7E7E;\n\t\tfont: bold 25px Helvetica, Arial, sans-serif;\n\t\tletter-spacing: -0.05em;\n\t\tline-height: 20px;\n\t\tmargin: 10px 0 30px;\n}\n#content h1[data-v-5b675133]:before,\n\t#content h1[data-v-5b675133]:after {\n\t\tcontent: \"\";\n\t\theight: 1px;\n\t\tposition: absolute;\n\t\ttop: 10px;\n\t\twidth: 27%;\n}\n#content h1[data-v-5b675133]:after {\n\t\tbackground: rgb(126,126,126);\n\t\tbackground: -webkit-gradient(linear,  left top, right top,  from(rgba(126,126,126,1)),to(rgba(255,255,255,1)));\n\t\tbackground: linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t    right: 0;\n}\n#content h1[data-v-5b675133]:before {\n\t\tbackground: rgb(126,126,126);\n\t\tbackground: -webkit-gradient(linear,  right top, left top,  from(rgba(126,126,126,1)),to(rgba(255,255,255,1)));\n\t\tbackground: linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\n\t    left: 0;\n}\n#content[data-v-5b675133]:after,\n\t#content[data-v-5b675133]:before {\n\t\tbackground: #f9f9f9;\n\t\tbackground: -webkit-gradient(linear,  left top, left bottom,  from(rgba(248,248,248,1)),to(rgba(249,249,249,1)));\n\t\tbackground: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );\n\t\tborder: 1px solid #c4c6ca;\n\t\tcontent: \"\";\n\t\tdisplay: block;\n\t\theight: 100%;\n\t\tleft: -1px;\n\t\tposition: absolute;\n\t\twidth: 100%;\n}\n#content[data-v-5b675133]:after {\n\t\t-webkit-transform: rotate(2deg);\n\t\ttransform: rotate(2deg);\n\t\ttop: 0;\n\t\tz-index: -1;\n}\n#content[data-v-5b675133]:before {\n\t\t-webkit-transform: rotate(-3deg);\n\t\ttransform: rotate(-3deg);\n\t\ttop: 0;\n\t\tz-index: -2;\n}\n#content form[data-v-5b675133] { margin: 0 20px; position: relative\n}\n#content form input[type=\"text\"][data-v-5b675133],\n\t#content form input[type=\"password\"][data-v-5b675133] {\n\t\tborder-radius: 3px;\n\t\t-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\tbox-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\n\t\t-webkit-transition: all 0.5s ease;\n\t\ttransition: all 0.5s ease;\n\t\tbackground: #eae7e7 url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) no-repeat;\n\t\tborder: 1px solid #c8c8c8;\n\t\tcolor: #777;\n\t\tfont: 13px Helvetica, Arial, sans-serif;\n\t\tmargin: 0 0 20px;\n\t\tpadding: 15px 10px 15px 40px;\n\t\twidth: 90%;\n}\n#content form input[type=\"text\"][data-v-5b675133]:focus,\n\t#content form input[type=\"password\"][data-v-5b675133]:focus {\n\t\t-webkit-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-ms-box-shadow: 0 0 2px #ed1c24 inset;\n\t\t-o-box-shadow: 0 0 2px #ed1c24 inset;\n\t\tbox-shadow: 0 0 2px #ed1c24 inset;\n\t\tbackground-color: #fff;\n\t\tborder: 1px solid #ed1c24;\n\t\toutline: none;\n}\n#username[data-v-5b675133] { background-position: 10px 10px !important\n}\n#password[data-v-5b675133] { background-position: 10px -53px !important\n}\n#content form input[type=\"submit\"][data-v-5b675133] {\n\t\tbackground: rgb(254,231,154);\n\t\tbackground: -webkit-gradient(linear,  left top, left bottom,  from(rgba(254,231,154,1)),to(rgba(254,193,81,1)));\n\t\tbackground: linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fee79a', endColorstr='#fec151',GradientType=0 );\n\t\tborder-radius: 30px;\n\t\t-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-ms-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\t-o-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\tbox-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\n\t\tborder: 1px solid #D69E31;\n\t\tcolor: #85592e;\n\t\tcursor: pointer;\n\t\tfloat: left;\n\t\tfont: bold 15px Helvetica, Arial, sans-serif;\n\t\theight: 35px;\n\t\tmargin: 20px 0 35px 15px;\n\t\tposition: relative;\n\t\ttext-shadow: 0 1px 0 rgba(255,255,255,0.5);\n\t\twidth: 120px;\n}\n#content form input[type=\"submit\"][data-v-5b675133]:hover {\n\t\tbackground: rgb(254,193,81);\n\t\tbackground: -webkit-gradient(linear,  left top, left bottom,  from(rgba(254,193,81,1)),to(rgba(254,231,154,1)));\n\t\tbackground: linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec151', endColorstr='#fee79a',GradientType=0 );\n}\n#content form div a[data-v-5b675133] {\n\t\tcolor: #004a80;\n\t    float: right;\n\t    font-size: 12px;\n\t    margin: 30px 15px 0 0;\n\t    text-decoration: underline;\n}\n.button[data-v-5b675133] {\n\t\tbackground: rgb(247,249,250);\n\t\tbackground: -webkit-gradient(linear,  left top, left bottom,  from(rgba(247,249,250,1)),to(rgba(240,240,240,1)));\n\t\tbackground: linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f9fa', endColorstr='#f0f0f0',GradientType=0 );\n\t\t-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-ms-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\t-o-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\tbox-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n\t\tborder-radius: 0 0 5px 5px;\n\t\tborder-top: 1px solid #CFD5D9;\n\t\tpadding: 15px 0;\n}\n.button a[data-v-5b675133] {\n\t\tbackground: url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) 0 -112px no-repeat;\n\t\tcolor: #7E7E7E;\n\t\tfont-size: 17px;\n\t\tpadding: 2px 0 2px 40px;\n\t\ttext-decoration: none;\n\t\t-webkit-transition: all 0.3s ease;\n\t\ttransition: all 0.3s ease;\n}\n.button a[data-v-5b675133]:hover {\n\t\tbackground-position: 0 -135px;\n\t\tcolor: #00aeef;\n}\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/src/Login.vue"],"names":[],"mappings":";AA+GA;;CAEA,mDAAA;CACA,qCAAA;IACA,6BAAA;CACA,uBAAA;CACA,mCAAA;CACA,gBAAA;IACA,MAAA;IACA,UAAA;CACA,YAAA;CACA,aAAA;CACA,WAAA;CACA;AACA;EACA,mBAAA;EACA,kCAAA;KACA,MAAA;KACA,UAAA;EACA,aAAA;EACA,YAAA;EACA,YAAA;CACA;CAGA,gBAAA;AACA;EACA,kBAAA;CAEA;AACA;EACA,uBAAA;EACA,gBAAA;EACA,iBAAA;EACA,qBAAA;EACA,iBAAA;CACA;AACA;EACA,YAAA;EACA,gBAAA;CAEA;AACA;CACA,sBAAA;CACA;AAGA;;IAEA,kBAAA;IACA,mBAAA;CACA;AACA;EACA,gBAAA;EACA,kBAAA;EACA,YAAA;EACA,iBAAA;EACA,qBAAA;CAEA;AACA;EACA,gBAAA;EACA,kBAAA;EACA,kBAAA;EACA,uBAAA;EACA,eAAA;CAEA;AACA;EACA,eAAA;EACA,2BAAA;CAEA;AAEA;EACA,oBAAA;EACA,iBAAA;EACA,iBAAA;EACA,kBAAA;EACA,gBAAA;EACA,WAAA;CACA;AACA;EACA,uBAAA;CACA;CAEA,cAAA;CAGA,mBAAA;AACA,qBAAA,eAAA;CAAA;AACA,qBAAA,eAAA;CAAA;AACA,qBAAA,eAAA;CAAA;AACA,qBAAA,eAAA;CAAA;AACA,qBAAA,eAAA;CAAA;AACA,qBAAA,eAAA;CAAA;AACA,yHAAA,cAAA;CAAA;AACA,wBAAA,eAAA;CAAA;AACA,6CAAA,iBAAA;CAAA;AACA,oBAAA,sBAAA;CAAA;AACA,0BAAA,2BAAA;CAAA;AACA,yBAAA,WAAA;CAAA;AACA,0BAAA,YAAA;CAAA;AACA,8BAAA,YAAA,CAAA,mBAAA;CAAA;AACA,+BAAA,aAAA,CAAA,kBAAA;CAAA;AACA;;EAEA,aAAA;EACA,eAAA;EACA,UAAA;EACA,YAAA;EACA,mBAAA;CACA;AAGA;EACA,oBAAA;EAKA,iHAAA;EAAA,mFAAA;EACA,oHAAA;EACA,uCAAA;EAEA,mCAAA;EACA,kCAAA;EACA,+BAAA;EACA,0BAAA;EACA,UAAA;EACA,kBAAA;EACA,mBAAA;EACA,mBAAA;EACA,0BAAA;EACA,WAAA;KACA,iBAAA;KACA,gBAAA;CAGA;AACA;EACA,eAAA;EACA,6CAAA;EACA,wBAAA;EACA,kBAAA;EACA,oBAAA;CACA;AACA;;EAEA,YAAA;EACA,YAAA;EACA,mBAAA;EACA,UAAA;EACA,WAAA;CACA;AACA;EACA,6BAAA;EAKA,+GAAA;EAAA,oFAAA;KACA,SAAA;CACA;AACA;EACA,6BAAA;EAKA,+GAAA;EAAA,qFAAA;KACA,QAAA;CACA;AACA;;EAEA,oBAAA;EAKA,iHAAA;EAAA,mFAAA;EACA,oHAAA;EACA,0BAAA;EACA,YAAA;EACA,eAAA;EACA,aAAA;EACA,WAAA;EACA,mBAAA;EACA,YAAA;CACA;AACA;EACA,gCAAA;EAIA,wBAAA;EACA,OAAA;EACA,YAAA;CACA;AACA;EACA,iCAAA;EAIA,yBAAA;EACA,OAAA;EACA,YAAA;CACA;AACA,iCAAA,eAAA,CAAA,kBAAA;CAAA;AACA;;EAMA,mBAAA;EACA,oEAAA;EAEA,gEAAA;EACA,+DAAA;EACA,4DAAA;EACA,kCAAA;EAIA,0BAAA;EACA,yFAAA;EACA,0BAAA;EACA,YAAA;EACA,wCAAA;EACA,iBAAA;EACA,6BAAA;EACA,WAAA;CACA;AACA;;EAEA,0CAAA;EAEA,sCAAA;EACA,qCAAA;EACA,kCAAA;EACA,uBAAA;EACA,0BAAA;EACA,cAAA;CACA;AACA,6BAAA,yCAAA;CAAA;AACA,6BAAA,0CAAA;CAAA;AACA;EACA,6BAAA;EAKA,gHAAA;EAAA,kFAAA;EACA,oHAAA;EAKA,oBAAA;EACA,wDAAA;EAEA,oDAAA;EACA,mDAAA;EACA,gDAAA;EACA,0BAAA;EACA,eAAA;EACA,gBAAA;EACA,YAAA;EACA,6CAAA;EACA,aAAA;EACA,yBAAA;EACA,mBAAA;EACA,2CAAA;EACA,aAAA;CACA;AACA;EACA,4BAAA;EAKA,gHAAA;EAAA,kFAAA;EACA,oHAAA;CACA;AACA;EACA,eAAA;KACA,aAAA;KACA,gBAAA;KACA,sBAAA;KACA,2BAAA;CACA;AACA;EACA,6BAAA;EAKA,iHAAA;EAAA,mFAAA;EACA,oHAAA;EACA,oDAAA;EAEA,gDAAA;EACA,+CAAA;EACA,4CAAA;EAKA,2BAAA;EACA,8BAAA;EACA,gBAAA;CACA;AACA;EACA,0FAAA;EACA,eAAA;EACA,gBAAA;EACA,wBAAA;EACA,sBAAA;EACA,kCAAA;EAIA,0BAAA;CACA;AACA;EACA,8BAAA;EACA,eAAA;CACA","file":"Login.vue","sourcesContent":["<template>\r\n  <div class=\"overlay\">\r\n     <div class=\"opacity\"> \r\n\t    <!-- Navbar starts -->       \r\n\t    <nav class=\"navbar navbar-fixed-top\">\r\n\t\t    <div class=\"container\">\t\t       \r\n\t            <a class=\"navbar-brand \" href=\"index.html\"><img style=\"margin-top:5px;\" src=\"/dist/assets/images/logo-web3.gif\"></a>\r\n\t           \t<button  class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#navbar-item\"  >\r\n\t\t            <span class=\"sr-only\">Toggle navigation</span>\r\n\t\t            <span class=\"icon-bar\"></span>\r\n\t\t            <span class=\"icon-bar\"></span>\r\n\t\t            <span class=\"icon-bar\"></span>\r\n\t\t        </button>\t\t          \r\n\t\t\t    <div id=\"navbar-item\" class=\"collapse  navbar-collapse\">\r\n\t\t\t          <ul class=\"nav navbar-nav navbar-right\">\r\n\t\t\t            <li ><router-link :to=\"'home'\">Home</router-link></li>\r\n\t\t\t            <li><a   href=\"#\">Contact</a></li>\r\n\t\t\t            <li ><a  href=\"#\"><router-link :to=\"'signup'\"  >Sign up</router-link></a></li>\r\n\t\t\t            <li><button class=\" btn-danger navbar-btn \"><a style=\"color: #fff;\" href=\"#\">Log in</a></button></li>\r\n\t\t\t          </ul>\r\n\t\t\t    </div><!--/.nav-collapse -->\r\n\t        </div>\r\n\t    </nav>\r\n\t    <!-- Navbar END -->\r\n\t\t\t      \t\t\t      \t\t        \r\n\t    <div class=\"row\">\r\n\t\t\t<!-- <div class=\"col-md-6 col-sm-6 title\">\r\n\t            \t<h1>Lorem ipsum dolor </h1>\r\n\t            \t<h2 class=\"home-hero-subtitle\">\r\n\t                   elit scripta suavitate his ea dico veritus no usu\r\n\t                    <a target=\"_blank\" href=\"/employee-recognition-guide\">transform employee recognition</a>\r\n\t                </h2>\r\n\t                \t\t    \t\r\n\t\t\t</div> -->\r\n\t\t    <div class=\"col-md-12 col-sm-12 login-col\">\r\n\t\t\t\t<section id=\"content\">\r\n\t\t\t\t\t<form v-on:submit.prevent=\"onSubmit\" id=\"form\">\r\n\t\t\t\t\t\t<h1>Login </h1>\r\n\t\t\t\t\t\t<div>\r\n\t\t\t\t\t\t\t<input type=\"text\" placeholder=\"Username\" required id=\"username\" v-model.trim=\"username\"/>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div>\r\n\t\t\t\t\t\t\t<input type=\"password\" placeholder=\"Password\" required id=\"password\" v-model.trim=\"password\"/>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div>\r\n\t\t\t\t\t\t\t<p id=\"error\" class=\"hidden\">Login failed!</p>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t<div>\r\n\t\t\t\t\t\t\t<input type=\"submit\" class=\"login\" value=\"Log in\" />\r\n\t\t\t\t\t\t\t<a style=\"color: #FF0000 ;\" href=\"#\">\r\n\t\t\t\t\t\t\t\tForgot password?\r\n\t\t\t\t\t\t\t</a>\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</form><!-- form -->\t\t\t\r\n\t\t\t\t</section><!-- content -->\r\n\t\t\t</div>\t\r\n\t    </div>\r\n    </div>\r\n   </div> \r\n</template>\r\n\r\n<script>\r\nconst axios = require('axios');\r\n\r\nexport default {\r\n  name: 'login',\r\n  data(){\r\n  \treturn {\r\n  \t\tusername: '',\r\n  \t\tpassword: '',\r\n  \t\tvalid: '',\r\n  \t}\r\n  },\r\n  watch: {\r\n  \tvalid(valid){\r\n  \t\tif(!valid){\r\n  \t\t\tdocument.getElementById('error').classList.remove('hidden');\r\n  \t\t}\r\n  \t}\r\n  },\r\n  methods: {\r\n  \tonSubmit: function(){\r\n  \t\taxios({\r\n  \t\t\tmethod: 'post',\r\n  \t\t\turl: '/auth',\r\n  \t\t\tdata: {\r\n  \t\t\t\tuser_name: this.username,\r\n  \t\t\t\tpassword: this.password\r\n  \t\t\t}\r\n  \t\t})\r\n  \t\t.then(req => {\r\n  \t\t\tthis.$router.push('/dash');\r\n  \t\t})\r\n  \t\t.catch(err => {\r\n  \t\t\tconsole.log(err);\r\n  \t\t})\r\n  \t}\r\n  },\r\n  beforeMount(){\r\n  \taxios.get('/session/data')\r\n  \t.then(req => {\r\n  \t\tif(req.data.roll){\r\n  \t\t\tthis.$router.push('/dash')\r\n  \t\t}\r\n  \t});\r\n  }\r\n};\r\n</script>\r\n\r\n\r\n\r\n<style scoped>\r\n\t.overlay{\r\n\t   \r\n\tbackground-image: url(\"/dist/assets/images/5.jpg\");\r\n\tbackground-color: rgba(0, 0, 0, 0.5);\r\n    background-repeat: no-repeat;\r\n\tbackground-size: cover;\r\n\tbackground-position: center center;\r\n\tposition: fixed;\r\n    top:0;\r\n    bottom: 0;\r\n\theight:100%;\r\n\tz-index: -10;\r\n\twidth:100%;\r\n\t}\r\n\t.opacity{\r\n\t\tposition: absolute;\r\n\t\tbackground-color: rgba(0,0,0,0.5);\r\n\t    top:0;\r\n\t    bottom: 0;\r\n\t\theight: 100%;\r\n\t\twidth: 100%;\r\n\t\tz-index: -5;\r\n\t}\r\n\r\n\r\n\t/*NAVBAR START*/\r\n\t.navbar-brand{\r\n\t\tmargin-top: -10px;\r\n\t\t\r\n\t}\r\n\t.navbar{\r\n\t\tbackground-color: #fff;\r\n\t\tposition: fixed;\r\n\t\tfont-weight: 800;\r\n\t\tletter-spacing: -1px;\r\n\t\tmargin-top: 20px;\r\n\t}\r\n\t.nav li a{\r\n\t\tcolor: #000;\r\n\t\tfont-size: 20px;\r\n\t\t\t\r\n\t}\r\n\t.nav li a:hover {\r\n\ttext-decoration: none;\r\n\t}\r\n\r\n\r\n\t.title{\r\n\t   \r\n\t   margin-top: 260px;\r\n\t   text-align: center;\r\n\t}\r\n\t.title h1{\r\n\t\tfont-size: 45px;\r\n\t\tline-height: 45px;\r\n\t\tcolor: #fff;\r\n\t\tfont-weight: 800;\r\n\t\tletter-spacing: -1px;\r\n\t\t\r\n\t}\r\n\t.title h2{\r\n\t\tfont-size: 27px;\r\n\t\tfont-weight: bold;\r\n\t\tline-height: 27px;\r\n\t\tletter-spacing: -0.5px;\r\n\t\tcolor: #C0C0C0;\r\n\r\n\t}\r\n\t.title a{\r\n\t\tcolor: inherit;\r\n\t\ttext-decoration: underline;\r\n\r\n\t}\r\n\r\n\t.btn-danger{\r\n\t\tborder-radius: 10px;\r\n\t\tfont-weight: 800;\t\r\n\t\tline-height: 1.7;\r\n\t\tmargin-left: 40px;\r\n\t\tfont-size: 18px;\r\n\t\twidth: 80%;\r\n\t}\r\n    .navbar-toggle span{\r\n\t\tbackground-color: #000;\r\n\t}\r\n\t\r\n\t/*NAVBAR END*/\r\n\r\n\r\n\t/*LOGIN BOX START*/\r\n\th1{ font-size:28px;}\r\n\th2{ font-size:26px;}\r\n\th3{ font-size:18px;}\r\n\th4{ font-size:16px;}\r\n\th5{ font-size:14px;}\r\n\th6{ font-size:12px;}\r\n\th1,h2,h3,h4,h5,h6{ color:#563D64;}\r\n\tsmall{ font-size:10px;}\r\n\tb, strong{ font-weight:bold;}\r\n\ta{ text-decoration: none; }\r\n\ta:hover{ text-decoration: underline; }\r\n\t.left { float:left; }\r\n\t.right { float:right; }\r\n\t.alignleft { float: left; margin-right: 15px; }\r\n\t.alignright { float: right; margin-left: 15px; }\r\n\t.clearfix:after,\r\n\tform:after {\r\n\t\tcontent: \".\";\r\n\t\tdisplay: block;\r\n\t\theight: 0;\r\n\t\tclear: both;\r\n\t\tvisibility: hidden;\r\n\t}\r\n\r\n\r\n\t#content {\r\n\t\tbackground: #f9f9f9;\r\n\t\tbackground: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);\r\n\t\tbackground: -webkit-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\r\n\t\tbackground: -o-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\r\n\t\tbackground: -ms-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\r\n\t\tbackground: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\r\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );\r\n\t\t-webkit-box-shadow: 0 1px 0 #fff inset;\r\n\t\t-moz-box-shadow: 0 1px 0 #fff inset;\r\n\t\t-ms-box-shadow: 0 1px 0 #fff inset;\r\n\t\t-o-box-shadow: 0 1px 0 #fff inset;\r\n\t\tbox-shadow: 0 1px 0 #fff inset;\r\n\t\tborder: 1px solid #c4c6ca;\r\n\t\tmargin: 0;\r\n\t\tpadding: 65px 0 0;\r\n\t\tposition: relative;\r\n\t\ttext-align: center;\r\n\t\ttext-shadow: 0 1px 0 #fff;\r\n\t\twidth: 33%;\r\n\t    margin-left: 33%;\r\n\t    margin-top: 15%;\r\n\r\n\r\n\t}\r\n\t#content h1 {\r\n\t\tcolor: #7E7E7E;\r\n\t\tfont: bold 25px Helvetica, Arial, sans-serif;\r\n\t\tletter-spacing: -0.05em;\r\n\t\tline-height: 20px;\r\n\t\tmargin: 10px 0 30px;\r\n\t}\r\n\t#content h1:before,\r\n\t#content h1:after {\r\n\t\tcontent: \"\";\r\n\t\theight: 1px;\r\n\t\tposition: absolute;\r\n\t\ttop: 10px;\r\n\t\twidth: 27%;\r\n\t}\r\n\t#content h1:after {\r\n\t\tbackground: rgb(126,126,126);\r\n\t\tbackground: -moz-linear-gradient(left,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);\r\n\t\tbackground: -webkit-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\r\n\t\tbackground: -o-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\r\n\t\tbackground: -ms-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\r\n\t\tbackground: linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\r\n\t    right: 0;\r\n\t}\r\n\t#content h1:before {\r\n\t\tbackground: rgb(126,126,126);\r\n\t\tbackground: -moz-linear-gradient(right,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);\r\n\t\tbackground: -webkit-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\r\n\t\tbackground: -o-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\r\n\t\tbackground: -ms-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\r\n\t\tbackground: linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);\r\n\t    left: 0;\r\n\t}\r\n\t#content:after,\r\n\t#content:before {\r\n\t\tbackground: #f9f9f9;\r\n\t\tbackground: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);\r\n\t\tbackground: -webkit-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\r\n\t\tbackground: -o-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\r\n\t\tbackground: -ms-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\r\n\t\tbackground: linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);\r\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#f9f9f9',GradientType=0 );\r\n\t\tborder: 1px solid #c4c6ca;\r\n\t\tcontent: \"\";\r\n\t\tdisplay: block;\r\n\t\theight: 100%;\r\n\t\tleft: -1px;\r\n\t\tposition: absolute;\r\n\t\twidth: 100%;\r\n\t}\r\n\t#content:after {\r\n\t\t-webkit-transform: rotate(2deg);\r\n\t\t-moz-transform: rotate(2deg);\r\n\t\t-ms-transform: rotate(2deg);\r\n\t\t-o-transform: rotate(2deg);\r\n\t\ttransform: rotate(2deg);\r\n\t\ttop: 0;\r\n\t\tz-index: -1;\r\n\t}\r\n\t#content:before {\r\n\t\t-webkit-transform: rotate(-3deg);\r\n\t\t-moz-transform: rotate(-3deg);\r\n\t\t-ms-transform: rotate(-3deg);\r\n\t\t-o-transform: rotate(-3deg);\r\n\t\ttransform: rotate(-3deg);\r\n\t\ttop: 0;\r\n\t\tz-index: -2;\r\n\t}\r\n\t#content form { margin: 0 20px; position: relative }\r\n\t#content form input[type=\"text\"],\r\n\t#content form input[type=\"password\"] {\r\n\t\t-webkit-border-radius: 3px;\r\n\t\t-moz-border-radius: 3px;\r\n\t\t-ms-border-radius: 3px;\r\n\t\t-o-border-radius: 3px;\r\n\t\tborder-radius: 3px;\r\n\t\t-webkit-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\r\n\t\t-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\r\n\t\t-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\r\n\t\t-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\r\n\t\tbox-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,0.08) inset;\r\n\t\t-webkit-transition: all 0.5s ease;\r\n\t\t-moz-transition: all 0.5s ease;\r\n\t\t-ms-transition: all 0.5s ease;\r\n\t\t-o-transition: all 0.5s ease;\r\n\t\ttransition: all 0.5s ease;\r\n\t\tbackground: #eae7e7 url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) no-repeat;\r\n\t\tborder: 1px solid #c8c8c8;\r\n\t\tcolor: #777;\r\n\t\tfont: 13px Helvetica, Arial, sans-serif;\r\n\t\tmargin: 0 0 20px;\r\n\t\tpadding: 15px 10px 15px 40px;\r\n\t\twidth: 90%;\r\n\t}\r\n\t#content form input[type=\"text\"]:focus,\r\n\t#content form input[type=\"password\"]:focus {\r\n\t\t-webkit-box-shadow: 0 0 2px #ed1c24 inset;\r\n\t\t-moz-box-shadow: 0 0 2px #ed1c24 inset;\r\n\t\t-ms-box-shadow: 0 0 2px #ed1c24 inset;\r\n\t\t-o-box-shadow: 0 0 2px #ed1c24 inset;\r\n\t\tbox-shadow: 0 0 2px #ed1c24 inset;\r\n\t\tbackground-color: #fff;\r\n\t\tborder: 1px solid #ed1c24;\r\n\t\toutline: none;\r\n\t}\r\n\t#username { background-position: 10px 10px !important }\r\n\t#password { background-position: 10px -53px !important }\r\n\t#content form input[type=\"submit\"] {\r\n\t\tbackground: rgb(254,231,154);\r\n\t\tbackground: -moz-linear-gradient(top,  rgba(254,231,154,1) 0%, rgba(254,193,81,1) 100%);\r\n\t\tbackground: -webkit-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\r\n\t\tbackground: -o-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\r\n\t\tbackground: -ms-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\r\n\t\tbackground: linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);\r\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fee79a', endColorstr='#fec151',GradientType=0 );\r\n\t\t-webkit-border-radius: 30px;\r\n\t\t-moz-border-radius: 30px;\r\n\t\t-ms-border-radius: 30px;\r\n\t\t-o-border-radius: 30px;\r\n\t\tborder-radius: 30px;\r\n\t\t-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\r\n\t\t-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\r\n\t\t-ms-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\r\n\t\t-o-box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\r\n\t\tbox-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;\r\n\t\tborder: 1px solid #D69E31;\r\n\t\tcolor: #85592e;\r\n\t\tcursor: pointer;\r\n\t\tfloat: left;\r\n\t\tfont: bold 15px Helvetica, Arial, sans-serif;\r\n\t\theight: 35px;\r\n\t\tmargin: 20px 0 35px 15px;\r\n\t\tposition: relative;\r\n\t\ttext-shadow: 0 1px 0 rgba(255,255,255,0.5);\r\n\t\twidth: 120px;\r\n\t}\r\n\t#content form input[type=\"submit\"]:hover {\r\n\t\tbackground: rgb(254,193,81);\r\n\t\tbackground: -moz-linear-gradient(top,  rgba(254,193,81,1) 0%, rgba(254,231,154,1) 100%);\r\n\t\tbackground: -webkit-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\r\n\t\tbackground: -o-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\r\n\t\tbackground: -ms-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\r\n\t\tbackground: linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);\r\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec151', endColorstr='#fee79a',GradientType=0 );\r\n\t}\r\n\t#content form div a {\r\n\t\tcolor: #004a80;\r\n\t    float: right;\r\n\t    font-size: 12px;\r\n\t    margin: 30px 15px 0 0;\r\n\t    text-decoration: underline;\r\n\t}\r\n\t.button {\r\n\t\tbackground: rgb(247,249,250);\r\n\t\tbackground: -moz-linear-gradient(top,  rgba(247,249,250,1) 0%, rgba(240,240,240,1) 100%);\r\n\t\tbackground: -webkit-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\r\n\t\tbackground: -o-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\r\n\t\tbackground: -ms-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\r\n\t\tbackground: linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);\r\n\t\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f9fa', endColorstr='#f0f0f0',GradientType=0 );\r\n\t\t-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\r\n\t\t-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\r\n\t\t-ms-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\r\n\t\t-o-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\r\n\t\tbox-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\r\n\t\t-webkit-border-radius: 0 0 5px 5px;\r\n\t\t-moz-border-radius: 0 0 5px 5px;\r\n\t\t-o-border-radius: 0 0 5px 5px;\r\n\t\t-ms-border-radius: 0 0 5px 5px;\r\n\t\tborder-radius: 0 0 5px 5px;\r\n\t\tborder-top: 1px solid #CFD5D9;\r\n\t\tpadding: 15px 0;\r\n\t}\r\n\t.button a {\r\n\t\tbackground: url(https://cssdeck.com/uploads/media/items/8/8bcLQqF.png) 0 -112px no-repeat;\r\n\t\tcolor: #7E7E7E;\r\n\t\tfont-size: 17px;\r\n\t\tpadding: 2px 0 2px 40px;\r\n\t\ttext-decoration: none;\r\n\t\t-webkit-transition: all 0.3s ease;\r\n\t\t-moz-transition: all 0.3s ease;\r\n\t\t-ms-transition: all 0.3s ease;\r\n\t\t-o-transition: all 0.3s ease;\r\n\t\ttransition: all 0.3s ease;\r\n\t}\r\n\t.button a:hover {\r\n\t\tbackground-position: 0 -135px;\r\n\t\tcolor: #00aeef;\r\n}\r\n</style>"],"sourceRoot":""}]);
 
 // exports
 
@@ -21428,6 +21632,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "overlay" }, [
+<<<<<<< HEAD
     _c("nav", { staticClass: "navbar navbar-fixed-top" }, [
       _c("div", { staticClass: "container" }, [
         _vm._m(0),
@@ -21454,111 +21659,142 @@ var render = function() {
               _vm._v(" "),
               _c("li", [
 >>>>>>> 74b4ad7930090817ff5ddc4088053b0c46086294
+=======
+    _c("div", { staticClass: "opacity" }, [
+      _c("nav", { staticClass: "navbar navbar-fixed-top" }, [
+        _c("div", { staticClass: "container" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "collapse  navbar-collapse",
+              attrs: { id: "navbar-item" }
+            },
+            [
+              _c("ul", { staticClass: "nav navbar-nav navbar-right" }, [
+>>>>>>> d5f584db1462729194aa169ba267397210840f21
                 _c(
-                  "a",
-                  { attrs: { href: "#" } },
+                  "li",
                   [
-                    _c("router-link", { attrs: { to: "signup" } }, [
-                      _vm._v("Sign up")
+                    _c("router-link", { attrs: { to: "home" } }, [
+                      _vm._v("Home")
                     ])
                   ],
                   1
-                )
-              ]),
-              _vm._v(" "),
-              _vm._m(3)
-            ])
-          ]
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12 col-sm-12 login-col" }, [
-        _c("section", { attrs: { id: "content" } }, [
-          _c(
-            "form",
-            {
-              attrs: { id: "form" },
-              on: {
-                submit: function($event) {
-                  $event.preventDefault()
-                  _vm.onSubmit($event)
-                }
-              }
-            },
-            [
-              _c("h1", [_vm._v("Login ")]),
-              _vm._v(" "),
-              _c("div", [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model.trim",
-                      value: _vm.username,
-                      expression: "username",
-                      modifiers: { trim: true }
-                    }
-                  ],
-                  attrs: {
-                    type: "text",
-                    placeholder: "Username",
-                    required: "",
-                    id: "username"
-                  },
-                  domProps: { value: _vm.username },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.username = $event.target.value.trim()
-                    },
-                    blur: function($event) {
-                      _vm.$forceUpdate()
-                    }
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model.trim",
-                      value: _vm.password,
-                      expression: "password",
-                      modifiers: { trim: true }
-                    }
-                  ],
-                  attrs: {
-                    type: "password",
-                    placeholder: "Password",
-                    required: "",
-                    id: "password"
-                  },
-                  domProps: { value: _vm.password },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.password = $event.target.value.trim()
-                    },
-                    blur: function($event) {
-                      _vm.$forceUpdate()
-                    }
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _vm._m(4),
-              _vm._v(" "),
-              _vm._m(5)
+                ),
+                _vm._v(" "),
+                _vm._m(2),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "a",
+                    { attrs: { href: "#" } },
+                    [
+                      _c("router-link", { attrs: { to: "signup" } }, [
+                        _vm._v("Sign up")
+                      ])
+                    ],
+                    1
+                  )
+                ]),
+                _vm._v(" "),
+                _vm._m(3)
+              ])
             ]
           )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-12 col-sm-12 login-col" }, [
+          _c("section", { attrs: { id: "content" } }, [
+            _c(
+              "form",
+              {
+                attrs: { id: "form" },
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    _vm.onSubmit($event)
+                  }
+                }
+              },
+              [
+                _c("h1", [_vm._v("Login ")]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model.trim",
+                        value: _vm.username,
+                        expression: "username",
+                        modifiers: { trim: true }
+                      }
+                    ],
+                    attrs: {
+                      type: "text",
+                      placeholder: "Username",
+                      required: "",
+                      id: "username"
+                    },
+                    domProps: { value: _vm.username },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.username = $event.target.value.trim()
+                      },
+                      blur: function($event) {
+                        _vm.$forceUpdate()
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model.trim",
+                        value: _vm.password,
+                        expression: "password",
+                        modifiers: { trim: true }
+                      }
+                    ],
+                    attrs: {
+                      type: "password",
+                      placeholder: "Password",
+                      required: "",
+                      id: "password"
+                    },
+                    domProps: { value: _vm.password },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.password = $event.target.value.trim()
+                      },
+                      blur: function($event) {
+                        _vm.$forceUpdate()
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _vm._m(4),
+                _vm._v(" "),
+                _vm._m(5)
+              ]
+            )
+          ])
         ])
       ])
     ])
@@ -21722,7 +21958,7 @@ var content = __webpack_require__(91);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("2f541e44", content, false);
+var update = __webpack_require__(3)("2f541e44", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -21741,7 +21977,7 @@ if(false) {
 /* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -22056,7 +22292,7 @@ var content = __webpack_require__(96);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("2a200c22", content, false);
+var update = __webpack_require__(3)("2a200c22", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -22075,12 +22311,12 @@ if(false) {
 /* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n /* -------------------------------- \n\nPrimary style\n\n-------------------------------- */\n*[data-v-7eea899c], *[data-v-7eea899c]::after, *[data-v-7eea899c]::before {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\nhtml[data-v-7eea899c] {\n  font-size: 62.5%;\n}\nbody[data-v-7eea899c] {\n  font-size: 1.6rem;\n  font-family: \"Open Sans\", sans-serif;\n  color: #3e454c;\n  background-color: #F5F5F5;\n}\nbody[data-v-7eea899c]::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\na[data-v-7eea899c] {\n  color: #1784c7;\n  text-decoration: none;\n}\n/*  ######  Side NAVBAR page style  ######  */\n#dashboard[data-v-7eea899c]{\n  -webkit-box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n          box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n    height: 100%;\n}\n#project[data-v-7eea899c]{\n  -webkit-box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n          box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#tables[data-v-7eea899c]{\n  -webkit-box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n          box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#user[data-v-7eea899c]{\n  -webkit-box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n          box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#admin[data-v-7eea899c]{\n  -webkit-box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n          box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n/*  ######  Side NAVBAR page style END ######  */\n.button[data-v-7eea899c]{\n  background-color: transparent;\n  color:#C8C8C8;\n  border: transparent;\n  height: 35px;\n  \n  font-size: 15px;\n  border : none;\n  outline: none;\n}\n.button[data-v-7eea899c]:active {\n  background-color: #323232;\n  border : none;\n  outline: none;\n}\n.button[data-v-7eea899c]:hover{\n  color: #ffffff;\n}\n.cd-side-nav[data-v-7eea899c]{\n  font-size: 20px;\n  margin-top: 20px;\n  position: fixed;\n}\n.fa[data-v-7eea899c]{\n  margin-right: 13px;\n}\n.cd-nav ul li a[data-v-7eea899c]:hover{\n  color: #e6e6e6;\n}\ninput[data-v-7eea899c] {\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 1.6rem;\n}\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-decoration,\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-cancel-button,\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-results-button,\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-results-decoration {\n  display: none;\n}\n/* -------------------------------- \n\nMain Page Content\n\n-------------------------------- */\n.cd-main-content .content-wrapper[data-v-7eea899c] {\n  padding: 45px 5% 3em;\n}\n.cd-main-content .content-wrapper h1[data-v-7eea899c] {\n  text-align: center;\n  padding: 3em 0;\n  font-size: 2rem;\n}\n.cd-main-content[data-v-7eea899c]::before {\n  /* never visible - used to check MQ in jQuery */\n  display: none;\n  content: 'mobile';\n}\n@media only screen and (min-width: 768px) {\n.cd-main-content .content-wrapper[data-v-7eea899c] {\n    margin-left: 110px;\n    margin-top: 80px;\n    padding-top: 155px;\n}\n.cd-main-content .content-wrapper h1[data-v-7eea899c] {\n    padding: 4em 0;\n    font-size: 3.2rem;\n    font-weight: 300;\n}\n.cd-main-content[data-v-7eea899c]::before {\n    content: 'tablet';\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-main-content .content-wrapper[data-v-7eea899c] {\n    margin-left: 200px;\n}\n.cd-main-content[data-v-7eea899c]::before {\n    content: 'desktop';\n}\n}\n/* -------------------------------- \n\nHeader\n\n-------------------------------- */\n.cd-main-header[data-v-7eea899c] {\n  position: absolute;\n  z-index: 2;\n  top: 0;\n  left: 0;\n  height: 45px;\n  width: 100%;\n  background: #FFFFFF;\n\n\n  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n\n\n          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.cd-main-header[data-v-7eea899c]::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\n/**/\n@media only screen and (min-width: 768px) \n{\n.cd-main-header[data-v-7eea899c] {\n    position: fixed;\n    height: 55px;\n    background-color:#323232;\n}\n}\n.cd-logo[data-v-7eea899c] {\n  float: left;\n  display: block;\n  margin: 11px 0 0 5%;\n}\n.cd-logo img[data-v-7eea899c] {\n  display: block;\n}\n@media only screen and (min-width: 768px) {\n.cd-logo[data-v-7eea899c] {\n    margin: 16px 0 0 36px;\n}\n}\n.cd-nav-trigger[data-v-7eea899c] {\n  /* navigation trigger - visible on mobile devices only */\n  float: right;\n  position: relative;\n  display: block;\n  width: 34px;\n  height: 44px;\n  margin-right: 5%;\n  /* hide text */\n  overflow: hidden;\n  white-space: nowrap;\n  color: transparent;\n}\n.cd-nav-trigger span[data-v-7eea899c], .cd-nav-trigger span[data-v-7eea899c]::before, .cd-nav-trigger span[data-v-7eea899c]::after {\n  /* hamburger icon in CSS */\n  position: absolute;\n  display: inline-block;\n  height: 3px;\n  width: 24px;\n  background:#323232;\n}\n.cd-nav-trigger span[data-v-7eea899c] {\n  /* line in the center */\n  position: absolute;\n  top: 50%;\n  right: 5px;\n  margin-top: -2px;\n  -webkit-transition: background 0.2s;\n  transition: background 0.2s;\n}\n.cd-nav-trigger span[data-v-7eea899c]::before, .cd-nav-trigger span[data-v-7eea899c]::after {\n  /* other 2 lines */\n  content: '';\n  right: 0;\n  /* Force Hardware Acceleration in WebKit */\n  -webkit-transform: translateZ(0);\n  transform: translateZ(0);\n  -webkit-backface-visibility: hidden;\n  backface-visibility: hidden;\n  -webkit-transform-origin: 0% 50%;\n  transform-origin: 0% 50%;\n  -webkit-transition: -webkit-transform 0.2s;\n  transition: -webkit-transform 0.2s;\n  transition: transform 0.2s;\n  transition: transform 0.2s, -webkit-transform 0.2s;\n}\n.cd-nav-trigger span[data-v-7eea899c]::before {\n  /* menu icon top line */\n  top: -6px;\n}\n.cd-nav-trigger span[data-v-7eea899c]::after {\n  /* menu icon bottom line */\n  top: 6px;\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c] {\n  /* hide line in the center */\n  background: rgba(255, 255, 255, 0);\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::before, .cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::after {\n  /* keep visible other 2 lines */\n  background: white;\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::before {\n  -webkit-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  transform: translateX(4px) translateY(-3px) rotate(45deg);\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::after {\n  -webkit-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  transform: translateX(4px) translateY(2px) rotate(-45deg);\n}\n@media only screen and (min-width: 768px) {\n.cd-nav-trigger[data-v-7eea899c] {\n    display: none;\n}\n}\n.cd-search[data-v-7eea899c] {\n  position: relative;\n  margin: 1.2em 5% 0.6em;\n}\n.cd-search.is-hidden[data-v-7eea899c] {\n  opacity: 0;\n}\n.cd-search[data-v-7eea899c]::before {\n  /* lens icon */\n  content: '';\n  position: absolute;\n  left: 8px;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n}\n.cd-search input[data-v-7eea899c] {\n  padding-left: 32px;\n  width: 100%;\n  height: 36px;\n  border: none;\n  border-radius: .25em;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  -ms-appearance: none;\n  -o-appearance: none;\n  appearance: none;\n}\n.cd-search input[data-v-7eea899c]:focus {\n  outline: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-search[data-v-7eea899c] {\n    float: left;\n    display: inline-block;\n    width: 250px;\n    height: 100%;\n    margin: 0 0 0 2.5em;\n}\n.cd-search.is-hidden[data-v-7eea899c] {\n    /* reset style */\n    opacity: 1;\n}\n.cd-search[data-v-7eea899c]::before {\n    background-position: 0 -16px;\n    left: 1em;\n}\n.cd-search form[data-v-7eea899c], .cd-search input[data-v-7eea899c] {\n    height: 100%;\n    width: 100%;\n}\n.cd-search input[data-v-7eea899c] {\n    border: none;\n    padding-left: 2.6em;\n    border-radius: 0;\n    background-color: #3e454c;\n    border-left: 1px solid #51575d;\n    color: #ffffff;\n}\n.cd-search input[data-v-7eea899c]::-webkit-input-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-7eea899c]::-moz-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-7eea899c]:-moz-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-7eea899c]:-ms-input-placeholder {\n    color: #777c81;\n}\n}\n/* -------------------------------- \n\nTop Navigation\n\n-------------------------------- */\n.cd-nav[data-v-7eea899c] {\n  /* top nav - not visible on mobile devices */\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-nav[data-v-7eea899c] {\n    display: block;\n    float: right;\n    height: 100%;\n}\n}\n.cd-top-nav > li > a[data-v-7eea899c]::before {\n  /* reset style */\n  display: none;\n}\n.cd-top-nav > li a[data-v-7eea899c] {\n  padding: 1em 5% !important;\n}\n.cd-top-nav img[data-v-7eea899c] {\n  /* avatar image */\n  position: absolute;\n  left: 1.8em;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 20px;\n  width: 20px;\n  border-radius: 50%;\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-top-nav[data-v-7eea899c] {\n    height: 100%;\n}\n.cd-top-nav a[data-v-7eea899c] {\n    display: block;\n    font-size: 1.4rem;\n    color: #adadad;\n}\n.cd-top-nav > li[data-v-7eea899c] {\n    display: inline-block;\n    margin-right: 1em;\n    height: 100%;\n}\n.cd-top-nav > li[data-v-7eea899c]:last-of-type {\n    margin-right: 0;\n}\n.cd-top-nav > li a[data-v-7eea899c] {\n    padding: 1em .6em !important;\n}\n.cd-top-nav img[data-v-7eea899c] {\n    display: block;\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-top-nav li:not(.has-children) a[data-v-7eea899c]:hover {\n    color: #1784c7;\n}\n}\n/* -------------------------------- \n\nSidebar\n\n-------------------------------- */\n.cd-side-nav[data-v-7eea899c] {\n  position: fixed;\n  z-index: 1;\n  left: 0;\n  top: 0;\n  width: 100%;\n  padding: 45px 0 0;\n  background-color: #323232;\n  visibility: hidden;\n  opacity: 0;\n  max-height: 100vh;\n  overflow: hidden;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;\n  transition: opacity 0.2s 0s, visibility 0s 0.2s;\n}\n.cd-side-nav.nav-is-visible[data-v-7eea899c] {\n  opacity: 1;\n  visibility: visible;\n  overflow: visible;\n  -webkit-overflow-scrolling: touch;\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0s;\n  transition: opacity 0.2s 0s, visibility 0s 0s;\n  max-height: none;\n  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\n          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-side-nav > ul[data-v-7eea899c] {\n  padding: 0.6em 0;\n}\n.cd-side-nav > ul[data-v-7eea899c]:last-of-type {\n  padding-bottom: 0;\n}\n.cd-side-nav .cd-label[data-v-7eea899c], .cd-side-nav a[data-v-7eea899c] {\n  display: block;\n  padding: 1em 5%;\n}\n.cd-side-nav a[data-v-7eea899c] {\n  position: relative;\n  color: #ffffff;\n  font-size: 1.4rem;\n}\n.cd-side-nav ul.cd-top-nav > li:last-of-type > a[data-v-7eea899c] {\n  border-bottom: none;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c] {\n  padding-left: calc(5% + 24px);\n  border-bottom: 1px solid #373d44;\n  font-size: 13px;\n  font-weight: bold;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c]::before {\n  /* icon before item name */\n  position: absolute;\n  content: '';\n  left: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n}\n.cd-side-nav > ul > li.overview > a[data-v-7eea899c]::before {\n  background-position: -64px 0;\n}\n.cd-side-nav > ul > li.notifications > a[data-v-7eea899c]::before {\n  background-position: -80px 0;\n}\n.cd-side-nav > ul > li.comments > a[data-v-7eea899c]::before {\n  background-position: -48px 0;\n}\n.cd-side-nav > ul > li.bookmarks > a[data-v-7eea899c]::before {\n  background-position: -32px 0;\n}\n.cd-side-nav > ul > li.images > a[data-v-7eea899c]::before {\n  background-position: 0 0;\n}\n.cd-side-nav > ul > li.users > a[data-v-7eea899c]::before {\n  background-position: -16px 0;\n}\n.cd-side-nav .count[data-v-7eea899c] {\n  /* notification badge */\n  position: absolute;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  right: calc(5% + 16px + 0.4em);\n  padding: 0.2em 0.4em;\n  background-color: #ff7e66;\n  border-radius: .25em;\n  color: #ffffff;\n  font-weight: bold;\n  font-size: 1.2rem;\n  text-align: center;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c] {\n  display: block;\n  margin: 0 5%;\n  padding: 1em 0;\n  background-color: #1784c7;\n  border-radius: .25em;\n  border: none;\n  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);\n          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);\n  text-align: center;\n  color: #ffffff;\n  font-weight: bold;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c]::before {\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-side-nav[data-v-7eea899c] {\n    \n    float: left;\n    top: fixed;\n    width: 110px;\n    min-height: 100vh;\n    padding-top: 55px;\n    /* reset style */\n    visibility: visible;\n    opacity: 1;\n    overflow: visible;\n    max-height: none;\n    position: fixed;\n}\n.cd-side-nav.nav-is-visible[data-v-7eea899c] {\n    -webkit-box-shadow: none;\n            box-shadow: none;\n}\n.cd-side-nav.is-fixed[data-v-7eea899c] {\n    position: fixed;\n}\n.cd-side-nav > ul[data-v-7eea899c] {\n    /* reset style */\n    padding: 0;\n}\n.cd-side-nav .cd-label[data-v-7eea899c] {\n    /* remove labels on minified version of the sidebar */\n    display: none;\n}\n.cd-side-nav a[data-v-7eea899c] {\n    font-size: 1.2rem;\n    text-align: center;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c] {\n    padding: calc(2.2em + 24px) 0 2.4em;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c]::before {\n    left: 50%;\n    right: auto;\n    -webkit-transform: translateX(-50%);\n    transform: translateX(-50%);\n    top: 2.4em;\n}\n.cd-side-nav .active > a[data-v-7eea899c] {\n    /* current page */\n    -webkit-box-shadow: inset 3px 0 0 #1784c7;\n            box-shadow: inset 3px 0 0 #1784c7;\n    background-color: #33383e;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c] {\n    margin: 1em 10% 0;\n}\n.cd-side-nav .count[data-v-7eea899c] {\n    height: 8px;\n    width: 8px;\n    border-radius: 50%;\n    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n            box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n    padding: 0;\n    top: 2em;\n    -webkit-transform: translateX(-50%);\n    transform: translateX(-50%);\n    left: calc(50% + 5px);\n    right: auto;\n    color: transparent;\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-side-nav[data-v-7eea899c] {\n    width: 150px;\n    position: fixed;\n}\n.cd-logo img[data-v-7eea899c]{\n    margin-left: -16px;\n    margin-top: 3px;\n}\n.cd-side-nav > ul[data-v-7eea899c] {\n    padding: 0.6em 0;\n}\n.cd-side-nav > ul > li:not(.action-btn):hover > a[data-v-7eea899c] {\n    background-color: #33383e;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c] {\n    padding: 1em 1em 1em 42px;\n    text-align: left;\n    border-bottom: none;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c]::before {\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    transform: translateY(-50%);\n    left: 18px;\n}\n.cd-side-nav .cd-label[data-v-7eea899c] {\n    display: block;\n    padding: 1em 18px;\n}\n.cd-side-nav .action-btn[data-v-7eea899c] {\n    text-align: left;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c] {\n    margin: 0 18px;\n}\n.no-touch .cd-side-nav .action-btn a[data-v-7eea899c]:hover {\n    background-color: #1a93de;\n}\n.cd-side-nav .count[data-v-7eea899c] {\n    /* reset style */\n    color: #ffffff;\n    height: auto;\n    width: auto;\n    border-radius: .25em;\n    padding: .2em .4em;\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    transform: translateY(-50%);\n    right: 18px;\n    left: auto;\n    -webkit-box-shadow: none;\n            box-shadow: none;\n}\n}\n.has-children ul[data-v-7eea899c] {\n  position: relative;\n  width: 100%;\n  display: none;\n  background-color: #1c1f22;\n}\n.has-children > a[data-v-7eea899c]::after {\n  /* arrow icon */\n  position: absolute;\n  content: '';\n  height: 16px;\n  width: 16px;\n  right: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n}\n.has-children.selected > ul[data-v-7eea899c] {\n  display: block;\n}\n.has-children.selected > a[data-v-7eea899c]::after {\n  -webkit-transform: translateY(-50%) rotate(180deg);\n  transform: translateY(-50%) rotate(180deg);\n}\n@media only screen and (min-width: 768px) {\n.has-children[data-v-7eea899c] {\n    position: relative;\n}\n.has-children ul[data-v-7eea899c] {\n    position: absolute;\n    top: 0;\n    left: 100%;\n    width: 160px;\n    padding: 0;\n    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);\n            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);\n}\n.has-children ul a[data-v-7eea899c] {\n    text-align: left;\n    border: none;\n    padding: 1em;\n}\n.no-touch .has-children ul a[data-v-7eea899c]:hover {\n    color: #1784c7;\n}\n.has-children > a[data-v-7eea899c]::after {\n    display: none;\n    color: black;\n}\n.cd-side-nav .has-children.selected > a[data-v-7eea899c] {\n    /* focus state -> show sub pages */\n    background-color: #33383e;\n}\n.cd-top-nav .has-children[data-v-7eea899c] {\n    position: relative;\n    background-color: #323232;\n}\n.cd-top-nav .has-children > a[data-v-7eea899c] {\n    height: 100%;\n    padding: 0 calc(1.8em + 22px) 0 calc(1.8em + 26px) !important;\n    line-height: 55px;\n}\n.cd-top-nav .has-children > a[data-v-7eea899c]::after {\n    display: block;\n    right: 1.8em;\n}\n.cd-top-nav .has-children ul[data-v-7eea899c] {\n    background-color: #1c1f22;\n    width: 200px;\n    top: 100%;\n    right: 0;\n    left: auto;\n    -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);\n            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-top-nav .has-children ul a[data-v-7eea899c] {\n    padding-left: 18px !important;\n}\n}\n@media only screen and (min-width: 1170px) {\n.has-children > ul[data-v-7eea899c] {\n    width: 100%;\n    z-index: 1;\n}\n.has-children ul a[data-v-7eea899c] {\n    padding-left: 18px;\n}\n.has-children.active > ul[data-v-7eea899c] {\n    /* if the item is active, make the subnavigation visible */\n    position: relative;\n    display: block;\n    /* reset style */\n    left: 0;\n    -webkit-box-shadow: none;\n            box-shadow: none;\n}\n.no-touch .cd-side-nav .has-children:hover > ul[data-v-7eea899c], .cd-side-nav .has-children.hover > ul[data-v-7eea899c] {\n    /* show subnavigation on hover */\n    display: block;\n    opacity: 1;\n    visibility: visible;\n}\n}\n\n\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/sidebar.vue"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;CAyGA;;;;mCAIA;AACA;EACA,+BAAA;UAAA,uBAAA;CACA;AAEA;EACA,iBAAA;CACA;AAEA;EACA,kBAAA;EACA,qCAAA;EACA,eAAA;EACA,0BAAA;CACA;AACA;EACA,YAAA;EACA,YAAA;EACA,eAAA;CACA;AAEA;EACA,eAAA;EACA,sBAAA;CACA;AAEA,8CAAA;AAGA;EACA,iDAAA;UAAA,yCAAA;IACA,iBAAA;IACA,mBAAA;IACA,aAAA;CAGA;AACA;EACA,iDAAA;UAAA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,iDAAA;UAAA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,iDAAA;UAAA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,iDAAA;UAAA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA,iDAAA;AAEA;EACA,8BAAA;EACA,cAAA;EACA,oBAAA;EACA,aAAA;;EAEA,gBAAA;EACA,cAAA;EACA,cAAA;CAGA;AACA;EACA,0BAAA;EACA,cAAA;EACA,cAAA;CAGA;AACA;EACA,eAAA;CACA;AACA;EACA,gBAAA;EACA,iBAAA;EACA,gBAAA;CACA;AACA;EACA,mBAAA;CACA;AAEA;EACA,eAAA;CACA;AAGA;EACA,qCAAA;EACA,kBAAA;CACA;AAEA;;;;EAIA,cAAA;CACA;AAEA;;;;mCAIA;AACA;EACA,qBAAA;CACA;AACA;EACA,mBAAA;EACA,eAAA;EACA,gBAAA;CACA;AACA;EACA,gDAAA;EACA,cAAA;EACA,kBAAA;CACA;AACA;AACA;IACA,mBAAA;IACA,iBAAA;IACA,mBAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;IACA,iBAAA;CACA;AACA;IACA,kBAAA;CACA;CACA;AACA;AACA;IACA,mBAAA;CACA;AACA;IACA,mBAAA;CACA;CACA;AAEA;;;;mCAIA;AAEA;EACA,mBAAA;EACA,WAAA;EACA,OAAA;EACA,QAAA;EACA,aAAA;EACA,YAAA;EACA,oBAAA;;;EAGA,iDAAA;;;UAAA,yCAAA;EACA,oCAAA;EACA,mCAAA;CACA;AACA;EACA,YAAA;EACA,YAAA;EACA,eAAA;CACA;AACA,IAAA;AAAA;;AAEA;IACA,gBAAA;IACA,aAAA;IACA,yBAAA;CACA;CACA;AAEA;EACA,YAAA;EACA,eAAA;EACA,oBAAA;CACA;AACA;EACA,eAAA;CACA;AACA;AACA;IACA,sBAAA;CACA;CACA;AAEA;EACA,yDAAA;EACA,aAAA;EACA,mBAAA;EACA,eAAA;EACA,YAAA;EACA,aAAA;EACA,iBAAA;EACA,eAAA;EACA,iBAAA;EACA,oBAAA;EACA,mBAAA;CACA;AACA;EACA,2BAAA;EACA,mBAAA;EACA,sBAAA;EACA,YAAA;EACA,YAAA;EACA,mBAAA;CACA;AACA;EACA,wBAAA;EACA,mBAAA;EACA,SAAA;EACA,WAAA;EACA,iBAAA;EACA,oCAAA;EAEA,4BAAA;CACA;AACA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,2CAAA;EACA,iCAAA;EAIA,yBAAA;EACA,oCAAA;EACA,4BAAA;EACA,iCAAA;EAIA,yBAAA;EACA,2CAAA;EAEA,mCAAA;EAAA,2BAAA;EAAA,mDAAA;CACA;AACA;EACA,wBAAA;EACA,UAAA;CACA;AACA;EACA,2BAAA;EACA,SAAA;CACA;AACA;EACA,6BAAA;EACA,mCAAA;CACA;AACA;EACA,gCAAA;EACA,kBAAA;CACA;AACA;EACA,kEAAA;EAIA,0DAAA;CACA;AACA;EACA,kEAAA;EAIA,0DAAA;CACA;AACA;AACA;IACA,cAAA;CACA;CACA;AAEA;EACA,mBAAA;EACA,uBAAA;CACA;AACA;EACA,WAAA;CACA;AACA;EACA,eAAA;EACA,YAAA;EACA,mBAAA;EACA,UAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,aAAA;EACA,YAAA;CAEA;AACA;EACA,mBAAA;EACA,YAAA;EACA,aAAA;EACA,aAAA;EACA,qBAAA;EACA,yBAAA;EACA,sBAAA;EACA,qBAAA;EACA,oBAAA;EACA,iBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;AACA;IACA,YAAA;IACA,sBAAA;IACA,aAAA;IACA,aAAA;IACA,oBAAA;CACA;AACA;IACA,iBAAA;IACA,WAAA;CACA;AACA;IACA,6BAAA;IACA,UAAA;CACA;AACA;IACA,aAAA;IACA,YAAA;CACA;AACA;IACA,aAAA;IACA,oBAAA;IACA,iBAAA;IACA,0BAAA;IACA,+BAAA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;CACA;AAEA;;;;mCAIA;AACA;EACA,6CAAA;EACA,cAAA;CACA;AACA;AACA;IACA,eAAA;IACA,aAAA;IACA,aAAA;CACA;CACA;AAEA;EACA,iBAAA;EACA,cAAA;CACA;AACA;EACA,2BAAA;CACA;AACA;EACA,kBAAA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,aAAA;EACA,YAAA;EACA,mBAAA;EACA,cAAA;CACA;AACA;AACA;IACA,aAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;IACA,eAAA;CACA;AACA;IACA,sBAAA;IACA,kBAAA;IACA,aAAA;CACA;AACA;IACA,gBAAA;CACA;AACA;IACA,6BAAA;CACA;AACA;IACA,eAAA;CACA;CACA;AACA;AACA;IACA,eAAA;CACA;CACA;AAEA;;;;mCAIA;AACA;EACA,gBAAA;EACA,WAAA;EACA,QAAA;EACA,OAAA;EACA,YAAA;EACA,kBAAA;EACA,0BAAA;EACA,mBAAA;EACA,WAAA;EACA,kBAAA;EACA,iBAAA;EACA,oCAAA;EACA,mCAAA;EACA,wDAAA;EAEA,gDAAA;CACA;AACA;EACA,WAAA;EACA,oBAAA;EACA,kBAAA;EACA,kCAAA;EACA,sDAAA;EAEA,8CAAA;EACA,iBAAA;EACA,kDAAA;UAAA,0CAAA;CACA;AACA;EACA,iBAAA;CACA;AACA;EACA,kBAAA;CACA;AACA;EACA,eAAA;EACA,gBAAA;CACA;AAEA;EACA,mBAAA;EACA,eAAA;EACA,kBAAA;CACA;AACA;EACA,oBAAA;CACA;AACA;EACA,8BAAA;EACA,iCAAA;EACA,gBAAA;EACA,kBAAA;CACA;AACA;EACA,2BAAA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,aAAA;EACA,YAAA;CAEA;AACA;EACA,6BAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,yBAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,wBAAA;EACA,mBAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,+BAAA;EACA,qBAAA;EACA,0BAAA;EACA,qBAAA;EACA,eAAA;EACA,kBAAA;EACA,kBAAA;EACA,mBAAA;CACA;AACA;EACA,eAAA;EACA,aAAA;EACA,eAAA;EACA,0BAAA;EACA,qBAAA;EACA,aAAA;EACA,yFAAA;UAAA,iFAAA;EACA,mBAAA;EACA,eAAA;EACA,kBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;AACA;;IAEA,YAAA;IACA,WAAA;IACA,aAAA;IACA,kBAAA;IACA,kBAAA;IACA,iBAAA;IACA,oBAAA;IACA,WAAA;IACA,kBAAA;IACA,iBAAA;IACA,gBAAA;CACA;AACA;IACA,yBAAA;YAAA,iBAAA;CACA;AACA;IACA,gBAAA;CACA;AACA;IACA,iBAAA;IACA,WAAA;CACA;AACA;IACA,sDAAA;IACA,cAAA;CACA;AACA;IACA,kBAAA;IACA,mBAAA;CACA;AACA;IACA,oCAAA;CACA;AACA;IACA,UAAA;IACA,YAAA;IACA,oCAAA;IAIA,4BAAA;IACA,WAAA;CACA;AACA;IACA,kBAAA;IACA,0CAAA;YAAA,kCAAA;IACA,0BAAA;CACA;AACA;IACA,kBAAA;CACA;AACA;IACA,YAAA;IACA,WAAA;IACA,mBAAA;IACA,+CAAA;YAAA,uCAAA;IACA,WAAA;IACA,SAAA;IACA,oCAAA;IAIA,4BAAA;IACA,sBAAA;IACA,YAAA;IACA,mBAAA;CACA;CACA;AACA;AACA;IACA,aAAA;IACA,gBAAA;CACA;AACA;IACA,mBAAA;IACA,gBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,0BAAA;IACA,iBAAA;IACA,oBAAA;CACA;AACA;IACA,SAAA;IACA,aAAA;IACA,oCAAA;IAIA,4BAAA;IACA,WAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,iBAAA;IACA,eAAA;IACA,aAAA;IACA,YAAA;IACA,qBAAA;IACA,mBAAA;IACA,SAAA;IACA,aAAA;IACA,oCAAA;IAIA,4BAAA;IACA,YAAA;IACA,WAAA;IACA,yBAAA;YAAA,iBAAA;CACA;CACA;AAEA;EACA,mBAAA;EACA,YAAA;EACA,cAAA;EACA,0BAAA;CACA;AACA;EACA,gBAAA;EACA,mBAAA;EACA,YAAA;EACA,aAAA;EACA,YAAA;EACA,UAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;CAEA;AACA;EACA,eAAA;CACA;AACA;EACA,mDAAA;EAIA,2CAAA;CACA;AACA;AACA;IACA,mBAAA;CACA;AACA;IACA,mBAAA;IACA,OAAA;IACA,WAAA;IACA,aAAA;IACA,WAAA;IACA,kDAAA;YAAA,0CAAA;CACA;AACA;IACA,iBAAA;IACA,aAAA;IACA,aAAA;CACA;AAGA;IACA,eAAA;CACA;AACA;IACA,cAAA;IACA,aAAA;CACA;AACA;IACA,mCAAA;IACA,0BAAA;CACA;AACA;IACA,mBAAA;IACA,0BAAA;CAEA;AACA;IACA,aAAA;IACA,8DAAA;IACA,kBAAA;CACA;AACA;IACA,eAAA;IACA,aAAA;CACA;AACA;IACA,0BAAA;IACA,aAAA;IACA,UAAA;IACA,SAAA;IACA,WAAA;IACA,kDAAA;YAAA,0CAAA;CACA;AACA;IACA,8BAAA;CACA;CACA;AACA;AACA;IACA,YAAA;IACA,WAAA;CACA;AACA;IACA,mBAAA;CACA;AACA;IACA,2DAAA;IACA,mBAAA;IACA,eAAA;IACA,iBAAA;IACA,QAAA;IACA,yBAAA;YAAA,iBAAA;CACA;AACA;IACA,iCAAA;IACA,eAAA;IACA,WAAA;IACA,oBAAA;CACA;CACA","file":"sidebar.vue","sourcesContent":["<template>\r\n  <div class=\"cd-side-nav\">\r\n     <!-- ####### Header NAVBAR ####### -->\r\n  <header class=\"cd-main-header\" >\r\n    <a href=\"#\" class=\"cd-logo\"><img style=\"margin-left:-80px; margin-top:-8px;\" src=\"/dist/assets/images/logo-trans.png\"  alt=\"Logo\"></a>       \r\n    <nav class=\"cd-nav\" >\r\n      <ul class=\"cd-top-nav\">\r\n         <li>\r\n             <a style=\"margin-top:6px;\" v-on:click=\"$parent.logout()\" class=\"btn btn-danger btn-md\">\r\n              <span class=\"glyphicon glyphicon-log-out\"></span> Log out\r\n             </a>\r\n        </li>\r\n         <li class=\"has-children account\">\r\n          <a href=\"#0\"  >\r\n            <img  src=\"/dist/assets/images/user.jpg\" alt=\"avatar\">\r\n            <div id='username'></div>\r\n          </a>\r\n        </li>  \r\n          <ul>\r\n           <!--  <li><a href=\"#0\">My Account</a></li>\r\n           <li><a href=\"#0\">Edit Account</a></li> -->\r\n            <!-- <li><a href=\"#0\">Logout</a></li> -->\r\n          </ul>\r\n        </li>\r\n      </ul>\r\n    </nav>\r\n  </header> \r\n  <!-- ###### Header NAVBAR END #######-->\r\n     \r\n    <!-- %%%%%%%%  Side NAVBAR %%%%%%% -->\r\n  <main class=\"cd-main-content\" >\r\n    <nav class=\"cd-side-nav\">\r\n      <input type=\"hidden\" name=\"user.installerID\" v-model=\"user.roll\">\r\n      <ul>\r\n        <li class=\"has-children Overviews\" v-if=\"user.roll == 'Admin' || 'Project Coordinator'\">\r\n         <a v-on:click=\"$parent.updateView('create-customer')\"> <i class=\"fa fa-th-large\" ></i>Customer</a>                   \r\n        </li>       \r\n        <li class=\"has-children comments\" v-if=\"user.roll == 'Admin' || 'Project Coordinator'\">\r\n          <a v-on:click=\"$parent.updateView('add-installer')\"><i class=\"fa fa-tasks\"></i> Installer</a>                   \r\n        </li>\r\n         </li> \r\n        <li class=\"has-children users\">\r\n          <a  v-on:click=\"$parent.updateView('add-user')\"><i class=\"fa fa-user fa-lg\"></i> User</a>       \r\n         \r\n        </li>\r\n         <li class=\"has-children users\">\r\n          <a v-on:click=\"$parent.updateView('create-roles')\"><i class=\"fa fa-users fa-lg\"></i> Roles</a> \r\n          </li>\r\n          <li class=\"has-children bookmarks\">\r\n          <a  v-on:click=\"$parent.updateView('create-payment-types')\"><i class=\"fa fa-usd fa-lg\"></i> Payments</a>\r\n          \r\n        </li>\r\n\r\n        <li class=\"has-children bookmarks\" v-if=\"user.roll == 'Admin' || 'Project Coordinator' || 'Project Manager' || 'Installer'\">\r\n          <a  v-on:click=\"$parent.updateView('add-bonus')\"><i class=\"fa fa-money fa-lg\"></i> Bonus</a>\r\n                    \r\n        </li>\r\n\r\n        <li class=\"has-children users\" v-if=\"user.roll == 'Admin' || 'Project Coordinator' || 'Project Manager' || 'Installer'\">\r\n          <a  v-on:click=\"$parent.updateView('create-project')\"><i class=\"fa fa-briefcase fa-lg\"></i> Jobs</a>       \r\n         \r\n        </li>\r\n\r\n        <li class=\"has-children users\">\r\n          <a  v-on:click=\"$parent.updateView('add-hours')\"><i class=\"fa fa-clock-o \"></i> Time</a>                 \r\n        </li>\r\n\t\t    \r\n     \r\n    </ul>\r\n    </nav>\r\n        <!-- %%%%%%%%  Side NAVBAR END %%%%%%% -->\r\n\r\n\r\n \r\n\r\n  </main> <!-- .cd-main-content -->\t\t\r\n  </div>\r\n</template>\r\n\r\n<script>\r\nconst axios = require('axios');\r\nexport default {\r\n  name: \"side-bar\",\r\n  props: [\"user\"],\r\n  beforeMount(){\r\n  axios.get('/session/data')\r\n   .then(req => {\r\n      console.log(\"Side Bar username\"+req.data.username);\r\n      $('#username').html(req.data.username);\r\n     \r\n      //If no session received, return home\r\n      if(!req.data.roll){\r\n        this.$router.push('/');\r\n      }\r\n\r\n     \r\n   })\r\n  .catch(function(err){\r\n    console.log(\"Error R\"+err);\r\n  });\r\n  }\r\n};\r\n\r\n</script>\r\n\r\n<style scoped>\r\n /* -------------------------------- \r\n\r\nPrimary style\r\n\r\n-------------------------------- */\r\n*, *::after, *::before {\r\n  box-sizing: border-box;\r\n}\r\n\r\nhtml {\r\n  font-size: 62.5%;\r\n}\r\n\r\nbody {\r\n  font-size: 1.6rem;\r\n  font-family: \"Open Sans\", sans-serif;\r\n  color: #3e454c;\r\n  background-color: #F5F5F5;\r\n}\r\nbody::after {\r\n  clear: both;\r\n  content: \"\";\r\n  display: table;\r\n}\r\n\r\na {\r\n  color: #1784c7;\r\n  text-decoration: none;\r\n}\r\n\r\n/*  ######  Side NAVBAR page style  ######  */\r\n\r\n\r\n#dashboard{\r\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\r\n    background: #fff;\r\n    margin-right: 40px;\r\n    height: 100%;\r\n\r\n\r\n}\r\n#project{\r\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\r\n    background: #fff;\r\n    margin-right: 40px;\r\n\r\n\r\n}\r\n#tables{\r\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\r\n    background: #fff;\r\n    margin-right: 40px;\r\n\r\n\r\n}\r\n#user{\r\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\r\n    background: #fff;\r\n    margin-right: 40px;\r\n\r\n\r\n}\r\n#admin{\r\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\r\n    background: #fff;\r\n    margin-right: 40px;\r\n\r\n\r\n}\r\n/*  ######  Side NAVBAR page style END ######  */\r\n\r\n.button{\r\n  background-color: transparent;\r\n  color:#C8C8C8;\r\n  border: transparent;\r\n  height: 35px;\r\n  \r\n  font-size: 15px;\r\n  border : none;\r\n  outline: none;\r\n\r\n\r\n}\r\n.button:active {\r\n  background-color: #323232;\r\n  border : none;\r\n  outline: none;\r\n  \r\n\r\n}\r\n.button:hover{\r\n  color: #ffffff;\r\n}\r\n.cd-side-nav{\r\n  font-size: 20px;\r\n  margin-top: 20px;\r\n  position: fixed;\r\n}\r\n.fa{\r\n  margin-right: 13px;\r\n}\r\n\r\n.cd-nav ul li a:hover{\r\n  color: #e6e6e6;\r\n}\r\n\r\n\r\ninput {\r\n  font-family: \"Open Sans\", sans-serif;\r\n  font-size: 1.6rem;\r\n}\r\n\r\ninput[type=\"search\"]::-webkit-search-decoration,\r\ninput[type=\"search\"]::-webkit-search-cancel-button,\r\ninput[type=\"search\"]::-webkit-search-results-button,\r\ninput[type=\"search\"]::-webkit-search-results-decoration {\r\n  display: none;\r\n}\r\n\r\n/* -------------------------------- \r\n\r\nMain Page Content\r\n\r\n-------------------------------- */\r\n.cd-main-content .content-wrapper {\r\n  padding: 45px 5% 3em;\r\n}\r\n.cd-main-content .content-wrapper h1 {\r\n  text-align: center;\r\n  padding: 3em 0;\r\n  font-size: 2rem;\r\n}\r\n.cd-main-content::before {\r\n  /* never visible - used to check MQ in jQuery */\r\n  display: none;\r\n  content: 'mobile';\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-main-content .content-wrapper {\r\n    margin-left: 110px;\r\n    margin-top: 80px;\r\n    padding-top: 155px;\r\n  }\r\n  .cd-main-content .content-wrapper h1 {\r\n    padding: 4em 0;\r\n    font-size: 3.2rem;\r\n    font-weight: 300;\r\n  }\r\n  .cd-main-content::before {\r\n    content: 'tablet';\r\n  }\r\n}\r\n@media only screen and (min-width: 1170px) {\r\n  .cd-main-content .content-wrapper {\r\n    margin-left: 200px;\r\n  }\r\n  .cd-main-content::before {\r\n    content: 'desktop';\r\n  }\r\n}\r\n\r\n/* -------------------------------- \r\n\r\nHeader\r\n\r\n-------------------------------- */\r\n \r\n.cd-main-header {\r\n  position: absolute;\r\n  z-index: 2;\r\n  top: 0;\r\n  left: 0;\r\n  height: 45px;\r\n  width: 100%;\r\n  background: #FFFFFF;\r\n\r\n\r\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n}\r\n.cd-main-header::after {\r\n  clear: both;\r\n  content: \"\";\r\n  display: table;\r\n}\r\n/**/@media only screen and (min-width: 768px) \r\n{\r\n  .cd-main-header {\r\n    position: fixed;\r\n    height: 55px;\r\n    background-color:#323232;\r\n  }\r\n}\r\n\r\n.cd-logo {\r\n  float: left;\r\n  display: block;\r\n  margin: 11px 0 0 5%;\r\n}\r\n.cd-logo img {\r\n  display: block;\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-logo {\r\n    margin: 16px 0 0 36px;\r\n  }\r\n}\r\n\r\n.cd-nav-trigger {\r\n  /* navigation trigger - visible on mobile devices only */\r\n  float: right;\r\n  position: relative;\r\n  display: block;\r\n  width: 34px;\r\n  height: 44px;\r\n  margin-right: 5%;\r\n  /* hide text */\r\n  overflow: hidden;\r\n  white-space: nowrap;\r\n  color: transparent;\r\n}\r\n.cd-nav-trigger span, .cd-nav-trigger span::before, .cd-nav-trigger span::after {\r\n  /* hamburger icon in CSS */\r\n  position: absolute;\r\n  display: inline-block;\r\n  height: 3px;\r\n  width: 24px;\r\n  background:#323232;\r\n}\r\n.cd-nav-trigger span {\r\n  /* line in the center */\r\n  position: absolute;\r\n  top: 50%;\r\n  right: 5px;\r\n  margin-top: -2px;\r\n  -webkit-transition: background 0.2s;\r\n  -moz-transition: background 0.2s;\r\n  transition: background 0.2s;\r\n}\r\n.cd-nav-trigger span::before, .cd-nav-trigger span::after {\r\n  /* other 2 lines */\r\n  content: '';\r\n  right: 0;\r\n  /* Force Hardware Acceleration in WebKit */\r\n  -webkit-transform: translateZ(0);\r\n  -moz-transform: translateZ(0);\r\n  -ms-transform: translateZ(0);\r\n  -o-transform: translateZ(0);\r\n  transform: translateZ(0);\r\n  -webkit-backface-visibility: hidden;\r\n  backface-visibility: hidden;\r\n  -webkit-transform-origin: 0% 50%;\r\n  -moz-transform-origin: 0% 50%;\r\n  -ms-transform-origin: 0% 50%;\r\n  -o-transform-origin: 0% 50%;\r\n  transform-origin: 0% 50%;\r\n  -webkit-transition: -webkit-transform 0.2s;\r\n  -moz-transition: -moz-transform 0.2s;\r\n  transition: transform 0.2s;\r\n}\r\n.cd-nav-trigger span::before {\r\n  /* menu icon top line */\r\n  top: -6px;\r\n}\r\n.cd-nav-trigger span::after {\r\n  /* menu icon bottom line */\r\n  top: 6px;\r\n}\r\n.cd-nav-trigger.nav-is-visible span {\r\n  /* hide line in the center */\r\n  background: rgba(255, 255, 255, 0);\r\n}\r\n.cd-nav-trigger.nav-is-visible span::before, .cd-nav-trigger.nav-is-visible span::after {\r\n  /* keep visible other 2 lines */\r\n  background: white;\r\n}\r\n.cd-nav-trigger.nav-is-visible span::before {\r\n  -webkit-transform: translateX(4px) translateY(-3px) rotate(45deg);\r\n  -moz-transform: translateX(4px) translateY(-3px) rotate(45deg);\r\n  -ms-transform: translateX(4px) translateY(-3px) rotate(45deg);\r\n  -o-transform: translateX(4px) translateY(-3px) rotate(45deg);\r\n  transform: translateX(4px) translateY(-3px) rotate(45deg);\r\n}\r\n.cd-nav-trigger.nav-is-visible span::after {\r\n  -webkit-transform: translateX(4px) translateY(2px) rotate(-45deg);\r\n  -moz-transform: translateX(4px) translateY(2px) rotate(-45deg);\r\n  -ms-transform: translateX(4px) translateY(2px) rotate(-45deg);\r\n  -o-transform: translateX(4px) translateY(2px) rotate(-45deg);\r\n  transform: translateX(4px) translateY(2px) rotate(-45deg);\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-nav-trigger {\r\n    display: none;\r\n  }\r\n}\r\n\r\n.cd-search {\r\n  position: relative;\r\n  margin: 1.2em 5% 0.6em;\r\n}\r\n.cd-search.is-hidden {\r\n  opacity: 0;\r\n}\r\n.cd-search::before {\r\n  /* lens icon */\r\n  content: '';\r\n  position: absolute;\r\n  left: 8px;\r\n  top: 50%;\r\n  bottom: auto;\r\n  -webkit-transform: translateY(-50%);\r\n  -moz-transform: translateY(-50%);\r\n  -ms-transform: translateY(-50%);\r\n  -o-transform: translateY(-50%);\r\n  transform: translateY(-50%);\r\n  height: 16px;\r\n  width: 16px;\r\n \r\n}\r\n.cd-search input {\r\n  padding-left: 32px;\r\n  width: 100%;\r\n  height: 36px;\r\n  border: none;\r\n  border-radius: .25em;\r\n  -webkit-appearance: none;\r\n  -moz-appearance: none;\r\n  -ms-appearance: none;\r\n  -o-appearance: none;\r\n  appearance: none;\r\n}\r\n.cd-search input:focus {\r\n  outline: none;\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-search {\r\n    float: left;\r\n    display: inline-block;\r\n    width: 250px;\r\n    height: 100%;\r\n    margin: 0 0 0 2.5em;\r\n  }\r\n  .cd-search.is-hidden {\r\n    /* reset style */\r\n    opacity: 1;\r\n  }\r\n  .cd-search::before {\r\n    background-position: 0 -16px;\r\n    left: 1em;\r\n  }\r\n  .cd-search form, .cd-search input {\r\n    height: 100%;\r\n    width: 100%;\r\n  }\r\n  .cd-search input {\r\n    border: none;\r\n    padding-left: 2.6em;\r\n    border-radius: 0;\r\n    background-color: #3e454c;\r\n    border-left: 1px solid #51575d;\r\n    color: #ffffff;\r\n  }\r\n  .cd-search input::-webkit-input-placeholder {\r\n    color: #777c81;\r\n  }\r\n  .cd-search input::-moz-placeholder {\r\n    color: #777c81;\r\n  }\r\n  .cd-search input:-moz-placeholder {\r\n    color: #777c81;\r\n  }\r\n  .cd-search input:-ms-input-placeholder {\r\n    color: #777c81;\r\n  }\r\n}\r\n\r\n/* -------------------------------- \r\n\r\nTop Navigation\r\n\r\n-------------------------------- */\r\n.cd-nav {\r\n  /* top nav - not visible on mobile devices */\r\n  display: none;\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-nav {\r\n    display: block;\r\n    float: right;\r\n    height: 100%;\r\n  }\r\n}\r\n\r\n.cd-top-nav > li > a::before {\r\n  /* reset style */\r\n  display: none;\r\n}\r\n.cd-top-nav > li a {\r\n  padding: 1em 5% !important;\r\n}\r\n.cd-top-nav img {\r\n  /* avatar image */\r\n  position: absolute;\r\n  left: 1.8em;\r\n  top: 50%;\r\n  bottom: auto;\r\n  -webkit-transform: translateY(-50%);\r\n  -moz-transform: translateY(-50%);\r\n  -ms-transform: translateY(-50%);\r\n  -o-transform: translateY(-50%);\r\n  transform: translateY(-50%);\r\n  height: 20px;\r\n  width: 20px;\r\n  border-radius: 50%;\r\n  display: none;\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-top-nav {\r\n    height: 100%;\r\n  }\r\n  .cd-top-nav a {\r\n    display: block;\r\n    font-size: 1.4rem;\r\n    color: #adadad;\r\n  }\r\n  .cd-top-nav > li {\r\n    display: inline-block;\r\n    margin-right: 1em;\r\n    height: 100%;\r\n  }\r\n  .cd-top-nav > li:last-of-type {\r\n    margin-right: 0;\r\n  }\r\n  .cd-top-nav > li a {\r\n    padding: 1em .6em !important;\r\n  }\r\n  .cd-top-nav img {\r\n    display: block;\r\n  }\r\n}\r\n@media only screen and (min-width: 1170px) {\r\n  .cd-top-nav li:not(.has-children) a:hover {\r\n    color: #1784c7;\r\n  }\r\n}\r\n\r\n/* -------------------------------- \r\n\r\nSidebar\r\n\r\n-------------------------------- */\r\n.cd-side-nav {\r\n  position: fixed;\r\n  z-index: 1;\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%;\r\n  padding: 45px 0 0;\r\n  background-color: #323232;\r\n  visibility: hidden;\r\n  opacity: 0;\r\n  max-height: 100vh;\r\n  overflow: hidden;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;\r\n  -moz-transition: opacity 0.2s 0s, visibility 0s 0.2s;\r\n  transition: opacity 0.2s 0s, visibility 0s 0.2s;\r\n}\r\n.cd-side-nav.nav-is-visible {\r\n  opacity: 1;\r\n  visibility: visible;\r\n  overflow: visible;\r\n  -webkit-overflow-scrolling: touch;\r\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0s;\r\n  -moz-transition: opacity 0.2s 0s, visibility 0s 0s;\r\n  transition: opacity 0.2s 0s, visibility 0s 0s;\r\n  max-height: none;\r\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\r\n}\r\n.cd-side-nav > ul {\r\n  padding: 0.6em 0;\r\n}\r\n.cd-side-nav > ul:last-of-type {\r\n  padding-bottom: 0;\r\n}\r\n.cd-side-nav .cd-label, .cd-side-nav a {\r\n  display: block;\r\n  padding: 1em 5%;\r\n}\r\n\r\n.cd-side-nav a {\r\n  position: relative;\r\n  color: #ffffff;\r\n  font-size: 1.4rem;\r\n}\r\n.cd-side-nav ul.cd-top-nav > li:last-of-type > a {\r\n  border-bottom: none;\r\n}\r\n.cd-side-nav > ul > li > a {\r\n  padding-left: calc(5% + 24px);\r\n  border-bottom: 1px solid #373d44;\r\n  font-size: 13px;\r\n  font-weight: bold;\r\n}\r\n.cd-side-nav > ul > li > a::before {\r\n  /* icon before item name */\r\n  position: absolute;\r\n  content: '';\r\n  left: 5%;\r\n  top: 50%;\r\n  bottom: auto;\r\n  -webkit-transform: translateY(-50%);\r\n  -moz-transform: translateY(-50%);\r\n  -ms-transform: translateY(-50%);\r\n  -o-transform: translateY(-50%);\r\n  transform: translateY(-50%);\r\n  height: 16px;\r\n  width: 16px;\r\n  \r\n}\r\n.cd-side-nav > ul > li.overview > a::before {\r\n  background-position: -64px 0;\r\n}\r\n.cd-side-nav > ul > li.notifications > a::before {\r\n  background-position: -80px 0;\r\n}\r\n.cd-side-nav > ul > li.comments > a::before {\r\n  background-position: -48px 0;\r\n}\r\n.cd-side-nav > ul > li.bookmarks > a::before {\r\n  background-position: -32px 0;\r\n}\r\n.cd-side-nav > ul > li.images > a::before {\r\n  background-position: 0 0;\r\n}\r\n.cd-side-nav > ul > li.users > a::before {\r\n  background-position: -16px 0;\r\n}\r\n.cd-side-nav .count {\r\n  /* notification badge */\r\n  position: absolute;\r\n  top: 50%;\r\n  bottom: auto;\r\n  -webkit-transform: translateY(-50%);\r\n  -moz-transform: translateY(-50%);\r\n  -ms-transform: translateY(-50%);\r\n  -o-transform: translateY(-50%);\r\n  transform: translateY(-50%);\r\n  right: calc(5% + 16px + 0.4em);\r\n  padding: 0.2em 0.4em;\r\n  background-color: #ff7e66;\r\n  border-radius: .25em;\r\n  color: #ffffff;\r\n  font-weight: bold;\r\n  font-size: 1.2rem;\r\n  text-align: center;\r\n}\r\n.cd-side-nav .action-btn a {\r\n  display: block;\r\n  margin: 0 5%;\r\n  padding: 1em 0;\r\n  background-color: #1784c7;\r\n  border-radius: .25em;\r\n  border: none;\r\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);\r\n  text-align: center;\r\n  color: #ffffff;\r\n  font-weight: bold;\r\n}\r\n.cd-side-nav .action-btn a::before {\r\n  display: none;\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-side-nav {\r\n    \r\n    float: left;\r\n    top: fixed;\r\n    width: 110px;\r\n    min-height: 100vh;\r\n    padding-top: 55px;\r\n    /* reset style */\r\n    visibility: visible;\r\n    opacity: 1;\r\n    overflow: visible;\r\n    max-height: none;\r\n    position: fixed;\r\n  }\r\n  .cd-side-nav.nav-is-visible {\r\n    box-shadow: none;\r\n  }\r\n  .cd-side-nav.is-fixed {\r\n    position: fixed;\r\n  }\r\n  .cd-side-nav > ul {\r\n    /* reset style */\r\n    padding: 0;\r\n  }\r\n  .cd-side-nav .cd-label {\r\n    /* remove labels on minified version of the sidebar */\r\n    display: none;\r\n  }\r\n  .cd-side-nav a {\r\n    font-size: 1.2rem;\r\n    text-align: center;\r\n  }\r\n  .cd-side-nav > ul > li > a {\r\n    padding: calc(2.2em + 24px) 0 2.4em;\r\n  }\r\n  .cd-side-nav > ul > li > a::before {\r\n    left: 50%;\r\n    right: auto;\r\n    -webkit-transform: translateX(-50%);\r\n    -moz-transform: translateX(-50%);\r\n    -ms-transform: translateX(-50%);\r\n    -o-transform: translateX(-50%);\r\n    transform: translateX(-50%);\r\n    top: 2.4em;\r\n  }\r\n  .cd-side-nav .active > a {\r\n    /* current page */\r\n    box-shadow: inset 3px 0 0 #1784c7;\r\n    background-color: #33383e;\r\n  }\r\n  .cd-side-nav .action-btn a {\r\n    margin: 1em 10% 0;\r\n  }\r\n  .cd-side-nav .count {\r\n    height: 8px;\r\n    width: 8px;\r\n    border-radius: 50%;\r\n    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\r\n    padding: 0;\r\n    top: 2em;\r\n    -webkit-transform: translateX(-50%);\r\n    -moz-transform: translateX(-50%);\r\n    -ms-transform: translateX(-50%);\r\n    -o-transform: translateX(-50%);\r\n    transform: translateX(-50%);\r\n    left: calc(50% + 5px);\r\n    right: auto;\r\n    color: transparent;\r\n  }\r\n}\r\n@media only screen and (min-width: 1170px) {\r\n  .cd-side-nav {\r\n    width: 150px;\r\n    position: fixed;\r\n  }\r\n  .cd-logo img{\r\n    margin-left: -16px;\r\n    margin-top: 3px;\r\n  }\r\n  .cd-side-nav > ul {\r\n    padding: 0.6em 0;\r\n  }\r\n  .cd-side-nav > ul > li:not(.action-btn):hover > a {\r\n    background-color: #33383e;\r\n  }\r\n  .cd-side-nav > ul > li > a {\r\n    padding: 1em 1em 1em 42px;\r\n    text-align: left;\r\n    border-bottom: none;\r\n  }\r\n  .cd-side-nav > ul > li > a::before {\r\n    top: 50%;\r\n    bottom: auto;\r\n    -webkit-transform: translateY(-50%);\r\n    -moz-transform: translateY(-50%);\r\n    -ms-transform: translateY(-50%);\r\n    -o-transform: translateY(-50%);\r\n    transform: translateY(-50%);\r\n    left: 18px;\r\n  }\r\n  .cd-side-nav .cd-label {\r\n    display: block;\r\n    padding: 1em 18px;\r\n  }\r\n  .cd-side-nav .action-btn {\r\n    text-align: left;\r\n  }\r\n  .cd-side-nav .action-btn a {\r\n    margin: 0 18px;\r\n  }\r\n  .no-touch .cd-side-nav .action-btn a:hover {\r\n    background-color: #1a93de;\r\n  }\r\n  .cd-side-nav .count {\r\n    /* reset style */\r\n    color: #ffffff;\r\n    height: auto;\r\n    width: auto;\r\n    border-radius: .25em;\r\n    padding: .2em .4em;\r\n    top: 50%;\r\n    bottom: auto;\r\n    -webkit-transform: translateY(-50%);\r\n    -moz-transform: translateY(-50%);\r\n    -ms-transform: translateY(-50%);\r\n    -o-transform: translateY(-50%);\r\n    transform: translateY(-50%);\r\n    right: 18px;\r\n    left: auto;\r\n    box-shadow: none;\r\n  }\r\n}\r\n\r\n.has-children ul {\r\n  position: relative;\r\n  width: 100%;\r\n  display: none;\r\n  background-color: #1c1f22;\r\n}\r\n.has-children > a::after {\r\n  /* arrow icon */\r\n  position: absolute;\r\n  content: '';\r\n  height: 16px;\r\n  width: 16px;\r\n  right: 5%;\r\n  top: 50%;\r\n  bottom: auto;\r\n  -webkit-transform: translateY(-50%);\r\n  -moz-transform: translateY(-50%);\r\n  -ms-transform: translateY(-50%);\r\n  -o-transform: translateY(-50%);\r\n  transform: translateY(-50%);\r\n  \r\n}\r\n.has-children.selected > ul {\r\n  display: block;\r\n}\r\n.has-children.selected > a::after {\r\n  -webkit-transform: translateY(-50%) rotate(180deg);\r\n  -moz-transform: translateY(-50%) rotate(180deg);\r\n  -ms-transform: translateY(-50%) rotate(180deg);\r\n  -o-transform: translateY(-50%) rotate(180deg);\r\n  transform: translateY(-50%) rotate(180deg);\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .has-children {\r\n    position: relative;\r\n  }\r\n  .has-children ul {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 100%;\r\n    width: 160px;\r\n    padding: 0;\r\n    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);\r\n  }\r\n  .has-children ul a {\r\n    text-align: left;\r\n    border: none;\r\n    padding: 1em;\r\n  }\r\n \r\n  \r\n  .no-touch .has-children ul a:hover {\r\n    color: #1784c7;\r\n  }\r\n  .has-children > a::after {\r\n    display: none;\r\n    color: black;\r\n  }\r\n  .cd-side-nav .has-children.selected > a {\r\n    /* focus state -> show sub pages */\r\n    background-color: #33383e;\r\n  }\r\n  .cd-top-nav .has-children {\r\n    position: relative;\r\n    background-color: #323232;\r\n\r\n  }\r\n  .cd-top-nav .has-children > a {\r\n    height: 100%;\r\n    padding: 0 calc(1.8em + 22px) 0 calc(1.8em + 26px) !important;\r\n    line-height: 55px;\r\n  }\r\n  .cd-top-nav .has-children > a::after {\r\n    display: block;\r\n    right: 1.8em;\r\n  }\r\n  .cd-top-nav .has-children ul {\r\n    background-color: #1c1f22;\r\n    width: 200px;\r\n    top: 100%;\r\n    right: 0;\r\n    left: auto;\r\n    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);\r\n  }\r\n  .cd-top-nav .has-children ul a {\r\n    padding-left: 18px !important;\r\n  }\r\n}\r\n@media only screen and (min-width: 1170px) {\r\n  .has-children > ul {\r\n    width: 100%;\r\n    z-index: 1;\r\n  }\r\n  .has-children ul a {\r\n    padding-left: 18px;\r\n  }\r\n  .has-children.active > ul {\r\n    /* if the item is active, make the subnavigation visible */\r\n    position: relative;\r\n    display: block;\r\n    /* reset style */\r\n    left: 0;\r\n    box-shadow: none;\r\n  }\r\n  .no-touch .cd-side-nav .has-children:hover > ul, .cd-side-nav .has-children.hover > ul {\r\n    /* show subnavigation on hover */\r\n    display: block;\r\n    opacity: 1;\r\n    visibility: visible;\r\n  }\r\n}\r\n\r\n\r\n</style>\r\n\r\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n /* -------------------------------- \n\nPrimary style\n\n-------------------------------- */\n*[data-v-7eea899c], *[data-v-7eea899c]::after, *[data-v-7eea899c]::before {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\nhtml[data-v-7eea899c] {\n  font-size: 62.5%;\n}\nbody[data-v-7eea899c] {\n  font-size: 1.6rem;\n  font-family: \"Open Sans\", sans-serif;\n  color: #3e454c;\n  background-color: #F5F5F5;\n}\nbody[data-v-7eea899c]::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\na[data-v-7eea899c] {\n  color: #1784c7;\n  text-decoration: none;\n}\n/*  ######  Side NAVBAR page style  ######  */\n#dashboard[data-v-7eea899c]{\n  -webkit-box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n          box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n    height: 100%;\n}\n#project[data-v-7eea899c]{\n  -webkit-box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n          box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#tables[data-v-7eea899c]{\n  -webkit-box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n          box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#user[data-v-7eea899c]{\n  -webkit-box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n          box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n#admin[data-v-7eea899c]{\n  -webkit-box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n          box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\n    background: #fff;\n    margin-right: 40px;\n}\n/*  ######  Side NAVBAR page style END ######  */\n.button[data-v-7eea899c]{\n  background-color: transparent;\n  color:#C8C8C8;\n  border: transparent;\n  height: 35px;\n  \n  font-size: 15px;\n  border : none;\n  outline: none;\n}\n.button[data-v-7eea899c]:active {\n  background-color: #323232;\n  border : none;\n  outline: none;\n}\n.button[data-v-7eea899c]:hover{\n  color: #ffffff;\n}\n.cd-side-nav[data-v-7eea899c]{\n  font-size: 20px;\n  margin-top: 20px;\n  position: fixed;\n}\n.fa[data-v-7eea899c]{\n  margin-right: 13px;\n}\n.cd-nav ul li a[data-v-7eea899c]:hover{\n  color: #e6e6e6;\n}\ninput[data-v-7eea899c] {\n  font-family: \"Open Sans\", sans-serif;\n  font-size: 1.6rem;\n}\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-decoration,\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-cancel-button,\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-results-button,\ninput[type=\"search\"][data-v-7eea899c]::-webkit-search-results-decoration {\n  display: none;\n}\n/* -------------------------------- \n\nMain Page Content\n\n-------------------------------- */\n.cd-main-content .content-wrapper[data-v-7eea899c] {\n  padding: 45px 5% 3em;\n}\n.cd-main-content .content-wrapper h1[data-v-7eea899c] {\n  text-align: center;\n  padding: 3em 0;\n  font-size: 2rem;\n}\n.cd-main-content[data-v-7eea899c]::before {\n  /* never visible - used to check MQ in jQuery */\n  display: none;\n  content: 'mobile';\n}\n@media only screen and (min-width: 768px) {\n.cd-main-content .content-wrapper[data-v-7eea899c] {\n    margin-left: 110px;\n    margin-top: 80px;\n    padding-top: 155px;\n}\n.cd-main-content .content-wrapper h1[data-v-7eea899c] {\n    padding: 4em 0;\n    font-size: 3.2rem;\n    font-weight: 300;\n}\n.cd-main-content[data-v-7eea899c]::before {\n    content: 'tablet';\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-main-content .content-wrapper[data-v-7eea899c] {\n    margin-left: 200px;\n}\n.cd-main-content[data-v-7eea899c]::before {\n    content: 'desktop';\n}\n}\n/* -------------------------------- \n\nHeader\n\n-------------------------------- */\n.cd-main-header[data-v-7eea899c] {\n  position: absolute;\n  z-index: 2;\n  top: 0;\n  left: 0;\n  height: 45px;\n  width: 100%;\n  background: #FFFFFF;\n\n\n  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n\n\n          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.cd-main-header[data-v-7eea899c]::after {\n  clear: both;\n  content: \"\";\n  display: table;\n}\n/**/\n@media only screen and (min-width: 768px) \n{\n.cd-main-header[data-v-7eea899c] {\n    position: fixed;\n    height: 55px;\n    background-color:#323232;\n}\n}\n.cd-logo[data-v-7eea899c] {\n  float: left;\n  display: block;\n  margin: 11px 0 0 5%;\n}\n.cd-logo img[data-v-7eea899c] {\n  display: block;\n}\n@media only screen and (min-width: 768px) {\n.cd-logo[data-v-7eea899c] {\n    margin: 16px 0 0 36px;\n}\n}\n.cd-nav-trigger[data-v-7eea899c] {\n  /* navigation trigger - visible on mobile devices only */\n  float: right;\n  position: relative;\n  display: block;\n  width: 34px;\n  height: 44px;\n  margin-right: 5%;\n  /* hide text */\n  overflow: hidden;\n  white-space: nowrap;\n  color: transparent;\n}\n.cd-nav-trigger span[data-v-7eea899c], .cd-nav-trigger span[data-v-7eea899c]::before, .cd-nav-trigger span[data-v-7eea899c]::after {\n  /* hamburger icon in CSS */\n  position: absolute;\n  display: inline-block;\n  height: 3px;\n  width: 24px;\n  background:#323232;\n}\n.cd-nav-trigger span[data-v-7eea899c] {\n  /* line in the center */\n  position: absolute;\n  top: 50%;\n  right: 5px;\n  margin-top: -2px;\n  -webkit-transition: background 0.2s;\n  transition: background 0.2s;\n}\n.cd-nav-trigger span[data-v-7eea899c]::before, .cd-nav-trigger span[data-v-7eea899c]::after {\n  /* other 2 lines */\n  content: '';\n  right: 0;\n  /* Force Hardware Acceleration in WebKit */\n  -webkit-transform: translateZ(0);\n  transform: translateZ(0);\n  -webkit-backface-visibility: hidden;\n  backface-visibility: hidden;\n  -webkit-transform-origin: 0% 50%;\n  transform-origin: 0% 50%;\n  -webkit-transition: -webkit-transform 0.2s;\n  transition: -webkit-transform 0.2s;\n  transition: transform 0.2s;\n  transition: transform 0.2s, -webkit-transform 0.2s;\n}\n.cd-nav-trigger span[data-v-7eea899c]::before {\n  /* menu icon top line */\n  top: -6px;\n}\n.cd-nav-trigger span[data-v-7eea899c]::after {\n  /* menu icon bottom line */\n  top: 6px;\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c] {\n  /* hide line in the center */\n  background: rgba(255, 255, 255, 0);\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::before, .cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::after {\n  /* keep visible other 2 lines */\n  background: white;\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::before {\n  -webkit-transform: translateX(4px) translateY(-3px) rotate(45deg);\n  transform: translateX(4px) translateY(-3px) rotate(45deg);\n}\n.cd-nav-trigger.nav-is-visible span[data-v-7eea899c]::after {\n  -webkit-transform: translateX(4px) translateY(2px) rotate(-45deg);\n  transform: translateX(4px) translateY(2px) rotate(-45deg);\n}\n@media only screen and (min-width: 768px) {\n.cd-nav-trigger[data-v-7eea899c] {\n    display: none;\n}\n}\n.cd-search[data-v-7eea899c] {\n  position: relative;\n  margin: 1.2em 5% 0.6em;\n}\n.cd-search.is-hidden[data-v-7eea899c] {\n  opacity: 0;\n}\n.cd-search[data-v-7eea899c]::before {\n  /* lens icon */\n  content: '';\n  position: absolute;\n  left: 8px;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n}\n.cd-search input[data-v-7eea899c] {\n  padding-left: 32px;\n  width: 100%;\n  height: 36px;\n  border: none;\n  border-radius: .25em;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  -ms-appearance: none;\n  -o-appearance: none;\n  appearance: none;\n}\n.cd-search input[data-v-7eea899c]:focus {\n  outline: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-search[data-v-7eea899c] {\n    float: left;\n    display: inline-block;\n    width: 250px;\n    height: 100%;\n    margin: 0 0 0 2.5em;\n}\n.cd-search.is-hidden[data-v-7eea899c] {\n    /* reset style */\n    opacity: 1;\n}\n.cd-search[data-v-7eea899c]::before {\n    background-position: 0 -16px;\n    left: 1em;\n}\n.cd-search form[data-v-7eea899c], .cd-search input[data-v-7eea899c] {\n    height: 100%;\n    width: 100%;\n}\n.cd-search input[data-v-7eea899c] {\n    border: none;\n    padding-left: 2.6em;\n    border-radius: 0;\n    background-color: #3e454c;\n    border-left: 1px solid #51575d;\n    color: #ffffff;\n}\n.cd-search input[data-v-7eea899c]::-webkit-input-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-7eea899c]::-moz-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-7eea899c]:-moz-placeholder {\n    color: #777c81;\n}\n.cd-search input[data-v-7eea899c]:-ms-input-placeholder {\n    color: #777c81;\n}\n}\n/* -------------------------------- \n\nTop Navigation\n\n-------------------------------- */\n.cd-nav[data-v-7eea899c] {\n  /* top nav - not visible on mobile devices */\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-nav[data-v-7eea899c] {\n    display: block;\n    float: right;\n    height: 100%;\n}\n}\n.cd-top-nav > li > a[data-v-7eea899c]::before {\n  /* reset style */\n  display: none;\n}\n.cd-top-nav > li a[data-v-7eea899c] {\n  padding: 1em 5% !important;\n}\n.cd-top-nav img[data-v-7eea899c] {\n  /* avatar image */\n  position: absolute;\n  left: 1.8em;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 20px;\n  width: 20px;\n  border-radius: 50%;\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-top-nav[data-v-7eea899c] {\n    height: 100%;\n}\n.cd-top-nav a[data-v-7eea899c] {\n    display: block;\n    font-size: 1.4rem;\n    color: #adadad;\n}\n.cd-top-nav > li[data-v-7eea899c] {\n    display: inline-block;\n    margin-right: 1em;\n    height: 100%;\n}\n.cd-top-nav > li[data-v-7eea899c]:last-of-type {\n    margin-right: 0;\n}\n.cd-top-nav > li a[data-v-7eea899c] {\n    padding: 1em .6em !important;\n}\n.cd-top-nav img[data-v-7eea899c] {\n    display: block;\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-top-nav li:not(.has-children) a[data-v-7eea899c]:hover {\n    color: #1784c7;\n}\n}\n/* -------------------------------- \n\nSidebar\n\n-------------------------------- */\n.cd-side-nav[data-v-7eea899c] {\n  position: fixed;\n  z-index: 1;\n  left: 0;\n  top: 0;\n  width: 100%;\n  padding: 45px 0 0;\n  background-color: #323232;\n  visibility: hidden;\n  opacity: 0;\n  max-height: 100vh;\n  overflow: hidden;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;\n  transition: opacity 0.2s 0s, visibility 0s 0.2s;\n}\n.cd-side-nav.nav-is-visible[data-v-7eea899c] {\n  opacity: 1;\n  visibility: visible;\n  overflow: visible;\n  -webkit-overflow-scrolling: touch;\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0s;\n  transition: opacity 0.2s 0s, visibility 0s 0s;\n  max-height: none;\n  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\n          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-side-nav > ul[data-v-7eea899c] {\n  padding: 0.6em 0;\n}\n.cd-side-nav > ul[data-v-7eea899c]:last-of-type {\n  padding-bottom: 0;\n}\n.cd-side-nav .cd-label[data-v-7eea899c], .cd-side-nav a[data-v-7eea899c] {\n  display: block;\n  padding: 1em 5%;\n}\n.cd-side-nav a[data-v-7eea899c] {\n  position: relative;\n  color: #ffffff;\n  font-size: 1.4rem;\n}\n.cd-side-nav ul.cd-top-nav > li:last-of-type > a[data-v-7eea899c] {\n  border-bottom: none;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c] {\n  padding-left: calc(5% + 24px);\n  border-bottom: 1px solid #373d44;\n  font-size: 13px;\n  font-weight: bold;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c]::before {\n  /* icon before item name */\n  position: absolute;\n  content: '';\n  left: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  height: 16px;\n  width: 16px;\n}\n.cd-side-nav > ul > li.overview > a[data-v-7eea899c]::before {\n  background-position: -64px 0;\n}\n.cd-side-nav > ul > li.notifications > a[data-v-7eea899c]::before {\n  background-position: -80px 0;\n}\n.cd-side-nav > ul > li.comments > a[data-v-7eea899c]::before {\n  background-position: -48px 0;\n}\n.cd-side-nav > ul > li.bookmarks > a[data-v-7eea899c]::before {\n  background-position: -32px 0;\n}\n.cd-side-nav > ul > li.images > a[data-v-7eea899c]::before {\n  background-position: 0 0;\n}\n.cd-side-nav > ul > li.users > a[data-v-7eea899c]::before {\n  background-position: -16px 0;\n}\n.cd-side-nav .count[data-v-7eea899c] {\n  /* notification badge */\n  position: absolute;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n  right: calc(5% + 16px + 0.4em);\n  padding: 0.2em 0.4em;\n  background-color: #ff7e66;\n  border-radius: .25em;\n  color: #ffffff;\n  font-weight: bold;\n  font-size: 1.2rem;\n  text-align: center;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c] {\n  display: block;\n  margin: 0 5%;\n  padding: 1em 0;\n  background-color: #1784c7;\n  border-radius: .25em;\n  border: none;\n  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);\n          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);\n  text-align: center;\n  color: #ffffff;\n  font-weight: bold;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c]::before {\n  display: none;\n}\n@media only screen and (min-width: 768px) {\n.cd-side-nav[data-v-7eea899c] {\n    \n    float: left;\n    top: fixed;\n    width: 110px;\n    min-height: 100vh;\n    padding-top: 55px;\n    /* reset style */\n    visibility: visible;\n    opacity: 1;\n    overflow: visible;\n    max-height: none;\n    position: fixed;\n}\n.cd-side-nav.nav-is-visible[data-v-7eea899c] {\n    -webkit-box-shadow: none;\n            box-shadow: none;\n}\n.cd-side-nav.is-fixed[data-v-7eea899c] {\n    position: fixed;\n}\n.cd-side-nav > ul[data-v-7eea899c] {\n    /* reset style */\n    padding: 0;\n}\n.cd-side-nav .cd-label[data-v-7eea899c] {\n    /* remove labels on minified version of the sidebar */\n    display: none;\n}\n.cd-side-nav a[data-v-7eea899c] {\n    font-size: 1.2rem;\n    text-align: center;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c] {\n    padding: calc(2.2em + 24px) 0 2.4em;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c]::before {\n    left: 50%;\n    right: auto;\n    -webkit-transform: translateX(-50%);\n    transform: translateX(-50%);\n    top: 2.4em;\n}\n.cd-side-nav .active > a[data-v-7eea899c] {\n    /* current page */\n    -webkit-box-shadow: inset 3px 0 0 #1784c7;\n            box-shadow: inset 3px 0 0 #1784c7;\n    background-color: #33383e;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c] {\n    margin: 1em 10% 0;\n}\n.cd-side-nav .count[data-v-7eea899c] {\n    height: 8px;\n    width: 8px;\n    border-radius: 50%;\n    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n            box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\n    padding: 0;\n    top: 2em;\n    -webkit-transform: translateX(-50%);\n    transform: translateX(-50%);\n    left: calc(50% + 5px);\n    right: auto;\n    color: transparent;\n}\n}\n@media only screen and (min-width: 1170px) {\n.cd-side-nav[data-v-7eea899c] {\n    width: 150px;\n    position: fixed;\n}\n.cd-logo img[data-v-7eea899c]{\n    margin-left: -16px;\n    margin-top: 3px;\n}\n.cd-side-nav > ul[data-v-7eea899c] {\n    padding: 0.6em 0;\n}\n.cd-side-nav > ul > li:not(.action-btn):hover > a[data-v-7eea899c] {\n    background-color: #33383e;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c] {\n    padding: 1em 1em 1em 42px;\n    text-align: left;\n    border-bottom: none;\n}\n.cd-side-nav > ul > li > a[data-v-7eea899c]::before {\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    transform: translateY(-50%);\n    left: 18px;\n}\n.cd-side-nav .cd-label[data-v-7eea899c] {\n    display: block;\n    padding: 1em 18px;\n}\n.cd-side-nav .action-btn[data-v-7eea899c] {\n    text-align: left;\n}\n.cd-side-nav .action-btn a[data-v-7eea899c] {\n    margin: 0 18px;\n}\n.no-touch .cd-side-nav .action-btn a[data-v-7eea899c]:hover {\n    background-color: #1a93de;\n}\n.cd-side-nav .count[data-v-7eea899c] {\n    /* reset style */\n    color: #ffffff;\n    height: auto;\n    width: auto;\n    border-radius: .25em;\n    padding: .2em .4em;\n    top: 50%;\n    bottom: auto;\n    -webkit-transform: translateY(-50%);\n    transform: translateY(-50%);\n    right: 18px;\n    left: auto;\n    -webkit-box-shadow: none;\n            box-shadow: none;\n}\n}\n.has-children ul[data-v-7eea899c] {\n  position: relative;\n  width: 100%;\n  display: none;\n  background-color: #1c1f22;\n}\n.has-children > a[data-v-7eea899c]::after {\n  /* arrow icon */\n  position: absolute;\n  content: '';\n  height: 16px;\n  width: 16px;\n  right: 5%;\n  top: 50%;\n  bottom: auto;\n  -webkit-transform: translateY(-50%);\n  transform: translateY(-50%);\n}\n.has-children.selected > ul[data-v-7eea899c] {\n  display: block;\n}\n.has-children.selected > a[data-v-7eea899c]::after {\n  -webkit-transform: translateY(-50%) rotate(180deg);\n  transform: translateY(-50%) rotate(180deg);\n}\n@media only screen and (min-width: 768px) {\n.has-children[data-v-7eea899c] {\n    position: relative;\n}\n.has-children ul[data-v-7eea899c] {\n    position: absolute;\n    top: 0;\n    left: 100%;\n    width: 160px;\n    padding: 0;\n    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);\n            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);\n}\n.has-children ul a[data-v-7eea899c] {\n    text-align: left;\n    border: none;\n    padding: 1em;\n}\n.no-touch .has-children ul a[data-v-7eea899c]:hover {\n    color: #1784c7;\n}\n.has-children > a[data-v-7eea899c]::after {\n    display: none;\n    color: black;\n}\n.cd-side-nav .has-children.selected > a[data-v-7eea899c] {\n    /* focus state -> show sub pages */\n    background-color: #33383e;\n}\n.cd-top-nav .has-children[data-v-7eea899c] {\n    position: relative;\n    background-color: #323232;\n}\n.cd-top-nav .has-children > a[data-v-7eea899c] {\n    height: 100%;\n    padding: 0 calc(1.8em + 22px) 0 calc(1.8em + 26px) !important;\n    line-height: 55px;\n}\n.cd-top-nav .has-children > a[data-v-7eea899c]::after {\n    display: block;\n    right: 1.8em;\n}\n.cd-top-nav .has-children ul[data-v-7eea899c] {\n    background-color: #1c1f22;\n    width: 200px;\n    top: 100%;\n    right: 0;\n    left: auto;\n    -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);\n            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);\n}\n.cd-top-nav .has-children ul a[data-v-7eea899c] {\n    padding-left: 18px !important;\n}\n}\n@media only screen and (min-width: 1170px) {\n.has-children > ul[data-v-7eea899c] {\n    width: 100%;\n    z-index: 1;\n}\n.has-children ul a[data-v-7eea899c] {\n    padding-left: 18px;\n}\n.has-children.active > ul[data-v-7eea899c] {\n    /* if the item is active, make the subnavigation visible */\n    position: relative;\n    display: block;\n    /* reset style */\n    left: 0;\n    -webkit-box-shadow: none;\n            box-shadow: none;\n}\n.no-touch .cd-side-nav .has-children:hover > ul[data-v-7eea899c], .cd-side-nav .has-children.hover > ul[data-v-7eea899c] {\n    /* show subnavigation on hover */\n    display: block;\n    opacity: 1;\n    visibility: visible;\n}\n}\n\n\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/sidebar.vue"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;CAuHA;;;;mCAIA;AACA;EACA,+BAAA;UAAA,uBAAA;CACA;AAEA;EACA,iBAAA;CACA;AAEA;EACA,kBAAA;EACA,qCAAA;EACA,eAAA;EACA,0BAAA;CACA;AACA;EACA,YAAA;EACA,YAAA;EACA,eAAA;CACA;AAEA;EACA,eAAA;EACA,sBAAA;CACA;AAEA,8CAAA;AAGA;EACA,iDAAA;UAAA,yCAAA;IACA,iBAAA;IACA,mBAAA;IACA,aAAA;CAGA;AACA;EACA,iDAAA;UAAA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,iDAAA;UAAA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,iDAAA;UAAA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA;EACA,iDAAA;UAAA,yCAAA;IACA,iBAAA;IACA,mBAAA;CAGA;AACA,iDAAA;AAEA;EACA,8BAAA;EACA,cAAA;EACA,oBAAA;EACA,aAAA;;EAEA,gBAAA;EACA,cAAA;EACA,cAAA;CAGA;AACA;EACA,0BAAA;EACA,cAAA;EACA,cAAA;CAGA;AACA;EACA,eAAA;CACA;AACA;EACA,gBAAA;EACA,iBAAA;EACA,gBAAA;CACA;AACA;EACA,mBAAA;CACA;AAEA;EACA,eAAA;CACA;AAGA;EACA,qCAAA;EACA,kBAAA;CACA;AAEA;;;;EAIA,cAAA;CACA;AAEA;;;;mCAIA;AACA;EACA,qBAAA;CACA;AACA;EACA,mBAAA;EACA,eAAA;EACA,gBAAA;CACA;AACA;EACA,gDAAA;EACA,cAAA;EACA,kBAAA;CACA;AACA;AACA;IACA,mBAAA;IACA,iBAAA;IACA,mBAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;IACA,iBAAA;CACA;AACA;IACA,kBAAA;CACA;CACA;AACA;AACA;IACA,mBAAA;CACA;AACA;IACA,mBAAA;CACA;CACA;AAEA;;;;mCAIA;AAEA;EACA,mBAAA;EACA,WAAA;EACA,OAAA;EACA,QAAA;EACA,aAAA;EACA,YAAA;EACA,oBAAA;;;EAGA,iDAAA;;;UAAA,yCAAA;EACA,oCAAA;EACA,mCAAA;CACA;AACA;EACA,YAAA;EACA,YAAA;EACA,eAAA;CACA;AACA,IAAA;AAAA;;AAEA;IACA,gBAAA;IACA,aAAA;IACA,yBAAA;CACA;CACA;AAEA;EACA,YAAA;EACA,eAAA;EACA,oBAAA;CACA;AACA;EACA,eAAA;CACA;AACA;AACA;IACA,sBAAA;CACA;CACA;AAEA;EACA,yDAAA;EACA,aAAA;EACA,mBAAA;EACA,eAAA;EACA,YAAA;EACA,aAAA;EACA,iBAAA;EACA,eAAA;EACA,iBAAA;EACA,oBAAA;EACA,mBAAA;CACA;AACA;EACA,2BAAA;EACA,mBAAA;EACA,sBAAA;EACA,YAAA;EACA,YAAA;EACA,mBAAA;CACA;AACA;EACA,wBAAA;EACA,mBAAA;EACA,SAAA;EACA,WAAA;EACA,iBAAA;EACA,oCAAA;EAEA,4BAAA;CACA;AACA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,2CAAA;EACA,iCAAA;EAIA,yBAAA;EACA,oCAAA;EACA,4BAAA;EACA,iCAAA;EAIA,yBAAA;EACA,2CAAA;EAEA,mCAAA;EAAA,2BAAA;EAAA,mDAAA;CACA;AACA;EACA,wBAAA;EACA,UAAA;CACA;AACA;EACA,2BAAA;EACA,SAAA;CACA;AACA;EACA,6BAAA;EACA,mCAAA;CACA;AACA;EACA,gCAAA;EACA,kBAAA;CACA;AACA;EACA,kEAAA;EAIA,0DAAA;CACA;AACA;EACA,kEAAA;EAIA,0DAAA;CACA;AACA;AACA;IACA,cAAA;CACA;CACA;AAEA;EACA,mBAAA;EACA,uBAAA;CACA;AACA;EACA,WAAA;CACA;AACA;EACA,eAAA;EACA,YAAA;EACA,mBAAA;EACA,UAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,aAAA;EACA,YAAA;CAEA;AACA;EACA,mBAAA;EACA,YAAA;EACA,aAAA;EACA,aAAA;EACA,qBAAA;EACA,yBAAA;EACA,sBAAA;EACA,qBAAA;EACA,oBAAA;EACA,iBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;AACA;IACA,YAAA;IACA,sBAAA;IACA,aAAA;IACA,aAAA;IACA,oBAAA;CACA;AACA;IACA,iBAAA;IACA,WAAA;CACA;AACA;IACA,6BAAA;IACA,UAAA;CACA;AACA;IACA,aAAA;IACA,YAAA;CACA;AACA;IACA,aAAA;IACA,oBAAA;IACA,iBAAA;IACA,0BAAA;IACA,+BAAA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;CACA;AAEA;;;;mCAIA;AACA;EACA,6CAAA;EACA,cAAA;CACA;AACA;AACA;IACA,eAAA;IACA,aAAA;IACA,aAAA;CACA;CACA;AAEA;EACA,iBAAA;EACA,cAAA;CACA;AACA;EACA,2BAAA;CACA;AACA;EACA,kBAAA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,aAAA;EACA,YAAA;EACA,mBAAA;EACA,cAAA;CACA;AACA;AACA;IACA,aAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;IACA,eAAA;CACA;AACA;IACA,sBAAA;IACA,kBAAA;IACA,aAAA;CACA;AACA;IACA,gBAAA;CACA;AACA;IACA,6BAAA;CACA;AACA;IACA,eAAA;CACA;CACA;AACA;AACA;IACA,eAAA;CACA;CACA;AAEA;;;;mCAIA;AACA;EACA,gBAAA;EACA,WAAA;EACA,QAAA;EACA,OAAA;EACA,YAAA;EACA,kBAAA;EACA,0BAAA;EACA,mBAAA;EACA,WAAA;EACA,kBAAA;EACA,iBAAA;EACA,oCAAA;EACA,mCAAA;EACA,wDAAA;EAEA,gDAAA;CACA;AACA;EACA,WAAA;EACA,oBAAA;EACA,kBAAA;EACA,kCAAA;EACA,sDAAA;EAEA,8CAAA;EACA,iBAAA;EACA,kDAAA;UAAA,0CAAA;CACA;AACA;EACA,iBAAA;CACA;AACA;EACA,kBAAA;CACA;AACA;EACA,eAAA;EACA,gBAAA;CACA;AAEA;EACA,mBAAA;EACA,eAAA;EACA,kBAAA;CACA;AACA;EACA,oBAAA;CACA;AACA;EACA,8BAAA;EACA,iCAAA;EACA,gBAAA;EACA,kBAAA;CACA;AACA;EACA,2BAAA;EACA,mBAAA;EACA,YAAA;EACA,SAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,aAAA;EACA,YAAA;CAEA;AACA;EACA,6BAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,yBAAA;CACA;AACA;EACA,6BAAA;CACA;AACA;EACA,wBAAA;EACA,mBAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;EACA,+BAAA;EACA,qBAAA;EACA,0BAAA;EACA,qBAAA;EACA,eAAA;EACA,kBAAA;EACA,kBAAA;EACA,mBAAA;CACA;AACA;EACA,eAAA;EACA,aAAA;EACA,eAAA;EACA,0BAAA;EACA,qBAAA;EACA,aAAA;EACA,yFAAA;UAAA,iFAAA;EACA,mBAAA;EACA,eAAA;EACA,kBAAA;CACA;AACA;EACA,cAAA;CACA;AACA;AACA;;IAEA,YAAA;IACA,WAAA;IACA,aAAA;IACA,kBAAA;IACA,kBAAA;IACA,iBAAA;IACA,oBAAA;IACA,WAAA;IACA,kBAAA;IACA,iBAAA;IACA,gBAAA;CACA;AACA;IACA,yBAAA;YAAA,iBAAA;CACA;AACA;IACA,gBAAA;CACA;AACA;IACA,iBAAA;IACA,WAAA;CACA;AACA;IACA,sDAAA;IACA,cAAA;CACA;AACA;IACA,kBAAA;IACA,mBAAA;CACA;AACA;IACA,oCAAA;CACA;AACA;IACA,UAAA;IACA,YAAA;IACA,oCAAA;IAIA,4BAAA;IACA,WAAA;CACA;AACA;IACA,kBAAA;IACA,0CAAA;YAAA,kCAAA;IACA,0BAAA;CACA;AACA;IACA,kBAAA;CACA;AACA;IACA,YAAA;IACA,WAAA;IACA,mBAAA;IACA,+CAAA;YAAA,uCAAA;IACA,WAAA;IACA,SAAA;IACA,oCAAA;IAIA,4BAAA;IACA,sBAAA;IACA,YAAA;IACA,mBAAA;CACA;CACA;AACA;AACA;IACA,aAAA;IACA,gBAAA;CACA;AACA;IACA,mBAAA;IACA,gBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,0BAAA;IACA,iBAAA;IACA,oBAAA;CACA;AACA;IACA,SAAA;IACA,aAAA;IACA,oCAAA;IAIA,4BAAA;IACA,WAAA;CACA;AACA;IACA,eAAA;IACA,kBAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,iBAAA;IACA,eAAA;IACA,aAAA;IACA,YAAA;IACA,qBAAA;IACA,mBAAA;IACA,SAAA;IACA,aAAA;IACA,oCAAA;IAIA,4BAAA;IACA,YAAA;IACA,WAAA;IACA,yBAAA;YAAA,iBAAA;CACA;CACA;AAEA;EACA,mBAAA;EACA,YAAA;EACA,cAAA;EACA,0BAAA;CACA;AACA;EACA,gBAAA;EACA,mBAAA;EACA,YAAA;EACA,aAAA;EACA,YAAA;EACA,UAAA;EACA,SAAA;EACA,aAAA;EACA,oCAAA;EAIA,4BAAA;CAEA;AACA;EACA,eAAA;CACA;AACA;EACA,mDAAA;EAIA,2CAAA;CACA;AACA;AACA;IACA,mBAAA;CACA;AACA;IACA,mBAAA;IACA,OAAA;IACA,WAAA;IACA,aAAA;IACA,WAAA;IACA,kDAAA;YAAA,0CAAA;CACA;AACA;IACA,iBAAA;IACA,aAAA;IACA,aAAA;CACA;AAGA;IACA,eAAA;CACA;AACA;IACA,cAAA;IACA,aAAA;CACA;AACA;IACA,mCAAA;IACA,0BAAA;CACA;AACA;IACA,mBAAA;IACA,0BAAA;CAEA;AACA;IACA,aAAA;IACA,8DAAA;IACA,kBAAA;CACA;AACA;IACA,eAAA;IACA,aAAA;CACA;AACA;IACA,0BAAA;IACA,aAAA;IACA,UAAA;IACA,SAAA;IACA,WAAA;IACA,kDAAA;YAAA,0CAAA;CACA;AACA;IACA,8BAAA;CACA;CACA;AACA;AACA;IACA,YAAA;IACA,WAAA;CACA;AACA;IACA,mBAAA;CACA;AACA;IACA,2DAAA;IACA,mBAAA;IACA,eAAA;IACA,iBAAA;IACA,QAAA;IACA,yBAAA;YAAA,iBAAA;CACA;AACA;IACA,iCAAA;IACA,eAAA;IACA,WAAA;IACA,oBAAA;CACA;CACA","file":"sidebar.vue","sourcesContent":["<template>\r\n  <div class=\"cd-side-nav\">\r\n     <!-- ####### Header NAVBAR ####### -->\r\n  <header class=\"cd-main-header\" >\r\n    <a href=\"#\" class=\"cd-logo\"><img style=\"margin-left:-80px; margin-top:-8px;\" src=\"/dist/assets/images/logo-trans.png\"  alt=\"Logo\"></a>       \r\n    <nav class=\"cd-nav\" >\r\n      <ul class=\"cd-top-nav\">\r\n         <li>\r\n             <a style=\"margin-top:6px;\" @click=\"logout()\" class=\"btn btn-danger btn-md\">\r\n              <span class=\"glyphicon glyphicon-log-out\"></span> Log out\r\n             </a>\r\n        </li>\r\n         <li class=\"has-children account\">\r\n          <a href=\"#0\"  >\r\n            <img  src=\"/dist/assets/images/user.jpg\" alt=\"avatar\">\r\n            <div id='username'></div>\r\n          </a>\r\n        </li>  \r\n          <ul>\r\n           <!--  <li><a href=\"#0\">My Account</a></li>\r\n           <li><a href=\"#0\">Edit Account</a></li> -->\r\n            <!-- <li><a href=\"#0\">Logout</a></li> -->\r\n          </ul>\r\n        </li>\r\n      </ul>\r\n    </nav>\r\n  </header> \r\n  <!-- ###### Header NAVBAR END #######-->\r\n     \r\n    <!-- %%%%%%%%  Side NAVBAR %%%%%%% -->\r\n  <main class=\"cd-main-content\" >\r\n    <nav class=\"cd-side-nav\">\r\n      <input type=\"hidden\" name=\"user.installerID\" v-model=\"user.roll\">\r\n      <ul>\r\n        <li class=\"has-children Overviews\" v-if=\"user.roll == 'Admin' || 'Project Coordinator'\">\r\n         <a v-on:click=\"$parent.updateView('create-customer')\"> <i class=\"fa fa-th-large\" ></i>Customer</a>                   \r\n        </li>       \r\n        <li class=\"has-children comments\" v-if=\"user.roll == 'Admin' || 'Project Coordinator'\">\r\n          <a v-on:click=\"$parent.updateView('add-installer')\"><i class=\"fa fa-tasks\"></i> Installer</a>                   \r\n        </li>\r\n         </li> \r\n        <li class=\"has-children users\">\r\n          <a  v-on:click=\"$parent.updateView('add-user')\"><i class=\"fa fa-user fa-lg\"></i> User</a>       \r\n         \r\n        </li>\r\n         <li class=\"has-children users\">\r\n          <a v-on:click=\"$parent.updateView('create-roles')\"><i class=\"fa fa-users fa-lg\"></i> Roles</a> \r\n          </li>\r\n          <li class=\"has-children bookmarks\">\r\n          <a  v-on:click=\"$parent.updateView('create-payment-types')\"><i class=\"fa fa-usd fa-lg\"></i> Payments</a>\r\n          \r\n        </li>\r\n\r\n        <li class=\"has-children bookmarks\" v-if=\"user.roll == 'Admin' || 'Project Coordinator' || 'Project Manager' || 'Installer'\">\r\n          <a  v-on:click=\"$parent.updateView('add-bonus')\"><i class=\"fa fa-money fa-lg\"></i> Bonus</a>\r\n                    \r\n        </li>\r\n\r\n        <li class=\"has-children users\" v-if=\"user.roll == 'Admin' || 'Project Coordinator' || 'Project Manager' || 'Installer'\">\r\n          <a  v-on:click=\"$parent.updateView('create-project')\"><i class=\"fa fa-briefcase fa-lg\"></i> Jobs</a>       \r\n         \r\n        </li>\r\n\r\n        <li class=\"has-children users\">\r\n          <a  v-on:click=\"$parent.updateView('add-hours')\"><i class=\"fa fa-clock-o \"></i> Time</a>                 \r\n        </li>\r\n\t\t    \r\n     \r\n    </ul>\r\n    </nav>\r\n        <!-- %%%%%%%%  Side NAVBAR END %%%%%%% -->\r\n\r\n\r\n \r\n\r\n  </main> <!-- .cd-main-content -->\t\t\r\n  </div>\r\n</template>\r\n\r\n<script>\r\nconst axios = require('axios');\r\nexport default {\r\n  name: \"side-bar\",\r\n  props: [\"user\"],\r\n  methods: {\r\n     logout () {\r\n          axios.get('/logout')\r\n         .then(req => {\r\n            console.log(\"logged out\");\r\n            $('#username').html(req.data.username);     \r\n            this.$router.push('/');     \r\n                     \r\n         })\r\n        .catch(function(err){\r\n          console.log(\"Error R\"+err);\r\n        });\r\n     }\r\n  },\r\n  beforeMount(){\r\n  axios.get('/session/data')\r\n   .then(req => {\r\n      console.log(\"Side Bar username\"+req.data.username);\r\n      $('#username').html(req.data.username);\r\n     \r\n      //If no session received, return home\r\n      if(!req.data.roll){\r\n        this.$router.push('/');\r\n      }\r\n\r\n     \r\n   })\r\n  .catch(function(err){\r\n    console.log(\"Error R\"+err);\r\n  });\r\n  }\r\n};\r\n\r\n</script>\r\n\r\n<style scoped>\r\n /* -------------------------------- \r\n\r\nPrimary style\r\n\r\n-------------------------------- */\r\n*, *::after, *::before {\r\n  box-sizing: border-box;\r\n}\r\n\r\nhtml {\r\n  font-size: 62.5%;\r\n}\r\n\r\nbody {\r\n  font-size: 1.6rem;\r\n  font-family: \"Open Sans\", sans-serif;\r\n  color: #3e454c;\r\n  background-color: #F5F5F5;\r\n}\r\nbody::after {\r\n  clear: both;\r\n  content: \"\";\r\n  display: table;\r\n}\r\n\r\na {\r\n  color: #1784c7;\r\n  text-decoration: none;\r\n}\r\n\r\n/*  ######  Side NAVBAR page style  ######  */\r\n\r\n\r\n#dashboard{\r\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\r\n    background: #fff;\r\n    margin-right: 40px;\r\n    height: 100%;\r\n\r\n\r\n}\r\n#project{\r\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\r\n    background: #fff;\r\n    margin-right: 40px;\r\n\r\n\r\n}\r\n#tables{\r\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\r\n    background: #fff;\r\n    margin-right: 40px;\r\n\r\n\r\n}\r\n#user{\r\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\r\n    background: #fff;\r\n    margin-right: 40px;\r\n\r\n\r\n}\r\n#admin{\r\n  box-shadow: 0 5px 15px hsla(0,0%,50%,.5);\r\n    background: #fff;\r\n    margin-right: 40px;\r\n\r\n\r\n}\r\n/*  ######  Side NAVBAR page style END ######  */\r\n\r\n.button{\r\n  background-color: transparent;\r\n  color:#C8C8C8;\r\n  border: transparent;\r\n  height: 35px;\r\n  \r\n  font-size: 15px;\r\n  border : none;\r\n  outline: none;\r\n\r\n\r\n}\r\n.button:active {\r\n  background-color: #323232;\r\n  border : none;\r\n  outline: none;\r\n  \r\n\r\n}\r\n.button:hover{\r\n  color: #ffffff;\r\n}\r\n.cd-side-nav{\r\n  font-size: 20px;\r\n  margin-top: 20px;\r\n  position: fixed;\r\n}\r\n.fa{\r\n  margin-right: 13px;\r\n}\r\n\r\n.cd-nav ul li a:hover{\r\n  color: #e6e6e6;\r\n}\r\n\r\n\r\ninput {\r\n  font-family: \"Open Sans\", sans-serif;\r\n  font-size: 1.6rem;\r\n}\r\n\r\ninput[type=\"search\"]::-webkit-search-decoration,\r\ninput[type=\"search\"]::-webkit-search-cancel-button,\r\ninput[type=\"search\"]::-webkit-search-results-button,\r\ninput[type=\"search\"]::-webkit-search-results-decoration {\r\n  display: none;\r\n}\r\n\r\n/* -------------------------------- \r\n\r\nMain Page Content\r\n\r\n-------------------------------- */\r\n.cd-main-content .content-wrapper {\r\n  padding: 45px 5% 3em;\r\n}\r\n.cd-main-content .content-wrapper h1 {\r\n  text-align: center;\r\n  padding: 3em 0;\r\n  font-size: 2rem;\r\n}\r\n.cd-main-content::before {\r\n  /* never visible - used to check MQ in jQuery */\r\n  display: none;\r\n  content: 'mobile';\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-main-content .content-wrapper {\r\n    margin-left: 110px;\r\n    margin-top: 80px;\r\n    padding-top: 155px;\r\n  }\r\n  .cd-main-content .content-wrapper h1 {\r\n    padding: 4em 0;\r\n    font-size: 3.2rem;\r\n    font-weight: 300;\r\n  }\r\n  .cd-main-content::before {\r\n    content: 'tablet';\r\n  }\r\n}\r\n@media only screen and (min-width: 1170px) {\r\n  .cd-main-content .content-wrapper {\r\n    margin-left: 200px;\r\n  }\r\n  .cd-main-content::before {\r\n    content: 'desktop';\r\n  }\r\n}\r\n\r\n/* -------------------------------- \r\n\r\nHeader\r\n\r\n-------------------------------- */\r\n \r\n.cd-main-header {\r\n  position: absolute;\r\n  z-index: 2;\r\n  top: 0;\r\n  left: 0;\r\n  height: 45px;\r\n  width: 100%;\r\n  background: #FFFFFF;\r\n\r\n\r\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n}\r\n.cd-main-header::after {\r\n  clear: both;\r\n  content: \"\";\r\n  display: table;\r\n}\r\n/**/@media only screen and (min-width: 768px) \r\n{\r\n  .cd-main-header {\r\n    position: fixed;\r\n    height: 55px;\r\n    background-color:#323232;\r\n  }\r\n}\r\n\r\n.cd-logo {\r\n  float: left;\r\n  display: block;\r\n  margin: 11px 0 0 5%;\r\n}\r\n.cd-logo img {\r\n  display: block;\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-logo {\r\n    margin: 16px 0 0 36px;\r\n  }\r\n}\r\n\r\n.cd-nav-trigger {\r\n  /* navigation trigger - visible on mobile devices only */\r\n  float: right;\r\n  position: relative;\r\n  display: block;\r\n  width: 34px;\r\n  height: 44px;\r\n  margin-right: 5%;\r\n  /* hide text */\r\n  overflow: hidden;\r\n  white-space: nowrap;\r\n  color: transparent;\r\n}\r\n.cd-nav-trigger span, .cd-nav-trigger span::before, .cd-nav-trigger span::after {\r\n  /* hamburger icon in CSS */\r\n  position: absolute;\r\n  display: inline-block;\r\n  height: 3px;\r\n  width: 24px;\r\n  background:#323232;\r\n}\r\n.cd-nav-trigger span {\r\n  /* line in the center */\r\n  position: absolute;\r\n  top: 50%;\r\n  right: 5px;\r\n  margin-top: -2px;\r\n  -webkit-transition: background 0.2s;\r\n  -moz-transition: background 0.2s;\r\n  transition: background 0.2s;\r\n}\r\n.cd-nav-trigger span::before, .cd-nav-trigger span::after {\r\n  /* other 2 lines */\r\n  content: '';\r\n  right: 0;\r\n  /* Force Hardware Acceleration in WebKit */\r\n  -webkit-transform: translateZ(0);\r\n  -moz-transform: translateZ(0);\r\n  -ms-transform: translateZ(0);\r\n  -o-transform: translateZ(0);\r\n  transform: translateZ(0);\r\n  -webkit-backface-visibility: hidden;\r\n  backface-visibility: hidden;\r\n  -webkit-transform-origin: 0% 50%;\r\n  -moz-transform-origin: 0% 50%;\r\n  -ms-transform-origin: 0% 50%;\r\n  -o-transform-origin: 0% 50%;\r\n  transform-origin: 0% 50%;\r\n  -webkit-transition: -webkit-transform 0.2s;\r\n  -moz-transition: -moz-transform 0.2s;\r\n  transition: transform 0.2s;\r\n}\r\n.cd-nav-trigger span::before {\r\n  /* menu icon top line */\r\n  top: -6px;\r\n}\r\n.cd-nav-trigger span::after {\r\n  /* menu icon bottom line */\r\n  top: 6px;\r\n}\r\n.cd-nav-trigger.nav-is-visible span {\r\n  /* hide line in the center */\r\n  background: rgba(255, 255, 255, 0);\r\n}\r\n.cd-nav-trigger.nav-is-visible span::before, .cd-nav-trigger.nav-is-visible span::after {\r\n  /* keep visible other 2 lines */\r\n  background: white;\r\n}\r\n.cd-nav-trigger.nav-is-visible span::before {\r\n  -webkit-transform: translateX(4px) translateY(-3px) rotate(45deg);\r\n  -moz-transform: translateX(4px) translateY(-3px) rotate(45deg);\r\n  -ms-transform: translateX(4px) translateY(-3px) rotate(45deg);\r\n  -o-transform: translateX(4px) translateY(-3px) rotate(45deg);\r\n  transform: translateX(4px) translateY(-3px) rotate(45deg);\r\n}\r\n.cd-nav-trigger.nav-is-visible span::after {\r\n  -webkit-transform: translateX(4px) translateY(2px) rotate(-45deg);\r\n  -moz-transform: translateX(4px) translateY(2px) rotate(-45deg);\r\n  -ms-transform: translateX(4px) translateY(2px) rotate(-45deg);\r\n  -o-transform: translateX(4px) translateY(2px) rotate(-45deg);\r\n  transform: translateX(4px) translateY(2px) rotate(-45deg);\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-nav-trigger {\r\n    display: none;\r\n  }\r\n}\r\n\r\n.cd-search {\r\n  position: relative;\r\n  margin: 1.2em 5% 0.6em;\r\n}\r\n.cd-search.is-hidden {\r\n  opacity: 0;\r\n}\r\n.cd-search::before {\r\n  /* lens icon */\r\n  content: '';\r\n  position: absolute;\r\n  left: 8px;\r\n  top: 50%;\r\n  bottom: auto;\r\n  -webkit-transform: translateY(-50%);\r\n  -moz-transform: translateY(-50%);\r\n  -ms-transform: translateY(-50%);\r\n  -o-transform: translateY(-50%);\r\n  transform: translateY(-50%);\r\n  height: 16px;\r\n  width: 16px;\r\n \r\n}\r\n.cd-search input {\r\n  padding-left: 32px;\r\n  width: 100%;\r\n  height: 36px;\r\n  border: none;\r\n  border-radius: .25em;\r\n  -webkit-appearance: none;\r\n  -moz-appearance: none;\r\n  -ms-appearance: none;\r\n  -o-appearance: none;\r\n  appearance: none;\r\n}\r\n.cd-search input:focus {\r\n  outline: none;\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-search {\r\n    float: left;\r\n    display: inline-block;\r\n    width: 250px;\r\n    height: 100%;\r\n    margin: 0 0 0 2.5em;\r\n  }\r\n  .cd-search.is-hidden {\r\n    /* reset style */\r\n    opacity: 1;\r\n  }\r\n  .cd-search::before {\r\n    background-position: 0 -16px;\r\n    left: 1em;\r\n  }\r\n  .cd-search form, .cd-search input {\r\n    height: 100%;\r\n    width: 100%;\r\n  }\r\n  .cd-search input {\r\n    border: none;\r\n    padding-left: 2.6em;\r\n    border-radius: 0;\r\n    background-color: #3e454c;\r\n    border-left: 1px solid #51575d;\r\n    color: #ffffff;\r\n  }\r\n  .cd-search input::-webkit-input-placeholder {\r\n    color: #777c81;\r\n  }\r\n  .cd-search input::-moz-placeholder {\r\n    color: #777c81;\r\n  }\r\n  .cd-search input:-moz-placeholder {\r\n    color: #777c81;\r\n  }\r\n  .cd-search input:-ms-input-placeholder {\r\n    color: #777c81;\r\n  }\r\n}\r\n\r\n/* -------------------------------- \r\n\r\nTop Navigation\r\n\r\n-------------------------------- */\r\n.cd-nav {\r\n  /* top nav - not visible on mobile devices */\r\n  display: none;\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-nav {\r\n    display: block;\r\n    float: right;\r\n    height: 100%;\r\n  }\r\n}\r\n\r\n.cd-top-nav > li > a::before {\r\n  /* reset style */\r\n  display: none;\r\n}\r\n.cd-top-nav > li a {\r\n  padding: 1em 5% !important;\r\n}\r\n.cd-top-nav img {\r\n  /* avatar image */\r\n  position: absolute;\r\n  left: 1.8em;\r\n  top: 50%;\r\n  bottom: auto;\r\n  -webkit-transform: translateY(-50%);\r\n  -moz-transform: translateY(-50%);\r\n  -ms-transform: translateY(-50%);\r\n  -o-transform: translateY(-50%);\r\n  transform: translateY(-50%);\r\n  height: 20px;\r\n  width: 20px;\r\n  border-radius: 50%;\r\n  display: none;\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-top-nav {\r\n    height: 100%;\r\n  }\r\n  .cd-top-nav a {\r\n    display: block;\r\n    font-size: 1.4rem;\r\n    color: #adadad;\r\n  }\r\n  .cd-top-nav > li {\r\n    display: inline-block;\r\n    margin-right: 1em;\r\n    height: 100%;\r\n  }\r\n  .cd-top-nav > li:last-of-type {\r\n    margin-right: 0;\r\n  }\r\n  .cd-top-nav > li a {\r\n    padding: 1em .6em !important;\r\n  }\r\n  .cd-top-nav img {\r\n    display: block;\r\n  }\r\n}\r\n@media only screen and (min-width: 1170px) {\r\n  .cd-top-nav li:not(.has-children) a:hover {\r\n    color: #1784c7;\r\n  }\r\n}\r\n\r\n/* -------------------------------- \r\n\r\nSidebar\r\n\r\n-------------------------------- */\r\n.cd-side-nav {\r\n  position: fixed;\r\n  z-index: 1;\r\n  left: 0;\r\n  top: 0;\r\n  width: 100%;\r\n  padding: 45px 0 0;\r\n  background-color: #323232;\r\n  visibility: hidden;\r\n  opacity: 0;\r\n  max-height: 100vh;\r\n  overflow: hidden;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0.2s;\r\n  -moz-transition: opacity 0.2s 0s, visibility 0s 0.2s;\r\n  transition: opacity 0.2s 0s, visibility 0s 0.2s;\r\n}\r\n.cd-side-nav.nav-is-visible {\r\n  opacity: 1;\r\n  visibility: visible;\r\n  overflow: visible;\r\n  -webkit-overflow-scrolling: touch;\r\n  -webkit-transition: opacity 0.2s 0s, visibility 0s 0s;\r\n  -moz-transition: opacity 0.2s 0s, visibility 0s 0s;\r\n  transition: opacity 0.2s 0s, visibility 0s 0s;\r\n  max-height: none;\r\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);\r\n}\r\n.cd-side-nav > ul {\r\n  padding: 0.6em 0;\r\n}\r\n.cd-side-nav > ul:last-of-type {\r\n  padding-bottom: 0;\r\n}\r\n.cd-side-nav .cd-label, .cd-side-nav a {\r\n  display: block;\r\n  padding: 1em 5%;\r\n}\r\n\r\n.cd-side-nav a {\r\n  position: relative;\r\n  color: #ffffff;\r\n  font-size: 1.4rem;\r\n}\r\n.cd-side-nav ul.cd-top-nav > li:last-of-type > a {\r\n  border-bottom: none;\r\n}\r\n.cd-side-nav > ul > li > a {\r\n  padding-left: calc(5% + 24px);\r\n  border-bottom: 1px solid #373d44;\r\n  font-size: 13px;\r\n  font-weight: bold;\r\n}\r\n.cd-side-nav > ul > li > a::before {\r\n  /* icon before item name */\r\n  position: absolute;\r\n  content: '';\r\n  left: 5%;\r\n  top: 50%;\r\n  bottom: auto;\r\n  -webkit-transform: translateY(-50%);\r\n  -moz-transform: translateY(-50%);\r\n  -ms-transform: translateY(-50%);\r\n  -o-transform: translateY(-50%);\r\n  transform: translateY(-50%);\r\n  height: 16px;\r\n  width: 16px;\r\n  \r\n}\r\n.cd-side-nav > ul > li.overview > a::before {\r\n  background-position: -64px 0;\r\n}\r\n.cd-side-nav > ul > li.notifications > a::before {\r\n  background-position: -80px 0;\r\n}\r\n.cd-side-nav > ul > li.comments > a::before {\r\n  background-position: -48px 0;\r\n}\r\n.cd-side-nav > ul > li.bookmarks > a::before {\r\n  background-position: -32px 0;\r\n}\r\n.cd-side-nav > ul > li.images > a::before {\r\n  background-position: 0 0;\r\n}\r\n.cd-side-nav > ul > li.users > a::before {\r\n  background-position: -16px 0;\r\n}\r\n.cd-side-nav .count {\r\n  /* notification badge */\r\n  position: absolute;\r\n  top: 50%;\r\n  bottom: auto;\r\n  -webkit-transform: translateY(-50%);\r\n  -moz-transform: translateY(-50%);\r\n  -ms-transform: translateY(-50%);\r\n  -o-transform: translateY(-50%);\r\n  transform: translateY(-50%);\r\n  right: calc(5% + 16px + 0.4em);\r\n  padding: 0.2em 0.4em;\r\n  background-color: #ff7e66;\r\n  border-radius: .25em;\r\n  color: #ffffff;\r\n  font-weight: bold;\r\n  font-size: 1.2rem;\r\n  text-align: center;\r\n}\r\n.cd-side-nav .action-btn a {\r\n  display: block;\r\n  margin: 0 5%;\r\n  padding: 1em 0;\r\n  background-color: #1784c7;\r\n  border-radius: .25em;\r\n  border: none;\r\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);\r\n  text-align: center;\r\n  color: #ffffff;\r\n  font-weight: bold;\r\n}\r\n.cd-side-nav .action-btn a::before {\r\n  display: none;\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .cd-side-nav {\r\n    \r\n    float: left;\r\n    top: fixed;\r\n    width: 110px;\r\n    min-height: 100vh;\r\n    padding-top: 55px;\r\n    /* reset style */\r\n    visibility: visible;\r\n    opacity: 1;\r\n    overflow: visible;\r\n    max-height: none;\r\n    position: fixed;\r\n  }\r\n  .cd-side-nav.nav-is-visible {\r\n    box-shadow: none;\r\n  }\r\n  .cd-side-nav.is-fixed {\r\n    position: fixed;\r\n  }\r\n  .cd-side-nav > ul {\r\n    /* reset style */\r\n    padding: 0;\r\n  }\r\n  .cd-side-nav .cd-label {\r\n    /* remove labels on minified version of the sidebar */\r\n    display: none;\r\n  }\r\n  .cd-side-nav a {\r\n    font-size: 1.2rem;\r\n    text-align: center;\r\n  }\r\n  .cd-side-nav > ul > li > a {\r\n    padding: calc(2.2em + 24px) 0 2.4em;\r\n  }\r\n  .cd-side-nav > ul > li > a::before {\r\n    left: 50%;\r\n    right: auto;\r\n    -webkit-transform: translateX(-50%);\r\n    -moz-transform: translateX(-50%);\r\n    -ms-transform: translateX(-50%);\r\n    -o-transform: translateX(-50%);\r\n    transform: translateX(-50%);\r\n    top: 2.4em;\r\n  }\r\n  .cd-side-nav .active > a {\r\n    /* current page */\r\n    box-shadow: inset 3px 0 0 #1784c7;\r\n    background-color: #33383e;\r\n  }\r\n  .cd-side-nav .action-btn a {\r\n    margin: 1em 10% 0;\r\n  }\r\n  .cd-side-nav .count {\r\n    height: 8px;\r\n    width: 8px;\r\n    border-radius: 50%;\r\n    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);\r\n    padding: 0;\r\n    top: 2em;\r\n    -webkit-transform: translateX(-50%);\r\n    -moz-transform: translateX(-50%);\r\n    -ms-transform: translateX(-50%);\r\n    -o-transform: translateX(-50%);\r\n    transform: translateX(-50%);\r\n    left: calc(50% + 5px);\r\n    right: auto;\r\n    color: transparent;\r\n  }\r\n}\r\n@media only screen and (min-width: 1170px) {\r\n  .cd-side-nav {\r\n    width: 150px;\r\n    position: fixed;\r\n  }\r\n  .cd-logo img{\r\n    margin-left: -16px;\r\n    margin-top: 3px;\r\n  }\r\n  .cd-side-nav > ul {\r\n    padding: 0.6em 0;\r\n  }\r\n  .cd-side-nav > ul > li:not(.action-btn):hover > a {\r\n    background-color: #33383e;\r\n  }\r\n  .cd-side-nav > ul > li > a {\r\n    padding: 1em 1em 1em 42px;\r\n    text-align: left;\r\n    border-bottom: none;\r\n  }\r\n  .cd-side-nav > ul > li > a::before {\r\n    top: 50%;\r\n    bottom: auto;\r\n    -webkit-transform: translateY(-50%);\r\n    -moz-transform: translateY(-50%);\r\n    -ms-transform: translateY(-50%);\r\n    -o-transform: translateY(-50%);\r\n    transform: translateY(-50%);\r\n    left: 18px;\r\n  }\r\n  .cd-side-nav .cd-label {\r\n    display: block;\r\n    padding: 1em 18px;\r\n  }\r\n  .cd-side-nav .action-btn {\r\n    text-align: left;\r\n  }\r\n  .cd-side-nav .action-btn a {\r\n    margin: 0 18px;\r\n  }\r\n  .no-touch .cd-side-nav .action-btn a:hover {\r\n    background-color: #1a93de;\r\n  }\r\n  .cd-side-nav .count {\r\n    /* reset style */\r\n    color: #ffffff;\r\n    height: auto;\r\n    width: auto;\r\n    border-radius: .25em;\r\n    padding: .2em .4em;\r\n    top: 50%;\r\n    bottom: auto;\r\n    -webkit-transform: translateY(-50%);\r\n    -moz-transform: translateY(-50%);\r\n    -ms-transform: translateY(-50%);\r\n    -o-transform: translateY(-50%);\r\n    transform: translateY(-50%);\r\n    right: 18px;\r\n    left: auto;\r\n    box-shadow: none;\r\n  }\r\n}\r\n\r\n.has-children ul {\r\n  position: relative;\r\n  width: 100%;\r\n  display: none;\r\n  background-color: #1c1f22;\r\n}\r\n.has-children > a::after {\r\n  /* arrow icon */\r\n  position: absolute;\r\n  content: '';\r\n  height: 16px;\r\n  width: 16px;\r\n  right: 5%;\r\n  top: 50%;\r\n  bottom: auto;\r\n  -webkit-transform: translateY(-50%);\r\n  -moz-transform: translateY(-50%);\r\n  -ms-transform: translateY(-50%);\r\n  -o-transform: translateY(-50%);\r\n  transform: translateY(-50%);\r\n  \r\n}\r\n.has-children.selected > ul {\r\n  display: block;\r\n}\r\n.has-children.selected > a::after {\r\n  -webkit-transform: translateY(-50%) rotate(180deg);\r\n  -moz-transform: translateY(-50%) rotate(180deg);\r\n  -ms-transform: translateY(-50%) rotate(180deg);\r\n  -o-transform: translateY(-50%) rotate(180deg);\r\n  transform: translateY(-50%) rotate(180deg);\r\n}\r\n@media only screen and (min-width: 768px) {\r\n  .has-children {\r\n    position: relative;\r\n  }\r\n  .has-children ul {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 100%;\r\n    width: 160px;\r\n    padding: 0;\r\n    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);\r\n  }\r\n  .has-children ul a {\r\n    text-align: left;\r\n    border: none;\r\n    padding: 1em;\r\n  }\r\n \r\n  \r\n  .no-touch .has-children ul a:hover {\r\n    color: #1784c7;\r\n  }\r\n  .has-children > a::after {\r\n    display: none;\r\n    color: black;\r\n  }\r\n  .cd-side-nav .has-children.selected > a {\r\n    /* focus state -> show sub pages */\r\n    background-color: #33383e;\r\n  }\r\n  .cd-top-nav .has-children {\r\n    position: relative;\r\n    background-color: #323232;\r\n\r\n  }\r\n  .cd-top-nav .has-children > a {\r\n    height: 100%;\r\n    padding: 0 calc(1.8em + 22px) 0 calc(1.8em + 26px) !important;\r\n    line-height: 55px;\r\n  }\r\n  .cd-top-nav .has-children > a::after {\r\n    display: block;\r\n    right: 1.8em;\r\n  }\r\n  .cd-top-nav .has-children ul {\r\n    background-color: #1c1f22;\r\n    width: 200px;\r\n    top: 100%;\r\n    right: 0;\r\n    left: auto;\r\n    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);\r\n  }\r\n  .cd-top-nav .has-children ul a {\r\n    padding-left: 18px !important;\r\n  }\r\n}\r\n@media only screen and (min-width: 1170px) {\r\n  .has-children > ul {\r\n    width: 100%;\r\n    z-index: 1;\r\n  }\r\n  .has-children ul a {\r\n    padding-left: 18px;\r\n  }\r\n  .has-children.active > ul {\r\n    /* if the item is active, make the subnavigation visible */\r\n    position: relative;\r\n    display: block;\r\n    /* reset style */\r\n    left: 0;\r\n    box-shadow: none;\r\n  }\r\n  .no-touch .cd-side-nav .has-children:hover > ul, .cd-side-nav .has-children.hover > ul {\r\n    /* show subnavigation on hover */\r\n    display: block;\r\n    opacity: 1;\r\n    visibility: visible;\r\n  }\r\n}\r\n\r\n\r\n</style>\r\n\r\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -22108,7 +22344,7 @@ var render = function() {
                 staticStyle: { "margin-top": "6px" },
                 on: {
                   click: function($event) {
-                    _vm.$parent.logout()
+                    _vm.logout()
                   }
                 }
               },
@@ -22396,7 +22632,7 @@ var content = __webpack_require__(100);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("0f3690d4", content, false);
+var update = __webpack_require__(3)("0f3690d4", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -22415,7 +22651,7 @@ if(false) {
 /* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -22639,7 +22875,7 @@ var content = __webpack_require__(104);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("7cebd266", content, false);
+var update = __webpack_require__(3)("7cebd266", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -22658,7 +22894,7 @@ if(false) {
 /* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -23461,7 +23697,7 @@ var content = __webpack_require__(120);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("d88e1d8e", content, false);
+var update = __webpack_require__(3)("d88e1d8e", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -23480,7 +23716,7 @@ if(false) {
 /* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -23726,7 +23962,7 @@ var content = __webpack_require__(124);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("4945df4d", content, false);
+var update = __webpack_require__(3)("4945df4d", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -23745,7 +23981,7 @@ if(false) {
 /* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -23957,7 +24193,7 @@ var content = __webpack_require__(128);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("78601eca", content, false);
+var update = __webpack_require__(3)("78601eca", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -23976,7 +24212,7 @@ if(false) {
 /* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -24192,7 +24428,7 @@ var content = __webpack_require__(132);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("553e1c86", content, false);
+var update = __webpack_require__(3)("553e1c86", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -24211,7 +24447,7 @@ if(false) {
 /* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -24542,7 +24778,7 @@ var content = __webpack_require__(136);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("641a6e76", content, false);
+var update = __webpack_require__(3)("641a6e76", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -24561,7 +24797,7 @@ if(false) {
 /* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -24843,7 +25079,7 @@ var content = __webpack_require__(140);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("31db4b50", content, false);
+var update = __webpack_require__(3)("31db4b50", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -24862,7 +25098,7 @@ if(false) {
 /* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -25093,7 +25329,7 @@ var content = __webpack_require__(144);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("4bb201c0", content, false);
+var update = __webpack_require__(3)("4bb201c0", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -25112,7 +25348,7 @@ if(false) {
 /* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -25343,7 +25579,7 @@ var content = __webpack_require__(148);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("3c82e83b", content, false);
+var update = __webpack_require__(3)("3c82e83b", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -25362,7 +25598,7 @@ if(false) {
 /* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -25595,7 +25831,7 @@ var content = __webpack_require__(152);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("05f562e0", content, false);
+var update = __webpack_require__(3)("05f562e0", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -25614,7 +25850,7 @@ if(false) {
 /* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -26096,7 +26332,7 @@ var content = __webpack_require__(156);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("3ffe3b3e", content, false);
+var update = __webpack_require__(3)("3ffe3b3e", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -26115,7 +26351,7 @@ if(false) {
 /* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -26351,7 +26587,7 @@ var content = __webpack_require__(160);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("aa9ba7ce", content, false);
+var update = __webpack_require__(3)("aa9ba7ce", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -26370,7 +26606,7 @@ if(false) {
 /* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -26746,7 +26982,7 @@ var content = __webpack_require__(164);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("9e93e4de", content, false);
+var update = __webpack_require__(3)("9e93e4de", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -26765,12 +27001,12 @@ if(false) {
 /* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-e86efc44]{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\nform[data-v-e86efc44]{\r\n  margin-top: 30px;\n}\n.header[data-v-e86efc44]{\r\n  border-bottom: 1px solid #ebebeb;\n}\n.input_heading[data-v-e86efc44]{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\n}\n.inputField[data-v-e86efc44]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-e86efc44]:focus{\r\n  outline: none;\n}\n.button[data-v-e86efc44]:focus{\r\n  outline-color:  #4bc800;\n}\n.button[data-v-e86efc44]{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    margin-top: 10px;\n}\n.inputField[data-v-e86efc44]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-e86efc44]:focus{\r\n  outline: none;\n}\n.button[data-v-e86efc44]:focus{\r\n  outline-color:  #4bc800;\n}\nul[data-v-e86efc44]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-e86efc44]{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\n}\nli[data-v-e86efc44]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-e86efc44]:hover{\r\n  border-color: #929292;\n}\na[data-v-e86efc44]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/addHours.vue"],"names":[],"mappings":";AA2GA;KACA,iBAAA;KACA,eAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;;KAEA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,eAAA;IACA,kBAAA;CAEA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,YAAA;IACA,gBAAA;IACA,kBAAA;IACA,aAAA;IACA,wBAAA;IACA,iBAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AAEA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,mBAAA;IACA,gBAAA;IACA,mBAAA;IACA,qCAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"addHours.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n      <div  class=\"header\">\r\n        <ul>\r\n            <li><a v-on:click=\"$parent.updateView('add-hours')\" style=\"color:#4bc800\">Enter Time Worked</a></li>\r\n           <!-- <li><a v-on:click=\"$parent.updateView('')\">Approve Time</a></li> -->\r\n           <li><a v-on:click=\"$parent.updateView('view-time')\">View time</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('modify-time')\">Modify time</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('approve-time')\">Approve time</a></li>\r\n           \r\n            \r\n        </ul>\r\n      </div>\r\n      \t\t<!-- <h1>Add hours</h1> -->\r\n      \t\t<form v-on:submit.prevent=\"onSubmit\" id=\"form\">\r\n          \t\t\t<p class=\"input_heading\">Job</p>\r\n          \t\t\t<select class=\"inputField\" v-model=\"fk_job_id\" required>\r\n          \t\t\t\t<option v-for=\"job in jobs\" v-bind:value=\"job.job_id\">{{job.job_name}}</option>\r\n          \t\t\t</select>\r\n                <p class=\"input_heading\">Installer</p>\r\n                <select class=\"inputField\" v-model=\"fk_installer_id\" required>\r\n                  <option v-for=\"installer in installers\" v-bind:value=\"installer.installer_id\">{{installer.first_name}} {{installer.first_name}}</option>\r\n                </select>\r\n          \t\t\t<p class=\"input_heading\">Regular hours worked</p>\r\n          \t\t\t<input class=\"inputField\" type=\"number\" step=\"0.1\" v-model.number=\"reg_hours_worked\" required>\r\n          \t\t\t<p class=\"input_heading\">Overtime hours worked</p>\r\n          \t\t\t<input class=\"inputField\" type=\"number\" step=\"0.1\" v-model.number=\"ot_hours_worked\" required>\r\n          \t\t\t<p class=\"input_heading\">Work date</p>\r\n          \t\t\t<input class=\"inputField\" type=\"date\" v-model=\"work_date\" required>\r\n          \t\t\t <button class=\"button\" type=\"submit\" value=\"Submit\">Add hours</button>\r\n          \t\t\t<p class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Hours added</p>\r\n      \t\t</form>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'add-hours',\r\n  props: ['user'],\r\n  data(){\r\n  \treturn {\r\n\t  \treg_hours_worked: '',\r\n\t  \tot_hours_worked: '',\r\n\t  \twork_date: '',\r\n\t  \tfk_job_id: '',\r\n\t  \tjobs: '',\r\n      installers: ''\r\n  \t}\r\n  },\r\n  methods: {\r\n  \tonSubmit: function(){\r\n  \t\taxios({\r\n  \t\t\tmethod: 'post',\r\n  \t\t\turl: '/installers/hours/add',\r\n  \t\t\tdata: {\r\n  \t\t\t\tcreated_by_id: this.user.userID,\r\n  \t\t\t\tmodified_by_id: this.user.userID,\r\n  \t\t\t\treg_hours_worked: this.reg_hours_worked,\r\n  \t\t\t\tot_hours_worked: this.ot_hours_worked,\r\n  \t\t\t\twork_date: this.work_date,\r\n  \t\t\t\tfk_job_id: this.fk_job_id,\r\n  \t\t\t\tfk_installer_id: this.fk_installer_id\r\n  \t\t\t}\r\n  \t\t})\r\n  \t\t.then(req => {\r\n  \t\t\tdocument.getElementById('confirmation').classList.remove('hidden');\r\n  \t\t\tthis.reg_hours_worked = '',\r\n  \t\t\tthis.ot_hours_worked = '',\r\n  \t\t\tthis.work_date = '',\r\n  \t\t\tthis.fk_job_id = '',\r\n        this.fk_installer_id=''\r\n  \t\t})\r\n  \t\t.catch(err => {\r\n  \t\t\tconsole.log(err);\r\n  \t\t})\r\n  \t}\r\n  },\r\n  beforeMount(){\r\n  \taxios({\r\n  \t\tmethod: 'get',\r\n  \t\turl: '/jobs'\r\n  \t})\r\n  \t.then(req => {\r\n  \t\tconsole.log(req.data.jobs);\r\n  \t\tthis.jobs = req.data.jobs;\r\n  \t})\r\n  \t.catch(err => {\r\n  \t\tconsole.log(err);\r\n  \t})\r\n\r\n      axios({\r\n      method: 'get',\r\n      url: '/installers'\r\n    })\r\n    .then(req => {\r\n      console.log(req.data.installers);\r\n      this.installers = req.data.installers;\r\n    })\r\n    .catch(err => {\r\n      console.log(err);\r\n    })\r\n  }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\nform{\r\n  margin-top: 30px;\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\n.input_heading{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\r\n    \r\n }   \r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n.button{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    margin-top: 10px;\r\n}\r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-e86efc44]{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\nform[data-v-e86efc44]{\r\n  margin-top: 30px;\n}\n.header[data-v-e86efc44]{\r\n  border-bottom: 1px solid #ebebeb;\n}\n.input_heading[data-v-e86efc44]{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\n}\n.inputField[data-v-e86efc44]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-e86efc44]:focus{\r\n  outline: none;\n}\n.button[data-v-e86efc44]:focus{\r\n  outline-color:  #4bc800;\n}\n.button[data-v-e86efc44]{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    margin-top: 10px;\n}\nul[data-v-e86efc44]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-e86efc44]{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\n}\nli[data-v-e86efc44]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-e86efc44]:hover{\r\n  border-color: #929292;\n}\na[data-v-e86efc44]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/addHours.vue"],"names":[],"mappings":";AA2GA;KACA,iBAAA;KACA,eAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;;KAEA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,eAAA;IACA,kBAAA;CAEA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,YAAA;IACA,gBAAA;IACA,kBAAA;IACA,aAAA;IACA,wBAAA;IACA,iBAAA;CACA;AAIA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,mBAAA;IACA,gBAAA;IACA,mBAAA;IACA,qCAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"addHours.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n      <div  class=\"header\">\r\n        <ul>\r\n            <li><a v-on:click=\"$parent.updateView('add-hours')\" style=\"color:#4bc800\">Enter Time Worked</a></li>\r\n           <!-- <li><a v-on:click=\"$parent.updateView('')\">Approve Time</a></li> -->\r\n           <li><a v-on:click=\"$parent.updateView('view-time')\">View time</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('modify-time')\">Modify time</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('approve-time')\">Approve time</a></li>\r\n           \r\n            \r\n        </ul>\r\n      </div>\r\n      \t\t<!-- <h1>Add hours</h1> -->\r\n      \t\t<form v-on:submit.prevent=\"onSubmit\" id=\"form\">\r\n          \t\t\t<p class=\"input_heading\">Job</p>\r\n          \t\t\t<select class=\"inputField\" v-model=\"fk_job_id\" required>\r\n          \t\t\t\t<option v-for=\"job in jobs\" v-bind:value=\"job.job_id\">{{job.job_name}}</option>\r\n          \t\t\t</select>\r\n                <p class=\"input_heading\">Installer</p>\r\n                <select class=\"inputField\" v-model=\"fk_installer_id\" required>\r\n                  <option v-for=\"installer in installers\" v-bind:value=\"installer.installer_id\">{{installer.first_name}} {{installer.first_name}}</option>\r\n                </select>\r\n          \t\t\t<p class=\"input_heading\">Regular hours worked</p>\r\n          \t\t\t<input class=\"inputField\" type=\"number\" step=\"0.1\" v-model.number=\"reg_hours_worked\" required>\r\n          \t\t\t<p class=\"input_heading\">Overtime hours worked</p>\r\n          \t\t\t<input class=\"inputField\" type=\"number\" step=\"0.1\" v-model.number=\"ot_hours_worked\" required>\r\n          \t\t\t<p class=\"input_heading\">Work date</p>\r\n          \t\t\t<input class=\"inputField\" type=\"date\" v-model=\"work_date\" required>\r\n          \t\t\t <button class=\"button\" type=\"submit\" value=\"Submit\">Add hours</button>\r\n          \t\t\t<p class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Hours added</p>\r\n      \t\t</form>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'add-hours',\r\n  props: ['user'],\r\n  data(){\r\n  \treturn {\r\n\t  \treg_hours_worked: '',\r\n\t  \tot_hours_worked: '',\r\n\t  \twork_date: '',\r\n\t  \tfk_job_id: '',\r\n\t  \tjobs: '',\r\n      installers: ''\r\n  \t}\r\n  },\r\n  methods: {\r\n  \tonSubmit: function(){\r\n  \t\taxios({\r\n  \t\t\tmethod: 'post',\r\n  \t\t\turl: '/installers/hours/add',\r\n  \t\t\tdata: {\r\n  \t\t\t\tcreated_by_id: this.user.userID,\r\n  \t\t\t\tmodified_by_id: this.user.userID,\r\n  \t\t\t\treg_hours_worked: this.reg_hours_worked,\r\n  \t\t\t\tot_hours_worked: this.ot_hours_worked,\r\n  \t\t\t\twork_date: this.work_date,\r\n  \t\t\t\tfk_job_id: this.fk_job_id,\r\n  \t\t\t\tfk_installer_id: this.fk_installer_id\r\n  \t\t\t}\r\n  \t\t})\r\n  \t\t.then(req => {\r\n  \t\t\tdocument.getElementById('confirmation').classList.remove('hidden');\r\n  \t\t\tthis.reg_hours_worked = '',\r\n  \t\t\tthis.ot_hours_worked = '',\r\n  \t\t\tthis.work_date = '',\r\n  \t\t\tthis.fk_job_id = '',\r\n        this.fk_installer_id=''\r\n  \t\t})\r\n  \t\t.catch(err => {\r\n  \t\t\tconsole.log(err);\r\n  \t\t})\r\n  \t}\r\n  },\r\n  beforeMount(){\r\n  \taxios({\r\n  \t\tmethod: 'get',\r\n  \t\turl: '/jobs'\r\n  \t})\r\n  \t.then(req => {\r\n  \t\tconsole.log(req.data.jobs);\r\n  \t\tthis.jobs = req.data.jobs;\r\n  \t})\r\n  \t.catch(err => {\r\n  \t\tconsole.log(err);\r\n  \t})\r\n\r\n      axios({\r\n      method: 'get',\r\n      url: '/installers'\r\n    })\r\n    .then(req => {\r\n      console.log(req.data.installers);\r\n      this.installers = req.data.installers;\r\n    })\r\n    .catch(err => {\r\n      console.log(err);\r\n    })\r\n  }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\nform{\r\n  margin-top: 30px;\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\n.input_heading{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\r\n    \r\n }   \r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n.button{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    margin-top: 10px;\r\n}\r\n\r\n\r\n\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
 
 // exports
 
@@ -27131,7 +27367,7 @@ var content = __webpack_require__(168);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("48401386", content, false);
+var update = __webpack_require__(3)("48401386", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -27150,12 +27386,12 @@ if(false) {
 /* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-6c5747fc]{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.header[data-v-6c5747fc]{\r\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-6c5747fc]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-6c5747fc]{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\n}\nli[data-v-6c5747fc]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-6c5747fc]:hover{\r\n  border-color: #929292;\n}\na[data-v-6c5747fc]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/viewTime.vue"],"names":[],"mappings":";AAyBA;KACA,iBAAA;KACA,eAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;;KAEA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAGA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,mBAAA;IACA,gBAAA;IACA,mBAAA;IACA,qCAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"viewTime.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n      <div  class=\"header\">\r\n        <ul>\r\n            <li><a v-on:click=\"$parent.updateView('add-hours')\" >Enter Time Worked</a></li>\r\n           <!-- <li><a v-on:click=\"$parent.updateView('')\">Approve Time</a></li> -->\r\n           <li><a v-on:click=\"$parent.updateView('view-time')\" style=\"color:#4bc800\">View time</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('modify-time')\">Modify time</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('approve-time')\">Approve time</a></li>\r\n                       \r\n        </ul>\r\n        <h1>View time</h1>\r\n      </div>\r\n</div>\r\n</template> \r\n\r\n<script>\r\n\r\nexport default {\r\n  name: 'view-time'\r\n \r\n};\r\n</script>    \r\n\r\n <style scoped>\r\n\r\n.mainDiv{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-6c5747fc]{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.custab[data-v-6c5747fc]{\r\n    border: 1px solid #ccc;\r\n    padding: 5px;\r\n    margin: 5% 0;\r\n    -webkit-box-shadow: 3px 3px 2px #ccc;\r\n            box-shadow: 3px 3px 2px #ccc;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\n}\n.custab[data-v-6c5747fc]:hover{\r\n    -webkit-box-shadow: 3px 3px 0px transparent;\r\n            box-shadow: 3px 3px 0px transparent;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\n}\ntr[data-v-6c5747fc]:nth-child(even){\r\n      background-color: #f9f9f9;\n}\n.header[data-v-6c5747fc]{\r\n  border-bottom: 1px solid #ebebeb;\n}\ntable[data-v-6c5747fc]{\r\n  width: 91%;\n}\ntd[data-v-6c5747fc]{\r\n    padding: 8px;\r\n    line-height: 1.42857143;\r\n    \r\n    border-top: 1px solid #ddd;\r\n    text-align: center;\n}\nth[data-v-6c5747fc]{\r\n  text-align: center;\n}\nul[data-v-6c5747fc]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-6c5747fc]{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\n}\nli[data-v-6c5747fc]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-6c5747fc]:hover{\r\n  border-color: #929292;\n}\n.header_a[data-v-6c5747fc]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/viewTime.vue"],"names":[],"mappings":";AAgHA;KACA,iBAAA;KACA,eAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;;KAEA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;IACA,uBAAA;IACA,aAAA;IACA,aAAA;IACA,qCAAA;YAAA,6BAAA;IACA,yBAAA;IAAA,iBAAA;CACA;AACA;IACA,4CAAA;YAAA,oCAAA;IACA,yBAAA;IAAA,iBAAA;CACA;AACA;MACA,0BAAA;CACA;AACA;EACA,iCAAA;CAEA;AAEA;EACA,WAAA;CACA;AACA;IACA,aAAA;IACA,wBAAA;;IAEA,2BAAA;IACA,mBAAA;CACA;AACA;EACA,mBAAA;CACA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,mBAAA;IACA,gBAAA;IACA,mBAAA;IACA,qCAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"viewTime.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n      <div  class=\"header\">\r\n        <ul>\r\n            <li><a class=\"header_a\" v-on:click=\"$parent.updateView('add-hours')\" >Enter Time Worked</a></li>\r\n           <!-- <li><a v-on:click=\"$parent.updateView('')\">Approve Time</a></li> -->\r\n           <li><a class=\"header_a\" v-on:click=\"$parent.updateView('view-time')\" style=\"color:#4bc800\">View time</a></li>\r\n           <li><a class=\"header_a\" v-on:click=\"$parent.updateView('modify-time')\">Modify time</a></li>\r\n           <li><a class=\"header_a\" v-on:click=\"$parent.updateView('approve-time')\">Approve time</a></li>\r\n                       \r\n        </ul>\r\n      </div>\r\n      <div class=\"container\">\r\n                <div class=\"row  custyle\">\r\n                    <table class=\"table table-striped custab\">\r\n                            <thead>\r\n                                <tr>\r\n                                    <th>Job Name</th>\r\n                                    <th>Installer Name</th>\r\n                                    <th>Installer Hours ID</th>\r\n                                    <th>Regular Hours Worked</th>\r\n                                    <th>Overtime hours worked</th>\r\n                                    <th>Work date</th>\r\n                                    <th class=\"text-center\">Action</th>\r\n                                </tr>\r\n                            </thead>\r\n                            <tr v-for=\"hour in hours\">\r\n                                <td>{{hour.fk_job_id}}</td>\r\n                                <td>{{hour.fk_installer_id}}</td>\r\n                                <td>{{hour.installers_hours_id}}</td>\r\n                                <td>{{hour.reg_hours_worked}}</td>\r\n                                <td>{{hour.ot_hours_worked}}</td>\r\n                                <td>{{hour.work_date}}</td>\r\n                                <td class=\"text-center\"><a href=\"#\" @click=\"deletehour(hour)\" class=\"btn btn-danger btn-xs\"><span class=\"glyphicon glyphicon-remove\"></span> Del</a></td>\r\n                            </tr>                           \r\n                    </table>\r\n                </div>\r\n        </div>          \r\n</div>\r\n</template> \r\n\r\n<script>\r\nimport axios from 'axios';\r\nexport default {\r\n  name: 'view-time',\r\n      data() {\r\n        return {\r\n          installers_hours_id:'',\r\n          hours: '',\r\n          \r\n        }\r\n      },\r\n    methods: {\r\n       deletehour (hour) {\r\n        // open the modal using the refs\r\n         this.installers_hours_id = hour.installers_hours_id;\r\n           axios({\r\n            method: 'delete',\r\n            url: '/installers/hours/delete',\r\n            data: {\r\n              installers_hours_id: this.installers_hours_id\r\n            }\r\n          })\r\n          .then(req => {\r\n            this.installers_hours_id = '';\r\n            this.getData();\r\n          })\r\n          .catch(err => {\r\n            console.log(err);\r\n          })\r\n       } ,\r\n       getData: function(){\r\n       axios.get('/installers/hours')\r\n        .then(req => {\r\n          this.hours = req.data.installer_hours;\r\n          console.log(req.data.installer_hours);\r\n        })\r\n      },\r\n      // getRoleName: function(roleid){\r\n      //    var role_name = \"\";\r\n      //   for (var i=0; this.roles.length ; i++) {\r\n      //       if(this.roles[i].installer_role_id==roleid){\r\n      //        role_name= this.roles[i].installer_role_name;\r\n\r\n      //       }\r\n      //     return role_name;  \r\n      //    }\r\n      // }   \r\n      },\r\n      beforeMount(){\r\n       \r\n        this.getData(); \r\n        // //Get role list\r\n        // axios({\r\n        //   method: 'get',\r\n        //   url: '/installers/roles'\r\n        // })\r\n        // .then(req => {\r\n        //   this.roles = req.data.roles;\r\n        //   this.getData();\r\n        // })\r\n        // .catch(err => {\r\n        //   console.log(err);\r\n        // });\r\n\r\n         \r\n      }\r\n \r\n};\r\n</script>    \r\n\r\n <style scoped>\r\n\r\n.mainDiv{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n\r\n.custab{\r\n    border: 1px solid #ccc;\r\n    padding: 5px;\r\n    margin: 5% 0;\r\n    box-shadow: 3px 3px 2px #ccc;\r\n    transition: 0.5s;\r\n    }\r\n.custab:hover{\r\n    box-shadow: 3px 3px 0px transparent;\r\n    transition: 0.5s;\r\n    }\r\n  tr:nth-child(even){\r\n      background-color: #f9f9f9;\r\n    }\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\n\r\ntable{\r\n  width: 91%;\r\n}\r\ntd{\r\n    padding: 8px;\r\n    line-height: 1.42857143;\r\n    \r\n    border-top: 1px solid #ddd;\r\n    text-align: center;\r\n}\r\nth{\r\n  text-align: center;\r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\n.header_a{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
 
 // exports
 
@@ -27176,6 +27412,7 @@ var render = function() {
           _c(
             "a",
             {
+              staticClass: "header_a",
               on: {
                 click: function($event) {
                   _vm.$parent.updateView("add-hours")
@@ -27190,6 +27427,7 @@ var render = function() {
           _c(
             "a",
             {
+              staticClass: "header_a",
               staticStyle: { color: "#4bc800" },
               on: {
                 click: function($event) {
@@ -27205,6 +27443,7 @@ var render = function() {
           _c(
             "a",
             {
+              staticClass: "header_a",
               on: {
                 click: function($event) {
                   _vm.$parent.updateView("modify-time")
@@ -27219,6 +27458,7 @@ var render = function() {
           _c(
             "a",
             {
+              staticClass: "header_a",
               on: {
                 click: function($event) {
                   _vm.$parent.updateView("approve-time")
@@ -27228,13 +27468,82 @@ var render = function() {
             [_vm._v("Approve time")]
           )
         ])
-      ]),
-      _vm._v(" "),
-      _c("h1", [_vm._v("View time")])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row  custyle" }, [
+        _c(
+          "table",
+          { staticClass: "table table-striped custab" },
+          [
+            _vm._m(0),
+            _vm._v(" "),
+            _vm._l(_vm.hours, function(hour) {
+              return _c("tr", [
+                _c("td", [_vm._v(_vm._s(hour.fk_job_id))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(hour.fk_installer_id))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(hour.installers_hours_id))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(hour.reg_hours_worked))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(hour.ot_hours_worked))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(hour.work_date))]),
+                _vm._v(" "),
+                _c("td", { staticClass: "text-center" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-danger btn-xs",
+                      attrs: { href: "#" },
+                      on: {
+                        click: function($event) {
+                          _vm.deletehour(hour)
+                        }
+                      }
+                    },
+                    [
+                      _c("span", { staticClass: "glyphicon glyphicon-remove" }),
+                      _vm._v(" Del")
+                    ]
+                  )
+                ])
+              ])
+            })
+          ],
+          2
+        )
+      ])
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Job Name")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Installer Name")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Installer Hours ID")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Regular Hours Worked")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Overtime hours worked")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Work date")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Action")])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
@@ -27312,7 +27621,7 @@ var content = __webpack_require__(172);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("a48e58d6", content, false);
+var update = __webpack_require__(3)("a48e58d6", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -27331,12 +27640,12 @@ if(false) {
 /* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-aa8381d2]{\r\n    margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n    \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.header[data-v-aa8381d2]{\r\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-aa8381d2]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-aa8381d2]{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\n}\nli[data-v-aa8381d2]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-aa8381d2]:hover{\r\n  border-color: #929292;\n}\na[data-v-aa8381d2]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/modifyTime.vue"],"names":[],"mappings":";AAyBA;IACA,iBAAA;KACA,eAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;;KAEA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAGA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,mBAAA;IACA,gBAAA;IACA,mBAAA;IACA,qCAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyTime.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n      <div  class=\"header\">\r\n        <ul>\r\n            <li><a v-on:click=\"$parent.updateView('add-hours')\" >Enter Time Worked</a></li>\r\n           <!-- <li><a v-on:click=\"$parent.updateView('')\">Approve Time</a></li> -->\r\n           <li><a v-on:click=\"$parent.updateView('view-time')\">View time</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('modify-time')\"  style=\"color:#4bc800\">Modify time</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('approve-time')\">Approve time</a></li>\r\n                       \r\n        </ul>\r\n        <h1>Modify time</h1>\r\n      </div>\r\n</div>\r\n</template> \r\n\r\n<script>\r\n\r\nexport default {\r\n  name: 'modify-time'\r\n \r\n};\r\n</script>    \r\n\r\n <style scoped>\r\n\r\n.mainDiv{\r\n    margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n    \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-aa8381d2]{\r\n    margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n    \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.header[data-v-aa8381d2]{\r\n  border-bottom: 1px solid #ebebeb;\n}\nform[data-v-aa8381d2]{\r\n  margin-top: 30px;\n}\n.inputField[data-v-aa8381d2]{\r\n    background-color: #fff;\r\n    font-family: Open Sans,Arial,sans-serif;\r\n    line-height: normal!important;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 0;\r\n    padding: 12px 18px 11px;\r\n    width: 100%;\n}\n.inputField[data-v-aa8381d2]:focus{\r\n  outline: none;\n}\n.input_heading[data-v-aa8381d2]{\r\n    color: #afaeb0;\r\n    \r\n    margin-top: 30px;\n}\n.button[data-v-aa8381d2]{\r\n    color: #fff;\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    padding: 9px;\r\n    margin-top: 20px;\n}\n.button[data-v-aa8381d2]:focus{\r\n  outline-color:  #4bc800;\n}\nul[data-v-aa8381d2]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-aa8381d2]{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\n}\nli[data-v-aa8381d2]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-aa8381d2]:hover{\r\n  border-color: #929292;\n}\na[data-v-aa8381d2]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/modifyTime.vue"],"names":[],"mappings":";AA0FA;IACA,iBAAA;KACA,eAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;;KAEA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAGA;EACA,iCAAA;CAEA;AACA;EACA,iBAAA;CACA;AACA;IACA,uBAAA;IACA,wCAAA;IACA,8BAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,UAAA;IACA,wBAAA;IACA,YAAA;CACA;AACA;EACA,cAAA;CACA;AACA;IACA,eAAA;;IAEA,iBAAA;CAKA;AACA;IACA,YAAA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,aAAA;IACA,iBAAA;CAGA;AACA;EACA,wBAAA;CAEA;AAEA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,mBAAA;IACA,gBAAA;IACA,mBAAA;IACA,qCAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyTime.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n      <div  class=\"header\">\r\n        <ul>\r\n            <li><a v-on:click=\"$parent.updateView('add-hours')\" >Enter Time Worked</a></li>\r\n           <!-- <li><a v-on:click=\"$parent.updateView('')\">Approve Time</a></li> -->\r\n           <li><a v-on:click=\"$parent.updateView('view-time')\">View time</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('modify-time')\"  style=\"color:#4bc800\">Modify time</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('approve-time')\">Approve time</a></li>          \r\n        </ul>        \r\n      </div>\r\n      <p class=\"input_heading\">Select Installer</p>\r\n            <select class=\"inputField\" v-model=\"fk_installer_id\" >\r\n                  <option v-for=\"hour in hours\" v-bind:value=\"hour.installers_hours_id\">{{hour.installers_hours_id}} </option>\r\n                </select>\r\n            \r\n            <form v-if=\"selectedRole.installers_hours_id\" v-on:submit.prevent=\"onSubmit\">              \r\n                    <input class=\"inputField\" type =\"hidden\" v-model=\"selectedRole.installers_hours_id\">\r\n                    <p class=\"input_heading\">Regular Hours Worked</p>\r\n                    <input class=\"inputField\" type=\"text\" v-model.trim=\"selectedRole.reg_hours_worked\" required>\r\n                    <p class=\"input_heading\">Overtime hours worked</p>\r\n                    <input class=\"inputField\" type=\"text\" v-model.number=\"selectedRole.ot_hours_worked\" required>\r\n                    <p class=\"input_heading\">Work date</p>\r\n                    <input class=\"inputField\" type=\"date\" v-model=\"selectedRole.work_date\" required>\r\n                    \r\n                    <button class=\"button\" type=\"submit\" value=\"Submit\">Update</button>\r\n                    <p style=\"text-align:center;\" class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\"> Updated successfully.</p>\r\n            </form>    \r\n\r\n</div>\r\n</template> \r\n\r\n<script>\r\nimport axios from 'axios';\r\nexport default {\r\n  name: 'modify-time',\r\n  data(){\r\n    return {\r\n      fk_installer_id: '',\r\n      hours: '',\r\n      selectedRole: {}\r\n    }\r\n  },\r\n  methods: {\r\n    onSubmit: function(){\r\n      axios({\r\n        method: 'put',\r\n        url: 'installers/hours/update',\r\n        data: {\r\n          installers_hours_id: this.selectedRole.installers_hours_id,\r\n          reg_hours_worked: this.selectedRole.reg_hours_worked,\r\n          ot_hours_worked: this.selectedRole.ot_hours_worked,\r\n          work_date: this.selectedRole.work_date\r\n         \r\n        }\r\n      })\r\n      .then(req => {\r\n        if(req.status===200){\r\n          $('.inputField').val('');\r\n        document.getElementById('confirmation').classList.remove('hidden');\r\n      };\r\n      })\r\n      .catch(err => {\r\n        console.log(err);\r\n      })\r\n    }\r\n  },\r\n  watch: {\r\n    fk_installer_id(id) {\r\n      [this.selectedRole] = this.hours.filter(r => r.installers_hours_id === id);\r\n    }\r\n  },\r\n  beforeMount(){\r\n    axios({\r\n      method: 'get',\r\n      url: '/installers/hours'\r\n    })\r\n    .then(req => {\r\n      this.hours = req.data.installer_hours;\r\n      console.log(req.data.installer_hours);\r\n    })\r\n    .catch(err => {\r\n      \r\n    })\r\n  }\r\n \r\n};\r\n</script>    \r\n\r\n <style scoped>\r\n\r\n.mainDiv{\r\n    margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n    \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\nform{\r\n  margin-top: 30px;\r\n}\r\n.inputField{\r\n    background-color: #fff;\r\n    font-family: Open Sans,Arial,sans-serif;\r\n    line-height: normal!important;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 0;\r\n    padding: 12px 18px 11px;\r\n    width: 100%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.input_heading{\r\n    color: #afaeb0;\r\n    \r\n    margin-top: 30px;\r\n    \r\n    \r\n   \r\n\r\n}\r\n.button{\r\n    color: #fff;\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    padding: 9px;\r\n    margin-top: 20px;\r\n   \r\n\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
 
 // exports
 
@@ -27409,13 +27718,212 @@ var render = function() {
             [_vm._v("Approve time")]
           )
         ])
-      ]),
-      _vm._v(" "),
-      _c("h1", [_vm._v("Modify time")])
-    ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("p", { staticClass: "input_heading" }, [_vm._v("Select Installer")]),
+    _vm._v(" "),
+    _c(
+      "select",
+      {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.fk_installer_id,
+            expression: "fk_installer_id"
+          }
+        ],
+        staticClass: "inputField",
+        on: {
+          change: function($event) {
+            var $$selectedVal = Array.prototype.filter
+              .call($event.target.options, function(o) {
+                return o.selected
+              })
+              .map(function(o) {
+                var val = "_value" in o ? o._value : o.value
+                return val
+              })
+            _vm.fk_installer_id = $event.target.multiple
+              ? $$selectedVal
+              : $$selectedVal[0]
+          }
+        }
+      },
+      _vm._l(_vm.hours, function(hour) {
+        return _c("option", { domProps: { value: hour.installers_hours_id } }, [
+          _vm._v(_vm._s(hour.installers_hours_id) + " ")
+        ])
+      })
+    ),
+    _vm._v(" "),
+    _vm.selectedRole.installers_hours_id
+      ? _c(
+          "form",
+          {
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                _vm.onSubmit($event)
+              }
+            }
+          },
+          [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.selectedRole.installers_hours_id,
+                  expression: "selectedRole.installers_hours_id"
+                }
+              ],
+              staticClass: "inputField",
+              attrs: { type: "hidden" },
+              domProps: { value: _vm.selectedRole.installers_hours_id },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.selectedRole,
+                    "installers_hours_id",
+                    $event.target.value
+                  )
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("p", { staticClass: "input_heading" }, [
+              _vm._v("Regular Hours Worked")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model.trim",
+                  value: _vm.selectedRole.reg_hours_worked,
+                  expression: "selectedRole.reg_hours_worked",
+                  modifiers: { trim: true }
+                }
+              ],
+              staticClass: "inputField",
+              attrs: { type: "text", required: "" },
+              domProps: { value: _vm.selectedRole.reg_hours_worked },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.selectedRole,
+                    "reg_hours_worked",
+                    $event.target.value.trim()
+                  )
+                },
+                blur: function($event) {
+                  _vm.$forceUpdate()
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("p", { staticClass: "input_heading" }, [
+              _vm._v("Overtime hours worked")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model.number",
+                  value: _vm.selectedRole.ot_hours_worked,
+                  expression: "selectedRole.ot_hours_worked",
+                  modifiers: { number: true }
+                }
+              ],
+              staticClass: "inputField",
+              attrs: { type: "text", required: "" },
+              domProps: { value: _vm.selectedRole.ot_hours_worked },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.selectedRole,
+                    "ot_hours_worked",
+                    _vm._n($event.target.value)
+                  )
+                },
+                blur: function($event) {
+                  _vm.$forceUpdate()
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("p", { staticClass: "input_heading" }, [_vm._v("Work date")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.selectedRole.work_date,
+                  expression: "selectedRole.work_date"
+                }
+              ],
+              staticClass: "inputField",
+              attrs: { type: "date", required: "" },
+              domProps: { value: _vm.selectedRole.work_date },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.selectedRole, "work_date", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "button",
+                attrs: { type: "submit", value: "Submit" }
+              },
+              [_vm._v("Update")]
+            ),
+            _vm._v(" "),
+            _vm._m(0)
+          ]
+        )
+      : _vm._e()
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "hidden input_heading",
+        staticStyle: { "text-align": "center" },
+        attrs: { id: "confirmation" }
+      },
+      [
+        _c("img", {
+          attrs: { src: "/dist/assets/images/yes.png", alt: "Logo" }
+        }),
+        _vm._v(" Updated successfully.")
+      ]
+    )
+  }
+]
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
@@ -27493,7 +28001,7 @@ var content = __webpack_require__(176);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("4ca135c9", content, false);
+var update = __webpack_require__(3)("4ca135c9", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -27512,7 +28020,7 @@ if(false) {
 /* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -27674,7 +28182,7 @@ var content = __webpack_require__(180);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("5c175e85", content, false);
+var update = __webpack_require__(3)("5c175e85", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -27693,7 +28201,7 @@ if(false) {
 /* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -27929,7 +28437,7 @@ var content = __webpack_require__(184);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("7b1d7d54", content, false);
+var update = __webpack_require__(3)("7b1d7d54", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -27948,7 +28456,7 @@ if(false) {
 /* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -28157,7 +28665,7 @@ var content = __webpack_require__(188);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("76f8b964", content, false);
+var update = __webpack_require__(3)("76f8b964", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -28176,7 +28684,7 @@ if(false) {
 /* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -28726,7 +29234,7 @@ var content = __webpack_require__(192);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("463580b2", content, false);
+var update = __webpack_require__(3)("463580b2", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -28745,7 +29253,7 @@ if(false) {
 /* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -28987,7 +29495,7 @@ var content = __webpack_require__(196);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("8ee835c4", content, false);
+var update = __webpack_require__(3)("8ee835c4", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -29006,7 +29514,7 @@ if(false) {
 /* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -29416,7 +29924,7 @@ var content = __webpack_require__(200);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("a82f1770", content, false);
+var update = __webpack_require__(3)("a82f1770", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -29435,11 +29943,12 @@ if(false) {
 /* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
 // module
+<<<<<<< HEAD
 <<<<<<< HEAD
 exports.push([module.i, "\n.mainDiv[data-v-7ae58e3a]{\n     margin-left: 12%;\n     margin-top: 5%;\n     margin-right: 5%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     \n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n}\n.header[data-v-7ae58e3a]{\n  border-bottom: 1px solid #ebebeb;\n}\nform[data-v-7ae58e3a]{\n  margin-top: 30px;\n}\n.inputField[data-v-7ae58e3a]{\n    background-color: #fff;\n    font-family: Open Sans,Arial,sans-serif;\n    line-height: normal!important;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 0;\n    padding: 12px 18px 11px;\n    width: 100%;\n}\n.inputField[data-v-7ae58e3a]:focus{\n  outline: none;\n}\n.input_heading[data-v-7ae58e3a]{\n    color: #afaeb0;\n    \n    margin-top: 30px;\n}\n.button[data-v-7ae58e3a]{\n    color: #fff;\n    background: #4bc800!important;\n    border: 0;\n    box-shadow: inset 0 -2px 0 #45b900!important;\n    padding: 9px;\n    margin-top: 20px;\n}\n.button[data-v-7ae58e3a]:focus{\n  outline-color:  #4bc800;\n}\nul[data-v-7ae58e3a]{\n  list-style-type:none;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\nli[data-v-7ae58e3a]{\n    padding-left: 6%;\n    padding-right: 6%;\n    padding-bottom: 2%;\n    padding-top: 2%;\n    text-align: center;\n    border-bottom: 3px solid transparent;\n}\nli[data-v-7ae58e3a]:active{\n  border-color:#4bc800;\n}\nli[data-v-7ae58e3a]:hover{\n  border-color: #929292;\n}\na[data-v-7ae58e3a]{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n", "", {"version":3,"sources":["C:/BootCamp/Homework/Week-22/BonusCheck/BonusCheck/src/components/src/components/modifyRoles.vue?e77f73e0"],"names":[],"mappings":";AAuGA;KACA,iBAAA;KACA,eAAA;KACA,iBAAA;KACA,yCAAA;;KAEA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AAGA;EACA,iBAAA;CACA;AACA;IACA,uBAAA;IACA,wCAAA;IACA,8BAAA;IACA,UAAA;IACA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,UAAA;IACA,wBAAA;IACA,YAAA;CACA;AACA;EACA,cAAA;CACA;AACA;IACA,eAAA;;IAEA,iBAAA;CAKA;AACA;IACA,YAAA;IACA,8BAAA;IACA,UAAA;IACA,6CAAA;IACA,aAAA;IACA,iBAAA;CAGA;AACA;EACA,wBAAA;CAEA;AAEA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,mBAAA;IACA,gBAAA;IACA,mBAAA;IACA,qCAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyRoles.vue","sourcesContent":["<template>\n  <div class=\"mainDiv\">\n    <div  class=\"header\">\n      <ul>\n           <li><a v-on:click=\"$parent.updateView('create-roles')\">Create roles</a></li>\n           <li><a v-on:click=\"$parent.updateView('modify-roles')\" style=\"color:#4bc800\">Modify Roles</a></li>\n            <li><a v-on:click=\"$parent.updateView('view-roles')\">View Roles</a></li>\n\n        </ul>\n      </div>  \n    <div class=\"row\">\n        <div class=\"col-md-10\">\n            <select class=\"input\" v-model=\"role_id\">\n              <option v-for=\"role in roles\" v-bind:value=\"role.installer_role_id\">\n                {{role.installer_role_name}}\n              </option>\n            </select>\n            \n            <form v-if=\"selectedRole.installer_role_id\" v-on:submit.prevent=\"onSubmit\">              \n                    <input class=\"inputField\" type =\"hidden\" v-model=\"selectedRole.installer_role_id\">\n                    <p class=\"input_heading\">Role name</p>\n                    <input class=\"inputField\" type=\"text\" v-model.trim=\"selectedRole.installer_role_name\" required>\n                    <p class=\"input_heading\">Role weight</p>\n                    <input class=\"inputField\" type=\"text\" v-model.number=\"selectedRole.role_weight\" required>\n                    <p class=\"input_heading\">Minimum base</p>\n                    <input class=\"inputField\" type=\"text\" v-model.number=\"selectedRole.min_base\" required>\n                    <p class=\"input_heading\">Maximum base</p>\n                    <input class=\"inputField\" type=\"text\" v-model.number=\"selectedRole.max_base\" required>\n                    <p class=\"input_heading\">Individual bonus</p>\n                    <input class=\"inputField\" type=\"text\" v-model.number=\"selectedRole.individual_bonus\" required>\n                    <p class=\"input_heading\">Team bonus</p>\n                    <input class=\"inputField\" type=\"text\" v-model.number=\"selectedRole.team_bonus\" required>\n                    <p class=\"input_heading\">Bonus weight</p>\n                    <input class=\"inputField\" type=\"text\" v-model.number=\"selectedRole.bonus_weight\" required>\n                    <button class=\"button\" type=\"submit\" value=\"Submit\">Update</button>\n                    <p style=\"text-align:center;\" class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Installer updated successfully.</p>\n            </form>    \n        </div>  \n     </div> \n  </div>\n</template>\n\n<script>\nimport axios from 'axios';\n\nexport default {\n  name: 'modify-roles',\n  data(){\n    return {\n      role_id: '',\n      roles: '',\n      selectedRole: {}\n  \t}\n  },\n  methods: {\n    onSubmit: function(){\n      axios({\n        method: 'put',\n        url: 'installers/roles/update',\n        data: {\n          installer_role_id: this.selectedRole.installer_role_id,\n          installer_role_name: this.selectedRole.installer_role_name,\n          role_weight: this.selectedRole.role_weight,\n          min_base: this.selectedRole.min_base,\n          max_base: this.selectedRole.max_base,\n          individual_bonus: this.selectedRole.individual_bonus,\n          team_bonus: this.selectedRole.team_bonus,\n          bonus_weight: this.selectedRole.bonus_weight\n        }\n      })\n      .then(req => {\n        if(req.status===200){\n          $('.inputField').val('');\n        document.getElementById('confirmation').classList.remove('hidden');\n      };\n      })\n      .catch(err => {\n        console.log(err);\n      })\n    }\n  },\n  watch: {\n    role_id(id) {\n      [this.selectedRole] = this.roles.filter(r => r.installer_role_id === id);\n    }\n  },\n  beforeMount(){\n    axios({\n      method: 'get',\n      url: '/installers/roles'\n    })\n    .then(req => {\n      this.roles = req.data.roles;\n      console.log(req.data.roles);\n    })\n    .catch(err => {\n      \n    })\n  }\n};\n</script>\n<style scoped>\n\n.mainDiv{\n     margin-left: 12%;\n     margin-top: 5%;\n     margin-right: 5%;\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\n     \n     background-color: #fff;\n     font-size: 16px;\n     padding: 20px;\n\n}\n\n.header{\n  border-bottom: 1px solid #ebebeb;\n    \n}\n\n\nform{\n  margin-top: 30px;\n}\n.inputField{\n    background-color: #fff;\n    font-family: Open Sans,Arial,sans-serif;\n    line-height: normal!important;\n    border: 0;\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\n    color: #222;\n    display: block;\n    font-size: 14px;\n    margin: 0;\n    padding: 12px 18px 11px;\n    width: 100%;\n}\n.inputField:focus{\n  outline: none;\n}\n.input_heading{\n    color: #afaeb0;\n    \n    margin-top: 30px;\n    \n    \n   \n\n}\n.button{\n    color: #fff;\n    background: #4bc800!important;\n    border: 0;\n    box-shadow: inset 0 -2px 0 #45b900!important;\n    padding: 9px;\n    margin-top: 20px;\n   \n\n}\n.button:focus{\n  outline-color:  #4bc800;\n\n}\n\nul{\n  list-style-type:none;\n  display: flex;\n  justify-content: center;\n}\nli{\n    padding-left: 6%;\n    padding-right: 6%;\n    padding-bottom: 2%;\n    padding-top: 2%;\n    text-align: center;\n    border-bottom: 3px solid transparent;\n}\nli:active{\n  border-color:#4bc800; \n}\n\nli:hover{\n  border-color: #929292;\n}\na{\n  color: #adadad;\n  text-decoration: none;\n  font-weight: bold;\n}\n</style>\n"],"sourceRoot":""}]);
 
@@ -29499,6 +30008,9 @@ exports.push([module.i, "\n.mainDiv[data-v-7ae58e3a]{\n     margin-left: 12%;\n 
 =======
 exports.push([module.i, "\n.mainDiv[data-v-7ae58e3a]{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.header[data-v-7ae58e3a]{\r\n  border-bottom: 1px solid #ebebeb;\n}\nform[data-v-7ae58e3a]{\r\n  margin-top: 30px;\n}\n.inputField[data-v-7ae58e3a]{\r\n    background-color: #fff;\r\n    font-family: Open Sans,Arial,sans-serif;\r\n    line-height: normal!important;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 0;\r\n    padding: 12px 18px 11px;\r\n    width: 100%;\n}\n.inputField[data-v-7ae58e3a]:focus{\r\n  outline: none;\n}\n.input_heading[data-v-7ae58e3a]{\r\n    color: #afaeb0;\r\n    \r\n    margin-top: 30px;\n}\n.button[data-v-7ae58e3a]{\r\n    color: #fff;\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    padding: 9px;\r\n    margin-top: 20px;\n}\n.button[data-v-7ae58e3a]:focus{\r\n  outline-color:  #4bc800;\n}\nul[data-v-7ae58e3a]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-7ae58e3a]{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\n}\nli[data-v-7ae58e3a]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-7ae58e3a]:hover{\r\n  border-color: #929292;\n}\na[data-v-7ae58e3a]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/modifyRoles.vue"],"names":[],"mappings":";AAsGA;KACA,iBAAA;KACA,eAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;;KAEA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AAGA;EACA,iBAAA;CACA;AACA;IACA,uBAAA;IACA,wCAAA;IACA,8BAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,UAAA;IACA,wBAAA;IACA,YAAA;CACA;AACA;EACA,cAAA;CACA;AACA;IACA,eAAA;;IAEA,iBAAA;CAKA;AACA;IACA,YAAA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,aAAA;IACA,iBAAA;CAGA;AACA;EACA,wBAAA;CAEA;AAEA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,mBAAA;IACA,gBAAA;IACA,mBAAA;IACA,qCAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyRoles.vue","sourcesContent":["<template>\r\n  <div class=\"mainDiv\">\r\n    <div  class=\"header\">\r\n      <ul>\r\n           <li><a v-on:click=\"$parent.updateView('create-roles')\">Create roles</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('modify-roles')\" style=\"color:#4bc800\">Modify Roles</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('view-roles')\">View Roles</a></li>\r\n\r\n        </ul>\r\n      </div>  \r\n    <div class=\"row\">\r\n        <div class=\"col-md-10\">\r\n            <select class=\"input\" v-model=\"role_id\">\r\n              <option v-for=\"role in roles\" v-bind:value=\"role.installer_role_id\">\r\n                {{role.installer_role_name}}\r\n              </option>\r\n            </select>\r\n            \r\n            <form v-if=\"selectedRole.installer_role_id\" v-on:submit.prevent=\"onSubmit\">              \r\n                    <input class=\"inputField\" type =\"hidden\" v-model=\"selectedRole.installer_role_id\">\r\n                    <p class=\"input_heading\">Role name</p>\r\n                    <input class=\"inputField\" type=\"text\" v-model.trim=\"selectedRole.installer_role_name\" required>\r\n                    <p class=\"input_heading\">Role weight</p>\r\n                    <input class=\"inputField\" type=\"text\" v-model.number=\"selectedRole.role_weight\" required>\r\n                    <p class=\"input_heading\">Minimum base</p>\r\n                    <input class=\"inputField\" type=\"text\" v-model.number=\"selectedRole.min_base\" required>\r\n                    <p class=\"input_heading\">Maximum base</p>\r\n                    <input class=\"inputField\" type=\"text\" v-model.number=\"selectedRole.max_base\" required>\r\n                    <p class=\"input_heading\">Individual bonus</p>\r\n                    <input class=\"inputField\" type=\"text\" v-model.number=\"selectedRole.individual_bonus\" required>\r\n                    <p class=\"input_heading\">Team bonus</p>\r\n                    <input class=\"inputField\" type=\"text\" v-model.number=\"selectedRole.team_bonus\" required>\r\n                    <p class=\"input_heading\">Bonus weight</p>\r\n                    <input class=\"inputField\" type=\"text\" v-model.number=\"selectedRole.bonus_weight\" required>\r\n                    <button class=\"button\" type=\"submit\" value=\"Submit\">Update</button>\r\n                    <p style=\"text-align:center;\" class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Installer updated successfully.</p>\r\n            </form>    \r\n        </div>  \r\n     </div> \r\n  </div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'modify-roles',\r\n  data(){\r\n    return {\r\n      role_id: '',\r\n      roles: '',\r\n      selectedRole: {}\r\n  \t}\r\n  },\r\n  methods: {\r\n    onSubmit: function(){\r\n      axios({\r\n        method: 'put',\r\n        url: 'installers/roles/update',\r\n        data: {\r\n          installer_role_id: this.selectedRole.installer_role_id,\r\n          installer_role_name: this.selectedRole.installer_role_name,\r\n          role_weight: this.selectedRole.role_weight,\r\n          min_base: this.selectedRole.min_base,\r\n          max_base: this.selectedRole.max_base,\r\n          individual_bonus: this.selectedRole.individual_bonus,\r\n          team_bonus: this.selectedRole.team_bonus,\r\n          bonus_weight: this.selectedRole.bonus_weight\r\n        }\r\n      })\r\n      .then(req => {\r\n        if(req.status===200){\r\n          $('.inputField').val('');\r\n        document.getElementById('confirmation').classList.remove('hidden');\r\n      };\r\n      })\r\n      .catch(err => {\r\n        console.log(err);\r\n      })\r\n    }\r\n  },\r\n  watch: {\r\n    role_id(id) {\r\n      [this.selectedRole] = this.roles.filter(r => r.installer_role_id === id);\r\n    }\r\n  },\r\n  beforeMount(){\r\n    axios({\r\n      method: 'get',\r\n      url: '/installers/roles'\r\n    })\r\n    .then(req => {\r\n      this.roles = req.data.roles;\r\n      console.log(req.data.roles);\r\n    })\r\n    .catch(err => {\r\n      \r\n    })\r\n  }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\n\r\n\r\nform{\r\n  margin-top: 30px;\r\n}\r\n.inputField{\r\n    background-color: #fff;\r\n    font-family: Open Sans,Arial,sans-serif;\r\n    line-height: normal!important;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 0;\r\n    padding: 12px 18px 11px;\r\n    width: 100%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.input_heading{\r\n    color: #afaeb0;\r\n    \r\n    margin-top: 30px;\r\n    \r\n    \r\n   \r\n\r\n}\r\n.button{\r\n    color: #fff;\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    padding: 9px;\r\n    margin-top: 20px;\r\n   \r\n\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>\r\n"],"sourceRoot":""}]);
 >>>>>>> 74b4ad7930090817ff5ddc4088053b0c46086294
+=======
+exports.push([module.i, "\n.mainDiv[data-v-7ae58e3a]{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.header[data-v-7ae58e3a]{\r\n  border-bottom: 1px solid #ebebeb;\n}\nform[data-v-7ae58e3a]{\r\n  margin-top: 30px;\n}\n.inputField[data-v-7ae58e3a]{\r\n    background-color: #fff;\r\n    font-family: Open Sans,Arial,sans-serif;\r\n    line-height: normal!important;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 0;\r\n    padding: 12px 18px 11px;\r\n    width: 100%;\n}\n.inputField[data-v-7ae58e3a]:focus{\r\n  outline: none;\n}\n.input_heading[data-v-7ae58e3a]{\r\n    color: #afaeb0;\r\n    \r\n    margin-top: 30px;\n}\n.button[data-v-7ae58e3a]{\r\n    color: #fff;\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    padding: 9px;\r\n    margin-top: 20px;\n}\n.button[data-v-7ae58e3a]:focus{\r\n  outline-color:  #4bc800;\n}\nul[data-v-7ae58e3a]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-7ae58e3a]{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\n}\nli[data-v-7ae58e3a]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-7ae58e3a]:hover{\r\n  border-color: #929292;\n}\na[data-v-7ae58e3a]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/modifyRoles.vue"],"names":[],"mappings":";AAoGA;KACA,iBAAA;KACA,eAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;;KAEA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AAGA;EACA,iBAAA;CACA;AACA;IACA,uBAAA;IACA,wCAAA;IACA,8BAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,UAAA;IACA,wBAAA;IACA,YAAA;CACA;AACA;EACA,cAAA;CACA;AACA;IACA,eAAA;;IAEA,iBAAA;CAKA;AACA;IACA,YAAA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,aAAA;IACA,iBAAA;CAGA;AACA;EACA,wBAAA;CAEA;AAEA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,mBAAA;IACA,gBAAA;IACA,mBAAA;IACA,qCAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"modifyRoles.vue","sourcesContent":["<template>\r\n  <div class=\"mainDiv\">\r\n    <div  class=\"header\">\r\n      <ul>\r\n           <li><a v-on:click=\"$parent.updateView('create-roles')\">Create roles</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('modify-roles')\" style=\"color:#4bc800\">Modify Roles</a></li>\r\n            <li><a v-on:click=\"$parent.updateView('view-roles')\">View Roles</a></li>\r\n\r\n        </ul>\r\n      </div>  \r\n            <p class=\"input_heading\">Select Role to modify</p>\r\n            <select class=\"inputField\" v-model=\"role_id\">\r\n              <option v-for=\"role in roles\" v-bind:value=\"role.installer_role_id\">\r\n                {{role.installer_role_name}}\r\n              </option>\r\n            </select>\r\n            \r\n            <form v-if=\"selectedRole.installer_role_id\" v-on:submit.prevent=\"onSubmit\">              \r\n                    <input class=\"inputField\" type =\"hidden\" v-model=\"selectedRole.installer_role_id\">\r\n                    <p class=\"input_heading\">Role name</p>\r\n                    <input class=\"inputField\" type=\"text\" v-model.trim=\"selectedRole.installer_role_name\" required>\r\n                    <p class=\"input_heading\">Role weight</p>\r\n                    <input class=\"inputField\" type=\"text\" v-model.number=\"selectedRole.role_weight\" required>\r\n                    <p class=\"input_heading\">Minimum base</p>\r\n                    <input class=\"inputField\" type=\"text\" v-model.number=\"selectedRole.min_base\" required>\r\n                    <p class=\"input_heading\">Maximum base</p>\r\n                    <input class=\"inputField\" type=\"text\" v-model.number=\"selectedRole.max_base\" required>\r\n                    <p class=\"input_heading\">Individual bonus</p>\r\n                    <input class=\"inputField\" type=\"text\" v-model.number=\"selectedRole.individual_bonus\" required>\r\n                    <p class=\"input_heading\">Team bonus</p>\r\n                    <input class=\"inputField\" type=\"text\" v-model.number=\"selectedRole.team_bonus\" required>\r\n                    <p class=\"input_heading\">Bonus weight</p>\r\n                    <input class=\"inputField\" type=\"text\" v-model.number=\"selectedRole.bonus_weight\" required>\r\n                    <button class=\"button\" type=\"submit\" value=\"Submit\">Update</button>\r\n                    <p style=\"text-align:center;\" class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Installer updated successfully.</p>\r\n            </form>    \r\n         \r\n  </div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'modify-roles',\r\n  data(){\r\n    return {\r\n      role_id: '',\r\n      roles: '',\r\n      selectedRole: {}\r\n  \t}\r\n  },\r\n  methods: {\r\n    onSubmit: function(){\r\n      axios({\r\n        method: 'put',\r\n        url: 'installers/roles/update',\r\n        data: {\r\n          installer_role_id: this.selectedRole.installer_role_id,\r\n          installer_role_name: this.selectedRole.installer_role_name,\r\n          role_weight: this.selectedRole.role_weight,\r\n          min_base: this.selectedRole.min_base,\r\n          max_base: this.selectedRole.max_base,\r\n          individual_bonus: this.selectedRole.individual_bonus,\r\n          team_bonus: this.selectedRole.team_bonus,\r\n          bonus_weight: this.selectedRole.bonus_weight\r\n        }\r\n      })\r\n      .then(req => {\r\n        if(req.status===200){\r\n          $('.inputField').val('');\r\n        document.getElementById('confirmation').classList.remove('hidden');\r\n      };\r\n      })\r\n      .catch(err => {\r\n        console.log(err);\r\n      })\r\n    }\r\n  },\r\n  watch: {\r\n    role_id(id) {\r\n      [this.selectedRole] = this.roles.filter(r => r.installer_role_id === id);\r\n    }\r\n  },\r\n  beforeMount(){\r\n    axios({\r\n      method: 'get',\r\n      url: '/installers/roles'\r\n    })\r\n    .then(req => {\r\n      this.roles = req.data.roles;\r\n      console.log(req.data.roles);\r\n    })\r\n    .catch(err => {\r\n      \r\n    })\r\n  }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\n\r\n\r\nform{\r\n  margin-top: 30px;\r\n}\r\n.inputField{\r\n    background-color: #fff;\r\n    font-family: Open Sans,Arial,sans-serif;\r\n    line-height: normal!important;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 0;\r\n    padding: 12px 18px 11px;\r\n    width: 100%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.input_heading{\r\n    color: #afaeb0;\r\n    \r\n    margin-top: 30px;\r\n    \r\n    \r\n   \r\n\r\n}\r\n.button{\r\n    color: #fff;\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    padding: 9px;\r\n    margin-top: 20px;\r\n   \r\n\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>\r\n"],"sourceRoot":""}]);
+>>>>>>> d5f584db1462729194aa169ba267397210840f21
 
 // exports
 
@@ -29560,342 +30072,326 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-10" }, [
-        _c(
-          "select",
+    _c("p", { staticClass: "input_heading" }, [
+      _vm._v("Select Role to modify")
+    ]),
+    _vm._v(" "),
+    _c(
+      "select",
+      {
+        directives: [
           {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.role_id,
-                expression: "role_id"
-              }
-            ],
-            staticClass: "input",
+            name: "model",
+            rawName: "v-model",
+            value: _vm.role_id,
+            expression: "role_id"
+          }
+        ],
+        staticClass: "inputField",
+        on: {
+          change: function($event) {
+            var $$selectedVal = Array.prototype.filter
+              .call($event.target.options, function(o) {
+                return o.selected
+              })
+              .map(function(o) {
+                var val = "_value" in o ? o._value : o.value
+                return val
+              })
+            _vm.role_id = $event.target.multiple
+              ? $$selectedVal
+              : $$selectedVal[0]
+          }
+        }
+      },
+      _vm._l(_vm.roles, function(role) {
+        return _c("option", { domProps: { value: role.installer_role_id } }, [
+          _vm._v(
+            "\n              " +
+              _vm._s(role.installer_role_name) +
+              "\n            "
+          )
+        ])
+      })
+    ),
+    _vm._v(" "),
+    _vm.selectedRole.installer_role_id
+      ? _c(
+          "form",
+          {
             on: {
-              change: function($event) {
-                var $$selectedVal = Array.prototype.filter
-                  .call($event.target.options, function(o) {
-                    return o.selected
-                  })
-                  .map(function(o) {
-                    var val = "_value" in o ? o._value : o.value
-                    return val
-                  })
-                _vm.role_id = $event.target.multiple
-                  ? $$selectedVal
-                  : $$selectedVal[0]
+              submit: function($event) {
+                $event.preventDefault()
+                _vm.onSubmit($event)
               }
             }
           },
-          _vm._l(_vm.roles, function(role) {
-            return _c(
-              "option",
-              { domProps: { value: role.installer_role_id } },
-              [
-                _vm._v(
-                  "\n              " +
-                    _vm._s(role.installer_role_name) +
-                    "\n            "
-                )
-              ]
-            )
-          })
-        ),
-        _vm._v(" "),
-        _vm.selectedRole.installer_role_id
-          ? _c(
-              "form",
-              {
-                on: {
-                  submit: function($event) {
-                    $event.preventDefault()
-                    _vm.onSubmit($event)
-                  }
+          [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.selectedRole.installer_role_id,
+                  expression: "selectedRole.installer_role_id"
                 }
+              ],
+              staticClass: "inputField",
+              attrs: { type: "hidden" },
+              domProps: { value: _vm.selectedRole.installer_role_id },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.selectedRole,
+                    "installer_role_id",
+                    $event.target.value
+                  )
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("p", { staticClass: "input_heading" }, [_vm._v("Role name")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model.trim",
+                  value: _vm.selectedRole.installer_role_name,
+                  expression: "selectedRole.installer_role_name",
+                  modifiers: { trim: true }
+                }
+              ],
+              staticClass: "inputField",
+              attrs: { type: "text", required: "" },
+              domProps: { value: _vm.selectedRole.installer_role_name },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.selectedRole,
+                    "installer_role_name",
+                    $event.target.value.trim()
+                  )
+                },
+                blur: function($event) {
+                  _vm.$forceUpdate()
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("p", { staticClass: "input_heading" }, [_vm._v("Role weight")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model.number",
+                  value: _vm.selectedRole.role_weight,
+                  expression: "selectedRole.role_weight",
+                  modifiers: { number: true }
+                }
+              ],
+              staticClass: "inputField",
+              attrs: { type: "text", required: "" },
+              domProps: { value: _vm.selectedRole.role_weight },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.selectedRole,
+                    "role_weight",
+                    _vm._n($event.target.value)
+                  )
+                },
+                blur: function($event) {
+                  _vm.$forceUpdate()
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("p", { staticClass: "input_heading" }, [_vm._v("Minimum base")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model.number",
+                  value: _vm.selectedRole.min_base,
+                  expression: "selectedRole.min_base",
+                  modifiers: { number: true }
+                }
+              ],
+              staticClass: "inputField",
+              attrs: { type: "text", required: "" },
+              domProps: { value: _vm.selectedRole.min_base },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.selectedRole,
+                    "min_base",
+                    _vm._n($event.target.value)
+                  )
+                },
+                blur: function($event) {
+                  _vm.$forceUpdate()
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("p", { staticClass: "input_heading" }, [_vm._v("Maximum base")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model.number",
+                  value: _vm.selectedRole.max_base,
+                  expression: "selectedRole.max_base",
+                  modifiers: { number: true }
+                }
+              ],
+              staticClass: "inputField",
+              attrs: { type: "text", required: "" },
+              domProps: { value: _vm.selectedRole.max_base },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.selectedRole,
+                    "max_base",
+                    _vm._n($event.target.value)
+                  )
+                },
+                blur: function($event) {
+                  _vm.$forceUpdate()
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("p", { staticClass: "input_heading" }, [
+              _vm._v("Individual bonus")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model.number",
+                  value: _vm.selectedRole.individual_bonus,
+                  expression: "selectedRole.individual_bonus",
+                  modifiers: { number: true }
+                }
+              ],
+              staticClass: "inputField",
+              attrs: { type: "text", required: "" },
+              domProps: { value: _vm.selectedRole.individual_bonus },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.selectedRole,
+                    "individual_bonus",
+                    _vm._n($event.target.value)
+                  )
+                },
+                blur: function($event) {
+                  _vm.$forceUpdate()
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("p", { staticClass: "input_heading" }, [_vm._v("Team bonus")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model.number",
+                  value: _vm.selectedRole.team_bonus,
+                  expression: "selectedRole.team_bonus",
+                  modifiers: { number: true }
+                }
+              ],
+              staticClass: "inputField",
+              attrs: { type: "text", required: "" },
+              domProps: { value: _vm.selectedRole.team_bonus },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.selectedRole,
+                    "team_bonus",
+                    _vm._n($event.target.value)
+                  )
+                },
+                blur: function($event) {
+                  _vm.$forceUpdate()
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("p", { staticClass: "input_heading" }, [_vm._v("Bonus weight")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model.number",
+                  value: _vm.selectedRole.bonus_weight,
+                  expression: "selectedRole.bonus_weight",
+                  modifiers: { number: true }
+                }
+              ],
+              staticClass: "inputField",
+              attrs: { type: "text", required: "" },
+              domProps: { value: _vm.selectedRole.bonus_weight },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.selectedRole,
+                    "bonus_weight",
+                    _vm._n($event.target.value)
+                  )
+                },
+                blur: function($event) {
+                  _vm.$forceUpdate()
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "button",
+                attrs: { type: "submit", value: "Submit" }
               },
-              [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.selectedRole.installer_role_id,
-                      expression: "selectedRole.installer_role_id"
-                    }
-                  ],
-                  staticClass: "inputField",
-                  attrs: { type: "hidden" },
-                  domProps: { value: _vm.selectedRole.installer_role_id },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(
-                        _vm.selectedRole,
-                        "installer_role_id",
-                        $event.target.value
-                      )
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("p", { staticClass: "input_heading" }, [
-                  _vm._v("Role name")
-                ]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model.trim",
-                      value: _vm.selectedRole.installer_role_name,
-                      expression: "selectedRole.installer_role_name",
-                      modifiers: { trim: true }
-                    }
-                  ],
-                  staticClass: "inputField",
-                  attrs: { type: "text", required: "" },
-                  domProps: { value: _vm.selectedRole.installer_role_name },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(
-                        _vm.selectedRole,
-                        "installer_role_name",
-                        $event.target.value.trim()
-                      )
-                    },
-                    blur: function($event) {
-                      _vm.$forceUpdate()
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("p", { staticClass: "input_heading" }, [
-                  _vm._v("Role weight")
-                ]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model.number",
-                      value: _vm.selectedRole.role_weight,
-                      expression: "selectedRole.role_weight",
-                      modifiers: { number: true }
-                    }
-                  ],
-                  staticClass: "inputField",
-                  attrs: { type: "text", required: "" },
-                  domProps: { value: _vm.selectedRole.role_weight },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(
-                        _vm.selectedRole,
-                        "role_weight",
-                        _vm._n($event.target.value)
-                      )
-                    },
-                    blur: function($event) {
-                      _vm.$forceUpdate()
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("p", { staticClass: "input_heading" }, [
-                  _vm._v("Minimum base")
-                ]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model.number",
-                      value: _vm.selectedRole.min_base,
-                      expression: "selectedRole.min_base",
-                      modifiers: { number: true }
-                    }
-                  ],
-                  staticClass: "inputField",
-                  attrs: { type: "text", required: "" },
-                  domProps: { value: _vm.selectedRole.min_base },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(
-                        _vm.selectedRole,
-                        "min_base",
-                        _vm._n($event.target.value)
-                      )
-                    },
-                    blur: function($event) {
-                      _vm.$forceUpdate()
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("p", { staticClass: "input_heading" }, [
-                  _vm._v("Maximum base")
-                ]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model.number",
-                      value: _vm.selectedRole.max_base,
-                      expression: "selectedRole.max_base",
-                      modifiers: { number: true }
-                    }
-                  ],
-                  staticClass: "inputField",
-                  attrs: { type: "text", required: "" },
-                  domProps: { value: _vm.selectedRole.max_base },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(
-                        _vm.selectedRole,
-                        "max_base",
-                        _vm._n($event.target.value)
-                      )
-                    },
-                    blur: function($event) {
-                      _vm.$forceUpdate()
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("p", { staticClass: "input_heading" }, [
-                  _vm._v("Individual bonus")
-                ]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model.number",
-                      value: _vm.selectedRole.individual_bonus,
-                      expression: "selectedRole.individual_bonus",
-                      modifiers: { number: true }
-                    }
-                  ],
-                  staticClass: "inputField",
-                  attrs: { type: "text", required: "" },
-                  domProps: { value: _vm.selectedRole.individual_bonus },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(
-                        _vm.selectedRole,
-                        "individual_bonus",
-                        _vm._n($event.target.value)
-                      )
-                    },
-                    blur: function($event) {
-                      _vm.$forceUpdate()
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("p", { staticClass: "input_heading" }, [
-                  _vm._v("Team bonus")
-                ]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model.number",
-                      value: _vm.selectedRole.team_bonus,
-                      expression: "selectedRole.team_bonus",
-                      modifiers: { number: true }
-                    }
-                  ],
-                  staticClass: "inputField",
-                  attrs: { type: "text", required: "" },
-                  domProps: { value: _vm.selectedRole.team_bonus },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(
-                        _vm.selectedRole,
-                        "team_bonus",
-                        _vm._n($event.target.value)
-                      )
-                    },
-                    blur: function($event) {
-                      _vm.$forceUpdate()
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("p", { staticClass: "input_heading" }, [
-                  _vm._v("Bonus weight")
-                ]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model.number",
-                      value: _vm.selectedRole.bonus_weight,
-                      expression: "selectedRole.bonus_weight",
-                      modifiers: { number: true }
-                    }
-                  ],
-                  staticClass: "inputField",
-                  attrs: { type: "text", required: "" },
-                  domProps: { value: _vm.selectedRole.bonus_weight },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(
-                        _vm.selectedRole,
-                        "bonus_weight",
-                        _vm._n($event.target.value)
-                      )
-                    },
-                    blur: function($event) {
-                      _vm.$forceUpdate()
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "button",
-                    attrs: { type: "submit", value: "Submit" }
-                  },
-                  [_vm._v("Update")]
-                ),
-                _vm._v(" "),
-                _vm._m(0)
-              ]
-            )
-          : _vm._e()
-      ])
-    ])
+              [_vm._v("Update")]
+            ),
+            _vm._v(" "),
+            _vm._m(0)
+          ]
+        )
+      : _vm._e()
   ])
 }
 var staticRenderFns = [
@@ -30557,7 +31053,7 @@ var content = __webpack_require__(206);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("0f2f9f7d", content, false);
+var update = __webpack_require__(3)("0f2f9f7d", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -30576,7 +31072,7 @@ if(false) {
 /* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -30868,7 +31364,7 @@ var content = __webpack_require__(210);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("141e14cf", content, false);
+var update = __webpack_require__(3)("141e14cf", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -30887,7 +31383,7 @@ if(false) {
 /* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -30908,7 +31404,7 @@ var content = __webpack_require__(212);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("cab86124", content, false);
+var update = __webpack_require__(3)("cab86124", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -30927,7 +31423,7 @@ if(false) {
 /* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -31448,7 +31944,7 @@ var content = __webpack_require__(216);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("82afcc2c", content, false);
+var update = __webpack_require__(3)("82afcc2c", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -31467,7 +31963,7 @@ if(false) {
 /* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -31808,7 +32304,7 @@ var content = __webpack_require__(220);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("3a17998e", content, false);
+var update = __webpack_require__(3)("3a17998e", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -31827,7 +32323,7 @@ if(false) {
 /* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -32238,7 +32734,7 @@ var content = __webpack_require__(224);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("2fe262ac", content, false);
+var update = __webpack_require__(3)("2fe262ac", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -32257,7 +32753,7 @@ if(false) {
 /* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 
@@ -32552,7 +33048,7 @@ var content = __webpack_require__(228);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("1d0e4341", content, false);
+var update = __webpack_require__(3)("1d0e4341", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -32571,7 +33067,7 @@ if(false) {
 /* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(true);
+exports = module.exports = __webpack_require__(2)(true);
 // imports
 
 

@@ -1,5 +1,6 @@
 <template>
   <div class="overlay">
+     <div class="opacity"> 
 	    <!-- Navbar starts -->       
 	    <nav class="navbar navbar-fixed-top">
 		    <div class="container">		       
@@ -55,6 +56,7 @@
 			</div>	
 	    </div>
     </div>
+   </div> 
 </template>
 
 <script>
@@ -110,7 +112,8 @@ export default {
 <style scoped>
 	.overlay{
 	   
-	    background-image: url(https://www.pega.com/sites/pega.com/files/banking-case-study-bg.jpg);
+	background-image: url("/dist/assets/images/5.jpg");
+	background-color: rgba(0, 0, 0, 0.5);
     background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -120,6 +123,15 @@ export default {
 	height:100%;
 	z-index: -10;
 	width:100%;
+	}
+	.opacity{
+		position: absolute;
+		background-color: rgba(0,0,0,0.5);
+	    top:0;
+	    bottom: 0;
+		height: 100%;
+		width: 100%;
+		z-index: -5;
 	}
 
 
