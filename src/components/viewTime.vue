@@ -6,7 +6,7 @@
            <!-- <li><a v-on:click="$parent.updateView('')">Approve Time</a></li> -->
            <li><a class="header_a" v-on:click="$parent.updateView('view-time')" style="color:#4bc800">View time</a></li>
            <li><a class="header_a" v-on:click="$parent.updateView('modify-time')">Modify time</a></li>
-           <li><a class="header_a" v-on:click="$parent.updateView('approve-time')">Approve time</a></li>
+           <!-- <li><a class="header_a" v-on:click="$parent.updateView('approve-time')">Approve time</a></li> -->
                        
         </ul>
       </div>
@@ -30,7 +30,7 @@
                                 <td>{{hour.installers_hours_id}}</td>
                                 <td>{{hour.reg_hours_worked}}</td>
                                 <td>{{hour.ot_hours_worked}}</td>
-                                <td>{{hour.work_date}}</td>
+                                <td> {{ date(hour.work_date) }}</td>
                                 <td class="text-center"><a href="#" @click="deletehour(hour)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
                             </tr>                           
                     </table>
@@ -40,6 +40,7 @@
 </template> 
 
 <script>
+import dateFormat from 'date-fns/format';
 import axios from 'axios';
 export default {
   name: 'view-time',
@@ -69,6 +70,9 @@ export default {
             console.log(err);
           })
        } ,
+       date: function(d) {
+          return dateFormat(d, ["YYYY-MM-DD"])
+        },
        getData: function(){
        axios.get('/installers/hours')
         .then(req => {

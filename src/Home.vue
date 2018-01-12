@@ -29,10 +29,9 @@
 	  <div class="opacity">
         <div class="overlay">    
             <section class="title">
-            	<h1>Lorem ipsum dolor </h1>
+            	<h1>WHBD</h1>
             	<h2 class="home-hero-subtitle">
-                   elit scripta suavitate his ea dico veritus no usu
-                    <a target="_blank" href="/employee-recognition-guide">transform employee recognition</a>
+                   Global Intelligent Building Design, Build, and Implementation Roll Out Company
                 </h2>
             </section>
         </div>
@@ -51,8 +50,8 @@
       	  </div>
       	  <div class="col-md-6 col-sm-6 readme">
       	    <div class="showcase-right">
-      	       <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h1>
-      	       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </p>
+      	       <h1>WHBD is a US based company that specializes in technology based role outs on a global scale. </h1>
+      	       <p>With over 1,600 partners globally WHBD can deliver multi-site, multi-disciplined turnkey solutions.  The founding partners of WHBD have decades of experience in the IT Infrastructure and Low Voltage Cabling disciplines so the vision of creating a global solution for intelligent buildings has become a reality for the partners. </p>
        	    </div>
        	    <br>
        	    <a href="" class="btn btn-danger btn-default btn-lg showcase-btn">Read More</a>

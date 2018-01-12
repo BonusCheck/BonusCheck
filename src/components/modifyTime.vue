@@ -6,7 +6,7 @@
            <!-- <li><a v-on:click="$parent.updateView('')">Approve Time</a></li> -->
            <li><a v-on:click="$parent.updateView('view-time')">View time</a></li>
            <li><a v-on:click="$parent.updateView('modify-time')"  style="color:#4bc800">Modify time</a></li>
-           <li><a v-on:click="$parent.updateView('approve-time')">Approve time</a></li>          
+           <!-- <li><a v-on:click="$parent.updateView('approve-time')">Approve time</a></li>   -->        
         </ul>        
       </div>
       <p class="input_heading">Select Installer</p>
