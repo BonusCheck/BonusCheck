@@ -26,8 +26,8 @@
                             
                                 <td>{{ payment.payment_type_id }} </td>
                                 <td>{{ payment.payment_type }}</td>
-                                <td>{{ payment.date_created }}</td>
-                                <td>{{ payment.date_modified }}</td>
+                                <td>{{ date(payment.date_created) }}</td>
+                                <td>{{ date(payment.date_modified) }}</td>
                                 <td class="text-center"><a href="#" @click="deletepayment(payment)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del
                                 </a>
                                 </td>
@@ -43,6 +43,7 @@
 
 <script>
 
+import dateFormat from 'date-fns/format';
 import axios from 'axios';
 
 export default {
@@ -73,6 +74,9 @@ export default {
             console.log(err);
           })
        } ,
+       date: function(d) {
+          return dateFormat(d, ["YYYY-MM-DD"])
+        },
        getData: function(){
        axios.get('/payment-types')
         .then(req => {

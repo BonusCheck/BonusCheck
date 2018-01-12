@@ -41,11 +41,7 @@
                 <p class="input_heading">Actual Payment</p>
                 		<input  class="inputField" type="number" v-model.number="payment_amount">
               
-               
-            	
-                    
-
-            		<p class="input_heading">Payment type</p>
+              	<p class="input_heading">Payment type</p>
             		<select class="inputField" v-model="fk_payment_type_id" required>
                     <option value='' placeholder="Choose a role"></option>
                     <option v-for="payment_type in payment_types" v-bind:value="payment_type.payment_type_id">
@@ -61,6 +57,7 @@
 </template>
 
 <script>
+    import dateFormat from 'date-fns/format';
     import axios from 'axios';
     export default {
       name: 'add-bonus',
@@ -107,7 +104,24 @@
           .catch(err => {
             console.log(err);
           })
-        }
+        },
+
+        date: function(d) {
+
+          return dateFormat(d, ["YYYY-MM-DD"])
+
+        },
+
+        getDates: function() {
+
+          for (let i = 0; i < this.jobs.length; i++) {
+          
+              this.jobs[i].scheduled_pay_date = this.date(this.jobs[i].scheduled_pay_date);
+
+              console.log(this.jobs[i].date_paid)
+            }
+      
+          }
       },
        beforeMount(){
 
@@ -123,6 +137,7 @@
         .then(req => {
           this.jobs = req.data.jobs;
           console.log(req.data.jobs);
+          this.getDates();
         })
 
           //Get installer list

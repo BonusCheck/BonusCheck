@@ -3,7 +3,7 @@
     <side-bar :user="user"></side-bar>
     <component :is="currentView" :user="user" ></component> 
  
-  </div>
+  </div> 
 </template>
 
 <script>
@@ -42,6 +42,7 @@ import createPaymentTypes from './components/createPaymentTypes';
 import schedulePayments from './components/schedulePayments'
 
 const axios = require('axios');
+const dateFormat = require('date-fns/format');
 
 export default {
   name: 'Dash',
@@ -105,7 +106,8 @@ export default {
       this.user = {
         userID: req.data.userID,
         installerID: req.data.installerID,
-        username:req.data.username
+        username:req.data.username,
+        roll:req.data.roll
       }
       //If no session received, return home
       if(!req.data.roll){

@@ -1,16 +1,16 @@
 <template>
-	<div class="mainDiv">
+  <div class="mainDiv">
     <div  class="header">
-	    <ul>
+      <ul>
            <li><a v-on:click="$parent.updateView('create-roles')">Create roles</a></li>
            <li><a v-on:click="$parent.updateView('modify-roles')" style="color:#4bc800">Modify Roles</a></li>
             <li><a v-on:click="$parent.updateView('view-roles')">View Roles</a></li>
 
         </ul>
       </div>  
-		
-           <p class="input_heading">Select role to modify</p>
-            <select class="inputField" v-model="role_id">
+    <div class="row">
+        <div class="col-md-10">
+            <select class="input" v-model="role_id">
               <option v-for="role in roles" v-bind:value="role.installer_role_id">
                 {{role.installer_role_name}}
               </option>
@@ -35,8 +35,9 @@
                     <button class="button" type="submit" value="Submit">Update</button>
                     <p style="text-align:center;" class="hidden input_heading" id="confirmation"><img src="/dist/assets/images/yes.png"  alt="Logo">Installer updated successfully.</p>
             </form>    
-         
-	</div>
+        </div>  
+     </div> 
+  </div>
 </template>
 
 <script>
@@ -45,7 +46,7 @@ import axios from 'axios';
 export default {
   name: 'modify-roles',
   data(){
-  	return {
+    return {
       role_id: '',
       roles: '',
       selectedRole: {}
@@ -84,17 +85,17 @@ export default {
     }
   },
   beforeMount(){
-  	axios({
-  		method: 'get',
-  		url: '/installers/roles'
-  	})
-  	.then(req => {
+    axios({
+      method: 'get',
+      url: '/installers/roles'
+    })
+    .then(req => {
       this.roles = req.data.roles;
       console.log(req.data.roles);
-  	})
-  	.catch(err => {
-  		
-  	})
+    })
+    .catch(err => {
+      
+    })
   }
 };
 </script>

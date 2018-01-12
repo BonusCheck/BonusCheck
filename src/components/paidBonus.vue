@@ -18,17 +18,17 @@
                                   <tr>
                                       <th>Scheduled Payment </th>
                                       <th>Scheduled Date</th>
-                                      <th>Actuall Payment</th>
+                                      <th>Actual Payment</th>
                                       <th>Date Paid</th>
                                       <th class="text-center">Action</th>
                                   </tr>
                               </thead>
                                 <tr v-for="bonus in bonuses">
                                     <td> {{ bonus.scheduled_payment_amount }}</td>
-                                    <td> {{bonus.scheduled_pay_date }}</td>
+                                    <td> {{ date(bonus.scheduled_pay_date) }}</td>
                                     <td> {{ bonus.payment_amount }}</td>
-                                    <td> {{ bonus.date_paid }}</td>
-                                    <td class="text-center"><a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+                                    <td> {{ date(bonus.date_paid) }}</td>
+                                    <td class="text-center"><a href="#" @click="deletebonus(bonus)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
                                 </tr>
                                 
                         </table>
@@ -39,6 +39,7 @@
 </template>
 
 <script>
+    import dateFormat from 'date-fns/format';
     import axios from 'axios';
 
     export default {
@@ -69,6 +70,9 @@
             console.log(err);
           })
        } ,
+      date: function(d) {
+        return dateFormat(d, ["YYYY-MM-DD"])
+      },
        getData: function(){
        axios.get('/installers/payments')
          .then(req => {

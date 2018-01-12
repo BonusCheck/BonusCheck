@@ -2,7 +2,7 @@
 	<div class="mainDiv">
     <div  class="header">
 	    <ul>
-           <li><a v-on:click="$parent.updateView('create-project')" >Create Project</a></li>
+           <liv-if="user.roll == 'Admin' || 'Project Coordinator'"><a v-on:click="$parent.updateView('create-project')" >Create Project</a></li>
            <li><a v-on:click="$parent.updateView('open-jobs')" >View open jobs</a></li>
            <li><a v-on:click="$parent.updateView('close-jobs')" >View close jobs</a></li>
            <li><a v-on:click="$parent.updateView('all-jobs')" style="color:#4bc800">View all jobs</a></li>
@@ -43,12 +43,13 @@ import axios from 'axios';
 
 export default {
   name: 'all-jobs',
-      data() {
+  props: ['user'],
+  data() {
         return {
           job_id:'',
           jobs: ''
         }
-      },
+   },
     methods: {
        deletejob (job) {
         // open the modal using the refs
@@ -76,13 +77,9 @@ export default {
         })
       }
     },
-      
-      beforeMount(){
-       
-       this.getData(); 
-         
-      }
-     
+    beforeMount(){
+      this.getData(); 
+    }
 };
 </script>
 <style scoped>

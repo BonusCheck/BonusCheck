@@ -30,12 +30,13 @@
     <!-- %%%%%%%%  Side NAVBAR %%%%%%% -->
   <main class="cd-main-content" >
     <nav class="cd-side-nav">
+      <input type="hidden" name="user.installerID" v-model="user.roll">
       <ul>
-        <li class="has-children Overviews">
-         <a v-on:click="$parent.updateView('create-customer')"> <i class="fa fa-address-card fa-lg" ></i>Customer</a>                   
+        <li class="has-children Overviews" v-if="user.roll == 'Admin' || 'Project Coordinator'">
+         <a v-on:click="$parent.updateView('create-customer')"> <i class="fa fa-th-large" ></i>Customer</a>                   
         </li>       
-        <li class="has-children comments">
-          <a v-on:click="$parent.updateView('add-installer')"><i class="fa fa-tasks fa-lg"></i> Installer</a>                   
+        <li class="has-children comments" v-if="user.roll == 'Admin' || 'Project Coordinator'">
+          <a v-on:click="$parent.updateView('add-installer')"><i class="fa fa-tasks"></i> Installer</a>                   
         </li>
          </li> 
         <li class="has-children users">
@@ -50,19 +51,37 @@
           
         </li>
 
-        <li class="has-children bookmarks">
-          <a  v-on:click="$parent.updateView('add-bonus')"><i class="fa fa-money fa-lg"></i> Bonus</a>
-                    
+        <li class="has-children bookmarks" v-if="user.roll == 'Admin' || 'Project Coordinator' || 'Project Manager' || 'Installer'">
+          <a  v-on:click="$parent.updateView('bonus-schedule')"><i class="fa fa-table"></i> Bonus</a>
+          
+       
+         <li class="has-children users">
+          <a v-on:click="$parent.updateView('create-roles')"><i class="fa fa-user"></i> Roles</a>       
+          <!-- <ul>
+           <li><a v-on:click="$parent.updateView('')">View transaction logs</a></li>
+           <li><a v-on:click="$parent.updateView('')">View project data</a></li>
+          </ul> -->
         </li>
-        <li class="has-children users">
-          <a  v-on:click="$parent.updateView('create-project')"><i class="fa fa-briefcase fa-lg"></i> Jobs</a>       
-         
-        </li>
-                 <li class="has-children users">
-          <a  v-on:click="$parent.updateView('add-hours')"><i class="fa fa-clock-o "></i> Time</a>                 
+		    <li class="has-children bookmarks">
+          <a  v-on:click="$parent.updateView('payment-history')"><i class="fa fa-table"></i> Payments</a>
+          
+        </li> 
+        
+       
+        
+       
+
+         <li class="has-children users" v-if="user.roll == 'Admin' || 'Project Coordinator'">
+          <a  v-on:click="$parent.updateView('all-project')"><i class="fa fa-user"></i> Project</a>                 
         </li>
 
-        
+        <li class="has-children users" v-if="user.roll == 'Admin' || 'Project Coordinator'">
+          <a v-on:click="$parent.updateView('create-roles')"><i class="fa fa-user"></i> Admin</a>       
+          <!-- <ul>
+           <li><a v-on:click="$parent.updateView('create-roles')">Create roles</a></li>
+           <li><a v-on:click="$parent.updateView('modify-roles')">Modify Roles</a></li>
+          </ul> -->
+        </li>
     </ul>
     </nav>
         <!-- %%%%%%%%  Side NAVBAR END %%%%%%% -->
@@ -78,6 +97,7 @@
 const axios = require('axios');
 export default {
   name: "side-bar",
+  props: ["user"],
   beforeMount(){
   axios.get('/session/data')
    .then(req => {
