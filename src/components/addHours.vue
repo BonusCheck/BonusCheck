@@ -17,6 +17,10 @@
           			<select class="inputField" v-model="fk_job_id" required>
           				<option v-for="job in jobs" v-bind:value="job.job_id">{{job.job_name}}</option>
           			</select>
+                <p class="input_heading">Installer</p>
+                <select class="inputField" v-model="fk_installer_id" required>
+                  <option v-for="installer in installers" v-bind:value="installer.installer_id">{{installer.first_name}} {{installer.first_name}}</option>
+                </select>
           			<p class="input_heading">Regular hours worked</p>
           			<input class="inputField" type="number" step="0.1" v-model.number="reg_hours_worked" required>
           			<p class="input_heading">Overtime hours worked</p>
@@ -41,7 +45,8 @@ export default {
 	  	ot_hours_worked: '',
 	  	work_date: '',
 	  	fk_job_id: '',
-	  	jobs: ''
+	  	jobs: '',
+      installers: ''
   	}
   },
   methods: {
@@ -56,7 +61,7 @@ export default {
   				ot_hours_worked: this.ot_hours_worked,
   				work_date: this.work_date,
   				fk_job_id: this.fk_job_id,
-  				fk_installer_id: this.user.installerID
+  				fk_installer_id: this.fk_installer_id
   			}
   		})
   		.then(req => {
@@ -64,7 +69,8 @@ export default {
   			this.reg_hours_worked = '',
   			this.ot_hours_worked = '',
   			this.work_date = '',
-  			this.fk_job_id = ''
+  			this.fk_job_id = '',
+        this.fk_installer_id=''
   		})
   		.catch(err => {
   			console.log(err);
@@ -83,6 +89,18 @@ export default {
   	.catch(err => {
   		console.log(err);
   	})
+
+      axios({
+      method: 'get',
+      url: '/installers'
+    })
+    .then(req => {
+      console.log(req.data.installers);
+      this.installers = req.data.installers;
+    })
+    .catch(err => {
+      console.log(err);
+    })
   }
 };
 </script>

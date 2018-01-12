@@ -2,7 +2,7 @@
 	<div class="mainDiv">
     <div  class="header">
 	    <ul>
-           <liv-if="user.roll == 'Admin' || 'Project Coordinator'"><a v-on:click="$parent.updateView('create-project')" >Create Project</a></li>
+           <li v-if="user.roll == 'Admin' || 'Project Coordinator'"><a v-on:click="$parent.updateView('create-project')" >Create Project</a></li>
            <li><a v-on:click="$parent.updateView('open-jobs')" >View open jobs</a></li>
            <li><a v-on:click="$parent.updateView('close-jobs')" >View close jobs</a></li>
            <li><a v-on:click="$parent.updateView('all-jobs')" style="color:#4bc800">View all jobs</a></li>

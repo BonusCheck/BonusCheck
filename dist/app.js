@@ -3511,6 +3511,8 @@ methods: {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
 //
@@ -3525,10 +3527,78 @@ methods: {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  name: 'open-jobs'
+  name: 'open-jobs',
+  props: ['user'],
+  data: function data() {
+        return {
+          job_id:'',
+          jobs: ''
+        }
+   },
+    methods: {
+       deletejob: function deletejob (job) {
+         var this$1 = this;
+
+        // open the modal using the refs
+         this.job_id = job.job_id;
+           __WEBPACK_IMPORTED_MODULE_0_axios___default()({
+            method: 'delete',
+            url: '/jobs/delete',
+            data: {
+              job_id: this.job_id
+            }
+          })
+          .then(function (req) {
+            this$1.job_id = '';
+            this$1.getData();
+          })
+          .catch(function (err) {
+            console.log(err);
+          })
+       } ,
+       getData: function(){
+       var this$1 = this;
+
+       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/jobs')
+        .then(function (req) {
+          this$1.jobs = req.data.jobs;
+          console.log(req.data.jobs);
+        })
+      }
+    },
+    beforeMount: function beforeMount(){
+      this.getData(); 
+    }
 });
 
 
@@ -3537,6 +3607,8 @@ methods: {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
 //
 //
 //
@@ -3551,10 +3623,78 @@ methods: {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  name: 'close-jobs'
+  name: 'close-jobs',
+  props: ['user'],
+  data: function data() {
+        return {
+          job_id:'',
+          jobs: ''
+        }
+   },
+    methods: {
+       deletejob: function deletejob (job) {
+         var this$1 = this;
+
+        // open the modal using the refs
+         this.job_id = job.job_id;
+           __WEBPACK_IMPORTED_MODULE_0_axios___default()({
+            method: 'delete',
+            url: '/jobs/delete',
+            data: {
+              job_id: this.job_id
+            }
+          })
+          .then(function (req) {
+            this$1.job_id = '';
+            this$1.getData();
+          })
+          .catch(function (err) {
+            console.log(err);
+          })
+       } ,
+       getData: function(){
+       var this$1 = this;
+
+       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/jobs')
+        .then(function (req) {
+          this$1.jobs = req.data.jobs;
+          console.log(req.data.jobs);
+        })
+      }
+    },
+    beforeMount: function beforeMount(){
+      this.getData(); 
+    }
 });
 
 
@@ -4073,6 +4213,10 @@ methods: {
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -4085,7 +4229,8 @@ methods: {
 	  	ot_hours_worked: '',
 	  	work_date: '',
 	  	fk_job_id: '',
-	  	jobs: ''
+	  	jobs: '',
+      installers: ''
   	}
   },
   methods: {
@@ -4102,7 +4247,7 @@ methods: {
   				ot_hours_worked: this.ot_hours_worked,
   				work_date: this.work_date,
   				fk_job_id: this.fk_job_id,
-  				fk_installer_id: this.user.installerID
+  				fk_installer_id: this.fk_installer_id
   			}
   		})
   		.then(function (req) {
@@ -4110,7 +4255,8 @@ methods: {
   			this$1.reg_hours_worked = '',
   			this$1.ot_hours_worked = '',
   			this$1.work_date = '',
-  			this$1.fk_job_id = ''
+  			this$1.fk_job_id = '',
+        this$1.fk_installer_id=''
   		})
   		.catch(function (err) {
   			console.log(err);
@@ -4131,6 +4277,18 @@ methods: {
   	.catch(function (err) {
   		console.log(err);
   	})
+
+      __WEBPACK_IMPORTED_MODULE_0_axios___default()({
+      method: 'get',
+      url: '/installers'
+    })
+    .then(function (req) {
+      console.log(req.data.installers);
+      this$1.installers = req.data.installers;
+    })
+    .catch(function (err) {
+      console.log(err);
+    })
   }
 });
 
@@ -4511,6 +4669,13 @@ methods: {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -4524,15 +4689,16 @@ methods: {
     	created_by_id: this.user.userID,
     	modified_by_id: this.user.userID, 
     	job_name: '',
-    	// start_date: '',
-    	// end_date: '',
+    	start_date: '',
+    	end_date: '',
     	hours_bid: '',
-    	// est_start_date: '',
-    	// est_end_date: '',
+    	est_start_date: '',
+    	 est_end_date: '',
     	fk_customer_id: '',
     	bill_rate: '',
     	job_status: '',
-    	max_labor_cost: ''
+    	max_labor_cost: '',
+      customers: {}
     }
   },
   methods: {
@@ -4545,11 +4711,11 @@ methods: {
       created_by_id: this.user.userID,
     	modified_by_id: this.user.userID, 
     	job_name: this.job_name,
-    	// start_date: this.start_date,
-    	// end_date: this.end_date,
+    	start_date: this.start_date,
+    	end_date: this.end_date,
     	hours_bid: this.hours_bid,
-    	// est_start_date: this.est_start_date,
-    	// est_end_date: this.est_end_date,
+    	est_start_date: this.est_start_date,
+    	est_end_date: this.est_end_date,
     	fk_customer_id: this.fk_customer_id,
     	bill_rate: this.bill_rate,
     	job_status: this.job_status,
@@ -4569,7 +4735,19 @@ methods: {
     }
   },
   beforeMount: function beforeMount(){
+  	var this$1 = this;
+
   	console.log(this);
+    __WEBPACK_IMPORTED_MODULE_0_axios___default()({
+      method: 'get',
+      url: '/customers'
+    })
+    .then(function (req) {
+      this$1.customers = req.data.customers;
+    })
+    .catch(function (err) {
+      console.log(err);
+    })
   }
 }); 
 
@@ -24481,7 +24659,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-e72920a0]{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n    \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.header[data-v-e72920a0]{\r\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-e72920a0]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-e72920a0]{\r\n   padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\n}\nli[data-v-e72920a0]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-e72920a0]:hover{\r\n  border-color: #929292;\n}\na[data-v-e72920a0]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/openJobs.vue"],"names":[],"mappings":";AAqBA;KACA,iBAAA;KACA,eAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;;KAEA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;GACA,iBAAA;IACA,kBAAA;IACA,mBAAA;IACA,gBAAA;IACA,mBAAA;IACA,qCAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"openJobs.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n    <div  class=\"header\">\r\n\t    <ul>\r\n           <li><a v-on:click=\"$parent.updateView('create-project')\" >Create Project</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('open-jobs')\" style=\"color:#4bc800\">View open jobs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('close-jobs')\">View close jobs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('all-jobs')\">View all jobs</a></li>\r\n          </ul>\r\n       </div>   \r\n\t\t<h1>open jobs</h1>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\n\r\nexport default {\r\n  name: 'open-jobs'\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n    \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n   padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-e72920a0]{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.custab[data-v-e72920a0]{\r\n    border: 1px solid #ccc;\r\n    padding: 5px;\r\n    margin: 5% 0;\r\n    -webkit-box-shadow: 3px 3px 2px #ccc;\r\n            box-shadow: 3px 3px 2px #ccc;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\n}\n.custab[data-v-e72920a0]:hover{\r\n    -webkit-box-shadow: 3px 3px 0px transparent;\r\n            box-shadow: 3px 3px 0px transparent;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\n}\ntr[data-v-e72920a0]:nth-child(even){\r\n      background-color: #f9f9f9;\n}\n.header[data-v-e72920a0]{\r\n  border-bottom: 1px solid #ebebeb;\n}\ntable[data-v-e72920a0]{\r\n  width: 91%;\n}\ntd[data-v-e72920a0]{\r\n    padding: 8px;\r\n    line-height: 1.42857143;\r\n    \r\n    border-top: 1px solid #ddd;\r\n    text-align: center;\n}\nth[data-v-e72920a0]{\r\n  text-align: center;\n}\nul[data-v-e72920a0]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-e72920a0]{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\n}\nli[data-v-e72920a0]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-e72920a0]:hover{\r\n  border-color: #929292;\n}\na[data-v-e72920a0]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/openJobs.vue"],"names":[],"mappings":";AAqFA;KACA,iBAAA;KACA,eAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;;KAEA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;IACA,uBAAA;IACA,aAAA;IACA,aAAA;IACA,qCAAA;YAAA,6BAAA;IACA,yBAAA;IAAA,iBAAA;CACA;AACA;IACA,4CAAA;YAAA,oCAAA;IACA,yBAAA;IAAA,iBAAA;CACA;AACA;MACA,0BAAA;CACA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,WAAA;CACA;AACA;IACA,aAAA;IACA,wBAAA;;IAEA,2BAAA;IACA,mBAAA;CACA;AACA;EACA,mBAAA;CACA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,mBAAA;IACA,gBAAA;IACA,mBAAA;IACA,qCAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"openJobs.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n    <div  class=\"header\">\r\n\t    <ul>\r\n           <li><a v-on:click=\"$parent.updateView('create-project')\" >Create Project</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('open-jobs')\" style=\"color:#4bc800\">View open jobs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('close-jobs')\">View close jobs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('all-jobs')\">View all jobs</a></li>\r\n          </ul>\r\n       </div>   \r\n\t\t<div class=\"container\">\r\n                <div class=\"row  custyle\">\r\n                    <table class=\"table table-striped custab\">\r\n                            <thead>\r\n                                <tr>\r\n                                    <th>JobID</th>\r\n                                    <th>JobName</th>\r\n                                    <th>Hours Bid</th>\r\n                                    <th>Bill Rate</th>\r\n                                    <th>Job Status</th>\r\n                                    <th>Max Labor</th>\r\n                                    <th class=\"text-center\">Action</th>\r\n                                </tr>\r\n                            </thead>\r\n                            <tr v-for=\"job in jobs\">\r\n                                <td>{{job.job_id}}</td>\r\n                                <td>{{job.job_name}}</td>\r\n                                <td>{{job.hours_bid}}</td>\r\n                                <td>{{job.bill_rate}}</td>\r\n                                <td>{{job.job_status}}</td>\r\n                                <td>{{job.max_labor_cost}}</td>\r\n                                <td class=\"text-center\"><a href=\"#\" @click=\"deletejob(job)\" class=\"btn btn-danger btn-xs\"><span class=\"glyphicon glyphicon-remove\"></span> Del</a></td>\r\n                            </tr>                           \r\n                    </table>\r\n                </div>\r\n        </div>          \r\n  </div>\r\n</template>\r\n\r\n<script>\r\n\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'open-jobs',\r\n  props: ['user'],\r\n  data() {\r\n        return {\r\n          job_id:'',\r\n          jobs: ''\r\n        }\r\n   },\r\n    methods: {\r\n       deletejob (job) {\r\n        // open the modal using the refs\r\n         this.job_id = job.job_id;\r\n           axios({\r\n            method: 'delete',\r\n            url: '/jobs/delete',\r\n            data: {\r\n              job_id: this.job_id\r\n            }\r\n          })\r\n          .then(req => {\r\n            this.job_id = '';\r\n            this.getData();\r\n          })\r\n          .catch(err => {\r\n            console.log(err);\r\n          })\r\n       } ,\r\n       getData: function(){\r\n       axios.get('/jobs')\r\n        .then(req => {\r\n          this.jobs = req.data.jobs;\r\n          console.log(req.data.jobs);\r\n        })\r\n      }\r\n    },\r\n    beforeMount(){\r\n      this.getData(); \r\n    }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n.custab{\r\n    border: 1px solid #ccc;\r\n    padding: 5px;\r\n    margin: 5% 0;\r\n    box-shadow: 3px 3px 2px #ccc;\r\n    transition: 0.5s;\r\n    }\r\n.custab:hover{\r\n    box-shadow: 3px 3px 0px transparent;\r\n    transition: 0.5s;\r\n    }\r\n  tr:nth-child(even){\r\n      background-color: #f9f9f9;\r\n    }\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\ntable{\r\n  width: 91%;\r\n}\r\ntd{\r\n    padding: 8px;\r\n    line-height: 1.42857143;\r\n    \r\n    border-top: 1px solid #ddd;\r\n    text-align: center;\r\n}\r\nth{\r\n  text-align: center;\r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
 
 // exports
 
@@ -24557,10 +24735,79 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("h1", [_vm._v("open jobs")])
+    _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row  custyle" }, [
+        _c(
+          "table",
+          { staticClass: "table table-striped custab" },
+          [
+            _vm._m(0),
+            _vm._v(" "),
+            _vm._l(_vm.jobs, function(job) {
+              return _c("tr", [
+                _c("td", [_vm._v(_vm._s(job.job_id))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(job.job_name))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(job.hours_bid))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(job.bill_rate))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(job.job_status))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(job.max_labor_cost))]),
+                _vm._v(" "),
+                _c("td", { staticClass: "text-center" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-danger btn-xs",
+                      attrs: { href: "#" },
+                      on: {
+                        click: function($event) {
+                          _vm.deletejob(job)
+                        }
+                      }
+                    },
+                    [
+                      _c("span", { staticClass: "glyphicon glyphicon-remove" }),
+                      _vm._v(" Del")
+                    ]
+                  )
+                ])
+              ])
+            })
+          ],
+          2
+        )
+      ])
+    ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("JobID")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("JobName")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Hours Bid")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Bill Rate")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Job Status")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Max Labor")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Action")])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
@@ -24662,7 +24909,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-ff0764a4]{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n   \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.header[data-v-ff0764a4]{\r\n  border-bottom: 1px solid #ebebeb;\n}\nul[data-v-ff0764a4]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-ff0764a4]{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\n}\nli[data-v-ff0764a4]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-ff0764a4]:hover{\r\n  border-color: #929292;\n}\na[data-v-ff0764a4]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/closeJobs.vue"],"names":[],"mappings":";AAqBA;KACA,iBAAA;KACA,eAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;;KAEA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,mBAAA;IACA,gBAAA;IACA,mBAAA;IACA,qCAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"closeJobs.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n    <div  class=\"header\">\r\n\t    <ul>\r\n           <li><a v-on:click=\"$parent.updateView('create-project')\" >Create Project</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('open-jobs')\" >View open jobs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('close-jobs')\" style=\"color:#4bc800\">View close jobs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('all-jobs')\">View all jobs</a></li>\r\n          </ul>\r\n       </div>   \r\n\t\t<h1>open jobs</h1>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\n\r\nexport default {\r\n  name: 'close-jobs'\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n   \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-ff0764a4]{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.custab[data-v-ff0764a4]{\r\n    border: 1px solid #ccc;\r\n    padding: 5px;\r\n    margin: 5% 0;\r\n    -webkit-box-shadow: 3px 3px 2px #ccc;\r\n            box-shadow: 3px 3px 2px #ccc;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\n}\n.custab[data-v-ff0764a4]:hover{\r\n    -webkit-box-shadow: 3px 3px 0px transparent;\r\n            box-shadow: 3px 3px 0px transparent;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\n}\ntr[data-v-ff0764a4]:nth-child(even){\r\n      background-color: #f9f9f9;\n}\n.header[data-v-ff0764a4]{\r\n  border-bottom: 1px solid #ebebeb;\n}\ntable[data-v-ff0764a4]{\r\n  width: 91%;\n}\ntd[data-v-ff0764a4]{\r\n    padding: 8px;\r\n    line-height: 1.42857143;\r\n    \r\n    border-top: 1px solid #ddd;\r\n    text-align: center;\n}\nth[data-v-ff0764a4]{\r\n  text-align: center;\n}\nul[data-v-ff0764a4]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-ff0764a4]{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\n}\nli[data-v-ff0764a4]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-ff0764a4]:hover{\r\n  border-color: #929292;\n}\na[data-v-ff0764a4]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/closeJobs.vue"],"names":[],"mappings":";AAqFA;KACA,iBAAA;KACA,eAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;;KAEA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;IACA,uBAAA;IACA,aAAA;IACA,aAAA;IACA,qCAAA;YAAA,6BAAA;IACA,yBAAA;IAAA,iBAAA;CACA;AACA;IACA,4CAAA;YAAA,oCAAA;IACA,yBAAA;IAAA,iBAAA;CACA;AACA;MACA,0BAAA;CACA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,WAAA;CACA;AACA;IACA,aAAA;IACA,wBAAA;;IAEA,2BAAA;IACA,mBAAA;CACA;AACA;EACA,mBAAA;CACA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,mBAAA;IACA,gBAAA;IACA,mBAAA;IACA,qCAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"closeJobs.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n    <div  class=\"header\">\r\n\t    <ul>\r\n           <li><a v-on:click=\"$parent.updateView('create-project')\" >Create Project</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('open-jobs')\" >View open jobs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('close-jobs')\" style=\"color:#4bc800\">View close jobs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('all-jobs')\">View all jobs</a></li>\r\n          </ul>\r\n       </div>   \r\n\t\t<div class=\"container\">\r\n                <div class=\"row  custyle\">\r\n                    <table class=\"table table-striped custab\">\r\n                            <thead>\r\n                                <tr>\r\n                                    <th>JobID</th>\r\n                                    <th>JobName</th>\r\n                                    <th>Hours Bid</th>\r\n                                    <th>Bill Rate</th>\r\n                                    <th>Job Status</th>\r\n                                    <th>Max Labor</th>\r\n                                    <th class=\"text-center\">Action</th>\r\n                                </tr>\r\n                            </thead>\r\n                            <tr v-for=\"job in jobs\">\r\n                                <td>{{job.job_id}}</td>\r\n                                <td>{{job.job_name}}</td>\r\n                                <td>{{job.hours_bid}}</td>\r\n                                <td>{{job.bill_rate}}</td>\r\n                                <td>{{job.job_status}}</td>\r\n                                <td>{{job.max_labor_cost}}</td>\r\n                                <td class=\"text-center\"><a href=\"#\" @click=\"deletejob(job)\" class=\"btn btn-danger btn-xs\"><span class=\"glyphicon glyphicon-remove\"></span> Del</a></td>\r\n                            </tr>                           \r\n                    </table>\r\n                </div>\r\n        </div>          \r\n  </div>\r\n</template>\r\n\r\n<script>\r\n\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'close-jobs',\r\n  props: ['user'],\r\n  data() {\r\n        return {\r\n          job_id:'',\r\n          jobs: ''\r\n        }\r\n   },\r\n    methods: {\r\n       deletejob (job) {\r\n        // open the modal using the refs\r\n         this.job_id = job.job_id;\r\n           axios({\r\n            method: 'delete',\r\n            url: '/jobs/delete',\r\n            data: {\r\n              job_id: this.job_id\r\n            }\r\n          })\r\n          .then(req => {\r\n            this.job_id = '';\r\n            this.getData();\r\n          })\r\n          .catch(err => {\r\n            console.log(err);\r\n          })\r\n       } ,\r\n       getData: function(){\r\n       axios.get('/jobs')\r\n        .then(req => {\r\n          this.jobs = req.data.jobs;\r\n          console.log(req.data.jobs);\r\n        })\r\n      }\r\n    },\r\n    beforeMount(){\r\n      this.getData(); \r\n    }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n.custab{\r\n    border: 1px solid #ccc;\r\n    padding: 5px;\r\n    margin: 5% 0;\r\n    box-shadow: 3px 3px 2px #ccc;\r\n    transition: 0.5s;\r\n    }\r\n.custab:hover{\r\n    box-shadow: 3px 3px 0px transparent;\r\n    transition: 0.5s;\r\n    }\r\n  tr:nth-child(even){\r\n      background-color: #f9f9f9;\r\n    }\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\ntable{\r\n  width: 91%;\r\n}\r\ntd{\r\n    padding: 8px;\r\n    line-height: 1.42857143;\r\n    \r\n    border-top: 1px solid #ddd;\r\n    text-align: center;\r\n}\r\nth{\r\n  text-align: center;\r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
 
 // exports
 
@@ -24738,10 +24985,79 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c("h1", [_vm._v("open jobs")])
+    _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row  custyle" }, [
+        _c(
+          "table",
+          { staticClass: "table table-striped custab" },
+          [
+            _vm._m(0),
+            _vm._v(" "),
+            _vm._l(_vm.jobs, function(job) {
+              return _c("tr", [
+                _c("td", [_vm._v(_vm._s(job.job_id))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(job.job_name))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(job.hours_bid))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(job.bill_rate))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(job.job_status))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(job.max_labor_cost))]),
+                _vm._v(" "),
+                _c("td", { staticClass: "text-center" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-danger btn-xs",
+                      attrs: { href: "#" },
+                      on: {
+                        click: function($event) {
+                          _vm.deletejob(job)
+                        }
+                      }
+                    },
+                    [
+                      _c("span", { staticClass: "glyphicon glyphicon-remove" }),
+                      _vm._v(" Del")
+                    ]
+                  )
+                ])
+              ])
+            })
+          ],
+          2
+        )
+      ])
+    ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("JobID")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("JobName")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Hours Bid")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Bill Rate")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Job Status")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Max Labor")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Action")])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
@@ -24843,7 +25159,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-4289fa57]{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.custab[data-v-4289fa57]{\r\n    border: 1px solid #ccc;\r\n    padding: 5px;\r\n    margin: 5% 0;\r\n    -webkit-box-shadow: 3px 3px 2px #ccc;\r\n            box-shadow: 3px 3px 2px #ccc;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\n}\n.custab[data-v-4289fa57]:hover{\r\n    -webkit-box-shadow: 3px 3px 0px transparent;\r\n            box-shadow: 3px 3px 0px transparent;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\n}\ntr[data-v-4289fa57]:nth-child(even){\r\n      background-color: #f9f9f9;\n}\n.header[data-v-4289fa57]{\r\n  border-bottom: 1px solid #ebebeb;\n}\ntable[data-v-4289fa57]{\r\n  width: 91%;\n}\ntd[data-v-4289fa57]{\r\n    padding: 8px;\r\n    line-height: 1.42857143;\r\n    \r\n    border-top: 1px solid #ddd;\r\n    text-align: center;\n}\nth[data-v-4289fa57]{\r\n  text-align: center;\n}\nul[data-v-4289fa57]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-4289fa57]{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\n}\nli[data-v-4289fa57]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-4289fa57]:hover{\r\n  border-color: #929292;\n}\na[data-v-4289fa57]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/allJobs.vue"],"names":[],"mappings":";AAqFA;KACA,iBAAA;KACA,eAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;;KAEA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;IACA,uBAAA;IACA,aAAA;IACA,aAAA;IACA,qCAAA;YAAA,6BAAA;IACA,yBAAA;IAAA,iBAAA;CACA;AACA;IACA,4CAAA;YAAA,oCAAA;IACA,yBAAA;IAAA,iBAAA;CACA;AACA;MACA,0BAAA;CACA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,WAAA;CACA;AACA;IACA,aAAA;IACA,wBAAA;;IAEA,2BAAA;IACA,mBAAA;CACA;AACA;EACA,mBAAA;CACA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,mBAAA;IACA,gBAAA;IACA,mBAAA;IACA,qCAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"allJobs.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n    <div  class=\"header\">\r\n\t    <ul>\r\n           <liv-if=\"user.roll == 'Admin' || 'Project Coordinator'\"><a v-on:click=\"$parent.updateView('create-project')\" >Create Project</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('open-jobs')\" >View open jobs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('close-jobs')\" >View close jobs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('all-jobs')\" style=\"color:#4bc800\">View all jobs</a></li>\r\n          </ul>\r\n       </div>   \r\n\t\t   <div class=\"container\">\r\n                <div class=\"row  custyle\">\r\n                    <table class=\"table table-striped custab\">\r\n                            <thead>\r\n                                <tr>\r\n                                    <th>JobID</th>\r\n                                    <th>JobName</th>\r\n                                    <th>Hours Bid</th>\r\n                                    <th>Bill Rate</th>\r\n                                    <th>Job Status</th>\r\n                                    <th>Max Labor</th>\r\n                                    <th class=\"text-center\">Action</th>\r\n                                </tr>\r\n                            </thead>\r\n                            <tr v-for=\"job in jobs\">\r\n                                <td>{{job.job_id}}</td>\r\n                                <td>{{job.job_name}}</td>\r\n                                <td>{{job.hours_bid}}</td>\r\n                                <td>{{job.bill_rate}}</td>\r\n                                <td>{{job.job_status}}</td>\r\n                                <td>{{job.max_labor_cost}}</td>\r\n                                <td class=\"text-center\"><a href=\"#\" @click=\"deletejob(job)\" class=\"btn btn-danger btn-xs\"><span class=\"glyphicon glyphicon-remove\"></span> Del</a></td>\r\n                            </tr>                           \r\n                    </table>\r\n                </div>\r\n        </div>          \r\n\t</div>\r\n</template>\r\n\r\n<script>\r\n\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'all-jobs',\r\n  props: ['user'],\r\n  data() {\r\n        return {\r\n          job_id:'',\r\n          jobs: ''\r\n        }\r\n   },\r\n    methods: {\r\n       deletejob (job) {\r\n        // open the modal using the refs\r\n         this.job_id = job.job_id;\r\n           axios({\r\n            method: 'delete',\r\n            url: '/jobs/delete',\r\n            data: {\r\n              job_id: this.job_id\r\n            }\r\n          })\r\n          .then(req => {\r\n            this.job_id = '';\r\n            this.getData();\r\n          })\r\n          .catch(err => {\r\n            console.log(err);\r\n          })\r\n       } ,\r\n       getData: function(){\r\n       axios.get('/jobs')\r\n        .then(req => {\r\n          this.jobs = req.data.jobs;\r\n          console.log(req.data.jobs);\r\n        })\r\n      }\r\n    },\r\n    beforeMount(){\r\n      this.getData(); \r\n    }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n.custab{\r\n    border: 1px solid #ccc;\r\n    padding: 5px;\r\n    margin: 5% 0;\r\n    box-shadow: 3px 3px 2px #ccc;\r\n    transition: 0.5s;\r\n    }\r\n.custab:hover{\r\n    box-shadow: 3px 3px 0px transparent;\r\n    transition: 0.5s;\r\n    }\r\n  tr:nth-child(even){\r\n      background-color: #f9f9f9;\r\n    }\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\ntable{\r\n  width: 91%;\r\n}\r\ntd{\r\n    padding: 8px;\r\n    line-height: 1.42857143;\r\n    \r\n    border-top: 1px solid #ddd;\r\n    text-align: center;\r\n}\r\nth{\r\n  text-align: center;\r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-4289fa57]{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\n.custab[data-v-4289fa57]{\r\n    border: 1px solid #ccc;\r\n    padding: 5px;\r\n    margin: 5% 0;\r\n    -webkit-box-shadow: 3px 3px 2px #ccc;\r\n            box-shadow: 3px 3px 2px #ccc;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\n}\n.custab[data-v-4289fa57]:hover{\r\n    -webkit-box-shadow: 3px 3px 0px transparent;\r\n            box-shadow: 3px 3px 0px transparent;\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\n}\ntr[data-v-4289fa57]:nth-child(even){\r\n      background-color: #f9f9f9;\n}\n.header[data-v-4289fa57]{\r\n  border-bottom: 1px solid #ebebeb;\n}\ntable[data-v-4289fa57]{\r\n  width: 91%;\n}\ntd[data-v-4289fa57]{\r\n    padding: 8px;\r\n    line-height: 1.42857143;\r\n    \r\n    border-top: 1px solid #ddd;\r\n    text-align: center;\n}\nth[data-v-4289fa57]{\r\n  text-align: center;\n}\nul[data-v-4289fa57]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-4289fa57]{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\n}\nli[data-v-4289fa57]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-4289fa57]:hover{\r\n  border-color: #929292;\n}\na[data-v-4289fa57]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/allJobs.vue"],"names":[],"mappings":";AAqFA;KACA,iBAAA;KACA,eAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;;KAEA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;IACA,uBAAA;IACA,aAAA;IACA,aAAA;IACA,qCAAA;YAAA,6BAAA;IACA,yBAAA;IAAA,iBAAA;CACA;AACA;IACA,4CAAA;YAAA,oCAAA;IACA,yBAAA;IAAA,iBAAA;CACA;AACA;MACA,0BAAA;CACA;AAEA;EACA,iCAAA;CAEA;AACA;EACA,WAAA;CACA;AACA;IACA,aAAA;IACA,wBAAA;;IAEA,2BAAA;IACA,mBAAA;CACA;AACA;EACA,mBAAA;CACA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,mBAAA;IACA,gBAAA;IACA,mBAAA;IACA,qCAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"allJobs.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n    <div  class=\"header\">\r\n\t    <ul>\r\n           <li v-if=\"user.roll == 'Admin' || 'Project Coordinator'\"><a v-on:click=\"$parent.updateView('create-project')\" >Create Project</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('open-jobs')\" >View open jobs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('close-jobs')\" >View close jobs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('all-jobs')\" style=\"color:#4bc800\">View all jobs</a></li>\r\n          </ul>\r\n       </div>   \r\n\t\t   <div class=\"container\">\r\n                <div class=\"row  custyle\">\r\n                    <table class=\"table table-striped custab\">\r\n                            <thead>\r\n                                <tr>\r\n                                    <th>JobID</th>\r\n                                    <th>JobName</th>\r\n                                    <th>Hours Bid</th>\r\n                                    <th>Bill Rate</th>\r\n                                    <th>Job Status</th>\r\n                                    <th>Max Labor</th>\r\n                                    <th class=\"text-center\">Action</th>\r\n                                </tr>\r\n                            </thead>\r\n                            <tr v-for=\"job in jobs\">\r\n                                <td>{{job.job_id}}</td>\r\n                                <td>{{job.job_name}}</td>\r\n                                <td>{{job.hours_bid}}</td>\r\n                                <td>{{job.bill_rate}}</td>\r\n                                <td>{{job.job_status}}</td>\r\n                                <td>{{job.max_labor_cost}}</td>\r\n                                <td class=\"text-center\"><a href=\"#\" @click=\"deletejob(job)\" class=\"btn btn-danger btn-xs\"><span class=\"glyphicon glyphicon-remove\"></span> Del</a></td>\r\n                            </tr>                           \r\n                    </table>\r\n                </div>\r\n        </div>          \r\n\t</div>\r\n</template>\r\n\r\n<script>\r\n\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'all-jobs',\r\n  props: ['user'],\r\n  data() {\r\n        return {\r\n          job_id:'',\r\n          jobs: ''\r\n        }\r\n   },\r\n    methods: {\r\n       deletejob (job) {\r\n        // open the modal using the refs\r\n         this.job_id = job.job_id;\r\n           axios({\r\n            method: 'delete',\r\n            url: '/jobs/delete',\r\n            data: {\r\n              job_id: this.job_id\r\n            }\r\n          })\r\n          .then(req => {\r\n            this.job_id = '';\r\n            this.getData();\r\n          })\r\n          .catch(err => {\r\n            console.log(err);\r\n          })\r\n       } ,\r\n       getData: function(){\r\n       axios.get('/jobs')\r\n        .then(req => {\r\n          this.jobs = req.data.jobs;\r\n          console.log(req.data.jobs);\r\n        })\r\n      }\r\n    },\r\n    beforeMount(){\r\n      this.getData(); \r\n    }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\n.custab{\r\n    border: 1px solid #ccc;\r\n    padding: 5px;\r\n    margin: 5% 0;\r\n    box-shadow: 3px 3px 2px #ccc;\r\n    transition: 0.5s;\r\n    }\r\n.custab:hover{\r\n    box-shadow: 3px 3px 0px transparent;\r\n    transition: 0.5s;\r\n    }\r\n  tr:nth-child(even){\r\n      background-color: #f9f9f9;\r\n    }\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\ntable{\r\n  width: 91%;\r\n}\r\ntd{\r\n    padding: 8px;\r\n    line-height: 1.42857143;\r\n    \r\n    border-top: 1px solid #ddd;\r\n    text-align: center;\r\n}\r\nth{\r\n  text-align: center;\r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
 
 // exports
 
@@ -24860,18 +25176,21 @@ var render = function() {
   return _c("div", { staticClass: "mainDiv" }, [
     _c("div", { staticClass: "header" }, [
       _c("ul", [
-        _vm._v("=\"user.roll == 'Admin' || 'Project Coordinator'\">"),
-        _c(
-          "a",
-          {
-            on: {
-              click: function($event) {
-                _vm.$parent.updateView("create-project")
-              }
-            }
-          },
-          [_vm._v("Create Project")]
-        ),
+        _vm.user.roll == "Admin" || "Project Coordinator"
+          ? _c("li", [
+              _c(
+                "a",
+                {
+                  on: {
+                    click: function($event) {
+                      _vm.$parent.updateView("create-project")
+                    }
+                  }
+                },
+                [_vm._v("Create Project")]
+              )
+            ])
+          : _vm._e(),
         _vm._v(" "),
         _c("li", [
           _c(
@@ -26243,7 +26562,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-e86efc44]{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\nform[data-v-e86efc44]{\r\n  margin-top: 30px;\n}\n.header[data-v-e86efc44]{\r\n  border-bottom: 1px solid #ebebeb;\n}\n.input_heading[data-v-e86efc44]{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\n}\n.inputField[data-v-e86efc44]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-e86efc44]:focus{\r\n  outline: none;\n}\n.button[data-v-e86efc44]:focus{\r\n  outline-color:  #4bc800;\n}\n.button[data-v-e86efc44]{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    margin-top: 10px;\n}\n.inputField[data-v-e86efc44]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-e86efc44]:focus{\r\n  outline: none;\n}\n.button[data-v-e86efc44]:focus{\r\n  outline-color:  #4bc800;\n}\nul[data-v-e86efc44]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-e86efc44]{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\n}\nli[data-v-e86efc44]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-e86efc44]:hover{\r\n  border-color: #929292;\n}\na[data-v-e86efc44]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/addHours.vue"],"names":[],"mappings":";AAyFA;KACA,iBAAA;KACA,eAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;;KAEA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,eAAA;IACA,kBAAA;CAEA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,YAAA;IACA,gBAAA;IACA,kBAAA;IACA,aAAA;IACA,wBAAA;IACA,iBAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AAEA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,mBAAA;IACA,gBAAA;IACA,mBAAA;IACA,qCAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"addHours.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n      <div  class=\"header\">\r\n        <ul>\r\n            <li><a v-on:click=\"$parent.updateView('add-hours')\" style=\"color:#4bc800\">Enter Time Worked</a></li>\r\n           <!-- <li><a v-on:click=\"$parent.updateView('')\">Approve Time</a></li> -->\r\n           <li><a v-on:click=\"$parent.updateView('view-time')\">View time</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('modify-time')\">Modify time</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('approve-time')\">Approve time</a></li>\r\n           \r\n            \r\n        </ul>\r\n      </div>\r\n      \t\t<!-- <h1>Add hours</h1> -->\r\n      \t\t<form v-on:submit.prevent=\"onSubmit\" id=\"form\">\r\n          \t\t\t<p class=\"input_heading\">Job</p>\r\n          \t\t\t<select class=\"inputField\" v-model=\"fk_job_id\" required>\r\n          \t\t\t\t<option v-for=\"job in jobs\" v-bind:value=\"job.job_id\">{{job.job_name}}</option>\r\n          \t\t\t</select>\r\n          \t\t\t<p class=\"input_heading\">Regular hours worked</p>\r\n          \t\t\t<input class=\"inputField\" type=\"number\" step=\"0.1\" v-model.number=\"reg_hours_worked\" required>\r\n          \t\t\t<p class=\"input_heading\">Overtime hours worked</p>\r\n          \t\t\t<input class=\"inputField\" type=\"number\" step=\"0.1\" v-model.number=\"ot_hours_worked\" required>\r\n          \t\t\t<p class=\"input_heading\">Work date</p>\r\n          \t\t\t<input class=\"inputField\" type=\"date\" v-model=\"work_date\" required>\r\n          \t\t\t <button class=\"button\" type=\"submit\" value=\"Submit\">Add hours</button>\r\n          \t\t\t<p class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Hours added</p>\r\n      \t\t</form>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'add-hours',\r\n  props: ['user'],\r\n  data(){\r\n  \treturn {\r\n\t  \treg_hours_worked: '',\r\n\t  \tot_hours_worked: '',\r\n\t  \twork_date: '',\r\n\t  \tfk_job_id: '',\r\n\t  \tjobs: ''\r\n  \t}\r\n  },\r\n  methods: {\r\n  \tonSubmit: function(){\r\n  \t\taxios({\r\n  \t\t\tmethod: 'post',\r\n  \t\t\turl: '/installers/hours/add',\r\n  \t\t\tdata: {\r\n  \t\t\t\tcreated_by_id: this.user.userID,\r\n  \t\t\t\tmodified_by_id: this.user.userID,\r\n  \t\t\t\treg_hours_worked: this.reg_hours_worked,\r\n  \t\t\t\tot_hours_worked: this.ot_hours_worked,\r\n  \t\t\t\twork_date: this.work_date,\r\n  \t\t\t\tfk_job_id: this.fk_job_id,\r\n  \t\t\t\tfk_installer_id: this.user.installerID\r\n  \t\t\t}\r\n  \t\t})\r\n  \t\t.then(req => {\r\n  \t\t\tdocument.getElementById('confirmation').classList.remove('hidden');\r\n  \t\t\tthis.reg_hours_worked = '',\r\n  \t\t\tthis.ot_hours_worked = '',\r\n  \t\t\tthis.work_date = '',\r\n  \t\t\tthis.fk_job_id = ''\r\n  \t\t})\r\n  \t\t.catch(err => {\r\n  \t\t\tconsole.log(err);\r\n  \t\t})\r\n  \t}\r\n  },\r\n  beforeMount(){\r\n  \taxios({\r\n  \t\tmethod: 'get',\r\n  \t\turl: '/jobs'\r\n  \t})\r\n  \t.then(req => {\r\n  \t\tconsole.log(req.data.jobs);\r\n  \t\tthis.jobs = req.data.jobs;\r\n  \t})\r\n  \t.catch(err => {\r\n  \t\tconsole.log(err);\r\n  \t})\r\n  }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\nform{\r\n  margin-top: 30px;\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\n.input_heading{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\r\n    \r\n }   \r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n.button{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    margin-top: 10px;\r\n}\r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-e86efc44]{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\nform[data-v-e86efc44]{\r\n  margin-top: 30px;\n}\n.header[data-v-e86efc44]{\r\n  border-bottom: 1px solid #ebebeb;\n}\n.input_heading[data-v-e86efc44]{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\n}\n.inputField[data-v-e86efc44]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-e86efc44]:focus{\r\n  outline: none;\n}\n.button[data-v-e86efc44]:focus{\r\n  outline-color:  #4bc800;\n}\n.button[data-v-e86efc44]{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    margin-top: 10px;\n}\n.inputField[data-v-e86efc44]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-e86efc44]:focus{\r\n  outline: none;\n}\n.button[data-v-e86efc44]:focus{\r\n  outline-color:  #4bc800;\n}\nul[data-v-e86efc44]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-e86efc44]{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\n}\nli[data-v-e86efc44]:active{\r\n  border-color:#4bc800;\n}\nli[data-v-e86efc44]:hover{\r\n  border-color: #929292;\n}\na[data-v-e86efc44]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/addHours.vue"],"names":[],"mappings":";AA2GA;KACA,iBAAA;KACA,eAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;;KAEA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,eAAA;IACA,kBAAA;CAEA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,YAAA;IACA,gBAAA;IACA,kBAAA;IACA,aAAA;IACA,wBAAA;IACA,iBAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AAEA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,mBAAA;IACA,gBAAA;IACA,mBAAA;IACA,qCAAA;CACA;AACA;EACA,qBAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"addHours.vue","sourcesContent":["<template>\r\n\t<div class=\"mainDiv\">\r\n      <div  class=\"header\">\r\n        <ul>\r\n            <li><a v-on:click=\"$parent.updateView('add-hours')\" style=\"color:#4bc800\">Enter Time Worked</a></li>\r\n           <!-- <li><a v-on:click=\"$parent.updateView('')\">Approve Time</a></li> -->\r\n           <li><a v-on:click=\"$parent.updateView('view-time')\">View time</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('modify-time')\">Modify time</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('approve-time')\">Approve time</a></li>\r\n           \r\n            \r\n        </ul>\r\n      </div>\r\n      \t\t<!-- <h1>Add hours</h1> -->\r\n      \t\t<form v-on:submit.prevent=\"onSubmit\" id=\"form\">\r\n          \t\t\t<p class=\"input_heading\">Job</p>\r\n          \t\t\t<select class=\"inputField\" v-model=\"fk_job_id\" required>\r\n          \t\t\t\t<option v-for=\"job in jobs\" v-bind:value=\"job.job_id\">{{job.job_name}}</option>\r\n          \t\t\t</select>\r\n                <p class=\"input_heading\">Installer</p>\r\n                <select class=\"inputField\" v-model=\"fk_installer_id\" required>\r\n                  <option v-for=\"installer in installers\" v-bind:value=\"installer.installer_id\">{{installer.first_name}} {{installer.first_name}}</option>\r\n                </select>\r\n          \t\t\t<p class=\"input_heading\">Regular hours worked</p>\r\n          \t\t\t<input class=\"inputField\" type=\"number\" step=\"0.1\" v-model.number=\"reg_hours_worked\" required>\r\n          \t\t\t<p class=\"input_heading\">Overtime hours worked</p>\r\n          \t\t\t<input class=\"inputField\" type=\"number\" step=\"0.1\" v-model.number=\"ot_hours_worked\" required>\r\n          \t\t\t<p class=\"input_heading\">Work date</p>\r\n          \t\t\t<input class=\"inputField\" type=\"date\" v-model=\"work_date\" required>\r\n          \t\t\t <button class=\"button\" type=\"submit\" value=\"Submit\">Add hours</button>\r\n          \t\t\t<p class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Hours added</p>\r\n      \t\t</form>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\nimport axios from 'axios';\r\n\r\nexport default {\r\n  name: 'add-hours',\r\n  props: ['user'],\r\n  data(){\r\n  \treturn {\r\n\t  \treg_hours_worked: '',\r\n\t  \tot_hours_worked: '',\r\n\t  \twork_date: '',\r\n\t  \tfk_job_id: '',\r\n\t  \tjobs: '',\r\n      installers: ''\r\n  \t}\r\n  },\r\n  methods: {\r\n  \tonSubmit: function(){\r\n  \t\taxios({\r\n  \t\t\tmethod: 'post',\r\n  \t\t\turl: '/installers/hours/add',\r\n  \t\t\tdata: {\r\n  \t\t\t\tcreated_by_id: this.user.userID,\r\n  \t\t\t\tmodified_by_id: this.user.userID,\r\n  \t\t\t\treg_hours_worked: this.reg_hours_worked,\r\n  \t\t\t\tot_hours_worked: this.ot_hours_worked,\r\n  \t\t\t\twork_date: this.work_date,\r\n  \t\t\t\tfk_job_id: this.fk_job_id,\r\n  \t\t\t\tfk_installer_id: this.fk_installer_id\r\n  \t\t\t}\r\n  \t\t})\r\n  \t\t.then(req => {\r\n  \t\t\tdocument.getElementById('confirmation').classList.remove('hidden');\r\n  \t\t\tthis.reg_hours_worked = '',\r\n  \t\t\tthis.ot_hours_worked = '',\r\n  \t\t\tthis.work_date = '',\r\n  \t\t\tthis.fk_job_id = '',\r\n        this.fk_installer_id=''\r\n  \t\t})\r\n  \t\t.catch(err => {\r\n  \t\t\tconsole.log(err);\r\n  \t\t})\r\n  \t}\r\n  },\r\n  beforeMount(){\r\n  \taxios({\r\n  \t\tmethod: 'get',\r\n  \t\turl: '/jobs'\r\n  \t})\r\n  \t.then(req => {\r\n  \t\tconsole.log(req.data.jobs);\r\n  \t\tthis.jobs = req.data.jobs;\r\n  \t})\r\n  \t.catch(err => {\r\n  \t\tconsole.log(err);\r\n  \t})\r\n\r\n      axios({\r\n      method: 'get',\r\n      url: '/installers'\r\n    })\r\n    .then(req => {\r\n      console.log(req.data.installers);\r\n      this.installers = req.data.installers;\r\n    })\r\n    .catch(err => {\r\n      console.log(err);\r\n    })\r\n  }\r\n};\r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\nform{\r\n  margin-top: 30px;\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\n.input_heading{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\r\n    \r\n }   \r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n.button{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    margin-top: 10px;\r\n}\r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\r\n}\r\nli:active{\r\n  border-color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #929292;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
 
 // exports
 
@@ -26366,6 +26685,52 @@ var render = function() {
             return _c("option", { domProps: { value: job.job_id } }, [
               _vm._v(_vm._s(job.job_name))
             ])
+          })
+        ),
+        _vm._v(" "),
+        _c("p", { staticClass: "input_heading" }, [_vm._v("Installer")]),
+        _vm._v(" "),
+        _c(
+          "select",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.fk_installer_id,
+                expression: "fk_installer_id"
+              }
+            ],
+            staticClass: "inputField",
+            attrs: { required: "" },
+            on: {
+              change: function($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function(o) {
+                    return o.selected
+                  })
+                  .map(function(o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.fk_installer_id = $event.target.multiple
+                  ? $$selectedVal
+                  : $$selectedVal[0]
+              }
+            }
+          },
+          _vm._l(_vm.installers, function(installer) {
+            return _c(
+              "option",
+              { domProps: { value: installer.installer_id } },
+              [
+                _vm._v(
+                  _vm._s(installer.first_name) +
+                    " " +
+                    _vm._s(installer.first_name)
+                )
+              ]
+            )
           })
         ),
         _vm._v(" "),
@@ -27608,7 +27973,7 @@ exports = module.exports = __webpack_require__(1)(true);
 
 
 // module
-exports.push([module.i, "\n.mainDiv[data-v-7b4f963d]{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\nform[data-v-7b4f963d]{\r\n  margin-top: 30px;\n}\n.header[data-v-7b4f963d]{\r\n  border-bottom: 1px solid #ebebeb;\n}\n.input_heading[data-v-7b4f963d]{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\n}\n.inputField[data-v-7b4f963d]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-7b4f963d]:focus{\r\n  outline: none;\n}\n.button[data-v-7b4f963d]:focus{\r\n  outline-color:  #4bc800;\n}\n.button[data-v-7b4f963d]{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    margin-top: 10px;\n}\n.inputField[data-v-7b4f963d]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-7b4f963d]:focus{\r\n  outline: none;\n}\n.button[data-v-7b4f963d]:focus{\r\n  outline-color:  #4bc800;\n}\nul[data-v-7b4f963d]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-7b4f963d]{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\n}\nli:active a[data-v-7b4f963d] {\r\n  color:#4bc800;\n}\nli[data-v-7b4f963d]:hover{\r\n  border-color: #4bc800;\n}\na[data-v-7b4f963d]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/createProject.vue"],"names":[],"mappings":";AA2IA;KACA,iBAAA;KACA,eAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;;KAEA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,eAAA;IACA,kBAAA;CAEA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,YAAA;IACA,gBAAA;IACA,kBAAA;IACA,aAAA;IACA,wBAAA;IACA,iBAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,mBAAA;IACA,gBAAA;IACA,mBAAA;IACA,qCAAA;CACA;AAEA;EACA,cAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"createProject.vue","sourcesContent":["<template>\r\n\t<div  class=\"mainDiv\">\r\n      <div  class=\"header\">\r\n        <ul>\r\n            <!-- <li><a v-on:click=\"$parent.updateView('add-hours')\">Enter Time Worked</a></li> -->\r\n           <!-- <li><a v-on:click=\"$parent.updateView('')\">Approve Time</a></li> -->\r\n           <li><a v-on:click=\"$parent.updateView('create-project')\" style=\"color:#4bc800\">Create Project</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('open-jobs')\">View open jobs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('close-jobs')\">View close jobs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('all-jobs')\">View all jobs</a></li>\r\n           \r\n            \r\n        </ul>\r\n      </div>\r\n\t\t\r\n\t\t<form v-on:submit.prevent=\"onSubmit\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-6\">\r\n            \t<p class=\"input_heading\">Project Name</p>\r\n            \t<input class=\"inputField\" type=\"text\" name=\"job_name\" v-model.trim=\"job_name\">\r\n            </div> \r\n            <div class=\"col-md-6\">  \r\n              <p class=\"input_heading\">Hours Bid</p>\r\n              <input class=\"inputField\" type=\"number\" name =\"hours_bid\" v-model.number=\"hours_bid\">\r\n            </div> \r\n             \r\n        </div>\r\n        <!-- <div class=\"row\">\r\n        <div class=\"col-md-6\"> \r\n              <p class=\"input_heading\">Start Date</p>\r\n              <input class=\"inputField\" type=\"date\" name=\"start_date\" v-model.trim=\"start_date\">\r\n            </div>  \r\n            <div class=\"col-md-6\">     \r\n            \t<p class=\"input_heading\">End Date</p>\r\n            \t<input class=\"inputField\" type=\"date\" name=\"end_date\" v-model.trim=\"end_date\">\r\n            </div>\r\n             \r\n        </div>      \r\n        <div class=\"row\">\r\n            <div class=\"col-md-6\">\r\n            \t<p class=\"input_heading\">Estimated Start Date</p>\r\n            \t<input class=\"inputField\" type=\"date\" name=\"est_start_date\" v-model.trim=\"est_start_date\">\r\n            </div>\r\n            <div class=\"col-md-6\">  \r\n            \t<p class=\"input_heading\">Estimated End Date</p>\r\n            \t<input class=\"inputField\" type=\"date\" name=\"est_end_date\" v-model.trim=\"est_end_date\">\r\n            </div>  \r\n        </div> -->\r\n        <div class=\"row\">\r\n            <div class=\"col-md-6\">      \r\n            \t<p class=\"input_heading\">Customer ID</p>\r\n            \t<input class=\"inputField\" type=\"number\" name=\"fk_customer_id\" v-model.number=\"fk_customer_id\">\r\n            </div>\r\n            <div class=\"col-md-6\">  \r\n            \t<p class=\"input_heading\">Bill Rate</p>\r\n            \t<input class=\"inputField\" type=\"text\" name=\"bill_rate\" v-model.trim=\"bill_rate\">\r\n            </div>\r\n        </div>    \r\n        <div class=\"row\">    \r\n            <div class=\"col-md-6\">  \r\n            \t<p class=\"input_heading\">Job Status</p>\r\n            \t<input class=\"inputField\" type=\"text\" name=\"job_status\" v-model.trim=\"job_status\">\r\n            </div> \r\n            <div class=\"col-md-6\"> \r\n            \t<p class=\"input_heading\">Max Labor Cost</p>\r\n            \t<input class=\"inputField\" type=\"number\" step=\"0.01\" name=\"max_labor_cost\" v-model.number=\"max_labor_cost\">\r\n            </div> \r\n        </div>     \r\n\r\n            <button class=\"button\" type=\"submit\" value=\"Submit\">Create Project</button>\r\n            <p style=\"text-align:center;\" class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Project added</p>\r\n             \r\n    </form>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\n\r\nimport axios from \"axios\";\r\n\r\nexport default {\r\n  name: 'create-project',\r\n  props: [\"user\"],\r\n  data() {\r\n    return {\r\n\r\n    \tcreated_by_id: this.user.userID,\r\n    \tmodified_by_id: this.user.userID, \r\n    \tjob_name: '',\r\n    \t// start_date: '',\r\n    \t// end_date: '',\r\n    \thours_bid: '',\r\n    \t// est_start_date: '',\r\n    \t// est_end_date: '',\r\n    \tfk_customer_id: '',\r\n    \tbill_rate: '',\r\n    \tjob_status: '',\r\n    \tmax_labor_cost: ''\r\n    }\r\n  },\r\n  methods: {\r\n    onSubmit: function(){\r\n      console.log(this.start_date);\r\n      axios({\r\n        method: 'post',\r\n        url: '/jobs/add',\r\n        data: {\r\n      created_by_id: this.user.userID,\r\n    \tmodified_by_id: this.user.userID, \r\n    \tjob_name: this.job_name,\r\n    \t// start_date: this.start_date,\r\n    \t// end_date: this.end_date,\r\n    \thours_bid: this.hours_bid,\r\n    \t// est_start_date: this.est_start_date,\r\n    \t// est_end_date: this.est_end_date,\r\n    \tfk_customer_id: this.fk_customer_id,\r\n    \tbill_rate: this.bill_rate,\r\n    \tjob_status: this.job_status,\r\n    \tmax_labor_cost: this.max_labor_cost\r\n      }\r\n      })\r\n      .then(req => {\r\n        if(req.status===200){\r\n          $('.inputField').val('');\r\n          document.getElementById('confirmation').classList.remove('hidden');\r\n          console.log('Customer added!');\r\n        };\r\n      })\r\n      .catch(err => {\r\n        console.log(err);\r\n      })\r\n    }\r\n  },\r\n  beforeMount(){\r\n  \tconsole.log(this);\r\n  }\r\n}; \r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\nform{\r\n  margin-top: 30px;\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\n.input_heading{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\r\n    \r\n }   \r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n.button{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    margin-top: 10px;\r\n}\r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\r\n}\r\n\r\nli:active a {\r\n  color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #4bc800;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.mainDiv[data-v-7b4f963d]{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     -webkit-box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n             box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\n}\nform[data-v-7b4f963d]{\r\n  margin-top: 30px;\n}\n.header[data-v-7b4f963d]{\r\n  border-bottom: 1px solid #ebebeb;\n}\n.input_heading[data-v-7b4f963d]{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\n}\n.inputField[data-v-7b4f963d]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-7b4f963d]:focus{\r\n  outline: none;\n}\n.button[data-v-7b4f963d]:focus{\r\n  outline-color:  #4bc800;\n}\n.button[data-v-7b4f963d]{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    -webkit-box-shadow: inset 0 -2px 0 #45b900!important;\r\n            box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    margin-top: 10px;\n}\n.inputField[data-v-7b4f963d]{\r\n    background-color: #fff;\r\n    border: 0;\r\n    -webkit-box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n            box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\n}\n.inputField[data-v-7b4f963d]:focus{\r\n  outline: none;\n}\n.button[data-v-7b4f963d]:focus{\r\n  outline-color:  #4bc800;\n}\nul[data-v-7b4f963d]{\r\n  list-style-type:none;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\nli[data-v-7b4f963d]{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\n}\nli:active a[data-v-7b4f963d] {\r\n  color:#4bc800;\n}\nli[data-v-7b4f963d]:hover{\r\n  border-color: #4bc800;\n}\na[data-v-7b4f963d]{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\n}\r\n", "", {"version":3,"sources":["C:/Users/yugaaniya/AA_finalProject/BonusCheck/src/components/src/components/createProject.vue"],"names":[],"mappings":";AA6JA;KACA,iBAAA;KACA,eAAA;KACA,iBAAA;KACA,iDAAA;aAAA,yCAAA;;KAEA,uBAAA;KACA,gBAAA;KACA,cAAA;CAEA;AACA;EACA,iBAAA;CACA;AAEA;EACA,iCAAA;CAEA;AACA;IACA,eAAA;IACA,kBAAA;CAEA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;IACA,8BAAA;IACA,UAAA;IACA,qDAAA;YAAA,6CAAA;IACA,YAAA;IACA,gBAAA;IACA,kBAAA;IACA,aAAA;IACA,wBAAA;IACA,iBAAA;CACA;AACA;IACA,uBAAA;IACA,UAAA;IACA,gDAAA;YAAA,wCAAA;IACA,YAAA;IACA,eAAA;IACA,gBAAA;IACA,aAAA;IACA,wBAAA;IACA,WAAA;CACA;AACA;EACA,cAAA;CACA;AACA;EACA,wBAAA;CAEA;AACA;EACA,qBAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,yBAAA;MAAA,sBAAA;UAAA,wBAAA;CACA;AACA;IACA,iBAAA;IACA,kBAAA;IACA,mBAAA;IACA,gBAAA;IACA,mBAAA;IACA,qCAAA;CACA;AAEA;EACA,cAAA;CACA;AAEA;EACA,sBAAA;CACA;AACA;EACA,eAAA;EACA,sBAAA;EACA,kBAAA;CACA","file":"createProject.vue","sourcesContent":["<template>\r\n\t<div  class=\"mainDiv\">\r\n      <div  class=\"header\">\r\n        <ul>\r\n            <!-- <li><a v-on:click=\"$parent.updateView('add-hours')\">Enter Time Worked</a></li> -->\r\n           <!-- <li><a v-on:click=\"$parent.updateView('')\">Approve Time</a></li> -->\r\n           <li><a v-on:click=\"$parent.updateView('create-project')\" style=\"color:#4bc800\">Create Project</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('open-jobs')\">View open jobs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('close-jobs')\">View close jobs</a></li>\r\n           <li><a v-on:click=\"$parent.updateView('all-jobs')\">View all jobs</a></li>\r\n           \r\n            \r\n        </ul>\r\n      </div>\r\n\t\t\r\n\t\t<form v-on:submit.prevent=\"onSubmit\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-6\">\r\n            \t<p class=\"input_heading\">Project Name</p>\r\n            \t<input class=\"inputField\" type=\"text\" name=\"job_name\" v-model.trim=\"job_name\">\r\n            </div> \r\n            <div class=\"col-md-6\">  \r\n              <p class=\"input_heading\">Hours Bid</p>\r\n              <input class=\"inputField\" type=\"number\" name =\"hours_bid\" v-model.number=\"hours_bid\">\r\n            </div> \r\n             \r\n        </div>\r\n       <div class=\"row\">\r\n        <div class=\"col-md-6\"> \r\n              <p class=\"input_heading\">Start Date</p>\r\n              <input class=\"inputField\" type=\"date\" name=\"start_date\" v-model.trim=\"start_date\">\r\n            </div>  \r\n            <div class=\"col-md-6\">     \r\n              <p class=\"input_heading\">End Date</p>\r\n              <input class=\"inputField\" type=\"date\" name=\"end_date\" v-model.trim=\"end_date\">\r\n            </div>\r\n             \r\n        </div>      \r\n        <div class=\"row\">\r\n            <div class=\"col-md-6\">\r\n              <p class=\"input_heading\">Estimated Start Date</p>\r\n              <input class=\"inputField\" type=\"date\" name=\"est_start_date\" v-model.trim=\"est_start_date\">\r\n            </div>\r\n            <div class=\"col-md-6\">  \r\n              <p class=\"input_heading\">Estimated End Date</p>\r\n              <input class=\"inputField\" type=\"date\" name=\"est_end_date\" v-model.trim=\"est_end_date\">\r\n            </div>  \r\n        </div> \r\n        <div class=\"row\">\r\n            <div class=\"col-md-6\">      \r\n            \t<p class=\"input_heading\">Customer </p>\r\n              <select class=\" inputField dropdown\" v-model=\"fk_customer_id\" required>\r\n                <option class=\"option\" v-for=\"customer in customers\" v-bind:value=\"customer.customer_id\">{{customer.customer_name}}</option>\r\n              </select>\r\n\r\n            </div>\r\n            <div class=\"col-md-6\">  \r\n            \t<p class=\"input_heading\">Bill Rate</p>\r\n            \t<input class=\"inputField\" type=\"number\" name=\"bill_rate\" v-model.number=\"bill_rate\">\r\n            </div>\r\n        </div>    \r\n        <div class=\"row\">    \r\n            <div class=\"col-md-6\">  \r\n            \t<p class=\"input_heading\">Job Status</p>\r\n            \r\n             <select class=\"dropdown inputField\" v-model=\"job_status\" required>\r\n              <option class=\"option\" value=\"Open\">Open</option>\r\n              <option class=\"option\" value=\"Close\">Close</option>\r\n            </select>\r\n            </div> \r\n            <div class=\"col-md-6\"> \r\n            \t<p class=\"input_heading\">Max Labor Cost</p>\r\n            \t<input class=\"inputField\" type=\"number\" step=\"0.01\" name=\"max_labor_cost\" v-model.number=\"max_labor_cost\">\r\n            </div> \r\n        </div>     \r\n\r\n            <button class=\"button\" type=\"submit\" value=\"Submit\">Create Project</button>\r\n            <p style=\"text-align:center;\" class=\"hidden input_heading\" id=\"confirmation\"><img src=\"/dist/assets/images/yes.png\"  alt=\"Logo\">Project added</p>\r\n             \r\n    </form>\r\n\t</div>\r\n</template>\r\n\r\n<script>\r\n\r\nimport axios from \"axios\";\r\n\r\nexport default {\r\n  name: 'create-project',\r\n  props: [\"user\"],\r\n  data() {\r\n    return {\r\n\r\n    \tcreated_by_id: this.user.userID,\r\n    \tmodified_by_id: this.user.userID, \r\n    \tjob_name: '',\r\n    \tstart_date: '',\r\n    \tend_date: '',\r\n    \thours_bid: '',\r\n    \test_start_date: '',\r\n    \t est_end_date: '',\r\n    \tfk_customer_id: '',\r\n    \tbill_rate: '',\r\n    \tjob_status: '',\r\n    \tmax_labor_cost: '',\r\n      customers: {}\r\n    }\r\n  },\r\n  methods: {\r\n    onSubmit: function(){\r\n      console.log(this.start_date);\r\n      axios({\r\n        method: 'post',\r\n        url: '/jobs/add',\r\n        data: {\r\n      created_by_id: this.user.userID,\r\n    \tmodified_by_id: this.user.userID, \r\n    \tjob_name: this.job_name,\r\n    \tstart_date: this.start_date,\r\n    \tend_date: this.end_date,\r\n    \thours_bid: this.hours_bid,\r\n    \test_start_date: this.est_start_date,\r\n    \test_end_date: this.est_end_date,\r\n    \tfk_customer_id: this.fk_customer_id,\r\n    \tbill_rate: this.bill_rate,\r\n    \tjob_status: this.job_status,\r\n    \tmax_labor_cost: this.max_labor_cost\r\n      }\r\n      })\r\n      .then(req => {\r\n        if(req.status===200){\r\n          $('.inputField').val('');\r\n          document.getElementById('confirmation').classList.remove('hidden');\r\n          console.log('Customer added!');\r\n        };\r\n      })\r\n      .catch(err => {\r\n        console.log(err);\r\n      })\r\n    }\r\n  },\r\n  beforeMount(){\r\n  \tconsole.log(this);\r\n    axios({\r\n      method: 'get',\r\n      url: '/customers'\r\n    })\r\n    .then(req => {\r\n      this.customers = req.data.customers;\r\n    })\r\n    .catch(err => {\r\n      console.log(err);\r\n    })\r\n  }\r\n}; \r\n</script>\r\n<style scoped>\r\n\r\n.mainDiv{\r\n     margin-left: 12%;\r\n     margin-top: 5%;\r\n     margin-right: 5%;\r\n     box-shadow: 0 5px 25px hsla(0,0%,10%,.7);\r\n     \r\n     background-color: #fff;\r\n     font-size: 16px;\r\n     padding: 20px;\r\n\r\n}\r\nform{\r\n  margin-top: 30px;\r\n}\r\n\r\n.header{\r\n  border-bottom: 1px solid #ebebeb;\r\n    \r\n}\r\n.input_heading{\r\n    color: #afaeb0;\r\n    margin-left: 18px;\r\n    \r\n }   \r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\n.button{\r\n    background: #4bc800!important;\r\n    border: 0;\r\n    box-shadow: inset 0 -2px 0 #45b900!important;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    margin-top: 10px;\r\n}\r\n.inputField{\r\n    background-color: #fff;\r\n    border: 0;\r\n    box-shadow: 0 1px 5px hsla(0,0%,20%,.5);\r\n    color: #222;\r\n    display: block;\r\n    font-size: 14px;\r\n    margin: 15px;\r\n    padding: 12px 18px 12px;\r\n    width: 97%;\r\n}\r\n.inputField:focus{\r\n  outline: none;\r\n}\r\n.button:focus{\r\n  outline-color:  #4bc800;\r\n\r\n}\r\nul{\r\n  list-style-type:none;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\nli{\r\n    padding-left: 6%;\r\n    padding-right: 6%;\r\n    padding-bottom: 2%;\r\n    padding-top: 2%;\r\n    text-align: center;\r\n    border-bottom: 3px solid transparent;\r\n}\r\n\r\nli:active a {\r\n  color:#4bc800; \r\n}\r\n\r\nli:hover{\r\n  border-color: #4bc800;\r\n}\r\na{\r\n  color: #adadad;\r\n  text-decoration: none;\r\n  font-weight: bold;\r\n}\r\n</style>"],"sourceRoot":""}]);
 
 // exports
 
@@ -27759,27 +28124,27 @@ var render = function() {
         _vm._v(" "),
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-6" }, [
-            _c("p", { staticClass: "input_heading" }, [_vm._v("Customer ID")]),
+            _c("p", { staticClass: "input_heading" }, [_vm._v("Start Date")]),
             _vm._v(" "),
             _c("input", {
               directives: [
                 {
                   name: "model",
-                  rawName: "v-model.number",
-                  value: _vm.fk_customer_id,
-                  expression: "fk_customer_id",
-                  modifiers: { number: true }
+                  rawName: "v-model.trim",
+                  value: _vm.start_date,
+                  expression: "start_date",
+                  modifiers: { trim: true }
                 }
               ],
               staticClass: "inputField",
-              attrs: { type: "number", name: "fk_customer_id" },
-              domProps: { value: _vm.fk_customer_id },
+              attrs: { type: "date", name: "start_date" },
+              domProps: { value: _vm.start_date },
               on: {
                 input: function($event) {
                   if ($event.target.composing) {
                     return
                   }
-                  _vm.fk_customer_id = _vm._n($event.target.value)
+                  _vm.start_date = $event.target.value.trim()
                 },
                 blur: function($event) {
                   _vm.$forceUpdate()
@@ -27789,27 +28154,170 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "col-md-6" }, [
-            _c("p", { staticClass: "input_heading" }, [_vm._v("Bill Rate")]),
+            _c("p", { staticClass: "input_heading" }, [_vm._v("End Date")]),
             _vm._v(" "),
             _c("input", {
               directives: [
                 {
                   name: "model",
                   rawName: "v-model.trim",
-                  value: _vm.bill_rate,
-                  expression: "bill_rate",
+                  value: _vm.end_date,
+                  expression: "end_date",
                   modifiers: { trim: true }
                 }
               ],
               staticClass: "inputField",
-              attrs: { type: "text", name: "bill_rate" },
+              attrs: { type: "date", name: "end_date" },
+              domProps: { value: _vm.end_date },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.end_date = $event.target.value.trim()
+                },
+                blur: function($event) {
+                  _vm.$forceUpdate()
+                }
+              }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("p", { staticClass: "input_heading" }, [
+              _vm._v("Estimated Start Date")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model.trim",
+                  value: _vm.est_start_date,
+                  expression: "est_start_date",
+                  modifiers: { trim: true }
+                }
+              ],
+              staticClass: "inputField",
+              attrs: { type: "date", name: "est_start_date" },
+              domProps: { value: _vm.est_start_date },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.est_start_date = $event.target.value.trim()
+                },
+                blur: function($event) {
+                  _vm.$forceUpdate()
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("p", { staticClass: "input_heading" }, [
+              _vm._v("Estimated End Date")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model.trim",
+                  value: _vm.est_end_date,
+                  expression: "est_end_date",
+                  modifiers: { trim: true }
+                }
+              ],
+              staticClass: "inputField",
+              attrs: { type: "date", name: "est_end_date" },
+              domProps: { value: _vm.est_end_date },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.est_end_date = $event.target.value.trim()
+                },
+                blur: function($event) {
+                  _vm.$forceUpdate()
+                }
+              }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("p", { staticClass: "input_heading" }, [_vm._v("Customer ")]),
+            _vm._v(" "),
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.fk_customer_id,
+                    expression: "fk_customer_id"
+                  }
+                ],
+                staticClass: " inputField dropdown",
+                attrs: { required: "" },
+                on: {
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.fk_customer_id = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  }
+                }
+              },
+              _vm._l(_vm.customers, function(customer) {
+                return _c(
+                  "option",
+                  {
+                    staticClass: "option",
+                    domProps: { value: customer.customer_id }
+                  },
+                  [_vm._v(_vm._s(customer.customer_name))]
+                )
+              })
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("p", { staticClass: "input_heading" }, [_vm._v("Bill Rate")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model.number",
+                  value: _vm.bill_rate,
+                  expression: "bill_rate",
+                  modifiers: { number: true }
+                }
+              ],
+              staticClass: "inputField",
+              attrs: { type: "number", name: "bill_rate" },
               domProps: { value: _vm.bill_rate },
               on: {
                 input: function($event) {
                   if ($event.target.composing) {
                     return
                   }
-                  _vm.bill_rate = $event.target.value.trim()
+                  _vm.bill_rate = _vm._n($event.target.value)
                 },
                 blur: function($event) {
                   _vm.$forceUpdate()
@@ -27823,31 +28331,49 @@ var render = function() {
           _c("div", { staticClass: "col-md-6" }, [
             _c("p", { staticClass: "input_heading" }, [_vm._v("Job Status")]),
             _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model.trim",
-                  value: _vm.job_status,
-                  expression: "job_status",
-                  modifiers: { trim: true }
-                }
-              ],
-              staticClass: "inputField",
-              attrs: { type: "text", name: "job_status" },
-              domProps: { value: _vm.job_status },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.job_status,
+                    expression: "job_status"
                   }
-                  _vm.job_status = $event.target.value.trim()
-                },
-                blur: function($event) {
-                  _vm.$forceUpdate()
+                ],
+                staticClass: "dropdown inputField",
+                attrs: { required: "" },
+                on: {
+                  change: function($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function(o) {
+                        return o.selected
+                      })
+                      .map(function(o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.job_status = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  }
                 }
-              }
-            })
+              },
+              [
+                _c(
+                  "option",
+                  { staticClass: "option", attrs: { value: "Open" } },
+                  [_vm._v("Open")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "option",
+                  { staticClass: "option", attrs: { value: "Close" } },
+                  [_vm._v("Close")]
+                )
+              ]
+            )
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "col-md-6" }, [
