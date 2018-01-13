@@ -4,7 +4,7 @@
     <ul>
            <li><a v-on:click="$parent.updateView('add-user')" style="color:#4bc800">Add User</a></li>
            <li><a v-on:click="$parent.updateView('delete-user')">Delete User</a></li>
-           <li v-if="user.roll === 'Admin' || 'Project-Cooridnator'"><a v-on:click="$parent.updateView('modify-project')">Modify project</a></li>
+           
     </ul>
    </div> 
   	<!-- <p class="heading">Add User</p> -->

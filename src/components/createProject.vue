@@ -4,10 +4,11 @@
         <ul>
             <!-- <li><a v-on:click="$parent.updateView('add-hours')">Enter Time Worked</a></li> -->
            <!-- <li><a v-on:click="$parent.updateView('')">Approve Time</a></li> -->
-           <li><a v-on:click="$parent.updateView('create-project')" style="color:#4bc800">Create Project</a></li>
-           <li><a v-on:click="$parent.updateView('open-jobs')">View open jobs</a></li>
-           <li><a v-on:click="$parent.updateView('close-jobs')">View close jobs</a></li>
-           <li><a v-on:click="$parent.updateView('all-jobs')">View all jobs</a></li>
+           <li><a v-on:click="$parent.updateView('create-project')" style="color:#4bc800">Create Jobs</a></li>
+           <li><a v-on:click="$parent.updateView('open-jobs')">View Open Jobs</a></li>
+           <li><a v-on:click="$parent.updateView('close-jobs')">View Close Jobs</a></li>
+           <li><a v-on:click="$parent.updateView('all-jobs')">View All Jobs</a></li>
+           <li v-if="user.roll === 'Admin' || 'Project-Cooridnator'"><a v-on:click="$parent.updateView('modify-project')">Modify Job</a></li>
            
             
         </ul>
