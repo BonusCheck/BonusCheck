@@ -4,7 +4,7 @@
     <ul>
            <li><a v-on:click="$parent.updateView('add-user')" style="color:#4bc800">Add User</a></li>
            <li><a v-on:click="$parent.updateView('delete-user')">Delete User</a></li>
-           <li v-if="user.roll === 'Admin' || 'Project-Cooridnator'"><a v-on:click="$parent.updateView('modify-project')">Modify project</a></li>
+           <!-- <li v-if="user.roll === 'Admin' || 'Project-Cooridnator'"><a v-on:click="$parent.updateView('modify-project')">Modify project</a></li> -->
     </ul>
    </div> 
   	<!-- <p class="heading">Add User</p> -->
@@ -14,7 +14,7 @@
       <p class="input_heading">Password</p>
     	<input class="inputField" type="password" name ="password" v-model="password">
       <p class="input_heading">User role</p>
-      <select class="inputField" v-model="fk_user_role_id" required>
+      <select class="inputField"  v-model="fk_user_role_id" required>
         <option value='' placeholder="Choose a role"></option>
         <option v-for="role in roles" v-bind:value="role.user_role_id">
           {{role.user_role_name}}
@@ -38,7 +38,8 @@ export default {
       user_name: '',
       password: '',
       fk_user_role_id: '',
-      roles: ''
+      roles: '',
+      user:this.user
     }
   },
   methods: {
@@ -69,6 +70,17 @@ export default {
       url: '/users/roles'
     })
     .then(req => {
+
+
+     /* if( user.user_role_name=='Project-Cooridnator'){
+      for(var i=0; i< req.data.roles;i++){
+      if(req.data.roles[i].user_role_name!='Admin'){
+        this.roles.push(req.data.roles[i]);
+      }
+
+      }
+        }*/
+            
       this.roles = req.data.roles;
       console.log(this.roles);
     })

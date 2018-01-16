@@ -2,10 +2,10 @@
 	<div class="mainDiv">
     <div  class="header">
 	    <ul>
-           <li><a v-on:click="$parent.updateView('create-project')" >Create Project</a></li>
-           <li><a v-on:click="$parent.updateView('open-jobs')" style="color:#4bc800">View open jobs</a></li>
-           <li><a v-on:click="$parent.updateView('close-jobs')">View close jobs</a></li>
-           <li><a v-on:click="$parent.updateView('all-jobs')">View all jobs</a></li>
+           <li><a class="header_a" v-on:click="$parent.updateView('create-project')" >Create Project</a></li>
+           <li><a class="header_a" v-on:click="$parent.updateView('open-jobs')" style="color:#4bc800">View open jobs</a></li>
+           <li><a class="header_a" v-on:click="$parent.updateView('close-jobs')">View close jobs</a></li>
+           <li><a class="header_a" v-on:click="$parent.updateView('all-jobs')">View all jobs</a></li>
           </ul>
        </div>   
 		<div class="container">
@@ -19,7 +19,8 @@
                                     <th>Bill Rate</th>
                                     <th>Job Status</th>
                                     <th>Max Labor</th>
-                                    <th class="text-center">Action</th>
+                                    <th class="text-center">Modify</th>
+                                    <th class="text-center">Delete</th>
                                 </tr>
                             </thead>
                             <tr v-for="job in jobs">
@@ -29,6 +30,9 @@
                                 <td>{{job.bill_rate}}</td>
                                 <td>{{job.job_status}}</td>
                                 <td>{{job.max_labor_cost}}</td>
+                                <td class="text-center"><a href="#" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-edit"></span> Edit
+                                      </a>
+                                </td>
                                 <td class="text-center"><a href="#" @click="deletejob(job)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
                             </tr>                           
                     </table>
@@ -147,7 +151,7 @@ li:active{
 li:hover{
   border-color: #929292;
 }
-a{
+.header_a{
   color: #adadad;
   text-decoration: none;
   font-weight: bold;

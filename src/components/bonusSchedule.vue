@@ -19,15 +19,17 @@
                                   <tr>
                                       <th>Scheduled Payment </th>
                                       <th>Scheduled Date</th>   
-                                      <th class="text-center">Action</th>
+                                      <th class="text-center">Modify</th>
+                                      <th class="text-center">Delete</th>
                                   </tr>
                               </thead>
                                 <tr v-for="bonus in bonuses">
-                                    <td>{{ bonus.scheduled_payment_amount }}</td>
-
-                                    <td>{{ date(bonus.scheduled_pay_date) }}</td> 
-                                                                                               
-                                    <td class="text-center"><a href="#"  @click="deletebonus(bonus)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+                                      <td>{{ bonus.scheduled_payment_amount }}</td>
+                                      <td>{{ date(bonus.scheduled_pay_date) }}</td> 
+                                      <td class="text-center"><a href="#" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-edit"></span> Edit
+                                        </a>
+                                      </td>                                                                                               
+                                      <td class="text-center"><a href="#"  @click="deletebonus(bonus)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
                                 </tr>
                                 
                         </table>
@@ -113,10 +115,13 @@ export default {
   tr:nth-child(even){
       background-color: #f9f9f9;
     }
+  th{
+    text-align: center;
+  }
   td{
     padding: 8px;
     line-height: 1.42857143;
-    vertical-align: top;
+    text-align: center;
     border-top: 1px solid #ddd;
 }  
 

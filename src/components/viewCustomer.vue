@@ -19,7 +19,8 @@
                                           <th>CustomerName</th>
                                           <th>DateCreated</th>
                                           <th>DateModified</th>
-                                          <th class="text-center">Action</th>
+                                          <th class="text-center">Modify</th>
+                                          <th class="text-center">Delete</th>
                                       </tr>
                                   </thead>
                                   <tr v-for="customer in customers">                             
@@ -27,9 +28,14 @@
                                       <td>{{ customer.customer_name }}</td>
                                       <td>{{ customer.date_created }}</td>
                                       <td>{{ customer.date_modified }}</td>
+                                      <td class="text-center"><a href="#" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-edit"></span> Edit
+                                      </a>
+                                      </td> 
                                       <td class="text-center"><a href="#" @click="deletecustomer(customer)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del
                                       </a>
-                                      </td>                                
+                                      </td>
+
+
                                   </tr>                           
                         </table>
                     

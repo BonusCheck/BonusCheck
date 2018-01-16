@@ -19,7 +19,8 @@
                                     <th>Max base</th>
                                     <th>Individual Bonus</th>
                                     <th>Team Bonus</th>
-                                    <th class="text-center">Action</th>
+                                    <th class="text-center">Modify</th>
+                                    <th class="text-center">Delete</th>
                                 </tr>
                             </thead>
                             <tr v-for="role in roles">
@@ -30,6 +31,9 @@
                                 <td>{{ role.max_base }}</td>
                                 <td>{{ role.individual_bonus }} </td>
                                 <td>{{ role.team_bonus }} </td>
+                                <td class="text-center"><a href="#" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-edit"></span> Edit
+                                      </a>
+                                </td>
                                 <td class="text-center"><a href="#" @click="deleterole(role)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del
                                 </a>
                                 </td>
@@ -123,8 +127,9 @@ export default {
   td{
     padding: 8px;
     line-height: 1.42857143;
-    vertical-align: top;
+    
     border-top: 1px solid #ddd;
+    text-align: center;
     
 }
 th{

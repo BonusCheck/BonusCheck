@@ -204,6 +204,7 @@ installerRouter.put("/payments/update", function(req, res) {
 //INSTALLER ROLES ROUTES
 
 installerRouter.get("/roles", function(req, res) {
+  console.log('ruchi '+req)
   installer_roles.all(function(data) {
     var vueObject = {
       roles: data

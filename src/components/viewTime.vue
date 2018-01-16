@@ -21,7 +21,8 @@
                                     <th>Regular Hours Worked</th>
                                     <th>Overtime hours worked</th>
                                     <th>Work date</th>
-                                    <th class="text-center">Action</th>
+                                    <th class="text-center">Modify</th>
+                                    <th class="text-center">Delete</th>
                                 </tr>
                             </thead>
                             <tr v-for="hour in hours">
@@ -31,6 +32,9 @@
                                 <td>{{hour.reg_hours_worked}}</td>
                                 <td>{{hour.ot_hours_worked}}</td>
                                 <td> {{ date(hour.work_date) }}</td>
+                                <td class="text-center"><a href="#" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-edit"></span> Edit
+                                      </a>
+                                </td>
                                 <td class="text-center"><a href="#" @click="deletehour(hour)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
                             </tr>                           
                     </table>

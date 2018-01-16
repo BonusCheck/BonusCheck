@@ -20,7 +20,8 @@
                                       <th>Scheduled Date</th>
                                       <th>Actual Payment</th>
                                       <th>Date Paid</th>
-                                      <th class="text-center">Action</th>
+                                      <th class="text-center">Modify</th>
+                                      <th class="text-center">Delete</th>
                                   </tr>
                               </thead>
                                 <tr v-for="bonus in bonuses">
@@ -28,6 +29,9 @@
                                     <td> {{ date(bonus.scheduled_pay_date) }}</td>
                                     <td> {{ bonus.payment_amount }}</td>
                                     <td> {{ date(bonus.date_paid) }}</td>
+                                    <td class="text-center"><a href="#" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-edit"></span> Edit
+                                      </a>
+                                    </td>
                                     <td class="text-center"><a href="#" @click="deletebonus(bonus)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
                                 </tr>
                                 
@@ -116,11 +120,15 @@
   tr:nth-child(even){
       background-color: #f9f9f9;
     }
+  th{
+    text-align: center;
+  }  
   td{
     padding: 8px;
     line-height: 1.42857143;
-    vertical-align: top;
+    
     border-top: 1px solid #ddd;
+    text-align: center;
 }  
 
 .header{

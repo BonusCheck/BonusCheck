@@ -2,10 +2,10 @@
 	<div class="mainDiv">
     <div  class="header">
 	    <ul>
-            <li><a v-on:click="$parent.updateView('create-payment-types')">Create Payments Types</a></li>
-            <li><a v-on:click="$parent.updateView('payment-history')" style="color:#4bc800">View Payment </a></li>
+            <li><a class="header_a" v-on:click="$parent.updateView('create-payment-types')">Create Payments Types</a></li>
+            <li><a class="header_a" v-on:click="$parent.updateView('payment-history')" style="color:#4bc800">View Payment </a></li>
             
-            <li><a v-on:click="$parent.updateView('modify-payments')">Modify Payments</a></li>
+            <li><a class="header_a" v-on:click="$parent.updateView('modify-payments')">Modify Payments</a></li>
             
             <!-- <li><a v-on:click="$parent.updateView('modify-payment-types')">Modify Payment Types</a></li> -->
           </ul>
@@ -19,7 +19,8 @@
                                   <th>PaymentType</th>
                                   <th>DateCreated</th>
                                   <th>DateModified</th>
-                                  <th class="text-center">Action</th>
+                                  <th class="text-center">Modify</th>
+                                  <th class="text-center">Delete</th>
                               </tr>
                           </thead>
                             <tr v-for="payment in payments">
@@ -28,6 +29,9 @@
                                 <td>{{ payment.payment_type }}</td>
                                 <td>{{ date(payment.date_created) }}</td>
                                 <td>{{ date(payment.date_modified) }}</td>
+                                <td class="text-center"><a href="#" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-edit"></span> Edit
+                                      </a>
+                                </td>
                                 <td class="text-center"><a href="#" @click="deletepayment(payment)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del
                                 </a>
                                 </td>
@@ -94,7 +98,7 @@ export default {
 <style scoped>
 
 .mainDiv{
-    margin-left: 12%;
+     margin-left: 12%;
      margin-top: 5%;
      margin-right: 5%;
      box-shadow: 0 5px 25px hsla(0,0%,10%,.7);
@@ -155,7 +159,7 @@ li:active{
 li:hover{
   border-color: #929292;
 }
-a{
+.header_a{
   color: #adadad;
   text-decoration: none;
   font-weight: bold;

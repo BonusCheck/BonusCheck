@@ -18,7 +18,8 @@
                                     <th>LastName</th>
                                     <th>CurrentWage</th>
                                     <th>Role</th>
-                                    <th class="text-center">Action</th>
+                                    <th class="text-center">Modify</th>
+                                    <th class="text-center">Delete</th>
                                 </tr>
                             </thead>
                             <tr v-for="installer in installers">
@@ -26,7 +27,10 @@
                                 <td>{{installer.first_name}}</td>
                                 <td>{{installer.last_name}}</td>
                                 <td>{{installer.current_wage}}</td>
-                                <td>{{installer.fk_installer_role_id}}</td>
+                                <td >{{getRoleName(installer.fk_installer_role_id)}}</td>
+                                <td class="text-center"><a href="#" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-edit"></span> Edit
+                                      </a>
+                                </td>
                                 <td class="text-center"><a href="#" @click="deleteinstaller(installer)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
                             </tr>                           
                     </table>
@@ -71,15 +75,15 @@
           console.log(req.data.installers);
         })
       },
-      getRoleName: function(roleid){
+      getRoleName: function(fk_installer_role_id){
          var role_name = "";
-        for (var i=0; this.roles.length ; i++) {
-            if(this.roles[i].installer_role_id==roleid){
+        for (var i=0; i<this.roles.length ; i++) {
+            if(this.roles[i].installer_role_id==fk_installer_role_id){
              role_name= this.roles[i].installer_role_name;
 
             }
-          return role_name;  
-         }
+        }
+        return role_name;  
       }   
       },
       beforeMount(){

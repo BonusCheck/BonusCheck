@@ -32,31 +32,31 @@
     <nav class="cd-side-nav">
       <input type="hidden" name="user.installerID" v-model="user.roll">
       <ul>
-        <li class="has-children Overviews" v-if="user.roll == 'Admin' || 'Project Coordinator'">
+        <li class="has-children Overviews" v-if="user.roll === 'Admin' || user.roll === 'Project Coordinator'" >
          <a v-on:click="$parent.updateView('create-customer')"> <i class="fa fa-th-large" ></i>Customer</a>                   
         </li>       
-        <li class="has-children comments" v-if="user.roll == 'Admin' || 'Project Coordinator'">
+        <li class="has-children comments" v-if="user.roll === 'Admin' || user.roll === 'Project Coordinator'">
           <a v-on:click="$parent.updateView('add-installer')"><i class="fa fa-tasks"></i> Installer</a>                   
         </li>
          </li> 
-        <li class="has-children users">
+        <li class="has-children users" v-if="user.roll === 'Admin' || user.roll === 'Project Coordinator'">
           <a  v-on:click="$parent.updateView('add-user')"><i class="fa fa-user fa-lg"></i> User</a>       
          
         </li>
          <li class="has-children users">
           <a v-on:click="$parent.updateView('create-roles')"><i class="fa fa-users fa-lg"></i> Roles</a> 
           </li>
-          <li class="has-children bookmarks">
+          <li class="has-children bookmarks" v-if="user.roll === 'Admin' || user.roll === 'Project Coordinator'">
           <a  v-on:click="$parent.updateView('create-payment-types')"><i class="fa fa-usd fa-lg"></i> Payments</a>
           
         </li>
 
-        <li class="has-children bookmarks" v-if="user.roll == 'Admin' || 'Project Coordinator' || 'Project Manager' || 'Installer'">
+        <li class="has-children bookmarks" >
           <a  v-on:click="$parent.updateView('add-bonus')"><i class="fa fa-money fa-lg"></i> Bonus</a>
                     
         </li>
 
-        <li class="has-children users" v-if="user.roll == 'Admin' || 'Project Coordinator' || 'Project Manager' || 'Installer'">
+        <li class="has-children users" >
           <a  v-on:click="$parent.updateView('create-project')"><i class="fa fa-briefcase fa-lg"></i> Jobs</a>       
          
         </li>
@@ -81,7 +81,12 @@
 const axios = require('axios');
 export default {
   name: "side-bar",
-  props: ["user"],
+   props: ["user"],
+   data(){
+    return {
+      user: this.user
+    }
+  }, 
   methods: {
      logout () {
           axios.get('/logout')
@@ -99,7 +104,7 @@ export default {
   beforeMount(){
   axios.get('/session/data')
    .then(req => {
-      console.log("Side Bar username"+req.data.username);
+      console.log("Side Bar username "+req.data.username);
       $('#username').html(req.data.username);
      
       //If no session received, return home
@@ -113,6 +118,12 @@ export default {
     console.log("Error R"+err);
   });
   }
+  ,
+
+  mounted (){
+    console.log("in mounted "+this.user);
+    
+    }
 };
 
 </script>
