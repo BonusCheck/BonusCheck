@@ -1,21 +1,10 @@
-# bonuscheck
+## BonusCheck
 
-> A Vue.js project
+>Contractor bonus payment manager
 
-## Build Setup
+## Authors
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+**Bill Monreal - Concept, database design**
+**Tim Kellogg - Front end, Vue developer**
+**Matt Bacher - Front end, Vue developer**
+**Ruchi Awasthi - Primary UI designer, templating**
